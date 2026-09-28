@@ -64,7 +64,7 @@
   const PREF = 'mf-desk:ui';
   const pref = (() => { try { return JSON.parse(localStorage.getItem(PREF) || '{}'); } catch (e) { return {}; } })();
   const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen, leftW: ui.leftW, alloc: ui.alloc })); } catch (e) { /* ignora */ } };
-  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320, alloc: pref.alloc === 'titoli' ? 'titoli' : 'settori' };
+  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320, alloc: pref.alloc === 'titoli' ? 'titoli' : 'settori', allNews: {} };
 
   const azienda = t => state.aziende[t] || D.aziende[t] || null;
   const tesiDi = t => ({ ...azienda(t).tesi, ...(state.tesi[t] || {}) });
@@ -359,18 +359,27 @@
   }
   const inScope = t => (ui.scope === 'portafoglio' ? held(t) : ui.scope === 'watchlist' ? watched(t) : tracked(t));
 
-  /* Segnale netto per titolo: media di (direzione × forza × similarità) sugli articoli collegati. Scala −1…+1. */
-  function signalBoard() {
-    const acc = {};
+  /* Segnale netto di un titolo: media di (direzione × forza × similarità) sugli articoli collegati. Scala −1…+1. */
+  function signalFor(t) {
+    let sum = 0, k = 0;
     D.notizie.forEach(n => {
       if (!n.segnale) return;
-      linked(n).forEach(s => {
-        if (!tracked(s.ticker)) return;
-        const o = acc[s.ticker] || (acc[s.ticker] = { sum: 0, n: 0 });
-        o.sum += (s.dir === 'up' ? 1 : s.dir === 'down' ? -1 : 0) * n.segnale.forza * s.sim; o.n++;
-      });
+      const x = n.strumenti.find(y => y.ticker === t && y.sim >= D.soglia);
+      if (!x) return;
+      sum += (x.dir === 'up' ? 1 : x.dir === 'down' ? -1 : 0) * n.segnale.forza * x.sim; k++;
     });
-    return Object.entries(acc).map(([t, o]) => ({ t, v: o.sum / o.n, n: o.n })).sort((a, b) => Math.abs(b.v) - Math.abs(a.v)).slice(0, 10);
+    return k ? { v: sum / k, n: k } : null;
+  }
+
+  /* Versione semplice per la home: fonte, titolo, riassunto dell'articolo, ora. L'analisi sta nella scheda del titolo. */
+  function newsCardSimple(n) {
+    const d = new Date(n.data + 'Z');
+    return `<article class="ncard">
+      <div class="src">MF Milano Finanza · ${esc(n.sezione)}</div>
+      <h3>${n.url ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.titolo)}</a>` : esc(n.titolo)}</h3>
+      ${!n.verdetto && n.riassunto ? `<p class="sum">${esc(n.riassunto)}</p>` : ''}
+      <div class="when">${d.getUTCDate()} ${MESI[d.getUTCMonth()]} · ${hhmm(d)}</div>
+    </article>`;
   }
 
   function newsCard(n, t) {
@@ -427,34 +436,23 @@
       const a = azienda(t), v = varDi(t), own = held(t) ? 'In portafoglio' : 'In watchlist';
       return `<section class="ssec" aria-labelledby="sec-${esc(t)}">
         <div class="ssec-h"><button class="ssec-title" type="button" data-open="${esc(t)}" id="sec-${esc(t)}"><span class="t">${esc(t)}</span><span class="n">${esc(a.nome)}</span></button><span class="tag">${own}</span></div>
-        <div class="quote"><span class="p">${nf(a.prezzo, priceDigits(a.prezzo))}</span><span class="c ${dirOf(v)}">${signed(v)}</span><span class="vsep"></span>${chipStato(statoDi(a))}</div>
-        <div class="cards">${items.map(n => newsCard(n, t)).join('')}</div>
-        <div class="more"><button type="button" data-open="${esc(t)}">SCHEDA <b>${esc(t)}</b>${icon('chev')}</button></div>
+        <div class="quote"><span class="p">${nf(a.prezzo, priceDigits(a.prezzo))}</span><span class="c ${dirOf(v)}">${signed(v)}</span></div>
+        <div class="cards">${items.slice(0, 3).map(newsCardSimple).join('')}</div>
+        <div class="more"><button type="button" data-open="${esc(t)}">${items.length > 3 ? `${items.length - 3} ${items.length - 3 === 1 ? 'ALTRA' : 'ALTRE'} · ` : ''}IMPATTO E TESI <b>${esc(t)}</b>${icon('chev')}</button></div>
       </section>`;
     }).join('') + (loose.length ? `<section class="ssec"><div class="ssec-h"><span class="ssec-title"><span class="t">Mercati</span><span class="n">senza titoli collegati</span></span></div>
-        <div class="cards">${loose.map(n => newsCard(n, null)).join('')}</div></section>` : '');
-
-    const board = signalBoard();
-    const boardHTML = board.length && !ui.q ? `<section class="card board" aria-labelledby="h-board">
-        <div class="board-h"><h2 id="h-board">Segnali impliciti</h2><p>${D.reale ? 'Articoli MF dal 1 ago · direzione del picco × forza (|z| / 6) · scala −1 … +1' : 'Ultime 4 sedute · media di direzione × forza × similarità · scala −1 … +1'}</p></div>
-        <div class="board-rows">${board.map(b => `<button class="brow" type="button" data-filter="${esc(b.t)}" aria-pressed="${ui.ticker === b.t}" title="${esc(azienda(b.t).nome)}: ${b.n} ${b.n === 1 ? 'articolo' : 'articoli'}, segnale netto ${signed(b.v, 2, '')}">
-          <span class="t"><span class="own ${ownership(b.t)}"></span>${esc(b.t)}</span>
-          <span class="track"><i class="${b.v >= 0 ? 'up' : 'down'}" style="width:calc(${Math.min(1, Math.abs(b.v)) * 50}% - 1px)"></i></span>
-          <span class="v">${signed(b.v, 2, '')}</span></button>`).join('')}</div>
-        <div class="board-legend"><span><i style="background:var(--up)"></i>Rialzista</span><span><i style="background:var(--down)"></i>Ribassista</span><span><span class="own p"></span>In portafoglio</span><span><span class="own w"></span>In watchlist</span></div>
-      </section>` : '';
+        <div class="cards">${loose.map(newsCardSimple).join('')}</div></section>` : '');
 
     const d = asOfDate;
     $('#app').innerHTML = `<div class="view">
       <h1 class="page-title" tabindex="-1" id="ptitle">Notizie <span class="date">${d.getUTCDate()} ${MESI_LUNGHI[d.getUTCMonth()]}</span></h1>
-      <p class="page-sub">${D.reale ? esc(D.reale.sottotitolo) : `Da MF Milano Finanza, collegate ai tuoi titoli per similarità tra embedding (soglia ${nf(D.soglia, 2)}), con il segnale implicito e l’indicatore della tesi che toccano.`}</p>
+      <p class="page-sub">Da MF Milano Finanza, sui titoli che segui. Apri un titolo per vedere l’impatto sul prezzo e sulla tua tesi.</p>
       ${D.indici.length ? `<div class="tape" aria-label="Indici (demo)">${D.indici.map(x => `<span>${esc(x.nome)}<b>${esc(x.valore)}</b><span class="${dirOf(x.var)}">${signed(x.var)}</span></span>`).join('')}</div>` : ''}
       <div class="controls">
         <div class="seg" role="group" aria-label="Quali notizie">${scopes.map(([k, l]) => `<button type="button" data-scope="${k}" aria-pressed="${ui.scope === k}">${l}<span class="c">${counts[k]}</span></button>`).join('')}</div>
         ${ui.ticker ? `<span class="filter">Solo <b>${esc(ui.ticker)}</b><button type="button" data-act="clear-filter" aria-label="Rimuovi filtro">${icon('x')}</button></span>` : ''}
         ${ui.q ? `<span class="filter">“${esc(ui.q)}”<button type="button" data-act="clear-q" aria-label="Cancella ricerca">${icon('x')}</button></span>` : ''}
       </div>
-      ${boardHTML}
       ${sections || `<div class="feed-empty"><p>${ui.q ? `Nessuna notizia per “${esc(ui.q)}”.` : 'Nessuna notizia collegata ai titoli selezionati.'}</p>
         <button class="btn secondary" type="button" data-act="all-news">Mostra tutte le notizie</button></div>`}
     </div>`;
@@ -542,12 +540,22 @@
     /* 5. Earnings */
     const earn = `<section class="card" id="earn">${earningsHTML(t)}</section>`;
 
-    /* Notizie collegate */
+    /* Notizie che possono muovere il titolo: qui sta l'analisi (verdetto sul prezzo, segnale, indicatore della tesi) */
     const rel = D.notizie.filter(n => n.strumenti.some(s => s.ticker === t && s.sim >= D.soglia)).sort((x, y) => y.data.localeCompare(x.data));
-    const news = `<section class="ssec" style="margin-top:24px"><div class="ssec-h"><span class="ssec-title"><span class="t" style="font-size:22px">Notizie collegate</span><span class="n" style="font-size:22px">${rel.length}</span></span></div>
-      ${rel.length ? `<div class="cards">${rel.map(n => newsCard(n, t)).join('')}</div>` : '<p class="note" style="margin-top:10px">Nessun articolo demo collegato a questo titolo sopra la soglia di similarità.</p>'}</section>`;
+    const sg = signalFor(t);
+    const news = `<section class="card" aria-labelledby="h-news">
+      <div class="card-h"><h2 id="h-news">Notizie che possono muovere il titolo</h2><span class="muted">${rel.length} ${rel.length === 1 ? 'articolo' : 'articoli'} MF</span></div>
+      ${sg ? `<div class="netsig">
+        <div><div class="label">Segnale netto dalle notizie</div><div class="big ${dirOf(sg.v)}">${signed(sg.v, 2, '')}</div><div class="small muted">${sg.n} ${sg.n === 1 ? 'articolo' : 'articoli'}</div></div>
+        <div><div class="track" role="img" aria-label="Segnale netto ${signed(sg.v, 2, '')} su una scala da −1 a +1"><i class="${sg.v >= 0 ? 'up' : 'down'}" style="width:calc(${Math.min(1, Math.abs(sg.v)) * 50}% - 1px)"></i></div>
+          <div class="scale3"><span>−1 ribassista</span><span>0</span><span>+1 rialzista</span></div>
+          <p class="small muted" style="margin-top:6px">${D.reale ? 'Media sugli articoli: direzione del picco × forza (|z| / 6).' : 'Media sugli articoli: direzione × forza × similarità.'}</p></div>
+      </div>` : ''}
+      ${rel.length ? `<div class="cards">${rel.slice(0, ui.allNews[t] ? rel.length : 4).map(n => newsCard(n, t)).join('')}</div>` : '<p class="note">Nessun articolo collegato a questo titolo sopra la soglia di similarità.</p>'}
+      ${rel.length > 4 && !ui.allNews[t] ? `<div class="more"><button type="button" data-act="more-news">MOSTRA ALTRE ${rel.length - 4}${icon('chev')}</button></div>` : ''}
+    </section>`;
 
-    $('#app').innerHTML = `<div class="view detail">${head}${tesi}${cambia}${decisione}${earn}${news}</div>`;
+    $('#app').innerHTML = `<div class="view detail">${head}${news}${tesi}${cambia}${decisione}${earn}</div>`;
 
     const N = D.giorni.length, n = 252, s = serieDi(t).slice(N - n), dates = D.giorni.slice(N - n);
     const markers = q.map(e => { const pd = parseIt(e.data); if (!pd) return null; const i = dates.findIndex(d => d >= pd); return i >= 0 ? { i, label: e.label.replace(' 20', '') } : null; }).filter(Boolean);
@@ -774,6 +782,7 @@
     if (el.dataset.q) { ui.quarter[t] = +el.dataset.q; $('#earn').innerHTML = earningsHTML(t); $(`#qt-${el.dataset.q}`).focus(); return; }
     switch (el.dataset.act) {
       case 'add-pos': openDialog('pos'); break;
+      case 'more-news': { ui.allNews[t] = true; const y = scrollY; renderDetail(t); scrollTo(0, y); break; }
       case 'toggle-watch': ui.watchOpen = !ui.watchOpen; savePref(); applyWatch(); setLeft(clampLeft(ui.leftW)); break;
       case 'add-watch': openDialog('watch'); break;
       case 'dlg-close': closeDialog(); break;

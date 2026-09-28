@@ -240,15 +240,6 @@ button.leg { cursor: pointer; border-radius: 6px; }
 .filter button { border: 0; background: none; color: var(--accent); display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; }
 
 .card { background: var(--card); border-radius: var(--r); box-shadow: var(--shadow); padding: 20px; }
-.board { margin-top: 18px; }
-.board-h { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; margin-bottom: 12px; }
-.board-h h2 { font-size: 17px; font-weight: 700; }
-.board-h p { font-size: 13px; color: var(--ink-2); }
-.board-rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
-@container (max-width: 620px) { .board-rows { grid-template-columns: minmax(0, 1fr); } }
-.brow { display: grid; grid-template-columns: 70px minmax(0, 1fr) 44px; align-items: center; gap: 10px; height: 32px; padding: 0 8px; margin: 0 -8px; border: 0; background: none; border-radius: 8px; text-align: left; }
-.brow:hover, .brow[aria-pressed="true"] { background: var(--fill-2); }
-.brow .t { font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 6px; }
 .own { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .own.p { background: var(--ink-2); } .own.w { box-shadow: inset 0 0 0 1.5px var(--ink-2); }
 .track { position: relative; height: 8px; }
@@ -256,10 +247,6 @@ button.leg { cursor: pointer; border-radius: 6px; }
 .track i { position: absolute; top: 0; height: 100%; }
 .track i.up { left: calc(50% + 1px); background: var(--up); border-radius: 0 4px 4px 0; }
 .track i.down { right: calc(50% + 1px); background: var(--down); border-radius: 4px 0 0 4px; }
-.brow .v { font-size: 13px; text-align: right; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.board-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin-top: 10px; }
-.board-legend span { display: inline-flex; align-items: center; gap: 6px; }
-.board-legend i { width: 8px; height: 8px; border-radius: 2px; }
 
 /* sezioni per titolo, come l'app Borsa */
 .ssec { margin-top: 40px; }
@@ -297,6 +284,13 @@ button.leg { cursor: pointer; border-radius: 6px; }
 .tl.off { color: var(--ink-2); }
 .tl.off svg.i { color: var(--ink-3); }
 .when { font-size: 12.5px; color: var(--ink-2); font-weight: 600; margin-top: 4px; }
+.netsig { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 28px; align-items: center; padding: 16px 18px; border-radius: 12px; background: var(--card-2); }
+.netsig .big { font-size: 30px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.15; }
+.netsig .track { height: 10px; }
+.scale3 { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--ink-2); }
+@container (max-width: 520px) { .netsig { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+.ncard h3 a { color: inherit; text-decoration: none; }
+@media (hover: hover) and (pointer: fine) { .ncard h3 a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; } }
 .more { display: flex; justify-content: flex-end; border-top: 1px solid var(--sep-strong); margin-top: 20px; padding-top: 12px; }
 .more button { border: 0; background: none; padding: 0; font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--ink-2); display: inline-flex; align-items: center; gap: 4px; }
 .more button b { color: var(--ink); }
