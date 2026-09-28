@@ -207,9 +207,9 @@
     const el = $('#foot-prov');
     if (!el) return;
     if (D.reale) {
-      el.textContent = `Prezzi e articoli MF da dataset (prezzi al ${D.reale.prezzi_al}, notizie al ${D.reale.notizie_al}). Interpretazioni del modello. Portafoglio e tesi di esempio. Non usare per decisioni di investimento.`;
+      el.textContent = 'Dati MF reali · portafoglio e tesi di esempio · interpretazioni del modello. Non è consulenza finanziaria.';
     } else {
-      el.textContent = 'Demo interamente simulata: prezzi, notizie e segnali sono inventati. Non usare per decisioni di investimento.';
+      el.textContent = 'Demo con prezzi, notizie e segnali simulati · portafoglio e tesi di esempio. Non è consulenza finanziaria.';
     }
   };
 
@@ -823,7 +823,12 @@
     return `<div class="data-wrap">
       <button class="data-btn" type="button" data-act="data-info" aria-expanded="false" aria-controls="data-pop">${label}${icon('info')}</button>
       <div class="data-pop" id="data-pop" role="dialog" aria-label="Da dove vengono i dati" hidden>
-        <dl>${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+        <dl>${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}
+          <div><dt>Legenda</dt><dd><span class="prov-legenda">
+            <span>${prov('dataset')} prezzi e articoli MF</span>
+            <span>${prov('modello')} interpretazioni del modello</span>
+            <span>${prov('esempio')} posizioni e tesi illustrative</span>
+          </span></dd></div></dl>
       </div>
     </div>`;
   }
