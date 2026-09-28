@@ -1,14 +1,13 @@
--- Base rate of "unusual" sessions among Italian ORD stocks.
+-- Base rate of "unusual" sessions among Italian-listed shares (non-ETF).
 -- Daily move = PRZ_LAST / previous session PRZ_RIF - 1 (same as events.sql).
 -- (a) sd over 20 sessions ending at this session inclusive — matches day_before.
 -- (b) sd over 20 sessions strictly before — matches same_day / later / reaction.
 -- Params: none. Evaluate sessions with d >= 2021-02-01; require n=20 and sd>0.
 
-WITH it AS (
+WITH azioni AS (
   SELECT COD_AZIONE
   FROM `class-hackaton-09.financial_instruments.instruments_info`
-  WHERE COD_TIPO = 'ORD'
-    AND COD_ISIN LIKE 'IT%'
+  WHERE COD_TIPO != 'ETF'
 ),
 
 sessions AS (
@@ -18,7 +17,7 @@ sessions AS (
     SAFE_DIVIDE(PRZ_LAST, LAG(PRZ_RIF) OVER w) - 1 AS ret,
     ROW_NUMBER() OVER w AS idx
   FROM `class-hackaton-09.financial_instruments.instruments_quotes`
-  WHERE COD_AZIONE IN (SELECT COD_AZIONE FROM it)
+  WHERE COD_AZIONE IN (SELECT COD_AZIONE FROM azioni)
     AND PRZ_LAST > 0 AND PRZ_RIF > 0
   WINDOW w AS (PARTITION BY COD_AZIONE ORDER BY DATA_QUOTAZ)
 ),

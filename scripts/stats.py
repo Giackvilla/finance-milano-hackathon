@@ -8,6 +8,7 @@ Usage:
 Date range: 2021-02-01 .. 2026-09-15.
 First-article filter: keep if the previous article on the same COD_AZIONE
 is >= 7 days earlier by pub_local (or there is no previous).
+Base rate: sql/base_rate.sql over non-ETF shares; cached in data/base_rate.json.
 """
 import argparse
 import collections
@@ -291,33 +292,33 @@ def headline_numbers(first_sum, base_rate):
     if rx_share is not None and rx_ratio is not None:
         en.append(
             f"The first session trading on the story is unusual {_pct1(rx_share)} of the time, "
-            f"{rx_ratio} times chance."
+            f"{rx_ratio:.1f} times chance."
         )
         it.append(
             f"La prima seduta che tratta sulla notizia è anomala nel {_pct1(rx_share)} dei casi, "
-            f"{rx_ratio} volte il caso."
+            f"{rx_ratio:.1f} volte il caso."
         )
 
     if ac_share is not None:
         en.append(
             f"When MF publishes after the close, the same day had already moved unusually "
             f"in {_pct1(ac_share)} of cases"
-            + (f" ({ac_ratio} times chance)." if ac_ratio is not None else ".")
+            + (f" ({ac_ratio:.1f} times chance)." if ac_ratio is not None else ".")
         )
         it.append(
             f"Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo "
             f"nel {_pct1(ac_share)} dei casi"
-            + (f" ({ac_ratio} volte il caso)." if ac_ratio is not None else ".")
+            + (f" ({ac_ratio:.1f} volte il caso)." if ac_ratio is not None else ".")
         )
 
     if po_share is not None and po_ratio is not None:
         en.append(
             f"When MF publishes before the open, the same trading day is unusual "
-            f"{_pct1(po_share)} of the time ({po_ratio} times chance)."
+            f"{_pct1(po_share)} of the time ({po_ratio:.1f} times chance)."
         )
         it.append(
             f"Quando MF pubblica prima dell'apertura, la stessa seduta è anomala "
-            f"nel {_pct1(po_share)} dei casi ({po_ratio} volte il caso)."
+            f"nel {_pct1(po_share)} dei casi ({po_ratio:.1f} volte il caso)."
         )
 
     return {
@@ -328,7 +329,7 @@ def headline_numbers(first_sum, base_rate):
     }
 
 
-def print_table(first, base_rate):
+def print_table(first, headlines):
     print()
     print(f"First articles (after 7-day filter): {first['n_articles']}")
     print(f"{'status':22} {'n':>6}")
@@ -345,9 +346,9 @@ def print_table(first, base_rate):
         print(f"{key:22} {s['n']:7d} {s['n_unusual']:8d} {sh:>8} {ch:>8} {rt:>7}")
     print()
     print("headline_numbers:")
-    for line in first.get("headline_preview_en") or []:
+    for line in headlines.get("en") or []:
         print(f"  EN: {line}")
-    for line in first.get("headline_preview_it") or []:
+    for line in headlines.get("it") or []:
         print(f"  IT: {line}")
 
 
@@ -375,8 +376,6 @@ def main():
     all_sum = summarise(arts, "all_matched", base_rate)
     first_sum = summarise(first, "first_articles", base_rate)
     headlines = headline_numbers(first_sum, base_rate)
-    first_sum["headline_preview_en"] = headlines["en"]
-    first_sum["headline_preview_it"] = headlines["it"]
 
     out = {
         "from_date": FROM_DATE,
@@ -391,7 +390,7 @@ def main():
     }
     STATS_JSON.write_text(json.dumps(out, ensure_ascii=False, indent=2))
     print(f"Wrote {STATS_JSON}")
-    print_table(first_sum, base_rate)
+    print_table(first_sum, headlines)
 
 
 if __name__ == "__main__":
