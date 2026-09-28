@@ -1,0 +1,34 @@
+{
+  "sectors": [
+    {
+      "id": "banche",
+      "label": "Banche",
+      "codes": ["AMBR", "CRIT", "BAMI", "BPEMI", "FBK", "MEDIOB", "BMPS"]
+    },
+    {
+      "id": "assicurazioni",
+      "label": "Assicurazioni",
+      "codes": ["GENE", "UNIPOL"]
+    },
+    {
+      "id": "energia",
+      "label": "Energia",
+      "codes": ["ENISPA", "ENEL", "SAIP", "TRN", "SRG", "IG", "AEM"]
+    },
+    {
+      "id": "industriali",
+      "label": "Industriali",
+      "codes": ["FINME", "PRY", "INTP", "COGE", "PIRC", "STM", "FIAT"]
+    },
+    {
+      "id": "lusso",
+      "label": "Lusso",
+      "codes": ["MONC", "BC", "RACE", "CPR"]
+    },
+    {
+      "id": "salute",
+      "label": "Salute",
+      "codes": ["AMP", "DIA", "REC"]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fear and Greed · Italia</title>
+  <style>
+    :root {
+      --ink: #1c1915;
+      --paper: #f3efe6;
+      --card: #fffdf8;
+      --line: #e2d9c8;
+      --muted: #6f675c;
+      --fear: #9d2c2c;
+      --greed: #1d6b45;
+      --neutral: #8a8174;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.45 Georgia, "Iowan Old Style", Palatino, serif;
+    }
+    main { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
+    header { display: flex; justify-content: space-between; gap: 16px; align-items: flex-end; margin-bottom: 22px; }
+    h1 { font-size: 34px; font-weight: 500; margin: 0; letter-spacing: -0.03em; }
+    h1 span { color: var(--muted); font-size: 18px; }
+    .asof { color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; }
+    .rule { color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 13px; margin: 0 0 22px; }
+    .italy, .sector {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .italy { padding: 22px 22px 18px; margin-bottom: 18px; }
+    .score-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .score { font-variant-numeric: tabular-nums; font-size: 64px; line-height: 0.9; letter-spacing: -0.04em; }
+    .band { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .gauge { position: relative; height: 14px; margin: 14px 0 8px; border-radius: 99px;
+      background: linear-gradient(90deg, var(--fear), #c4a15a 50%, var(--greed)); }
+    .tick {
+      position: absolute; top: -5px; width: 3px; height: 24px; background: var(--ink); border-radius: 2px;
+      transform: translateX(-1.5px);
+    }
+    .shocks { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; color: var(--ink); margin: 8px 0 4px; }
+    .shocks b { font-weight: 650; }
+    .down { color: var(--fear); }
+    .up { color: var(--greed); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .sector { padding: 16px 16px 12px; }
+    .italy h2, .sector h2 { margin: 0; font-size: 22px; font-weight: 500; }
+    .sector .score { font-size: 40px; }
+    .bars { margin-top: 10px; }
+    .bar-row { display: grid; grid-template-columns: 92px 1fr 52px; gap: 8px; align-items: center; margin: 5px 0; }
+    .bar-row span, .bar-row em {
+      font-family: ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-style: normal; color: var(--muted);
+    }
+    .track { height: 7px; background: #efe8db; border-radius: 99px; overflow: hidden; }
+    .fill { height: 100%; background: var(--ink); border-radius: 99px; }
+    .heads { margin: 8px 0 0; padding: 0; list-style: none; }
+    .heads li { font-size: 13px; color: var(--muted); margin: 3px 0; }
+    .error { color: var(--fear); font-family: ui-sans-serif, system-ui, sans-serif; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+      .score { font-size: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Fear and Greed <span>Italia</span></h1>
+      <div class="asof" id="asof"></div>
+    </header>
+    <p class="rule">A shock is a name whose daily move is at least twice the standard deviation of its previous 20 sessions. News tone shifts the weights of momentum, strength, breadth, and volatility. It does not change the shock count.</p>
+    <div id="italy"></div>
+    <div class="grid" id="sectors"></div>
+  </main>
+  <script>
+    const NAMES = {
+      momentum: "Momentum",
+      strength: "Strength",
+      breadth: "Breadth",
+      volatility: "Volatility",
+      narrative: "Narrative",
+    };
+
+    function tone(score) {
+      if (score < 45) return "var(--fear)";
+      if (score < 55) return "var(--neutral)";
+      return "var(--greed)";
+    }
+
+    function shocksLine(block) {
+      return `<p class="shocks"><b class="down">${block.shocks_down} down</b> · <b class="up">${block.shocks_up} up</b> today · ${block.shocks_5d} in 5 sessions <span style="color:var(--muted)">(${block.names} names)</span></p>`;
+    }
+
+    function gauge(score) {
+      const left = Math.max(0, Math.min(100, score));
+      return `<div class="gauge" aria-hidden="true"><div class="tick" style="left:${left}%"></div></div>`;
+    }
+
+    function bars(components) {
+      const rows = Object.keys(NAMES).map((key) => {
+        const part = components[key];
+        const width = Math.max(0, Math.min(100, part.value));
+        const weight = Math.round(part.weight * 1000) / 10;
+        return `<div class="bar-row"><span>${NAMES[key]}</span><div class="track"><div class="fill" style="width:${width}%"></div></div><em>${weight}%</em></div>`;
+      }).join("");
+      return `<div class="bars">${rows}</div>`;
+    }
+
+    function headlines(list) {
+      if (!list || !list.length) return "";
+      return `<ul class="heads">${list.map((title) => `<li>${escapeHtml(title)}</li>`).join("")}</ul>`;
+    }
+
+    function escapeHtml(text) {
+      return String(text).replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+      }[ch]));
+    }
+
+    function card(title, block, extra) {
+      return `<section class="${extra ? "sector" : "italy"}">
+        <div class="score-row">
+          <h2>${escapeHtml(title)}</h2>
+          <div class="score" style="color:${tone(block.score)}">${block.score.toFixed(1)}</div>
+        </div>
+        <div class="band" style="color:${tone(block.score)}">${escapeHtml(block.label)}</div>
+        ${gauge(block.score)}
+        ${shocksLine(block)}
+        ${bars(block.components)}
+        ${extra || ""}
+      </section>`;
+    }
+
+    fetch(new URL("../data/fear_greed.json", window.location.href))
+      .then((response) => {
+        if (!response.ok) throw new Error("Could not read fear_greed.json");
+        return response.json();
+      })
+      .then((data) => {
+        document.getElementById("asof").textContent = data.as_of;
+        document.getElementById("italy").innerHTML = card("Italy", data.italy, "");
+        document.getElementById("sectors").innerHTML = data.sectors.map((sector) =>
+          card(sector.name, sector, headlines(sector.headlines))
+        ).join("");
+      })
+      .catch((error) => {
+        document.getElementById("italy").innerHTML = `<p class="error">${escapeHtml(error.message)}. Serve the repo root and open web/fear-greed.html.</p>`;
+      });
+  </script>
+</body>
+</html>
