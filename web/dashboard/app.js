@@ -751,8 +751,13 @@
         ? prov('esempio', 'Prezzo simulato')
         : (D.reale ? prov('dataset', 'Prezzo da dataset MF') : prov('esempio', 'Prezzo demo'));
       return `<section class="ssec" aria-labelledby="sec-${esc(t)}">
-        <div class="ssec-h"><button class="ssec-title" type="button" data-open="${esc(t)}" id="sec-${esc(t)}"><span class="t">${esc(t)}</span><span class="n">${esc(a.nome)}</span></button><span class="tag">${own}</span></div>
-        <div class="quote"><span class="p">${nf(a.prezzo, priceDigits(a.prezzo))}</span><span class="c ${dirOf(v)}">${signed(v)}</span> ${pxBadge}<span class="vsep"></span>${chipStato(statoDi(a))}</div>
+        <div class="ssec-top">
+          <div class="ssec-meta">
+            <div class="ssec-h"><button class="ssec-title" type="button" data-open="${esc(t)}" id="sec-${esc(t)}"><span class="t">${esc(t)}</span><span class="n">${esc(a.nome)}</span></button><span class="tag">${own}</span></div>
+            <div class="quote"><span class="p">${nf(a.prezzo, priceDigits(a.prezzo))}</span><span class="c ${dirOf(v)}">${signed(v)}</span> ${pxBadge}<span class="vsep"></span>${chipStato(statoDi(a))}</div>
+          </div>
+          <canvas class="ssec-cone" data-cone="${esc(t)}" width="480" height="148" role="img" aria-label="Scenari di prezzo dopo le notizie su ${esc(a.nome)}"></canvas>
+        </div>
         <div class="cards">${items.slice(0, 4).map(n => newsCard(n, t)).join('')}</div>
         <div class="more"><button type="button" data-open="${esc(t)}">SCHEDA <b>${esc(t)}</b>${icon('chev')}</button></div>
       </section>`;
@@ -786,6 +791,16 @@
       ${sections || `<div class="feed-empty"><p>${ui.q ? `Nessuna notizia per “${esc(ui.q)}”.` : 'Nessuna notizia collegata ai titoli selezionati.'}</p>
         <button class="btn secondary" type="button" data-act="all-news">Mostra tutte le notizie</button></div>`}
     </div>`;
+    mountNewsCones(groups);
+  }
+
+  function mountNewsCones(groups) {
+    if (!window.NewsCone || !window.NewsCone.mountAll) return;
+    window.NewsCone.mountAll($('#app'), {
+      serie: serieDi,
+      dates: () => D.giorni,
+      news: t => (groups && groups[t]) || [],
+    });
   }
 
   /* ================================================================ area centrale: riepilogo (home) */

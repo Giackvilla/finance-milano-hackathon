@@ -424,11 +424,22 @@ svg.fg-gauge .fg-val { fill: var(--ink-3); font: 700 34px var(--font); }
 
 /* sezioni per titolo, come l'app Borsa */
 .ssec { margin-top: 40px; }
+.ssec-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 46%); gap: 10px 22px; align-items: start; }
+.ssec-meta { min-width: 0; }
 .ssec-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .ssec-title { display: inline-flex; align-items: baseline; gap: 10px; border: 0; background: none; padding: 0; text-align: left; }
 .ssec-title .t { font-size: 24px; font-weight: 700; letter-spacing: -.02em; }
 .ssec-title .n { font-size: 24px; font-weight: 400; color: var(--ink-3); letter-spacing: -.02em; }
 .ssec-title:hover .n { color: var(--ink-2); }
+.ssec-cone {
+  width: 100%; height: 148px; display: block;
+  border-radius: 12px; background: var(--card-2);
+  box-shadow: inset 0 0 0 .5px var(--sep);
+}
+@media (max-width: 820px) {
+  .ssec-top { grid-template-columns: 1fr; }
+  .ssec-cone { height: 128px; }
+}
 .tag { font-size: 14px; font-weight: 500; color: var(--ink-2); white-space: nowrap; }
 .quote { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; font-size: 15px; }
 .quote .p { font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -722,4 +733,5 @@ body { letter-spacing: -0.005em; }
 <script src="data.js"></script>
 <script src="real_data.js"></script>
 <script src="fear_greed.js"></script>
+<script src="news_cone.js"></script>
 <script src="app.js"></script>

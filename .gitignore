@@ -7,3 +7,6 @@ data/tape_all.csv
 data/company_prices.csv
 # iCloud Desktop sync conflict copies ("moncler 2.json")
 * [0-9].json
+
+# Local-only prototype (not for GitHub)
+web/forecast-cone/
