@@ -1,0 +1,175 @@
+{
+  "article": {
+    "content_id": "202609091059297824",
+    "titolo": "Webuild smentisce la richiesta di 22 miliardi al governo: il titolo chiude in calo del 7,9%",
+    "data_pubblicazione": "2026-09-09T08:45:58",
+    "pub_local": "2026-09-09T10:45:58",
+    "testata": "MF",
+    "quote": "Il titolo ha chiuso in ribasso del 7,9% a 2,01 euro.",
+    "url": "https://www.milanofinanza.it/news/webuild-sotto-stress--7-equita-guarda-alle-tensioni-sulla-liquidità-202609091059297824"
+  },
+  "instrument": {
+    "des_azione": "Webuild",
+    "cod_azione": "COGE",
+    "isin": "IT0003865570"
+  },
+  "news": {
+    "news_type": "capital",
+    "scheduled": false,
+    "headline_reports_move": true,
+    "matched": [
+      {
+        "type": "market_report",
+        "keyword": "chiude in (?:calo|rialzo|ribasso|rosso|verde|parita)"
+      },
+      {
+        "type": "capital",
+        "keyword": "\\bobbligazioni?\\b"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "REACTED",
+    "peak": {
+      "d": "2026-09-09",
+      "timing": "same_day",
+      "timing_words_en": "the day of the article",
+      "timing_words_it": "il giorno dell'articolo",
+      "move_pct": -7.96,
+      "z": -6.69,
+      "vol_x": 12.44,
+      "retained_pct": 126.44,
+      "open_share_pct": 30.16
+    },
+    "largest": {
+      "d": "2026-09-09",
+      "timing": "same_day",
+      "timing_words_en": "the day of the article",
+      "timing_words_it": "il giorno dell'articolo",
+      "move_pct": -7.96,
+      "z": -6.69,
+      "vol_x": 12.44,
+      "retained_pct": 126.44,
+      "open_share_pct": 30.16
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-09-09",
+        "timing": "same_day",
+        "closed_before_publication": false,
+        "move_pct": -7.96,
+        "z": -6.69
+      },
+      {
+        "d": "2026-09-10",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": 3.58,
+        "z": 3.01
+      },
+      {
+        "d": "2026-09-11",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": -3.36,
+        "z": -2.82
+      },
+      {
+        "d": "2026-09-14",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": -3.97,
+        "z": -3.34
+      },
+      {
+        "d": "2026-09-16",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": 5.49,
+        "z": 4.62
+      }
+    ],
+    "at_open": {
+      "open_share_pct": 30.16,
+      "gap_pct": -2.47
+    },
+    "publication_phase": "in_session",
+    "pub_local": "2026-09-09T10:45:58",
+    "text_en": "The stock moved the day of the article (9 Sep 2026, -8.0%, 6.7 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (126% of the move is in the price). The headline reports the price move itself.",
+    "text_it": "L'azione si è mossa il giorno dell'articolo (9 settembre 2026, -8.0%, 6.7 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 126% del movimento è nel prezzo). Il titolo dell'articolo racconta il movimento dell'azione stesso."
+  },
+  "tape": {
+    "timing": "same_day",
+    "move_date": "2026-09-09",
+    "move_pct": -7.96,
+    "z": -6.69,
+    "unusual": true,
+    "volume_x": 12.44,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 1.19,
+    "px_before_move": 2.186,
+    "px_after_move": 2.012,
+    "last_session": "2026-09-23",
+    "last_px": 1.966,
+    "retained_pct": 126,
+    "facts_text": [
+      "The stock moved the day of the article (9 Sep 2026, -8.0%, 6.7 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (126% of the move is in the price). The headline reports the price move itself."
+    ]
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "instrument_name": "Webuild",
+    "title_adjective": "in calo del 7,9%",
+    "figure_in_body": "7,9%",
+    "adjective_matches": true,
+    "sentence": "The title adjective 'in calo del 7,9%' accurately describes the 7,9% drop reported in the body, and the story from MF, 2026-09-09, fits the price facts as the stock moved -8.0% on the day of the article, indicating a clear reaction.",
+    "checks": {
+      "quote_is_verbatim": true,
+      "figure_is_in_body": true,
+      "adjective_is_in_title": true,
+      "numbers_not_in_sources": [],
+      "no_recommendation": true,
+      "recommendation_words_flagged": []
+    },
+    "attempts": [
+      {
+        "checks": {
+          "quote_is_verbatim": true,
+          "figure_is_in_body": true,
+          "adjective_is_in_title": true,
+          "numbers_not_in_sources": [],
+          "no_recommendation": true,
+          "recommendation_words_flagged": []
+        },
+        "sentence": "The title adjective 'in calo del 7,9%' accurately describes the 7,9% drop reported in the body, and the story from MF, 2026-09-09, fits the price facts as the stock moved -8.0% on the day of the article, indicating a clear reaction."
+      }
+    ],
+    "post_edited": false
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

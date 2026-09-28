@@ -248,7 +248,7 @@ def call_gemini(prompt: str) -> dict:
         method="POST",
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=120) as r:
+    with urllib.request.urlopen(req, timeout=300) as r:
         body = json.load(r)
     return json.loads(body["candidates"][0]["content"]["parts"][0]["text"])
 

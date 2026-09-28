@@ -1,0 +1,164 @@
+{
+  "article": {
+    "content_id": "202608270903428328",
+    "titolo": "A2a: il titolo prova un recupero",
+    "data_pubblicazione": "2026-08-27T07:03:31",
+    "pub_local": "2026-08-27T09:03:31",
+    "testata": "MF",
+    "quote": "Il titolo, dopo una prolungata fase laterale di consolidamento al di sopra del supporto grafico posto in area 2,27-2,2550 euro, ha infatti compiuto un veloce balzo in avanti e si è portato a ridosso dei 2,37 euro.",
+    "url": "https://www.milanofinanza.it/news/a2a-il-titolo-prova-un-recupero-202608270903428328"
+  },
+  "instrument": {
+    "des_azione": "A2a",
+    "cod_azione": "AEM",
+    "isin": "IT0001233417"
+  },
+  "news": {
+    "news_type": "market_report",
+    "scheduled": null,
+    "headline_reports_move": false,
+    "matched": [
+      {
+        "type": "market_report",
+        "keyword": "il titolo prova"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "PARTLY_IN_PRICE",
+    "peak": {
+      "d": "2026-09-02",
+      "timing": "later",
+      "timing_words_en": "4 sessions after the article",
+      "timing_words_it": "4 sedute dopo l'articolo",
+      "move_pct": -2.61,
+      "z": -3.17,
+      "vol_x": 1.31,
+      "retained_pct": 11.67,
+      "open_share_pct": 3.29
+    },
+    "largest": {
+      "d": "2026-09-02",
+      "timing": "later",
+      "timing_words_en": "4 sessions after the article",
+      "timing_words_it": "4 sedute dopo l'articolo",
+      "move_pct": -2.61,
+      "z": -3.17,
+      "vol_x": 1.31,
+      "retained_pct": 11.67,
+      "open_share_pct": 3.29
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-08-26",
+        "timing": "day_before",
+        "closed_before_publication": true,
+        "move_pct": 2.04,
+        "z": 2.48
+      },
+      {
+        "d": "2026-08-27",
+        "timing": "same_day",
+        "closed_before_publication": false,
+        "move_pct": -2.04,
+        "z": -2.48
+      },
+      {
+        "d": "2026-09-01",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": -1.71,
+        "z": -2.08
+      },
+      {
+        "d": "2026-09-02",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": -2.61,
+        "z": -3.17
+      }
+    ],
+    "at_open": {
+      "open_share_pct": 33.11,
+      "gap_pct": -0.68
+    },
+    "publication_phase": "in_session",
+    "pub_local": "2026-08-27T09:03:31",
+    "text_en": "Part of the unusual movement came before publication; the biggest was 4 sessions after the article (2 Sep 2026, -2.6%, 3.2 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 12% of that move is still in the price.",
+    "text_it": "Parte del movimento anomalo è arrivata prima della pubblicazione; il più ampio è stato 4 sedute dopo l'articolo (2 settembre 2026, -2.6%, 3.2 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il 12% di quel movimento è ancora nel prezzo."
+  },
+  "tape": {
+    "timing": "later",
+    "move_date": "2026-09-02",
+    "move_pct": -2.61,
+    "z": -3.17,
+    "unusual": true,
+    "volume_x": 1.31,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 0.821,
+    "px_before_move": 2.302,
+    "px_after_move": 2.242,
+    "last_session": "2026-09-23",
+    "last_px": 2.295,
+    "retained_pct": 12,
+    "facts_text": [
+      "Parte del movimento anomalo è arrivata prima della pubblicazione; il più ampio è stato 4 sedute dopo l'articolo (2 settembre 2026, -2.6%, 3.2 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il 12% di quel movimento è ancora nel prezzo."
+    ]
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "instrument_name": "A2a",
+    "title_adjective": "prova un recupero",
+    "figure_in_body": "veloce balzo in avanti",
+    "adjective_matches": true,
+    "sentence": "L'aggettivo 'prova un recupero' nel titolo di MF, 2026-08-27, descrive adeguatamente il 'veloce balzo in avanti' del titolo A2A, che si è portato a ridosso dei 2,37 euro dopo una fase di consolidamento sopra i 2,27-2,2550 euro; tuttavia, il movimento più ampio è stato un calo del -2.6% il 2 settembre 2026, 4 sedute dopo la pubblicazione, che rappresenta 3.2 volte l'oscillazione normale, indicando una reazione ritardata e contraria.",
+    "checks": {
+      "quote_is_verbatim": true,
+      "figure_is_in_body": true,
+      "adjective_is_in_title": true,
+      "numbers_not_in_sources": [],
+      "no_recommendation": true,
+      "recommendation_words_flagged": []
+    },
+    "attempts": [
+      {
+        "checks": {
+          "quote_is_verbatim": true,
+          "figure_is_in_body": true,
+          "adjective_is_in_title": true,
+          "numbers_not_in_sources": [],
+          "no_recommendation": true,
+          "recommendation_words_flagged": []
+        },
+        "sentence": "L'aggettivo 'prova un recupero' nel titolo di MF, 2026-08-27, descrive adeguatamente il 'veloce balzo in avanti' del titolo A2A, che si è portato a ridosso dei 2,37 euro dopo una fase di consolidamento sopra i 2,27-2,2550 euro; tuttavia, il movimento più ampio è stato un calo del -2.6% il 2 settembre 2026, 4 sedute dopo la pubblicazione, che rappresenta 3.2 volte l'oscillazione normale, indicando una reazione ritardata e contraria."
+      }
+    ],
+    "post_edited": false
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

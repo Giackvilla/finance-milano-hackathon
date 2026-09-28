@@ -1,0 +1,158 @@
+{
+  "article": {
+    "content_id": "202609020746321794",
+    "titolo": "Gaming, Lottomatica (-11,2%) rileva Cirsa: nasce il secondo operatore globale quotato. Perché il titolo crolla",
+    "data_pubblicazione": "2026-09-02T05:29:54",
+    "pub_local": "2026-09-02T07:29:54",
+    "testata": "MF",
+    "quote": "Il titolo del gruppo italiano, intanto, perde l’11,2% in apertura di mercoledì 2 settembre, a 21,98 euro.",
+    "url": "https://www.milanofinanza.it/news/gaming-lottomatica-rileva-cirsa-nasce-il-secondo-maggiore-operatore-globale-quotato-operazione-da-oltre-2-miliardi-202609020746321794"
+  },
+  "instrument": {
+    "des_azione": "Lottomatica",
+    "cod_azione": "LTMC",
+    "isin": "IT0005541336"
+  },
+  "news": {
+    "news_type": "deal",
+    "scheduled": false,
+    "headline_reports_move": true,
+    "matched": [
+      {
+        "type": "deal",
+        "keyword": "\\brileva\\b"
+      },
+      {
+        "type": "market_report",
+        "keyword": "il titolo (?:crolla|balza|vola|corre|affonda|scivola|cade|tracolla|sprofonda|rimbalza)"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "DELAYED",
+    "peak": {
+      "d": "2026-09-07",
+      "timing": "later",
+      "timing_words_en": "3 sessions after the article",
+      "timing_words_it": "3 sedute dopo l'articolo",
+      "move_pct": 7.7,
+      "z": 5.89,
+      "vol_x": 5.03,
+      "retained_pct": 169.52,
+      "open_share_pct": 2.22
+    },
+    "largest": {
+      "d": "2026-09-07",
+      "timing": "later",
+      "timing_words_en": "3 sessions after the article",
+      "timing_words_it": "3 sedute dopo l'articolo",
+      "move_pct": 7.7,
+      "z": 5.89,
+      "vol_x": 5.03,
+      "retained_pct": 169.52,
+      "open_share_pct": 2.22
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-09-02",
+        "timing": "same_day",
+        "closed_before_publication": false,
+        "move_pct": -7.63,
+        "z": -5.83
+      },
+      {
+        "d": "2026-09-03",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": 5.77,
+        "z": 4.41
+      },
+      {
+        "d": "2026-09-07",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": 7.7,
+        "z": 5.89
+      }
+    ],
+    "at_open": null,
+    "publication_phase": "pre_open",
+    "pub_local": "2026-09-02T07:29:54",
+    "text_en": "The stock moved 3 sessions after the article (7 Sep 2026, +7.7%, 5.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (170% of the move is in the price). The headline reports the price move itself.",
+    "text_it": "L'azione si è mossa 3 sedute dopo l'articolo (7 settembre 2026, +7.7%, 5.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 170% del movimento è nel prezzo). Il titolo dell'articolo racconta il movimento dell'azione stesso."
+  },
+  "tape": {
+    "timing": "later",
+    "move_date": "2026-09-07",
+    "move_pct": 7.7,
+    "z": 5.89,
+    "unusual": true,
+    "volume_x": 5.03,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 1.308,
+    "px_before_move": 24.27,
+    "px_after_move": 26.14,
+    "last_session": "2026-09-23",
+    "last_px": 27.44,
+    "retained_pct": 170,
+    "facts_text": [
+      "The stock moved 3 sessions after the article (7 Sep 2026, +7.7%, 5.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (170% of the move is in the price). The headline reports the price move itself."
+    ]
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "instrument_name": "Lottomatica",
+    "title_adjective": "crolla",
+    "figure_in_body": "l’11,2%",
+    "adjective_matches": true,
+    "sentence": "The title adjective \"crolla\" accurately describes the 11.2% drop reported in the body of MF, 2026-09-02, which occurred at the open on the day of publication; however, the stock's significant price reaction was a delayed positive move of 7.7% three sessions after the article, on 7 Sep 2026, which was 5.9 times the normal daily swing.",
+    "checks": {
+      "quote_is_verbatim": true,
+      "figure_is_in_body": true,
+      "adjective_is_in_title": true,
+      "numbers_not_in_sources": [],
+      "no_recommendation": true,
+      "recommendation_words_flagged": []
+    },
+    "attempts": [
+      {
+        "checks": {
+          "quote_is_verbatim": true,
+          "figure_is_in_body": true,
+          "adjective_is_in_title": true,
+          "numbers_not_in_sources": [],
+          "no_recommendation": true,
+          "recommendation_words_flagged": []
+        },
+        "sentence": "The title adjective \"crolla\" accurately describes the 11.2% drop reported in the body of MF, 2026-09-02, which occurred at the open on the day of publication; however, the stock's significant price reaction was a delayed positive move of 7.7% three sessions after the article, on 7 Sep 2026, which was 5.9 times the normal daily swing."
+      }
+    ],
+    "post_edited": false
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

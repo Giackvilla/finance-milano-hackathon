@@ -1,0 +1,169 @@
+{
+  "article": {
+    "content_id": "202609151013178211",
+    "titolo": "NewPrinces raddoppia i ricavi e accelera sull’ebitda, ma chiude il semestre ancora in perdita",
+    "data_pubblicazione": "2026-09-15T08:05:18",
+    "pub_local": "2026-09-15T10:05:18",
+    "testata": "MF",
+    "quote": "Il risultato netto consolidato è negativo per 5,8 milioni nel semestre, rispetto all’utile di 22,2 milioni nel primo semestre 2025.",
+    "url": "https://www.milanofinanza.it/news/newprinces-i-ricavi-balzano-oltre-3-miliardi-nel-semestre-ma-chiude-in-rosso-202609151013178211"
+  },
+  "instrument": {
+    "des_azione": "Newprinces",
+    "cod_azione": "NWL",
+    "isin": "IT0005385213"
+  },
+  "news": {
+    "news_type": "earnings",
+    "scheduled": true,
+    "headline_reports_move": false,
+    "matched": [
+      {
+        "type": "earnings",
+        "keyword": "\\bperdita\\b"
+      },
+      {
+        "type": "earnings",
+        "keyword": "\\bricavi\\b"
+      },
+      {
+        "type": "earnings",
+        "keyword": "\\bebitda\\b"
+      },
+      {
+        "type": "earnings",
+        "keyword": "chiude il semestre"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "PARTLY_IN_PRICE",
+    "peak": {
+      "d": "2026-09-16",
+      "timing": "later",
+      "timing_words_en": "1 session after the article",
+      "timing_words_it": "la seduta dopo l'articolo",
+      "move_pct": 8.52,
+      "z": 6.12,
+      "vol_x": 4.01,
+      "retained_pct": 49.66,
+      "open_share_pct": 0.0
+    },
+    "largest": {
+      "d": "2026-09-16",
+      "timing": "later",
+      "timing_words_en": "1 session after the article",
+      "timing_words_it": "la seduta dopo l'articolo",
+      "move_pct": 8.52,
+      "z": 6.12,
+      "vol_x": 4.01,
+      "retained_pct": 49.66,
+      "open_share_pct": 0.0
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-09-14",
+        "timing": "day_before",
+        "closed_before_publication": true,
+        "move_pct": 4.04,
+        "z": 2.9
+      },
+      {
+        "d": "2026-09-16",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": 8.52,
+        "z": 6.12
+      },
+      {
+        "d": "2026-09-18",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": -3.14,
+        "z": -2.26
+      }
+    ],
+    "at_open": {
+      "open_share_pct": 119.06,
+      "gap_pct": 1.82
+    },
+    "publication_phase": "in_session",
+    "pub_local": "2026-09-15T10:05:18",
+    "text_en": "Part of the unusual movement came before publication; the biggest was 1 session after the article (16 Sep 2026, +8.5%, 6.1 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 50% of that move is still in the price.",
+    "text_it": "Parte del movimento anomalo è arrivata prima della pubblicazione; il più ampio è stato la seduta dopo l'articolo (16 settembre 2026, +8.5%, 6.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il 50% di quel movimento è ancora nel prezzo."
+  },
+  "tape": {
+    "timing": "later",
+    "move_date": "2026-09-16",
+    "move_pct": 8.52,
+    "z": 6.12,
+    "unusual": true,
+    "volume_x": 4.01,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 1.392,
+    "px_before_move": 17.25,
+    "px_after_move": 18.72,
+    "last_session": "2026-09-23",
+    "last_px": 17.98,
+    "retained_pct": 50,
+    "facts_text": [
+      "Part of the unusual movement came before publication; the biggest was 1 session after the article (16 Sep 2026, +8.5%, 6.1 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 50% of that move is still in the price."
+    ]
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "instrument_name": "NewPrinces",
+    "title_adjective": "in perdita",
+    "figure_in_body": "negativo per 5,8 milioni",
+    "adjective_matches": true,
+    "sentence": "The title adjective \"in perdita\" accurately describes the consolidated net result being \"negativo per 5,8 milioni\" in the semester; the biggest price movement was a delayed reaction, occurring 1 session after the MF, 2026-09-15 article, with a +8.5% increase, 6.1 times the normal daily swing, and 50% of that move still in the price by 23 Sep 2026.",
+    "checks": {
+      "quote_is_verbatim": true,
+      "figure_is_in_body": true,
+      "adjective_is_in_title": true,
+      "numbers_not_in_sources": [],
+      "no_recommendation": true,
+      "recommendation_words_flagged": []
+    },
+    "attempts": [
+      {
+        "checks": {
+          "quote_is_verbatim": true,
+          "figure_is_in_body": true,
+          "adjective_is_in_title": true,
+          "numbers_not_in_sources": [],
+          "no_recommendation": true,
+          "recommendation_words_flagged": []
+        },
+        "sentence": "The title adjective \"in perdita\" accurately describes the consolidated net result being \"negativo per 5,8 milioni\" in the semester; the biggest price movement was a delayed reaction, occurring 1 session after the MF, 2026-09-15 article, with a +8.5% increase, 6.1 times the normal daily swing, and 50% of that move still in the price by 23 Sep 2026."
+      }
+    ],
+    "post_edited": false
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

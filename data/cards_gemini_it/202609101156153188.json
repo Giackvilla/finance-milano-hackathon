@@ -1,0 +1,138 @@
+{
+  "article": {
+    "content_id": "202609101156153188",
+    "titolo": "Moncler: il trend rimane negativo",
+    "data_pubblicazione": "2026-09-10T09:56:11",
+    "pub_local": "2026-09-10T11:56:11",
+    "testata": "MF",
+    "quote": "La situazione tecnica di Moncler rimane negativa.",
+    "url": "https://www.milanofinanza.it/news/moncler-il-trend-rimane-negativo-202609101156153188"
+  },
+  "instrument": {
+    "des_azione": "Moncler",
+    "cod_azione": "MONC",
+    "isin": "IT0004965148"
+  },
+  "news": {
+    "news_type": "other",
+    "scheduled": null,
+    "headline_reports_move": false,
+    "matched": []
+  },
+  "verdict": {
+    "status": "REACTED",
+    "peak": {
+      "d": "2026-09-10",
+      "timing": "same_day",
+      "timing_words_en": "the day of the article",
+      "timing_words_it": "il giorno dell'articolo",
+      "move_pct": -3.45,
+      "z": -2.34,
+      "vol_x": 1.89,
+      "retained_pct": 53.85,
+      "open_share_pct": 13.89
+    },
+    "largest": {
+      "d": "2026-09-10",
+      "timing": "same_day",
+      "timing_words_en": "the day of the article",
+      "timing_words_it": "il giorno dell'articolo",
+      "move_pct": -3.45,
+      "z": -2.34,
+      "vol_x": 1.89,
+      "retained_pct": 53.85,
+      "open_share_pct": 13.89
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-09-10",
+        "timing": "same_day",
+        "closed_before_publication": false,
+        "move_pct": -3.45,
+        "z": -2.34
+      }
+    ],
+    "at_open": {
+      "open_share_pct": 13.89,
+      "gap_pct": -0.49
+    },
+    "publication_phase": "in_session",
+    "pub_local": "2026-09-10T11:56:11",
+    "text_en": "The stock moved the day of the article (10 Sep 2026, -3.5%, 2.3 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, 54% of that move is still in the price.",
+    "text_it": "L'azione si è mossa il giorno dell'articolo (10 settembre 2026, -3.5%, 2.3 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 54% di quel movimento è ancora nel prezzo."
+  },
+  "tape": {
+    "timing": "same_day",
+    "move_date": "2026-09-10",
+    "move_pct": -3.45,
+    "z": -2.34,
+    "unusual": true,
+    "volume_x": 1.89,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 1.479,
+    "px_before_move": 45.16,
+    "px_after_move": 43.6,
+    "last_session": "2026-09-23",
+    "last_px": 44.32,
+    "retained_pct": 54,
+    "facts_text": [
+      "L'azione si è mossa il giorno dell'articolo (10 settembre 2026, -3.5%, 2.3 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 54% di quel movimento è ancora nel prezzo."
+    ]
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "instrument_name": "Moncler",
+    "title_adjective": "negativo",
+    "figure_in_body": "La situazione tecnica di Moncler rimane negativa",
+    "adjective_matches": true,
+    "sentence": "L'aggettivo 'negativo' nel titolo di MF, 2026-09-10, descrive fedelmente la 'situazione tecnica di Moncler rimane negativa' e la 'tendenza ribassista' riportate nel corpo dell'articolo; i fatti di prezzo indicano che l'azione si è mossa del -3.5% il giorno dell'articolo, 2.3 volte l'oscillazione normale, senza anomalie precedenti la pubblicazione, e il 54% di tale movimento era ancora nel prezzo al 23 settembre 2026, suggerendo che la notizia ha riportato un movimento significativo e fresco.",
+    "checks": {
+      "quote_is_verbatim": true,
+      "figure_is_in_body": true,
+      "adjective_is_in_title": true,
+      "numbers_not_in_sources": [],
+      "no_recommendation": true,
+      "recommendation_words_flagged": []
+    },
+    "attempts": [
+      {
+        "checks": {
+          "quote_is_verbatim": true,
+          "figure_is_in_body": true,
+          "adjective_is_in_title": true,
+          "numbers_not_in_sources": [],
+          "no_recommendation": true,
+          "recommendation_words_flagged": []
+        },
+        "sentence": "L'aggettivo 'negativo' nel titolo di MF, 2026-09-10, descrive fedelmente la 'situazione tecnica di Moncler rimane negativa' e la 'tendenza ribassista' riportate nel corpo dell'articolo; i fatti di prezzo indicano che l'azione si è mossa del -3.5% il giorno dell'articolo, 2.3 volte l'oscillazione normale, senza anomalie precedenti la pubblicazione, e il 54% di tale movimento era ancora nel prezzo al 23 settembre 2026, suggerendo che la notizia ha riportato un movimento significativo e fresco."
+      }
+    ],
+    "post_edited": false
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "article": {
+    "content_id": "202609110915249931",
+    "titolo": "Il cda di Trevi boccia all’unisono l’offerta tutta in azioni di Icop: fondata su sinergie incerte",
+    "data_pubblicazione": "2026-09-10T11:25:43",
+    "pub_local": "2026-09-10T13:25:43",
+    "testata": "MF",
+    "quote": "Il cda di Trevi Finanziaria ha approvato all’unanimità il comunicato sull’offerta pubblica di scambio volontaria totalitaria promossa da Icop.",
+    "url": "https://www.milanofinanza.it/news/il-cda-di-trevi-boccia-allunisono-lofferta-tutta-in-azioni-di-icop-fondata-su-sinergie-incerte-202609110915249931"
+  },
+  "instrument": {
+    "des_azione": "Trevi",
+    "cod_azione": "TFI",
+    "isin": "IT0005709909"
+  },
+  "news": {
+    "news_type": "governance",
+    "scheduled": false,
+    "headline_reports_move": false,
+    "matched": [
+      {
+        "type": "governance",
+        "keyword": "\\bcda\\b"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "ALREADY_IN_PRICE",
+    "peak": {
+      "d": "2026-09-09",
+      "timing": "day_before",
+      "timing_words_en": "the session before the article",
+      "timing_words_it": "la seduta prima dell'articolo",
+      "move_pct": -2.35,
+      "z": -2.89,
+      "vol_x": 5.23,
+      "retained_pct": 42.86,
+      "open_share_pct": 24.78
+    },
+    "largest": {
+      "d": "2026-09-09",
+      "timing": "day_before",
+      "timing_words_en": "the session before the article",
+      "timing_words_it": "la seduta prima dell'articolo",
+      "move_pct": -2.35,
+      "z": -2.89,
+      "vol_x": 5.23,
+      "retained_pct": 42.86,
+      "open_share_pct": 24.78
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-09-09",
+        "timing": "day_before",
+        "closed_before_publication": true,
+        "move_pct": -2.35,
+        "z": -2.89
+      }
+    ],
+    "at_open": {
+      "open_share_pct": 552.14,
+      "gap_pct": -0.95
+    },
+    "publication_phase": "in_session",
+    "pub_local": "2026-09-10T13:25:43",
+    "text_en": "The biggest unusual move came before the article was published (on 9 Sep 2026, -2.4%, 2.9 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 43% of that move is still in the price.",
+    "text_it": "Il movimento anomalo più ampio è arrivato prima che l'articolo fosse pubblicato (il 9 settembre 2026, -2.4%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il 43% di quel movimento è ancora nel prezzo."
+  },
+  "tape": {
+    "timing": "day_before",
+    "move_date": "2026-09-09",
+    "move_pct": -2.35,
+    "z": -2.89,
+    "unusual": true,
+    "volume_x": 5.23,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 0.812,
+    "px_before_move": 4.768,
+    "px_after_move": 4.656,
+    "last_session": "2026-09-23",
+    "last_px": 4.72,
+    "retained_pct": 43,
+    "facts_text": [
+      "The biggest unusual move came before the article was published (on 9 Sep 2026, -2.4%, 2.9 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 43% of that move is still in the price."
+    ]
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "instrument_name": "Trevi",
+    "title_adjective": "boccia all’unisono",
+    "figure_in_body": "Il cda di Trevi Finanziaria ha approvato all’unanimità il comunicato sull’offerta pubblica di scambio volontaria totalitaria promossa da Icop.",
+    "adjective_matches": true,
+    "sentence": "The title's \"boccia all’unisono\" accurately reflects the board's unanimous rejection of Icop's offer as stated in the body; however, the biggest unusual move, a -2.4% drop, occurred on 9 Sep 2026, before the MF article was published on 10 Sep 2026, indicating the news was already largely in the price, with 43% of that move still present by 23 Sep 2026.",
+    "checks": {
+      "quote_is_verbatim": true,
+      "figure_is_in_body": true,
+      "adjective_is_in_title": true,
+      "numbers_not_in_sources": [],
+      "no_recommendation": true,
+      "recommendation_words_flagged": []
+    },
+    "attempts": [
+      {
+        "checks": {
+          "quote_is_verbatim": true,
+          "figure_is_in_body": true,
+          "adjective_is_in_title": true,
+          "numbers_not_in_sources": [],
+          "no_recommendation": true,
+          "recommendation_words_flagged": []
+        },
+        "sentence": "The title's \"boccia all’unisono\" accurately reflects the board's unanimous rejection of Icop's offer as stated in the body; however, the biggest unusual move, a -2.4% drop, occurred on 9 Sep 2026, before the MF article was published on 10 Sep 2026, indicating the news was already largely in the price, with 43% of that move still present by 23 Sep 2026."
+      }
+    ],
+    "post_edited": false
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

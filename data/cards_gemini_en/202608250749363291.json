@@ -1,0 +1,144 @@
+{
+  "article": {
+    "content_id": "202608250749363291",
+    "titolo": "Nexi: il titolo prova un nuovo allungo",
+    "data_pubblicazione": "2026-08-25T05:49:30",
+    "pub_local": "2026-08-25T07:49:30",
+    "testata": "MF",
+    "quote": "Il titolo, dopo una breve pausa di consolidamento al di sopra del sostegno grafico posto in area 4,10-4,05 euro, ha infatti compiuto un veloce balzo in avanti ed è salito verso i 4,40 euro.",
+    "url": "https://www.milanofinanza.it/news/nexi-il-titolo-prova-un-nuovo-allungo-202608250749363291"
+  },
+  "instrument": {
+    "des_azione": "Nexi",
+    "cod_azione": "NEXI",
+    "isin": "IT0005366767"
+  },
+  "news": {
+    "news_type": "market_report",
+    "scheduled": null,
+    "headline_reports_move": false,
+    "matched": [
+      {
+        "type": "market_report",
+        "keyword": "il titolo prova"
+      },
+      {
+        "type": "market_report",
+        "keyword": "nuovo allungo"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "ALREADY_IN_PRICE",
+    "peak": {
+      "d": "2026-08-24",
+      "timing": "day_before",
+      "timing_words_en": "the session before the article",
+      "timing_words_it": "la seduta prima dell'articolo",
+      "move_pct": 4.61,
+      "z": 2.28,
+      "vol_x": 1.19,
+      "retained_pct": -34.54,
+      "open_share_pct": -0.53
+    },
+    "largest": {
+      "d": "2026-08-24",
+      "timing": "day_before",
+      "timing_words_en": "the session before the article",
+      "timing_words_it": "la seduta prima dell'articolo",
+      "move_pct": 4.61,
+      "z": 2.28,
+      "vol_x": 1.19,
+      "retained_pct": -34.54,
+      "open_share_pct": -0.53
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-08-24",
+        "timing": "day_before",
+        "closed_before_publication": true,
+        "move_pct": 4.61,
+        "z": 2.28
+      }
+    ],
+    "at_open": null,
+    "publication_phase": "pre_open",
+    "pub_local": "2026-08-25T07:49:30",
+    "text_en": "The biggest unusual move came before the article was published (on 24 Aug 2026, +4.6%, 2.3 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, the move has fully reversed.",
+    "text_it": "Il movimento anomalo più ampio è arrivato prima che l'articolo fosse pubblicato (il 24 agosto 2026, +4.6%, 2.3 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il movimento si è completamente invertito."
+  },
+  "tape": {
+    "timing": "day_before",
+    "move_date": "2026-08-24",
+    "move_pct": 4.61,
+    "z": 2.28,
+    "unusual": true,
+    "volume_x": 1.19,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 2.019,
+    "px_before_move": 4.208,
+    "px_after_move": 4.402,
+    "last_session": "2026-09-23",
+    "last_px": 4.141,
+    "retained_pct": -35,
+    "facts_text": [
+      "The biggest unusual move came before the article was published (on 24 Aug 2026, +4.6%, 2.3 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, the move has fully reversed."
+    ]
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "instrument_name": "Nexi",
+    "title_adjective": "nuovo allungo",
+    "figure_in_body": "un veloce balzo in avanti ed è salito verso i 4,40 euro",
+    "adjective_matches": true,
+    "sentence": "The title's 'nuovo allungo' (new advance) fairly describes the stock's 'veloce balzo in avanti ed è salito verso i 4,40 euro' (quick jump forward and rise towards 4.40 euro); however, MF, 2026-08-25 reported on a +4.6% move on 24 Aug 2026 that was already in the price before publication, and this move had fully reversed by 23 Sep 2026.",
+    "checks": {
+      "quote_is_verbatim": true,
+      "figure_is_in_body": true,
+      "adjective_is_in_title": true,
+      "numbers_not_in_sources": [],
+      "no_recommendation": true,
+      "recommendation_words_flagged": []
+    },
+    "attempts": [
+      {
+        "checks": {
+          "quote_is_verbatim": true,
+          "figure_is_in_body": true,
+          "adjective_is_in_title": true,
+          "numbers_not_in_sources": [],
+          "no_recommendation": true,
+          "recommendation_words_flagged": []
+        },
+        "sentence": "The title's 'nuovo allungo' (new advance) fairly describes the stock's 'veloce balzo in avanti ed è salito verso i 4,40 euro' (quick jump forward and rise towards 4.40 euro); however, MF, 2026-08-25 reported on a +4.6% move on 24 Aug 2026 that was already in the price before publication, and this move had fully reversed by 23 Sep 2026."
+      }
+    ],
+    "post_edited": false
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}
