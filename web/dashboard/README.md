@@ -1,6 +1,6 @@
 # Dashboard (prototype)
 
-Portfolio on the left, MF news grouped by stock in the middle, watchlist on the right. Clicking a stock opens its page as one argument: your thesis, what changed after the latest results and the last four earnings, an analysis of the MF news grouped by the thesis indicator each story touches, and only then a decision to consider that draws on both.
+Portfolio on the left (value, chart, holdings), a lean summary in the middle (Fear & Greed and allocation pies), watchlist on the right. Clicking a stock opens its page as one argument: your thesis, what changed after the latest results and the last four earnings, an analysis of the MF news grouped by the thesis indicator each story touches, and only then a decision to consider that draws on both.
 
 `data.js` holds the demo shell (example theses as input, plus fallback esito/earnings/decisione). `real_data.js` overlays whatever the pipeline has produced.
 
@@ -23,6 +23,24 @@ python3 -m http.server 8765 --directory web/dashboard
 ```
 
 Then open http://localhost:8765.
+
+## Pages
+
+- **Riepilogo** (home, `#riepilogo`): a slot for the Fear & Greed index, then two interactive pies, by holding and by sector. Clicking a holding opens its company page; clicking a sector pins it and lists its holdings.
+- **Notizie** (`#notizie`): MF headlines grouped by company, kept simple. Reached from the toolbar switch.
+- **Company page** (`#azienda-<code>`): news that can move the stock (net signal, price verdict, thesis indicator), then thesis, what changed, decision and the last four earnings.
+
+The left column (value, chart, holdings) and the right column (watchlist) stay on every page.
+
+## Adding the Fear & Greed index
+
+When `fear_greed.js` is loaded (it is, from `scripts/fear_greed.py`), the home page shows the Italy and sector Fear & Greed card from `window.FEAR_GREED`. Without it, the home page reserves a placeholder card with the id `fear-greed`, sized like a half-circle gauge with a four-row history (previous close, 1 week, 1 month, 1 year ago). To fill the placeholder a different way without touching `app.js`:
+
+1. Create `web/dashboard/fear_greed.js` and load it in `index.html` **before** `app.js`.
+2. In it, define `window.renderFearGreed = function (el, ctx) { … }`. `el` is the card element; replace its contents. `ctx.data` is `window.DEMO_DATA`.
+3. The home page calls it after every render (switching back to Riepilogo, adding a position, resetting the demo), so it must be safe to call more than once.
+
+Use the page's CSS variables (`--card`, `--ink`, `--ink-2`, `--fill`, `--up`, `--down`, `--sep`) so it works in light and dark mode. `data/fear_greed.json` and `web/fear-greed.html` already have the numbers and a first design.
 
 ## Files
 

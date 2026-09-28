@@ -63,8 +63,8 @@
 
   const PREF = 'mf-desk:ui';
   const pref = (() => { try { return JSON.parse(localStorage.getItem(PREF) || '{}'); } catch (e) { return {}; } })();
-  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen, leftW: ui.leftW, alloc: ui.alloc })); } catch (e) { /* ignora */ } };
-  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320, alloc: pref.alloc === 'titoli' ? 'titoli' : 'settori', allNews: {}, fg: 'italy' };
+  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen, leftW: ui.leftW })); } catch (e) { /* ignora */ } };
+  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320, allNews: {}, lastMain: '#riepilogo', fg: 'italy' };
 
   const azienda = t => state.aziende[t] || D.aziende[t] || null;
   const tesiDi = t => ({ ...azienda(t).tesi, ...(state.tesi[t] || {}) });
@@ -360,26 +360,59 @@
     let i = 0;
     return secs.map(x => ({ ...x, col: x.n === 'Altro' ? 'var(--s-other)' : SERIES[i++] }));
   }
-  /* Torta con spicchi separati da 2px del colore della superficie (ring). */
-  function pieSVG(secs, size, ring, label) {
-    const r = size / 2, tot = secs.reduce((s, x) => s + x.p, 0) || 1;
+  /* Home: torte grandi e interattive. HOME tiene i dati dell'ultima resa e il settore fissato con un clic. */
+  const HOME = { titoli: [], settori: [], rows: [], tot: 0, pin: null };
+
+  function pieInteractive(kind) {
+    const items = HOME[kind], size = 240, r = size / 2, tot = items.reduce((s, x) => s + x.p, 0) || 1;
     let a0 = -Math.PI / 2;
     const pt = a => `${(r + r * Math.cos(a)).toFixed(2)} ${(r + r * Math.sin(a)).toFixed(2)}`;
-    const paths = secs.map((x, i) => {
-      const f = x.p / tot, a1 = a0 + f * 2 * Math.PI;
+    const paths = items.map((x, i) => {
+      const f = x.p / tot, a1 = a0 + f * 2 * Math.PI, mid = (a0 + a1) / 2;
       const d = f > 0.9999 ? `M${r} 0A${r} ${r} 0 1 1 ${r - 0.01} 0Z` : `M${r} ${r}L${pt(a0)}A${r} ${r} 0 ${f > 0.5 ? 1 : 0} 1 ${pt(a1)}Z`;
       a0 = a1;
-      return `<path d="${d}" fill="${x.col}" stroke="${ring}" stroke-width="2" stroke-linejoin="round" data-slice="${i}"${x.open ? ` data-open="${esc(x.open)}"` : ''}><title>${esc(x.full || x.n)} ${nf(x.p, 1)}%</title></path>`;
+      const act = kind === 'titoli' ? (x.open ? `apri la scheda di ${x.full}` : '') : 'mostra i titoli del settore';
+      return `<path class="slice" d="${d}" fill="${x.col}" data-k="${kind}" data-i="${i}" style="--dx:${(Math.cos(mid) * 8).toFixed(1)}px;--dy:${(Math.sin(mid) * 8).toFixed(1)}px"${act ? ` tabindex="0" role="button" aria-label="${esc(x.full || x.n)}: ${nf(x.p, 1)}%, ${eur(x.v, 0)}. ${cap(act)}"` : ''}></path>`;
     }).join('');
-    return `<svg class="pie" width="${size}" height="${size}" viewBox="-1 -1 ${size + 2} ${size + 2}" role="img" aria-label="${esc(label)}: ${esc(secs.map(x => `${x.n} ${nf(x.p, 1)}%`).join(', '))}">${paths}</svg>`;
+    const legend = items.map((x, i) => `<li><button class="leg" type="button" data-k="${kind}" data-i="${i}"${kind === 'titoli' && !x.open ? ' disabled' : ''}>
+        <i style="background:${x.col}"></i><span>${esc(x.n)}${kind === 'titoli' && x.open ? ` <small>${esc(x.full)}</small>` : ''}</span><b>${nf(x.p, 1)}%</b><em>${eur(x.v, 0)}</em></button></li>`).join('');
+    const pinned = kind === 'settori' ? HOME.pin : null;
+    return `<div class="ipie${pinned != null ? ' hl' : ''}" data-kind="${kind}" data-state="${pinned ?? ''}|${pinned != null}">
+      <svg class="pie big" viewBox="-10 -10 ${size + 20} ${size + 20}" role="group" aria-label="Allocazione ${kind === 'titoli' ? 'per titolo' : 'per settore'}">${paths.replace(new RegExp(`data-i="${pinned}"`), `data-i="${pinned}" data-on`)}</svg>
+      <div class="readout" aria-live="polite">${readout(kind, pinned, pinned != null)}</div>
+      <ul class="ilegend">${legend}</ul>
+    </div>`;
   }
-  function pieBlock(secs, size, ring, label) {
-    const inner = x => `<i style="background:${x.col}"></i><span>${esc(x.n)}</span><b>${nf(x.p, 1)}%<em>${eur(x.v, 0)}</em></b>`;
-    return `<div class="pie-wrap">${pieSVG(secs, size, ring, label)}
-      <ul class="pie-legend">${secs.map((x, i) => `<li data-leg="${i}">${x.open
-        ? `<button class="leg" type="button" data-open="${esc(x.open)}" title="Apri ${esc(x.full)}">${inner(x)}</button>`
-        : `<div class="leg">${inner(x)}</div>`}</li>`).join('')}</ul></div>`;
+
+  /* Riquadro di lettura: cosa c'è sotto il puntatore, o il settore fissato (con i suoi titoli). */
+  function readout(kind, i, list) {
+    const items = HOME[kind], x = i == null ? null : items[i];
+    if (!x) {
+      return kind === 'titoli'
+        ? `<div class="r-name">Portafoglio</div><div class="r-big">${eur(HOME.tot, 0)}</div><div class="r-sub">${HOME.rows.length} titoli · passa su uno spicchio per i dettagli</div>`
+        : `<div class="r-name">Settori</div><div class="r-big">${items.length}</div><div class="r-sub">Clicca un settore per vedere i suoi titoli</div>`;
+    }
+    if (kind === 'titoli') {
+      const row = HOME.rows.find(r => r.ticker === x.open);
+      const extra = row ? ` · oggi <span class="${dirOf(varDi(row.ticker))}">${signed(varDi(row.ticker))}</span> · tesi ${STATO[statoDi(row.a)].dash.toLowerCase()}` : '';
+      return `<div class="r-name">${esc(x.n)} <span class="muted">${esc(x.full)}</span></div><div class="r-big">${nf(x.p, 1)}%</div><div class="r-sub">${eur(x.v, 0)}${extra}</div>`;
+    }
+    return `<div class="r-name">${esc(x.n)}</div><div class="r-big">${nf(x.p, 1)}%</div><div class="r-sub">${eur(x.v, 0)} · ${x.members.length} ${x.members.length === 1 ? 'titolo' : 'titoli'}${list ? '' : ' · clicca per vederli'}</div>
+      ${list ? `<ul class="r-list">${x.members.map(m => `<li><button type="button" data-open="${esc(m.ticker)}"><b>${esc(m.ticker)}</b><span>${esc(m.a.nome)}</span><em>${nf(m.peso, 1)}%</em>${icon('chev')}</button></li>`).join('')}</ul>` : ''}`;
   }
+
+  /* Evidenzia l'elemento i (o il settore fissato se i è null). Ridisegna il riquadro solo se lo stato cambia. */
+  function setActive(wrap, i) {
+    const kind = wrap.dataset.kind, pin = kind === 'settori' ? HOME.pin : null;
+    const show = i ?? pin, list = show != null && show === pin;
+    const key = `${show ?? ''}|${list}`;
+    if (wrap.dataset.state === key) return;
+    wrap.dataset.state = key;
+    wrap.classList.toggle('hl', show != null);
+    $$('[data-i]', wrap).forEach(e => e.toggleAttribute('data-on', show != null && +e.dataset.i === show));
+    $('.readout', wrap).innerHTML = readout(kind, show, list);
+  }
+
   const dayChange = (rows, tot) => { const prev = rows.reduce((s, r) => s + r.quantita * r.a.prezzo / (1 + varDi(r.ticker) / 100), 0); return { day: tot - prev, pct: (tot / prev - 1) * 100 }; };
 
   /* ================================================================ barra sinistra: portafoglio */
@@ -397,7 +430,6 @@
     } else {
       const chartRows = base.length ? base : rows;
       const { day, pct: dayPct } = dayChange(chartRows, tot || chartRows.reduce((s, r) => s + r.valore, 0));
-      const secs = sectors(chartRows.filter(r => r.peso != null));
       const nSim = rows.filter(r => r.simPrezzo).length;
       const prezziLabel = D.reale ? (D.reale.prezzi_al || D.aggiornamento) : D.aggiornamento;
 
@@ -418,14 +450,6 @@
             <div class="seg" role="group" aria-label="Periodo del grafico">${Object.keys(RANGES).map(k => `<button type="button" data-range="${k}" aria-pressed="${ui.range === k}">${k}</button>`).join('')}</div>
           </div>
           <div class="range-delta num" id="rdelta" style="padding:6px 6px 0"></div>
-        </div>
-        <div class="alloc">
-          <div class="alloc-head"><span class="label">Allocazione</span>
-            <div class="seg seg-sm" role="group" aria-label="Allocazione per">${[['settori', 'Settori'], ['titoli', 'Titoli']].map(([k, l]) => `<button type="button" data-alloc="${k}" aria-pressed="${ui.alloc === k}">${l}</button>`).join('')}</div></div>
-          <div class="alloc-grid" data-show="${ui.alloc}">
-            <div data-panel="settori"><div class="label alloc-sub">Per settore</div>${pieBlock(secs, 104, 'var(--side)', 'Allocazione per settore')}</div>
-            <div data-panel="titoli"><div class="label alloc-sub">Per titolo</div>${pieBlock(companies(rows), 104, 'var(--side)', 'Allocazione per titolo')}</div>
-          </div>
         </div>
         <div>
           <div class="side-head"><h3>Posizioni</h3></div><p class="label" style="padding:0 6px;margin:2px 0 6px">Tesi: ${sum}</p>
@@ -573,8 +597,11 @@
   }
 
   /* ================================================================ area centrale: notizie */
-  function toolbar(back) {
-    $('#toolbar').innerHTML = `${back ? `<button class="back" type="button" data-act="back">${icon('back')}Notizie</button>` : ''}
+  function toolbar(mode) {
+    const nav = mode === 'detail'
+      ? `<button class="back" type="button" data-act="back">${icon('back')}${ui.lastMain === '#notizie' ? 'Notizie' : 'Riepilogo'}</button>`
+      : `<nav class="seg" aria-label="Sezioni"><a href="#riepilogo"${mode === 'home' ? ' aria-current="page"' : ''}>Riepilogo</a><a href="#notizie"${mode === 'news' ? ' aria-current="page"' : ''}>Notizie</a></nav>`;
+    $('#toolbar').innerHTML = `${nav}
       <span class="spacer"></span>
       <span class="status">Borsa Italiana · chiusa ·</span>
       <span class="demo"${D.reale ? ` title="${esc(`${D.reale.etichetta} · Prezzi al ${D.reale.prezzi_al || D.aggiornamento} · Notizie al ${D.reale.notizie_al || D.aggiornamento}`)}"` : ''}>${D.reale ? `${esc(D.reale.etichetta)} · ${cutoffsHTML()}` : 'Dati simulati'}</span>
@@ -644,7 +671,7 @@
   }
 
   function renderNews() {
-    toolbar(false);
+    toolbar('news');
     const counts = {
       rilevanti: D.notizie.filter(n => linked(n).some(s => tracked(s.ticker))).length,
       portafoglio: D.notizie.filter(n => linked(n).some(s => held(s.ticker))).length,
@@ -694,7 +721,6 @@
     $('#app').innerHTML = `<div class="view">
       <h1 class="page-title" tabindex="-1" id="ptitle">Notizie <span class="date">${d.getUTCDate()} ${MESI_LUNGHI[d.getUTCMonth()]}</span></h1>
       <p class="page-sub">${D.reale ? esc(D.reale.sottotitolo) : `Da MF Milano Finanza (demo), collegate ai titoli per similarità tra embedding (soglia ${nf(D.soglia, 2)}). La reazione di prezzo sotto ogni articolo descrive movimenti passati, non una previsione.`}</p>
-      ${fearGreedHTML()}
       ${D.indici.length ? `<div class="tape" aria-label="Indici (demo)">${D.indici.map(x => `<span>${esc(x.nome)}<b>${esc(x.valore)}</b><span class="${dirOf(x.var)}">${signed(x.var)}</span></span>`).join('')}</div>` : ''}
       <div class="controls">
         <div class="seg" role="group" aria-label="Quali notizie">${scopes.map(([k, l]) => `<button type="button" data-scope="${k}" aria-pressed="${ui.scope === k}">${l}<span class="c">${counts[k]}</span></button>`).join('')}</div>
@@ -705,6 +731,52 @@
       ${sections || `<div class="feed-empty"><p>${ui.q ? `Nessuna notizia per “${esc(ui.q)}”.` : 'Nessuna notizia collegata ai titoli selezionati.'}</p>
         <button class="btn secondary" type="button" data-act="all-news">Mostra tutte le notizie</button></div>`}
     </div>`;
+  }
+
+  /* ================================================================ area centrale: riepilogo (home) */
+  /* Semicerchio a cinque zone, vuoto: occupa lo stesso spazio del vero indicatore. */
+  function fgGhostGauge() {
+    const cx = 160, cy = 160, R = 150, r0 = 96, gap = 0.012;
+    const p = (rad, a) => `${(cx + rad * Math.cos(a)).toFixed(1)} ${(cy + rad * Math.sin(a)).toFixed(1)}`;
+    const seg = i => { const a0 = Math.PI + i * Math.PI / 5 + gap, a1 = Math.PI + (i + 1) * Math.PI / 5 - gap;
+      return `<path d="M${p(R, a0)}A${R} ${R} 0 0 1 ${p(R, a1)}L${p(r0, a1)}A${r0} ${r0} 0 0 0 ${p(r0, a0)}Z"/>`; };
+    return `<svg class="fg-gauge" viewBox="0 0 320 172">${[0, 1, 2, 3, 4].map(seg).join('')}
+      <text x="${cx - r0 + 8}" y="${cy + 8}" text-anchor="start">0</text><text x="${cx}" y="${cy - r0 + 22}" text-anchor="middle">50</text><text x="${cx + r0 - 8}" y="${cy + 8}" text-anchor="end">100</text>
+      <text class="fg-val" x="${cx}" y="${cy + 6}" text-anchor="middle">—</text></svg>`;
+  }
+
+  function renderHome() {
+    toolbar('home');
+    const { rows, tot } = posizioni(), d = asOfDate;
+    const head = `<h1 class="page-title" tabindex="-1" id="ptitle">Riepilogo <span class="date">${d.getUTCDate()} ${MESI_LUNGHI[d.getUTCMonth()]}</span></h1>`;
+    /* Spazio riservato all'indice Fear & Greed. Chi lo realizza definisce window.renderFearGreed(el):
+       viene chiamata dopo ogni resa della home e può sostituire il contenuto di #fear-greed. Vedi README. */
+    const fg = window.FEAR_GREED ? fearGreedHTML() : `<section class="card fg-slot" id="fear-greed" aria-labelledby="h-fg">
+        <div class="card-h"><h2 id="h-fg">Fear &amp; Greed · Italia</h2><span class="muted">In arrivo</span></div>
+        <div class="fg-body" aria-hidden="true">${fgGhostGauge()}
+          <dl class="fg-hist">${['Chiusura precedente', '1 settimana fa', '1 mese fa', '1 anno fa'].map(l => `<div><dt>${l}</dt><dd>—</dd></div>`).join('')}</dl>
+        </div>
+        <p class="note">Spazio riservato all’indice di sentiment del mercato italiano.</p>
+      </section>`;
+    let body;
+    if (!rows.length) {
+      body = `<section class="card empty" style="margin-top:16px"><h3>Nessuna posizione</h3><p>Aggiungi un titolo che possiedi per vedere come è distribuito il portafoglio.</p>
+        <button class="btn" type="button" data-act="add-pos">${icon('plus')}Aggiungi posizione</button></section>`;
+    } else {
+      const secs = sectors(rows), names = new Set(secs.map(x => x.n));
+      HOME.rows = rows; HOME.tot = tot;
+      HOME.titoli = companies(rows);
+      HOME.settori = secs.map(x => ({ ...x, members: rows.filter(r => { const s0 = D.settori[r.ticker] || 'Altro'; return (names.has(s0) ? s0 : 'Altro') === x.n; }) }));
+      if (HOME.pin != null && !HOME.settori[HOME.pin]) HOME.pin = null;
+      body = `<div class="home-grid">
+        <section class="card"><div class="card-h"><h2>Per titolo</h2><span class="muted">Clic: scheda del titolo</span></div>${pieInteractive('titoli')}</section>
+        <section class="card"><div class="card-h"><h2>Per settore</h2><span class="muted">Clic: i titoli del settore</span></div>${pieInteractive('settori')}</section>
+      </div>`;
+    }
+    $('#app').innerHTML = `<div class="view">${head}${fg}${body}</div>`;
+    if (typeof window.renderFearGreed === 'function') {
+      try { window.renderFearGreed($('#fear-greed'), { data: D, posizioni }); } catch (e) { console.error('renderFearGreed', e); }
+    }
   }
 
   /* ================================================================ area centrale: scheda azienda */
@@ -860,7 +932,7 @@
 
   function renderDetail(t) {
     const a = azienda(t);
-    toolbar(true);
+    toolbar('detail');
     const isHeld = held(t), isWatched = watched(t);
     const pos = posizioni().rows.find(r => r.ticker === t);
     const T = tesiDi(t), stato = statoDi(a);
@@ -1293,8 +1365,10 @@
 
   function renderMain() {
     charts.forEach((_, host) => { if (host.id !== 'pchart') charts.delete(host); });
-    const t = currentTicker(), ok = !!(t && azienda(t));
-    if (ok) renderDetail(t); else { if (t) history.replaceState(null, '', '#notizie'); renderNews(); }
+    const t = currentTicker(), ok = !!(t && azienda(t)), h = location.hash;
+    if (ok) renderDetail(t);
+    else if (h === '#notizie') { ui.lastMain = '#notizie'; renderNews(); }
+    else { if (h && h !== '#riepilogo') history.replaceState(null, '', '#riepilogo'); ui.lastMain = '#riepilogo'; renderHome(); }
     $('#shell').classList.toggle('is-detail', ok);
     applyWatch();
   }
@@ -1305,6 +1379,7 @@
     renderLeft(); renderRight(); renderMain();
   }
   function route() {
+    hideNotif();
     ui.editing = false; ui.removing = false;
     ui.current = currentTicker();
     // aggiorna solo la selezione nelle barre laterali, senza ridisegnarle
@@ -1328,19 +1403,21 @@
   }
 
   document.addEventListener('click', ev => {
-    const el = ev.target.closest('[data-open],[data-act],[data-range],[data-scope],[data-filter],[data-q],[data-alloc],[data-fg]');
+    const slice = ev.target.closest('.ipie [data-i]');
+    if (slice) {
+      const kind = slice.dataset.k, i = +slice.dataset.i, x = HOME[kind][i];
+      if (kind === 'titoli') { if (x && x.open) openCompany(x.open); return; }
+      HOME.pin = HOME.pin === i ? null : i;
+      const w = slice.closest('.ipie'); w.dataset.state = ''; setActive(w, null);
+      return;
+    }
+    const el = ev.target.closest('[data-open],[data-act],[data-range],[data-scope],[data-filter],[data-q],[data-fg]');
     if (!el) return;
     if (el.dataset.fg) {
       ui.fg = el.dataset.fg;
       const y = scrollY;
       renderMain();
       scrollTo(0, y);
-      return;
-    }
-    if (el.dataset.alloc) {
-      ui.alloc = el.dataset.alloc; savePref();
-      const g = $('.alloc-grid'); if (g) g.dataset.show = ui.alloc;
-      $$('[data-alloc]').forEach(b => b.setAttribute('aria-pressed', b.dataset.alloc === ui.alloc));
       return;
     }
     if (el.dataset.open) { openCompany(el.dataset.open); return; }
@@ -1358,7 +1435,7 @@
       case 'clear-filter': ui.ticker = null; renderMain(); break;
       case 'clear-q': ui.q = ''; $('#q').value = ''; renderMain(); break;
       case 'all-news': ui.scope = 'tutte'; ui.ticker = null; ui.q = ''; $('#q').value = ''; renderMain(); break;
-      case 'back': location.hash = '#notizie'; break;
+      case 'back': location.hash = ui.lastMain; break;
       case 'edit': ui.editing = true; $('#tesi-card').innerHTML = tesiForm(t); $('#f-motivo').focus(); break;
       case 'edit-cancel': ui.editing = false; $('#tesi-card').innerHTML = tesiView(t, posizioni().rows.find(r => r.ticker === t)); break;
       case 'retry-ricalcolo': if (t) avviaRicalcolo(t); break;
@@ -1368,7 +1445,7 @@
         const where = held(t) ? 'dal portafoglio' : 'dalla watchlist';
         state.portafoglio = state.portafoglio.filter(p => p.ticker !== t);
         state.watchlist = state.watchlist.filter(w => w.ticker !== t);
-        save(); ui.removing = false; history.replaceState(null, '', '#notizie'); renderAll(); toast(`${t} rimosso ${where}`);
+        save(); ui.removing = false; history.replaceState(null, '', ui.lastMain); renderAll(); toast(`${t} rimosso ${where}`);
         break;
       }
     }
@@ -1441,25 +1518,93 @@
   window.addEventListener('resize', () => setLeft(clampLeft(ui.leftW)));
   setLeft(clampLeft(ui.leftW));
 
-  // torta: passando su uno spicchio si evidenzia la voce di legenda, e viceversa
-  document.addEventListener('pointerover', ev => {
-    const hit = ev.target.closest && ev.target.closest('[data-slice],[data-leg]');
-    $$('.pie-wrap').forEach(w => {
-      const on = !!hit && w.contains(hit);
-      w.classList.toggle('hl', on);
-      const i = on ? (hit.dataset.slice ?? hit.dataset.leg) : null;
-      $$('[data-slice],[data-leg]', w).forEach(e => e.classList.toggle('on', on && (e.dataset.slice ?? e.dataset.leg) === i));
-    });
-  });
+  // torte della home: passando (o con il focus) su uno spicchio o su una voce si aggiornano evidenziazione e riquadro
+  /* Anteprima della tesi in stile notifiche, solo sulla torta per titolo: tesi in breve, ultimi risultati,
+     e come si è mosso il prezzo rispetto alla tesi. Primo ingresso con un breve ritardo; tra spicchi si aggiorna subito. */
+  const notif = document.createElement('div');
+  notif.className = 'notif'; notif.id = 'pie-notif'; notif.setAttribute('role', 'tooltip'); notif.hidden = true;
+  document.body.appendChild(notif);
+  let notifT, notifKey = null;
 
-  document.documentElement.addEventListener('pointerleave', () => $$('.pie-wrap.hl').forEach(w => { w.classList.remove('hl'); $$('.on', w).forEach(e => e.classList.remove('on')); }));
+  /* Ultimi risultati disponibili e variazione del prezzo dalla chiusura precedente la pubblicazione a oggi. */
+  function sinceEarnings(t) {
+    const q = (azienda(t).earnings || []).filter(e => !e.mancante), e = q[q.length - 1];
+    if (!e) return null;
+    const pd = parseIt(e.data), s0 = serieDi(t), i = pd ? D.giorni.findIndex(d => d >= pd) : -1;
+    return { e, pct: i < 0 ? null : (s0[s0.length - 1] / s0[Math.max(0, i - 1)] - 1) * 100 };
+  }
+  /* Lettura (interpretazione, non dato): il prezzo dopo i risultati va nella direzione della tesi? */
+  function priceVsThesis(stato, pct) {
+    if (stato === 'insufficiente' || pct == null) return 'Dati insufficienti per confrontare prezzo e tesi.';
+    const up = pct > 0.5, down = pct < -0.5;
+    if (stato === 'rafforzata') return up ? 'Il prezzo va nella direzione della tesi.' : down ? 'Il prezzo non riflette ancora il rafforzamento della tesi.' : 'Prezzo quasi fermo nonostante la tesi più forte.';
+    if (stato === 'indebolita') return down ? 'Il prezzo conferma l’indebolimento della tesi.' : up ? 'Il prezzo sale nonostante la tesi più debole.' : 'Prezzo quasi fermo con una tesi più debole.';
+    return up ? 'Tesi invariata; il prezzo è salito dai risultati.' : down ? 'Tesi invariata; il prezzo è sceso dai risultati.' : 'Tesi e prezzo sostanzialmente fermi.';
+  }
+  function notifHTML(x) {
+    const t = x.open, a = azienda(t), T = tesiDi(t), stato = statoDi(a), se = sinceEarnings(t);
+    const tesi = (state.tesi[t] && state.tesi[t].motivo) || T.motivoBreve || T.motivo || 'Nessuna tesi scritta.';
+    const eff = se && EFFETTO[se.e.impatto.effetto];
+    return `<div class="nt-head"><b>${esc(x.n)} <span>${esc(x.full)}</span></b>${chipStato(stato)}</div>
+      <div class="nt-card"><dl class="nt-rows">
+        <div><dt>Tesi</dt><dd class="nt-clamp">${esc(tesi)}</dd></div>
+        <div><dt>Risultati</dt><dd>${eff ? `<span class="chip ${eff.cls}">${icon(eff.ic)}${eff.label}</span> <span class="muted">· ${esc(se.e.label)}</span>` : '<span class="muted">Non disponibili</span>'}</dd></div>
+        <div><dt>Prezzo</dt><dd>${se && se.pct != null ? `<b class="${dirOf(se.pct)}">${signed(se.pct, 1)}</b> dai risultati` : '<span class="muted">n.d.</span>'}</dd></div>
+      </dl>
+      <p class="nt-read">${priceVsThesis(stato, se && se.pct)}</p></div>`;
+  }
+  /* Accanto al bordo esterno dello spicchio, verso l'esterno; dentro la finestra; cresce dal lato dello spicchio. */
+  function placeNotif(slice) {
+    const box = slice.ownerSVGElement.getBoundingClientRect();
+    const R = box.width / 2, cx = box.left + R, cy = box.top + box.height / 2;
+    const ux = parseFloat(slice.style.getPropertyValue('--dx')) / 8 || 0, uy = parseFloat(slice.style.getPropertyValue('--dy')) / 8 || 0;
+    const ox = cx + ux * R * 0.9, oy = cy + uy * R * 0.9, w = notif.offsetWidth, h = notif.offsetHeight, gap = 16;
+    const right = ux >= 0;
+    let x = right ? ox + gap : ox - w - gap;
+    if (x + w > innerWidth - 8 || x < 8) x = right ? ox - w - gap : ox + gap;
+    x = Math.max(8, Math.min(innerWidth - w - 8, x));
+    const y = Math.max(60, Math.min(innerHeight - h - 8, oy - h / 2));
+    notif.style.left = x + 'px'; notif.style.top = y + 'px';
+    notif.style.transformOrigin = `${x > ox ? 'left' : 'right'} ${Math.max(0, Math.min(h, oy - y))}px`;
+  }
+  function showNotif(hit) {
+    const w = hit.closest('.ipie'), kind = w.dataset.kind, i = +hit.dataset.i, x = HOME[kind][i];
+    if (kind !== 'titoli' || !x || !x.open) return hideNotif();
+    const key = kind + i, slice = w.querySelector(`.slice[data-i="${i}"]`);
+    const render = () => {
+      notif.innerHTML = notifHTML(x); placeNotif(slice); notifKey = key;
+      $$('[aria-describedby="pie-notif"]').forEach(e => e.removeAttribute('aria-describedby'));
+      hit.setAttribute('aria-describedby', 'pie-notif');
+    };
+    clearTimeout(notifT);
+    if (!notif.hidden) {
+      if (notifKey !== key) { notif.classList.add('instant'); render(); requestAnimationFrame(() => notif.classList.remove('instant')); }
+      return;
+    }
+    notifT = setTimeout(() => { render(); notif.hidden = false; }, 140);
+  }
+  function hideNotif() { clearTimeout(notifT); notifKey = null; notif.hidden = true; }
+
+  const pieHover = (target, preview) => {
+    const hit = target && target.closest && target.closest('.ipie [data-i]');
+    $$('.ipie').forEach(w => setActive(w, hit && w.contains(hit) ? +hit.dataset.i : null));
+    if (hit && preview) showNotif(hit); else hideNotif();
+  };
+  document.addEventListener('pointerover', ev => pieHover(ev.target, ev.pointerType !== 'touch'));
+  document.addEventListener('focusin', ev => pieHover(ev.target, true));
+  document.documentElement.addEventListener('pointerleave', () => pieHover(null));
+  window.addEventListener('scroll', hideNotif, { passive: true });
+  document.addEventListener('keydown', ev => {
+    const sl = ev.target.closest && ev.target.closest('.slice[role="button"]');
+    if (sl && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); sl.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+  });
 
   // barra degli strumenti: separatore solo quando il contenuto ci scorre sotto
   const tb = $('#toolbar');
   window.addEventListener('scroll', () => tb.classList.toggle('scrolled', window.scrollY > 4), { passive: true });
 
-  $('#reset').addEventListener('click', () => { state = seed(); save(); ui.ticker = null; ui.scope = 'rilevanti'; ui.q = ''; history.replaceState(null, '', '#notizie'); renderAll(); toast('Dati demo ripristinati'); });
-  $('#clear').addEventListener('click', () => { state.portafoglio = []; save(); history.replaceState(null, '', '#notizie'); renderAll(); toast('Portafoglio svuotato'); });
+  $('#reset').addEventListener('click', () => { state = seed(); save(); ui.ticker = null; ui.scope = 'rilevanti'; ui.q = ''; HOME.pin = null; history.replaceState(null, '', '#riepilogo'); renderAll(); toast('Dati demo ripristinati'); });
+  $('#clear').addEventListener('click', () => { state.portafoglio = []; save(); history.replaceState(null, '', '#riepilogo'); renderAll(); toast('Portafoglio svuotato'); });
   dlg.addEventListener('click', ev => { if (ev.target === dlg) closeDialog(); });
 
   window.addEventListener('hashchange', route);
