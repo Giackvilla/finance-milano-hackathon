@@ -550,6 +550,40 @@
     if (!fg) return null;
     return fg.sectors.find(s => (s.tickers || []).indexOf(ticker) >= 0) || null;
   }
+  /* Zone e soglie uguali a scripts/fear_greed.py (label_for). */
+  const FG_ZONES = [
+    { lo: 0, hi: 25, key: 'Extreme fear', short: 'Paura estrema', tone: 'fear' },
+    { lo: 25, hi: 45, key: 'Fear', short: 'Paura', tone: 'fear' },
+    { lo: 45, hi: 55, key: 'Neutral', short: 'Neutro', tone: 'neutral' },
+    { lo: 55, hi: 75, key: 'Greed', short: 'Avidità', tone: 'greed' },
+    { lo: 75, hi: 101, key: 'Extreme greed', short: 'Avidità estrema', tone: 'greed' }
+  ];
+  const fgZone = v => FG_ZONES.find(z => v >= z.lo && v < z.hi) || FG_ZONES[FG_ZONES.length - 1];
+
+  /* Quadrante a semicerchio: cinque zone (quella attiva colorata), scala 0-100, lancetta, valore al centro. */
+  function fgDial(score) {
+    const W = 360, cx = 180, cy = 184, R = 176, r0 = 112, rl = (R + r0) / 2;
+    const ang = v => Math.PI + (Math.max(0, Math.min(100, v)) / 100) * Math.PI;
+    const pt = (rad, a) => `${(cx + rad * Math.cos(a)).toFixed(1)} ${(cy + rad * Math.sin(a)).toFixed(1)}`;
+    const active = fgZone(score);
+    const zones = FG_ZONES.map((z, i) => {
+      const a0 = ang(z.lo) + 0.012, a1 = ang(Math.min(100, z.hi)) - 0.012;
+      const on = z === active;
+      return `<path class="fg-zone${on ? ` on ${z.tone}` : ''}" d="M${pt(R, a0)}A${R} ${R} 0 0 1 ${pt(R, a1)}L${pt(r0, a1)}A${r0} ${r0} 0 0 0 ${pt(r0, a0)}Z"/>
+        <path id="fgl${i}" d="M${pt(rl, a0)}A${rl} ${rl} 0 0 1 ${pt(rl, a1)}" fill="none"/>
+        <text class="fg-zl${on ? ' on' : ''}${(a1 - a0) * rl < 70 ? ' tight' : ''}"><textPath href="#fgl${i}" startOffset="50%" text-anchor="middle" dominant-baseline="middle">${z.short.toUpperCase()}</textPath></text>`;
+    }).join('');
+    const dots = Array.from({ length: 21 }, (_, i) => i * 5).filter(v => v % 25).map(v => { const a = ang(v); return `<circle cx="${(cx + (r0 - 14) * Math.cos(a)).toFixed(1)}" cy="${(cy + (r0 - 14) * Math.sin(a)).toFixed(1)}" r="1.5"/>`; }).join('');
+    const nums = [0, 25, 50, 75, 100].map(v => { const a = ang(v); return `<text class="fg-num" x="${(cx + (r0 - 22) * Math.cos(a)).toFixed(1)}" y="${(cy + (r0 - 22) * Math.sin(a) + 4).toFixed(1)}" text-anchor="middle">${v}</text>`; }).join('');
+    const a = ang(score), tip = pt(r0 - 6, a), b1 = pt(5, a + Math.PI / 2), b2 = pt(5, a - Math.PI / 2);
+    return `<svg class="fg-dial" viewBox="0 0 ${W} ${cy + 6}" role="img" aria-label="Indice ${nf(score, 1)} su 100: ${esc(active.short)}">
+      ${zones}<g class="fg-dots">${dots}</g>${nums}
+      <path class="fg-needle" d="M${b1}L${tip}L${b2}Z"/>
+      <circle class="fg-hub" cx="${cx}" cy="${cy}" r="36"/>
+      <text class="fg-val" x="${cx}" y="${cy - 6}" text-anchor="middle">${Math.round(score)}</text>
+    </svg>`;
+  }
+
   function fearGreedHTML() {
     const fg = window.FEAR_GREED;
     if (!fg) return '';
@@ -558,25 +592,28 @@
     const name = selected ? selected.name : 'Italia';
     const picks = [{ id: 'italy', name: 'Italia', score: fg.italy.score, label: fg.italy.label }].concat(fg.sectors);
     const heads = (selected && selected.headlines) || [];
-    return `<section class="card fg" aria-label="Fear and Greed">
-      <div class="fg-top">
-        <div>
-          <div class="fg-kicker">Fear &amp; Greed ${prov('modello', 'Indice descrittivo sul nastro e sul tono delle notizie. Non è un segnale operativo.')}</div>
-          <div class="label">${esc(name)} · ${esc(fgDate(block.date))}</div>
-        </div>
-        <div class="fg-side">
-          ${block.spark && block.spark.length > 1 ? sparkline(block.spark, 96, 28) : ''}
-          <div class="fg-score" style="color:${fgTone(block.score)}">${nf(block.score, 1)}</div>
-          <div class="fg-band" style="color:${fgTone(block.score)}">${esc(fgBand(block.label))}</div>
-        </div>
+    const sp = block.spark || [], at = k => (sp.length > k ? sp[sp.length - 1 - k] : null);
+    const hist = [['Chiusura precedente', at(1)], ['1 settimana fa', at(5)], ['1 mese fa', at(21)], ['3 mesi fa', sp.length ? sp[0] : null]];
+    const zone = fgZone(block.score);
+    return `<section class="card fg" id="fear-greed" aria-labelledby="h-fg">
+      <div class="card-h"><div><h2 id="h-fg">Fear &amp; Greed · ${esc(name)} ${prov('modello', 'Indice descrittivo sul nastro e sul tono delle notizie. Non è un segnale operativo.')}</h2>
+        <p class="muted" style="font-size:13px;margin-top:2px">Che emozione muove il mercato oggi? · ${esc(fgDate(block.date))}</p></div>
+        <span class="fg-now ${zone.tone}">${esc(fgBand(block.label))}</span></div>
+      <div class="fg-body">
+        ${fgDial(block.score)}
+        <dl class="fg-hist">${hist.map(([l, v]) => {
+          const z = v == null ? null : fgZone(v);
+          return `<div><dt><span>${l}</span><b>${z ? esc(z.short) : 'n.d.'}</b></dt><i aria-hidden="true"></i><dd class="${z ? z.tone : ''}">${v == null ? '—' : Math.round(v)}</dd></div>`;
+        }).join('')}</dl>
       </div>
-      ${fgGauge(block.score)}
-      <p class="fg-shocks">${fgShocks(block)} <span class="muted">· ${block.names} titoli</span></p>
-      <div class="fg-picks" role="group" aria-label="Settore">${picks.map(p => `<button class="fg-pick" type="button" data-fg="${esc(p.id)}" aria-pressed="${(selected ? selected.id : 'italy') === p.id}">
-        <span class="nm">${esc(p.name)}</span><b style="color:${fgTone(p.score)}">${nf(p.score, 1)}</b>
+      <div class="fg-picks" role="group" aria-label="Mercato o settore">${picks.map(p => `<button class="fg-pick" type="button" data-fg="${esc(p.id)}" aria-pressed="${(selected ? selected.id : 'italy') === p.id}">
+        <span class="nm">${esc(p.name)}</span><b class="${fgZone(p.score).tone}">${Math.round(p.score)}</b>
       </button>`).join('')}</div>
-      ${fgBars(block.components)}
-      ${heads.length ? `<ul class="fg-heads">${heads.map(h => `<li>${esc(h)}</li>`).join('')}</ul>` : ''}
+      <details class="fg-more"><summary>Come è calcolato</summary>
+        <p class="fg-shocks">${fgShocks(block)} <span class="muted">· ${block.names} titoli</span></p>
+        ${fgBars(block.components)}
+        ${heads.length ? `<ul class="fg-heads">${heads.map(h => `<li>${esc(h)}</li>`).join('')}</ul>` : ''}
+      </details>
     </section>`;
   }
   function fearGreedCompanyHTML(ticker) {
@@ -1550,6 +1587,21 @@
     if (stato === 'indebolita') return down ? 'Il prezzo conferma l’indebolimento della tesi.' : up ? 'Il prezzo sale nonostante la tesi più debole.' : 'Prezzo quasi fermo con una tesi più debole.';
     return up ? 'Tesi invariata; il prezzo è salito dai risultati.' : down ? 'Tesi invariata; il prezzo è sceso dai risultati.' : 'Tesi e prezzo sostanzialmente fermi.';
   }
+  /* Settore: le ultime notizie MF sui suoi titoli, in stile notifiche. */
+  function sectorNewsHTML(x) {
+    const tickers = x.members.map(m => m.ticker);
+    const list = D.notizie.filter(n => linked(n).some(s0 => tickers.includes(s0.ticker))).sort((a, b) => b.data.localeCompare(a.data));
+    const cards = list.slice(0, 3).map(n => {
+      const d = new Date(n.data + 'Z'), s0 = linked(n).find(y => tickers.includes(y.ticker)), vd = n.verdetto;
+      const dir = s0 ? s0.dir : n.segnale && n.segnale.dir;
+      const tag = vd ? `<span class="chip ${vd.cls}">${esc(vd.label)}</span>`
+        : n.segnale ? `<span class="chip ${dir === 'up' ? 'pos' : dir === 'down' ? 'neg' : 'neu'}">${trend(dir)}${DIR_LABEL[dir]}</span>` : '';
+      return `<li class="nt-card"><div class="nt-meta"><span class="nt-app" aria-hidden="true">MF</span><span>${s0 ? `<b>${esc(s0.ticker)}</b> · ` : ''}${d.getUTCDate()} ${MESI[d.getUTCMonth()]}</span>${tag}</div><p>${esc(n.titolo)}</p></li>`;
+    }).join('');
+    return `<div class="nt-head"><b>${esc(x.n)}</b><span>${list.length ? `${list.length} ${list.length === 1 ? 'notizia' : 'notizie'}` : 'Nessuna notizia'}</span></div>
+      ${cards ? `<ul>${cards}</ul>` : '<p class="nt-empty">Nessun articolo MF collegato di recente.</p>'}
+      <div class="nt-foot">Clic per vedere i titoli del settore</div>`;
+  }
   function notifHTML(x) {
     const t = x.open, a = azienda(t), T = tesiDi(t), stato = statoDi(a), se = sinceEarnings(t);
     const tesi = (state.tesi[t] && state.tesi[t].motivo) || T.motivoBreve || T.motivo || 'Nessuna tesi scritta.';
@@ -1578,10 +1630,10 @@
   }
   function showNotif(hit) {
     const w = hit.closest('.ipie'), kind = w.dataset.kind, i = +hit.dataset.i, x = HOME[kind][i];
-    if (kind !== 'titoli' || !x || !x.open) return hideNotif();
+    if (!x || (kind === 'titoli' && !x.open)) return hideNotif();
     const key = kind + i, slice = w.querySelector(`.slice[data-i="${i}"]`);
     const render = () => {
-      notif.innerHTML = notifHTML(x); placeNotif(slice); notifKey = key;
+      notif.innerHTML = kind === 'titoli' ? notifHTML(x) : sectorNewsHTML(x); placeNotif(slice); notifKey = key;
       $$('[aria-describedby="pie-notif"]').forEach(e => e.removeAttribute('aria-describedby'));
       hit.setAttribute('aria-describedby', 'pie-notif');
     };
