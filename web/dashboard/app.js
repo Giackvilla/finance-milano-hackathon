@@ -818,6 +818,7 @@
     renderLeft(); renderRight(); renderMain();
   }
   function route() {
+    hideNotif();
     ui.editing = false; ui.removing = false;
     ui.current = currentTicker();
     // aggiorna solo la selezione nelle barre laterali, senza ridisegnarle
@@ -949,13 +950,69 @@
   setLeft(clampLeft(ui.leftW));
 
   // torte della home: passando (o con il focus) su uno spicchio o su una voce si aggiornano evidenziazione e riquadro
-  const pieHover = target => {
+  /* Anteprima notizie in stile notifiche: compare accanto allo spicchio (o alla voce di legenda) sotto il puntatore.
+     Primo ingresso con un breve ritardo; passando da uno spicchio all'altro si aggiorna subito, senza animazione. */
+  const notif = document.createElement('div');
+  notif.className = 'notif'; notif.id = 'pie-notif'; notif.setAttribute('role', 'tooltip'); notif.hidden = true;
+  document.body.appendChild(notif);
+  let notifT, notifKey = null;
+
+  const newsFor = tickers => D.notizie.filter(n => linked(n).some(s => tickers.includes(s.ticker))).sort((a, b) => b.data.localeCompare(a.data));
+  function notifHTML(kind, x) {
+    const tickers = kind === 'titoli' ? [x.open] : x.members.map(m => m.ticker);
+    const list = newsFor(tickers);
+    const cards = list.slice(0, 3).map(n => {
+      const d = new Date(n.data + 'Z'), s0 = linked(n).find(y => tickers.includes(y.ticker)), vd = n.verdetto;
+      const dir = s0 ? s0.dir : n.segnale && n.segnale.dir;
+      const tag = vd ? `<span class="chip ${vd.cls}">${esc(vd.label)}</span>`
+        : n.segnale ? `<span class="chip ${dir === 'up' ? 'pos' : dir === 'down' ? 'neg' : 'neu'}">${trend(dir)}${DIR_LABEL[dir]}</span>` : '';
+      return `<li class="nt-card"><div class="nt-meta"><span class="nt-app" aria-hidden="true">MF</span><span>${kind === 'settori' && s0 ? `<b>${esc(s0.ticker)}</b> · ` : ''}${d.getUTCDate()} ${MESI[d.getUTCMonth()]}</span>${tag}</div><p>${esc(n.titolo)}</p></li>`;
+    }).join('');
+    return `<div class="nt-head"><b>${esc(x.n)}${kind === 'titoli' ? ` <span>${esc(x.full)}</span>` : ''}</b><span>${list.length ? `${list.length} ${list.length === 1 ? 'notizia' : 'notizie'}` : 'Nessuna notizia'}</span></div>
+      ${cards ? `<ul>${cards}</ul>` : '<p class="nt-empty">Nessun articolo MF collegato di recente.</p>'}
+      <div class="nt-foot">${kind === 'titoli' ? 'Clic per aprire la scheda' : 'Clic per vedere i titoli del settore'}</div>`;
+  }
+  /* Accanto al bordo esterno dello spicchio, verso l'esterno; dentro la finestra; cresce dal lato dello spicchio. */
+  function placeNotif(slice) {
+    const box = slice.ownerSVGElement.getBoundingClientRect();
+    const R = box.width / 2, cx = box.left + R, cy = box.top + box.height / 2;
+    const ux = parseFloat(slice.style.getPropertyValue('--dx')) / 8 || 0, uy = parseFloat(slice.style.getPropertyValue('--dy')) / 8 || 0;
+    const ox = cx + ux * R * 0.9, oy = cy + uy * R * 0.9, w = notif.offsetWidth, h = notif.offsetHeight, gap = 16;
+    const right = ux >= 0;
+    let x = right ? ox + gap : ox - w - gap;
+    if (x + w > innerWidth - 8 || x < 8) x = right ? ox - w - gap : ox + gap;
+    x = Math.max(8, Math.min(innerWidth - w - 8, x));
+    const y = Math.max(60, Math.min(innerHeight - h - 8, oy - h / 2));
+    notif.style.left = x + 'px'; notif.style.top = y + 'px';
+    notif.style.transformOrigin = `${x > ox ? 'left' : 'right'} ${Math.max(0, Math.min(h, oy - y))}px`;
+  }
+  function showNotif(hit) {
+    const w = hit.closest('.ipie'), kind = w.dataset.kind, i = +hit.dataset.i, x = HOME[kind][i];
+    if (!x || (kind === 'titoli' && !x.open)) return hideNotif();
+    const key = kind + i, slice = w.querySelector(`.slice[data-i="${i}"]`);
+    const render = () => {
+      notif.innerHTML = notifHTML(kind, x); placeNotif(slice); notifKey = key;
+      $$('[aria-describedby="pie-notif"]').forEach(e => e.removeAttribute('aria-describedby'));
+      hit.setAttribute('aria-describedby', 'pie-notif');
+    };
+    clearTimeout(notifT);
+    if (!notif.hidden) {
+      if (notifKey !== key) { notif.classList.add('instant'); render(); requestAnimationFrame(() => notif.classList.remove('instant')); }
+      return;
+    }
+    notifT = setTimeout(() => { render(); notif.hidden = false; }, 140);
+  }
+  function hideNotif() { clearTimeout(notifT); notifKey = null; notif.hidden = true; }
+
+  const pieHover = (target, preview) => {
     const hit = target && target.closest && target.closest('.ipie [data-i]');
     $$('.ipie').forEach(w => setActive(w, hit && w.contains(hit) ? +hit.dataset.i : null));
+    if (hit && preview) showNotif(hit); else hideNotif();
   };
-  document.addEventListener('pointerover', ev => pieHover(ev.target));
-  document.addEventListener('focusin', ev => pieHover(ev.target));
+  document.addEventListener('pointerover', ev => pieHover(ev.target, ev.pointerType !== 'touch'));
+  document.addEventListener('focusin', ev => pieHover(ev.target, true));
   document.documentElement.addEventListener('pointerleave', () => pieHover(null));
+  window.addEventListener('scroll', hideNotif, { passive: true });
   document.addEventListener('keydown', ev => {
     const sl = ev.target.closest && ev.target.closest('.slice[role="button"]');
     if (sl && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); sl.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
