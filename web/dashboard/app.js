@@ -45,7 +45,7 @@
     x: '<path d="M6 6l12 12M18 6L6 18"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
     search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
-    panel: '<rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M15 4.5v15"/>'
+    panel: '<rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M9 4.5v15"/>'
   };
   const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
 
@@ -63,8 +63,8 @@
 
   const PREF = 'mf-desk:ui';
   const pref = (() => { try { return JSON.parse(localStorage.getItem(PREF) || '{}'); } catch (e) { return {}; } })();
-  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen, leftW: ui.leftW })); } catch (e) { /* ignora */ } };
-  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320, allNews: {}, lastMain: '#riepilogo', fg: 'italy' };
+  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ sideOpen: ui.sideOpen, sideTab: ui.sideTab, leftW: ui.leftW })); } catch (e) { /* ignora */ } };
+  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, sideOpen: pref.sideOpen !== false, sideTab: pref.sideTab === 'watchlist' ? 'watchlist' : 'portafoglio', leftW: pref.leftW || 320, allNews: {}, lastMain: '#riepilogo', fg: 'italy' };
 
   const azienda = t => state.aziende[t] || D.aziende[t] || null;
   const tesiDi = t => ({ ...azienda(t).tesi, ...(state.tesi[t] || {}) });
@@ -468,7 +468,10 @@
           }).join('')}</ul>
         </div>`;
     }
-    $('#side-left').innerHTML = `<div class="side-inner">${search}${body}</div>`;
+    if (ui.sideTab === 'watchlist') body = watchBody();
+    const tabs = `<div class="seg side-tabs" role="tablist" aria-label="Elenco">${[['portafoglio', 'Portafoglio', state.portafoglio.length], ['watchlist', 'Watchlist', state.watchlist.length]]
+      .map(([k, l, c]) => `<button type="button" role="tab" data-side-tab="${k}" aria-selected="${ui.sideTab === k}">${l}<span class="c">${c}</span></button>`).join('')}</div>`;
+    $('#side-left').innerHTML = `<div class="side-inner">${search}${tabs}${body}</div>`;
     bindSearch();
     drawPortfolioChart();
   }
@@ -485,8 +488,8 @@
     $$('[data-range]').forEach(b => b.setAttribute('aria-pressed', b.dataset.range === ui.range));
   }
 
-  /* ================================================================ barra destra: watchlist */
-  function renderRight() {
+  /* ================================================================ barra laterale: scheda watchlist */
+  function watchBody() {
     const items = state.watchlist.map(w => azienda(w.ticker)).filter(Boolean);
     const list = items.length ? `<ul class="syms">${items.map(a => {
       const dec = decisioneDi(a.ticker);
@@ -501,11 +504,9 @@
       </button></li>`;
     }).join('')}</ul>` : `<div class="empty"><h3>Watchlist vuota</h3><p>Aggiungi un’azienda che stai valutando e il motivo del tuo interesse.</p>
       <button class="btn" type="button" data-act="add-watch">${icon('plus')}Aggiungi alla watchlist</button></div>`;
-    $('#side-right').innerHTML = `<div class="side-inner">
-      <div class="side-head"><h2>Watchlist ${prov('esempio', 'Watchlist di esempio')}</h2><button class="icon-btn" type="button" data-act="add-watch" aria-label="Aggiungi alla watchlist" title="Aggiungi alla watchlist">${icon('plus')}</button></div>
+    return `<div class="side-head"><h2>Watchlist ${prov('esempio', 'Watchlist di esempio')}</h2><button class="icon-btn" type="button" data-act="add-watch" aria-label="Aggiungi alla watchlist" title="Aggiungi alla watchlist">${icon('plus')}</button></div>
       ${items.length ? '<p class="label" style="padding:0 6px;margin-top:-10px">Azione da valutare · ultimo mese</p>' : ''}
-      ${list}
-    </div>`;
+      ${list}`;
   }
 
   /* ================================================================ Fear & Greed */
@@ -601,17 +602,18 @@
     const nav = mode === 'detail'
       ? `<button class="back" type="button" data-act="back">${icon('back')}${ui.lastMain === '#notizie' ? 'Notizie' : 'Riepilogo'}</button>`
       : `<nav class="seg" aria-label="Sezioni"><a href="#riepilogo"${mode === 'home' ? ' aria-current="page"' : ''}>Riepilogo</a><a href="#notizie"${mode === 'news' ? ' aria-current="page"' : ''}>Notizie</a></nav>`;
-    $('#toolbar').innerHTML = `${nav}
+    const sl = ui.sideOpen ? 'Nascondi la barra laterale' : 'Mostra la barra laterale';
+    $('#toolbar').innerHTML = `<button class="icon-btn plain" type="button" data-act="toggle-side" aria-controls="side-left" aria-pressed="${ui.sideOpen}" aria-label="${sl}" title="${sl}">${icon('panel')}</button>
+      ${nav}
       <span class="spacer"></span>
       <span class="status">Borsa Italiana · chiusa ·</span>
-      <span class="demo"${D.reale ? ` title="${esc(`${D.reale.etichetta} · Prezzi al ${D.reale.prezzi_al || D.aggiornamento} · Notizie al ${D.reale.notizie_al || D.aggiornamento}`)}"` : ''}>${D.reale ? `${esc(D.reale.etichetta)} · ${cutoffsHTML()}` : 'Dati simulati'}</span>
-      <button class="icon-btn plain" type="button" data-act="toggle-watch" aria-controls="side-right" aria-pressed="${ui.watchOpen}" aria-label="${ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'}" title="${ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'}">${icon('panel')}</button>`;
+      <span class="demo"${D.reale ? ` title="${esc(`${D.reale.etichetta} · Prezzi al ${D.reale.prezzi_al || D.aggiornamento} · Notizie al ${D.reale.notizie_al || D.aggiornamento}`)}"` : ''}>${D.reale ? `${esc(D.reale.etichetta)} · ${cutoffsHTML()}` : 'Dati simulati'}</span>`;
   }
-  function applyWatch() {
-    $('#shell').classList.toggle('watch-closed', !ui.watchOpen);
-    const side = $('#side-right'); side.inert = !ui.watchOpen;
-    const b = $('[data-act="toggle-watch"]');
-    if (b) { const l = ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'; b.setAttribute('aria-pressed', ui.watchOpen); b.setAttribute('aria-label', l); b.title = l; }
+  function applySide() {
+    $('#shell').classList.toggle('side-closed', !ui.sideOpen);
+    $('#side-left').inert = !ui.sideOpen;
+    const b = $('[data-act="toggle-side"]');
+    if (b) { const l = ui.sideOpen ? 'Nascondi la barra laterale' : 'Mostra la barra laterale'; b.setAttribute('aria-pressed', ui.sideOpen); b.setAttribute('aria-label', l); b.title = l; }
     setTimeout(() => charts.forEach((draw, host) => { if (host.isConnected) draw(); }), 320);
   }
 
@@ -1235,6 +1237,7 @@
     }
     if (kind === 'pos') { state.portafoglio.push({ ticker, quantita }); state.watchlist = state.watchlist.filter(w => w.ticker !== ticker); }
     else state.watchlist.push({ ticker });
+    ui.sideTab = kind === 'pos' ? 'portafoglio' : 'watchlist'; savePref();
     save(); closeDialog(); renderAll();
     toast(kind === 'pos' ? `${ticker} aggiunto al portafoglio` : `${ticker} aggiunto alla watchlist`);
   }
@@ -1370,19 +1373,23 @@
     else if (h === '#notizie') { ui.lastMain = '#notizie'; renderNews(); }
     else { if (h && h !== '#riepilogo') history.replaceState(null, '', '#riepilogo'); ui.lastMain = '#riepilogo'; renderHome(); }
     $('#shell').classList.toggle('is-detail', ok);
-    applyWatch();
+    applySide();
   }
   function renderAll() {
     ui.current = currentTicker();
     charts.clear();
     syncFooter();
-    renderLeft(); renderRight(); renderMain();
+    renderLeft(); renderMain();
   }
   function route() {
     hideNotif();
     ui.editing = false; ui.removing = false;
     ui.current = currentTicker();
-    // aggiorna solo la selezione nelle barre laterali, senza ridisegnarle
+    const c = ui.current;
+    if (c && ((ui.sideTab === 'portafoglio' && !held(c) && watched(c)) || (ui.sideTab === 'watchlist' && !watched(c) && held(c)))) {
+      ui.sideTab = held(c) ? 'portafoglio' : 'watchlist'; savePref(); renderLeft();
+    }
+    // aggiorna solo la selezione nella barra laterale, senza ridisegnarla
     $$('.sym').forEach(b => { if (b.dataset.open === ui.current) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
     renderMain();
     window.scrollTo(0, 0);
@@ -1411,6 +1418,8 @@
       const w = slice.closest('.ipie'); w.dataset.state = ''; setActive(w, null);
       return;
     }
+    const tab = ev.target.closest('[data-side-tab]');
+    if (tab) { ui.sideTab = tab.dataset.sideTab; savePref(); renderLeft(); $(`[data-side-tab="${ui.sideTab}"]`).focus(); return; }
     const el = ev.target.closest('[data-open],[data-act],[data-range],[data-scope],[data-filter],[data-q],[data-fg]');
     if (!el) return;
     if (el.dataset.fg) {
@@ -1429,7 +1438,7 @@
     switch (el.dataset.act) {
       case 'add-pos': openDialog('pos'); break;
       case 'more-news': { ui.allNews[t] = true; const y = scrollY; renderDetail(t); scrollTo(0, y); break; }
-      case 'toggle-watch': ui.watchOpen = !ui.watchOpen; savePref(); applyWatch(); setLeft(clampLeft(ui.leftW)); break;
+      case 'toggle-side': ui.sideOpen = !ui.sideOpen; savePref(); applySide(); break;
       case 'add-watch': openDialog('watch'); break;
       case 'dlg-close': closeDialog(); break;
       case 'clear-filter': ui.ticker = null; renderMain(); break;
@@ -1470,7 +1479,7 @@
      Doppio clic: larghezza predefinita. Tastiera: frecce (Maiusc = passo lungo), Home, Fine. */
   const LEFT_DEF = 320, LEFT_MIN = 260;
   const shell = $('#shell'), splitter = $('#splitter');
-  const leftMax = () => Math.max(LEFT_MIN, Math.min(720, window.innerWidth - (ui.watchOpen && window.innerWidth > 1240 ? 320 : 0) - 440));
+  const leftMax = () => Math.max(LEFT_MIN, Math.min(720, window.innerWidth - 440));
   const clampLeft = w => Math.max(LEFT_MIN, Math.min(leftMax(), w));
   const rubber = (over, dim = 180, c = 0.55) => (over * dim * c) / (dim + c * Math.abs(over));
   let sideRaf;

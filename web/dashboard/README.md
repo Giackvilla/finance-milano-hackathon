@@ -1,6 +1,6 @@
 # Dashboard (prototype)
 
-Portfolio on the left (value, chart, holdings), a lean summary in the middle (Fear & Greed and allocation pies), watchlist on the right. Clicking a stock opens its page as one argument: your thesis, what changed after the latest results and the last four earnings, an analysis of the MF news grouped by the thesis indicator each story touches, and only then a decision to consider that draws on both.
+A sidebar on the left that switches between your portfolio (value, chart, holdings) and your watchlist, and a lean summary in the middle (Fear & Greed and allocation pies). Clicking a stock opens its page as one argument: your thesis, what changed after the latest results and the last four earnings, an analysis of the MF news grouped by the thesis indicator each story touches, and only then a decision to consider that draws on both.
 
 `data.js` holds the demo shell (example theses as input, plus fallback esito/earnings/decisione). `real_data.js` overlays whatever the pipeline has produced.
 
@@ -30,7 +30,7 @@ Then open http://localhost:8765.
 - **Notizie** (`#notizie`): MF headlines grouped by company, kept simple. Reached from the toolbar switch.
 - **Company page** (`#azienda-<code>`): news that can move the stock (net signal, price verdict, thesis indicator), then thesis, what changed, decision and the last four earnings.
 
-The left column (value, chart, holdings) and the right column (watchlist) stay on every page.
+The sidebar stays on every page. Its **Portafoglio | Watchlist** switch picks the list, its right edge can be dragged to resize it, and the toolbar button at the top left closes it completely. Opening a company from the other list switches the sidebar to that list.
 
 ## Adding the Fear & Greed index
 
