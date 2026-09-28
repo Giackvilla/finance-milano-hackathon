@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "market_report",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": null,
     "headline_reports_move": false,
     "matched": [
@@ -36,7 +36,9 @@
     "keyword_news_type": "other",
     "gemini_des_azione": "Moncler",
     "gemini_cod_azione": "MONC",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "market_report",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "REACTED",

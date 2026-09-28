@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "market_report",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": null,
     "headline_reports_move": false,
     "matched": [
@@ -36,7 +36,9 @@
     "keyword_news_type": "market_report",
     "gemini_des_azione": "Nexi",
     "gemini_cod_azione": "NEXI",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "market_report",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "ALREADY_IN_PRICE",

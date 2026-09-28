@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "deal",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": false,
     "headline_reports_move": true,
     "matched": [
@@ -54,7 +54,9 @@
     "keyword_news_type": "deal",
     "gemini_des_azione": "Lottomatica",
     "gemini_cod_azione": "LTMC",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "deal",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "DELAYED",

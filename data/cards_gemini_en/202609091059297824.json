@@ -14,8 +14,8 @@
     "isin": "IT0003865570"
   },
   "news": {
-    "news_type": "other",
-    "classifier": "gemini",
+    "news_type": "market_report",
+    "classifier": "both",
     "scheduled": false,
     "headline_reports_move": true,
     "matched": [
@@ -55,7 +55,8 @@
     "gemini_des_azione": "Webuild",
     "gemini_cod_azione": "COGE",
     "instrument_agrees": true,
-    "reviewed": "Reviewed: Gemini's primary label was capital, but the quote is a denial of a reported request, not a capital action. Primary set to other."
+    "gemini_news_type": "capital",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "REACTED",

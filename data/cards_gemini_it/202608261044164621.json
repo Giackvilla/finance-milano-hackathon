@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "analyst",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": false,
     "headline_reports_move": false,
     "matched": [
@@ -54,7 +54,9 @@
     "keyword_news_type": "analyst",
     "gemini_des_azione": "Rai Way",
     "gemini_cod_azione": "RWAY",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "analyst",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "REACTED",

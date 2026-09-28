@@ -84,10 +84,12 @@ The controlled labels are the existing card labels: `takeover`, `earnings`,
 offerings are `capital`; commercial offers and contracts are `deal`. The output
 keeps the card's `article`, `instrument`, `news`, and `gemini` blocks.
 
-The demo cards in `data/cards_gemini_en` and `data/cards_gemini_it` use this
-classifier for `news.news_type` (`news.classifier` = `gemini`). `scheduled` and
-`headline_reports_move` stay on the keyword rules, because the verdict text uses
-them. Refresh with `python3 scripts/refresh_demo_news.py`.
+The demo cards in `data/cards_gemini_en` and `data/cards_gemini_it` use both
+classifiers (`news.classifier` = `both`). `scripts/choose_news.py` keeps the
+first Gemini topic whose quote matches that topic's rules, and falls back to
+the keyword label, then to `other`. `scheduled` and `headline_reports_move`
+stay on the keyword rules, because the verdict text uses them. Refresh the
+Gemini topics with `python3 scripts/refresh_demo_news.py`.
 
 ## For the dashboard
 

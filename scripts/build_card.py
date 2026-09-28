@@ -477,11 +477,17 @@ def news_block_for(
         listed,
         language=lang,
     )
+    from choose_news import choose_news_type
+
     gem_code = (g.get("instrument") or {}).get("cod_azione")
+    topics = g["news"]["topics"]
+    chosen, reason = choose_news_type(kw["news_type"], topics, titolo)
     block.update({
-        "news_type": g["news"]["news_type"],
-        "classifier": "gemini",
-        "topics": g["news"]["topics"],
+        "news_type": chosen,
+        "classifier": "both",
+        "choice": reason,
+        "gemini_news_type": g["news"]["news_type"],
+        "topics": topics,
         "summary": g["gemini"]["summary"],
         "company_evidence": g["gemini"]["company_evidence"],
         "matched": g["news"]["matched"],

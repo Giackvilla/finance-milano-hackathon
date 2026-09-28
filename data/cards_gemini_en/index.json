@@ -19,7 +19,7 @@
       "peak_move_pct": 17.65,
       "retained_pct": 100,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609151013178211",
@@ -33,7 +33,7 @@
       "peak_move_pct": 8.52,
       "retained_pct": 50,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609102204136722",
@@ -47,7 +47,7 @@
       "peak_move_pct": -1.96,
       "retained_pct": 0,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609110915249931",
@@ -61,7 +61,7 @@
       "peak_move_pct": -2.35,
       "retained_pct": 43,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609101405465587",
@@ -75,7 +75,7 @@
       "peak_move_pct": -2.99,
       "retained_pct": -12,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609101156153188",
@@ -89,21 +89,21 @@
       "peak_move_pct": -3.45,
       "retained_pct": 54,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609091059297824",
       "titolo": "Webuild smentisce la richiesta di 22 miliardi al governo: il titolo chiude in calo del 7,9%",
       "pub_local": "2026-09-09T10:45:58",
       "des_azione": "Webuild",
-      "news_type": "other",
+      "news_type": "market_report",
       "headline_reports_move": true,
       "status": "REACTED",
       "peak_z": -6.69,
       "peak_move_pct": -7.96,
       "retained_pct": 126,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609041033385407",
@@ -117,7 +117,7 @@
       "peak_move_pct": 4.05,
       "retained_pct": 61,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609020746321794",
@@ -131,7 +131,7 @@
       "peak_move_pct": 7.7,
       "retained_pct": 170,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202609010736168283",
@@ -145,7 +145,7 @@
       "peak_move_pct": 2.29,
       "retained_pct": -98,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202608270903428328",
@@ -159,7 +159,7 @@
       "peak_move_pct": -2.61,
       "retained_pct": 12,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202608270925452473",
@@ -173,7 +173,7 @@
       "peak_move_pct": 3.27,
       "retained_pct": -12,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202608261044164621",
@@ -187,7 +187,7 @@
       "peak_move_pct": -2.55,
       "retained_pct": 225,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     },
     {
       "content_id": "202608250749363291",
@@ -201,7 +201,7 @@
       "peak_move_pct": 4.61,
       "retained_pct": -35,
       "adjective_matches": true,
-      "classifier": "gemini"
+      "classifier": "both"
     }
   ]
 }

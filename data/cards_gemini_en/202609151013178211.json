@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "earnings",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": true,
     "headline_reports_move": false,
     "matched": [
@@ -45,7 +45,9 @@
     "keyword_news_type": "earnings",
     "gemini_des_azione": "Newprinces",
     "gemini_cod_azione": "NWL",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "earnings",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "PARTLY_IN_PRICE",

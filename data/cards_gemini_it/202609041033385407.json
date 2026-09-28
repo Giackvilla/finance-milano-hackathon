@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "plan",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": false,
     "headline_reports_move": false,
     "matched": [
@@ -54,7 +54,9 @@
     "keyword_news_type": "capital",
     "gemini_des_azione": "Iren",
     "gemini_cod_azione": "AET",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "plan",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "REACTED",

@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "takeover",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": false,
     "headline_reports_move": false,
     "matched": [
@@ -54,7 +54,9 @@
     "keyword_news_type": "governance",
     "gemini_des_azione": "Trevi",
     "gemini_cod_azione": "TFI",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "takeover",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "ALREADY_IN_PRICE",

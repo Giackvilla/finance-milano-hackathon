@@ -51,7 +51,7 @@ def main():
             for entry in index["cards"]:
                 if entry["content_id"] == cid:
                     entry["news_type"] = block["news_type"]
-                    entry["classifier"] = "gemini"
+                    entry["classifier"] = block["classifier"]
             index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n")
         print(
             f"[{i}/{len(ids)}] {sample['instrument']['des_azione']}: "

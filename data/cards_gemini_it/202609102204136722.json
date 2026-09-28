@@ -15,7 +15,7 @@
   },
   "news": {
     "news_type": "governance",
-    "classifier": "gemini",
+    "classifier": "both",
     "scheduled": false,
     "headline_reports_move": false,
     "matched": [
@@ -45,7 +45,9 @@
     "keyword_news_type": "governance",
     "gemini_des_azione": "Italmobiliare",
     "gemini_cod_azione": "ITMO",
-    "instrument_agrees": true
+    "instrument_agrees": true,
+    "gemini_news_type": "governance",
+    "choice": "gemini_quote"
   },
   "verdict": {
     "status": "ALREADY_IN_PRICE",
