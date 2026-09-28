@@ -44,7 +44,10 @@
     doc: '<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/>',
     x: '<path d="M6 6l12 12M18 6L6 18"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
-    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>'
+    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+    expand: '<path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/>',
+    collapse: '<path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/>',
+    panel: '<rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M15 4.5v15"/>'
   };
   const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
 
@@ -60,7 +63,10 @@
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* ignora */ } }
   let state = load();
 
-  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null };
+  const PREF = 'mf-desk:ui';
+  const pref = (() => { try { return JSON.parse(localStorage.getItem(PREF) || '{}'); } catch (e) { return {}; } })();
+  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen })); } catch (e) { /* ignora */ } };
+  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false };
 
   const azienda = t => state.aziende[t] || D.aziende[t] || null;
   const tesiDi = t => ({ ...azienda(t).tesi, ...(state.tesi[t] || {}) });
@@ -195,6 +201,38 @@
       <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
   }
 
+  /* ================================================================ allocazione: torta */
+  const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)'];
+  function sectors(rows) {
+    const by = {};
+    rows.forEach(r => { const s = D.settori[r.ticker] || 'Altro'; (by[s] = by[s] || { p: 0, v: 0 }); by[s].p += r.peso; by[s].v += r.valore; });
+    let secs = Object.entries(by).map(([n, o]) => ({ n, p: o.p, v: o.v })).sort((a, b) => b.v - a.v);
+    if (secs.length > 5) {
+      const rest = secs.slice(4);
+      secs = secs.slice(0, 4).concat([{ n: 'Altro', p: rest.reduce((s, x) => s + x.p, 0), v: rest.reduce((s, x) => s + x.v, 0) }]);
+    }
+    let i = 0;
+    return secs.map(x => ({ ...x, col: x.n === 'Altro' ? 'var(--s-other)' : SERIES[i++] }));
+  }
+  /* Torta con spicchi separati da 2px del colore della superficie (ring). */
+  function pieSVG(secs, size, ring) {
+    const r = size / 2, tot = secs.reduce((s, x) => s + x.p, 0) || 1;
+    let a0 = -Math.PI / 2;
+    const pt = a => `${(r + r * Math.cos(a)).toFixed(2)} ${(r + r * Math.sin(a)).toFixed(2)}`;
+    const paths = secs.map((x, i) => {
+      const f = x.p / tot, a1 = a0 + f * 2 * Math.PI;
+      const d = f > 0.9999 ? `M${r} 0A${r} ${r} 0 1 1 ${r - 0.01} 0Z` : `M${r} ${r}L${pt(a0)}A${r} ${r} 0 ${f > 0.5 ? 1 : 0} 1 ${pt(a1)}Z`;
+      a0 = a1;
+      return `<path d="${d}" fill="${x.col}" stroke="${ring}" stroke-width="2" stroke-linejoin="round" data-slice="${i}"><title>${esc(x.n)} ${nf(x.p, 1)}%</title></path>`;
+    }).join('');
+    return `<svg class="pie" width="${size}" height="${size}" viewBox="-1 -1 ${size + 2} ${size + 2}" role="img" aria-label="Allocazione per settore: ${esc(secs.map(x => `${x.n} ${nf(x.p, 1)}%`).join(', '))}">${paths}</svg>`;
+  }
+  function pieBlock(secs, size, ring, withValues) {
+    return `<div class="pie-wrap${withValues ? ' lg' : ''}">${pieSVG(secs, size, ring)}
+      <ul class="pie-legend">${secs.map((x, i) => `<li data-leg="${i}"><i style="background:${x.col}"></i><span>${esc(x.n)}</span><b>${nf(x.p, 1)}%${withValues ? `<em>${eur(x.v, 0)}</em>` : ''}</b></li>`).join('')}</ul></div>`;
+  }
+  const dayChange = (rows, tot) => { const prev = rows.reduce((s, r) => s + r.quantita * r.a.prezzo / (1 + varDi(r.ticker) / 100), 0); return { day: tot - prev, pct: (tot / prev - 1) * 100 }; };
+
   /* ================================================================ barra sinistra: portafoglio */
   const RANGES = { '1M': 21, '3M': 63, '1A': 252, 'MAX': D.giorni.length };
 
@@ -208,21 +246,17 @@
         <div class="empty"><h3>Nessuna posizione</h3><p>Aggiungi un titolo che possiedi e il motivo per cui l’hai comprato: lo confronteremo con risultati e notizie.</p>
           <button class="btn" type="button" data-act="add-pos">${icon('plus')}Aggiungi posizione</button></div>`;
     } else {
-      const prev = rows.reduce((s, r) => s + r.quantita * r.a.prezzo / (1 + varDi(r.ticker) / 100), 0);
-      const day = tot - prev, dayPct = (tot / prev - 1) * 100;
-
-      const bySec = {};
-      rows.forEach(r => { const s = D.settori[r.ticker] || 'Altro'; bySec[s] = (bySec[s] || 0) + r.peso; });
-      let secs = Object.entries(bySec).sort((a, b) => b[1] - a[1]);
-      if (secs.length > 5) { const other = secs.slice(4).reduce((s, x) => s + x[1], 0); secs = secs.slice(0, 4).concat([['Altro', other]]); }
-      const cols = ['--s1', '--s2', '--s3', '--s4', '--s5'];
-      const secCol = (n, i) => (n === 'Altro' ? 'var(--s-other)' : `var(${cols[i]})`);
+      const { day, pct: dayPct } = dayChange(rows, tot);
+      const secs = sectors(rows);
 
       const counts = { pos: 0, neu: 0, warn: 0, na: 0 };
       rows.forEach(r => counts[STATO[statoDi(r.a)].cls]++);
       const sum = [counts.pos && `${counts.pos} rafforzate`, counts.neu && `${counts.neu} invariate`, counts.warn && `${counts.warn} da rivedere`, counts.na && `${counts.na} senza dati`].filter(Boolean).join(' · ');
 
-      body = `<div class="side-head"><h2>Portafoglio</h2><button class="icon-btn" type="button" data-act="add-pos" aria-label="Aggiungi posizione" title="Aggiungi posizione">${icon('plus')}</button></div>
+      const open = location.hash === '#portafoglio';
+      body = `<div class="side-head"><h2>Portafoglio</h2><div class="side-tools">
+          <button class="icon-btn" type="button" data-act="expand-port" aria-pressed="${open}" aria-label="${open ? 'Chiudi la vista estesa' : 'Espandi il portafoglio'}" title="${open ? 'Chiudi la vista estesa' : 'Espandi il portafoglio'}">${icon(open ? 'collapse' : 'expand')}</button>
+          <button class="icon-btn" type="button" data-act="add-pos" aria-label="Aggiungi posizione" title="Aggiungi posizione">${icon('plus')}</button></div></div>
         <div class="summary">
           <div class="label">Valore totale · al ${esc(D.aggiornamento)}</div>
           <div class="total num">${eur(tot)}</div>
@@ -235,9 +269,7 @@
           </div>
           <div class="range-delta num" id="rdelta" style="padding:6px 6px 0"></div>
         </div>
-        <div class="alloc"><div class="label">Allocazione per settore</div>
-          <div class="alloc-bar" aria-hidden="true">${secs.map(([n, p], i) => `<span style="flex:${p};background:${secCol(n, i)}"></span>`).join('')}</div>
-          <div class="legend">${secs.map(([n, p], i) => `<span><i style="background:${secCol(n, i)}"></i>${esc(n)} <b>${nf(p, 1)}%</b></span>`).join('')}</div></div>
+        <div class="alloc"><div class="label">Allocazione per settore</div>${pieBlock(secs, 104, 'var(--side)', false)}</div>
         <div>
           <div class="side-head"><h3>Posizioni</h3></div><p class="label" style="padding:0 6px;margin:2px 0 6px">Tesi: ${sum}</p>
           <ul class="syms">${rows.map(r => {
@@ -257,13 +289,63 @@
   }
 
   function drawPortfolioChart() {
-    const host = $('#pchart'); if (!host) return;
     const { rows } = posizioni();
+    if (!rows.length) return;
     const n = RANGES[ui.range], N = D.giorni.length, vals = new Array(n).fill(0);
     rows.forEach(r => { const s = serieDi(r.ticker); for (let i = 0; i < n; i++) vals[i] += r.quantita * s[N - n + i]; });
-    areaChart(host, vals, D.giorni.slice(N - n), { h: 132, padR: 40, xLabels: [0.15, 0.85], year: ui.range === 'MAX', label: 'Valore del portafoglio' });
-    const ch = vals[n - 1] - vals[0], pct = (vals[n - 1] / vals[0] - 1) * 100;
-    $('#rdelta').innerHTML = `<span class="${dirOf(ch)}">${ch >= 0 ? '+' : '−'}${eur(Math.abs(ch), 0)} (${signed(pct, 1)})</span> <span class="muted">nel periodo</span>`;
+    const dates = D.giorni.slice(N - n), ch = vals[n - 1] - vals[0], pct = (vals[n - 1] / vals[0] - 1) * 100;
+    const delta = `<span class="${dirOf(ch)}">${ch >= 0 ? '+' : '−'}${eur(Math.abs(ch), 0)} (${signed(pct, 1)})</span> <span class="muted">nel periodo</span>`;
+    if ($('#pchart')) { areaChart($('#pchart'), vals, dates, { h: 132, padR: 40, xLabels: [0.15, 0.85], year: ui.range === 'MAX', label: 'Valore del portafoglio' }); $('#rdelta').innerHTML = delta; }
+    if ($('#xchart')) { areaChart($('#xchart'), vals, dates, { h: 260, padR: 48, year: ui.range === 'MAX', ring: 'var(--card)', label: 'Valore del portafoglio' }); $('#xdelta').innerHTML = delta; }
+    $$('[data-range]').forEach(b => b.setAttribute('aria-pressed', b.dataset.range === ui.range));
+  }
+
+  /* ================================================================ area centrale: portafoglio esteso */
+  function renderPortfolioView() {
+    toolbar(true);
+    const { rows, tot } = posizioni();
+    const d = asOfDate;
+    const title = `<h1 class="page-title" tabindex="-1" id="ptitle">Portafoglio <span class="date">${d.getUTCDate()} ${MESI_LUNGHI[d.getUTCMonth()]}</span></h1>`;
+    if (!rows.length) {
+      $('#app').innerHTML = `<div class="view">${title}<div class="empty" style="margin-top:40px"><h3>Nessuna posizione</h3><p>Aggiungi un titolo che possiedi e il motivo per cui l’hai comprato.</p>
+        <button class="btn" type="button" data-act="add-pos">${icon('plus')}Aggiungi posizione</button></div></div>`;
+      return;
+    }
+    const { day, pct } = dayChange(rows, tot), secs = sectors(rows);
+    const byState = ['rafforzata', 'invariata', 'indebolita', 'insufficiente'].map(k => ({ k, list: rows.filter(r => statoDi(r.a) === k) })).filter(x => x.list.length);
+    const table = rows.map(r => {
+      const dec = decisioneDi(r.ticker), v = varDi(r.ticker);
+      return `<tr data-open="${esc(r.ticker)}">
+        <td><button class="rowlink" type="button" data-open="${esc(r.ticker)}"><b>${esc(r.ticker)}</b><span>${esc(r.a.nome)}</span></button></td>
+        <td>${nf(r.quantita, 0)}</td><td>${nf(r.a.prezzo, priceDigits(r.a.prezzo))}</td><td>${eur(r.valore)}</td><td>${nf(r.peso, 1)}%</td>
+        <td class="${dirOf(v)}">${signed(v)}</td>
+        <td class="l">${chipStato(statoDi(r.a))}</td>
+        <td class="l">${dec ? AZIONI.portafoglio[dec.azione] : '<span class="muted">Dati insufficienti</span>'}</td>
+      </tr>`;
+    }).join('');
+    $('#app').innerHTML = `<div class="view">
+      ${title}
+      <div class="dh-quote" style="margin-top:10px"><span class="p">${eur(tot)}</span><span class="${dirOf(day)}" style="font-weight:500">${day >= 0 ? '+' : '−'}${eur(Math.abs(day))} (${signed(pct)})</span><span class="muted">ultima seduta · ${rows.length} posizioni</span></div>
+      <div class="detail" style="margin-top:20px">
+        <section class="card">
+          <div class="card-h"><h2>Andamento</h2><div class="seg" role="group" aria-label="Periodo del grafico">${Object.keys(RANGES).map(k => `<button type="button" data-range="${k}" aria-pressed="${ui.range === k}">${k}</button>`).join('')}</div></div>
+          <div class="chart" id="xchart"></div>
+          <div class="range-delta num" id="xdelta" style="margin-top:8px;font-size:14px"></div>
+        </section>
+        <div class="split" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+          <section class="card"><div class="card-h"><h2>Allocazione per settore</h2></div>${pieBlock(secs, 176, 'var(--card)', true)}</section>
+          <section class="card"><div class="card-h"><h2>Stato delle tesi</h2><span class="muted">dopo gli ultimi risultati</span></div>
+            <dl class="group theses">${byState.map(x => `<div><dt>${chipStato(x.k)}</dt><dd><b>${x.list.length}</b>${x.list.map(r => esc(r.ticker)).join(', ')}</dd></div>`).join('')}</dl></section>
+        </div>
+        <section class="card">
+          <div class="card-h"><h2>Posizioni</h2><button class="btn secondary" type="button" data-act="add-pos" style="height:30px;padding:0 14px">${icon('plus')}Aggiungi posizione</button></div>
+          <div class="table-wrap"><table class="hold">
+            <thead><tr><th scope="col">Titolo</th><th scope="col">Quantità</th><th scope="col">Prezzo</th><th scope="col">Valore</th><th scope="col">Peso</th><th scope="col">Oggi</th><th scope="col" class="l">Tesi</th><th scope="col" class="l">Decisione</th></tr></thead>
+            <tbody>${table}</tbody></table></div>
+        </section>
+      </div>
+    </div>`;
+    drawPortfolioChart();
   }
 
   /* ================================================================ barra destra: watchlist */
@@ -290,8 +372,16 @@
   function toolbar(back) {
     $('#toolbar').innerHTML = `${back ? `<button class="back" type="button" data-act="back">${icon('back')}Notizie</button>` : ''}
       <span class="spacer"></span>
-      <span class="status">Borsa Italiana · chiusa</span>
-      <span class="demo">Demo — dati simulati</span>`;
+      <span class="status">Borsa Italiana · chiusa ·</span>
+      <span class="demo">Dati simulati</span>
+      <button class="icon-btn plain" type="button" data-act="toggle-watch" aria-controls="side-right" aria-pressed="${ui.watchOpen}" aria-label="${ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'}" title="${ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'}">${icon('panel')}</button>`;
+  }
+  function applyWatch() {
+    $('#shell').classList.toggle('watch-closed', !ui.watchOpen);
+    const side = $('#side-right'); side.inert = !ui.watchOpen;
+    const b = $('[data-act="toggle-watch"]');
+    if (b) { const l = ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'; b.setAttribute('aria-pressed', ui.watchOpen); b.setAttribute('aria-label', l); b.title = l; }
+    setTimeout(() => charts.forEach((draw, host) => { if (host.isConnected) draw(); }), 320);
   }
 
   function newsMatches(n) {
@@ -416,7 +506,7 @@
     const head = `<div class="dh">
         <div class="dh-title"><h1 tabindex="-1" id="ptitle">${esc(a.ticker)}</h1><span class="n">${esc(a.nome)}</span></div>
         <div class="dh-quote"><span class="p">${eur(a.prezzo, priceDigits(a.prezzo))}</span><span class="${dirOf(v)}" style="font-weight:500">${signed(v)}</span><span class="muted">Chiusura del ${esc(D.aggiornamento)}</span></div>
-        <div class="dh-meta">${isHeld ? `<span class="tag">In portafoglio · ${nf(pos ? pos.peso : 0, 1)}%</span>` : isWatched ? '<span class="tag">In watchlist</span>' : ''}${a.settore && a.settore !== '—' ? `<span class="tag">${esc(a.settore)}</span>` : ''}</div>
+        <div class="dh-meta tag">${[isHeld ? `In portafoglio · peso ${nf(pos ? pos.peso : 0, 1)}%` : isWatched ? 'In watchlist' : '', a.settore && a.settore !== '—' ? esc(a.settore) : ''].filter(Boolean).join(' · ')}</div>
       </div>
       <section class="card"><div class="split">
         <div><div class="label" style="margin-bottom:6px">Ultimo anno · le linee verticali indicano la pubblicazione dei risultati</div><div class="chart" id="dchart"></div></div>
@@ -437,9 +527,9 @@
         ${mod}
         <p style="font-size:16px;max-width:68ch">${esc(e ? e.sintesi : 'Non ci sono risultati trimestrali collegati a questa azienda nella demo: non è possibile confrontare la tesi con i dati.')}</p>
         ${e && (e.fatti.length || e.interpretazioni.length) ? `<div class="split">
-          ${e.fatti.length ? `<div class="block"><h3 class="mini">Fatti documentati</h3><ul class="facts">${e.fatti.map(f => `<li><span class="ftag fact">Dato</span><span>${esc(f)}</span></li>`).join('')}</ul>
+          ${e.fatti.length ? `<div class="block"><h3 class="mini">Fatti documentati nei risultati</h3><ul class="facts">${e.fatti.map(f => `<li>${esc(f)}</li>`).join('')}</ul>
             <div class="srcnote">${icon('doc')}Fonte non disponibile nella demo</div></div>` : ''}
-          ${e.interpretazioni.length ? `<div class="block"><h3 class="mini">Interpretazioni</h3><ul class="interps">${e.interpretazioni.map(f => `<li><span class="ftag interp">Lettura</span><span>${esc(f)}</span></li>`).join('')}</ul></div>` : ''}
+          ${e.interpretazioni.length ? `<div class="block"><h3 class="mini">Interpretazioni (non sono dati)</h3><ul class="interps">${e.interpretazioni.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''}
         </div>` : ''}
       </div>
     </section>`;
@@ -460,7 +550,7 @@
             <p style="font-size:16px">${esc(dec.motivazione)}</p>
             <p class="disclaimer">Un’indicazione da valutare, non un ordine operativo né una previsione: nessuna probabilità di successo è stimata.</p>
           </div>
-          <div class="block"><h3 class="mini">Elementi considerati</h3><div class="considered">${considered.map(c => `<span>${esc(c)}</span>`).join('')}</div></div>
+          <div class="block"><h3 class="mini">Elementi considerati</h3><p class="considered">${considered.map(esc).join(' · ')}</p></div>
         </div>
         <div class="dec-grid" style="margin-top:18px">
           <div class="block"><h3 class="mini">Elementi a favore</h3><ul class="bullets">${dec.aFavore.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
@@ -549,7 +639,7 @@
       const imp = EFFETTO[e.impatto.effetto];
       panel = `<div class="qpanel">
         <div class="stack">
-          <div class="block"><h3 class="mini">Tre fatti essenziali</h3><ul class="facts">${e.fatti.map(f => `<li><span class="ftag fact">Dato</span><span>${esc(f)}</span></li>`).join('')}</ul></div>
+          <div class="block"><h3 class="mini">Tre fatti essenziali</h3><ul class="facts">${e.fatti.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>
           <div class="block"><h3 class="mini">Indicazioni del management</h3><p>${esc(e.guidance)}</p></div>
           <div class="block"><h3 class="mini">Cosa è cambiato dal trimestre precedente</h3><p>${esc(e.cambiato)}</p></div>
           <div class="block"><h3 class="mini">Impatto sulla tua tesi</h3><div><span class="chip ${imp.cls}">${icon(imp.ic)}${imp.label}</span></div><p>${esc(e.impatto.testo)}</p></div>
@@ -661,9 +751,14 @@
 
   function renderMain() {
     charts.forEach((_, host) => { if (host.id !== 'pchart') charts.delete(host); });
-    const t = currentTicker(), ok = !!(t && azienda(t));
-    if (ok) renderDetail(t); else { if (t) history.replaceState(null, '', '#notizie'); renderNews(); }
-    $('#shell').classList.toggle('is-detail', ok);
+    const t = currentTicker(), ok = !!(t && azienda(t)), port = location.hash === '#portafoglio';
+    if (port) renderPortfolioView();
+    else if (ok) renderDetail(t);
+    else { if (t) history.replaceState(null, '', '#notizie'); renderNews(); }
+    $('#shell').classList.toggle('is-detail', ok || port);
+    const ex = $('[data-act="expand-port"]');
+    if (ex) { const l = port ? 'Chiudi la vista estesa' : 'Espandi il portafoglio'; ex.setAttribute('aria-pressed', port); ex.setAttribute('aria-label', l); ex.title = l; ex.innerHTML = icon(port ? 'collapse' : 'expand'); }
+    applyWatch();
   }
   function renderAll() {
     ui.current = currentTicker();
@@ -697,13 +792,15 @@
     const el = ev.target.closest('[data-open],[data-act],[data-range],[data-scope],[data-filter],[data-q]');
     if (!el) return;
     if (el.dataset.open) { openCompany(el.dataset.open); return; }
-    if (el.dataset.range) { ui.range = el.dataset.range; $$('[data-range]').forEach(b => b.setAttribute('aria-pressed', b === el)); drawPortfolioChart(); return; }
+    if (el.dataset.range) { ui.range = el.dataset.range; drawPortfolioChart(); return; }
     if (el.dataset.scope) { ui.scope = el.dataset.scope; ui.ticker = null; renderMain(); return; }
     if (el.dataset.filter) { ui.ticker = ui.ticker === el.dataset.filter ? null : el.dataset.filter; renderMain(); return; }
     const t = currentTicker();
     if (el.dataset.q) { ui.quarter[t] = +el.dataset.q; $('#earn').innerHTML = earningsHTML(t); $(`#qt-${el.dataset.q}`).focus(); return; }
     switch (el.dataset.act) {
       case 'add-pos': openDialog('pos'); break;
+      case 'expand-port': location.hash = location.hash === '#portafoglio' ? '#notizie' : '#portafoglio'; break;
+      case 'toggle-watch': ui.watchOpen = !ui.watchOpen; savePref(); applyWatch(); break;
       case 'add-watch': openDialog('watch'); break;
       case 'dlg-close': closeDialog(); break;
       case 'clear-filter': ui.ticker = null; renderMain(); break;
@@ -737,6 +834,19 @@
     const tabs = $$('.qtab'), i = tabs.indexOf(tab);
     tabs[(i + (ev.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length].click();
   });
+
+  // torta: passando su uno spicchio si evidenzia la voce di legenda, e viceversa
+  document.addEventListener('pointerover', ev => {
+    const hit = ev.target.closest && ev.target.closest('[data-slice],[data-leg]');
+    $$('.pie-wrap').forEach(w => {
+      const on = !!hit && w.contains(hit);
+      w.classList.toggle('hl', on);
+      const i = on ? (hit.dataset.slice ?? hit.dataset.leg) : null;
+      $$('[data-slice],[data-leg]', w).forEach(e => e.classList.toggle('on', on && (e.dataset.slice ?? e.dataset.leg) === i));
+    });
+  });
+
+  document.documentElement.addEventListener('pointerleave', () => $$('.pie-wrap.hl').forEach(w => { w.classList.remove('hl'); $$('.on', w).forEach(e => e.classList.remove('on')); }));
 
   // barra degli strumenti: separatore solo quando il contenuto ci scorre sotto
   const tb = $('#toolbar');
