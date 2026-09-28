@@ -179,7 +179,17 @@
   }
   const ownership = t => (held(t) ? 'p' : watched(t) ? 'w' : '');
   const varDi = t => (D.mercato[t] ?? 0);
-  const serieDi = t => { const a = azienda(t); return D.serie(t, a.prezzo, varDi(t)); };
+  const serieDi = t => {
+    const extra = D.catalogSerie && D.catalogSerie[t];
+    if (extra && extra.length) return extra;
+    const a = azienda(t);
+    return D.serie(t, a.prezzo, varDi(t));
+  };
+  /* Nomi con analisi già generata dalla pipeline. Gli altri, se sono nel bundle MF, si leggono al volo. */
+  const PIPELINE = new Set(Object.keys(D.aziende).filter(t => {
+    const a = D.aziende[t];
+    return a && (a.tesi_usata || (a.esito && a.esito.metodo));
+  }));
   const linked = n => n.strumenti.filter(s => s.sim >= D.soglia);
   /* Provenienza: dataset = prezzi/articoli MF; simulato = serie inventata; esempio = holding/tesi demo. */
   const prezzoFonte = a => (a && a.prezzo_fonte) || (D.reale ? 'simulato' : 'esempio');
@@ -569,7 +579,7 @@
             return `<li><button class="sym" type="button" data-open="${esc(r.ticker)}"${ui.current === r.ticker ? ' aria-current="page"' : ''}>
               <span class="sym-l"><span class="sym-t">${esc(r.ticker)} ${pxBadge}</span><span class="sym-n">${esc(r.a.nome)}</span>
                 <span class="sym-s"><i class="sdot ${st.cls}"></i>${st.dash} · ${pesoTxt}</span></span>
-              ${sparkline(serieDi(r.ticker).slice(-22))}
+              ${sparkline((() => { const s = serieDi(r.ticker).slice(-22).filter(v => v != null); return s.length > 1 ? s : [r.a.prezzo, r.a.prezzo]; })())}
               <span class="sym-r"><span class="sym-p">${nf(r.a.prezzo, priceDigits(r.a.prezzo))}</span>${pill(varDi(r.ticker))}</span>
             </button></li>`;
           }).join('')}</ul>
@@ -588,8 +598,15 @@
     const chartRows = (base && base.length) ? base : rows;
     if (!chartRows.length) return;
     const n = RANGES[ui.range], N = D.giorni.length, vals = new Array(n).fill(0);
-    chartRows.forEach(r => { const s = serieDi(r.ticker); for (let i = 0; i < n; i++) vals[i] += r.quantita * s[N - n + i]; });
-    const dates = D.giorni.slice(N - n), ch = vals[n - 1] - vals[0], pct = (vals[n - 1] / vals[0] - 1) * 100;
+    chartRows.forEach(r => {
+      const s = serieDi(r.ticker);
+      for (let i = 0; i < n; i++) {
+        const px = s[N - n + i];
+        if (px == null) continue;
+        vals[i] += r.quantita * px;
+      }
+    });
+    const dates = D.giorni.slice(N - n), ch = vals[n - 1] - vals[0], pct = vals[0] ? (vals[n - 1] / vals[0] - 1) * 100 : 0;
     const delta = `<span class="${dirOf(ch)}">${ch >= 0 ? '+' : '−'}${eur(Math.abs(ch), 0)} (${signed(pct, 1)})</span> <span class="muted">nel periodo</span>`;
     if ($('#pchart')) { areaChart($('#pchart'), vals, dates, { h: w => Math.round(Math.max(132, Math.min(300, w * 0.42))), padR: 40, xLabels: [0.15, 0.85], year: ui.range === 'MAX', label: 'Valore del portafoglio' }); $('#rdelta').innerHTML = delta; }
     $$('[data-range]').forEach(b => b.setAttribute('aria-pressed', b.dataset.range === ui.range));
@@ -606,7 +623,7 @@
         : (D.reale ? prov('dataset', 'Prezzo da dataset MF') : prov('esempio', 'Prezzo demo'));
       return `<li><button class="sym" type="button" data-open="${esc(a.ticker)}"${ui.current === a.ticker ? ' aria-current="page"' : ''} title="${esc(tesiDi(a.ticker).motivo)}">
         <span class="sym-l"><span class="sym-t">${esc(a.ticker)} ${pxBadge}</span><span class="sym-n">${esc(a.nome)}</span><span class="sym-s">${act}</span></span>
-        ${sparkline(serieDi(a.ticker).slice(-22))}
+        ${sparkline((() => { const s = serieDi(a.ticker).slice(-22).filter(v => v != null); return s.length > 1 ? s : [a.prezzo, a.prezzo]; })())}
         <span class="sym-r"><span class="sym-p">${nf(a.prezzo, priceDigits(a.prezzo))}</span>${pill(varDi(a.ticker))}</span>
       </button></li>`;
     }).join('')}</ul>` : `<div class="empty"><h3>Watchlist vuota</h3><p>Aggiungi un’azienda che stai valutando e il motivo del tuo interesse.</p>
@@ -1272,7 +1289,8 @@
 
     $('#app').innerHTML = `<div class="view detail">${head}${tesi}${latest}${earn}${decisione}${altro}</div>`;
 
-    const N = D.giorni.length, n = 252, s = serieDi(t).slice(N - n), dates = D.giorni.slice(N - n);
+    const N = D.giorni.length, n = 252, fullS = serieDi(t), listed = fullS.findIndex(v => v != null);
+    const from = Math.max(listed < 0 ? 0 : listed, N - n), s = fullS.slice(from), dates = D.giorni.slice(from);
     const markers = q.map(e => { const pd = parseIt(e.data); if (!pd) return null; const i = dates.findIndex(d => d >= pd); return i >= 0 ? { i, label: e.label.replace(' 20', '') } : null; }).filter(Boolean);
     const drawPrice = () => areaChart($('#dchart'), s, dates, { h: 150, markers, ring: 'var(--card)', fmt: v => eur(v, priceDigits(v)), label: `Prezzo di ${a.nome} nell’ultimo anno` });
     $('#altro').addEventListener('toggle', ev => { if (ev.target.open) drawPrice(); });
@@ -1429,7 +1447,7 @@
     const pos = kind === 'pos';
     dlg.innerHTML = `<form class="form" id="add-form" novalidate>
       <h2 id="dlg-title">${pos ? 'Aggiungi posizione' : 'Aggiungi alla watchlist'}</h2>
-      <p class="intro">${pos ? 'Indica il titolo e il motivo per cui l’hai comprato.' : 'Indica l’azienda e il motivo del tuo interesse.'} Nella demo i prezzi si inseriscono a mano.</p>
+      <p class="intro">${pos ? 'Indica il titolo e il motivo per cui l’hai comprato.' : 'Indica l’azienda e il motivo del tuo interesse.'} Se il titolo è nel dataset MF, il prezzo è la chiusura già in archivio.</p>
       <div class="two">
         <div class="field"><label for="a-nome">Nome azienda</label><div class="ac-wrap"><input id="a-nome" name="nome" required autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="a-nome-list" aria-expanded="false"><ul id="a-nome-list" class="ac-list" role="listbox" hidden></ul></div><span class="err" hidden></span></div>
         <div class="field"><label for="a-ticker">Ticker</label><div class="ac-wrap"><input id="a-ticker" name="ticker" required autocomplete="off" maxlength="10" style="text-transform:uppercase" role="combobox" aria-autocomplete="list" aria-controls="a-ticker-list" aria-expanded="false"><ul id="a-ticker-list" class="ac-list" role="listbox" hidden></ul></div><span class="err" hidden></span></div>
@@ -1445,7 +1463,7 @@
     </form>`;
     dlg.dataset.kind = kind;
     const form = $('#add-form', dlg);
-    const applyPick = c => fillFromCompany(c, form);
+    const applyPick = c => { fillFromCompany(c, form); fillCatalogPrice(c.ticker, form); };
     wireCompanySuggest($('#a-nome', dlg), { listId: 'a-nome-list', onPick: applyPick });
     wireCompanySuggest($('#a-ticker', dlg), { listId: 'a-ticker-list', onPick: applyPick });
     if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
@@ -1490,6 +1508,7 @@
     ui.sideTab = kind === 'pos' ? 'portafoglio' : 'watchlist'; savePref();
     save(); closeDialog(); renderAll();
     toast(kind === 'pos' ? `${ticker} aggiunto al portafoglio` : `${ticker} aggiunto alla watchlist`);
+    if (!PIPELINE.has(ticker)) hydrateCatalog([ticker]);
   }
 
   function submitTesi(form, t) {
@@ -1518,9 +1537,102 @@
 
   function mergeAzienda(t, payload) {
     if (!payload || typeof payload !== 'object') return;
-    if (!D.aziende[t]) return;
+    if (!D.aziende[t]) {
+      if (state.aziende[t] || payload.catalog || payload.prezzo_fonte === 'dataset') applyCatalog(t, payload);
+      return;
+    }
     Object.assign(D.aziende[t], payload);
     if (state.aziende[t]) Object.assign(state.aziende[t], payload);
+  }
+
+  /* Prezzo, serie e lettura della tesi per un nome del bundle che non è tra i dieci del demo. */
+  function applyCatalog(t, payload) {
+    if (!payload) return;
+    if (payload.azienda) payload = { ...payload, ...payload.azienda };
+    const prev = state.aziende[t] || D.aziende[t] || {};
+    const tesi = prev.tesi || { orizzonte: '', motivo: '', motivoBreve: '', indicatori: [], pesoPrevisto: null };
+    const next = {
+      ...prev,
+      nome: payload.nome || prev.nome || t,
+      ticker: t,
+      settore: prev.settore && prev.settore !== '—' ? prev.settore : (prev.settore || '—'),
+      prezzo: payload.prezzo != null ? payload.prezzo : prev.prezzo,
+      prezzo_fonte: payload.prezzo_fonte || 'dataset',
+      isin: payload.isin || prev.isin,
+      cod_azione: payload.cod_azione || prev.cod_azione,
+      valutazione: 'valutazione' in payload ? payload.valutazione : prev.valutazione,
+      utente: prev.utente !== false,
+      tesi
+    };
+    if (payload.esito) next.esito = payload.esito;
+    if (payload.tesi_usata) next.tesi_usata = payload.tesi_usata;
+    if ('decisione' in payload) next.decisione = payload.decisione;
+    if ('mancano' in payload) next.mancano = payload.mancano;
+    if (payload.earnings) next.earnings = payload.earnings;
+    if (payload.evoluzione) next.evoluzione = payload.evoluzione;
+    if (payload.analisi_notizie) next.analisi_notizie = payload.analisi_notizie;
+    state.aziende[t] = next;
+    if (payload.mercato != null) D.mercato[t] = payload.mercato;
+    if (Array.isArray(payload.serie) && payload.serie.length === D.giorni.length) {
+      if (!D.catalogSerie) D.catalogSerie = {};
+      D.catalogSerie[t] = payload.serie;
+    }
+    const seen = new Set((D.notizie || []).map(n => n.id + '|' + ((n.strumenti && n.strumenti[0] && n.strumenti[0].ticker) || '')));
+    (payload.notizie || []).forEach(n => {
+      const tk = (n.strumenti && n.strumenti[0] && n.strumenti[0].ticker) || t;
+      const k = n.id + '|' + tk;
+      if (seen.has(k)) return;
+      seen.add(k);
+      D.notizie.push(n);
+    });
+    if (payload.notizie && payload.notizie.length) D.notizie.sort((a, b) => String(b.data).localeCompare(String(a.data)));
+    save();
+  }
+
+  function catalogBody(t) {
+    const T = tesiDi(t) || {};
+    return {
+      orizzonte: T.orizzonte || '',
+      motivo: T.motivo || '',
+      indicatori: T.indicatori || [],
+      pesoPrevisto: T.pesoPrevisto == null ? null : T.pesoPrevisto,
+      contesto: held(t) ? 'portafoglio' : 'watchlist'
+    };
+  }
+
+  async function fillCatalogPrice(ticker, form) {
+    if (!ticker || location.protocol === 'file:') return;
+    try {
+      const r = await fetch(`/api/catalog/${encodeURIComponent(ticker)}`);
+      if (!r.ok) return;
+      const j = await r.json();
+      const px = $('#a-prezzo', form);
+      if (px && j.prezzo != null && document.body.contains(px)) px.value = j.prezzo;
+    } catch (e) { /* prezzo a mano */ }
+  }
+
+  async function fetchCatalog(t) {
+    const res = await fetch(`/api/catalog/${encodeURIComponent(t)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(catalogBody(t))
+    });
+    if (!res.ok) return null;
+    return res.json();
+  }
+
+  async function hydrateCatalog(tickers) {
+    const list = (tickers || [...state.portafoglio, ...state.watchlist].map(x => x.ticker))
+      .filter(t => t && !PIPELINE.has(t));
+    if (!list.length || location.protocol === 'file:') return;
+    let changed = false;
+    await Promise.all(list.map(async t => {
+      try {
+        const payload = await fetchCatalog(t);
+        if (payload && payload.ok) { applyCatalog(t, payload); changed = true; }
+      } catch (e) { /* server assente */ }
+    }));
+    if (changed) renderAll();
   }
 
   function sleep(ms) { return new Promise(res => setTimeout(res, ms)); }
@@ -1544,7 +1656,8 @@
       orizzonte: T.orizzonte || '',
       motivo: T.motivo || '',
       indicatori: T.indicatori || [],
-      pesoPrevisto: T.pesoPrevisto == null ? null : T.pesoPrevisto
+      pesoPrevisto: T.pesoPrevisto == null ? null : T.pesoPrevisto,
+      contesto: contesto(t)
     };
     const st = await apiStatus();
     if (!st || !st.ok) {
@@ -1565,6 +1678,16 @@
         body: JSON.stringify(body)
       });
       const queued = await res.json().catch(() => ({}));
+      if (res.status === 404) {
+        const payload = await fetchCatalog(t);
+        if (payload && payload.ok) {
+          applyCatalog(t, payload);
+          ricalcoli[t] = { status: 'done', diff: null, dryRun: false };
+          toast('Analisi aggiornata');
+          if (currentTicker() === t) renderAll();
+          return;
+        }
+      }
       if (!res.ok && res.status !== 202) {
         throw new Error((queued && queued.error) || `Errore HTTP ${res.status}`);
       }
@@ -1579,7 +1702,17 @@
         if (currentTicker() === t) renderAll();
         return;
       }
-      if (job.azienda) mergeAzienda(t, job.azienda);
+      if (job.catalog) {
+        applyCatalog(t, {
+          ...(job.azienda || {}),
+          serie: job.serie,
+          notizie: job.notizie,
+          mercato: job.mercato,
+          prezzo: job.prezzo,
+          prezzo_fonte: job.prezzo_fonte,
+          nome: job.nome
+        });
+      } else if (job.azienda) mergeAzienda(t, job.azienda);
       const ctx = contesto(t);
       const diff = diffRicalcolo(job.before, job.after, ctx);
       const a = azienda(t);
@@ -1927,4 +2060,5 @@
 
   window.addEventListener('hashchange', route);
   renderAll();
+  hydrateCatalog();
 })();

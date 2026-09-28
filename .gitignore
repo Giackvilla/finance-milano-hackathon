@@ -10,3 +10,4 @@ data/company_prices.csv
 
 # Local-only prototype (not for GitHub)
 web/forecast-cone/
+tmp-screenshots/

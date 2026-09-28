@@ -57,7 +57,7 @@ serve:
 test:
 	@total=0; failed=0; \
 	for t in test_verdict test_classify test_build_card test_export test_theses \
-		test_choose_news test_classify_gemini test_fear_greed; do \
+		test_choose_news test_classify_gemini test_fear_greed test_catalog_company; do \
 	  out=$$($(PY) scripts/$$t.py 2>&1); ec=$$?; echo "$$out"; \
 	  n=$$(echo "$$out" | sed -n 's/.*Ran \([0-9][0-9]*\) test.*/\1/p' | tail -1); \
 	  total=$$((total + $${n:-0})); \

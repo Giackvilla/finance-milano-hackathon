@@ -149,6 +149,8 @@ python3 scripts/build_theses.py --force --only STLAM
 
 The builder reads the thesis from `data.js`, and uses `data/theses_overrides/<TICKER>.json` when that file exists. It writes `data/theses/<TICKER>.json`. An unchanged thesis skips Gemini and BigQuery unless `--force` is set. Quote and number checks drop a fact whose figure is not in the sources. `valutazione` stays null: there is no P/E series in the warehouse extract.
 
+A name that is not in that list still gets a reading when it is in the offline bundle. Saving the thesis, or opening a holding you added from the catalog, calls `POST /api/catalog/<TICKER>`. That path does not use Gemini. It compares the words of the thesis with MF titles from 1 Aug 2026 and the price reaction already stored on the company file. If the titles do not contain the thesis, the page says so and lists the articles it did check. Bending Spoons (`1BSP`) is one of those names.
+
 | Desk ticker | `COD_AZIONE` | Company file |
 |---|---|---|
 | `ENEL`, `PRY`, `MONC`, `TPRO`, `REC` | same code | `enel`, `prysmian`, `moncler`, `technoprobe`, `recordati` |
@@ -188,7 +190,7 @@ The board score next to a headline is the observed move around that article, inc
 make test
 ```
 
-Runs `test_verdict`, `test_classify`, `test_build_card`, `test_export`, `test_theses`, `test_choose_news`, `test_classify_gemini`, and `test_fear_greed`.
+Runs `test_verdict`, `test_classify`, `test_build_card`, `test_export`, `test_theses`, `test_choose_news`, `test_classify_gemini`, `test_fear_greed`, and `test_catalog_company`.
 
 A separate hand review of 12 articles is in [eval/manual_article_eval.md](eval/manual_article_eval.md): company match 11/12, strict type 8/12. Full bodies are not in the export, so that review scores quotes as partial.
 

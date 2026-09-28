@@ -9,6 +9,8 @@ Usage:
 Serves web/dashboard/ on http://localhost:8000 and exposes:
 
     GET  /api/status
+    GET  /api/catalog/<TICKER>       price, series and MF stories for any bundle name
+    POST /api/catalog/<TICKER>       same, plus a title-level thesis check (no Gemini)
     POST /api/tesi/<TICKER>          JSON body {orizzonte, motivo, indicatori, pesoPrevisto}
     GET  /api/tesi/<TICKER>/job      poll long-running rebuilds
 
@@ -163,6 +165,53 @@ def execute_rebuild(ticker: str, body: dict) -> dict:
     }
 
 
+def catalog_payload(ticker: str, body: Optional[dict], with_thesis: bool) -> Optional[dict]:
+    """Offline reading for a name that is in the bundle but not in the demo book."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from catalog_company import read_company  # noqa: WPS433
+
+    raw = read_company(ticker, body or {}, (body or {}).get("contesto") or "portafoglio")
+    if not raw:
+        return None
+    market = {
+        "ok": True,
+        "catalog": True,
+        "ticker": raw["ticker"],
+        "nome": raw["nome"],
+        "isin": raw["isin"],
+        "cod_azione": raw["cod_azione"],
+        "prezzo": raw["prezzo"],
+        "mercato": raw["mercato"],
+        "prezzo_fonte": raw["prezzo_fonte"],
+        "serie": raw["serie"],
+        "notizie": raw["notizie"],
+    }
+    if not with_thesis:
+        return market
+    azienda = {
+        "nome": raw["nome"],
+        "prezzo": raw["prezzo"],
+        "prezzo_fonte": raw["prezzo_fonte"],
+        "isin": raw["isin"],
+        "cod_azione": raw["cod_azione"],
+        "tesi_usata": raw["tesi_usata"],
+        "esito": raw["esito"],
+        "decisione": raw["decisione"],
+        "mancano": raw["mancano"],
+        "earnings": raw["earnings"],
+        "evoluzione": raw["evoluzione"],
+        "analisi_notizie": raw["analisi_notizie"],
+        "valutazione": raw["valutazione"],
+    }
+    return {
+        **market,
+        "dry_run": False,
+        "before": {"status": None, "sintesi": "", "indicatori": [], "decisione": None},
+        "after": analysis_summary(azienda),
+        "azienda": azienda,
+    }
+
+
 def start_job(ticker: str, body: dict) -> None:
     with JOB_LOCK:
         JOBS[ticker] = {"status": "running", "result": None}
@@ -228,6 +277,17 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self) -> None:  # noqa: N802
         path = urlparse(self.path).path
+        if path.startswith("/api/catalog/"):
+            ticker = path.split("/")[-1].upper()
+            if not ticker.isalnum():
+                self._json(400, {"ok": False, "error": "Ticker non valido"})
+                return
+            payload = catalog_payload(ticker, None, with_thesis=False)
+            if not payload:
+                self._json(404, {"ok": False, "error": f"Ticker sconosciuto: {ticker}"})
+                return
+            self._json(200, payload)
+            return
         if path == "/api/status":
             self._json(200, {
                 "ok": True,
@@ -252,6 +312,20 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_POST(self) -> None:  # noqa: N802
         path = urlparse(self.path).path
+        if path.startswith("/api/catalog/"):
+            ticker = path.split("/")[-1].upper()
+            if not ticker.isalnum():
+                self._json(400, {"ok": False, "error": "Ticker non valido"})
+                return
+            body = self._read_json()
+            if body is None:
+                return
+            payload = catalog_payload(ticker, body, with_thesis=True)
+            if not payload:
+                self._json(404, {"ok": False, "error": f"Ticker sconosciuto: {ticker}"})
+                return
+            self._json(200, payload)
+            return
         if not path.startswith("/api/tesi/"):
             self._json(404, {"ok": False, "error": "Not found"})
             return
@@ -280,7 +354,13 @@ class Handler(SimpleHTTPRequestHandler):
         except Exception:
             demo_ok = thesis_path.is_file()
         if not demo_ok and not thesis_path.is_file():
-            self._json(404, {"ok": False, "error": f"Ticker sconosciuto: {ticker}"})
+            payload = catalog_payload(ticker, body, with_thesis=True)
+            if not payload:
+                self._json(404, {"ok": False, "error": f"Ticker sconosciuto: {ticker}"})
+                return
+            with JOB_LOCK:
+                JOBS[ticker] = {"status": "done", "result": payload}
+            self._json(202, {"ok": True, "queued": True, "ticker": ticker, "dry_run": False, "catalog": True})
             return
 
         with JOB_LOCK:
