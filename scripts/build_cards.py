@@ -233,7 +233,13 @@ def main(argv: Optional[List[str]] = None) -> None:
     ap.add_argument("--gemini", action="store_true", help="Call Gemini (default: off)")
     ap.add_argument("--lang", choices=["en", "it"], default="en")
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--out-dir", default=None, help="Default: data/cards")
     args = ap.parse_args(argv)
+
+    global CARDS_DIR
+    if args.out_dir:
+        CARDS_DIR = Path(args.out_dir).resolve()
+    CARDS_DIR.mkdir(parents=True, exist_ok=True)
 
     if args.from_date and not args.to_date:
         ap.error("--to is required with --from")
