@@ -18,14 +18,30 @@
  },
  "news": {
   "news_type": "market_report",
+  "classifier": "both",
   "scheduled": null,
   "headline_reports_move": false,
   "matched": [
    {
     "type": "market_report",
-    "keyword": "il titolo prova"
+    "keyword": "La situazione tecnica di A2A è interessante. Il titolo, dopo una prolungata fase laterale di consolidamento al di sopra del supporto grafico posto in area 2,27-2,2550 euro, ha infatti compiuto un veloce balzo in avanti e si è portato a ridosso dei 2,37 euro."
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "market_report",
+    "confidence": 1.0,
+    "evidence": "La situazione tecnica di A2A è interessante. Il titolo, dopo una prolungata fase laterale di consolidamento al di sopra del supporto grafico posto in area 2,27-2,2550 euro, ha infatti compiuto un veloce balzo in avanti e si è portato a ridosso dei 2,37 euro."
+   }
+  ],
+  "summary": "La situazione tecnica di A2A è interessante. Dopo una fase laterale di consolidamento sopra i 2,27-2,2550 euro, il titolo ha registrato un rapido aumento, raggiungendo quasi i 2,37 euro. Un superamento di questo livello potrebbe innescare ulteriori rialzi, con obiettivi a 2,40-2,41 e 2,44-2,45 euro. Una discesa sotto i 2,25 euro annullerebbe i progressi e indicherebbe un segnale ribassista.",
+  "company_evidence": "A2A",
+  "keyword_news_type": "market_report",
+  "gemini_des_azione": "A2a",
+  "gemini_cod_azione": "AEM",
+  "instrument_agrees": true,
+  "gemini_news_type": "market_report",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "PARTLY_IN_PRICE",

@@ -147,10 +147,10 @@ body.resizing { cursor: col-resize; user-select: none; -webkit-user-select: none
 .fg-slot { margin-top: 18px; }
 .fg-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; margin-bottom: 12px; }
 @container (max-width: 640px) { .fg-body { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
-.fg-gauge { display: block; width: 100%; max-width: 380px; height: auto; margin: 0 auto; }
-.fg-gauge path { fill: var(--fill); }
-.fg-gauge text { fill: var(--ink-2); font: 500 12px var(--font); }
-.fg-gauge .fg-val { fill: var(--ink-3); font: 700 34px var(--font); }
+svg.fg-gauge { display: block; width: 100%; max-width: 380px; height: auto; margin: 0 auto; }
+svg.fg-gauge path { fill: var(--fill); }
+svg.fg-gauge text { fill: var(--ink-2); font: 500 12px var(--font); }
+svg.fg-gauge .fg-val { fill: var(--ink-3); font: 700 34px var(--font); }
 .fg-hist > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--sep); }
 .fg-hist > div:last-child { border-bottom: 0; }
 .fg-hist dt { font-size: 13.5px; color: var(--ink-2); }

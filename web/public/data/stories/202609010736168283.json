@@ -17,10 +17,31 @@
   "company_slug": "saipem"
  },
  "news": {
-  "news_type": "other",
+  "news_type": "market_report",
+  "classifier": "both",
   "scheduled": null,
   "headline_reports_move": false,
-  "matched": []
+  "matched": [
+   {
+    "type": "market_report",
+    "keyword": "La situazione tecnica di Saipem appare costruttiva. Il titolo, dopo essere sceso verso la fine del mese di luglio verso i 3,90 euro, ha infatti compiuto un veloce spunto rialzista ed è risalito con una certa decisione fino a quota 4,6350-4,65 euro."
+   }
+  ],
+  "topics": [
+   {
+    "topic": "market_report",
+    "confidence": 0.95,
+    "evidence": "La situazione tecnica di Saipem appare costruttiva. Il titolo, dopo essere sceso verso la fine del mese di luglio verso i 3,90 euro, ha infatti compiuto un veloce spunto rialzista ed è risalito con una certa decisione fino a quota 4,6350-4,65 euro."
+   }
+  ],
+  "summary": "La situazione tecnica del titolo Saipem è considerata costruttiva. Dopo essere sceso a fine luglio, il titolo ha registrato un rapido rialzo fino a 4,6350-4,65 euro. Un superamento di questo livello, con volumi in aumento, potrebbe portare a ulteriori guadagni con target a 4,72-4,73 e 4,78-4,79 euro. È cruciale il mantenimento del supporto a 4,45-4,40 euro, poiché una discesa sotto tale soglia indicherebbe una correzione negativa.",
+  "company_evidence": "La situazione tecnica di Saipem",
+  "keyword_news_type": "other",
+  "gemini_des_azione": "Saipem",
+  "gemini_cod_azione": "SAIP",
+  "instrument_agrees": true,
+  "gemini_news_type": "market_report",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "ALREADY_IN_PRICE",

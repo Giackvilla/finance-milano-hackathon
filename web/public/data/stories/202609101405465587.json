@@ -18,22 +18,48 @@
  },
  "news": {
   "news_type": "earnings",
+  "classifier": "both",
   "scheduled": true,
   "headline_reports_move": false,
   "matched": [
    {
     "type": "earnings",
-    "keyword": "\\butile\\b(?!\\s+per\\b)"
-   },
-   {
-    "type": "earnings",
-    "keyword": "\\bricavi\\b"
+    "keyword": "ricavi pari a 267 milioni, in aumento del 3,4% rispetto allo stesso periodo dello scorso anno, e un risultato operativo adjusted (operating ebitda adjusted) di 47,6 milioni (+0,9%, con una marginalità del 17,8%)"
    },
    {
     "type": "deal",
-    "keyword": "\\bm&a\\b"
+    "keyword": "si prepara a nuove operazioni di fusioni e acquisizioni"
+   },
+   {
+    "type": "plan",
+    "keyword": "l’implementazione di un rilevante piano di investimenti"
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "earnings",
+    "confidence": 0.95,
+    "evidence": "ricavi pari a 267 milioni, in aumento del 3,4% rispetto allo stesso periodo dello scorso anno, e un risultato operativo adjusted (operating ebitda adjusted) di 47,6 milioni (+0,9%, con una marginalità del 17,8%)"
+   },
+   {
+    "topic": "deal",
+    "confidence": 0.85,
+    "evidence": "si prepara a nuove operazioni di fusioni e acquisizioni"
+   },
+   {
+    "topic": "plan",
+    "confidence": 0.8,
+    "evidence": "l’implementazione di un rilevante piano di investimenti"
+   }
+  ],
+  "summary": "Garofalo Health Care (GHC) ha chiuso il primo semestre 2026 con ricavi in aumento del 3,4% a 267 milioni di euro e un EBITDA adjusted di 47,6 milioni (+0,9%), ma l'utile netto è sceso del 21,8% a 15,2 milioni. La società si sta preparando a nuove operazioni di fusioni e acquisizioni e ha implementato un significativo piano di investimenti. L'AD Maria Laura Garofalo si è detta ottimista per il futuro, grazie anche a budget incrementali da alcune Regioni e all'apertura di un nuovo reparto RSA. La Regione Lazio ha inoltre riconosciuto un budget di 2,2 milioni di euro all'European Hospital. Il titolo ha registrato una flessione del 2,24% il 10 settembre.",
+  "company_evidence": "Garofalo Health Care (Ghc)",
+  "keyword_news_type": "earnings",
+  "gemini_des_azione": "Garofalo Health Care",
+  "gemini_cod_azione": "GHC",
+  "instrument_agrees": true,
+  "gemini_news_type": "earnings",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "PARTLY_IN_PRICE",
