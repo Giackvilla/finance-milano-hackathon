@@ -2,7 +2,7 @@
 
 ![FinMan](finman.png)
 
-A sidebar on the left that switches between your portfolio (value, chart, holdings) and your watchlist, and a lean summary in the middle (Fear & Greed and allocation pies). Clicking a stock opens its page as one argument: your thesis, what changed after the latest results and the last four earnings, an analysis of the MF news grouped by the thesis indicator each story touches, and only then a decision to consider that draws on both.
+A sidebar on the left that switches between your portfolio (value, chart, holdings) and your watchlist, and a lean summary in the middle (Fear & Greed and allocation pies). Clicking a stock opens its page in this order: your thesis, what changed after the latest results, the last four quarters, a decision to consider, then MF news, the price chart and sector Fear & Greed, closed.
 
 `data.js` holds the demo shell (example theses as input, plus fallback esito/earnings/decisione). `real_data.js` overlays whatever the pipeline has produced.
 
@@ -16,7 +16,11 @@ make serve
 python3 scripts/serve_dashboard.py --dry-run
 ```
 
-Then open http://localhost:8000. Saving a thesis POSTs to `/api/tesi/<TICKER>`, which writes `data/theses_overrides/`, runs `build_theses.py --only` + `build_dashboard_data.py`, and the UI shows “Cosa è cambiato”. Opening `index.html` from disk still works for browsing, but ricalcolo needs the server (`make serve`).
+Then open http://localhost:8000. For one of the ten example names, saving a thesis POSTs to `/api/tesi/<TICKER>`, which writes `data/theses_overrides/`, runs `build_theses.py --only` + `build_dashboard_data.py`, and the UI shows “Cosa è cambiato”. That path needs Gemini. In `--dry-run` those ten stay **Da ricalcolare**.
+
+A name you add from the catalog POSTs to `/api/catalog/<TICKER>` instead. That check runs in dry-run too: thesis words against MF titles since 1 Aug 2026, plus the stored price reaction. No Gemini, and no figure that is not already in the title.
+
+Opening `index.html` from disk still works for browsing. A fresh reading needs the server.
 
 Static-only alternative:
 
@@ -30,13 +34,13 @@ Then open http://localhost:8765.
 
 - **Riepilogo** (home, `#riepilogo`): a slot for the Fear & Greed index, then two interactive pies, by holding and by sector. Clicking a holding opens its company page; clicking a sector pins it and lists its holdings.
 - **Notizie** (`#notizie`): MF headlines grouped by company, kept simple. Reached from the toolbar switch.
-- **Company page** (`#azienda-<code>`): news that can move the stock (net signal, price verdict, thesis indicator), then thesis, what changed, decision and the last four earnings.
+- **Company page** (`#azienda-<code>`): thesis, what the latest results change, the last four quarters, the indication, then MF news, the price chart and sector Fear & Greed, closed.
 
 The sidebar stays on every page. Its **Portafoglio | Watchlist** switch picks the list, its right edge can be dragged to resize it, and the toolbar button at the top left closes it completely. Opening a company from the other list switches the sidebar to that list.
 
-## Adding the Fear & Greed index
+## Fear & Greed
 
-When `fear_greed.js` is loaded (it is, from `scripts/fear_greed.py`), the home page shows the Italy and sector Fear & Greed card from `window.FEAR_GREED`. Without it, the home page reserves a placeholder card with the id `fear-greed`, sized like a half-circle gauge with a four-row history (previous close, 1 week, 1 month, 1 year ago). To fill the placeholder a different way without touching `app.js`:
+The home page already shows the Italy and sector card from `window.FEAR_GREED` in `fear_greed.js` (`scripts/fear_greed.py`). If that file is missing, the page reserves a placeholder card with the id `fear-greed`. To fill the placeholder a different way without touching `app.js`:
 
 1. Create `web/dashboard/fear_greed.js` and load it in `index.html` **before** `app.js`.
 2. In it, define `window.renderFearGreed = function (el, ctx) { … }`. `el` is the card element; replace its contents. `ctx.data` is `window.DEMO_DATA`.
@@ -62,18 +66,18 @@ User edits (positions, watchlist, thesis changes, added companies) are saved in 
 
 - Real: prices and the price chart (2021-01-04 to 2026-09-23), last-session move, trading-day calendar, company names, and MF stories since 1 Aug 2026 with the price verdict (status, peak move, how many times the normal daily swing).
 - Portfolio quantities are rescaled so each position keeps its demo value at the real price, so the weights stay the same.
-- Analysis (when present): `tesi_usata`, `esito`, `earnings`, `decisione`/`mancano` come from `scripts/build_theses.py` via `data/theses/<TICKER>.json` (Gemini 2.5 Flash over MF article bodies, with verbatim-quote and number checks). `valutazione` is null (no P/E source). `reazione` is computed from real closes. Companies without a thesis file keep the simulated fallback in `data.js`.
+- Analysis for the ten example names: `tesi_usata`, `esito`, `earnings`, `decisione`/`mancano` come from `scripts/build_theses.py` via `data/theses/<TICKER>.json` (Gemini 2.5 Flash over MF article bodies, with verbatim-quote and number checks). `valutazione` is null (no P/E source). `reazione` is computed from real closes. A name added from the catalog is read by `scripts/catalog_company.py` from titles and the stored price reaction, even under `--dry-run`. A name with neither stays on the simulated fallback in `data.js`.
 - Stellantis (`STLAM`) keeps a simulated price because its ISIN is Dutch (`COD_AZIONE` FIAT) and the offline price bundle has no FIAT series; the UI badges it and excludes it from the portfolio total so dataset and simulated prices are never mixed silently. The index strip is hidden.
 
 Demo tickers map to the bundle in `DEMO_COMPANIES` inside the generator (`ISP` → Intesa Sanpaolo `AMBR`, `LDO` → Leonardo `FINME`, `SPM` → Saipem `SAIP`, `TIT` → Telecom Italia `OLI`).
 
-## Connecting real data
+## How the screen is keyed
 
-`app.js` only reads `window.DEMO_DATA`. To connect real data, produce an object with the same shape, either by generating `data.js` from a script or by replacing it with a loader that sets `window.DEMO_DATA` before `app.js` runs. The full shape is documented at the top of `data.js`.
+`app.js` only reads `window.DEMO_DATA`. `real_data.js` fills that object before `app.js` runs. The shape is at the top of `data.js`.
 
-### Key everything by `COD_AZIONE`
+### Exchange ticker and `COD_AZIONE`
 
-The demo uses exchange tickers as keys. `COD_AZIONE` is MF's internal code, not the exchange ticker, and several differ, so these won't join with `data/cards` until the keys change:
+The screen shows the exchange ticker. `COD_AZIONE` is MF's internal code, and several differ. The join already lives in `DEMO_COMPANIES` inside `scripts/build_dashboard_data.py`:
 
 | Company | Demo key | `COD_AZIONE` in `data/cards` |
 |---|---|---|
@@ -83,14 +87,14 @@ The demo uses exchange tickers as keys. `COD_AZIONE` is MF's internal code, not 
 | Stellantis | `STLAM` | `FIAT` |
 | Telecom Italia | `TIT` | `OLI` |
 
-Enel (`ENEL`), Prysmian (`PRY`), Moncler (`MONC`) and Technoprobe (`TPRO`) already match. Today the screen shows the key as the ticker; if we key by `COD_AZIONE`, the ticker field should become a separate display symbol.
+Enel (`ENEL`), Prysmian (`PRY`), Moncler (`MONC`), Technoprobe (`TPRO`) and Recordati (`REC`) use the same code on both sides. The screen keeps the exchange ticker as the label.
 
 ### Where each field comes from
 
 | `DEMO_DATA` field | Real source | Status |
 |---|---|---|
 | `notizie[].id`, `titolo`, `data` | `data/cards/<content_id>.json` → `article.content_id`, `article.titolo`, `article.pub_local` | Available |
-| `notizie[].url` (not shown yet) | `article.url` (real milanofinanza.it link) | Available |
+| `notizie[].url` | `article.url` (real milanofinanza.it link). The card shows “Fonte: MF” and the title links out. | Wired |
 | `notizie[].riassunto` | `verdict.text_it`, or `gemini.sentence` from `data/cards_gemini_en/` | Available |
 | `notizie[].sezione` | `news.news_type` (`earnings`, `deal`, `takeover`, …), needs an Italian label | Available |
 | `notizie[].strumenti[]` | `instrument.cod_azione`; `sim` is the embedding cosine (1.0 for a name match); `dir` from the sign of `verdict.peak.move_pct` | Available (one instrument per card) |
@@ -113,7 +117,7 @@ Enel (`ENEL`), Prysmian (`PRY`), Moncler (`MONC`) and Technoprobe (`TPRO`) alrea
 
 - Simulated analysis (no `esito.metodo` / `tesi_usata`) still says "nella demo" where sources or numbers are missing. Real-analysis companies show source links (`MF · data`), method line, and article-based empty states instead.
 - Portfolio weights are rounded so they always add up to 100%. A live weight interpretation is appended when a held stock is ≥ 20%.
-- If the current thesis differs from `tesi_usata` (motivo, indicatori, orizzonte, pesoPrevisto), conclusions show **Da ricalcolare**; the previous status/sintesi/decision stay collapsed under “Analisi precedente”. With `make serve`, saving a thesis triggers a rebuild and a “Cosa è cambiato” diff.
+- On the ten example names, if the current thesis differs from `tesi_usata` (motivo, indicatori, orizzonte, pesoPrevisto), conclusions show **Da ricalcolare**; the previous status, sintesi and decision stay collapsed under “Analisi precedente”. With `make serve`, saving a thesis triggers a rebuild and a “Cosa è cambiato” diff. A catalog name is updated by `/api/catalog/<TICKER>` instead, including in dry-run.
 - The decision comes last, after the thesis and news analyses. `build_theses.py` writes it in a separate Gemini call that receives the earnings outcome and the news rollup; `decisione.basata_su` records that. A decision without `basata_su` (older files, simulated fallback) shows a warning that it did not consider the news.
 - The decision section never states probabilities and has no trading buttons. `valutazione` null is simply omitted from "Elementi considerati".
 - A story links to a stock only above a 0.60 cosine similarity between article and instrument embeddings. Below that, the nearest instrument is usually noise.

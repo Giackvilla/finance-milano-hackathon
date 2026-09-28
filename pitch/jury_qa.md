@@ -2,15 +2,15 @@
 
 Line to remember: **we do not tell you what to buy — we show whether MF facts still support the thesis you wrote.**
 
-The product is an Italian investor desk: example portfolio and watchlist on the sides, MF stories in the middle, company page as one argument — your thesis → what latest results change → MF news grouped by the thesis indicators they touch → a **Decisione da valutare** with actions to consider (held: Mantenere / Aggiungere / Ridurre / Vendere; watchlist: Valutare ingresso / Attendere / Evitare per ora). Prices and matched MF articles come from the warehouse; thesis/earnings/news readings are Gemini with automated quote and number checks; holdings are **demo**. Offline suite: **82** unit tests (`make test`). Manual sample (12 articles): company match **11/12**, strict classification **8/12** (see `eval/manual_article_eval.md`).
+The product is FinMan, an Italian investor desk: example portfolio and watchlist on the sides, MF stories in the middle, company page as one argument — your thesis → what the latest results change → the last four quarters → a **Decisione da valutare** (held: Mantenere / Aggiungere / Ridurre / Vendere; watchlist: Valutare ingresso / Attendere / Evitare per ora) → MF news, the price chart and sector Fear & Greed, closed. Prices and matched MF articles come from the warehouse. The ten example names have Gemini readings with quote and number checks. Any other bundled name is checked from MF titles and the stored price reaction, including under `--dry-run`, with no invented figures. Holdings are **demo**. Offline suite: **86** unit tests (`make test`). Manual sample (12 articles): company match **11/12**, strict classification **8/12** (see `eval/manual_article_eval.md`).
 
 ---
 
 ### 1. What does the product actually do?
 
-**EN:** You state a thesis (motive, up to three indicators, horizon). The desk checks that thesis against the last four earnings windows and against recent MF articles linked to the name, then drafts an indication to evaluate — not an order. With `make serve`, saving an edited thesis marks analysis **Da ricalcolare**, regenerates via the local API, and shows what changed (status, indicators, decision).
+**EN:** You state a thesis (motive, up to three indicators, horizon). On the ten example names the desk checks that thesis against the last four earnings windows and against recent MF articles, then drafts an indication to evaluate — not an order. `make serve` regenerates that reading and shows what changed. `python3 scripts/serve_dashboard.py --dry-run` is enough to open the demo: those ten stay marked **Da ricalcolare** if you edit them, because dry-run does not call Gemini. A name you add from the catalog is still checked, in dry-run too, by comparing the thesis words with MF titles and the stored price reaction.
 
-**IT:** Scrivi una tesi (motivo, fino a tre indicatori, orizzonte). La scrivania la confronta con gli ultimi quattro earnings e con gli articoli MF recenti sul titolo, poi propone un’indicazione da valutare — non un ordine. Con `make serve`, salvare una tesi modificata marca l’analisi **Da ricalcolare**, la rigenera via API locale e mostra cosa è cambiato (stato, indicatori, decisione).
+**IT:** Scrivi una tesi (motivo, fino a tre indicatori, orizzonte). Sui dieci nomi di esempio la scrivania la confronta con gli ultimi quattro trimestri e con gli articoli MF recenti, poi propone un’indicazione da valutare — non un ordine. `make serve` rigenera quella lettura e mostra cosa è cambiato. `python3 scripts/serve_dashboard.py --dry-run` basta per aprire la demo: quei dieci restano **Da ricalcolare** se li modifichi, perché il dry-run non chiama Gemini. Un nome aggiunto dal catalogo viene comunque controllato, anche in dry-run, confrontando le parole della tesi con i titoli MF e la reazione di prezzo già salvata.
 
 ---
 
@@ -32,9 +32,9 @@ The product is an Italian investor desk: example portfolio and watchlist on the 
 
 ### 4. What does the company page show above the fold?
 
-**EN:** A compact strip: thesis status after latest results → new supporting / conflicting MF evidence → source (MF link + date) → what to monitor next. Then the full sections: thesis, “Cosa cambia”, four earnings, news analysis by indicator, decision card.
+**EN:** Thesis, what the latest results change, the last four quarters, then the indication. MF news, the one-year price chart and sector Fear & Greed sit in a closed block under that.
 
-**IT:** Una striscia compatta: stato della tesi dopo gli ultimi risultati → nuove evidenze MF a favore / contro → fonte (link MF + data) → cosa monitorare dopo. Poi le sezioni complete: tesi, “Cosa cambia”, quattro earnings, analisi notizie per indicatore, card decisione.
+**IT:** Tesi, cosa cambia con gli ultimi risultati, gli ultimi quattro trimestri, poi l’indicazione. Notizie MF, grafico del prezzo a un anno e Fear & Greed di settore stanno in un blocco chiuso sotto.
 
 ---
 

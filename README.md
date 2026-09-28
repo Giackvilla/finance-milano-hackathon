@@ -1,6 +1,6 @@
-# MF Desk
+# FinMan
 
-Finance Milano Hackathon, challenge 2. You write a thesis for an Italian name. The desk checks that thesis against Milano Finanza articles and Borsa Italiana closes, then drafts an indication to evaluate.
+Finance Milano Hackathon, challenge 2. You write a thesis for an Italian name. FinMan checks that thesis against Milano Finanza articles and Borsa Italiana closes, then drafts an indication to evaluate.
 
 The indication is an input for a person, not an order. The screen estimates no chance of success. The portfolio and watchlist in the demo are example holdings.
 
@@ -12,9 +12,13 @@ Python 3.9 or newer. The scripts use the standard library only. `web/public/data
 python3 scripts/serve_dashboard.py --dry-run
 ```
 
-Open http://127.0.0.1:8000. `--dry-run` (or `DASHBOARD_DRY_RUN=1`) skips BigQuery and Gemini when a thesis is saved. The page still marks the analysis **Da ricalcolare** and shows a local diff.
+Open http://127.0.0.1:8000. This is the command for the demo. It needs no cloud login.
 
-A save that really rebuilds the reading:
+The ten example names already have a Gemini reading in the repo. `--dry-run` (or `DASHBOARD_DRY_RUN=1`) does not call BigQuery or Gemini again when one of those theses is saved. The page marks that analysis **Da ricalcolare**.
+
+Any other name in the bundle is checked on save, including in dry-run. The server compares the words of the thesis with MF titles since 1 Aug 2026 and the price reaction already stored on the company file. It does not invent a figure that is not in the title. Bending Spoons (`1BSP`) is one of those names.
+
+A save that rebuilds one of the ten readings with Gemini:
 
 ```bash
 make serve
@@ -40,14 +44,14 @@ The portfolio column and the watchlist stay up on every page.
 |---|---|
 | `#riepilogo` | Italy Fear & Greed, then allocation by holding and by sector. |
 | `#notizie` | MF headlines, filtered to the portfolio, the watchlist, or every tracked name. |
-| `#azienda-<ticker>` | Thesis, what the latest results change, the last four earnings windows, MF news grouped by the thesis indicator each story touches, then the indication. |
+| `#azienda-<ticker>` | Thesis, what the latest results change, the last four quarters, the indication, then MF news, the price chart and sector Fear & Greed, closed. |
 
 Held names use Mantenere, Aggiungere, Ridurre, Vendere. Watchlist names use Valutare ingresso, Attendere, Evitare per ora. Those words are the indication. The page has no control that sends an order.
 
 Each block is labelled:
 
 - **Dataset.** Borsa Italiana closes and MF articles, with links back to the source. Prices run through 23 Sep 2026. Stories on the desk start 1 Aug 2026.
-- **Modello.** Gemini readings: earnings against the thesis, headlines mapped to indicators, the decision draft, the one-sentence card, and Fear & Greed.
+- **Modello.** On the ten example names, Gemini readings: earnings against the thesis, headlines mapped to indicators, the decision draft. On any other bundled name, a title match plus the stored price reaction, with the method written on the page. Fear & Greed is a fixed formula.
 - **Esempio.** The starting positions, weights, and theses.
 
 Stellantis (`STLAM`) keeps a simulated price. Its ISIN is Dutch (`COD_AZIONE` `FIAT`) and the offline Italian tape has no FIAT series. The UI badges it and leaves it out of the portfolio total, so dataset prices and the simulated series stay separate.
