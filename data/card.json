@@ -1,0 +1,39 @@
+{
+  "_status": "PLACEHOLDER - numbers are fake until Data replaces this file",
+  "article": {
+    "titolo": "Webuild smentisce la richiesta di 22 miliardi al governo: il titolo chiude in calo del 7,9%",
+    "data_pubblicazione": "2026-09-09T08:45:00",
+    "testata": "MF",
+    "quote": "Placeholder quote from the body.",
+    "url": ""
+  },
+  "instrument": {
+    "des_azione": "Webuild",
+    "cod_azione": "WBD",
+    "isin": "IT0000000000"
+  },
+  "tape": {
+    "timing": "same_day",
+    "move_date": "2026-09-09",
+    "move_pct": -8.0,
+    "z": -6.7,
+    "volume_x": 12.4,
+    "baseline_sessions": 20,
+    "px_before_move": 1.0,
+    "px_after_move": 0.92,
+    "last_session": "2026-09-23",
+    "last_px": 0.9,
+    "retained_pct": 126
+  },
+  "gemini": {
+    "model": "gemini-2.5-flash",
+    "title_adjective": "",
+    "figure_in_body": "",
+    "adjective_matches": true,
+    "sentence": "Placeholder Gemini sentence citing the article."
+  },
+  "count": {
+    "matched_stories": 0,
+    "unusual_day_before": 0
+  }
+}
