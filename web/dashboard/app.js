@@ -1,5 +1,5 @@
 /*
- * MF Desk — componenti e interazioni.
+ * FinMan — componenti e interazioni.
  * Non contiene dati: legge tutto da window.DEMO_DATA (data.js).
  * Stato dell'utente (posizioni, watchlist, tesi modificate, aziende aggiunte) in localStorage.
  *
@@ -521,6 +521,11 @@
 
   const dayChange = (rows, tot) => { const prev = rows.reduce((s, r) => s + r.quantita * r.a.prezzo / (1 + varDi(r.ticker) / 100), 0); return { day: tot - prev, pct: (tot / prev - 1) * 100 }; };
 
+  /* Marchio FinMan. Se l'immagine manca (es. pagina pubblicata senza il file) resta l'iniziale. */
+  const brandHTML = (cls = '') => `<a class="brand ${cls}" href="#riepilogo" aria-label="FinMan, vai al riepilogo">
+      <span class="brand-mark"><img src="finman-mark.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('b'), { textContent: 'F' }))"></span>
+      <span class="brand-name">FinMan</span></a>`;
+
   /* ================================================================ barra sinistra: portafoglio */
   const RANGES = { '1M': 21, '3M': 63, '1A': 252, 'MAX': D.giorni.length };
 
@@ -578,7 +583,7 @@
     if (ui.sideTab === 'watchlist') body = watchBody();
     const tabs = `<div class="seg side-tabs" role="tablist" aria-label="Elenco">${[['portafoglio', 'Portafoglio', state.portafoglio.length], ['watchlist', 'Watchlist', state.watchlist.length]]
       .map(([k, l, c]) => `<button type="button" role="tab" data-side-tab="${k}" aria-selected="${ui.sideTab === k}">${l}<span class="c">${c}</span></button>`).join('')}</div>`;
-    $('#side-left').innerHTML = `<div class="side-inner">${search}${tabs}${body}</div>`;
+    $('#side-left').innerHTML = `<div class="side-inner">${brandHTML()}${search}${tabs}${body}</div>`;
     bindSearch();
     drawPortfolioChart();
   }
@@ -765,6 +770,7 @@
       : `<nav class="seg" aria-label="Sezioni"><a href="#riepilogo"${mode === 'home' ? ' aria-current="page"' : ''}>Riepilogo</a><a href="#notizie"${mode === 'news' ? ' aria-current="page"' : ''}>Notizie</a></nav>`;
     const sl = ui.sideOpen ? 'Nascondi la barra laterale' : 'Mostra la barra laterale';
     $('#toolbar').innerHTML = `<button class="icon-btn plain" type="button" data-act="toggle-side" aria-controls="side-left" aria-pressed="${ui.sideOpen}" aria-label="${sl}" title="${sl}">${icon('panel')}</button>
+      ${brandHTML('tb-brand')}
       ${nav}
       <span class="spacer"></span>
       ${dataInfoHTML()}`;

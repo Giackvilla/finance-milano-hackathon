@@ -1,4 +1,6 @@
-# Dashboard (prototype)
+# FinMan · dashboard (prototype)
+
+![FinMan](finman.png)
 
 A sidebar on the left that switches between your portfolio (value, chart, holdings) and your watchlist, and a lean summary in the middle (Fear & Greed and allocation pies). Clicking a stock opens its page as one argument: your thesis, what changed after the latest results and the last four earnings, an analysis of the MF news grouped by the thesis indicator each story touches, and only then a decision to consider that draws on both.
 
