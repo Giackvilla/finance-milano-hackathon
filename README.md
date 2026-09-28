@@ -1,114 +1,199 @@
-# From headlines to signals
+# MF Desk
 
-Challenge 2, Finance Milano Hackathon. One card for one real MF story: the headline, what the tape did around it, and one Gemini sentence on whether the headline matches the facts.
+Finance Milano Hackathon, challenge 2. You write a thesis for an Italian name. The desk checks that thesis against Milano Finanza articles and Borsa Italiana closes, then drafts an indication to evaluate.
 
-**The signal is where the headline and the tape disagree.**
+The indication is an input for a person, not an order. The screen estimates no chance of success. The portfolio and watchlist in the demo are example holdings.
+
+## Run the desk
+
+Python 3.9 or newer. The scripts use the standard library only. `web/public/data/` and `web/dashboard/real_data.js` are committed, so browsing needs no cloud login and no Gemini key.
+
+```bash
+python3 scripts/serve_dashboard.py --dry-run
+```
+
+Open http://127.0.0.1:8000. `--dry-run` (or `DASHBOARD_DRY_RUN=1`) skips BigQuery and Gemini when a thesis is saved. The page still marks the analysis **Da ricalcolare** and shows a local diff.
+
+A save that really rebuilds the reading:
+
+```bash
+make serve
+```
+
+Same URL. The browser POSTs the thesis to `/api/tesi/<TICKER>`. The server writes `data/theses_overrides/<TICKER>.json`, runs `scripts/build_theses.py --only` and `scripts/build_dashboard_data.py`, and the page shows **Cosa è cambiato**. That path needs the `gcloud` and `bq` CLIs, Vertex AI, and Node, because the thesis builder loads `web/dashboard/data.js` through `node`.
+
+Opening `web/dashboard/index.html` from disk is enough to look around. Regenerating a thesis needs the server above.
+
+Static copy, no API:
+
+```bash
+python3 -m http.server 8765 --directory web/dashboard
+```
+
+Positions, the watchlist, thesis edits, and added names stay in the browser under `localStorage` key `mf-desk:v1`. **Ripristina dati demo** in the footer clears them.
+
+## Pages
+
+The portfolio column and the watchlist stay up on every page.
+
+| Hash | Page |
+|---|---|
+| `#riepilogo` | Italy Fear & Greed, then allocation by holding and by sector. |
+| `#notizie` | MF headlines, filtered to the portfolio, the watchlist, or every tracked name. |
+| `#azienda-<ticker>` | Thesis, what the latest results change, the last four earnings windows, MF news grouped by the thesis indicator each story touches, then the indication. |
+
+Held names use Mantenere, Aggiungere, Ridurre, Vendere. Watchlist names use Valutare ingresso, Attendere, Evitare per ora. Those words are the indication. The page has no control that sends an order.
+
+Each block is labelled:
+
+- **Dataset.** Borsa Italiana closes and MF articles, with links back to the source. Prices run through 23 Sep 2026. Stories on the desk start 1 Aug 2026.
+- **Modello.** Gemini readings: earnings against the thesis, headlines mapped to indicators, the decision draft, the one-sentence card, and Fear & Greed.
+- **Esempio.** The starting positions, weights, and theses.
+
+Stellantis (`STLAM`) keeps a simulated price. Its ISIN is Dutch (`COD_AZIONE` `FIAT`) and the offline Italian tape has no FIAT series. The UI badges it and leaves it out of the portfolio total, so dataset prices and the simulated series stay separate.
+
+Screen-level notes, including the `DEMO_DATA` field map, are in [web/dashboard/README.md](web/dashboard/README.md).
+
+## Committed bundle
+
+From `web/public/data/manifest.json`, generated 28 Sep 2026:
+
+| | |
+|---|---|
+| Detail stories | 35, published 17 Aug 2026 to 18 Sep 2026 |
+| Gemini sentence and chart | 14 of those 35 |
+| Companies | 280, with MF stories from 1 Feb 2021 to 15 Sep 2026 |
+| Last close | 23 Sep 2026 |
+
+The shape of each file is in [data/SCHEMA.md](data/SCHEMA.md). `make dashboard` turns that bundle into `web/dashboard/real_data.js`.
 
 ## Layout
 
-| Folder | Owner | Contents |
-|---|---|---|
-| `sql/` | Data | BigQuery queries. `events.sql` matches titles to `DES_AZIONE` and computes the tape figures. |
-| `data/` | Data | `card.json` is the contract between everyone. Don't change its shape without telling the team. |
-| `scripts/` | Model | Gemini prompt and call. Reads only `titolo` and `body`. |
-| `web/` | Screen | The card. Reads `data/card.json`. |
-| `pitch.md` | Pitch | The three beats. |
+| Path | Contents |
+|---|---|
+| `web/dashboard/` | The desk. `data.js` is the demo shell. `real_data.js` and `fear_greed.js` are generated. |
+| `web/public/data/` | Static JSON the desk is built from. |
+| `web/fear-greed.html` | Standalone Fear & Greed page. |
+| `data/` | Cards, Gemini cards, series, theses, stats. `tape_all.csv` and `company_prices.csv` are gitignored. |
+| `scripts/` | Builders and tests. |
+| `sql/` | BigQuery queries. |
+| `eval/` | Hand review of 12 articles. |
+| `pitch/jury_qa.md` | Jury answers, English and Italian. |
 
-## Frozen rule
+## Rebuild
 
-- Baseline: the 20 sessions before the article date.
-- Daily move: `PRZ_LAST / PRZ_RIF - 1`, with `PRZ_RIF` taken from the previous session (on the same row it equals `PRZ_LAST` for most stocks).
-- Unusual: absolute move at least 2 times the baseline standard deviation.
-- Retained: `(PRZ_LAST on 2026-09-23 - price before the move) / (price after the move - price before the move)`.
-
-Prices and dates come only from BigQuery. Gemini never does arithmetic.
-
-## Running the queries
+GCP project `class-hackaton-09`. Gemini model `gemini-2.5-flash` on Vertex, location `global`. The access token is `gcloud auth print-access-token`.
 
 ```bash
 gcloud auth login
 gcloud auth application-default login
 gcloud config set project class-hackaton-09
-
-bq --project_id=class-hackaton-09 query --use_legacy_sql=false --format=csv --max_rows=500 \
-  --parameter=from_date:DATE:2026-07-01 --parameter=to_date:DATE:2026-09-18 \
-  < sql/events.sql > data/candidates_recent.csv
 ```
 
-## Building the card
+```bash
+make export      # offline: rebuild web/public/data from data/, run the contract test, write real_data.js
+make dashboard   # rewrite web/dashboard/real_data.js only
+make test        # unit tests
+make all         # BigQuery + Gemini, then export
+```
+
+`make all` runs events, tape and stats, company prices, cards, Gemini cards, chart series, theses, then export.
+
+`make export` rebuilds `web/public/data/companies/` when `data/tape_all.csv` is present (`make stats`). The price columns in those files need `data/company_prices.csv` (`make prices`). Without those two CSVs the company files already in the repo are left as they are.
+
+Fear & Greed is outside `make all`:
 
 ```bash
-# One story → data/card.json (or --out path). Prices from BigQuery; Gemini on titolo+body+verdict text.
+python3 scripts/fear_greed.py
+```
+
+That writes `data/fear_greed.json` and `web/dashboard/fear_greed.js`. A shock is a daily move at least twice the standard deviation of the previous 20 sessions. The narrative leg tilts the other weights. Shock counts sit beside the score and are not tilted.
+
+Makefile dates: cards from `2026-08-15` to `2026-09-18` (`FROM`, `TO`). The events query starts at `2026-07-01`. Hero ids default to the English Gemini cards already in `data/cards_gemini_en/`. Override with `HERO_IDS`.
+
+### One card
+
+```bash
 python3 scripts/build_card.py <content_id>
 python3 scripts/build_card.py <content_id> --lang it
 python3 scripts/build_card.py <content_id> --no-gemini --out /tmp/card.json
 
-# Batch over a Rome pub_date range (or --ids …). Default skips Gemini; add --gemini to call it.
 python3 scripts/build_cards.py --from 2026-08-15 --to 2026-09-18 --first-only --unusual-only
-python3 scripts/build_cards.py --from 2026-08-15 --to 2026-09-18 --first-only --unusual-only --gemini --limit 3
+python3 scripts/build_cards.py --ids <content_id> --gemini --lang it --out-dir data/cards_gemini_it
 ```
 
-`card.json` blocks: **article** (id, titolo, UTC + Rome times, quote, url) · **instrument** · **news** (classify: type, scheduled, headline_reports_move) · **verdict** (status + peak/largest + bilingual text) · **tape** (peak-or-largest session figures + `facts_text`) · **gemini** (sentence + checks; nulls with `--no-gemini`) · **context** (optional `stats.json` / `base_rate.json`).
+Blocks: `article`, `instrument`, `news`, `verdict`, `tape`, `gemini`, and optional `context`. `--no-gemini` leaves the Gemini fields null. Prices come from BigQuery. Gemini sees the title, the body, and the verdict facts as text.
 
-Verdict statuses: **NO_REACTION** — no session with |z|≥2 · **ALREADY_IN_PRICE** — peak unusual session closed before publication · **PARTLY_IN_PRICE** — some unusual move closed before, peak did not · **MOSTLY_AT_OPEN** — more than half of the day's move was already in the opening price before an in-session article (fixed majority rule, not tuned) · **REACTED** — peak unusual move on the reaction session · **DELAYED** — peak unusual move after the reaction session.
+### Classification
 
-Check `gemini.checks`: quote verbatim in body, figure in body, adjective in title, numbers only from article/facts, no recommendation words unless already in the article.
-
-## Body-first Gemini classification CLI
-
-`scripts/classify_gemini.py` calls Gemini through Vertex AI with the access token
-from `gcloud auth print-access-token`. It reads the full article body, returns at
-most three controlled topics, and validates the selected company and ticker
-against ordinary Italian instruments that also have quotes in BigQuery.
+`scripts/classify_gemini.py` reads the full body, returns at most three controlled topics, and checks the company and ticker against ordinary Italian instruments that also have quotes in BigQuery.
 
 ```bash
-# Article from class-hackaton-09.news.articles
 python3 scripts/classify_gemini.py --content-id 202609101905313642
-
-# JSON (titolo/title/headline + body/text/content) or plain UTF-8 text
 python3 scripts/classify_gemini.py --file article.json --lang it
-
-# Body on stdin; title is optional but improves company matching
-cat article.txt | python3 scripts/classify_gemini.py \
-  --title "Prysmian colloca nuove azioni" --out /tmp/classification.json
 ```
 
-The defaults match the card builder: project `class-hackaton-09`, Vertex location
-`global`, and model `gemini-2.5-flash`. Override them with `--project`,
-`--location`, and `--model` (or `GOOGLE_CLOUD_PROJECT`,
-`GOOGLE_CLOUD_LOCATION`, and `GEMINI_MODEL`).
+Override the defaults with `--project`, `--location`, `--model`, or `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION`, `GEMINI_MODEL`.
 
-The controlled labels are the existing card labels: `takeover`, `earnings`,
-`plan`, `capital`, `legal_regulatory`, `analyst`, `deal`, `governance`,
-`market_report`, and `other`. Public/control offers are `takeover`; securities
-offerings are `capital`; commercial offers and contracts are `deal`. The output
-keeps the card's `article`, `instrument`, `news`, and `gemini` blocks.
+Labels, in priority order: `takeover`, `earnings`, `plan`, `capital`, `legal_regulatory`, `analyst`, `deal`, `governance`, `market_report`, `other`. A public or control offer is `takeover`. A securities offering is `capital`. A commercial contract is `deal`.
 
-The demo cards in `data/cards_gemini_en` and `data/cards_gemini_it` use both
-classifiers (`news.classifier` = `both`). `scripts/choose_news.py` keeps the
-first Gemini topic whose quote matches that topic's rules, and falls back to
-the keyword label, then to `other`. `scheduled` and `headline_reports_move`
-stay on the keyword rules, because the verdict text uses them. Refresh the
-Gemini topics with `python3 scripts/refresh_demo_news.py`.
+Cards in `data/cards_gemini_en` and `data/cards_gemini_it` set `news.classifier` to `both`. `scripts/choose_news.py` keeps the first Gemini topic whose quote matches that topic’s rules, then the keyword label, then `other`. `scheduled` and `headline_reports_move` stay on the keyword rules, because the verdict text uses them. `python3 scripts/refresh_demo_news.py` refreshes the Gemini topics on those cards.
 
-## For the dashboard
-
-Read only `web/public/data/`. It is committed, so the dashboard never needs gcloud or a Gemini key. The shape of every file is in [data/SCHEMA.md](data/SCHEMA.md).
-
-- `manifest.json` has counts, dates and the file path templates.
-- `stories.json` is the list view. `stories/<content_id>.json` is one story with the card, the Gemini sentence in both languages, and the chart series.
-- `summary.json` holds the headline numbers and the status breakdowns by news type.
-- `status_meta.json` has labels, explanations and colours for the six statuses.
-- `companies.json` and `companies/<slug>.json` hold every MF story on a company since 2021, with its verdict, plus daily prices for the company page.
+### Theses
 
 ```bash
-make export   # offline: rebuild the bundle from data/ and run the contract test
-make all      # BigQuery + Gemini: events, tape/stats, prices, cards, Gemini cards, series, export
-make test     # all unit tests
+python3 scripts/build_theses.py
+python3 scripts/build_theses.py --only PRY ENEL
+python3 scripts/build_theses.py --force --only STLAM
 ```
 
-`make export` needs `data/tape_all.csv` (from `make stats`) and optionally `data/company_prices.csv` (from `make prices`) to rebuild the company files. Both are gitignored. Without them, the existing `companies/` is kept as it is.
+The builder reads the thesis from `data.js`, and uses `data/theses_overrides/<TICKER>.json` when that file exists. It writes `data/theses/<TICKER>.json`. An unchanged thesis skips Gemini and BigQuery unless `--force` is set. Quote and number checks drop a fact whose figure is not in the sources. `valutazione` stays null: there is no P/E series in the warehouse extract.
 
-## Workflow
+| Desk ticker | `COD_AZIONE` | Company file |
+|---|---|---|
+| `ENEL`, `PRY`, `MONC`, `TPRO`, `REC` | same code | `enel`, `prysmian`, `moncler`, `technoprobe`, `recordati` |
+| `ISP` | `AMBR` | `intesa-sanpaolo` |
+| `LDO` | `FINME` | `leonardo` |
+| `SPM` | `SAIP` | `saipem` |
+| `TIT` | `OLI` | `telecom-italia` |
+| `STLAM` | `FIAT` | simulated price, no offline series |
 
-Everyone works on `main`, stays inside their own folder, makes small commits and pulls often.
+## Tape rule
+
+Frozen. Nothing here was trained or tuned.
+
+- Baseline: the 20 sessions before the article date.
+- Daily move: `PRZ_LAST / previous session's PRZ_RIF - 1`. On the same row `PRZ_RIF` equals `PRZ_LAST` for most stocks, so a same-row ratio is almost always zero.
+- Unusual: absolute move at least 2 times the sample standard deviation of that baseline.
+- Retained: `(PRZ_LAST on 2026-09-23 - price before the move) / (price after the move - price before the move)`.
+
+Prices and dates come only from BigQuery. Gemini does no arithmetic.
+
+| Status | Meaning |
+|---|---|
+| `NO_REACTION` | No session in the window has \|z\| ≥ 2. |
+| `ALREADY_IN_PRICE` | The peak unusual session closed before publication. |
+| `PARTLY_IN_PRICE` | Some unusual move closed before publication. The peak did not. |
+| `MOSTLY_AT_OPEN` | In-session article, and more than half of that day’s move was already in the open. Fixed majority, not fitted. |
+| `REACTED` | The peak unusual move is on the reaction session. |
+| `DELAYED` | The peak unusual move is after the reaction session. |
+
+A card sentence is shown only when every Gemini check passes: the quote is verbatim in the body, the figure is in the body, the adjective is in the title, every number comes from the article or the facts text, and recommendation words appear only when the article already uses them.
+
+The board score next to a headline is the observed move around that article, including sessions after publication, scaled from the peak and from `|z|`. It describes the past.
+
+## Tests
+
+```bash
+make test
+```
+
+Runs `test_verdict`, `test_classify`, `test_build_card`, `test_export`, `test_theses`, `test_choose_news`, `test_classify_gemini`, and `test_fear_greed`.
+
+A separate hand review of 12 articles is in [eval/manual_article_eval.md](eval/manual_article_eval.md): company match 11/12, strict type 8/12. Full bodies are not in the export, so that review scores quotes as partial.
+
+## Limits
+
+Match is on the title. A shared token such as Leonardo attaches the person as well as Leonardo SpA. The hand review counted on the order of 80 of 749 stories under that name. The tape is daily closes, plus the open-share rule for `MOSTLY_AT_OPEN`. The 2σ / 20-session cut is a description, not a model. Sessions well after publication sit near the base rate. Gemini text that fails a check is omitted. A link from a story to a thesis indicator can be loose. Article bodies are not in `web/public/data/`. The demo book is invented.
+
+Wording for the jury, in both languages, is in [pitch/jury_qa.md](pitch/jury_qa.md).
