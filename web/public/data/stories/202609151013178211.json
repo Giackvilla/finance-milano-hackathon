@@ -18,26 +18,39 @@
  },
  "news": {
   "news_type": "earnings",
+  "classifier": "both",
   "scheduled": true,
   "headline_reports_move": false,
   "matched": [
    {
     "type": "earnings",
-    "keyword": "\\bperdita\\b"
+    "keyword": "NewPrinces chiude il primo semestre 2026 con ricavi consolidati che hanno superato i 3 miliardi di euro"
    },
    {
-    "type": "earnings",
-    "keyword": "\\bricavi\\b"
-   },
-   {
-    "type": "earnings",
-    "keyword": "\\bebitda\\b"
-   },
-   {
-    "type": "earnings",
-    "keyword": "chiude il semestre"
+    "type": "capital",
+    "keyword": "La posizione finanziaria netta consolidata al 30 giugno 2026 è pari a -67,3 milioni"
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "earnings",
+    "confidence": 0.95,
+    "evidence": "NewPrinces chiude il primo semestre 2026 con ricavi consolidati che hanno superato i 3 miliardi di euro"
+   },
+   {
+    "topic": "capital",
+    "confidence": 0.7,
+    "evidence": "La posizione finanziaria netta consolidata al 30 giugno 2026 è pari a -67,3 milioni"
+   }
+  ],
+  "summary": "NewPrinces ha chiuso il primo semestre 2026 con ricavi consolidati superiori a 3 miliardi di euro, in crescita del 131% grazie alle acquisizioni del 2025. L'EBITDA consolidato è salito a 170,1 milioni (+64,1%), con un miglioramento della redditività nel secondo trimestre. Nonostante un EBIT positivo nel secondo trimestre, il risultato netto consolidato del semestre è stato negativo per 5,8 milioni. La guidance per l'EBITDA annuale è stimata tra 330 e 350 milioni. La posizione finanziaria netta consolidata è migliorata a -67,3 milioni, con una cassa positiva di 314 milioni escludendo l'Ifrs 16. Il presidente Angelo Mastrolia ha sottolineato la solida performance del secondo trimestre, con una forte accelerazione della redditività e un utile netto positivo, attribuendo il miglioramento alla maggiore efficienza e diversificazione del gruppo.",
+  "company_evidence": "NewPrinces chiude il primo semestre 2026",
+  "keyword_news_type": "earnings",
+  "gemini_des_azione": "Newprinces",
+  "gemini_cod_azione": "NWL",
+  "instrument_agrees": true,
+  "gemini_news_type": "earnings",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "PARTLY_IN_PRICE",

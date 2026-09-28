@@ -17,19 +17,49 @@
   "company_slug": "webuild"
  },
  "news": {
-  "news_type": "capital",
+  "news_type": "market_report",
+  "classifier": "both",
   "scheduled": false,
   "headline_reports_move": true,
   "matched": [
    {
-    "type": "market_report",
-    "keyword": "chiude in (?:calo|rialzo|ribasso|rosso|verde|parita)"
+    "type": "capital",
+    "keyword": "Webuild contesta la ricostruzione della stampa su possibili extracosti che ha mandato in titolo in netto rosso. La società dell’ingegneria precisa di non aver chiesto al governo 22 miliardi di euro di extracosti."
    },
    {
-    "type": "capital",
-    "keyword": "\\bobbligazioni?\\b"
+    "type": "market_report",
+    "keyword": "Il titolo ha chiuso in ribasso del 7,9% a 2,01 euro."
+   },
+   {
+    "type": "analyst",
+    "keyword": "Equita mantiene il giudizio buy sul titolo, con target price a 3,50 euro"
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "capital",
+    "confidence": 0.9,
+    "evidence": "Webuild contesta la ricostruzione della stampa su possibili extracosti che ha mandato in titolo in netto rosso. La società dell’ingegneria precisa di non aver chiesto al governo 22 miliardi di euro di extracosti."
+   },
+   {
+    "topic": "market_report",
+    "confidence": 0.8,
+    "evidence": "Il titolo ha chiuso in ribasso del 7,9% a 2,01 euro."
+   },
+   {
+    "topic": "analyst",
+    "confidence": 0.7,
+    "evidence": "Equita mantiene il giudizio buy sul titolo, con target price a 3,50 euro"
+   }
+  ],
+  "summary": "Webuild ha smentito le notizie di stampa riguardo una presunta richiesta al governo di 22 miliardi di euro per extracosti, precisando che le comunicazioni alle istituzioni riguardano crediti per lavori eseguiti e anticipazioni contrattuali. Il titolo ha chiuso in calo del 7,9%. La società ha indicato un fabbisogno di cassa immediato di 2,1 miliardi di euro e riserve per circa 22 miliardi, con richieste aggiuntive di 10-12 miliardi per opere in corso. Equita ha mantenuto il giudizio 'buy' ma ha espresso interrogativi sulla sostenibilità della generazione di cassa.",
+  "company_evidence": "Webuild contesta la ricostruzione della stampa",
+  "keyword_news_type": "capital",
+  "gemini_des_azione": "Webuild",
+  "gemini_cod_azione": "COGE",
+  "instrument_agrees": true,
+  "gemini_news_type": "capital",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "REACTED",

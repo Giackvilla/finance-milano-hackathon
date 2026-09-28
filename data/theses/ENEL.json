@@ -1,0 +1,611 @@
+{
+  "tesi_usata": {
+    "motivo": "Forte generazione di free cash flow e un dividendo stabile, sostenuti dalle reti elettriche regolate.",
+    "indicatori": [
+      "Free cash flow dopo gli investimenti",
+      "Debito netto / EBITDA",
+      "Dividendo per azione confermato"
+    ],
+    "orizzonte": "Oltre 5 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "rafforzata",
+    "sintesi": "La forte generazione di flussi di cassa operativi ha costantemente coperto investimenti e dividendi, supportando la tesi di una robusta generazione di free cash flow. La conferma del dividendo e l'aumento delle stime sull'utile netto ordinario rafforzano l'idea di un dividendo stabile, nonostante l'indebitamento finanziario netto sia in crescita.",
+    "fatti": [
+      {
+        "testo": "Enel ha registrato un EBITDA ordinario di 11,84 miliardi di euro nel primo semestre 2026, in crescita del 3,2%.",
+        "citazione": "ebitda ordinario di 11,84 miliardi di euro ( +3,2%)",
+        "fonte": {
+          "titolo": "Enel, il decreto bollette pesa sui conti in Italia. Corre l’estero. Ebitda a 11,8 miliardi (+ 3,2%)",
+          "url": "https://www.milanofinanza.it/news/enel-il-decreto-bollette-pesa-sui-conti-in-italia-corre-lestero-ebitda-a-118-miliardi--32-202607301828295443",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "L'utile netto ordinario di Enel per il primo semestre 2026 è salito a 3,93 miliardi di euro, con un aumento del 2,8%.",
+        "citazione": "risultato netto ordinario di 3,93 miliardi di euro ( +2,8%)",
+        "fonte": {
+          "titolo": "Enel, il decreto bollette pesa sui conti in Italia. Corre l’estero. Ebitda a 11,8 miliardi (+ 3,2%)",
+          "url": "https://www.milanofinanza.it/news/enel-il-decreto-bollette-pesa-sui-conti-in-italia-corre-lestero-ebitda-a-118-miliardi--32-202607301828295443",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "L'indebitamento finanziario netto di Enel è aumentato del 6,7% a 61 miliardi di euro.",
+        "citazione": "Indebitamento finanziario netto, cresciuto del 6,7% a 61 miliardi di euro.",
+        "fonte": {
+          "titolo": "Enel, il decreto bollette pesa sui conti in Italia. Corre l’estero. Ebitda a 11,8 miliardi (+ 3,2%)",
+          "url": "https://www.milanofinanza.it/news/enel-il-decreto-bollette-pesa-sui-conti-in-italia-corre-lestero-ebitda-a-118-miliardi--32-202607301828295443",
+          "data": "30 lug 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "La capacità di Enel di generare flussi di cassa operativi elevati, anche in un contesto di aumento degli investimenti, suggerisce una buona resilienza del modello di business.",
+      "L'incremento dell'indebitamento finanziario netto, sebbene gestito dai flussi di cassa, potrebbe rappresentare un fattore da monitorare attentamente per la sostenibilità a lungo termine."
+    ],
+    "indicatori": [
+      {
+        "nome": "Free cash flow dopo gli investimenti",
+        "stato": "neutro",
+        "testo": "I flussi di cassa operativi e le nuove emissioni hanno coperto gli investimenti e i dividendi, ma l'indebitamento finanziario netto è aumentato (rilevato in 1T 2026).",
+        "citazione": "I flussi di cassa generati dall’attività operativa e gli effetti derivanti dalle nuove emissioni di prestiti obbligazionari non convertibili subordinati ibridi perpetui hanno soddisfatto il fabbisogno finanziario connesso agli investimenti del periodo, al pagamento di dividendi, all’acquisto da parte di Enel ed Endesa di azioni proprie nell’ambito delle operazioni di share buyback e alle operazioni straordinarie.",
+        "fonte": {
+          "titolo": "Enel: Spagna e Sud America spingono i conti del primo trimestre. L’utile netto sale a 1,94 miliardi",
+          "url": "https://www.milanofinanza.it/news/enel-spagna-e-sud-america-spingono-i-conti-del-primo-trimestre-lutile-netto-sale-a-194-miliardi-202605071824387538",
+          "data": "7 mag 2026"
+        }
+      },
+      {
+        "nome": "Debito netto / EBITDA",
+        "stato": "contro",
+        "testo": "L'indebitamento finanziario netto è aumentato a 57,83 miliardi di euro rispetto ai 57,18 miliardi di fine 2025 (rilevato in 1T 2026).",
+        "citazione": "I’indebitamento finanziario netto è leggermente aumentato a 57,83 miliardi di euro dai 57,18 miliardi di fine 2025 (+1,1%).",
+        "fonte": {
+          "titolo": "Enel: Spagna e Sud America spingono i conti del primo trimestre. L’utile netto sale a 1,94 miliardi",
+          "url": "https://www.milanofinanza.it/news/enel-spagna-e-sud-america-spingono-i-conti-del-primo-trimestre-lutile-netto-sale-a-194-miliardi-202605071824387538",
+          "data": "7 mag 2026"
+        }
+      },
+      {
+        "nome": "Dividendo per azione confermato",
+        "stato": "a_favore",
+        "testo": "I flussi di cassa generati dalla gestione operativa hanno sostanzialmente compensato il fabbisogno generato dagli investimenti e dal pagamento dei dividendi (rilevato in 4T 2025).",
+        "citazione": "I flussi di cassa generati dalla gestione operativa hanno sostanzialmente compensato il fabbisogno generato dagli investimenti e dal pagamento dei dividendi",
+        "fonte": {
+          "titolo": "Enel, cresce l’ebitda 2025. L’utile netto supererà 6,9 miliardi",
+          "url": "https://www.milanofinanza.it/news/enel-cresce-lebitda-2025--lutile-netto-in-area-69-miliardi-202602051845052989",
+          "data": "5 feb 2026"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 4 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "I primi trimestri hanno mostrato una solida performance operativa e la conferma del dividendo, rafforzando la tesi. Successivamente, pur mantenendo una forte generazione di cassa, si è osservato un progressivo aumento dell'indebitamento finanziario netto.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "13 nov 2025",
+      "fatti": [
+        {
+          "testo": "Enel ha registrato ricavi in crescita nei primi nove mesi del 2025.",
+          "citazione": "Enel chiude i primi nove mesi del 2025 con ricavi in crescita a 59,7 miliardi di euro (+3,6%)",
+          "fonte": {
+            "titolo": "Enel, l’estero traina i conti dei primi 9 mesi. Ebitda sopra il consenso",
+            "url": "https://www.milanofinanza.it/news/enel-lestero-traina-i-conti-dei-9-mesi-2025-ebitda-sopra-il-consenso-202511131829197985",
+            "data": "13 nov 2025"
+          }
+        },
+        {
+          "testo": "L'EBITDA ordinario dei primi nove mesi del 2025 è leggermente diminuito ma ha superato le attese del consenso.",
+          "citazione": "un ebitda ordinario in lieve flessione a 17,26 miliardi (-1,1%), ma leggermente superiore alle attese del consenso (17,16 miliardi di euro).",
+          "fonte": {
+            "titolo": "Enel, l’estero traina i conti dei primi 9 mesi. Ebitda sopra il consenso",
+            "url": "https://www.milanofinanza.it/news/enel-lestero-traina-i-conti-dei-9-mesi-2025-ebitda-sopra-il-consenso-202511131829197985",
+            "data": "13 nov 2025"
+          }
+        },
+        {
+          "testo": "Il risultato netto ordinario è aumentato del 4,5% rispetto all'anno precedente.",
+          "citazione": "Il risultato netto ordinario è di 5,7 miliardi di euro (+4,5% anno su anno).",
+          "fonte": {
+            "titolo": "Enel, l’estero traina i conti dei primi 9 mesi. Ebitda sopra il consenso",
+            "url": "https://www.milanofinanza.it/news/enel-lestero-traina-i-conti-dei-9-mesi-2025-ebitda-sopra-il-consenso-202511131829197985",
+            "data": "13 nov 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi",
+          "valore": "59,7 miliardi di euro",
+          "confronto": "+3,6%",
+          "base": null,
+          "nota": "primi nove mesi del 2025"
+        },
+        {
+          "nome": "Ebitda ordinario",
+          "valore": "17,26 miliardi",
+          "confronto": "-1,1%",
+          "base": null,
+          "nota": "primi nove mesi del 2025, superiore al consenso di 17,16 miliardi di euro"
+        },
+        {
+          "nome": "Risultato netto ordinario",
+          "valore": "5,7 miliardi di euro",
+          "confronto": "+4,5%",
+          "base": null,
+          "nota": "primi nove mesi del 2025"
+        },
+        {
+          "nome": "Indebitamento",
+          "valore": "57,5 miliardi di euro",
+          "confronto": "+3,2%",
+          "base": null,
+          "nota": "al periodo"
+        }
+      ],
+      "guidance": "Il gruppo conferma la guidance indicata nel piano 2025-27 per l’ ebitda ordinario tra 22,9 e 23,1 miliardi. In rialzo le stime sull’utile netto ordinario: sarà leggermente superiore ai 6,9 miliardi di euro che erano la parte alta del range indicato in precedenza.",
+      "cambiato": "Non ci sono dati precedenti verificati per un confronto.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "I positivi flussi di cassa generati dalla gestione operativa e la conferma del dividendo minimo per il 2025 rafforzano la tesi di una forte generazione di free cash flow e un dividendo stabile."
+      },
+      "reazione": {
+        "pct": 0.3,
+        "da": "chiusura del 13 nov 2025",
+        "a": "chiusura del 14 nov 2025",
+        "nota": "Articolo MF delle 17:36: risultati pubblicati a mercati chiusi."
+      },
+      "fonti": [
+        {
+          "titolo": "Enel, l’estero traina i conti dei primi 9 mesi. Ebitda sopra il consenso",
+          "url": "https://www.milanofinanza.it/news/enel-lestero-traina-i-conti-dei-9-mesi-2025-ebitda-sopra-il-consenso-202511131829197985",
+          "data": "13 nov 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "5 feb 2026",
+      "fatti": [
+        {
+          "testo": "Enel ha chiuso il 2025 con un EBITDA in lieve crescita, raggiungendo 22,9 miliardi di euro.",
+          "citazione": "Enel ha chiuso i conti del 2025 con un ebitda in lieve crescita a 22,9 miliardi di euro (+2,2%).",
+          "fonte": {
+            "titolo": "Enel, cresce l’ebitda 2025. L’utile netto supererà 6,9 miliardi",
+            "url": "https://www.milanofinanza.it/news/enel-cresce-lebitda-2025--lutile-netto-in-area-69-miliardi-202602051845052989",
+            "data": "5 feb 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto ordinario di Enel per il 2025 è stimato superare la parte alta della guidance, che era di 6,9 miliardi di euro.",
+          "citazione": "Con i dati preliminari diffusi giovedì 5 febbraio, il gruppo guidato dall’ad Flavio Cattaneo conferma le stime sull’utile netto ordinario, previsto lievemente superiore alla parte alta del range di 6,7-6,9 miliardi di euro.",
+          "fonte": {
+            "titolo": "Enel, cresce l’ebitda 2025. L’utile netto supererà 6,9 miliardi",
+            "url": "https://www.milanofinanza.it/news/enel-cresce-lebitda-2025--lutile-netto-in-area-69-miliardi-202602051845052989",
+            "data": "5 feb 2026"
+          }
+        },
+        {
+          "testo": "L'indebitamento finanziario netto di Enel ha registrato una leggera crescita, attestandosi a 57,2 miliardi di euro.",
+          "citazione": "Leggera crescita per l’indebitamento finanziario netto, a 57,2 miliardi di euro (+2,5%).",
+          "fonte": {
+            "titolo": "Enel, cresce l’ebitda 2025. L’utile netto supererà 6,9 miliardi",
+            "url": "https://www.milanofinanza.it/news/enel-cresce-lebitda-2025--lutile-netto-in-area-69-miliardi-202602051845052989",
+            "data": "5 feb 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "EBITDA",
+          "valore": "22,9 miliardi di euro",
+          "confronto": "+2,2%",
+          "base": "a/a",
+          "nota": "in lieve crescita"
+        },
+        {
+          "nome": "Utile netto ordinario",
+          "valore": "superiore alla parte alta della guidance di 6,9 miliardi di euro",
+          "confronto": "",
+          "base": null,
+          "nota": "stimato"
+        },
+        {
+          "nome": "Indebitamento finanziario netto",
+          "valore": "57,2 miliardi di euro",
+          "confronto": "+2,5%",
+          "base": "a/a",
+          "nota": "Leggera crescita"
+        },
+        {
+          "nome": "Rapporto indebitamento finanziario netto/Ebitda ordinario",
+          "valore": "2,5x",
+          "confronto": "",
+          "base": null,
+          "nota": "tra i migliori nel settore utility"
+        }
+      ],
+      "guidance": "utile netto ordinario previsto lievemente superiore alla parte alta del range di 6,7-6,9 miliardi di euro",
+      "cambiato": "L'EBITDA ordinario, che nei primi nove mesi del 2025 era leggermente diminuito, ha chiuso il 2025 in lieve crescita del 2,2% a 22,9 miliardi di euro. I ricavi continuano a crescere, raggiungendo 80,4 miliardi di euro (+1,9%). L'utile netto ordinario è stimato in crescita, superando la parte alta della guidance di 6,9 miliardi di euro.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La generazione di cassa operativa ha compensato investimenti e dividendi, e l'EBITDA delle reti è cresciuto significativamente, supportando la tesi di un dividendo stabile e la solidità delle attività regolate."
+      },
+      "reazione": {
+        "pct": -0.1,
+        "da": "chiusura del 5 feb 2026",
+        "a": "chiusura del 6 feb 2026",
+        "nota": "Articolo MF delle 18:14: risultati pubblicati a mercati chiusi."
+      },
+      "fonti": [
+        {
+          "titolo": "Enel, cresce l’ebitda 2025. L’utile netto supererà 6,9 miliardi",
+          "url": "https://www.milanofinanza.it/news/enel-cresce-lebitda-2025--lutile-netto-in-area-69-miliardi-202602051845052989",
+          "data": "5 feb 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "periodo": "gennaio–marzo 2026",
+      "data": "7 mag 2026",
+      "fatti": [
+        {
+          "testo": "Enel ha registrato un EBITDA ordinario di 6 miliardi di euro nel primo trimestre 2026, in crescita del 3,6% rispetto all'anno precedente.",
+          "citazione": "Il gruppo guidato dall’ad Flavio Cattaneo ha chiuso i primi tre mesi dell’anno con un ebitda ordinario di 6 miliardi di euro (+3,6% anno su anno)",
+          "fonte": {
+            "titolo": "Enel: Spagna e Sud America spingono i conti del primo trimestre. L’utile netto sale a 1,94 miliardi",
+            "url": "https://www.milanofinanza.it/news/enel-spagna-e-sud-america-spingono-i-conti-del-primo-trimestre-lutile-netto-sale-a-194-miliardi-202605071824387538",
+            "data": "7 mag 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto ordinario di Enel per il primo trimestre 2026 è salito a 1,94 miliardi di euro, con un aumento del 3,9%.",
+          "citazione": "e un risultato netto ordinario di 1,94 miliardi di euro (+3,9%).",
+          "fonte": {
+            "titolo": "Enel: Spagna e Sud America spingono i conti del primo trimestre. L’utile netto sale a 1,94 miliardi",
+            "url": "https://www.milanofinanza.it/news/enel-spagna-e-sud-america-spingono-i-conti-del-primo-trimestre-lutile-netto-sale-a-194-miliardi-202605071824387538",
+            "data": "7 mag 2026"
+          }
+        },
+        {
+          "testo": "L'indebitamento finanziario netto di Enel è leggermente aumentato a 57,83 miliardi di euro rispetto ai 57,18 miliardi di fine 2025.",
+          "citazione": "I’indebitamento finanziario netto è leggermente aumentato a 57,83 miliardi di euro dai 57,18 miliardi di fine 2025 (+1,1%).",
+          "fonte": {
+            "titolo": "Enel: Spagna e Sud America spingono i conti del primo trimestre. L’utile netto sale a 1,94 miliardi",
+            "url": "https://www.milanofinanza.it/news/enel-spagna-e-sud-america-spingono-i-conti-del-primo-trimestre-lutile-netto-sale-a-194-miliardi-202605071824387538",
+            "data": "7 mag 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "EBITDA ordinario",
+          "valore": "6 miliardi di euro",
+          "confronto": "+3,6%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Risultato netto ordinario",
+          "valore": "1,94 miliardi di euro",
+          "confronto": "+3,9%",
+          "base": null,
+          "nota": null
+        },
+        {
+          "nome": "Indebitamento finanziario netto",
+          "valore": "57,83 miliardi di euro",
+          "confronto": "+1,1%",
+          "base": null,
+          "nota": "rispetto a fine 2025"
+        }
+      ],
+      "guidance": null,
+      "cambiato": "L'indebitamento finanziario netto è aumentato a 57,83 miliardi di euro rispetto ai 57,18 miliardi di fine 2025.",
+      "impatto": {
+        "effetto": "invariata",
+        "testo": "La crescita operativa supporta la generazione di cassa, ma l'aumento del debito e l'incertezza sulla concessione in Brasile introducono elementi di cautela per la stabilità del free cash flow e del dividendo, nonostante gli investimenti nelle reti regolate."
+      },
+      "reazione": {
+        "pct": -2.0,
+        "da": "chiusura del 6 mag 2026",
+        "a": "chiusura del 7 mag 2026",
+        "nota": "Articolo MF delle 17:00: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Enel: Spagna e Sud America spingono i conti del primo trimestre. L’utile netto sale a 1,94 miliardi",
+          "url": "https://www.milanofinanza.it/news/enel-spagna-e-sud-america-spingono-i-conti-del-primo-trimestre-lutile-netto-sale-a-194-miliardi-202605071824387538",
+          "data": "7 mag 2026"
+        }
+      ]
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "periodo": "aprile–giugno 2026",
+      "data": "30 lug 2026",
+      "fatti": [
+        {
+          "testo": "Enel ha registrato un EBITDA ordinario di 11,84 miliardi di euro nel primo semestre 2026, in crescita del 3,2%.",
+          "citazione": "ebitda ordinario di 11,84 miliardi di euro ( +3,2%)",
+          "fonte": {
+            "titolo": "Enel, il decreto bollette pesa sui conti in Italia. Corre l’estero. Ebitda a 11,8 miliardi (+ 3,2%)",
+            "url": "https://www.milanofinanza.it/news/enel-il-decreto-bollette-pesa-sui-conti-in-italia-corre-lestero-ebitda-a-118-miliardi--32-202607301828295443",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto ordinario di Enel per il primo semestre 2026 è salito a 3,93 miliardi di euro, con un aumento del 2,8%.",
+          "citazione": "risultato netto ordinario di 3,93 miliardi di euro ( +2,8%)",
+          "fonte": {
+            "titolo": "Enel, il decreto bollette pesa sui conti in Italia. Corre l’estero. Ebitda a 11,8 miliardi (+ 3,2%)",
+            "url": "https://www.milanofinanza.it/news/enel-il-decreto-bollette-pesa-sui-conti-in-italia-corre-lestero-ebitda-a-118-miliardi--32-202607301828295443",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "L'indebitamento finanziario netto di Enel è aumentato del 6,7% a 61 miliardi di euro.",
+          "citazione": "Indebitamento finanziario netto, cresciuto del 6,7% a 61 miliardi di euro.",
+          "fonte": {
+            "titolo": "Enel, il decreto bollette pesa sui conti in Italia. Corre l’estero. Ebitda a 11,8 miliardi (+ 3,2%)",
+            "url": "https://www.milanofinanza.it/news/enel-il-decreto-bollette-pesa-sui-conti-in-italia-corre-lestero-ebitda-a-118-miliardi--32-202607301828295443",
+            "data": "30 lug 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "EBITDA ordinario",
+          "valore": "11,84 miliardi di euro",
+          "confronto": "+3,2%",
+          "base": "a/a",
+          "nota": "Primo semestre 2026"
+        },
+        {
+          "nome": "Utile netto ordinario",
+          "valore": "3,93 miliardi di euro",
+          "confronto": "+2,8%",
+          "base": "a/a",
+          "nota": "Primo semestre 2026"
+        },
+        {
+          "nome": "Indebitamento finanziario netto",
+          "valore": "61 miliardi di euro",
+          "confronto": "+6,7%",
+          "base": null,
+          "nota": "Fine primo semestre 2026"
+        },
+        {
+          "nome": "EPS",
+          "valore": "0,40 euro",
+          "confronto": "+5,3%",
+          "base": "a/a",
+          "nota": "Primo semestre 2026"
+        }
+      ],
+      "guidance": "Per l’esercizio 2026 si prevede che l’eps si porti a circa 0,74 euro, corrispondente alla parte alta del range stimato da Enel, come atteso dal mercato.",
+      "cambiato": "L'indebitamento finanziario netto è cresciuto del 6,7% a 61 miliardi di euro.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La forte generazione di flussi di cassa operativi, pari a circa 6,1 miliardi di euro, ha permesso il pagamento dei dividendi e la copertura degli investimenti, nonostante l'aumento dell'indebitamento finanziario netto."
+      },
+      "reazione": {
+        "pct": 0.1,
+        "da": "chiusura del 29 lug 2026",
+        "a": "chiusura del 30 lug 2026",
+        "nota": "Articolo MF delle 16:02: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Enel, il decreto bollette pesa sui conti in Italia. Corre l’estero. Ebitda a 11,8 miliardi (+ 3,2%)",
+          "url": "https://www.milanofinanza.it/news/enel-il-decreto-bollette-pesa-sui-conti-in-italia-corre-lestero-ebitda-a-118-miliardi--32-202607301828295443",
+          "data": "30 lug 2026"
+        }
+      ]
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 4,
+    "per_indicatore": [
+      {
+        "nome": "Free cash flow dopo gli investimenti",
+        "n": 1,
+        "reazione": 1,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": [
+          {
+            "content_id": "202609111817042189",
+            "titolo": "Enel, la controllata Usa torna a fare cassa e avvia una nuova fase di m&a nelle rinnovabili",
+            "data": "11 set 2026",
+            "status": "DELAYED"
+          }
+        ]
+      },
+      {
+        "nome": "Debito netto / EBITDA",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Dividendo per azione confermato",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 3,
+      "reazione": 2,
+      "gia_nel_prezzo": 0,
+      "nessuna": 1
+    }
+  },
+  "decisione": {
+    "contesto": "portafoglio",
+    "azione": "mantenere",
+    "motivazione": "La tesi di una forte generazione di free cash flow e un dividendo stabile è rafforzata dai risultati che mostrano una solida performance operativa e la conferma del dividendo. Tuttavia, l'aumento dell'indebitamento finanziario netto è un elemento di preoccupazione, mitigato in parte dalla notizia che la controllata USA torna a generare cassa.",
+    "aFavore": [
+      "Dividendo per azione confermato",
+      "Forte generazione di flussi di cassa operativi",
+      "Enel, la controllata Usa torna a fare cassa"
+    ],
+    "rischio": "L'indebitamento finanziario netto in crescita.",
+    "cambierebbe": "Un miglioramento del rapporto Debito netto / EBITDA o un ulteriore deterioramento dello stesso.",
+    "basata_su": [
+      "risultati",
+      "notizie"
+    ],
+    "notizie_considerate": 4,
+    "notizie_da": "1 ago 2026"
+  },
+  "notizie_indicatori": {
+    "202609111817042189": "Free cash flow dopo gli investimenti"
+  },
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202511131829197985"
+      ],
+      "4T25": [
+        "202602051845052989",
+        "202602062119092842"
+      ],
+      "1T26": [
+        "202605071824387538",
+        "202604151332183908"
+      ],
+      "2T26": [
+        "202607301828295443",
+        "202607222031199368"
+      ]
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [
+            "fatto[2]: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        },
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "1T26": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "2T26": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [57.83]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ],
+      "decisione": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "2T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      }
+    },
+    "dropped": {
+      "3T25": 0,
+      "4T25": 0,
+      "1T26": 0,
+      "2T26": 0
+    },
+    "thesis_fp": "d87f6cc79d174f6a",
+    "pipeline_version": 2,
+    "n_quarters_ok": 4,
+    "n_facts_latest": 3,
+    "total_dropped": 0,
+    "insufficiente_forced": false,
+    "stlam_prices": null
+  }
+}

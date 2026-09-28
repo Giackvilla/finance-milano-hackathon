@@ -18,14 +18,48 @@
  },
  "news": {
   "news_type": "deal",
+  "classifier": "both",
   "scheduled": false,
   "headline_reports_move": false,
   "matched": [
    {
     "type": "deal",
-    "keyword": "\\bordini\\b"
+    "keyword": "Nuovi ordini e attività aggiuntive per 110 milioni di euro per Maire. Il gruppo guidato da Alessandro Bernini ha annunciato nuove commesse nell’ambito della business unit Integrated E&C Solutions"
+   },
+   {
+    "type": "analyst",
+    "keyword": "Per Equita la notizia è positiva in quanto conferma il buon momentum commerciale di Maire e il posizionamento nel segmento gas/gas naturale liquefatto. La sim ha quindi ribadito il rating buy e il target price a 18,50 sul titolo."
+   },
+   {
+    "type": "market_report",
+    "keyword": "A Piazza Affari il titolo Maire il 27 agosto, grazie a questo nuovo contratto, è salito in chiusura del 3,17% a 12,64 euro."
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "deal",
+    "confidence": 1.0,
+    "evidence": "Nuovi ordini e attività aggiuntive per 110 milioni di euro per Maire. Il gruppo guidato da Alessandro Bernini ha annunciato nuove commesse nell’ambito della business unit Integrated E&C Solutions"
+   },
+   {
+    "topic": "analyst",
+    "confidence": 0.9,
+    "evidence": "Per Equita la notizia è positiva in quanto conferma il buon momentum commerciale di Maire e il posizionamento nel segmento gas/gas naturale liquefatto. La sim ha quindi ribadito il rating buy e il target price a 18,50 sul titolo."
+   },
+   {
+    "topic": "market_report",
+    "confidence": 0.8,
+    "evidence": "A Piazza Affari il titolo Maire il 27 agosto, grazie a questo nuovo contratto, è salito in chiusura del 3,17% a 12,64 euro."
+   }
+  ],
+  "summary": "Maire ha annunciato nuovi ordini e attività aggiuntive per 110 milioni di euro, principalmente tramite la controllata Tecnimont, rafforzando la sua posizione nella monetizzazione del gas naturale in Sud America e Asia. Questi contratti, che includono un accordo di ingegneria preliminare in Sud America e un Front-end engineering design in Asia, potrebbero portare a un coinvolgimento più ampio in future fasi di sviluppo. Gli analisti di Equita, Banca Akros e Mediobanca hanno commentato positivamente la notizia, ribadendo i loro rating e target price, sebbene non prevedano un impatto trasformativo sulle stime del gruppo. Il titolo Maire ha reagito positivamente in borsa, salendo del 3,17% a Piazza Affari.",
+  "company_evidence": "Nuovi ordini e attività aggiuntive per 110 milioni di euro per Maire.",
+  "keyword_news_type": "deal",
+  "gemini_des_azione": "Maire",
+  "gemini_cod_azione": "MT",
+  "instrument_agrees": true,
+  "gemini_news_type": "deal",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "REACTED",

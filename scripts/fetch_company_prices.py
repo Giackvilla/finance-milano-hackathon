@@ -7,6 +7,10 @@ Usage:
 
 Companies come from data/tape_all.csv plus data/cards*/. Writes
 data/company_prices.csv, which export_dashboard.py reads if present.
+
+Note: Stellantis (demo ticker STLAM) trades as COD_AZIONE FIAT and is absent from
+the Italian-ISIN story tape, so it never appears here offline; the dashboard
+marks its price as simulated until FIAT closes are exported separately.
 Stdlib, Python 3.9.
 """
 from __future__ import annotations

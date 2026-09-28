@@ -1,0 +1,387 @@
+{
+  "tesi_usata": {
+    "motivo": "Crescita dei farmaci per malattie rare, un mercato con pochi concorrenti e margini elevati.",
+    "indicatori": [
+      "Crescita dei ricavi malattie rare",
+      "Margine EBITDA",
+      "Debito netto / EBITDA"
+    ],
+    "orizzonte": "3–5 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "insufficiente",
+    "sintesi": "La crescita robusta nel segmento delle malattie rare e i margini EBITDA elevati confermano la validità della tesi di investimento. Questi risultati indicano che l'azienda sta capitalizzando efficacemente sul mercato specializzato con pochi concorrenti.",
+    "fatti": [
+      {
+        "testo": "Recordati ha registrato ricavi totali per il 2025 pari a 2.618,4 milioni di euro, superando le stime del consenso che si aspettava 2.600 milioni.",
+        "citazione": "i ricavi sono aumentati dell’11,8% a 2.618,4 milioni di euro (+8,3% a parità di perimetro e a cambi costanti) quando il consenso si aspettava 2.600 milioni.",
+        "fonte": {
+          "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+          "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+          "data": "18 feb 2026"
+        }
+      },
+      {
+        "testo": "L'EBITDA per il 2025 ha raggiunto 991 milioni di euro, superando i 978 milioni previsti dal consenso.",
+        "citazione": "l’ebitda ha raggiunto quota 991 milioni (+14,5%), superando i 978 milioni previsti dal consenso.",
+        "fonte": {
+          "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+          "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+          "data": "18 feb 2026"
+        }
+      },
+      {
+        "testo": "I ricavi dal settore delle malattie rare sono cresciuti del 30% nel 2025, raggiungendo 1,08 miliardi di euro e rappresentando il 41% del totale.",
+        "citazione": "Rare diseases (+30% a 1,08 miliardi, al 41% del totale)",
+        "fonte": {
+          "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+          "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+          "data": "18 feb 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "La capacità di superare le attese del consenso sia sui ricavi che sull'EBITDA suggerisce una gestione efficace e una buona esecuzione strategica.",
+      "L'aumento della percentuale dei ricavi derivanti dalle malattie rare sul totale evidenzia un progressivo rafforzamento del focus aziendale su questo segmento chiave."
+    ],
+    "indicatori": [
+      {
+        "nome": "Crescita dei ricavi malattie rare",
+        "stato": "a_favore",
+        "testo": "I ricavi del settore Rare diseases sono cresciuti del 30% a 1,08 miliardi di euro, rappresentando il 41% del totale dei ricavi.",
+        "citazione": "Rare diseases (+30% a 1,08 miliardi, al 41% del totale)",
+        "fonte": {
+          "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+          "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+          "data": "18 feb 2026"
+        }
+      },
+      {
+        "nome": "Margine EBITDA",
+        "stato": "a_favore",
+        "testo": "La redditività è stata migliore del previsto, con un miglioramento determinato dal mix di business favorevole e dal buon leverage operativo.",
+        "citazione": "il miglioramento della redditività è stato determinato dal mix di business favorevole e dal buon leverage operativo in entrambe le divisioni",
+        "fonte": {
+          "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+          "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+          "data": "18 feb 2026"
+        }
+      },
+      {
+        "nome": "Debito netto / EBITDA",
+        "stato": "a_favore",
+        "testo": "Il rapporto Debito netto / EBITDA è migliorato a 2,1 volte a fine settembre 2025 (rilevato in 3T 2025).",
+        "citazione": "leva pari a 2,1 volte l’ebitda",
+        "fonte": {
+          "titolo": "Recordati, ricavi ed ebitda crescono a due cifre. Vendite di Isturisa raddoppiate a più di 1,2 miliardi. Analisti: buy",
+          "url": "https://www.milanofinanza.it/news/recordati-ricavi-ed-ebitda-crescono-a-due-cifre-vendite-di-isturisa-raddoppiate-a-più-di-12-miliardi-analisti-buy-202511120923432976",
+          "data": "12 nov 2025"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 2 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "I risultati del quarto trimestre 2025 hanno confermato e rafforzato le tendenze positive già osservate nel terzo trimestre, in particolare per quanto riguarda la crescita delle malattie rare e la redditività. La guidance per il 2026 e 2027 suggerisce una continuazione di questa traiettoria positiva.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "12 nov 2025",
+      "fatti": [
+        {
+          "testo": "Nel terzo trimestre, i ricavi sono stati di 632,4 milioni di euro, superando le attese del consenso dell'1%.",
+          "citazione": "I ricavi del solo terzo trimestre a 632,4 milioni sono superiori dell’1% rispetto al consenso",
+          "fonte": {
+            "titolo": "Recordati, ricavi ed ebitda crescono a due cifre. Vendite di Isturisa raddoppiate a più di 1,2 miliardi. Analisti: buy",
+            "url": "https://www.milanofinanza.it/news/recordati-ricavi-ed-ebitda-crescono-a-due-cifre-vendite-di-isturisa-raddoppiate-a-più-di-12-miliardi-analisti-buy-202511120923432976",
+            "data": "12 nov 2025"
+          }
+        },
+        {
+          "testo": "L'EBITDA rettificato del terzo trimestre ha raggiunto 247,6 milioni di euro, con un margine del 39,1%, superando le attese del consenso del 4%.",
+          "citazione": "L’ebitda rettificato a 247,6 milioni con un margine del 39,1% e l’utile netto rettificato a 165,3 milioni risultano, rispettivamente, superiori del 4% e del 5% alle attese del consenso",
+          "fonte": {
+            "titolo": "Recordati, ricavi ed ebitda crescono a due cifre. Vendite di Isturisa raddoppiate a più di 1,2 miliardi. Analisti: buy",
+            "url": "https://www.milanofinanza.it/news/recordati-ricavi-ed-ebitda-crescono-a-due-cifre-vendite-di-isturisa-raddoppiate-a-più-di-12-miliardi-analisti-buy-202511120923432976",
+            "data": "12 nov 2025"
+          }
+        },
+        {
+          "testo": "Nei primi nove mesi del 2025, il segmento delle malattie rare ha registrato una crescita del 29,2%, raggiungendo 782,2 milioni di euro.",
+          "citazione": "segmento Rare diseases (malattie rare; +29,2% a 782,2 milioni)",
+          "fonte": {
+            "titolo": "Recordati, ricavi ed ebitda crescono a due cifre. Vendite di Isturisa raddoppiate a più di 1,2 miliardi. Analisti: buy",
+            "url": "https://www.milanofinanza.it/news/recordati-ricavi-ed-ebitda-crescono-a-due-cifre-vendite-di-isturisa-raddoppiate-a-più-di-12-miliardi-analisti-buy-202511120923432976",
+            "data": "12 nov 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Crescita dei ricavi malattie rare",
+          "valore": "+29,2%",
+          "confronto": "",
+          "base": "a/a",
+          "nota": "riferito ai primi nove mesi del 2025"
+        },
+        {
+          "nome": "Margine EBITDA",
+          "valore": "39,1%",
+          "confronto": "",
+          "base": "t/t",
+          "nota": "riferito al terzo trimestre"
+        },
+        {
+          "nome": "Debito netto / EBITDA",
+          "valore": "2,1 volte",
+          "confronto": "",
+          "base": null,
+          "nota": "a fine settembre 2025"
+        }
+      ],
+      "guidance": "Recordati ha confermato la guidance 2025, prevedendo ricavi tra 2,6 e 2,67 miliardi e EBITDA tra 970 milioni e 1 miliardo, ma nella metà bassa dell'intervallo.",
+      "cambiato": "",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La forte crescita del segmento malattie rare (+29,2% nei primi nove mesi) e l'ottimo margine EBITDA del 39,1% nel trimestre rafforzano la tesi di investimento basata su questo mercato con margini elevati."
+      },
+      "reazione": {
+        "pct": 2.4,
+        "da": "chiusura del 11 nov 2025",
+        "a": "chiusura del 12 nov 2025",
+        "nota": "Articolo MF delle 08:07: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Recordati, ricavi ed ebitda crescono a due cifre. Vendite di Isturisa raddoppiate a più di 1,2 miliardi. Analisti: buy",
+          "url": "https://www.milanofinanza.it/news/recordati-ricavi-ed-ebitda-crescono-a-due-cifre-vendite-di-isturisa-raddoppiate-a-più-di-12-miliardi-analisti-buy-202511120923432976",
+          "data": "12 nov 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "18 feb 2026",
+      "fatti": [
+        {
+          "testo": "Recordati ha registrato ricavi totali per il 2025 pari a 2.618,4 milioni di euro, superando le stime del consenso che si aspettava 2.600 milioni.",
+          "citazione": "i ricavi sono aumentati dell’11,8% a 2.618,4 milioni di euro (+8,3% a parità di perimetro e a cambi costanti) quando il consenso si aspettava 2.600 milioni.",
+          "fonte": {
+            "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+            "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+            "data": "18 feb 2026"
+          }
+        },
+        {
+          "testo": "L'EBITDA per il 2025 ha raggiunto 991 milioni di euro, superando i 978 milioni previsti dal consenso.",
+          "citazione": "l’ebitda ha raggiunto quota 991 milioni (+14,5%), superando i 978 milioni previsti dal consenso.",
+          "fonte": {
+            "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+            "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+            "data": "18 feb 2026"
+          }
+        },
+        {
+          "testo": "I ricavi dal settore delle malattie rare sono cresciuti del 30% nel 2025, raggiungendo 1,08 miliardi di euro e rappresentando il 41% del totale.",
+          "citazione": "Rare diseases (+30% a 1,08 miliardi, al 41% del totale)",
+          "fonte": {
+            "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+            "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+            "data": "18 feb 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi totali",
+          "valore": "2.618,4 milioni di euro",
+          "confronto": "superando le stime del consenso",
+          "base": "a/a",
+          "nota": "Crescita dell’11,8%"
+        },
+        {
+          "nome": "EBITDA",
+          "valore": "991 milioni",
+          "confronto": "superando i 978 milioni previsti dal consenso",
+          "base": "a/a",
+          "nota": "Crescita del 14,5%"
+        }
+      ],
+      "guidance": "Recordati ha fornito una guidance per il 2026 con ricavi tra 2.730-2.800 milioni di euro e EBITDA tra 995-1.030 milioni. Ha anche confermato i target per il 2027, prevedendo un fatturato di 3-3,2 miliardi di euro e un EBITDA adjusted di 1,14-1,23 miliardi di euro, con un rapporto debito netto/EBITDA tra 1,7-2 x.",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La forte crescita del 30% nei ricavi delle malattie rare e la redditività migliore del previsto rafforzano la tesi di investimento basata sulla crescita in questo segmento ad alti margini."
+      },
+      "reazione": {
+        "pct": 2.5,
+        "da": "chiusura del 17 feb 2026",
+        "a": "chiusura del 18 feb 2026",
+        "nota": "Articolo MF delle 08:56: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Recordati, la redditività sorprende. Equita: oltre 1,5 miliardi per nuove acquisizioni",
+          "url": "https://www.milanofinanza.it/news/recordati-la-redditività-sorprende-equita-oltre-15-miliardi-per-nuove-acquisizioni-202602181036083014",
+          "data": "18 feb 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "mancante": true
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "mancante": true
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 2,
+    "per_indicatore": [
+      {
+        "nome": "Crescita dei ricavi malattie rare",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Margine EBITDA",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Debito netto / EBITDA",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 2,
+      "reazione": 0,
+      "gia_nel_prezzo": 0,
+      "nessuna": 2
+    }
+  },
+  "decisione": null,
+  "notizie_indicatori": {},
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202511120923432976",
+        "202510231340092749"
+      ],
+      "4T25": [
+        "202602181036083014"
+      ],
+      "1T26": [],
+      "2T26": []
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [
+            "fatto[0]: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        },
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [29.2]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "cambiato: numbers not in sources [29.2]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        }
+      ],
+      "1T26": [],
+      "2T26": [],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "reason": "no_candidates"
+      },
+      "2T26": {
+        "reason": "no_candidates"
+      }
+    },
+    "dropped": {
+      "3T25": 0,
+      "4T25": 1
+    },
+    "thesis_fp": "9b26106f30e98313",
+    "pipeline_version": 2,
+    "n_quarters_ok": 2,
+    "n_facts_latest": 3,
+    "total_dropped": 1,
+    "insufficiente_forced": true,
+    "stlam_prices": null
+  },
+  "mancano": [
+    "Ultimo trimestre disponibile (4T25) anteriore al 1T 2026.",
+    "Risultati 1T 2026 non coperti da articoli MF verificati.",
+    "Risultati 2T 2026 non coperti da articoli MF verificati."
+  ]
+}

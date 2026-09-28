@@ -18,14 +18,39 @@
  },
  "news": {
   "news_type": "governance",
+  "classifier": "both",
   "scheduled": false,
   "headline_reports_move": false,
   "matched": [
    {
     "type": "governance",
-    "keyword": "nuovo (?:ad|ceo|presidente|amministratore)"
+    "keyword": "Caffè Borbone cambia amministratore delegato e affida la guida ad Andrea Cipolloni"
+   },
+   {
+    "type": "earnings",
+    "keyword": "Nel primo semestre 2026 Caffè Borbone ha registrato ricavi per 189,4 milioni di euro, in aumento del 2,7% rispetto allo stesso periodo del 2025, mentre il margine operativo lordo è salito del 21,7% a 28,3 milioni."
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "governance",
+    "confidence": 1.0,
+    "evidence": "Caffè Borbone cambia amministratore delegato e affida la guida ad Andrea Cipolloni"
+   },
+   {
+    "topic": "earnings",
+    "confidence": 0.9,
+    "evidence": "Nel primo semestre 2026 Caffè Borbone ha registrato ricavi per 189,4 milioni di euro, in aumento del 2,7% rispetto allo stesso periodo del 2025, mentre il margine operativo lordo è salito del 21,7% a 28,3 milioni."
+   }
+  ],
+  "summary": "Caffè Borbone, controllata al 60% da Italmobiliare, ha nominato Andrea Cipolloni come nuovo amministratore delegato, con effetto da inizio ottobre. Cipolloni, che ha guidato in precedenza Eataly e Autogrill Europe, subentra a Marco Schiavon. Il suo obiettivo principale sarà accompagnare il brand nella prossima fase di sviluppo e internazionalizzazione. La società ha anche registrato buoni risultati finanziari nel primo semestre 2026, con ricavi pari a 189,4 milioni di euro (+2,7%) e un margine operativo lordo in crescita del 21,7% a 28,3 milioni di euro.",
+  "company_evidence": "a Italmobiliare",
+  "keyword_news_type": "governance",
+  "gemini_des_azione": "Italmobiliare",
+  "gemini_cod_azione": "ITMO",
+  "instrument_agrees": true,
+  "gemini_news_type": "governance",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "ALREADY_IN_PRICE",

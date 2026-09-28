@@ -18,22 +18,48 @@
  },
  "news": {
   "news_type": "analyst",
+  "classifier": "both",
   "scheduled": false,
   "headline_reports_move": false,
   "matched": [
    {
     "type": "analyst",
-    "keyword": "target price"
+    "keyword": "Riduce il target price sull’azione e conferma il giudizio equal-weight."
    },
    {
-    "type": "analyst",
-    "keyword": "taglia(?:no)? (?:il |i )?target"
+    "type": "plan",
+    "keyword": "Rai Way è oltre la metà del percorso previsto dal piano industriale 2024-2027."
    },
    {
-    "type": "analyst",
-    "keyword": "(?:equita|kepler|intermonte|jefferies|goldman|morgan stanley|barclays|\\bciti\\b|jp\\s*morgan|jpmorgan|bernstein|deutsche bank|banca akros|\\bakros\\b|berenberg|\\bubs\\b|\\bhsbc\\b|\\bbofa\\b|bank of america|\\bkbw\\b|\\balantra\\b).{0,55}(?:target|rating|giudizio|promuove|boccia|buy|hold|sell|neutral|outperform|underperform|upside|stime|analist|raccomand|overweight|underweight)"
+    "type": "earnings",
+    "keyword": "Morgan Stanley si attende a fine anno un utile netto stabile anno su anno a 88,6 milioni e un dividendo di 0,33 euro per azione"
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "analyst",
+    "confidence": 1.0,
+    "evidence": "Riduce il target price sull’azione e conferma il giudizio equal-weight."
+   },
+   {
+    "topic": "plan",
+    "confidence": 0.9,
+    "evidence": "Rai Way è oltre la metà del percorso previsto dal piano industriale 2024-2027."
+   },
+   {
+    "topic": "earnings",
+    "confidence": 0.8,
+    "evidence": "Morgan Stanley si attende a fine anno un utile netto stabile anno su anno a 88,6 milioni e un dividendo di 0,33 euro per azione"
+   }
+  ],
+  "summary": "L'articolo riporta l'analisi di Morgan Stanley su Rai Way, con la banca che taglia il target price del 20% a 5,4 euro e mantiene il giudizio \"equal-weight\". La cautela è motivata da cinque fattori: assenza di catalizzatori, possibile vendita di una quota da parte di Rai, sostenibilità a lungo termine del core business, rischio di esecuzione sui data center e scarsa liquidità del titolo. Morgan Stanley indica anche cosa potrebbe renderla più positiva, come l'avanzamento concreto nella realizzazione dei data center e un'ulteriore distribuzione di capitale. La banca prevede un utile netto stabile a fine anno e un dividendo di 0,33 euro per azione. L'opportunità dei data center italiani richiederà più tempo per concretizzarsi, con ricavi significativi non attesi prima del 2028.",
+  "company_evidence": "Rai Way",
+  "keyword_news_type": "analyst",
+  "gemini_des_azione": "Rai Way",
+  "gemini_cod_azione": "RWAY",
+  "instrument_agrees": true,
+  "gemini_news_type": "analyst",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "REACTED",

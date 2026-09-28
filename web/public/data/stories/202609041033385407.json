@@ -17,15 +17,49 @@
   "company_slug": "iren"
  },
  "news": {
-  "news_type": "capital",
+  "news_type": "plan",
+  "classifier": "both",
   "scheduled": false,
   "headline_reports_move": false,
   "matched": [
    {
+    "type": "plan",
+    "keyword": "Il piano industriale è atteso a ottobre."
+   },
+   {
     "type": "capital",
-    "keyword": "\\bdividendo\\b"
+    "keyword": "Il management ha infatti confermato la politica di dividendi con un tasso medio annuo di crescita della cedola dell’8%."
+   },
+   {
+    "type": "analyst",
+    "keyword": "Da qui la conferma da parte di Equita del rating buy con un target price 3,30 euro sul titolo"
    }
-  ]
+  ],
+  "topics": [
+   {
+    "topic": "plan",
+    "confidence": 0.95,
+    "evidence": "Il piano industriale è atteso a ottobre."
+   },
+   {
+    "topic": "capital",
+    "confidence": 0.9,
+    "evidence": "Il management ha infatti confermato la politica di dividendi con un tasso medio annuo di crescita della cedola dell’8%."
+   },
+   {
+    "topic": "analyst",
+    "confidence": 0.9,
+    "evidence": "Da qui la conferma da parte di Equita del rating buy con un target price 3,30 euro sul titolo"
+   }
+  ],
+  "summary": "Iren ha ricevuto indicazioni positive dalla presentazione alla Infrastructure & Defence conference. Il piano industriale, atteso a ottobre, includerà nuove indicazioni di crescita, un approccio più focalizzato sui progetti, l'espansione geografica e opportunità nel settore Waste. La società è interessata ad acquisizioni e ha confermato la politica di dividendi con una crescita media annua dell'8%, rendendo il rendimento di Iren il più elevato nel settore utility, al 6,7% nel 2027. Equita ha confermato il rating buy con un target price di 3,30 euro, ritenendo che il titolo non sia correttamente valutato e che il piano di ottobre possa fungere da catalizzatore.",
+  "company_evidence": "Sono arrivate indicazioni interessanti per Iren",
+  "keyword_news_type": "capital",
+  "gemini_des_azione": "Iren",
+  "gemini_cod_azione": "AET",
+  "instrument_agrees": true,
+  "gemini_news_type": "plan",
+  "choice": "gemini_quote"
  },
  "verdict": {
   "status": "REACTED",

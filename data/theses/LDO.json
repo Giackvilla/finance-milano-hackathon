@@ -1,0 +1,676 @@
+{
+  "tesi_usata": {
+    "motivo": "Crescita della spesa per la difesa in Europa, con ordini pluriennali per elettronica ed elicotteri.",
+    "indicatori": [
+      "Ordini acquisiti (book-to-bill)",
+      "Ricavi dell’elettronica per la difesa",
+      "Free cash flow operativo"
+    ],
+    "orizzonte": "3–5 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "rafforzata",
+    "sintesi": "I risultati trimestrali di Leonardo mostrano una crescita robusta degli ordini e dei ricavi, confermando l'impatto positivo dell'aumento della spesa per la difesa in Europa. Il contributo significativo delle divisioni Elettronica per la Difesa ed Elicotteri, insieme agli ordini pluriennali, rafforza la validità della tesi di investimento.",
+    "fatti": [
+      {
+        "testo": "Leonardo ha registrato ordini per 16,2 miliardi di euro nel primo semestre 2026, con un aumento del 44,6% rispetto all'anno precedente.",
+        "citazione": "Gli ordini hanno raggiunto 16,2 miliardi di euro, con un incremento del 44,6% rispetto ai primi sei mesi del 2025",
+        "fonte": {
+          "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+          "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "I ricavi del gruppo hanno superato i 10 miliardi di euro nel semestre, crescendo del 12,2% anno su anno.",
+        "citazione": "I ricavi sono aumentati del 12,2% a 10 miliardi",
+        "fonte": {
+          "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+          "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "L'utile netto adjusted è balzato a 476 milioni di euro nel semestre, segnando un aumento del 74% rispetto all'anno precedente.",
+        "citazione": "il risultato netto adjusted è balzato del 74% a 476 milioni",
+        "fonte": {
+          "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+          "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+          "data": "30 lug 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "La capacità di Leonardo di acquisire ordini significativi e di rivedere al rialzo le proprie previsioni suggerisce una forte domanda strutturale nei settori chiave.",
+      "L'andamento positivo del free operating cash flow indica una buona gestione finanziaria a fronte della crescita operativa."
+    ],
+    "indicatori": [
+      {
+        "nome": "Ordini acquisiti (book-to-bill)",
+        "stato": "a_favore",
+        "testo": "Gli ordini del semestre sono cresciuti del 44,6% a 16,2 miliardi di euro, con il portafoglio ordini che sale a 58,6 miliardi (+30%). La guidance 2026 sugli ordini è stata rivista al rialzo a 28,2 miliardi.",
+        "citazione": "Gli ordini hanno raggiunto 16,2 miliardi di euro, con un incremento del 44,6% rispetto ai primi sei mesi del 2025, mentre il portafoglio è salito a 58,6 miliardi (+30%)",
+        "fonte": {
+          "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+          "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "nome": "Ricavi dell’elettronica per la difesa",
+        "stato": "a_favore",
+        "testo": "L'Elettronica per la Difesa ha registrato ricavi in aumento del 18,9% nel semestre, beneficiando anche del consolidamento di Iveco Defence.",
+        "citazione": "L’Elettronica per la Difesa registra ordini per oltre 7 miliardi (+30,6%) e ricavi in aumento del 18,9%, beneficiando anche del consolidamento di Iveco Defence.",
+        "fonte": {
+          "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+          "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "nome": "Free cash flow operativo",
+        "stato": "a_favore",
+        "testo": "Il free operating cash flow del semestre, sebbene negativo per 249 milioni, ha mostrato un miglioramento del 39% rispetto allo stesso periodo del 2025. La guidance per il 2026 è stata rivista al rialzo a 1,37 miliardi.",
+        "citazione": "il free operating cash flow resta negativo per 249 milioni, come tipicamente avviene nella prima parte dell’anno, ma migliora del 39% rispetto allo stesso periodo del 2025.",
+        "fonte": {
+          "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+          "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+          "data": "30 lug 2026"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 4 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "Leonardo ha mostrato un'accelerazione costante nella crescita degli ordini e dei ricavi, superando le aspettative e rivedendo al rialzo le proprie previsioni per l'anno in corso. Questo trend positivo è stato sostenuto dal forte contributo dei settori chiave legati alla difesa.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "5 nov 2025",
+      "fatti": [
+        {
+          "testo": "Leonardo ha registrato ricavi per 4,53 miliardi di euro nel terzo trimestre 2025, con un aumento del 10,6% rispetto all'anno precedente.",
+          "citazione": "Leonardo ha chiuso il terzo trimestre 2025 con ricavi per 4,53 miliardi di euro, in aumento del 10,6% rispetto ai 4,09 miliardi dello stesso periodo del 2024",
+          "fonte": {
+            "titolo": "Leonardo, crescita a due cifre per ordini e utile nel terzo trimestre 2025",
+            "url": "https://www.milanofinanza.it/news/leonardo-crescita-a-due-cifre-per-ordini-e-utili-nel-terzo-trimestre-2025-202511051605148054",
+            "data": "5 nov 2025"
+          }
+        },
+        {
+          "testo": "L'Elettronica per la Difesa e la divisione Elicotteri hanno dato il contributo più significativo alla crescita trimestrale.",
+          "citazione": "L’andamento trimestrale riflette una dinamica positiva in quasi tutti i settori, ma il contributo più forte arriva dall’Elettronica per la Difesa e nella divisione Elicotteri.",
+          "fonte": {
+            "titolo": "Leonardo, crescita a due cifre per ordini e utile nel terzo trimestre 2025",
+            "url": "https://www.milanofinanza.it/news/leonardo-crescita-a-due-cifre-per-ordini-e-utili-nel-terzo-trimestre-2025-202511051605148054",
+            "data": "5 nov 2025"
+          }
+        },
+        {
+          "testo": "Nei primi nove mesi del 2025, gli ordini complessivi sono saliti del 24,3% a 18,2 miliardi di euro.",
+          "citazione": "Allargando ai primi nove mesi, il bilancio parziale del 2025 è largamente positivo: gli ordini complessivi salgono del 24,3% a 18,2 miliardi",
+          "fonte": {
+            "titolo": "Leonardo, crescita a due cifre per ordini e utile nel terzo trimestre 2025",
+            "url": "https://www.milanofinanza.it/news/leonardo-crescita-a-due-cifre-per-ordini-e-utili-nel-terzo-trimestre-2025-202511051605148054",
+            "data": "5 nov 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ordini acquisiti (book-to-bill)",
+          "valore": "1,4",
+          "confronto": "",
+          "base": null,
+          "nota": "Riferito ai primi nove mesi del 2025."
+        },
+        {
+          "nome": "Ricavi dell’elettronica per la difesa",
+          "valore": "5,8 miliardi",
+          "confronto": "+12,5%",
+          "base": null,
+          "nota": "Riferito ai primi nove mesi del 2025."
+        },
+        {
+          "nome": "Free cash flow operativo",
+          "valore": "–426 milioni",
+          "confronto": "+22,5%",
+          "base": null,
+          "nota": "Riferito ai primi nove mesi del 2025."
+        }
+      ],
+      "guidance": "Confermata la guidance 2025, alzata a luglio: attesi ordini tra 22,25 e 22,75 miliardi, ricavi a circa 18,6 miliardi, ebita intorno a 1,66 miliardi, focf tra 920 e 980 milioni e debito netto a circa 1,1 miliardi.",
+      "cambiato": "Nessun trimestre precedente verificato.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La crescita dei ricavi e il forte contributo dell'Elettronica per la Difesa e degli Elicotteri, insieme all'aumento degli ordini, supportano la tesi di investimento basata sulla crescita della spesa per la difesa."
+      },
+      "reazione": {
+        "pct": -1.0,
+        "da": "chiusura del 4 nov 2025",
+        "a": "chiusura del 5 nov 2025",
+        "nota": "Articolo MF delle 15:39: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Leonardo, crescita a due cifre per ordini e utile nel terzo trimestre 2025",
+          "url": "https://www.milanofinanza.it/news/leonardo-crescita-a-due-cifre-per-ordini-e-utili-nel-terzo-trimestre-2025-202511051605148054",
+          "data": "5 nov 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "12 mar 2026",
+      "fatti": [
+        {
+          "testo": "Leonardo ha chiuso l'esercizio 2025 con ordini pari a 23,8 miliardi di euro, in crescita del 15% rispetto all'anno precedente.",
+          "citazione": "L’esercizio si è chiuso con incrementi anno su anno a doppia cifra per ordini, a 23,8 miliardi (+15%)",
+          "fonte": {
+            "titolo": "Leonardo, con i conti 2025 sale anche il dividendo (+21%). Il nuovo piano si allunga al 2030",
+            "url": "https://www.milanofinanza.it/news/leonardo-con-i-conti-2025-sale-anche-il-dividendo--21-il-nuovo-piano-si-allunga-al-2030-202603120800359210",
+            "data": "12 mar 2026"
+          }
+        },
+        {
+          "testo": "I ricavi totali di Leonardo per il 2025 hanno raggiunto i 19,5 miliardi di euro, segnando un aumento dell'11% anno su anno.",
+          "citazione": "ricavi a 19,5 miliardi (+11%)",
+          "fonte": {
+            "titolo": "Leonardo, con i conti 2025 sale anche il dividendo (+21%). Il nuovo piano si allunga al 2030",
+            "url": "https://www.milanofinanza.it/news/leonardo-con-i-conti-2025-sale-anche-il-dividendo--21-il-nuovo-piano-si-allunga-al-2030-202603120800359210",
+            "data": "12 mar 2026"
+          }
+        },
+        {
+          "testo": "Il free operating cash flow di Leonardo per il 2025 è stato di 1 miliardo di euro, con un incremento del 21% rispetto all'anno precedente.",
+          "citazione": "free operating cash flow a 1 miliardo (+21%)",
+          "fonte": {
+            "titolo": "Leonardo, con i conti 2025 sale anche il dividendo (+21%). Il nuovo piano si allunga al 2030",
+            "url": "https://www.milanofinanza.it/news/leonardo-con-i-conti-2025-sale-anche-il-dividendo--21-il-nuovo-piano-si-allunga-al-2030-202603120800359210",
+            "data": "12 mar 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ordini",
+          "valore": "23,8 miliardi",
+          "confronto": "+15%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Ricavi",
+          "valore": "19,5 miliardi",
+          "confronto": "+11%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Free Operating Cash Flow",
+          "valore": "1 miliardo",
+          "confronto": "+21%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Dividendo",
+          "valore": "0,63 euro",
+          "confronto": "21% in più",
+          "base": "a/a",
+          "nota": "rispetto a quello del 2024"
+        }
+      ],
+      "guidance": "Le previsioni per il 2026 includono ordini a circa 25 miliardi di euro, ricavi intorno ai 21 miliardi di euro e un free operating cash flow atteso a circa 1,11 miliardi di euro.",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "I solidi risultati del 2025, con una crescita a doppia cifra per ordini e ricavi, e il focus su settori chiave come l'elettronica per la difesa e gli elicotteri, supportano la tesi di investimento basata sulla crescita della spesa per la difesa in Europa."
+      },
+      "reazione": {
+        "pct": 5.7,
+        "da": "chiusura del 11 mar 2026",
+        "a": "chiusura del 12 mar 2026",
+        "nota": "Articolo MF delle 07:42: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Leonardo, con i conti 2025 sale anche il dividendo (+21%). Il nuovo piano si allunga al 2030",
+          "url": "https://www.milanofinanza.it/news/leonardo-con-i-conti-2025-sale-anche-il-dividendo--21-il-nuovo-piano-si-allunga-al-2030-202603120800359210",
+          "data": "12 mar 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "periodo": "gennaio–marzo 2026",
+      "data": "6 mag 2026",
+      "fatti": [
+        {
+          "testo": "Leonardo ha registrato ordini per 9 miliardi di euro nel primo trimestre 2026, con una crescita del 31% anno su anno.",
+          "citazione": "Il gruppo ha chiuso con una crescita a due cifre anno su anno per ordini ed ebita, rispettivamente a 9 miliardi (+ 31%)",
+          "fonte": {
+            "titolo": "Leonardo, il mercato promuove i conti ma resta ampia la forbice sui target price. Ecco i giudizi degli analisti sul titolo",
+            "url": "https://www.milanofinanza.it/news/leonardo-il-mercato-promuove-i-conti-ma-resta-ampia-la-forbice-sui-target-price-ecco-i-giudizi-degli-analisti-sul-titolo-202605061411497433",
+            "data": "6 mag 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto adjusted è balzato a 184 milioni di euro, segnando un aumento del 60% rispetto all'anno precedente.",
+          "citazione": "L’utile netto adjusted è balzato a 184 milioni (+60%)",
+          "fonte": {
+            "titolo": "Leonardo, il mercato promuove i conti ma resta ampia la forbice sui target price. Ecco i giudizi degli analisti sul titolo",
+            "url": "https://www.milanofinanza.it/news/leonardo-il-mercato-promuove-i-conti-ma-resta-ampia-la-forbice-sui-target-price-ecco-i-giudizi-degli-analisti-sul-titolo-202605061411497433",
+            "data": "6 mag 2026"
+          }
+        },
+        {
+          "testo": "I ricavi hanno raggiunto 4,4 miliardi di euro nel trimestre, in crescita del 7% anno su anno.",
+          "citazione": "I ricavi sono in aumento a 4,4 miliardi di euro (+ 7%)",
+          "fonte": {
+            "titolo": "Leonardo, balzo dell’utile a 184 milioni (+60%) nell’ultimo trimestre firmato dal ceo Cingolani",
+            "url": "https://www.milanofinanza.it/news/leonardo-cresce-a-due-cifre-nel-primo-trimestre-2026-balzo-60-dellutile-a-184-milioni-202605060813132879",
+            "data": "5 mag 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ordini acquisiti",
+          "valore": "9 miliardi di euro",
+          "confronto": "+ 31%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Ricavi",
+          "valore": "4,4 miliardi di euro",
+          "confronto": "+ 7%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Free operating cash flow",
+          "valore": "-411 milioni di euro",
+          "confronto": "miglioramento del 29%",
+          "base": "a/a",
+          "nota": "assorbimento di cassa inferiore alle previsioni"
+        },
+        {
+          "nome": "Utile netto adjusted",
+          "valore": "184 milioni",
+          "confronto": "+60%",
+          "base": "a/a",
+          "nota": null
+        }
+      ],
+      "guidance": "Confermate le stime per l’intero esercizio 2026: ordini a 25 miliardi di euro, ricavi per 21 miliardi, un ebita di oltre 2 miliardi e un indebitamento netto di circa 800 milioni, al netto dell’acquisizione di Iveco Defense Vehicles.",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La forte crescita degli ordini (+31% a/a), in particolare nell'Elettronica per la Difesa e negli Elicotteri, conferma la validità della tesi di investimento legata all'aumento della spesa per la difesa e agli ordini pluriennali in questi settori."
+      },
+      "reazione": {
+        "pct": 5.0,
+        "da": "chiusura del 5 mag 2026",
+        "a": "chiusura del 6 mag 2026",
+        "nota": "Articolo MF delle 01:00: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Leonardo, il mercato promuove i conti ma resta ampia la forbice sui target price. Ecco i giudizi degli analisti sul titolo",
+          "url": "https://www.milanofinanza.it/news/leonardo-il-mercato-promuove-i-conti-ma-resta-ampia-la-forbice-sui-target-price-ecco-i-giudizi-degli-analisti-sul-titolo-202605061411497433",
+          "data": "6 mag 2026"
+        },
+        {
+          "titolo": "Leonardo, balzo dell’utile a 184 milioni (+60%) nell’ultimo trimestre firmato dal ceo Cingolani",
+          "url": "https://www.milanofinanza.it/news/leonardo-cresce-a-due-cifre-nel-primo-trimestre-2026-balzo-60-dellutile-a-184-milioni-202605060813132879",
+          "data": "5 mag 2026"
+        }
+      ]
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "periodo": "aprile–giugno 2026",
+      "data": "30 lug 2026",
+      "fatti": [
+        {
+          "testo": "Leonardo ha registrato ordini per 16,2 miliardi di euro nel primo semestre 2026, con un aumento del 44,6% rispetto all'anno precedente.",
+          "citazione": "Gli ordini hanno raggiunto 16,2 miliardi di euro, con un incremento del 44,6% rispetto ai primi sei mesi del 2025",
+          "fonte": {
+            "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+            "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "I ricavi del gruppo hanno superato i 10 miliardi di euro nel semestre, crescendo del 12,2% anno su anno.",
+          "citazione": "I ricavi sono aumentati del 12,2% a 10 miliardi",
+          "fonte": {
+            "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+            "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto adjusted è balzato a 476 milioni di euro nel semestre, segnando un aumento del 74% rispetto all'anno precedente.",
+          "citazione": "il risultato netto adjusted è balzato del 74% a 476 milioni",
+          "fonte": {
+            "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+            "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+            "data": "30 lug 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ordini",
+          "valore": "16,2 miliardi di euro",
+          "confronto": "+44,6%",
+          "base": null,
+          "nota": "semestre"
+        },
+        {
+          "nome": "Ricavi",
+          "valore": "10 miliardi di euro",
+          "confronto": "+12,2%",
+          "base": "a/a",
+          "nota": "semestre"
+        },
+        {
+          "nome": "Utile netto adjusted",
+          "valore": "476 milioni di euro",
+          "confronto": "+74%",
+          "base": "a/a",
+          "nota": "semestre"
+        }
+      ],
+      "guidance": "Leonardo ha rivisto al rialzo la guidance 2026, stimando ordini per circa 28,2 miliardi (rispetto ai 26,2 miliardi previsti in precedenza), un Free Operating Cash Flow di 1,37 miliardi (rispetto a 1,32 miliardi) e un Ebita di 2,21 miliardi (rispetto a 2,15 miliardi). I ricavi restano confermati a circa 22,1 miliardi e l'indebitamento netto di fine anno è atteso a circa 2,2 miliardi.",
+      "cambiato": "Rispetto al trimestre precedente, il gruppo ha continuato a mostrare una forte crescita degli ordini e dei ricavi, con un utile netto adjusted in ulteriore aumento. La guidance per l'intero anno 2026 è stata rivista al rialzo per ordini, cassa e redditività.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La forte crescita degli ordini complessivi e, in particolare, nell'Elettronica per la Difesa e negli Elicotteri, insieme alla guidance al rialzo, supporta la tesi di investimento legata all'aumento della spesa per la difesa."
+      },
+      "reazione": {
+        "pct": 2.6,
+        "da": "chiusura del 30 lug 2026",
+        "a": "chiusura del 31 lug 2026",
+        "nota": "Articolo MF delle 18:58: risultati pubblicati a mercati chiusi."
+      },
+      "fonti": [
+        {
+          "titolo": "Leonardo, debutto sprint per l’ad Mariani: nel semestre ordini a 16 miliardi (+45%) e guidance al rialzo",
+          "url": "https://www.milanofinanza.it/news/leonardo-debutto-sprint-per-lad-mariani-nel-semestre-ordini-a-16-miliardi-45-e-guidance-al-rialzo-202607301907025977",
+          "data": "30 lug 2026"
+        }
+      ]
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 22,
+    "per_indicatore": [
+      {
+        "nome": "Ordini acquisiti (book-to-bill)",
+        "n": 5,
+        "reazione": 2,
+        "gia_nel_prezzo": 0,
+        "nessuna": 3,
+        "titoli": [
+          {
+            "content_id": "202609151419471797",
+            "titolo": "Difesa, titoli in rally: Giappone verso il 3,5% del pil e nuovo contratto per Leonardo, tra le top pick di Citi",
+            "data": "15 set 2026",
+            "status": "NO_REACTION"
+          },
+          {
+            "content_id": "202609142011155479",
+            "titolo": "Leonardo: gli analisti promuovono il titolo e arriva una nuova commessa in Arabia Saudita",
+            "data": "14 set 2026",
+            "status": "NO_REACTION"
+          },
+          {
+            "content_id": "202609031459516646",
+            "titolo": "Leonardo, maxi-ordine per Atr da un miliardo di dollari dall’India. Ma in borsa il titolo scende",
+            "data": "3 set 2026",
+            "status": "DELAYED"
+          },
+          {
+            "content_id": "202609011018357267",
+            "titolo": "Leonardo firma il primo contratto con l’esercito brasiliano per sette blindati Centauro II",
+            "data": "1 set 2026",
+            "status": "NO_REACTION"
+          },
+          {
+            "content_id": "202608191352257322",
+            "titolo": "Il cloud nazionale di Tim, Leonardo & C fa contenti gli azionisti: boom di ordini e nuove risorse",
+            "data": "19 ago 2026",
+            "status": "DELAYED"
+          }
+        ]
+      },
+      {
+        "nome": "Ricavi dell’elettronica per la difesa",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Free cash flow operativo",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 17,
+      "reazione": 10,
+      "gia_nel_prezzo": 2,
+      "nessuna": 5
+    }
+  },
+  "decisione": {
+    "contesto": "portafoglio",
+    "azione": "mantenere",
+    "motivazione": "La crescita robusta degli ordini e dei ricavi, specialmente nelle divisioni Elettronica per la Difesa ed Elicotteri, rafforza la tesi di investimento legata all'aumento della spesa per la difesa. Le notizie recenti, pur evidenziando nuovi contratti e l'interesse degli analisti, mostrano anche una certa volatilità nella reazione del mercato.",
+    "aFavore": [
+      "Ordini acquisiti (book-to-bill)",
+      "Ricavi dell’elettronica per la difesa",
+      "nuovo contratto per Leonardo, tra le top pick di Citi"
+    ],
+    "rischio": "La reazione imprevedibile del mercato, che può portare a cali del titolo anche in presenza di notizie operative positive come un maxi-ordine.",
+    "cambierebbe": "Un rallentamento significativo nella crescita degli ordini o dei ricavi, in particolare nei settori chiave della difesa, o una revisione al ribasso delle previsioni.",
+    "basata_su": [
+      "risultati",
+      "notizie"
+    ],
+    "notizie_considerate": 22,
+    "notizie_da": "1 ago 2026"
+  },
+  "notizie_indicatori": {
+    "202609151419471797": "Ordini acquisiti (book-to-bill)",
+    "202609142011155479": "Ordini acquisiti (book-to-bill)",
+    "202609031459516646": "Ordini acquisiti (book-to-bill)",
+    "202609011018357267": "Ordini acquisiti (book-to-bill)",
+    "202608191352257322": "Ordini acquisiti (book-to-bill)"
+  },
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202511051605148054",
+        "202510291818193128"
+      ],
+      "4T25": [
+        "202603120800359210"
+      ],
+      "1T26": [
+        "202605060813132879",
+        "202605061411497433"
+      ],
+      "2T26": [
+        "202607301907025977",
+        "202609032105376096"
+      ]
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [
+            "fatto[1]: citazione not verbatim",
+            "metrica[0]: numbers not in sources [3.0]",
+            "metrica[1]: numbers not in sources [3.0]",
+            "metrica[2]: numbers not in sources [3.0]",
+            "metrica[3]: numbers not in sources [3.0]"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 4,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        },
+        {
+          "failures": [
+            "ind Free cash flow operativo: numbers not in sources [426.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 1,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [18.2]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "cambiato: numbers not in sources [18.2]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        }
+      ],
+      "1T26": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [11.0]",
+            "indicatore Ordini acquisiti (book-to-bill): citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 1,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "fatto[1]: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "2T26": [
+        {
+          "failures": [
+            "ind Ordini acquisiti (book-to-bill): numbers not in sources [1.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 1,
+            "fields": []
+          }
+        },
+        {
+          "failures": [
+            "metrica[3]: numbers not in sources [-249.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 1,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ],
+      "decisione": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "2T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      }
+    },
+    "dropped": {
+      "3T25": 1,
+      "4T25": 1,
+      "1T26": 1,
+      "2T26": 1
+    },
+    "thesis_fp": "1bc5a6bd58b8d720",
+    "pipeline_version": 2,
+    "n_quarters_ok": 4,
+    "n_facts_latest": 3,
+    "total_dropped": 4,
+    "insufficiente_forced": false,
+    "stlam_prices": null
+  }
+}

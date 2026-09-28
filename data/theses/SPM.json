@@ -1,0 +1,616 @@
+{
+  "tesi_usata": {
+    "motivo": "Ciclo di investimenti nell’energia offshore, con ordini pluriennali e margini in ripresa.",
+    "indicatori": [
+      "Nuovi ordini acquisiti",
+      "Margine EBITDA",
+      "Debito netto"
+    ],
+    "orizzonte": "1–3 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "indebolita",
+    "sintesi": "La tesi sui margini in ripresa è stata indebolita dalla revisione al ribasso della guidance sull'EBITDA adjusted per il 2026. Nonostante ciò, la forte raccolta ordini continua a supportare l'idea di un ciclo di investimenti nell'energia offshore e di ordini pluriennali.",
+    "fatti": [
+      {
+        "testo": "L'EBITDA adjusted del secondo trimestre si è attestato a 402 milioni di euro, inferiore alle attese degli analisti.",
+        "citazione": "L'adjusted ebitda si è fermato a 402 milioni di euro, sotto i 465 milioni attesi dal broker",
+        "fonte": {
+          "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+          "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+          "data": "28 lug 2026"
+        }
+      },
+      {
+        "testo": "I ricavi del secondo trimestre sono stati solidi a 3,82 miliardi di euro, in crescita del 3% e in linea con le previsioni.",
+        "citazione": "I ricavi, pari a 3,82 miliardi (+3%), sono invece risultati solidi e in linea con le attese.",
+        "fonte": {
+          "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+          "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+          "data": "28 lug 2026"
+        }
+      },
+      {
+        "testo": "Il free cash flow ha superato le previsioni, raggiungendo 356 milioni di euro nel secondo trimestre.",
+        "citazione": "il free cash flow ha raggiunto 356 milioni di euro, sopra le previsioni",
+        "fonte": {
+          "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+          "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+          "data": "28 lug 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "Sembra che la capacità di Saipem di migliorare i margini stia affrontando delle sfide, nonostante i progressi iniziali.",
+      "L'andamento degli ordini conferma il dinamismo del settore offshore, ma la profittabilità futura è ora meno chiara."
+    ],
+    "indicatori": [
+      {
+        "nome": "Nuovi ordini acquisiti",
+        "stato": "a_favore",
+        "testo": "La raccolta ordini nel secondo trimestre è stata di 4,1 miliardi di euro, portando il totale semestrale a 5,7 miliardi, con un aumento del 33%. La società prevede un order intake 2026 superiore a quello del 2025.",
+        "citazione": "nel secondo trimestre la raccolta è salita a 4,1 miliardi di euro, portando il totale del semestre a 5,7 miliardi (+33%) e spingendo la società a prevedere un order intake 2026 (raccolta ordini) superiore a quello del 2025.",
+        "fonte": {
+          "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+          "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+          "data": "28 lug 2026"
+        }
+      },
+      {
+        "nome": "Margine EBITDA",
+        "stato": "contro",
+        "testo": "La guidance sull'EBITDA adjusted per il 2026 è stata rivista al ribasso a circa 1,75 miliardi di euro, rispetto ai precedenti 1,9 miliardi.",
+        "citazione": "Saipem prevede ora un ebitda adjusted 2026 di circa 1,75 miliardi di euro, rispetto agli 1,9 miliardi indicati in precedenza.",
+        "fonte": {
+          "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+          "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+          "data": "28 lug 2026"
+        }
+      },
+      {
+        "nome": "Debito netto",
+        "stato": "a_favore",
+        "testo": "La posizione finanziaria netta è migliorata, diventando positiva per 1,2 miliardi pre-Ifrs16 e quasi in pareggio post-Ifrs16 (-23 milioni), in recupero rispetto a fine 2025 (rilevato in 1T 2026).",
+        "citazione": "il free cash flow (al netto dei canoni di locazione) di 199 milioni di euro ha contribuito al miglioramento della posizione finanziaria netta, positiva per 1,2 miliardi pre-Ifrs16 e quasi in pareggio post-Ifrs16 (-23 milioni), in recupero rispetto a fine 2025",
+        "fonte": {
+          "titolo": "Saipem, ricavi stabili e margini in crescita nel primo trimestre: ebitda + 24%. Gli effetti della crisi in Medio Oriente",
+          "url": "https://www.milanofinanza.it/news/saipem-ricavi-stabili-e-margini-in-crescita-nel-primo-trimestre-ebitda--24-gli-effetti-della-crisi-in-medio-oriente-202604211925587434",
+          "data": "21 apr 2026"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 4 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "Dopo un periodo di forte crescita dei margini e miglioramento della posizione finanziaria, l'ultimo trimestre ha visto una riduzione delle aspettative sull'EBITDA futuro. Questo cambiamento ha parzialmente offuscato il quadro positivo delineato dai precedenti risultati.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "22 ott 2025",
+      "fatti": [
+        {
+          "testo": "I ricavi di Saipem nel terzo trimestre 2025 sono cresciuti dell'1,6% raggiungendo i 3,77 miliardi di euro.",
+          "citazione": "Nel terzo trimestre la crescita dei ricavi è stata più contenuta a 3,77 miliardi (+1,6%)",
+          "fonte": {
+            "titolo": "Saipem: margini in crescita nei nove mesi 2025, guidance confermate",
+            "url": "https://www.milanofinanza.it/news/saipem-margini-in-crescita-nei-nove-mesi-2025-ma-gli-ordini-sono-in-calo-del-44-202510221912531189",
+            "data": "22 ott 2025"
+          }
+        },
+        {
+          "testo": "L'EBITDA di Saipem nel terzo trimestre 2025 è aumentato del 28,5%, arrivando a 437 milioni di euro.",
+          "citazione": "mentre l’ebitda ha mantenuto un ritmo a doppia cifra, salendo a 437 milioni (+28,5%).",
+          "fonte": {
+            "titolo": "Saipem: margini in crescita nei nove mesi 2025, guidance confermate",
+            "url": "https://www.milanofinanza.it/news/saipem-margini-in-crescita-nei-nove-mesi-2025-ma-gli-ordini-sono-in-calo-del-44-202510221912531189",
+            "data": "22 ott 2025"
+          }
+        },
+        {
+          "testo": "Nei primi nove mesi del 2025, i nuovi ordini acquisiti da Saipem sono diminuiti del 44,5%, passando da 13,5 a 7,5 miliardi di euro.",
+          "citazione": "forte discesa degli ordini, passati da 13,5 a 7,5 miliardi di euro (- 44,5%).",
+          "fonte": {
+            "titolo": "Saipem: margini in crescita nei nove mesi 2025, guidance confermate",
+            "url": "https://www.milanofinanza.it/news/saipem-margini-in-crescita-nei-nove-mesi-2025-ma-gli-ordini-sono-in-calo-del-44-202510221912531189",
+            "data": "22 ott 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi",
+          "valore": "3,77 miliardi",
+          "confronto": "+1,6%",
+          "base": null,
+          "nota": "Ricavi del terzo trimestre 2025"
+        },
+        {
+          "nome": "EBITDA",
+          "valore": "437 milioni",
+          "confronto": "+28,5%",
+          "base": null,
+          "nota": "EBITDA del terzo trimestre 2025"
+        },
+        {
+          "nome": "Utile netto",
+          "valore": "81 milioni",
+          "confronto": "-8%",
+          "base": null,
+          "nota": "Utile netto del terzo trimestre 2025"
+        },
+        {
+          "nome": "Posizione finanziaria netta",
+          "valore": "844 milioni",
+          "confronto": "in miglioramento di 161 milioni",
+          "base": null,
+          "nota": "Posizione finanziaria netta a fine settembre 2025"
+        }
+      ],
+      "guidance": "Saipem conferma la guidance 2025, che prevede ricavi intorno ai 15 miliardi, un ebitda di 1,6 miliardi, cash flow operativo di circa 900 milioni e investimenti per 500 milioni.",
+      "cambiato": "Non ci sono dati verificati del trimestre precedente per un confronto.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "I margini EBITDA sono in forte crescita, supportando la tesi di ripresa dei margini. Sebbene i nuovi ordini siano diminuiti nei nove mesi, il portafoglio ordini rimane solido e la posizione finanziaria netta è migliorata."
+      },
+      "reazione": {
+        "pct": 1.3,
+        "da": "chiusura del 22 ott 2025",
+        "a": "chiusura del 23 ott 2025",
+        "nota": "Articolo MF delle 18:46: risultati pubblicati a mercati chiusi."
+      },
+      "fonti": [
+        {
+          "titolo": "Saipem: margini in crescita nei nove mesi 2025, guidance confermate",
+          "url": "https://www.milanofinanza.it/news/saipem-margini-in-crescita-nei-nove-mesi-2025-ma-gli-ordini-sono-in-calo-del-44-202510221912531189",
+          "data": "22 ott 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "10 mar 2026",
+      "fatti": [
+        {
+          "testo": "Saipem ha registrato ricavi consolidati di circa 15,5 miliardi di euro per l'intero 2025.",
+          "citazione": "ricavi consolidati di circa 15,5 miliardi di euro",
+          "fonte": {
+            "titolo": "Saipem, ok ai conti 2025. Agli azionisti dividendo di 0,17 euro",
+            "url": "https://www.milanofinanza.it/news/saipem-ok-ai-conti-2025--agli-azionisti-dividendo-di-017-euro-202603102021075969",
+            "data": "10 mar 2026"
+          }
+        },
+        {
+          "testo": "L'EBITDA consolidato di Saipem per il 2025 ha raggiunto 1,7 miliardi di euro.",
+          "citazione": "ebitda di 1,7 miliardi",
+          "fonte": {
+            "titolo": "Saipem, ok ai conti 2025. Agli azionisti dividendo di 0,17 euro",
+            "url": "https://www.milanofinanza.it/news/saipem-ok-ai-conti-2025--agli-azionisti-dividendo-di-017-euro-202603102021075969",
+            "data": "10 mar 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto consolidato di Saipem per il 2025 è stato di 310 milioni di euro.",
+          "citazione": "utile netto consolidato di 310 milioni",
+          "fonte": {
+            "titolo": "Saipem, ok ai conti 2025. Agli azionisti dividendo di 0,17 euro",
+            "url": "https://www.milanofinanza.it/news/saipem-ok-ai-conti-2025--agli-azionisti-dividendo-di-017-euro-202603102021075969",
+            "data": "10 mar 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Utile netto SPA",
+          "valore": "347 milioni di euro",
+          "confronto": "279 milioni del 2024",
+          "base": "a/a",
+          "nota": "Riferito alla sola SPA"
+        }
+      ],
+      "guidance": null,
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "invariata",
+        "testo": "I solidi risultati finanziari per l'intero 2025, inclusi ricavi, EBITDA e utile netto, supportano l'idea di margini in ripresa. Tuttavia, la mancanza di dati aggiornati sui nuovi ordini acquisiti per l'intero anno lascia un'incertezza sulla componente degli ordini pluriennali della tesi."
+      },
+      "reazione": {
+        "pct": -0.7,
+        "da": "chiusura del 10 mar 2026",
+        "a": "chiusura del 11 mar 2026",
+        "nota": "Articolo MF delle 19:55: risultati pubblicati a mercati chiusi."
+      },
+      "fonti": [
+        {
+          "titolo": "Saipem, ok ai conti 2025. Agli azionisti dividendo di 0,17 euro",
+          "url": "https://www.milanofinanza.it/news/saipem-ok-ai-conti-2025--agli-azionisti-dividendo-di-017-euro-202603102021075969",
+          "data": "10 mar 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "periodo": "gennaio–marzo 2026",
+      "data": "21 apr 2026",
+      "fatti": [
+        {
+          "testo": "Saipem ha registrato un aumento dell'EBITDA del 24% nel primo trimestre 2026, raggiungendo 434 milioni di euro.",
+          "citazione": "l’ebitda ha registrato un incremento del 24% a 434 milioni",
+          "fonte": {
+            "titolo": "Saipem, ricavi stabili e margini in crescita nel primo trimestre: ebitda + 24%. Gli effetti della crisi in Medio Oriente",
+            "url": "https://www.milanofinanza.it/news/saipem-ricavi-stabili-e-margini-in-crescita-nel-primo-trimestre-ebitda--24-gli-effetti-della-crisi-in-medio-oriente-202604211925587434",
+            "data": "21 apr 2026"
+          }
+        },
+        {
+          "testo": "I ricavi sono rimasti stabili a 3,53 miliardi di euro nel primo trimestre 2026.",
+          "citazione": "a fronte di ricavi stabili a 3,53 miliardi di euro",
+          "fonte": {
+            "titolo": "Saipem, ricavi stabili e margini in crescita nel primo trimestre: ebitda + 24%. Gli effetti della crisi in Medio Oriente",
+            "url": "https://www.milanofinanza.it/news/saipem-ricavi-stabili-e-margini-in-crescita-nel-primo-trimestre-ebitda--24-gli-effetti-della-crisi-in-medio-oriente-202604211925587434",
+            "data": "21 apr 2026"
+          }
+        },
+        {
+          "testo": "La posizione finanziaria netta è migliorata, diventando positiva per 1,2 miliardi pre-Ifrs16 e quasi in pareggio post-Ifrs16 (-23 milioni), in recupero rispetto a fine 2025.",
+          "citazione": "il free cash flow (al netto dei canoni di locazione) di 199 milioni di euro ha contribuito al miglioramento della posizione finanziaria netta, positiva per 1,2 miliardi pre-Ifrs16 e quasi in pareggio post-Ifrs16 (-23 milioni), in recupero rispetto a fine 2025",
+          "fonte": {
+            "titolo": "Saipem, ricavi stabili e margini in crescita nel primo trimestre: ebitda + 24%. Gli effetti della crisi in Medio Oriente",
+            "url": "https://www.milanofinanza.it/news/saipem-ricavi-stabili-e-margini-in-crescita-nel-primo-trimestre-ebitda--24-gli-effetti-della-crisi-in-medio-oriente-202604211925587434",
+            "data": "21 apr 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "EBITDA",
+          "valore": "434 milioni",
+          "confronto": "+24%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Ricavi",
+          "valore": "3,53 miliardi di euro",
+          "confronto": "stabili",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "EBITDA margin",
+          "valore": "12,3%",
+          "confronto": "dal 10%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Posizione finanziaria netta",
+          "valore": "positiva per 1,2 miliardi pre-Ifrs16 e quasi in pareggio post-Ifrs16 (-23 milioni)",
+          "confronto": "in recupero",
+          "base": null,
+          "nota": "rispetto a fine 2025"
+        }
+      ],
+      "guidance": "Saipem ha confermato le guidance 2026, con ricavi attesi a circa 15,5 miliardi, ebitda a 1,9 miliardi e free cash flow intorno a 600 milioni.",
+      "cambiato": "La posizione finanziaria netta è migliorata significativamente, passando da un valore non specificato a fine 2025 a positiva per 1,2 miliardi pre-Ifrs16 e quasi in pareggio post-Ifrs16 (-23 milioni) nel primo trimestre 2026.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "Il miglioramento dei margini EBITDA e della posizione finanziaria netta, insieme alla conferma delle guidance e all'acquisizione di un importante ordine offshore, rafforzano la tesi di un ciclo di investimenti nell'energia offshore e di margini in ripresa, nonostante un calo negli ordini acquisiti nel trimestre."
+      },
+      "reazione": {
+        "pct": 6.5,
+        "da": "chiusura del 21 apr 2026",
+        "a": "chiusura del 22 apr 2026",
+        "nota": "Articolo MF delle 18:26: risultati pubblicati a mercati chiusi."
+      },
+      "fonti": [
+        {
+          "titolo": "Saipem, ricavi stabili e margini in crescita nel primo trimestre: ebitda + 24%. Gli effetti della crisi in Medio Oriente",
+          "url": "https://www.milanofinanza.it/news/saipem-ricavi-stabili-e-margini-in-crescita-nel-primo-trimestre-ebitda--24-gli-effetti-della-crisi-in-medio-oriente-202604211925587434",
+          "data": "21 apr 2026"
+        }
+      ]
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "periodo": "aprile–giugno 2026",
+      "data": "28 lug 2026",
+      "fatti": [
+        {
+          "testo": "L'EBITDA adjusted del secondo trimestre si è attestato a 402 milioni di euro, inferiore alle attese degli analisti.",
+          "citazione": "L'adjusted ebitda si è fermato a 402 milioni di euro, sotto i 465 milioni attesi dal broker",
+          "fonte": {
+            "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+            "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+            "data": "28 lug 2026"
+          }
+        },
+        {
+          "testo": "I ricavi del secondo trimestre sono stati solidi a 3,82 miliardi di euro, in crescita del 3% e in linea con le previsioni.",
+          "citazione": "I ricavi, pari a 3,82 miliardi (+3%), sono invece risultati solidi e in linea con le attese.",
+          "fonte": {
+            "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+            "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+            "data": "28 lug 2026"
+          }
+        },
+        {
+          "testo": "Il free cash flow ha superato le previsioni, raggiungendo 356 milioni di euro nel secondo trimestre.",
+          "citazione": "il free cash flow ha raggiunto 356 milioni di euro, sopra le previsioni",
+          "fonte": {
+            "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+            "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+            "data": "28 lug 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Adjusted EBITDA",
+          "valore": "402 milioni di euro",
+          "confronto": "sotto i 465 milioni attesi dal broker",
+          "base": null,
+          "nota": "del secondo trimestre"
+        },
+        {
+          "nome": "Ricavi",
+          "valore": "3,82 miliardi",
+          "confronto": "+3%",
+          "base": null,
+          "nota": "del secondo trimestre"
+        },
+        {
+          "nome": "Utile netto adjusted",
+          "valore": "53 milioni",
+          "confronto": "contro una stima di 94 milioni",
+          "base": null,
+          "nota": "del secondo trimestre"
+        },
+        {
+          "nome": "Free cash flow",
+          "valore": "356 milioni di euro",
+          "confronto": "sopra le previsioni",
+          "base": null,
+          "nota": "del secondo trimestre"
+        }
+      ],
+      "guidance": "Saipem prevede ora un ebitda adjusted 2026 di circa 1,75 miliardi di euro, rispetto agli 1,9 miliardi indicati in precedenza. Confermate invece le altre metriche chiave, con ricavi attesi a circa 15,5 miliardi, cash flow operativo post leasing intorno a 1 miliardo e free cash flow post leasing a circa 600 milioni.",
+      "cambiato": "La guidance sull'EBITDA adjusted per il 2026 è stata rivista al ribasso a circa 1,75 miliardi di euro, rispetto ai precedenti 1,9 miliardi. La raccolta ordini nel secondo trimestre è salita a 4,1 miliardi di euro, portando il totale del semestre a 5,7 miliardi (+33%), e la società prevede un order intake 2026 superiore a quello del 2025.",
+      "impatto": {
+        "effetto": "indebolisce",
+        "testo": "La riduzione della guidance sull'EBITDA adjusted per il 2026 indebolisce la tesi sui margini in ripresa, nonostante la forte raccolta ordini supporti il ciclo di investimenti offshore."
+      },
+      "reazione": {
+        "pct": -8.9,
+        "da": "chiusura del 27 lug 2026",
+        "a": "chiusura del 28 lug 2026",
+        "nota": "Articolo MF delle 10:41: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Saipem perde l’8,9% dopo i conti, analisti divisi sul titolo. Interviene il ceo Puliti",
+          "url": "https://www.milanofinanza.it/news/saipem-sotto-stress-dopo-i-conti-analisti-divisi-sul-titolo-202607281121106143",
+          "data": "28 lug 2026"
+        }
+      ]
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 7,
+    "per_indicatore": [
+      {
+        "nome": "Nuovi ordini acquisiti",
+        "n": 3,
+        "reazione": 0,
+        "gia_nel_prezzo": 2,
+        "nessuna": 1,
+        "titoli": [
+          {
+            "content_id": "202609011738416531",
+            "titolo": "Saipem punta sui carburanti sintetici: contratto con Synhelion per un impianto in Germania",
+            "data": "1 set 2026",
+            "status": "ALREADY_IN_PRICE"
+          },
+          {
+            "content_id": "202609010845271698",
+            "titolo": "Saipem punta sui carburanti sintetici: contratto con Synhelion per un impianto in Germania",
+            "data": "1 set 2026",
+            "status": "ALREADY_IN_PRICE"
+          },
+          {
+            "content_id": "202608071620036724",
+            "titolo": "Saipem avanza sul maxi progetto Rovuma Lng in Mozambico. Firmata una lettera di intenti da 32 milioni con ExxonMobil",
+            "data": "7 ago 2026",
+            "status": "NO_REACTION"
+          }
+        ]
+      },
+      {
+        "nome": "Margine EBITDA",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Debito netto",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 4,
+      "reazione": 0,
+      "gia_nel_prezzo": 1,
+      "nessuna": 3
+    }
+  },
+  "decisione": {
+    "contesto": "watchlist",
+    "azione": "attendere",
+    "motivazione": "La tesi sui margini in ripresa è stata indebolita dalla revisione al ribasso della guidance sull'EBITDA, nonostante la forte raccolta ordini e il miglioramento del debito netto. Le notizie recenti confermano la solidità degli ordini, ma non offrono nuovi spunti sulla ripresa dei margini, che rimane la principale incertezza.",
+    "aFavore": [
+      "Forte raccolta ordini (5,7 miliardi semestrali)",
+      "Miglioramento del debito netto (positivo pre-Ifrs16)",
+      "Nuovi contratti (Synhelion, Rovuma Lng)"
+    ],
+    "rischio": "La revisione al ribasso della guidance sull'EBITDA adjusted per il 2026.",
+    "cambierebbe": "Un miglioramento delle aspettative sui margini futuri o un'ulteriore conferma che i nuovi ordini si tradurranno in una maggiore redditività.",
+    "basata_su": [
+      "risultati",
+      "notizie"
+    ],
+    "notizie_considerate": 7,
+    "notizie_da": "1 ago 2026"
+  },
+  "notizie_indicatori": {
+    "202609011738416531": "Nuovi ordini acquisiti",
+    "202609010845271698": "Nuovi ordini acquisiti",
+    "202608071620036724": "Nuovi ordini acquisiti"
+  },
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202510221912531189",
+        "202511201323268732"
+      ],
+      "4T25": [
+        "202603102021075969"
+      ],
+      "1T26": [
+        "202604211925587434"
+      ],
+      "2T26": [
+        "202607281121106143"
+      ]
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [
+            "fatto[0]: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        },
+        {
+          "failures": [
+            "cambiato: numbers not in sources [44.5]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        }
+      ],
+      "1T26": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "2T26": [
+        {
+          "failures": [
+            "metrica[3]: numbers not in sources [2.0]",
+            "cambiato: numbers not in sources [3.53, 434.0]",
+            "indicatore Margine EBITDA: citazione not verbatim",
+            "indicatore Debito netto: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 1,
+            "indicatori_to_non_citato": 2,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ],
+      "decisione": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "2T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      }
+    },
+    "dropped": {
+      "3T25": 0,
+      "4T25": 1,
+      "1T26": 0,
+      "2T26": 0
+    },
+    "thesis_fp": "4648cd54be930a40",
+    "pipeline_version": 2,
+    "n_quarters_ok": 4,
+    "n_facts_latest": 3,
+    "total_dropped": 1,
+    "insufficiente_forced": false,
+    "stlam_prices": null
+  }
+}

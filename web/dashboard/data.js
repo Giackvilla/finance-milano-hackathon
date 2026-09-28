@@ -1,21 +1,24 @@
 /*
- * DATI DIMOSTRATIVI — tutti simulati.
- * Nessun prezzo, risultato trimestrale, reazione o fonte in questo file è reale.
+ * DATI DIMOSTRATIVI — fallback simulato.
+ * Le tesi (motivo/indicatori) in questo file sono l’input di esempio usato dall’UI e dalla pipeline.
+ * esito, earnings e decisione qui sotto sono solo un fallback: quando la pipeline genera
+ * data/theses/<TICKER>.json, real_data.js li sovrascrive con analisi verificate sugli articoli MF.
+ * Prezzi e notizie possono già essere reali via real_data.js.
  *
  * Questo file contiene solo dati: app.js lo legge da window.DEMO_DATA e non contiene valori.
- * Per collegare dati reali basta produrre un oggetto con la stessa forma
- * (es. prezzi da financial_instruments.instruments_quotes, fonti dagli articoli MF).
  *
- * Forma di un'azienda:
- *   nome, ticker, settore, prezzo, valutazione
+ * Forma di un'azienda (dopo l’override reale):
+ *   nome, ticker, settore, prezzo, valutazione|null
  *   tesi        { orizzonte, motivo, motivoBreve, indicatori[<=3], pesoPrevisto|null }
- *   esito       { stato: 'rafforzata'|'invariata'|'indebolita'|'insufficiente', sintesi, fatti[], interpretazioni[] }
- *   decisione   { contesto: 'portafoglio'|'watchlist', azione, motivazione, aFavore[], rischio, cambierebbe }
+ *   tesi_usata  { motivo, indicatori[], orizzonte }  — snapshot usato per generare esito
+ *   esito       { stato, sintesi, fatti[{testo,citazione,fonte}|str], interpretazioni[],
+ *                 indicatori[{nome,stato,testo,citazione,fonte}], metodo? }
+ *   decisione   { contesto, azione, motivazione, aFavore[], rischio, cambierebbe } | null
+ *   mancano[]   — quando decisione è null
  *   evoluzione  testo breve sui quattro trimestri
  *   earnings[]  dal più vecchio al più recente; ogni trimestre:
- *               { id, label, periodo, data, fatti[3], metriche[], guidance, cambiato,
- *                 impatto { effetto: 'rafforza'|'invariata'|'indebolisce', testo },
- *                 reazione { pct, da, a, nota }, fonti[] }
+ *               { id, label, periodo, data, fatti[], metriche[], guidance|null, cambiato,
+ *                 impatto { effetto, testo }, reazione|null, fonti[] }
  *               oppure { id, label, mancante: true }
  *   metriche:   { nome, valore|null, confronto, base: 'a/a'|'t/t'|null, nota }
  */
@@ -66,8 +69,7 @@
             'Guidance 2026 sull’EBITDA rettificato alzata a 2,45–2,55 miliardi di euro.'
           ],
           interpretazioni: [
-            'La domanda dei data center sembra ormai un motore misurabile dei ricavi, non più solo una prospettiva.',
-            'Con un peso del 28% la tua esposizione a questo tema è già elevata.'
+            'La domanda dei data center sembra ormai un motore misurabile dei ricavi, non più solo una prospettiva.'
           ]
         },
         decisione: {
@@ -772,10 +774,11 @@
 })();
 
 /*
- * Mercato, notizie e storico prezzi — sempre dati dimostrativi.
+ * Mercato, notizie e storico prezzi — fallback dimostrativo (sostituito da real_data.js se presente).
  * Le notizie imitano la forma degli articoli MF (titolo, riassunto_gen, data_pubblicazione)
  * e il collegamento articolo → strumento via similarità tra embedding (soglia 0,60).
- * segnale.dir: 'up' | 'down' | 'flat'; segnale.forza 0–1; storico = reazione media di articoli simili.
+ * segnale = reazione di prezzo osservata (dir/forza), non una previsione né un consiglio operativo.
+ * STLAM resta solo qui: COD_AZIONE FIAT assente dal bundle prezzi offline.
  */
 (function () {
   'use strict';

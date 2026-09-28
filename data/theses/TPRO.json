@@ -1,0 +1,185 @@
+{
+  "tesi_usata": {
+    "motivo": "Domanda di schede di test per i chip dedicati all’intelligenza artificiale.",
+    "indicatori": [
+      "Crescita dei ricavi",
+      "Quota di ricavi da clienti AI",
+      "Margine EBITDA"
+    ],
+    "orizzonte": "3–5 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "insufficiente",
+    "sintesi": "Non ci sono dati disponibili per i trimestri verificati. Di conseguenza, non è possibile valutare il legame tra i risultati e la tesi sulla domanda di schede di test per chip AI.",
+    "fatti": [],
+    "interpretazioni": [
+      "Senza dati finanziari, è impossibile formulare un'opinione sull'andamento dell'azienda.",
+      "Non si possono trarre conclusioni sulla validità della tesi in assenza di informazioni concrete."
+    ],
+    "indicatori": [
+      {
+        "nome": "Crescita dei ricavi",
+        "stato": "non_citato",
+        "testo": "Non citato negli articoli dei trimestri disponibili.",
+        "citazione": null,
+        "fonte": null
+      },
+      {
+        "nome": "Quota di ricavi da clienti AI",
+        "stato": "non_citato",
+        "testo": "Non citato negli articoli dei trimestri disponibili.",
+        "citazione": null,
+        "fonte": null
+      },
+      {
+        "nome": "Margine EBITDA",
+        "stato": "non_citato",
+        "testo": "Non citato negli articoli dei trimestri disponibili.",
+        "citazione": null,
+        "fonte": null
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 0 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "Non è possibile analizzare l'evoluzione tra i trimestri, dato che tutti i dati sono mancanti.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "mancante": true
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "mancante": true
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "mancante": true
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "mancante": true
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 2,
+    "per_indicatore": [
+      {
+        "nome": "Crescita dei ricavi",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Quota di ricavi da clienti AI",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Margine EBITDA",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 2,
+      "reazione": 1,
+      "gia_nel_prezzo": 0,
+      "nessuna": 1
+    }
+  },
+  "decisione": null,
+  "notizie_indicatori": {},
+  "debug": {
+    "candidate_ids": {
+      "3T25": [],
+      "4T25": [],
+      "1T26": [],
+      "2T26": [
+        "202609091108567418"
+      ]
+    },
+    "attempts": {
+      "3T25": [],
+      "4T25": [],
+      "1T26": [],
+      "2T26": [
+        {
+          "failures": [
+            "pertinente=false",
+            "no surviving facts"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        },
+        {
+          "failures": [
+            "pertinente=false",
+            "no surviving facts"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "reason": "no_candidates"
+      },
+      "4T25": {
+        "reason": "no_candidates"
+      },
+      "1T26": {
+        "reason": "no_candidates"
+      },
+      "2T26": {
+        "pertinente": false,
+        "n_fatti": 0
+      }
+    },
+    "dropped": {
+      "2T26": 0
+    },
+    "thesis_fp": "a1a3340af48a3267",
+    "pipeline_version": 2,
+    "n_quarters_ok": 0,
+    "n_facts_latest": 0,
+    "total_dropped": 0,
+    "insufficiente_forced": true,
+    "stlam_prices": null
+  },
+  "mancano": [
+    "Solo 0 trimestre/i con risultati verificati (ne servono almeno 2).",
+    "Nessun risultato trimestrale recente trovato negli articoli MF.",
+    "Risultati 3T 2025 non coperti da articoli MF verificati.",
+    "Risultati 4T 2025 non coperti da articoli MF verificati.",
+    "Risultati 1T 2026 non coperti da articoli MF verificati.",
+    "Risultati 2T 2026 non coperti da articoli MF verificati."
+  ]
+}

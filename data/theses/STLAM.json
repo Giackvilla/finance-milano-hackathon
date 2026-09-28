@@ -1,0 +1,572 @@
+{
+  "tesi_usata": {
+    "motivo": "Ripresa dei margini in Nord America grazie a nuovi modelli e a scorte più basse presso i concessionari.",
+    "indicatori": [
+      "Margine operativo rettificato Nord America",
+      "Scorte presso i concessionari USA",
+      "Free cash flow industriale"
+    ],
+    "orizzonte": "1–3 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "indebolita",
+    "sintesi": "La crescita dei volumi in Nord America e il lancio di nuovi modelli hanno inizialmente supportato la tesi di una ripresa dei margini. Tuttavia, il margine operativo rettificato in Nord America è rimasto debole nell'ultimo trimestre, mettendo in discussione la piena realizzazione della tesi.",
+    "fatti": [
+      {
+        "testo": "Stellantis è tornata in utile nel secondo trimestre 2026, registrando 293 milioni di euro contro una perdita di 1,87 miliardi nello stesso periodo del 2025.",
+        "citazione": "Il gruppo automobilistico guidato da Antonio Filosa ha chiuso il secondo trimestre con ricavi in crescita del 13% a 43,5 miliardi di euro, un utile netto di 293 milioni contro la perdita di 1,87 miliardi dello stesso periodo del 2025",
+        "fonte": {
+          "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "I ricavi del gruppo sono cresciuti del 13% a 43,5 miliardi di euro nel secondo trimestre.",
+        "citazione": "ricavi in crescita del 13% a 43,5 miliardi di euro",
+        "fonte": {
+          "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "L'utile operativo rettificato (Aoi) è più che triplicato, raggiungendo 773 milioni di euro rispetto ai 213 milioni di un anno fa.",
+        "citazione": "un adjusted operating income (Aoi) di 773 milioni, più che triplicato rispetto ai 213 milioni di un anno fa",
+        "fonte": {
+          "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+          "data": "30 lug 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "Le ingenti perdite registrate nel 2025 potrebbero aver rallentato la capacità di Stellantis di ottimizzare i margini in Nord America.",
+      "La debolezza del margine operativo in Nord America, che necessita di crediti di conformità per essere positivo, indica che la redditività intrinseca della regione non è ancora solida."
+    ],
+    "indicatori": [
+      {
+        "nome": "Margine operativo rettificato Nord America",
+        "stato": "contro",
+        "testo": "La regione fa segnare un utile operativo di 284 milioni (con un margine dell’1,6%). Ma il dato «include un utile netto di 317 milioni di euro relativo agli impegni contrattuali rinegoziati per l’acquisto di crediti di conformità normativa», spiega la società, senza il quale il Nord America sarebbe ancora in negativo.",
+        "citazione": "La regione fa segnare un utile operativo di 284 milioni (con un margine dell’1,6%). Ma il dato «include un utile netto di 317 milioni di euro relativo agli impegni contrattuali rinegoziati per l’acquisto di crediti di conformità normativa», spiega la società, senza il quale il Nord America sarebbe ancora in negativo.",
+        "fonte": {
+          "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "nome": "Scorte presso i concessionari USA",
+        "stato": "a_favore",
+        "testo": "I volumi in Nord America sono cresciuti del 35% grazie al ritorno a dinamiche di inventario più normali, rispetto all'anno precedente che era stato penalizzato dalla riduzione delle scorte dei concessionari statunitensi (rilevato in 3T 2025).",
+        "citazione": "In questo è stato decisivo il contributo del Nord America, dove i volumi sono cresciuti del 35% grazie al ritorno a dinamiche di inventario più normali rispetto all’anno precedente, penalizzato dalla riduzione delle scorte dei concessionari statunitensi.",
+        "fonte": {
+          "titolo": "Stellantis torna a crescere, ricavi a 37,2 miliardi (+13%) nel terzo trimestre. Filosa: progressi incoraggianti",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-alla-crescita-ricavi-a-372-miliardi-13-nel-terzo-trimestre-filosa-progressi-incoraggianti-202510300808469170",
+          "data": "29 ott 2025"
+        }
+      },
+      {
+        "nome": "Free cash flow industriale",
+        "stato": "a_favore",
+        "testo": "Il free cash flow industriale è tornato positivo per 1 miliardo di euro, superando le attese del consenso che lo prevedeva negativo.",
+        "citazione": "il free cash flow industriale è tornato positivo per 1 miliardo di euro.",
+        "fonte": {
+          "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+          "data": "30 lug 2026"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 4 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "Dopo un iniziale rafforzamento della tesi grazie alla crescita dei volumi in Nord America, il 2025 ha visto l'azienda affrontare perdite significative. Nel 2026, pur tornando all'utile complessivo, la ripresa dei margini in Nord America si è rivelata più debole del previsto.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "29 ott 2025",
+      "fatti": [
+        {
+          "testo": "Stellantis ha registrato ricavi netti di 37,2 miliardi di euro nel terzo trimestre, con un aumento del 13% su base annua.",
+          "citazione": "Nel terzo trimestre il gruppo dell’auto ora guidato dal ceo italiano Antonio Filosa ha registrato ricavi netti pari a 37,2 miliardi di euro, in crescita del 13% su base annua",
+          "fonte": {
+            "titolo": "Stellantis torna a crescere, ricavi a 37,2 miliardi (+13%) nel terzo trimestre. Filosa: progressi incoraggianti",
+            "url": "https://www.milanofinanza.it/news/stellantis-torna-alla-crescita-ricavi-a-372-miliardi-13-nel-terzo-trimestre-filosa-progressi-incoraggianti-202510300808469170",
+            "data": "29 ott 2025"
+          }
+        },
+        {
+          "testo": "Le consegne consolidate sono salite a 1,3 milioni di veicoli, con un incremento del 13% rispetto allo stesso periodo del 2024, grazie soprattutto al Nord America.",
+          "citazione": "le consegne consolidate, che sono salite a 1,3 milioni di veicoli, con un incremento del 13% (pari a 152 mila unità) rispetto allo stesso periodo del 2024. In questo è stato decisivo il contributo del Nord America",
+          "fonte": {
+            "titolo": "Stellantis torna a crescere, ricavi a 37,2 miliardi (+13%) nel terzo trimestre. Filosa: progressi incoraggianti",
+            "url": "https://www.milanofinanza.it/news/stellantis-torna-alla-crescita-ricavi-a-372-miliardi-13-nel-terzo-trimestre-filosa-progressi-incoraggianti-202510300808469170",
+            "data": "29 ott 2025"
+          }
+        },
+        {
+          "testo": "I volumi in Nord America sono cresciuti del 35% grazie al ritorno a dinamiche di inventario più normali rispetto all'anno precedente.",
+          "citazione": "In questo è stato decisivo il contributo del Nord America, dove i volumi sono cresciuti del 35% grazie al ritorno a dinamiche di inventario più normali rispetto all’anno precedente",
+          "fonte": {
+            "titolo": "Stellantis torna a crescere, ricavi a 37,2 miliardi (+13%) nel terzo trimestre. Filosa: progressi incoraggianti",
+            "url": "https://www.milanofinanza.it/news/stellantis-torna-alla-crescita-ricavi-a-372-miliardi-13-nel-terzo-trimestre-filosa-progressi-incoraggianti-202510300808469170",
+            "data": "29 ott 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi netti",
+          "valore": "37,2 miliardi di euro",
+          "confronto": "+13%",
+          "base": null,
+          "nota": null
+        },
+        {
+          "nome": "Consegne consolidate",
+          "valore": "1,3 milioni di veicoli",
+          "confronto": "+13%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Volumi Nord America",
+          "valore": "+35%",
+          "confronto": "",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Scorte totali del gruppo",
+          "valore": "1,252 milioni di unità",
+          "confronto": "+4%",
+          "base": null,
+          "nota": "al 30 settembre"
+        }
+      ],
+      "guidance": "Stellantis ha confermato le stime per la seconda metà del 2025, prevedendo un ulteriore miglioramento di ricavi, margine operativo (Aoi) e flussi di cassa industriali rispetto al primo semestre.",
+      "cambiato": "Rispetto a diversi trimestri complicati, Stellantis ha iniziato a invertire la tendenza, registrando un ritorno alla crescita del fatturato.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La crescita dei volumi del 35% in Nord America, grazie a dinamiche di inventario più normali e al lancio di nuovi modelli, rafforza la tesi di una ripresa dei margini nella regione."
+      },
+      "reazione": {
+        "pct": -8.9,
+        "da": "chiusura del 29 ott 2025",
+        "a": "chiusura del 30 ott 2025",
+        "nota": "Articolo MF delle 18:43: risultati pubblicati a mercati chiusi."
+      },
+      "fonti": [
+        {
+          "titolo": "Stellantis torna a crescere, ricavi a 37,2 miliardi (+13%) nel terzo trimestre. Filosa: progressi incoraggianti",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-alla-crescita-ricavi-a-372-miliardi-13-nel-terzo-trimestre-filosa-progressi-incoraggianti-202510300808469170",
+          "data": "29 ott 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "6 feb 2026",
+      "fatti": [
+        {
+          "testo": "Stellantis ha chiuso il secondo semestre 2025 con una perdita stimata tra 19 e 21 miliardi di euro, a seguito di un profondo riassetto strategico.",
+          "citazione": "risultati preliminari del secondo semestre 2025, chiuso con una perdita stimata tra 19 e 21 miliardi",
+          "fonte": {
+            "titolo": "Stellantis, parla il ceo Filosa dopo il crollo in borsa: abbiamo sopravvalutato l'auto elettrica, ora pulizia nel bilancio",
+            "url": "https://www.milanofinanza.it/news/stellantis-crolla-in-borsa-il-ceo-filosa-agli-analisti-riassetto-necessario-dopo-aver-sopravvalutato-lelettrico-202602061424136271",
+            "data": "6 feb 2026"
+          }
+        },
+        {
+          "testo": "L'anno 2025 si è concluso per Stellantis con una perdita netta di 22,3 miliardi di euro, dovuta principalmente a svalutazioni legate a una sovrastima della transizione elettrica.",
+          "citazione": "Il 2025 è stato infatti un anno estremamente complesso per Stellantis, chiuso con una perdita netta di 22,3 miliardi di euro, anche a causa di svalutazioni legate a una sovrastima della velocità della transizione elettrica.",
+          "fonte": {
+            "titolo": "Stellantis pesa sui conti 2025 della famiglia Peugeot. Che però diversifica dall’auto e aumenta gli utili",
+            "url": "https://www.milanofinanza.it/news/stellantis-pesa-sui-conti-2025-della-famiglia-peugeot-che-però-diversifica-dallauto-e-aumenta-gli-utili-202603260806211905",
+            "data": "25 mar 2026"
+          }
+        },
+        {
+          "testo": "A causa delle perdite registrate, Stellantis ha annunciato la sospensione del dividendo per il 2026.",
+          "citazione": "La decisione di non distribuire il dividendo è stata presa a causa delle perdite",
+          "fonte": {
+            "titolo": "Stellantis, parla il ceo Filosa dopo il crollo in borsa: abbiamo sopravvalutato l'auto elettrica, ora pulizia nel bilancio",
+            "url": "https://www.milanofinanza.it/news/stellantis-crolla-in-borsa-il-ceo-filosa-agli-analisti-riassetto-necessario-dopo-aver-sopravvalutato-lelettrico-202602061424136271",
+            "data": "6 feb 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Perdita stimata",
+          "valore": "tra 19 e 21 miliardi",
+          "confronto": "",
+          "base": null,
+          "nota": "per il secondo semestre 2025"
+        },
+        {
+          "nome": "Perdita netta",
+          "valore": "22,3 miliardi di euro",
+          "confronto": "",
+          "base": null,
+          "nota": "per l'intero 2025"
+        }
+      ],
+      "guidance": "l’azienda è al lavoro per riportare il business a una generazione di free cash flow industriale positiva",
+      "cambiato": "Rispetto al trimestre precedente, che aveva mostrato una crescita robusta dei ricavi e dei volumi, Stellantis ha registrato perdite ingenti nel secondo semestre 2025 e ha annunciato un profondo riassetto strategico, inclusa la sospensione del dividendo.",
+      "impatto": {
+        "effetto": "indebolisce",
+        "testo": "Nonostante i segnali positivi sul portafoglio ordini in Nord America, le ingenti perdite e il riassetto strategico indicano che la ripresa dei margini potrebbe essere più complessa e a lungo termine del previsto."
+      },
+      "reazione": {
+        "pct": -25.2,
+        "da": "chiusura del 5 feb 2026",
+        "a": "chiusura del 6 feb 2026",
+        "nota": "Articolo MF delle 13:18: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Stellantis, parla il ceo Filosa dopo il crollo in borsa: abbiamo sopravvalutato l'auto elettrica, ora pulizia nel bilancio",
+          "url": "https://www.milanofinanza.it/news/stellantis-crolla-in-borsa-il-ceo-filosa-agli-analisti-riassetto-necessario-dopo-aver-sopravvalutato-lelettrico-202602061424136271",
+          "data": "6 feb 2026"
+        },
+        {
+          "titolo": "Stellantis pesa sui conti 2025 della famiglia Peugeot. Che però diversifica dall’auto e aumenta gli utili",
+          "url": "https://www.milanofinanza.it/news/stellantis-pesa-sui-conti-2025-della-famiglia-peugeot-che-però-diversifica-dallauto-e-aumenta-gli-utili-202603260806211905",
+          "data": "25 mar 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "periodo": "gennaio–marzo 2026",
+      "data": "15 apr 2026",
+      "fatti": [
+        {
+          "testo": "Stellantis ha stimato consegne per 1,4 milioni di veicoli nel primo trimestre 2026, in crescita del 12% rispetto all'anno precedente, con un contributo positivo da tutte le principali aree geografiche.",
+          "citazione": "Il gruppo, guidato da Antonio Filosa, ha comunicato volumi pari a circa 1,4 milioni di veicoli, in aumento del 12% su base annua, con un contributo positivo da tutte le principali aree geografiche e una spinta particolare da Europa allargata e Nord America.",
+          "fonte": {
+            "titolo": "Stellantis recupera nel primo trimestre: consegne stimate a 1,4 milioni (+12%) trainate da Europa e Nord America",
+            "url": "https://www.milanofinanza.it/news/stellantis-recupera-nel-primo-trimestre-consegne-stimate-a-14-milioni-12-trainate-da-europa-e-nord-america-202604150819146905",
+            "data": "15 apr 2026"
+          }
+        },
+        {
+          "testo": "Le consegne in Nord America sono aumentate di circa 54 mila unità, pari a un +17% anno su anno, sostenute da modelli chiave come il pick-up Ram 1500, il Jeep Grand Wagoneer e il nuovo Jeep Cherokee.",
+          "citazione": "Nel trimestre il Nord America ha registrato una crescita di circa 54 mila unità, pari a un +17% anno su anno. A sostenere i volumi è stato il rafforzamento dello slancio commerciale, con contributi determinanti da modelli chiave come il pick-up Ram 1500 con motore Hemi V8, il rinnovato Jeep Grand Wagoneer e il nuovo Jeep Cherokee.",
+          "fonte": {
+            "titolo": "Stellantis recupera nel primo trimestre: consegne stimate a 1,4 milioni (+12%) trainate da Europa e Nord America",
+            "url": "https://www.milanofinanza.it/news/stellantis-recupera-nel-primo-trimestre-consegne-stimate-a-14-milioni-12-trainate-da-europa-e-nord-america-202604150819146905",
+            "data": "15 apr 2026"
+          }
+        },
+        {
+          "testo": "Il dato sulle consegne del primo trimestre 2026 conferma i segnali di rafforzamento operativo per Stellantis, dopo un 2025 caratterizzato da forti rettifiche e risultati negativi.",
+          "citazione": "Il dato sulle consegne del primo trimestre conferma i segnali di rafforzamento operativo per il gruppo, in un contesto ancora complesso per il settore automotive globale tra transizione elettrica, pressione competitiva e volatilità della domanda. Dopo un 2025 segnato da forti rettifiche e risultati negativi, la crescita dei volumi, soprattutto nei mercati chiave e grazie ai nuovi lanci, potrebbe contribuire a sostenere il percorso di recupero atteso nel corso del 2026 e ribadito anche dal presidente John Elkann e dal ceo Filosa durante l’assemblea degli azionisti di martedì 14 aprile.",
+          "fonte": {
+            "titolo": "Stellantis recupera nel primo trimestre: consegne stimate a 1,4 milioni (+12%) trainate da Europa e Nord America",
+            "url": "https://www.milanofinanza.it/news/stellantis-recupera-nel-primo-trimestre-consegne-stimate-a-14-milioni-12-trainate-da-europa-e-nord-america-202604150819146905",
+            "data": "15 apr 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Consegne totali",
+          "valore": "1,4 milioni",
+          "confronto": "+12%",
+          "base": null,
+          "nota": "stimate"
+        },
+        {
+          "nome": "Consegne Nord America",
+          "valore": "circa 54 mila unità",
+          "confronto": "+17%",
+          "base": null,
+          "nota": null
+        }
+      ],
+      "guidance": "Il gruppo si aspetta un percorso di recupero nel corso del 2026, sostenuto dalla crescita dei volumi e dai nuovi lanci.",
+      "cambiato": "Rispetto al 2025, segnato da forti rettifiche e risultati negativi, il primo trimestre 2026 mostra segnali di rafforzamento operativo e crescita dei volumi, in particolare in Nord America.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La crescita delle consegne in Nord America del 17% anno su anno, trainata da nuovi modelli chiave, supporta la tesi di una ripresa dei margini grazie all'introduzione di nuovi veicoli."
+      },
+      "reazione": {
+        "pct": 1.8,
+        "da": "chiusura del 14 apr 2026",
+        "a": "chiusura del 15 apr 2026",
+        "nota": "Articolo MF delle 06:12: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Stellantis recupera nel primo trimestre: consegne stimate a 1,4 milioni (+12%) trainate da Europa e Nord America",
+          "url": "https://www.milanofinanza.it/news/stellantis-recupera-nel-primo-trimestre-consegne-stimate-a-14-milioni-12-trainate-da-europa-e-nord-america-202604150819146905",
+          "data": "15 apr 2026"
+        }
+      ]
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "periodo": "aprile–giugno 2026",
+      "data": "30 lug 2026",
+      "fatti": [
+        {
+          "testo": "Stellantis è tornata in utile nel secondo trimestre 2026, registrando 293 milioni di euro contro una perdita di 1,87 miliardi nello stesso periodo del 2025.",
+          "citazione": "Il gruppo automobilistico guidato da Antonio Filosa ha chiuso il secondo trimestre con ricavi in crescita del 13% a 43,5 miliardi di euro, un utile netto di 293 milioni contro la perdita di 1,87 miliardi dello stesso periodo del 2025",
+          "fonte": {
+            "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+            "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "I ricavi del gruppo sono cresciuti del 13% a 43,5 miliardi di euro nel secondo trimestre.",
+          "citazione": "ricavi in crescita del 13% a 43,5 miliardi di euro",
+          "fonte": {
+            "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+            "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "L'utile operativo rettificato (Aoi) è più che triplicato, raggiungendo 773 milioni di euro rispetto ai 213 milioni di un anno fa.",
+          "citazione": "un adjusted operating income (Aoi) di 773 milioni, più che triplicato rispetto ai 213 milioni di un anno fa",
+          "fonte": {
+            "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+            "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+            "data": "30 lug 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Margine operativo rettificato Nord America",
+          "valore": "1,6%",
+          "confronto": "",
+          "base": null,
+          "nota": "Include 317 milioni di euro di crediti di conformità normativa, senza i quali il Nord America sarebbe ancora in negativo."
+        },
+        {
+          "nome": "Free cash flow industriale",
+          "valore": "1 miliardo di euro",
+          "confronto": "tornato positivo",
+          "base": null,
+          "nota": "Il consenso si attendeva un free cash flow negativo di 676 milioni."
+        }
+      ],
+      "guidance": "Stellantis ha confermato la guidance per l'intero esercizio 2026, prevedendo una crescita dei ricavi di entità medio-singola cifra, un margine operativo adjusted a una cifra bassa e un miglioramento del free cash flow industriale rispetto al 2025. Prevede inoltre un free cash flow industriale positivo nel 2027.",
+      "cambiato": "Rispetto al trimestre precedente, i segnali di rafforzamento operativo si sono concretizzati con il ritorno all'utile netto e un free cash flow industriale positivo. Il Nord America continua a essere un motore di crescita, anche se la sua redditività operativa è sostenuta da crediti di conformità.",
+      "impatto": {
+        "effetto": "indebolisce",
+        "testo": "La ripresa dei margini in Nord America è debole, con un margine operativo del 1,6% che sarebbe negativo senza l'inclusione di crediti di conformità. Tuttavia, la regione è stata trainata dal rilancio di modelli chiave come Ram e Jeep."
+      },
+      "reazione": {
+        "pct": -4.3,
+        "da": "chiusura del 29 lug 2026",
+        "a": "chiusura del 30 lug 2026",
+        "nota": "Articolo MF delle 06:14: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Stellantis torna all’utile nel secondo trimestre: 293 milioni. Ricavi a 43,5 miliardi (+13%). Ma il titolo apre in rosso: -8%",
+          "url": "https://www.milanofinanza.it/news/stellantis-torna-allutile-nel-secondo-trimestre-293-milioni-ricavi-a-435-miliardi-13-e-cash-flow-a-1-miliardo-202607300818008257",
+          "data": "30 lug 2026"
+        }
+      ]
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 0,
+    "per_indicatore": [
+      {
+        "nome": "Margine operativo rettificato Nord America",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Scorte presso i concessionari USA",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Free cash flow industriale",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 0,
+      "reazione": 0,
+      "gia_nel_prezzo": 0,
+      "nessuna": 0
+    }
+  },
+  "decisione": {
+    "contesto": "portafoglio",
+    "azione": "ridurre",
+    "motivazione": "La tesi di ripresa dei margini in Nord America è indebolita, dato che il margine operativo rettificato è rimasto debole e dipendente da voci straordinarie, nonostante il free cash flow positivo e la normalizzazione delle scorte. Le notizie recenti non aggiungono nuove informazioni rilevanti alla tesi, quindi la valutazione si basa principalmente sui risultati.",
+    "aFavore": [
+      "Scorte presso i concessionari USA",
+      "Free cash flow industriale"
+    ],
+    "rischio": "Il margine operativo rettificato in Nord America è ancora debole e dipendente da voci straordinarie, indicando una ripresa non strutturale.",
+    "cambierebbe": "Un miglioramento strutturale e sostenibile del margine operativo rettificato in Nord America, non dipendente da voci straordinarie.",
+    "basata_su": [
+      "risultati",
+      "notizie"
+    ],
+    "notizie_considerate": 0,
+    "notizie_da": "1 ago 2026"
+  },
+  "notizie_indicatori": {},
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202510300808469170",
+        "202511171310419323"
+      ],
+      "4T25": [
+        "202603260806211905",
+        "202602061424136271"
+      ],
+      "1T26": [
+        "202604150819146905",
+        "202604241047041676"
+      ],
+      "2T26": [
+        "202607300818008257",
+        "202608241350284430"
+      ]
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [
+            "metrica[0]: numbers not in sources [2.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 1,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        },
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "1T26": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [22.3]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "2T26": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ],
+      "decisione": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "2T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      }
+    },
+    "dropped": {
+      "3T25": 0,
+      "4T25": 0,
+      "1T26": 0,
+      "2T26": 0
+    },
+    "thesis_fp": "427fb9cba4476046",
+    "pipeline_version": 2,
+    "n_quarters_ok": 4,
+    "n_facts_latest": 3,
+    "total_dropped": 0,
+    "insufficiente_forced": false,
+    "stlam_prices": true
+  }
+}

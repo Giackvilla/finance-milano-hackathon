@@ -1,0 +1,671 @@
+{
+  "tesi_usata": {
+    "motivo": "Aumento della domanda di data center e di nuove reti elettriche, che richiedono cavi ad alta tensione e in fibra ottica.",
+    "indicatori": [
+      "Portafoglio ordini nella trasmissione",
+      "Crescita dei ricavi legati ai data center",
+      "Margine EBITDA rettificato"
+    ],
+    "orizzonte": "3–5 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "rafforzata",
+    "sintesi": "I risultati trimestrali di Prysmian mostrano una crescita robusta nelle aree chiave di Transmission e Digital Solutions, confermando la tesi di investimento legata all'aumento della domanda di cavi per data center e nuove reti elettriche. Il portafoglio ordini in crescita e gli outlook finanziari costantemente rivisti al rialzo rafforzano ulteriormente questa prospettiva.",
+    "fatti": [
+      {
+        "testo": "Prysmian ha superato i 6 miliardi di euro di ricavi nel secondo trimestre 2026, con una crescita organica del 9,4%.",
+        "citazione": "Il gruppo dei cavi guidato dal ceo Massimo Battaini ha superato i 6 miliardi di ricavi nel secondo trimestre dell’anno, con una crescita organica del 9,4%.",
+        "fonte": {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "L'EBITDA adjusted del secondo trimestre ha raggiunto 730 milioni di euro, segnando un aumento del 20,7%.",
+        "citazione": "l’adjusted ebitda è arrivato a 730 milioni nel secondo trimestre (+20,7%)",
+        "fonte": {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "testo": "L'utile netto del semestre è salito a 584 milioni di euro, rispetto ai 435 milioni dell'anno precedente.",
+        "citazione": "L’utile netto passa da 435 a 584 milioni nel semestre.",
+        "fonte": {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "Sembra che Prysmian stia capitalizzando efficacemente la transizione energetica e la digitalizzazione globale.",
+      "La capacità di Prysmian di siglare accordi significativi per i data center suggerisce un posizionamento strategico vincente nel lungo periodo."
+    ],
+    "indicatori": [
+      {
+        "nome": "Portafoglio ordini nella trasmissione",
+        "stato": "a_favore",
+        "testo": "Il backlog nel settore Transmission ammonta a circa 17 miliardi di euro, con ulteriori 2 miliardi di euro che dovrebbero aggiungersi (rilevato in 1T 2026).",
+        "citazione": "Il backlog ammonta a circa 17 miliardi, con ulteriori 2 miliardi che dovrebbero aggiungersi.",
+        "fonte": {
+          "titolo": "Prysmian, nel primo trimestre salgono margini e cassa, negoziazioni per accordi sui data center. In borsa prima crolla e poi vola",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-primo-trimestre-salgono-margini-e-cassa-negoziazioni-per-accordi-commerciali-sui-data-center-202604300803377389",
+          "data": "30 apr 2026"
+        }
+      },
+      {
+        "nome": "Crescita dei ricavi legati ai data center",
+        "stato": "a_favore",
+        "testo": "La business unit Digital Solutions sta vivendo una «trasformazione strategica» grazie ad accordi per i data center, come quello da 5,5 miliardi con Molex. Anche Industrial & Construction cresce grazie ai data center negli USA.",
+        "citazione": "Digital Solutions è in fase di «trasformazione strategica» grazie ad accordi di lungo termine con hyperscaler e operatori di infrastrutture per i data center, come dimostra l’accordo con Molex da 5,5 miliardi annunciato qualche giorno fa. Nel secondo trimestre i ricavi sonno stati di 540 milioni per 122 milioni di adjusted ebitda, con un margine lievitato in un anno dal 16,8% al 23,8%, frutto anche del contributo di Channell. Nel semestre il fatturato è stato di 991 milioni per un adjusted ebitda di 210 milioni. Anche Industrial & Construction è in crescita grazie al contributo data center negli Usa: ricavi del trimestre a 2,39 miliardi (+9,1%) e adjusted ebitda a 228 milioni, seppur con un margine in lieve calo (da 14,1% a 13,6%).",
+        "fonte": {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        }
+      },
+      {
+        "nome": "Margine EBITDA rettificato",
+        "stato": "a_favore",
+        "testo": "Il margine EBITDA adjusted complessivo del semestre è stato del 15,4%, e l'EBITDA adjusted del secondo trimestre è cresciuto del 20,7%.",
+        "citazione": "l’adjusted ebitda è arrivato a 730 milioni nel secondo trimestre (+20,7%) e a 1,33 miliardi nel semestre (+17,6%), con un margine complessivo ai prezzi standard dei metalli del 15,4%.",
+        "fonte": {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 4 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "Prysmian ha dimostrato una crescita costante e un miglioramento della redditività trimestre dopo trimestre, superando le aspettative e alzando ripetutamente le previsioni per l'anno in corso.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "30 ott 2025",
+      "fatti": [
+        {
+          "testo": "Prysmian ha registrato i migliori risultati di sempre nel terzo trimestre, con una crescita organica dei ricavi del 9,2% a 5,03 miliardi di euro e un utile netto di 596 milioni di euro.",
+          "citazione": "Prysmian chiude il terzo trimestre con i risultati «migliori di sempre». Il gruppo dei cavi italiano ha registrato una crescita organica dei ricavi del 9,2% a 5,03 miliardi e un utile netto di gruppo di 596 milioni, a fronte dei 173 milioni del terzo trimestre 2024.",
+          "fonte": {
+            "titolo": "Prysmian nel terzo trimestre sfiora i 600 milioni di utile e alza l’outlook 2025 su margini e cassa. Ma il titolo cade",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-terzo-trimestre-sfiora-i-600-milioni-di-utile-e-alza-loutlook-2025-su-margini-e-cassa-202510300716448450",
+            "data": "30 ott 2025"
+          }
+        },
+        {
+          "testo": "L'EBITDA adjusted è aumentato del 19,3% a 644 milioni di euro, con un miglioramento del margine complessivo ai prezzi standard dei metalli dal 13,8% al 14,8% anno su anno.",
+          "citazione": "L’ebitda adjusted è passato da 540 a 644 milioni (+19,3%) con un margine complessivo ai prezzi standard dei metalli in miglioramento dal 13,8% al 14,8% anno su anno.",
+          "fonte": {
+            "titolo": "Prysmian nel terzo trimestre sfiora i 600 milioni di utile e alza l’outlook 2025 su margini e cassa. Ma il titolo cade",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-terzo-trimestre-sfiora-i-600-milioni-di-utile-e-alza-loutlook-2025-su-margini-e-cassa-202510300716448450",
+            "data": "30 ott 2025"
+          }
+        },
+        {
+          "testo": "La business unit Transmission ha guidato la crescita con un aumento organico dei ricavi del 39% a 877 milioni di euro e un solido portafoglio ordini di oltre 16 miliardi di euro.",
+          "citazione": "A spingere ricavi e margini del gruppo è stata principalmente la business unit Transmission. Nel terzo trimestre i ricavi hanno avuto una crescita organica del 39% a 877 milioni.",
+          "fonte": {
+            "titolo": "Prysmian nel terzo trimestre sfiora i 600 milioni di utile e alza l’outlook 2025 su margini e cassa. Ma il titolo cade",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-terzo-trimestre-sfiora-i-600-milioni-di-utile-e-alza-loutlook-2025-su-margini-e-cassa-202510300716448450",
+            "data": "30 ott 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Crescita organica ricavi",
+          "valore": "9,2%",
+          "confronto": "5,03 miliardi",
+          "base": "a/a",
+          "nota": "Rispetto al terzo trimestre 2024"
+        },
+        {
+          "nome": "Utile netto",
+          "valore": "596 milioni",
+          "confronto": "173 milioni",
+          "base": "a/a",
+          "nota": "Rispetto al terzo trimestre 2024"
+        },
+        {
+          "nome": "EBITDA adjusted",
+          "valore": "644 milioni",
+          "confronto": "540 milioni",
+          "base": "a/a",
+          "nota": "Crescita del 19,3% rispetto al terzo trimestre 2024"
+        },
+        {
+          "nome": "Margine EBITDA complessivo",
+          "valore": "14,8%",
+          "confronto": "13,8%",
+          "base": "a/a",
+          "nota": "Miglioramento rispetto al terzo trimestre 2024"
+        }
+      ],
+      "guidance": "Prysmian ha alzato l'outlook 2025 per l'EBITDA adjusted, ora previsto tra 2,375 e 2,425 miliardi (precedentemente 2,3-2,375 miliardi), e per il free cash flow, tra 1,025 e 1,125 miliardi (precedentemente 1-1,075 miliardi).",
+      "cambiato": "I ricavi organici sono cresciuti del 9,2% e l'utile netto è aumentato significativamente da 173 milioni a 596 milioni rispetto al terzo trimestre 2024. L'EBITDA adjusted è salito del 19,3% a 644 milioni, con un miglioramento del margine complessivo dal 13,8% al 14,8%.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "I risultati eccellenti, in particolare la forte crescita della business unit Transmission e Digital Solutions, supportano la tesi di investimento legata all'aumento della domanda di cavi per data center e nuove reti elettriche."
+      },
+      "reazione": {
+        "pct": -4.0,
+        "da": "chiusura del 29 ott 2025",
+        "a": "chiusura del 30 ott 2025",
+        "nota": "Articolo MF delle 07:10: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Prysmian nel terzo trimestre sfiora i 600 milioni di utile e alza l’outlook 2025 su margini e cassa. Ma il titolo cade",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-terzo-trimestre-sfiora-i-600-milioni-di-utile-e-alza-loutlook-2025-su-margini-e-cassa-202510300716448450",
+          "data": "30 ott 2025"
+        },
+        {
+          "titolo": "Prysmian nel terzo trimestre sfiora i 600 milioni di utile e alza l’outlook 2025 su margini e cassa. Ma il titolo cade",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-terzo-trimestre-sfiora-i-600-milioni-di-utile-e-alza-loutlook-2025-su-margini-e-cassa-202510300716448450",
+          "data": "30 ott 2025"
+        },
+        {
+          "titolo": "Prysmian nel terzo trimestre sfiora i 600 milioni di utile e alza l’outlook 2025 su margini e cassa. Ma il titolo cade",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-terzo-trimestre-sfiora-i-600-milioni-di-utile-e-alza-loutlook-2025-su-margini-e-cassa-202510300716448450",
+          "data": "30 ott 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "26 feb 2026",
+      "fatti": [
+        {
+          "testo": "Nel quarto trimestre 2025, Prysmian ha registrato un fatturato di 4,99 miliardi di euro, con una crescita organica del 4,3%.",
+          "citazione": "Limitandosi al quarto trimestre, il fatturato è stato di 4,99 miliardi (+4,3% organico)",
+          "fonte": {
+            "titolo": "Prysmian, nel 2025 quasi 1,3 miliardi di utile: dividendo +13%. In assemblea la delega per un aumento di capitale per fare m&a",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-2025-quasi-13-miliardi-di-utile-dividendo-13-in-assemblea-la-delega-per-un-aumento-di-capitale-per-fare-ma-202602260743536674",
+            "data": "26 feb 2026"
+          }
+        },
+        {
+          "testo": "L'EBITDA adjusted del quarto trimestre è stato di 622 milioni di euro, in aumento rispetto ai 518 milioni del quarto trimestre 2024.",
+          "citazione": "mentre l’adjusted ebitda è stato di 622 milioni (da 518 milioni del quarto trimestre 2024).",
+          "fonte": {
+            "titolo": "Prysmian, nel 2025 quasi 1,3 miliardi di utile: dividendo +13%. In assemblea la delega per un aumento di capitale per fare m&a",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-2025-quasi-13-miliardi-di-utile-dividendo-13-in-assemblea-la-delega-per-un-aumento-di-capitale-per-fare-ma-202602260743536674",
+            "data": "26 feb 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto per il 2025 ha raggiunto 1,27 miliardi di euro, il dato più alto di sempre, con un balzo di quasi il 74% rispetto ai 729 milioni del 2024.",
+          "citazione": "Dati in crescita che hanno prodotto un balzo dell’utile di quasi il 74%, passato da 729 milioni a 1,27 miliardi, il dato più alto di sempre.",
+          "fonte": {
+            "titolo": "Prysmian, nel 2025 quasi 1,3 miliardi di utile: dividendo +13%. In assemblea la delega per un aumento di capitale per fare m&a",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-2025-quasi-13-miliardi-di-utile-dividendo-13-in-assemblea-la-delega-per-un-aumento-di-capitale-per-fare-ma-202602260743536674",
+            "data": "26 feb 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi",
+          "valore": "4,99 miliardi",
+          "confronto": "+4,3%",
+          "base": null,
+          "nota": "relativo al quarto trimestre"
+        },
+        {
+          "nome": "Adjusted EBITDA",
+          "valore": "622 milioni",
+          "confronto": "da 518 milioni",
+          "base": "a/a",
+          "nota": "relativo al quarto trimestre"
+        },
+        {
+          "nome": "Utile netto",
+          "valore": "1,27 miliardi",
+          "confronto": "da 729 milioni",
+          "base": "a/a",
+          "nota": "risultato annuale 2025"
+        },
+        {
+          "nome": "Free Cash Flow",
+          "valore": "1,17 miliardi",
+          "confronto": "dal miliardo 2024",
+          "base": "a/a",
+          "nota": "risultato annuale 2025"
+        }
+      ],
+      "guidance": "Per il 2026, l'adjusted EBITDA è previsto tra 2,625 e 2,775 miliardi di euro, e il free cash flow tra 1,300 e 1,400 miliardi di euro.",
+      "cambiato": "I risultati del quarto trimestre 2025 sono stati definiti 'leggermente soft rispetto al consenso', suggerendo un rallentamento rispetto alla forte performance del trimestre precedente.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La crescita rilevante della business unit Transmission (+28,7% organica nei ricavi 2025) e il solido backlog di 17 miliardi di euro, insieme alla forte crescita di Digital Solutions (+7% nei ricavi 2025), supportano la tesi di investimento legata alla domanda di cavi ad alta tensione e in fibra ottica."
+      },
+      "reazione": {
+        "pct": 0.2,
+        "da": "chiusura del 25 feb 2026",
+        "a": "chiusura del 26 feb 2026",
+        "nota": "Articolo MF delle 07:36: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Prysmian, nel 2025 quasi 1,3 miliardi di utile: dividendo +13%. In assemblea la delega per un aumento di capitale per fare m&a",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-2025-quasi-13-miliardi-di-utile-dividendo-13-in-assemblea-la-delega-per-un-aumento-di-capitale-per-fare-ma-202602260743536674",
+          "data": "26 feb 2026"
+        },
+        {
+          "titolo": "Prysmian, nel 2025 quasi 1,3 miliardi di utile: dividendo +13%. In assemblea la delega per un aumento di capitale per fare m&a",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-2025-quasi-13-miliardi-di-utile-dividendo-13-in-assemblea-la-delega-per-un-aumento-di-capitale-per-fare-ma-202602260743536674",
+          "data": "26 feb 2026"
+        },
+        {
+          "titolo": "Prysmian, nel 2025 quasi 1,3 miliardi di utile: dividendo +13%. In assemblea la delega per un aumento di capitale per fare m&a",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-2025-quasi-13-miliardi-di-utile-dividendo-13-in-assemblea-la-delega-per-un-aumento-di-capitale-per-fare-ma-202602260743536674",
+          "data": "26 feb 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "periodo": "gennaio–marzo 2026",
+      "data": "30 apr 2026",
+      "fatti": [
+        {
+          "testo": "Nel primo trimestre 2026, Prysmian ha registrato ricavi per 5,2 miliardi di euro, con una crescita organica del 5%.",
+          "citazione": "I ricavi dei primi tre mesi dell’anno del gruppo guidato dall’ad, Massimo Battaini, registrano una crescita organica del 5% a 5,2 miliardi di ricavi",
+          "fonte": {
+            "titolo": "Prysmian, nel primo trimestre salgono margini e cassa, negoziazioni per accordi sui data center. In borsa prima crolla e poi vola",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-primo-trimestre-salgono-margini-e-cassa-negoziazioni-per-accordi-commerciali-sui-data-center-202604300803377389",
+            "data": "30 apr 2026"
+          }
+        },
+        {
+          "testo": "L'EBITDA adjusted ha raggiunto 601 milioni di euro, in aumento del 14% anno su anno, nonostante un impatto negativo dai cambi.",
+          "citazione": "l’adjusted ebitda tocca quota 601 milioni (+14% anno su anno) nonostante l’impatto negativo per 36 milioni derivanti dai cambi",
+          "fonte": {
+            "titolo": "Prysmian, nel primo trimestre salgono margini e cassa, negoziazioni per accordi sui data center. In borsa prima crolla e poi vola",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-primo-trimestre-salgono-margini-e-cassa-negoziazioni-per-accordi-commerciali-sui-data-center-202604300803377389",
+            "data": "30 apr 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto è arrivato a 246 milioni di euro, con un incremento del 64%, anche grazie all'integrazione dell'acquisizione di Channell.",
+          "citazione": "L’utile netto, complice il cambio di perimetro che ora vede pienamente integrata l’acquisizione di Channell, arriva a 246 milioni (+64%)",
+          "fonte": {
+            "titolo": "Prysmian, nel primo trimestre salgono margini e cassa, negoziazioni per accordi sui data center. In borsa prima crolla e poi vola",
+            "url": "https://www.milanofinanza.it/news/prysmian-nel-primo-trimestre-salgono-margini-e-cassa-negoziazioni-per-accordi-commerciali-sui-data-center-202604300803377389",
+            "data": "30 apr 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi",
+          "valore": "5,2 miliardi di euro",
+          "confronto": "+5%",
+          "base": "a/a",
+          "nota": "crescita organica"
+        },
+        {
+          "nome": "EBITDA Adjusted",
+          "valore": "601 milioni di euro",
+          "confronto": "+14%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Margine complessivo",
+          "valore": "14,2%",
+          "confronto": "dal 13,1% al 14,2%",
+          "base": "a/a",
+          "nota": "al prezzo standard dei metalli"
+        },
+        {
+          "nome": "Utile Netto",
+          "valore": "246 milioni di euro",
+          "confronto": "+64%",
+          "base": "a/a",
+          "nota": null
+        }
+      ],
+      "guidance": "Confermata la guidance 2026: EBITDA adjusted compreso tra 2,625 e 2,775 miliardi di euro, free cash flow tra 1,3 e 1,4 miliardi di euro e ricavi sustainability-linked tra il 47% e il 49% del totale. Un upgrade della guidance 2026 è definito probabile a luglio se i risultati proseguiranno il trend positivo.",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "I risultati del trimestre rafforzano la tesi di investimento, evidenziando una forte spinta dalla domanda di data center e un solido posizionamento nel settore Transmission, cruciale per le nuove reti elettriche. Prysmian sta negoziando accordi di lungo periodo per cogliere ulteriori opportunità di crescita nei data center."
+      },
+      "reazione": {
+        "pct": 2.9,
+        "da": "chiusura del 29 apr 2026",
+        "a": "chiusura del 30 apr 2026",
+        "nota": "Articolo MF delle 07:51: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Prysmian, nel primo trimestre salgono margini e cassa, negoziazioni per accordi sui data center. In borsa prima crolla e poi vola",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-primo-trimestre-salgono-margini-e-cassa-negoziazioni-per-accordi-commerciali-sui-data-center-202604300803377389",
+          "data": "30 apr 2026"
+        },
+        {
+          "titolo": "Prysmian, nel primo trimestre salgono margini e cassa, negoziazioni per accordi sui data center. In borsa prima crolla e poi vola",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-primo-trimestre-salgono-margini-e-cassa-negoziazioni-per-accordi-commerciali-sui-data-center-202604300803377389",
+          "data": "30 apr 2026"
+        },
+        {
+          "titolo": "Prysmian, nel primo trimestre salgono margini e cassa, negoziazioni per accordi sui data center. In borsa prima crolla e poi vola",
+          "url": "https://www.milanofinanza.it/news/prysmian-nel-primo-trimestre-salgono-margini-e-cassa-negoziazioni-per-accordi-commerciali-sui-data-center-202604300803377389",
+          "data": "30 apr 2026"
+        }
+      ]
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "periodo": "aprile–giugno 2026",
+      "data": "30 lug 2026",
+      "fatti": [
+        {
+          "testo": "Prysmian ha superato i 6 miliardi di euro di ricavi nel secondo trimestre 2026, con una crescita organica del 9,4%.",
+          "citazione": "Il gruppo dei cavi guidato dal ceo Massimo Battaini ha superato i 6 miliardi di ricavi nel secondo trimestre dell’anno, con una crescita organica del 9,4%.",
+          "fonte": {
+            "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+            "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "L'EBITDA adjusted del secondo trimestre ha raggiunto 730 milioni di euro, segnando un aumento del 20,7%.",
+          "citazione": "l’adjusted ebitda è arrivato a 730 milioni nel secondo trimestre (+20,7%)",
+          "fonte": {
+            "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+            "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+            "data": "30 lug 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto del semestre è salito a 584 milioni di euro, rispetto ai 435 milioni dell'anno precedente.",
+          "citazione": "L’utile netto passa da 435 a 584 milioni nel semestre.",
+          "fonte": {
+            "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+            "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+            "data": "30 lug 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi",
+          "valore": "6 miliardi",
+          "confronto": "+9,4%",
+          "base": null,
+          "nota": "nel secondo trimestre"
+        },
+        {
+          "nome": "Adjusted EBITDA",
+          "valore": "730 milioni",
+          "confronto": "+20,7%",
+          "base": null,
+          "nota": "nel secondo trimestre"
+        },
+        {
+          "nome": "Margine complessivo",
+          "valore": "15,4%",
+          "confronto": "",
+          "base": null,
+          "nota": "ai prezzi standard dei metalli (semestre)"
+        },
+        {
+          "nome": "Utile netto",
+          "valore": "584 milioni",
+          "confronto": "da 435 milioni",
+          "base": null,
+          "nota": "nel semestre"
+        }
+      ],
+      "guidance": "Prysmian ha alzato la guidance per il 2026, prevedendo un adjusted EBITDA tra 2,8 e 2,9 miliardi di euro (rispetto ai precedenti 2,625-2,775 miliardi) e un free cash flow tra 1,65 e 1,75 miliardi di euro (dai precedenti 1,3-1,4 miliardi).",
+      "cambiato": "Rispetto al trimestre precedente, i ricavi e l'EBITDA adjusted hanno mostrato una crescita organica e un aumento percentuale maggiori. Inoltre, la società ha alzato la guidance per l'intero anno 2026.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "I risultati mostrano una forte crescita nei settori chiave come Transmission e Digital Solutions, con accordi significativi per i data center (es. Molex da 5,5 miliardi), confermando la domanda di cavi ad alta tensione e in fibra ottica."
+      },
+      "reazione": {
+        "pct": 4.5,
+        "da": "chiusura del 29 lug 2026",
+        "a": "chiusura del 30 lug 2026",
+        "nota": "Articolo MF delle 08:12: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        },
+        {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        },
+        {
+          "titolo": "Prysmian, ricavi oltre quota 6 miliardi nel secondo trimestre. Alzata la guidance per il 2026 su margini e cassa generata",
+          "url": "https://www.milanofinanza.it/news/prysmian-ricavi-oltre-quota-6-miliardi-nel-secondo-trimestre-alzata-la-guidance-per-il-2026-su-margini-e-cassa-generata-202607300814056430",
+          "data": "30 lug 2026"
+        }
+      ]
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 5,
+    "per_indicatore": [
+      {
+        "nome": "Portafoglio ordini nella trasmissione",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Crescita dei ricavi legati ai data center",
+        "n": 2,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 2,
+        "titoli": [
+          {
+            "content_id": "202608071751404243",
+            "titolo": "Prysmian a tutta carica: con Atkore cavalca il trend data center e scommette ancora sugli Usa",
+            "data": "6 ago 2026",
+            "status": "NO_REACTION"
+          },
+          {
+            "content_id": "202608030757483541",
+            "titolo": "M&A, Prysmian compra Atkore negli Usa per 3,8 miliardi di dollari, a deciso sconto. Nasce un colosso dei data center. Il punto degli analisti",
+            "data": "3 ago 2026",
+            "status": "NO_REACTION"
+          }
+        ]
+      },
+      {
+        "nome": "Margine EBITDA rettificato",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 3,
+      "reazione": 1,
+      "gia_nel_prezzo": 1,
+      "nessuna": 1
+    }
+  },
+  "decisione": {
+    "contesto": "portafoglio",
+    "azione": "mantenere",
+    "motivazione": "I risultati trimestrali confermano la robustezza della tesi di investimento, evidenziando una crescita solida nelle aree chiave legate ai data center e alle reti elettriche. Le recenti notizie sull'acquisizione di Atkore rafforzano ulteriormente la posizione di Prysmian nel settore dei data center, ma la concentrazione nel portafoglio suggerisce di mantenere la posizione attuale.",
+    "aFavore": [
+      "Portafoglio ordini nella trasmissione in forte crescita",
+      "Crescita dei ricavi legati ai data center grazie ad accordi strategici",
+      "Acquisizione di Atkore per rafforzare la posizione nei data center"
+    ],
+    "rischio": "Rischio di integrazione dell'acquisizione di Atkore",
+    "cambierebbe": "Un rallentamento della domanda di cavi per data center o problemi nell'integrazione dell'acquisizione di Atkore",
+    "basata_su": [
+      "risultati",
+      "notizie"
+    ],
+    "notizie_considerate": 5,
+    "notizie_da": "1 ago 2026"
+  },
+  "notizie_indicatori": {
+    "202608071751404243": "Crescita dei ricavi legati ai data center",
+    "202608030757483541": "Crescita dei ricavi legati ai data center"
+  },
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202510300716448450"
+      ],
+      "4T25": [
+        "202602260743536674"
+      ],
+      "1T26": [
+        "202604300803377389"
+      ],
+      "2T26": [
+        "202607300732324657",
+        "202607300814056430"
+      ]
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [3.0, 4.0, 5.03, 16.0, 644.0]",
+            "impatto: numbers not in sources [4.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato",
+              "impatto"
+            ]
+          }
+        },
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "1T26": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [4.3, 4.99, 622.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "cambiato: numbers not in sources [4.3, 4.99, 622.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        }
+      ],
+      "2T26": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ],
+      "decisione": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "2T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      }
+    },
+    "dropped": {
+      "3T25": 0,
+      "4T25": 0,
+      "1T26": 1,
+      "2T26": 0
+    },
+    "thesis_fp": "41d73ad535124b1f",
+    "pipeline_version": 2,
+    "n_quarters_ok": 4,
+    "n_facts_latest": 3,
+    "total_dropped": 1,
+    "insufficiente_forced": false,
+    "stlam_prices": null
+  }
+}

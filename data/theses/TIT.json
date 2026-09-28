@@ -1,0 +1,611 @@
+{
+  "tesi_usata": {
+    "motivo": "Valorizzazione della rete fissa con la cessione e conseguente riduzione del debito.",
+    "indicatori": [
+      "Debito netto dopo la cessione",
+      "Ricavi da servizi in Italia",
+      "Remunerazione degli azionisti"
+    ],
+    "orizzonte": "1–3 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "rafforzata",
+    "sintesi": "La cessione della rete fissa ha permesso una significativa riduzione del debito netto, un elemento centrale della tesi di investimento. Il ritorno all'utile e l'annuncio di un buyback, anche grazie alla valorizzazione degli asset come Sparkle, confermano il percorso di miglioramento finanziario.",
+    "fatti": [
+      {
+        "testo": "TIM è tornata all'utile nel secondo trimestre 2026, dopo aver registrato perdite nei primi tre mesi dell'anno.",
+        "citazione": "nel secondo trimestre ritorna anche l’utile dopo le perdite dei primi tre mesi dell’anno.",
+        "fonte": {
+          "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+          "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+          "data": "29 lug 2026"
+        }
+      },
+      {
+        "testo": "I ricavi totali di TIM nei primi sei mesi dell'anno sono cresciuti del 2% a 6,8 miliardi di euro, con i ricavi da servizi in aumento del 2,1% a 6,4 miliardi.",
+        "citazione": "I ricavi nei primi sei mesi dell’anno arrivano a 6,8 miliardi di euro, in crescita del 2%, e l’ebitda after lease a 1,8 miliardi (+1,2%). I ricavi da servizi sono lievitati del 2,1% a 6,4 miliardi.",
+        "fonte": {
+          "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+          "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+          "data": "29 lug 2026"
+        }
+      },
+      {
+        "testo": "L'indebitamento finanziario netto di TIM è rimasto stabile a 7,3 miliardi di euro rispetto a marzo 2026.",
+        "citazione": "la stabilità dell’indebitamento finanziario netto rispetto a marzo a 7,3 miliardi",
+        "fonte": {
+          "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+          "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+          "data": "29 lug 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "A mio parere, la gestione sta dimostrando un impegno concreto nel riequilibrare la struttura finanziaria dell'azienda attraverso la dismissione di asset non strategici.",
+      "Ritengo che la conferma del closing di Sparkle sia un segnale positivo che indica la capacità di TIM di portare a termine le operazioni di valorizzazione della rete fissa."
+    ],
+    "indicatori": [
+      {
+        "nome": "Debito netto dopo la cessione",
+        "stato": "contro",
+        "testo": "L'indebitamento netto di TIM è salito a quasi 7,3 miliardi di euro nel primo trimestre 2026, aumentando di circa 400 milioni (rilevato in 1T 2026).",
+        "citazione": "L’indebitamento netto, complice la stagionalità del business, risale di circa 400 milioni e si posiziona poco sotto i 7,3 miliardi",
+        "fonte": {
+          "titolo": "Tim rallenta nel primo trimestre con il cambio di operatore Mnvo sulla sua rete. Confermata la guidance 2026",
+          "url": "https://www.milanofinanza.it/news/tim-rallenta-nel-primo-trimestre-con-il-cambio-di-operatore-mnvo-sulla-sua-rete-confermata-la-guidance-2026-202605061835422431",
+          "data": "6 mag 2026"
+        }
+      },
+      {
+        "nome": "Ricavi da servizi in Italia",
+        "stato": "a_favore",
+        "testo": "I ricavi da servizi nel perimetro domestico sono stati leggermente positivi nel semestre.",
+        "citazione": "Guardando al solo perimetro domestico, sono leggermente positivi sia i ricavi totali (+0,2% a 4,6 miliardi) sia quelli da servizi (+0,1% a 4,2 miliardi)",
+        "fonte": {
+          "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+          "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+          "data": "29 lug 2026"
+        }
+      },
+      {
+        "nome": "Remunerazione degli azionisti",
+        "stato": "a_favore",
+        "testo": "Si prevede che il dividendo di TIM aumenterà a partire dal 2027, con una politica futura accrescitiva (rilevato in 1T 2026).",
+        "citazione": "Tim farà aumentare il dividendo dal 2027",
+        "fonte": {
+          "titolo": "Poste, trimestrale record e guidance alzata. Opas su Tim entro settembre: spingerà il dividendo",
+          "url": "https://www.milanofinanza.it/news/poste-trimestrale-record-e-guidance-alzata-opas-su-tim-entro-settembre-spingerà-il-dividendo-202605070734245003",
+          "data": "7 mag 2026"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 4 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "Dopo una forte riduzione del debito nel 3T 2025 e il ritorno all'utile nel 4T 2025, si è osservato un aumento stagionale del debito nel 1T 2026, stabilizzatosi nel 2T 2026. La conferma delle cessioni e la stabilità del debito indicano un percorso coerente con gli obiettivi di lungo termine.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "5 nov 2025",
+      "fatti": [
+        {
+          "testo": "Tim ha registrato un utile netto per gli azionisti di 23 milioni di euro nel terzo trimestre 2025.",
+          "citazione": "Tim torna a vedere l’utile nel terzo trimestre per tutti i suoi azionisti. Il gruppo guidato da Pietro Labriola, infatti, ha generato un risultato netto per i soci della controllante positivo per 23 milioni di euro nel periodo luglio-settembre.",
+          "fonte": {
+            "titolo": "Tim torna all’utile nel terzo trimestre. Nei nove mesi i ricavi toccano quota 10 miliardi. Presentate le sinergie con Poste",
+            "url": "https://www.milanofinanza.it/news/tim-nei-nove-mesi-i-ricavi-toccano-quota-10-miliardi-enterprise-continua-a-correre-presentate-le-sinergie-con-poste-202511051812296673",
+            "data": "5 nov 2025"
+          }
+        },
+        {
+          "testo": "Nei primi nove mesi del 2025, i ricavi totali di Tim hanno raggiunto i 10 miliardi di euro, con una crescita del 2,3% anno su anno.",
+          "citazione": "Tim chiude i primi nove mesi del 2025 con 10 miliardi di ricavi, in crescita del 2,3% anno su anno, di cui 6,9 miliardi prodotti in Italia.",
+          "fonte": {
+            "titolo": "Tim torna all’utile nel terzo trimestre. Nei nove mesi i ricavi toccano quota 10 miliardi. Presentate le sinergie con Poste",
+            "url": "https://www.milanofinanza.it/news/tim-nei-nove-mesi-i-ricavi-toccano-quota-10-miliardi-enterprise-continua-a-correre-presentate-le-sinergie-con-poste-202511051812296673",
+            "data": "5 nov 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Utile netto per i soci della controllante",
+          "valore": "23 milioni di euro",
+          "confronto": "positivo",
+          "base": null,
+          "nota": "nel periodo luglio-settembre"
+        },
+        {
+          "nome": "Indebitamento finanziario netto after lease",
+          "valore": "7,5 miliardi",
+          "confronto": "stabile",
+          "base": null,
+          "nota": null
+        }
+      ],
+      "guidance": "Confermate le guidance per il 2025.",
+      "cambiato": "Non ci sono dati del trimestre precedente per un confronto diretto.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La cessione della rete ha permesso a Tim di ridurre l'indebitamento finanziario netto after lease di 13,1 miliardi, allineandosi alle best practice internazionali e rafforzando la tesi di investimento sulla riduzione del debito."
+      },
+      "reazione": {
+        "pct": -1.1,
+        "da": "chiusura del 4 nov 2025",
+        "a": "chiusura del 5 nov 2025",
+        "nota": "Articolo MF delle 16:16: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Tim torna all’utile nel terzo trimestre. Nei nove mesi i ricavi toccano quota 10 miliardi. Presentate le sinergie con Poste",
+          "url": "https://www.milanofinanza.it/news/tim-nei-nove-mesi-i-ricavi-toccano-quota-10-miliardi-enterprise-continua-a-correre-presentate-le-sinergie-con-poste-202511051812296673",
+          "data": "5 nov 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "11 mar 2026",
+      "fatti": [
+        {
+          "testo": "Tim ha chiuso il quarto trimestre 2025 con profitti per 473 milioni di euro.",
+          "citazione": "Nel quarto trimestre si è vista un’altra accelerazione dei risultati, con Tim che ha chiuso con profitti per 473 milioni.",
+          "fonte": {
+            "titolo": "Tim chiude il 2025 con 519 milioni di utili grazie al Brasile e al rimborso del canone del 1998",
+            "url": "https://www.milanofinanza.it/news/tim-chiude-il-2025-con-519-milioni-di-utili-grazie-al-brasile-e-al-rimborso-del-canone-del-1998-202603111826131547",
+            "data": "11 mar 2026"
+          }
+        },
+        {
+          "testo": "Il gruppo Tim ha registrato un utile netto consolidato di 519 milioni di euro per l'intero 2025, tornando in utile dopo quattro anni.",
+          "citazione": "La riga finale del bilancio consolidato recita +519 milioni di euro, rispetto alla perdita di 364 milioni del 2024.",
+          "fonte": {
+            "titolo": "Tim chiude il 2025 con 519 milioni di utili grazie al Brasile e al rimborso del canone del 1998",
+            "url": "https://www.milanofinanza.it/news/tim-chiude-il-2025-con-519-milioni-di-utili-grazie-al-brasile-e-al-rimborso-del-canone-del-1998-202603111826131547",
+            "data": "11 mar 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto attribuibile ai soci della controllante per il 2025 è stato di 297 milioni di euro.",
+          "citazione": "La quota attribuibile ai soci della controllante è di 297 milioni (rispetto al -610 milioni del 2024)",
+          "fonte": {
+            "titolo": "Tim chiude il 2025 con 519 milioni di utili grazie al Brasile e al rimborso del canone del 1998",
+            "url": "https://www.milanofinanza.it/news/tim-chiude-il-2025-con-519-milioni-di-utili-grazie-al-brasile-e-al-rimborso-del-canone-del-1998-202603111826131547",
+            "data": "11 mar 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Utile netto consolidato 2025",
+          "valore": "+519 milioni di euro",
+          "confronto": "rispetto alla perdita di 364 milioni del 2024",
+          "base": "a/a",
+          "nota": "Primo utile di gruppo in quattro anni"
+        },
+        {
+          "nome": "Utile netto attribuibile ai soci 2025",
+          "valore": "297 milioni",
+          "confronto": "rispetto al -610 milioni del 2024",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Utile netto Tim Brasil 2025",
+          "valore": "intorno a 700 milioni di euro",
+          "confronto": "",
+          "base": null,
+          "nota": "Ha trainato i conti del gruppo"
+        }
+      ],
+      "guidance": "È stato annunciato un buyback fino a 400 milioni di euro, che sarà sottoposto all'approvazione dell'assemblea dopo il closing di Sparkle.",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "Il ritorno all'utile del gruppo e l'annuncio di un buyback legato al closing di Sparkle (parte della rete fissa) indicano un miglioramento della situazione finanziaria e una potenziale valorizzazione degli asset, elementi chiave per la tesi."
+      },
+      "reazione": {
+        "pct": -1.7,
+        "da": "chiusura del 10 mar 2026",
+        "a": "chiusura del 11 mar 2026",
+        "nota": "Articolo MF delle 15:38: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Tim chiude il 2025 con 519 milioni di utili grazie al Brasile e al rimborso del canone del 1998",
+          "url": "https://www.milanofinanza.it/news/tim-chiude-il-2025-con-519-milioni-di-utili-grazie-al-brasile-e-al-rimborso-del-canone-del-1998-202603111826131547",
+          "data": "11 mar 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "periodo": "gennaio–marzo 2026",
+      "data": "6 mag 2026",
+      "fatti": [
+        {
+          "testo": "Nel primo trimestre 2026, i ricavi totali di TIM sono aumentati dell'1,4% raggiungendo 3,3 miliardi di euro.",
+          "citazione": "I ricavi totali salgono dell’1,4% a 3,3 miliardi nei primi tre mesi dell’anno",
+          "fonte": {
+            "titolo": "Tim rallenta nel primo trimestre con il cambio di operatore Mnvo sulla sua rete. Confermata la guidance 2026",
+            "url": "https://www.milanofinanza.it/news/tim-rallenta-nel-primo-trimestre-con-il-cambio-di-operatore-mnvo-sulla-sua-rete-confermata-la-guidance-2026-202605061835422431",
+            "data": "6 mag 2026"
+          }
+        },
+        {
+          "testo": "TIM ha registrato una perdita di 211 milioni di euro nel primo trimestre 2026, in aumento rispetto ai 71 milioni del primo trimestre 2025.",
+          "citazione": "nel primo trimestre il rosso è lievitato dai 71 milioni del 2025 ai 211 milioni del 2026",
+          "fonte": {
+            "titolo": "Tim rallenta nel primo trimestre con il cambio di operatore Mnvo sulla sua rete. Confermata la guidance 2026",
+            "url": "https://www.milanofinanza.it/news/tim-rallenta-nel-primo-trimestre-con-il-cambio-di-operatore-mnvo-sulla-sua-rete-confermata-la-guidance-2026-202605061835422431",
+            "data": "6 mag 2026"
+          }
+        },
+        {
+          "testo": "L'indebitamento netto di TIM è salito a quasi 7,3 miliardi di euro, con un aumento di circa 400 milioni, a causa della stagionalità del business.",
+          "citazione": "L’indebitamento netto, complice la stagionalità del business, risale di circa 400 milioni e si posiziona poco sotto i 7,3 miliardi",
+          "fonte": {
+            "titolo": "Tim rallenta nel primo trimestre con il cambio di operatore Mnvo sulla sua rete. Confermata la guidance 2026",
+            "url": "https://www.milanofinanza.it/news/tim-rallenta-nel-primo-trimestre-con-il-cambio-di-operatore-mnvo-sulla-sua-rete-confermata-la-guidance-2026-202605061835422431",
+            "data": "6 mag 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Ricavi totali",
+          "valore": "3,3 miliardi",
+          "confronto": "saldono dell’1,4%",
+          "base": "a/a",
+          "nota": "di cui 2,2 miliardi nel domestico (-0,9%) e 1,1 miliardi in Brasile (+6,4%)"
+        },
+        {
+          "nome": "Perdita netta",
+          "valore": "211 milioni",
+          "confronto": "è lievitato dai 71 milioni del 2025 ai 211 milioni del 2026",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Indebitamento netto",
+          "valore": "7,3 miliardi",
+          "confronto": "risale di circa 400 milioni",
+          "base": "t/t",
+          "nota": "complice la stagionalità del business"
+        },
+        {
+          "nome": "Ricavi da servizi in Italia",
+          "valore": "+0,2%",
+          "confronto": "+0,2%",
+          "base": "a/a",
+          "nota": "legata all’avvicendamento sulla rete Tim tra Fastweb e Poste Mobile"
+        }
+      ],
+      "guidance": "Confermata una crescita dei ricavi del 2/3% e dell’ebitda after lease del 5/6% nel 2026.",
+      "cambiato": "Il rosso di bilancio è lievitato da 71 milioni di euro nel primo trimestre 2025 a 211 milioni di euro nel primo trimestre 2026.",
+      "impatto": {
+        "effetto": "indebolisce",
+        "testo": "L'aumento dell'indebitamento netto nel trimestre, sebbene stagionale, indebolisce l'obiettivo di riduzione del debito della tesi di investimento."
+      },
+      "reazione": {
+        "pct": 1.6,
+        "da": "chiusura del 5 mag 2026",
+        "a": "chiusura del 6 mag 2026",
+        "nota": "Articolo MF delle 10:25: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Tim rallenta nel primo trimestre con il cambio di operatore Mnvo sulla sua rete. Confermata la guidance 2026",
+          "url": "https://www.milanofinanza.it/news/tim-rallenta-nel-primo-trimestre-con-il-cambio-di-operatore-mnvo-sulla-sua-rete-confermata-la-guidance-2026-202605061835422431",
+          "data": "6 mag 2026"
+        }
+      ]
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "periodo": "aprile–giugno 2026",
+      "data": "29 lug 2026",
+      "fatti": [
+        {
+          "testo": "TIM è tornata all'utile nel secondo trimestre 2026, dopo aver registrato perdite nei primi tre mesi dell'anno.",
+          "citazione": "nel secondo trimestre ritorna anche l’utile dopo le perdite dei primi tre mesi dell’anno.",
+          "fonte": {
+            "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+            "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+            "data": "29 lug 2026"
+          }
+        },
+        {
+          "testo": "I ricavi totali di TIM nei primi sei mesi dell'anno sono cresciuti del 2% a 6,8 miliardi di euro, con i ricavi da servizi in aumento del 2,1% a 6,4 miliardi.",
+          "citazione": "I ricavi nei primi sei mesi dell’anno arrivano a 6,8 miliardi di euro, in crescita del 2%, e l’ebitda after lease a 1,8 miliardi (+1,2%). I ricavi da servizi sono lievitati del 2,1% a 6,4 miliardi.",
+          "fonte": {
+            "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+            "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+            "data": "29 lug 2026"
+          }
+        },
+        {
+          "testo": "L'indebitamento finanziario netto di TIM è rimasto stabile a 7,3 miliardi di euro rispetto a marzo 2026.",
+          "citazione": "la stabilità dell’indebitamento finanziario netto rispetto a marzo a 7,3 miliardi",
+          "fonte": {
+            "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+            "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+            "data": "29 lug 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Risultato netto attribuibile ai soci",
+          "valore": "88 milioni",
+          "confronto": "rispetto al rosso di 8 milioni del periodo aprile-giugno 2025",
+          "base": "a/a",
+          "nota": "Ritorno all'utile nel secondo trimestre"
+        },
+        {
+          "nome": "Indebitamento finanziario netto",
+          "valore": "7,3 miliardi",
+          "confronto": "stabilità dell’indebitamento finanziario netto rispetto a marzo",
+          "base": "t/t",
+          "nota": null
+        }
+      ],
+      "guidance": "Risultati che fanno confermare la guidance per il 2026 e 2027 all’operatore guidato dal ceo Pietro Labriola",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "La conferma del closing della cessione di Sparkle nel terzo trimestre, un passo verso la valorizzazione della rete fissa, e la stabilità del debito netto supportano la tesi di investimento."
+      },
+      "reazione": {
+        "pct": 0.5,
+        "da": "chiusura del 28 lug 2026",
+        "a": "chiusura del 29 lug 2026",
+        "nota": "Articolo MF delle 10:18: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Tim, nel primo semestre salgono ricavi e margini. Ritorno all’utile nel secondo trimestre",
+          "url": "https://www.milanofinanza.it/news/tim-nel-primo-semestre-salgono-ricavi-e-margini-ritorno-allutile-nel-secondo-trimestre-202607291829386102",
+          "data": "29 lug 2026"
+        }
+      ]
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 0,
+    "per_indicatore": [
+      {
+        "nome": "Debito netto dopo la cessione",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Ricavi da servizi in Italia",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Remunerazione degli azionisti",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 0,
+      "reazione": 0,
+      "gia_nel_prezzo": 0,
+      "nessuna": 0
+    }
+  },
+  "decisione": {
+    "contesto": "portafoglio",
+    "azione": "mantenere",
+    "motivazione": "La significativa riduzione del debito netto grazie alla cessione della rete fissa e il ritorno all'utile rafforzano la tesi di investimento. L'assenza di articoli recenti da MF non introduce nuovi elementi che possano alterare questa valutazione positiva.",
+    "aFavore": [
+      "Significativa riduzione del debito netto post-cessione",
+      "Ritorno all'utile",
+      "Remunerazione degli azionisti prevista in aumento"
+    ],
+    "rischio": "L'aumento stagionale del debito netto nel primo trimestre 2026, sebbene stabilizzato, richiede attenzione.",
+    "cambierebbe": "Un aumento significativo e non stagionale del debito netto nei prossimi risultati.",
+    "basata_su": [
+      "risultati",
+      "notizie"
+    ],
+    "notizie_considerate": 0,
+    "notizie_da": "1 ago 2026"
+  },
+  "notizie_indicatori": {},
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202511051812296673",
+        "202511201301407344"
+      ],
+      "4T25": [
+        "202603111826131547"
+      ],
+      "1T26": [
+        "202605061835422431",
+        "202605070734245003"
+      ],
+      "2T26": [
+        "202607291829386102",
+        "202608031924059329"
+      ]
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [
+            "fatto[2]: citazione not verbatim",
+            "metrica[1]: numbers not in sources [9.0]"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 1,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        },
+        {
+          "failures": [
+            "fatto[2]: citazione not verbatim",
+            "metrica[1]: numbers not in sources [9.0]",
+            "metrica[3]: numbers not in sources [9.0]"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 2,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [
+            "metrica[1]: numbers not in sources [4.0]",
+            "cambiato: numbers not in sources [3.0, 4.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 1,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "fatto[1]: citazione not verbatim",
+            "metrica[2]: numbers not in sources [4.0]",
+            "metrica[3]: numbers not in sources [-155.0]"
+          ],
+          "drops": {
+            "fatti": 1,
+            "metriche": 2,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "1T26": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [4.0, 473.0]",
+            "indicatore Ricavi da servizi in Italia: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 1,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "indicatore Ricavi da servizi in Italia: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 1,
+            "fields": []
+          }
+        }
+      ],
+      "2T26": [
+        {
+          "failures": [
+            "metrica[1]: numbers not in sources [1.0]",
+            "cambiato: numbers not in sources [1.0, 211.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 1,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "metrica[1]: numbers not in sources [1.0]",
+            "metrica[3]: numbers not in sources [1.0]",
+            "cambiato: numbers not in sources [211.0]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 2,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ],
+      "decisione": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 2
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "2T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      }
+    },
+    "dropped": {
+      "3T25": 3,
+      "4T25": 3,
+      "1T26": 1,
+      "2T26": 3
+    },
+    "thesis_fp": "3eb541093d0ec1df",
+    "pipeline_version": 2,
+    "n_quarters_ok": 4,
+    "n_facts_latest": 3,
+    "total_dropped": 10,
+    "insufficiente_forced": false,
+    "stlam_prices": null
+  }
+}
