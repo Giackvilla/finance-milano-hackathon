@@ -35,16 +35,24 @@ bq --project_id=class-hackaton-09 query --use_legacy_sql=false --format=csv --ma
   < sql/events.sql > data/candidates_recent.csv
 ```
 
-## Building the card for the chosen story
+## Building the card
 
 ```bash
-python3 scripts/build_card.py <content_id>            # writes data/card.json
-python3 scripts/build_card.py <content_id> --lang it  # Gemini sentence in Italian
-python3 scripts/count_day_before.py                   # writes data/count.json
+# One story → data/card.json (or --out path). Prices from BigQuery; Gemini on titolo+body+verdict text.
+python3 scripts/build_card.py <content_id>
+python3 scripts/build_card.py <content_id> --lang it
+python3 scripts/build_card.py <content_id> --no-gemini --out /tmp/card.json
+
+# Batch over a Rome pub_date range (or --ids …). Default skips Gemini; add --gemini to call it.
+python3 scripts/build_cards.py --from 2026-08-15 --to 2026-09-18 --first-only --unusual-only
+python3 scripts/build_cards.py --from 2026-08-15 --to 2026-09-18 --first-only --unusual-only --gemini --limit 3
 ```
 
-`<content_id>` comes from `data/candidates_recent.csv`. The article's title must name exactly one company.
-Check `gemini.checks` in the output: the quote must be verbatim, the figure must be in the body, and no number may come from outside the sources.
+`card.json` blocks: **article** (id, titolo, UTC + Rome times, quote, url) · **instrument** · **news** (classify: type, scheduled, headline_reports_move) · **verdict** (status + peak/largest + bilingual text) · **tape** (peak-or-largest session figures + `facts_text`) · **gemini** (sentence + checks; nulls with `--no-gemini`) · **context** (optional `stats.json` / `base_rate.json`).
+
+Verdict statuses: **NO_REACTION** — no session with |z|≥2 · **ALREADY_IN_PRICE** — peak unusual session closed before publication · **PARTLY_IN_PRICE** — some unusual move closed before, peak did not · **MOSTLY_AT_OPEN** — more than half of the day's move was already in the opening price before an in-session article (fixed majority rule, not tuned) · **REACTED** — peak unusual move on the reaction session · **DELAYED** — peak unusual move after the reaction session.
+
+`<content_id>` must name exactly one Italian listed company with 20 baseline sessions. Check `gemini.checks`: quote verbatim in body, figure in body, adjective in title, numbers only from article/facts, no recommendation words unless already in the article.
 
 ## Workflow
 

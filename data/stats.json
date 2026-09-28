@@ -1,9 +1,9 @@
 {
   "from_date": "2021-02-01",
   "to_date": "2026-09-15",
-  "n_session_rows": 94484,
-  "n_articles_before_filter": 13540,
-  "n_articles_after_filter": 5043,
+  "n_session_rows": 89779,
+  "n_articles_before_filter": 12867,
+  "n_articles_after_filter": 4746,
   "base_rate": {
     "n_sessions_a": 1050859,
     "n_unusual_a": 65240,
@@ -14,382 +14,382 @@
   },
   "all_matched": {
     "label": "all_matched",
-    "n_articles": 13540,
+    "n_articles": 12867,
     "status": {
-      "NO_REACTION": 7754,
-      "ALREADY_IN_PRICE": 1012,
-      "PARTLY_IN_PRICE": 375,
-      "MOSTLY_AT_OPEN": 251,
-      "REACTED": 1100,
-      "DELAYED": 3048
+      "NO_REACTION": 7406,
+      "ALREADY_IN_PRICE": 952,
+      "PARTLY_IN_PRICE": 365,
+      "MOSTLY_AT_OPEN": 240,
+      "REACTED": 974,
+      "DELAYED": 2930
     },
     "by_news_type": {
       "analyst": {
         "NO_REACTION": 314,
-        "ALREADY_IN_PRICE": 58,
+        "ALREADY_IN_PRICE": 57,
         "PARTLY_IN_PRICE": 16,
         "MOSTLY_AT_OPEN": 32,
-        "REACTED": 74,
-        "DELAYED": 118
+        "REACTED": 73,
+        "DELAYED": 119
       },
       "capital": {
-        "NO_REACTION": 459,
+        "NO_REACTION": 455,
         "ALREADY_IN_PRICE": 53,
-        "PARTLY_IN_PRICE": 32,
+        "PARTLY_IN_PRICE": 33,
         "MOSTLY_AT_OPEN": 18,
-        "REACTED": 77,
+        "REACTED": 72,
         "DELAYED": 176
       },
       "deal": {
-        "NO_REACTION": 928,
-        "ALREADY_IN_PRICE": 96,
-        "PARTLY_IN_PRICE": 31,
-        "MOSTLY_AT_OPEN": 32,
-        "REACTED": 102,
-        "DELAYED": 338
+        "NO_REACTION": 904,
+        "ALREADY_IN_PRICE": 92,
+        "PARTLY_IN_PRICE": 32,
+        "MOSTLY_AT_OPEN": 29,
+        "REACTED": 99,
+        "DELAYED": 335
       },
       "earnings": {
-        "NO_REACTION": 810,
-        "ALREADY_IN_PRICE": 118,
-        "PARTLY_IN_PRICE": 56,
+        "NO_REACTION": 784,
+        "ALREADY_IN_PRICE": 110,
+        "PARTLY_IN_PRICE": 55,
         "MOSTLY_AT_OPEN": 48,
-        "REACTED": 241,
-        "DELAYED": 404
+        "REACTED": 233,
+        "DELAYED": 391
       },
       "governance": {
-        "NO_REACTION": 276,
-        "ALREADY_IN_PRICE": 40,
+        "NO_REACTION": 271,
+        "ALREADY_IN_PRICE": 39,
         "PARTLY_IN_PRICE": 19,
         "MOSTLY_AT_OPEN": 5,
         "REACTED": 17,
-        "DELAYED": 111
+        "DELAYED": 108
       },
       "legal_regulatory": {
-        "NO_REACTION": 122,
-        "ALREADY_IN_PRICE": 20,
+        "NO_REACTION": 117,
+        "ALREADY_IN_PRICE": 16,
         "PARTLY_IN_PRICE": 6,
         "MOSTLY_AT_OPEN": 1,
-        "REACTED": 7,
-        "DELAYED": 41
+        "REACTED": 6,
+        "DELAYED": 38
       },
       "market_report": {
-        "NO_REACTION": 1021,
-        "ALREADY_IN_PRICE": 210,
-        "PARTLY_IN_PRICE": 62,
-        "MOSTLY_AT_OPEN": 30,
-        "REACTED": 191,
-        "DELAYED": 371
+        "NO_REACTION": 894,
+        "ALREADY_IN_PRICE": 183,
+        "PARTLY_IN_PRICE": 54,
+        "MOSTLY_AT_OPEN": 22,
+        "REACTED": 97,
+        "DELAYED": 315
       },
       "other": {
-        "NO_REACTION": 3601,
-        "ALREADY_IN_PRICE": 367,
-        "PARTLY_IN_PRICE": 132,
+        "NO_REACTION": 3452,
+        "ALREADY_IN_PRICE": 357,
+        "PARTLY_IN_PRICE": 131,
         "MOSTLY_AT_OPEN": 63,
-        "REACTED": 338,
-        "DELAYED": 1392
+        "REACTED": 328,
+        "DELAYED": 1352
       },
       "plan": {
         "NO_REACTION": 30,
-        "ALREADY_IN_PRICE": 12,
+        "ALREADY_IN_PRICE": 10,
         "PARTLY_IN_PRICE": 4,
         "MOSTLY_AT_OPEN": 3,
-        "REACTED": 12,
+        "REACTED": 11,
         "DELAYED": 15
       },
       "takeover": {
-        "NO_REACTION": 193,
-        "ALREADY_IN_PRICE": 38,
-        "PARTLY_IN_PRICE": 17,
+        "NO_REACTION": 185,
+        "ALREADY_IN_PRICE": 35,
+        "PARTLY_IN_PRICE": 15,
         "MOSTLY_AT_OPEN": 19,
-        "REACTED": 41,
-        "DELAYED": 82
+        "REACTED": 38,
+        "DELAYED": 81
       }
     },
-    "unusual_n": 5786,
+    "unusual_n": 5461,
     "share_already_or_mostly_at_open": 0.218,
-    "share_anything_before": 0.283,
-    "count_already_or_mostly_at_open": 1263,
-    "count_anything_before": 1638,
-    "unusual_day_before_peak": 691,
-    "share_day_before_peak": 0.119,
+    "share_anything_before": 0.285,
+    "count_already_or_mostly_at_open": 1192,
+    "count_anything_before": 1557,
+    "unusual_day_before_peak": 666,
+    "share_day_before_peak": 0.122,
     "per_session": {
       "day_before": {
-        "n": 13540,
-        "n_unusual": 1012,
-        "share": 0.0747,
+        "n": 12867,
+        "n_unusual": 980,
+        "share": 0.0762,
         "chance_rule": "a",
         "chance": 0.0621,
-        "ratio": 1.2
+        "ratio": 1.23
       },
       "reaction": {
-        "n": 13535,
-        "n_unusual": 1970,
-        "share": 0.1455,
+        "n": 12862,
+        "n_unusual": 1790,
+        "share": 0.1392,
+        "chance_rule": "b",
+        "chance": 0.075,
+        "ratio": 1.86
+      },
+      "same_day_pre_open": {
+        "n": 1302,
+        "n_unusual": 167,
+        "share": 0.1283,
+        "chance_rule": "b",
+        "chance": 0.075,
+        "ratio": 1.71
+      },
+      "same_day_in_session": {
+        "n": 8743,
+        "n_unusual": 1269,
+        "share": 0.1451,
         "chance_rule": "b",
         "chance": 0.075,
         "ratio": 1.94
       },
-      "same_day_pre_open": {
-        "n": 1483,
-        "n_unusual": 259,
-        "share": 0.1746,
-        "chance_rule": "b",
-        "chance": 0.075,
-        "ratio": 2.33
-      },
-      "same_day_in_session": {
-        "n": 9045,
-        "n_unusual": 1333,
-        "share": 0.1474,
-        "chance_rule": "b",
-        "chance": 0.075,
-        "ratio": 1.97
-      },
       "same_day_after_close": {
-        "n": 2741,
-        "n_unusual": 426,
-        "share": 0.1554,
+        "n": 2557,
+        "n_unusual": 385,
+        "share": 0.1506,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 2.07
+        "ratio": 2.01
       },
       "later_1": {
-        "n": 13535,
-        "n_unusual": 1401,
-        "share": 0.1035,
+        "n": 12862,
+        "n_unusual": 1332,
+        "share": 0.1036,
         "chance_rule": "b",
         "chance": 0.075,
         "ratio": 1.38
       },
       "later_2": {
-        "n": 13535,
-        "n_unusual": 1149,
-        "share": 0.0849,
+        "n": 12862,
+        "n_unusual": 1098,
+        "share": 0.0854,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 1.13
+        "ratio": 1.14
       },
       "later_3": {
-        "n": 13535,
-        "n_unusual": 1079,
+        "n": 12862,
+        "n_unusual": 1025,
         "share": 0.0797,
         "chance_rule": "b",
         "chance": 0.075,
         "ratio": 1.06
       },
       "later_4": {
-        "n": 13535,
-        "n_unusual": 1081,
-        "share": 0.0799,
+        "n": 12862,
+        "n_unusual": 1026,
+        "share": 0.0798,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 1.07
+        "ratio": 1.06
       },
       "later_5": {
-        "n": 13535,
-        "n_unusual": 1049,
-        "share": 0.0775,
+        "n": 12862,
+        "n_unusual": 1001,
+        "share": 0.0778,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 1.03
+        "ratio": 1.04
       }
     }
   },
   "first_articles": {
     "label": "first_articles",
-    "n_articles": 5043,
+    "n_articles": 4746,
     "status": {
-      "NO_REACTION": 2756,
-      "ALREADY_IN_PRICE": 383,
-      "PARTLY_IN_PRICE": 149,
-      "MOSTLY_AT_OPEN": 118,
-      "REACTED": 523,
-      "DELAYED": 1114
+      "NO_REACTION": 2583,
+      "ALREADY_IN_PRICE": 365,
+      "PARTLY_IN_PRICE": 150,
+      "MOSTLY_AT_OPEN": 116,
+      "REACTED": 473,
+      "DELAYED": 1059
     },
     "by_news_type": {
       "analyst": {
-        "NO_REACTION": 128,
-        "ALREADY_IN_PRICE": 24,
+        "NO_REACTION": 131,
+        "ALREADY_IN_PRICE": 25,
         "PARTLY_IN_PRICE": 6,
-        "MOSTLY_AT_OPEN": 11,
-        "REACTED": 41,
-        "DELAYED": 43
+        "MOSTLY_AT_OPEN": 12,
+        "REACTED": 43,
+        "DELAYED": 45
       },
       "capital": {
-        "NO_REACTION": 154,
+        "NO_REACTION": 152,
         "ALREADY_IN_PRICE": 22,
-        "PARTLY_IN_PRICE": 12,
+        "PARTLY_IN_PRICE": 13,
         "MOSTLY_AT_OPEN": 6,
-        "REACTED": 39,
-        "DELAYED": 68
+        "REACTED": 40,
+        "DELAYED": 70
       },
       "deal": {
-        "NO_REACTION": 443,
-        "ALREADY_IN_PRICE": 44,
-        "PARTLY_IN_PRICE": 21,
-        "MOSTLY_AT_OPEN": 21,
-        "REACTED": 55,
-        "DELAYED": 159
+        "NO_REACTION": 427,
+        "ALREADY_IN_PRICE": 40,
+        "PARTLY_IN_PRICE": 22,
+        "MOSTLY_AT_OPEN": 19,
+        "REACTED": 54,
+        "DELAYED": 158
       },
       "earnings": {
-        "NO_REACTION": 407,
+        "NO_REACTION": 398,
         "ALREADY_IN_PRICE": 68,
-        "PARTLY_IN_PRICE": 33,
+        "PARTLY_IN_PRICE": 35,
         "MOSTLY_AT_OPEN": 29,
-        "REACTED": 147,
-        "DELAYED": 240
+        "REACTED": 148,
+        "DELAYED": 236
       },
       "governance": {
-        "NO_REACTION": 85,
-        "ALREADY_IN_PRICE": 12,
+        "NO_REACTION": 83,
+        "ALREADY_IN_PRICE": 11,
         "PARTLY_IN_PRICE": 5,
         "MOSTLY_AT_OPEN": 1,
         "REACTED": 6,
-        "DELAYED": 23
+        "DELAYED": 21
       },
       "legal_regulatory": {
-        "NO_REACTION": 35,
-        "ALREADY_IN_PRICE": 2,
+        "NO_REACTION": 32,
+        "ALREADY_IN_PRICE": 3,
         "PARTLY_IN_PRICE": 1,
         "MOSTLY_AT_OPEN": 0,
         "REACTED": 2,
-        "DELAYED": 19
+        "DELAYED": 17
       },
       "market_report": {
-        "NO_REACTION": 216,
-        "ALREADY_IN_PRICE": 87,
-        "PARTLY_IN_PRICE": 19,
-        "MOSTLY_AT_OPEN": 10,
-        "REACTED": 85,
-        "DELAYED": 74
+        "NO_REACTION": 189,
+        "ALREADY_IN_PRICE": 76,
+        "PARTLY_IN_PRICE": 18,
+        "MOSTLY_AT_OPEN": 9,
+        "REACTED": 39,
+        "DELAYED": 55
       },
       "other": {
-        "NO_REACTION": 1223,
-        "ALREADY_IN_PRICE": 112,
-        "PARTLY_IN_PRICE": 45,
+        "NO_REACTION": 1105,
+        "ALREADY_IN_PRICE": 106,
+        "PARTLY_IN_PRICE": 44,
         "MOSTLY_AT_OPEN": 27,
-        "REACTED": 127,
-        "DELAYED": 463
+        "REACTED": 121,
+        "DELAYED": 432
       },
       "plan": {
         "NO_REACTION": 11,
-        "ALREADY_IN_PRICE": 5,
+        "ALREADY_IN_PRICE": 6,
         "PARTLY_IN_PRICE": 2,
         "MOSTLY_AT_OPEN": 0,
-        "REACTED": 4,
+        "REACTED": 3,
         "DELAYED": 4
       },
       "takeover": {
-        "NO_REACTION": 54,
-        "ALREADY_IN_PRICE": 7,
-        "PARTLY_IN_PRICE": 5,
+        "NO_REACTION": 55,
+        "ALREADY_IN_PRICE": 8,
+        "PARTLY_IN_PRICE": 4,
         "MOSTLY_AT_OPEN": 13,
         "REACTED": 17,
         "DELAYED": 21
       }
     },
-    "unusual_n": 2287,
-    "share_already_or_mostly_at_open": 0.219,
-    "share_anything_before": 0.284,
-    "count_already_or_mostly_at_open": 501,
-    "count_anything_before": 650,
-    "unusual_day_before_peak": 237,
-    "share_day_before_peak": 0.104,
+    "unusual_n": 2163,
+    "share_already_or_mostly_at_open": 0.222,
+    "share_anything_before": 0.292,
+    "count_already_or_mostly_at_open": 481,
+    "count_anything_before": 631,
+    "unusual_day_before_peak": 229,
+    "share_day_before_peak": 0.106,
     "per_session": {
       "day_before": {
-        "n": 5043,
-        "n_unusual": 356,
-        "share": 0.0706,
+        "n": 4746,
+        "n_unusual": 349,
+        "share": 0.0735,
         "chance_rule": "a",
         "chance": 0.0621,
-        "ratio": 1.14
+        "ratio": 1.18
       },
       "reaction": {
-        "n": 5038,
-        "n_unusual": 915,
-        "share": 0.1816,
+        "n": 4741,
+        "n_unusual": 851,
+        "share": 0.1795,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 2.42
+        "ratio": 2.39
       },
       "same_day_pre_open": {
-        "n": 512,
-        "n_unusual": 114,
-        "share": 0.2227,
+        "n": 446,
+        "n_unusual": 71,
+        "share": 0.1592,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 2.97
+        "ratio": 2.12
       },
       "same_day_in_session": {
-        "n": 3358,
-        "n_unusual": 607,
-        "share": 0.1808,
+        "n": 3196,
+        "n_unusual": 599,
+        "share": 0.1874,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 2.41
+        "ratio": 2.5
       },
       "same_day_after_close": {
-        "n": 1078,
-        "n_unusual": 199,
-        "share": 0.1846,
+        "n": 1014,
+        "n_unusual": 187,
+        "share": 0.1844,
         "chance_rule": "b",
         "chance": 0.075,
         "ratio": 2.46
       },
       "later_1": {
-        "n": 5038,
-        "n_unusual": 642,
-        "share": 0.1274,
+        "n": 4741,
+        "n_unusual": 603,
+        "share": 0.1272,
         "chance_rule": "b",
         "chance": 0.075,
         "ratio": 1.7
       },
       "later_2": {
-        "n": 5038,
-        "n_unusual": 473,
-        "share": 0.0939,
+        "n": 4741,
+        "n_unusual": 446,
+        "share": 0.0941,
         "chance_rule": "b",
         "chance": 0.075,
         "ratio": 1.25
       },
       "later_3": {
-        "n": 5038,
-        "n_unusual": 427,
-        "share": 0.0848,
+        "n": 4741,
+        "n_unusual": 403,
+        "share": 0.085,
         "chance_rule": "b",
         "chance": 0.075,
         "ratio": 1.13
       },
       "later_4": {
-        "n": 5038,
-        "n_unusual": 398,
-        "share": 0.079,
+        "n": 4741,
+        "n_unusual": 371,
+        "share": 0.0783,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 1.05
+        "ratio": 1.04
       },
       "later_5": {
-        "n": 5038,
-        "n_unusual": 389,
-        "share": 0.0772,
+        "n": 4741,
+        "n_unusual": 371,
+        "share": 0.0783,
         "chance_rule": "b",
         "chance": 0.075,
-        "ratio": 1.03
+        "ratio": 1.04
       }
     }
   },
   "headline_numbers": {
     "en": [
-      "The session before an MF story is unusual 7.1% of the time, against 6.2% for any session.",
-      "The first session trading on the story is unusual 18.2% of the time, 2.4 times chance.",
-      "When MF publishes after the close, the same day had already moved unusually in 18.5% of cases (2.5 times chance).",
-      "When MF publishes before the open, the same trading day is unusual 22.3% of the time (3.0 times chance)."
+      "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+      "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+      "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+      "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
     ],
     "it": [
-      "La seduta prima di un articolo MF è anomala nel 7.1% dei casi, contro il 6.2% di una seduta qualsiasi.",
-      "La prima seduta che tratta sulla notizia è anomala nel 18.2% dei casi, 2.4 volte il caso.",
-      "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.5% dei casi (2.5 volte il caso).",
-      "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 22.3% dei casi (3.0 volte il caso)."
+      "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+      "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+      "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+      "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
     ],
     "chance_a_pct": 6.21,
     "chance_b_pct": 7.5

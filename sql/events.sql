@@ -9,11 +9,20 @@ WITH names AS (
     i.COD_AZIONE,
     i.DES_AZIONE,
     i.COD_ISIN,
-    CONCAT(r'(?i)\b', REGEXP_REPLACE(TRIM(i.DES_AZIONE), r'([.^$|()\[\]{}*+?\\])', r'\\\1'), r'\b') AS pattern
+    -- first letter must be capitalised (unless the name itself starts lowercase, e.g. doValue): "impianti" in a sentence is not Impianti
+    CONCAT(
+      r'\b',
+      IF(REGEXP_CONTAINS(SUBSTR(TRIM(i.DES_AZIONE), 1, 1), r'^[a-z]$'),
+         CONCAT('[', SUBSTR(TRIM(i.DES_AZIONE), 1, 1), UPPER(SUBSTR(TRIM(i.DES_AZIONE), 1, 1)), ']'),
+         REGEXP_REPLACE(SUBSTR(TRIM(i.DES_AZIONE), 1, 1), r'([.^$|()\[\]{}*+?\\])', r'\\\1')),
+      r'(?i:', REGEXP_REPLACE(SUBSTR(TRIM(i.DES_AZIONE), 2), r'([.^$|()\[\]{}*+?\\])', r'\\\1'), r')\b'
+    ) AS pattern
   FROM `class-hackaton-09.financial_instruments.instruments_info` i
   WHERE i.COD_TIPO = 'ORD'
     AND i.COD_ISIN LIKE 'IT%'
     AND LENGTH(TRIM(i.DES_AZIONE)) >= 3
+    -- company names that are also everyday or foreign words in titles
+    AND TRIM(i.DES_AZIONE) NOT IN ('Reti', 'Impianti', 'Energy', 'Maps', 'Simone', 'Plc', 'Circle', 'Pattern', 'Predict', 'Friends', 'Adventure', 'Tecno')
     AND i.COD_AZIONE IN (SELECT DISTINCT COD_AZIONE FROM `class-hackaton-09.financial_instruments.instruments_quotes`)
 ),
 
@@ -21,6 +30,8 @@ articles AS (
   SELECT content_id, titolo, data_pubblicazione, DATE(data_pubblicazione) AS pub_date
   FROM `class-hackaton-09.news.articles`
   WHERE DATE(data_pubblicazione) BETWEEN @from_date AND @to_date
+    -- multi-stock live blogs and daily recaps are not about one company
+    AND NOT REGEXP_CONTAINS(titolo, r"^(Borse oggi in diretta|Cos.è successo oggi)")
 ),
 
 matches AS (

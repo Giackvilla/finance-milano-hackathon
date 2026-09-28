@@ -1,0 +1,123 @@
+{
+  "article": {
+    "content_id": "202608212138149558",
+    "titolo": "Mps-Mediobanca, l’indagine sul concerto avanza. Anche senza le chat dell’ex dg del Tesoro Sala",
+    "data_pubblicazione": "2026-08-21T09:54:24",
+    "pub_local": "2026-08-21T11:54:24",
+    "testata": "MF",
+    "quote": null,
+    "url": "https://www.milanofinanza.it/news/mps-mediobanca-lindagine-sul-concerto-avanza-anche-senza-le-chat-dellex-dg-del-tesoro-sala-202608212138149558"
+  },
+  "instrument": {
+    "des_azione": "Mediobanca",
+    "cod_azione": "MEDIOB",
+    "isin": "IT0000062957"
+  },
+  "news": {
+    "news_type": "legal_regulatory",
+    "scheduled": false,
+    "headline_reports_move": false,
+    "matched": [
+      {
+        "type": "legal_regulatory",
+        "keyword": "\\bindagine\\b"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "DELAYED",
+    "peak": {
+      "d": "2026-08-27",
+      "timing": "later",
+      "timing_words_en": "4 sessions after the article",
+      "timing_words_it": "4 sedute dopo l'articolo",
+      "move_pct": -2.07,
+      "z": -2.18,
+      "vol_x": 1.12,
+      "retained_pct": -139.66,
+      "open_share_pct": 27.38
+    },
+    "largest": {
+      "d": "2026-08-27",
+      "timing": "later",
+      "timing_words_en": "4 sessions after the article",
+      "timing_words_it": "4 sedute dopo l'articolo",
+      "move_pct": -2.07,
+      "z": -2.18,
+      "vol_x": 1.12,
+      "retained_pct": -139.66,
+      "open_share_pct": 27.38
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-08-27",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": -2.07,
+        "z": -2.18
+      }
+    ],
+    "at_open": {
+      "open_share_pct": -17.46,
+      "gap_pct": 0.32
+    },
+    "publication_phase": "in_session",
+    "pub_local": "2026-08-21T11:54:24",
+    "text_en": "The stock moved 4 sessions after the article (27 Aug 2026, -2.1%, 2.2 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the move has fully reversed.",
+    "text_it": "L'azione si è mossa 4 sedute dopo l'articolo (27 agosto 2026, -2.1%, 2.2 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il movimento si è completamente invertito."
+  },
+  "tape": {
+    "timing": "later",
+    "move_date": "2026-08-27",
+    "move_pct": -2.07,
+    "z": -2.18,
+    "unusual": true,
+    "volume_x": 1.12,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 0.952,
+    "px_before_move": 27.96,
+    "px_after_move": 27.38,
+    "last_session": "2026-09-23",
+    "last_px": 28.77,
+    "retained_pct": -140,
+    "facts_text": [
+      "The stock moved 4 sessions after the article (27 Aug 2026, -2.1%, 2.2 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the move has fully reversed."
+    ]
+  },
+  "gemini": {
+    "model": null,
+    "instrument_name": null,
+    "title_adjective": null,
+    "figure_in_body": null,
+    "adjective_matches": null,
+    "sentence": null,
+    "checks": null,
+    "attempts": null
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

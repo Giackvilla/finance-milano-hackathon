@@ -1,0 +1,120 @@
+{
+  "article": {
+    "content_id": "202609102204136722",
+    "titolo": "Caffè Borbone (Italmobiliare), Andrea Cipolloni nuovo ad: ha guidato Eataly e Autogrill Europe",
+    "data_pubblicazione": "2026-09-10T19:48:35",
+    "pub_local": "2026-09-10T21:48:35",
+    "testata": "MF",
+    "quote": null,
+    "url": "https://www.milanofinanza.it/news/andrea-cipolloni-nuovo-ad-di-caffè-borbone-italmobiliare-ha-guidato-eataly-e-autogrill-europe-202609102204136722"
+  },
+  "instrument": {
+    "des_azione": "Italmobiliare",
+    "cod_azione": "ITMO",
+    "isin": "IT0005253205"
+  },
+  "news": {
+    "news_type": "governance",
+    "scheduled": false,
+    "headline_reports_move": false,
+    "matched": [
+      {
+        "type": "governance",
+        "keyword": "nuovo (?:ad|ceo|presidente|amministratore)"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "ALREADY_IN_PRICE",
+    "peak": {
+      "d": "2026-09-09",
+      "timing": "day_before",
+      "timing_words_en": "the session before the article",
+      "timing_words_it": "la seduta prima dell'articolo",
+      "move_pct": -1.96,
+      "z": -2.04,
+      "vol_x": 1.63,
+      "retained_pct": 0.0,
+      "open_share_pct": 0.0
+    },
+    "largest": {
+      "d": "2026-09-09",
+      "timing": "day_before",
+      "timing_words_en": "the session before the article",
+      "timing_words_it": "la seduta prima dell'articolo",
+      "move_pct": -1.96,
+      "z": -2.04,
+      "vol_x": 1.63,
+      "retained_pct": 0.0,
+      "open_share_pct": 0.0
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-09-09",
+        "timing": "day_before",
+        "closed_before_publication": true,
+        "move_pct": -1.96,
+        "z": -2.04
+      }
+    ],
+    "at_open": null,
+    "publication_phase": "after_close",
+    "pub_local": "2026-09-10T21:48:35",
+    "text_en": "The biggest unusual move came before the article was published (on 9 Sep 2026, -2.0%, 2.0 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 0% of that move is still in the price.",
+    "text_it": "Il movimento anomalo più ampio è arrivato prima che l'articolo fosse pubblicato (il 9 settembre 2026, -2.0%, 2.0 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il 0% di quel movimento è ancora nel prezzo."
+  },
+  "tape": {
+    "timing": "day_before",
+    "move_date": "2026-09-09",
+    "move_pct": -1.96,
+    "z": -2.04,
+    "unusual": true,
+    "volume_x": 1.63,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 0.959,
+    "px_before_move": 25.5,
+    "px_after_move": 25.0,
+    "last_session": "2026-09-23",
+    "last_px": 25.5,
+    "retained_pct": 0,
+    "facts_text": [
+      "The biggest unusual move came before the article was published (on 9 Sep 2026, -2.0%, 2.0 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 0% of that move is still in the price."
+    ]
+  },
+  "gemini": {
+    "model": null,
+    "instrument_name": null,
+    "title_adjective": null,
+    "figure_in_body": null,
+    "adjective_matches": null,
+    "sentence": null,
+    "checks": null,
+    "attempts": null
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}

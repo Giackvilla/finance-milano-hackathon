@@ -1,0 +1,145 @@
+{
+  "article": {
+    "content_id": "202609101405465587",
+    "titolo": "Garofalo Health Care, l’utile frena ma i ricavi aumentano. In cerca di nuove opportunità di crescita m&a",
+    "data_pubblicazione": "2026-09-10T10:54:03",
+    "pub_local": "2026-09-10T12:54:03",
+    "testata": "MF",
+    "quote": null,
+    "url": "https://www.milanofinanza.it/news/garofalo-health-care-aumenta-i-ricavi-e-guarda-a-nuove-acquisizioni-202609101405465587"
+  },
+  "instrument": {
+    "des_azione": "Garofalo Health Care",
+    "cod_azione": "GHC",
+    "isin": "IT0005345233"
+  },
+  "news": {
+    "news_type": "earnings",
+    "scheduled": true,
+    "headline_reports_move": false,
+    "matched": [
+      {
+        "type": "earnings",
+        "keyword": "\\butile\\b(?!\\s+per\\b)"
+      },
+      {
+        "type": "earnings",
+        "keyword": "\\bricavi\\b"
+      },
+      {
+        "type": "deal",
+        "keyword": "\\bm&a\\b"
+      }
+    ]
+  },
+  "verdict": {
+    "status": "PARTLY_IN_PRICE",
+    "peak": {
+      "d": "2026-09-10",
+      "timing": "same_day",
+      "timing_words_en": "the day of the article",
+      "timing_words_it": "il giorno dell'articolo",
+      "move_pct": -2.99,
+      "z": -3.1,
+      "vol_x": 1.97,
+      "retained_pct": -12.5,
+      "open_share_pct": -12.29
+    },
+    "largest": {
+      "d": "2026-09-10",
+      "timing": "same_day",
+      "timing_words_en": "the day of the article",
+      "timing_words_it": "il giorno dell'articolo",
+      "move_pct": -2.99,
+      "z": -3.1,
+      "vol_x": 1.97,
+      "retained_pct": -12.5,
+      "open_share_pct": -12.29
+    },
+    "unusual_sessions": [
+      {
+        "d": "2026-09-09",
+        "timing": "day_before",
+        "closed_before_publication": true,
+        "move_pct": -2.9,
+        "z": -3.01
+      },
+      {
+        "d": "2026-09-10",
+        "timing": "same_day",
+        "closed_before_publication": false,
+        "move_pct": -2.99,
+        "z": -3.1
+      },
+      {
+        "d": "2026-09-16",
+        "timing": "later",
+        "closed_before_publication": false,
+        "move_pct": 2.28,
+        "z": 2.37
+      }
+    ],
+    "at_open": {
+      "open_share_pct": -12.29,
+      "gap_pct": 0.37
+    },
+    "publication_phase": "in_session",
+    "pub_local": "2026-09-10T12:54:03",
+    "text_en": "Part of the unusual movement came before publication; the biggest was the day of the article (10 Sep 2026, -3.0%, 3.1 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, the move has fully reversed.",
+    "text_it": "Parte del movimento anomalo è arrivata prima della pubblicazione; il più ampio è stato il giorno dell'articolo (10 settembre 2026, -3.0%, 3.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il movimento si è completamente invertito."
+  },
+  "tape": {
+    "timing": "same_day",
+    "move_date": "2026-09-10",
+    "move_pct": -2.99,
+    "z": -3.1,
+    "unusual": true,
+    "volume_x": 1.97,
+    "baseline_sessions": 20,
+    "baseline_sd_pct": 0.962,
+    "px_before_move": 5.36,
+    "px_after_move": 5.2,
+    "last_session": "2026-09-23",
+    "last_px": 5.38,
+    "retained_pct": -12,
+    "facts_text": [
+      "Part of the unusual movement came before publication; the biggest was the day of the article (10 Sep 2026, -3.0%, 3.1 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, the move has fully reversed."
+    ]
+  },
+  "gemini": {
+    "model": null,
+    "instrument_name": null,
+    "title_adjective": null,
+    "figure_in_body": null,
+    "adjective_matches": null,
+    "sentence": null,
+    "checks": null,
+    "attempts": null
+  },
+  "context": {
+    "headline_numbers": {
+      "en": [
+        "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+        "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+        "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+        "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+      ],
+      "it": [
+        "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+        "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+        "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+        "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+      ],
+      "chance_a_pct": 6.21,
+      "chance_b_pct": 7.5
+    },
+    "base_rate": {
+      "n_sessions_a": 1050859,
+      "n_unusual_a": 65240,
+      "share_a": 0.06208254389980007,
+      "n_sessions_b": 1049361,
+      "n_unusual_b": 78674,
+      "share_b": 0.07497324562281237
+    }
+  }
+}
