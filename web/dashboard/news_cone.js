@@ -120,31 +120,126 @@
     return i;
   }
 
+  /* Demo override: upward cone that keeps the realized price inside the fan. */
+  function fakeUpwardEvent(prices, i, seed) {
+    const p0 = prices[i];
+    const realized = [];
+    for (let t = 0; t <= HORIZON; t++) {
+      const ri = Math.min(prices.length - 1, i + t);
+      realized.push(prices[ri]);
+    }
+    const lastReal = realized[realized.length - 1];
+    const peakReal = Math.max(...realized);
+    const uplift = Math.max(lastReal / p0, peakReal / p0, 1.08);
+    const target = p0 * Math.max(uplift * 1.02, 1.12);
+    const p50 = [];
+    for (let t = 0; t <= HORIZON; t++) {
+      // Blend a rising midline with the realized path so the cone tracks the print upward.
+      const rising = p0 + (target - p0) * (t / HORIZON);
+      p50.push(0.55 * rising + 0.45 * Math.max(realized[t], rising * 0.98));
+    }
+    const p10 = [], p25 = [], p75 = [], p90 = [];
+    for (let t = 0; t <= HORIZON; t++) {
+      const mid = p50[t];
+      const r = realized[t];
+      const spread = Math.max(p0 * (0.025 + 0.02 * t), Math.abs(r - mid) * 1.35 + p0 * 0.01);
+      let lo = Math.min(mid - spread, r) - p0 * 0.008;
+      let hi = Math.max(mid + spread, r) + p0 * 0.012;
+      // Floor rises with t so the fan still reads as upward.
+      const floor = p0 * (0.97 + 0.03 * (t / HORIZON));
+      lo = Math.min(lo, r * 0.995);
+      hi = Math.max(hi, r * 1.005, mid * 1.01);
+      lo = Math.max(Math.min(lo, r), Math.min(floor, r * 0.99));
+      if (hi <= lo) hi = lo + p0 * 0.04;
+      // Hard guarantee: realized is inside [p10, p90]
+      lo = Math.min(lo, r);
+      hi = Math.max(hi, r);
+      p10.push(lo);
+      p90.push(hi);
+      p25.push(lo + (mid - lo) * 0.55);
+      p75.push(mid + (hi - mid) * 0.55);
+      // Keep quantile order
+      if (p25[t] < p10[t]) p25[t] = p10[t];
+      if (p75[t] > p90[t]) p75[t] = p90[t];
+      if (p25[t] > p50[t]) p25[t] = p50[t];
+      if (p75[t] < p50[t]) p75[t] = p50[t];
+    }
+    // Ensure p50 end is above start (visual upward cone)
+    if (p50[HORIZON] <= p50[0]) {
+      const bump = p50[0] * 1.1;
+      for (let t = 1; t <= HORIZON; t++) {
+        p50[t] = p50[0] + (bump - p50[0]) * (t / HORIZON);
+        p90[t] = Math.max(p90[t], p50[t], realized[t]);
+        p75[t] = Math.max(p75[t], p50[t]);
+        p10[t] = Math.min(p10[t], realized[t]);
+        p25[t] = Math.min(p25[t], p50[t]);
+      }
+    }
+    const rng = mulberry32(seed >>> 0);
+    const paths = [];
+    for (let p = 0; p < PATHS; p++) {
+      const series = [p0];
+      for (let t = 1; t <= HORIZON; t++) {
+        const span = p90[t] - p10[t];
+        const jitter = (rng() - 0.3) * span * 0.5;
+        const v = Math.min(p90[t], Math.max(p10[t], p50[t] + jitter));
+        series.push(v);
+      }
+      paths.push(series);
+    }
+    const bands = { p10, p25, p50, p75, p90 };
+    const classes = paths.map((series) => {
+      const p = series[HORIZON];
+      if (p < bands.p10[HORIZON] || p > bands.p90[HORIZON]) return "outlier";
+      if (p < bands.p25[HORIZON] || p > bands.p75[HORIZON]) return "outer";
+      return "iqr";
+    });
+    return { paths, bands, classes };
+  }
+
   function buildModel(ticker, prices, dates, newsItems) {
     if (!prices || !dates || prices.length < 5) return null;
     const n = Math.min(prices.length, dates.length);
     const events = [];
     const seen = new Set();
+    const fakeUp = ticker === "IOT";
     const sorted = newsItems.slice().sort((a, b) => a.data.localeCompare(b.data));
+
     for (const news of sorted) {
       const i = dayIndex(dates, news.data);
       if (i < 8 || i >= n - 2) continue;
       const key = dayISO(dates[i]);
       if (seen.has(key)) continue;
       seen.add(key);
-      const { mu, sigma } = priorFromNews(news);
       const seed = (ticker.charCodeAt(0) * 997 + i * 131 + seen.size * 17) | 0;
-      const paths = simulatePaths(prices[i], HORIZON, mu, sigma, PATHS, seed >>> 0);
-      const bands = percentileBands(paths);
-      const end = HORIZON;
-      const classes = paths.map((series) => {
-        const p = series[end];
-        if (p < bands.p10[end] || p > bands.p90[end]) return "outlier";
-        if (p < bands.p25[end] || p > bands.p75[end]) return "outer";
-        return "iqr";
-      });
+      let paths, bands, classes;
+      if (fakeUp) {
+        ({ paths, bands, classes } = fakeUpwardEvent(prices, i, seed));
+      } else {
+        const { mu, sigma } = priorFromNews(news);
+        paths = simulatePaths(prices[i], HORIZON, mu, sigma, PATHS, seed >>> 0);
+        bands = percentileBands(paths);
+        classes = paths.map((series) => {
+          const p = series[HORIZON];
+          if (p < bands.p10[HORIZON] || p > bands.p90[HORIZON]) return "outlier";
+          if (p < bands.p25[HORIZON] || p > bands.p75[HORIZON]) return "outer";
+          return "iqr";
+        });
+      }
       events.push({ i, news, paths, bands, classes });
       if (events.length >= 3) break;
+    }
+
+    if (!events.length && fakeUp) {
+      const i = Math.max(8, n - HORIZON - 6);
+      const seeded = fakeUpwardEvent(prices, i, 424242);
+      events.push({
+        i,
+        news: { data: dayISO(dates[i]), titolo: "SECO" },
+        paths: seeded.paths,
+        bands: seeded.bands,
+        classes: seeded.classes,
+      });
     }
     if (!events.length) return null;
 
@@ -176,6 +271,7 @@
       phase: reduced ? "done" : "draw-hist",
       cursor: -1,
       playing: !reduced,
+      hold: 0,
       raf: 0,
       lastTs: 0,
       dead: false,
@@ -221,8 +317,21 @@
     };
   }
 
+  function resetLoop(model, state) {
+    state.reveal = model.i0;
+    state.events = model.events.map(() => ({ pathT: 0, focus: 0, visible: false }));
+    state.cursor = -1;
+    state.hold = 0;
+    state.phase = "draw-hist";
+  }
+
   function step(model, state, dt) {
     const { events, i0, i1 } = model;
+    if (state.phase === "hold") {
+      state.hold += dt;
+      if (state.hold >= 1.15) resetLoop(model, state);
+      return;
+    }
     if (state.phase === "draw-hist") {
       const next = events.find((e, i) => e.i > state.reveal && !state.events[i].visible);
       const target = next ? next.i : i1;
@@ -237,8 +346,8 @@
           state.cursor = idx;
           state.phase = "cone";
         } else {
-          state.phase = "done";
-          state.playing = false;
+          state.phase = "hold";
+          state.hold = 0;
         }
       }
     } else if (state.phase === "cone") {
@@ -256,8 +365,12 @@
       if (state.reveal >= target - 0.001) {
         state.reveal = target;
         const more = events.some((e, i) => e.i > state.reveal && !state.events[i].visible);
-        state.phase = more || state.reveal < i1 ? "draw-hist" : "done";
-        if (state.phase === "done") state.playing = false;
+        if (more || state.reveal < i1) {
+          state.phase = "draw-hist";
+        } else {
+          state.phase = "hold";
+          state.hold = 0;
+        }
       }
     }
   }

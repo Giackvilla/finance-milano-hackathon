@@ -10,7 +10,7 @@
   'use strict';
 
   const D = window.DEMO_DATA;
-  const KEY = 'mf-desk:v1';
+  const KEY = 'mf-desk:v2';
 
   /* ================================================================ utilità */
   const $ = (s, r = document) => r.querySelector(s);
@@ -232,7 +232,13 @@
     raw.map((v, i) => [v - fl[i], i]).sort((a, b) => b[0] - a[0]).forEach(([, i]) => { if (rest > 0) { fl[i]++; rest--; } });
     base.forEach((r, i) => { r.peso = fl[i] / 10; });
     rows.forEach(r => { if (r.simPrezzo && D.reale) r.peso = null; });
-    rows.sort((a, b) => (b.simPrezzo === a.simPrezzo ? b.valore - a.valore : (a.simPrezzo ? 1 : -1)));
+    const port = state.portafoglio.map(p => p.ticker);
+    rows.sort((a, b) => {
+      if (D.reale && a.simPrezzo !== b.simPrezzo) return a.simPrezzo ? 1 : -1;
+      const ia = port.indexOf(a.ticker), ib = port.indexOf(b.ticker);
+      if (ia >= 0 && ib >= 0) return ia - ib;
+      return b.valore - a.valore;
+    });
     return { rows, base, tot };
   }
 
@@ -441,16 +447,31 @@
   let rsz;
   window.addEventListener('resize', () => { clearTimeout(rsz); rsz = setTimeout(() => charts.forEach((draw, host) => { if (host.isConnected) draw(); else charts.delete(host); }), 120); });
 
-  /* Minigrafico con riferimento tratteggiato al primo valore, come le righe di "My Symbols". */
+  /* Mini grafico del prezzo (serie storica), senza linea di riferimento. */
   function sparkline(vals, w = 56, h = 30) {
+    if (!vals || vals.length < 2) return '';
     const lo = Math.min(...vals), hi = Math.max(...vals), n = vals.length;
-    const Y = v => (2 + (1 - (v - lo) / ((hi - lo) || 1)) * (h - 4)).toFixed(1);
-    const pts = vals.map((v, i) => `${(i / (n - 1) * (w - 2) + 1).toFixed(1)},${Y(v)}`).join(' ');
-    const col = vals[n - 1] >= vals[0] ? 'var(--up)' : 'var(--down)';
+    const span = (hi - lo) || Math.abs(vals[n - 1]) * 0.01 || 1;
+    const X = i => (i / (n - 1) * (w - 2) + 1);
+    const Y = v => (2 + (1 - (v - lo) / span) * (h - 4));
+    const pts = vals.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(' ');
+    const base = `${X(0).toFixed(1)},${(h - 1).toFixed(1)} ${pts} ${X(n - 1).toFixed(1)},${(h - 1).toFixed(1)}`;
+    const up = vals[n - 1] >= vals[0];
+    const col = up ? 'var(--up)' : 'var(--down)';
+    const fill = up ? 'color-mix(in srgb, var(--up) 22%, transparent)' : 'color-mix(in srgb, var(--down) 22%, transparent)';
     return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
-      <line x1="0" x2="${w}" y1="${Y(vals[0])}" y2="${Y(vals[0])}" stroke="${col}" stroke-width="1" stroke-dasharray="1.5 2.5" opacity=".7" vector-effect="non-scaling-stroke"/>
-      <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`;
+      <polygon points="${base}" fill="${fill}" stroke="none"/>
+      <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`;
   }
+  const sparkPrezzo = t => {
+    const span = { '1M': 21, '3M': 63, '1A': 252, 'MAX': D.giorni.length }[ui.range] || 63;
+    const n = Math.min(span, D.giorni.length);
+    const a = azienda(t);
+    const s = serieDi(t).slice(-n).filter(v => v != null && Number.isFinite(v));
+    if (s.length > 1) return sparkline(s);
+    const px = a && a.prezzo != null ? a.prezzo : 0;
+    return sparkline([px, px]);
+  };
 
   /* ================================================================ allocazione: torta */
   const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)'];
@@ -584,7 +605,7 @@
             return `<li><button class="sym" type="button" data-open="${esc(r.ticker)}"${ui.current === r.ticker ? ' aria-current="page"' : ''}>
               <span class="sym-l"><span class="sym-t">${esc(r.ticker)} ${pxBadge}</span><span class="sym-n">${esc(r.a.nome)}</span>
                 <span class="sym-s"><i class="sdot ${st.cls}"></i>${st.dash} · ${pesoTxt}</span></span>
-              ${sparkline((() => { const s = serieDi(r.ticker).slice(-22).filter(v => v != null); return s.length > 1 ? s : [r.a.prezzo, r.a.prezzo]; })())}
+              ${sparkPrezzo(r.ticker)}
               <span class="sym-r"><span class="sym-p">${nf(r.a.prezzo, priceDigits(r.a.prezzo))}</span>${pill(varDi(r.ticker))}</span>
             </button></li>`;
           }).join('')}</ul>
@@ -628,7 +649,7 @@
         : (D.reale ? prov('dataset', 'Prezzo da dataset MF') : prov('esempio', 'Prezzo demo'));
       return `<li><button class="sym" type="button" data-open="${esc(a.ticker)}"${ui.current === a.ticker ? ' aria-current="page"' : ''} title="${esc(tesiDi(a.ticker).motivo)}">
         <span class="sym-l"><span class="sym-t">${esc(a.ticker)} ${pxBadge}</span><span class="sym-n">${esc(a.nome)}</span><span class="sym-s">${act}</span></span>
-        ${sparkline((() => { const s = serieDi(a.ticker).slice(-22).filter(v => v != null); return s.length > 1 ? s : [a.prezzo, a.prezzo]; })())}
+        ${sparkPrezzo(a.ticker)}
         <span class="sym-r"><span class="sym-p">${nf(a.prezzo, priceDigits(a.prezzo))}</span>${pill(varDi(a.ticker))}</span>
       </button></li>`;
     }).join('')}</ul>` : `<div class="empty"><h3>Watchlist vuota</h3><p>Aggiungi un’azienda che stai valutando e il motivo del tuo interesse.</p>
@@ -892,7 +913,13 @@
       (groups[s.ticker] = groups[s.ticker] || []).push(n);
     }));
     const order = Object.keys(groups).map(t => ({ t, items: groups[t].sort((a, b) => b.data.localeCompare(a.data)) }))
-      .sort((a, b) => b.items[0].data.localeCompare(a.items[0].data));
+      .sort((a, b) => {
+        const port = state.portafoglio.map(p => p.ticker);
+        const ia = port.indexOf(a.t), ib = port.indexOf(b.t);
+        if (ia >= 0 && ib >= 0) return ia - ib;
+        if (ia >= 0 !== ib >= 0) return ia >= 0 ? -1 : 1;
+        return b.items[0].data.localeCompare(a.items[0].data);
+      });
     const loose = ui.scope === 'tutte' && !ui.ticker ? D.notizie.filter(n => newsMatches(n) && !linked(n).some(s => tracked(s.ticker))) : [];
 
     const sections = order.map(({ t, items }) => {
@@ -1849,7 +1876,7 @@
       return;
     }
     if (el.dataset.open) { openCompany(el.dataset.open); return; }
-    if (el.dataset.range) { ui.range = el.dataset.range; drawPortfolioChart(); return; }
+    if (el.dataset.range) { ui.range = el.dataset.range; renderLeft(); return; }
     if (el.dataset.scope) { ui.scope = el.dataset.scope; ui.ticker = null; renderMain(); return; }
     if (el.dataset.filter) { ui.ticker = ui.ticker === el.dataset.filter ? null : el.dataset.filter; renderMain(); return; }
     const t = currentTicker();

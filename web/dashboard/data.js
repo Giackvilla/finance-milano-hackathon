@@ -33,10 +33,10 @@
     aggiornamento: '25 set 2026',
 
     portafoglio: [
+      { ticker: 'IOT', quantita: 3710 },
+      { ticker: 'ISP', quantita: 3950 },
       { ticker: 'PRY', quantita: 430 },
       { ticker: 'ENEL', quantita: 2700 },
-      { ticker: 'ISP', quantita: 3950 },
-      { ticker: 'LDO', quantita: 325 },
       { ticker: 'STLAM', quantita: 1450 },
       { ticker: 'TIT', quantita: 22400 }
     ],
@@ -271,6 +271,60 @@
             cambiato: 'Rispetto al 1T 2026 arriva il nuovo riacquisto di azioni.',
             impatto: I('rafforza', 'La distribuzione agli azionisti, cuore della tesi, aumenta.'),
             reazione: R(2.6, 'chiusura del 30 lug 2026', 'chiusura del 31 lug 2026', 'Risultati pubblicati prima dell’apertura.'),
+            fonti: []
+          }
+        ]
+      },
+
+      /* ---------------------------------------------------------------- SECO */
+      IOT: {
+        nome: 'SECO', ticker: 'IOT', settore: 'Tecnologia · edge AI', prezzo: 4.42,
+        valutazione: 'P/E atteso elevato sul 2026, premio legato all’alleanza Neura',
+        tesi: {
+          orizzonte: '3–5 anni',
+          motivo: 'Crescita dell’edge AI industriale: moduli, robotica e partnership (Neura, Arduino/Qualcomm) che ampliano ricavi e pipeline oltre l’hardware tradizionale.',
+          motivoBreve: 'Edge AI industriale e robotica',
+          indicatori: ['Ricavi e pipeline AI/robotica', 'Utile adjusted vs consensus', 'Guidance ricavi 2027'],
+          pesoPrevisto: null
+        },
+        esito: {
+          stato: 'rafforzata',
+          sintesi: 'I conti 1H e l’alleanza Neura vanno nella direzione della tesi: utile sopra le attese nonostante il calo anno su anno, e target ricavi 2027 a 270 milioni. Il titolo ha reagito con un salto anomalo (+14%).',
+          fatti: [
+            'Utile adjusted 1H a 5,5 milioni (−24,7% a/a) ma sopra le stime degli analisti.',
+            'Alleanza europea con Neura per portare la Physical AI in robot e fabbriche.',
+            'Guidance: ricavi 2027 verso 270 milioni con il contributo Neura.'
+          ],
+          interpretazioni: [
+            'Il mercato ha letto i numeri e Neura come conferma della tesi edge AI, non come un one-off.'
+          ]
+        },
+        decisione: {
+          contesto: 'portafoglio', azione: 'mantenere',
+          motivazione: 'La tesi si rafforza dopo conti e alleanza, ma il salto di prezzo ha già scontato buona parte della notizia. Ha senso tenere la posizione e verificare l’esecuzione su Neura nei prossimi trimestri.',
+          aFavore: ['Beat sul consensus nonostante utile in calo', 'Target 2027 esplicito con Neura', 'Reazione di prezzo +14% same day'],
+          rischio: 'Ritardi sull’integrazione Neura o delusione sui ricavi AI farebbero riassorbire il premio.',
+          cambierebbe: 'Una conferma di pipeline AI/robotica nei prossimi earnings renderebbe la tesi ancora più solida.'
+        },
+        evoluzione: 'Da luglio il titolo ha anticipato i conti con volatilità elevata; a settembre Neura e il bilancio 1H hanno rafforzato la tesi in un’unica settimana.',
+        earnings: [
+          {
+            id: '2T26', label: '1H 2026', periodo: 'gennaio–giugno 2026', data: '8 set 2026',
+            fatti: [
+              'Utile adjusted 5,5 mln €, sopra le attese ISP.',
+              'Ricavi in linea; focus sul target 2027 a 270 mln con Neura.',
+              'Titolo +14% in chiusura il giorno della pubblicazione.'
+            ],
+            metriche: [
+              M('Utile adjusted', '5,5 mln €', '−24,7%', 'a/a'),
+              M('Reazione titolo', '+14,1%', 'z 3,6', 'same day'),
+              M('Target ricavi 2027', '270 mln €', 'con Neura', ''),
+              M('Volume', '6×', 'vs 20 sedute', '')
+            ],
+            guidance: 'Confermata la guidance; ricavi 2027 verso 270 milioni con Neura.',
+            cambiato: 'Arriva l’ancoraggio numerico sul 2027 e la partnership robotica.',
+            impatto: I('rafforza', 'Beat + Neura allineati alla tesi edge AI.'),
+            reazione: R(14.1, 'chiusura del 7 set 2026', 'chiusura dell’8 set 2026', 'Risultati e news Neura nella stessa settimana.'),
             fonti: []
           }
         ]
@@ -788,7 +842,7 @@
 
   /* Variazione % dell'ultima seduta (25 set 2026). */
   D.mercato = {
-    PRY: 1.24, ENEL: 0.62, ISP: 1.14, LDO: 0.41, STLAM: -1.93, TIT: -2.14,
+    PRY: 1.24, ENEL: 0.62, ISP: 1.14, LDO: 0.41, IOT: -0.56, STLAM: -1.93, TIT: -2.14,
     REC: 0.35, MONC: -0.58, SPM: -1.12, TPRO: 2.40
   };
 
@@ -801,7 +855,7 @@
   ];
 
   D.settori = {
-    PRY: 'Industria', LDO: 'Industria', ENEL: 'Utility', ISP: 'Banche', STLAM: 'Auto', TIT: 'Telecom'
+    PRY: 'Industria', LDO: 'Industria', IOT: 'Tecnologia', ENEL: 'Utility', ISP: 'Banche', STLAM: 'Auto', TIT: 'Telecom'
   };
 
   D.notizie = [

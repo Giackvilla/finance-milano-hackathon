@@ -28,6 +28,7 @@ DEMO_COMPANIES = {
     "ENEL": "enel",
     "ISP": "intesa-sanpaolo",
     "LDO": "leonardo",
+    "IOT": "seco",
     "TIT": "telecom-italia",
     "REC": "recordati",
     "MONC": "moncler",
