@@ -1,0 +1,104 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202608201721482359",
+ "article": {
+  "content_id": "202608201721482359",
+  "titolo": "Il fondo americano Advent pronto ad aumentare la quota in Avio",
+  "data_pubblicazione": "2026-08-20T14:26:12",
+  "pub_local": "2026-08-20T16:26:12",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/advent-pronta-ad-aumentare-la-quota-in-avio-202608201721482359"
+ },
+ "instrument": {
+  "des_azione": "Avio",
+  "cod_azione": "SPA2",
+  "isin": "IT0005119810",
+  "company_slug": "avio"
+ },
+ "news": {
+  "news_type": "capital",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "capital",
+    "keyword": "aumento di capitale"
+   },
+   {
+    "type": "deal",
+    "keyword": "\\baccord[oi]\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-08-24",
+   "timing": "later",
+   "timing_words_en": "2 sessions after the article",
+   "timing_words_it": "2 sedute dopo l'articolo",
+   "move_pct": -4.73,
+   "z": -2.19,
+   "vol_x": 0.97,
+   "retained_pct": 192.76,
+   "open_share_pct": 14.18
+  },
+  "largest": {
+   "d": "2026-08-24",
+   "timing": "later",
+   "timing_words_en": "2 sessions after the article",
+   "timing_words_it": "2 sedute dopo l'articolo",
+   "move_pct": -4.73,
+   "z": -2.19,
+   "vol_x": 0.97,
+   "retained_pct": 192.76,
+   "open_share_pct": 14.18
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-08-24",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -4.73,
+    "z": -2.19
+   }
+  ],
+  "at_open": {
+   "open_share_pct": 0.0,
+   "gap_pct": 0.0
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-08-20T16:26:12",
+  "text_en": "The stock moved 2 sessions after the article (24 Aug 2026, -4.7%, 2.2 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (193% of the move is in the price).",
+  "text_it": "L'azione si è mossa 2 sedute dopo l'articolo (24 agosto 2026, -4.7%, 2.2 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 193% del movimento è nel prezzo)."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-08-24",
+  "move_pct": -4.73,
+  "z": -2.19,
+  "unusual": true,
+  "volume_x": 0.97,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 2.164,
+  "px_before_move": 32.14,
+  "px_after_move": 30.62,
+  "last_session": "2026-09-23",
+  "last_px": 29.21,
+  "retained_pct": 193,
+  "facts_text": {
+   "en": [
+    "The stock moved 2 sessions after the article (24 Aug 2026, -4.7%, 2.2 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (193% of the move is in the price)."
+   ],
+   "it": [
+    "L'azione si è mossa 2 sedute dopo l'articolo (24 agosto 2026, -4.7%, 2.2 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 193% del movimento è nel prezzo)."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

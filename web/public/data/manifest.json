@@ -1,0 +1,31 @@
+{
+ "schema_version": "1.0",
+ "generated_at": "2026-09-28T10:27:23Z",
+ "languages": [
+  "en",
+  "it"
+ ],
+ "last_price_date": "2026-09-23",
+ "stories_range": {
+  "from": "2026-08-17",
+  "to": "2026-09-18"
+ },
+ "history_range": {
+  "from": "2021-02-01",
+  "to": "2026-09-15"
+ },
+ "counts": {
+  "stories": 35,
+  "stories_with_gemini": 14,
+  "stories_with_series": 14,
+  "companies": 280
+ },
+ "files": {
+  "stories": "stories.json",
+  "story": "stories/{content_id}.json",
+  "summary": "summary.json",
+  "status_meta": "status_meta.json",
+  "companies": "companies.json",
+  "company": "companies/{slug}.json"
+ }
+}

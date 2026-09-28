@@ -1,0 +1,654 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202608270925452473",
+ "article": {
+  "content_id": "202608270925452473",
+  "titolo": "Maire, nuovi ordini per 110 milioni: la controllata Tecnimont si rafforza nel gas in Sud America e in Asia",
+  "data_pubblicazione": "2026-08-27T06:46:19",
+  "pub_local": "2026-08-27T08:46:19",
+  "testata": "MF",
+  "quote": "Nuovi ordini e attività aggiuntive per 110 milioni di euro per Maire.",
+  "url": "https://www.milanofinanza.it/news/maire-nuovi-ordini-per-110-milioni-la-controllata-tecnimont-si-rafforza-nel-gas-in-sud-america-e-in-asia-202608270925452473"
+ },
+ "instrument": {
+  "des_azione": "Maire",
+  "cod_azione": "MT",
+  "isin": "IT0004931058",
+  "company_slug": "maire"
+ },
+ "news": {
+  "news_type": "deal",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "deal",
+    "keyword": "\\bordini\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "REACTED",
+  "peak": {
+   "d": "2026-08-27",
+   "timing": "same_day",
+   "timing_words_en": "the day of the article",
+   "timing_words_it": "il giorno dell'articolo",
+   "move_pct": 3.27,
+   "z": 3.07,
+   "vol_x": 1.35,
+   "retained_pct": -12.5,
+   "open_share_pct": 50.4
+  },
+  "largest": {
+   "d": "2026-08-27",
+   "timing": "same_day",
+   "timing_words_en": "the day of the article",
+   "timing_words_it": "il giorno dell'articolo",
+   "move_pct": 3.27,
+   "z": 3.07,
+   "vol_x": 1.35,
+   "retained_pct": -12.5,
+   "open_share_pct": 50.4
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-08-27",
+    "timing": "same_day",
+    "closed_before_publication": false,
+    "move_pct": 3.27,
+    "z": 3.07
+   },
+   {
+    "d": "2026-09-02",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -3.05,
+    "z": -2.87
+   }
+  ],
+  "at_open": null,
+  "publication_phase": "pre_open",
+  "pub_local": "2026-08-27T08:46:19",
+  "text_en": "The stock moved the day of the article (27 Aug 2026, +3.3%, 3.1 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the move has fully reversed.",
+  "text_it": "L'azione si è mossa il giorno dell'articolo (27 agosto 2026, +3.3%, 3.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il movimento si è completamente invertito."
+ },
+ "tape": {
+  "timing": "same_day",
+  "move_date": "2026-08-27",
+  "move_pct": 3.27,
+  "z": 3.07,
+  "unusual": true,
+  "volume_x": 1.35,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.065,
+  "px_before_move": 12.24,
+  "px_after_move": 12.64,
+  "last_session": "2026-09-23",
+  "last_px": 12.19,
+  "retained_pct": -12,
+  "facts_text": {
+   "en": [
+    "The stock moved the day of the article (27 Aug 2026, +3.3%, 3.1 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the move has fully reversed."
+   ],
+   "it": [
+    "L'azione si è mossa il giorno dell'articolo (27 agosto 2026, +3.3%, 3.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il movimento si è completamente invertito."
+   ]
+  }
+ },
+ "gemini": {
+  "en": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Maire",
+   "title_adjective": "si rafforza",
+   "figure_in_body": "110 milioni di euro",
+   "adjective_matches": true,
+   "sentence": "The title's 'si rafforza' accurately reflects the '110 milioni di euro' in new orders for Maire, as stated in the article (MF, 2026-08-27), and the stock reacted clearly to this news with a 3.17% rise on 27 Aug 2026, which was 3.1 times the normal daily swing, although this move fully reversed by 23 Sep 2026.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  },
+  "it": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Maire",
+   "title_adjective": "nuovi",
+   "figure_in_body": "110 milioni di euro",
+   "adjective_matches": true,
+   "sentence": "L'aggettivo 'nuovi' nel titolo descrive correttamente i 110 milioni di euro di ordini menzionati nel corpo dell'articolo, sebbene il loro impatto non sia considerato trasformativo; secondo i fatti di prezzo, l'azione ha reagito positivamente il 27 agosto 2026 con un aumento del 3,3%, 3,1 volte l'oscillazione normale, in una chiara reazione alla notizia di MF, 2026-08-27, ma tale movimento si è completamente invertito entro il 23 settembre 2026.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  }
+ },
+ "series": {
+  "baseline": {
+   "from": "2026-07-30",
+   "to": "2026-08-26",
+   "sd_pct": 1.065
+  },
+  "markers": {
+   "publication": "2026-08-27T08:46:19",
+   "session_before": "2026-08-26",
+   "peak": "2026-08-27",
+   "last_session": "2026-09-23"
+  },
+  "sessions": [
+   {
+    "d": "2026-07-22",
+    "rel": -26,
+    "prz_last": 13.96,
+    "index_100": 114.0523,
+    "move_pct": 0.36,
+    "z": 0.34,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 335649.0
+   },
+   {
+    "d": "2026-07-23",
+    "rel": -25,
+    "prz_last": 13.9,
+    "index_100": 113.5621,
+    "move_pct": -0.43,
+    "z": -0.4,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 370262.0
+   },
+   {
+    "d": "2026-07-24",
+    "rel": -24,
+    "prz_last": 13.94,
+    "index_100": 113.8889,
+    "move_pct": 0.29,
+    "z": 0.27,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 275504.0
+   },
+   {
+    "d": "2026-07-27",
+    "rel": -23,
+    "prz_last": 13.66,
+    "index_100": 111.6013,
+    "move_pct": -2.01,
+    "z": -1.89,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 394896.0
+   },
+   {
+    "d": "2026-07-28",
+    "rel": -22,
+    "prz_last": 12.9,
+    "index_100": 105.3922,
+    "move_pct": -5.56,
+    "z": -5.23,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 970400.0
+   },
+   {
+    "d": "2026-07-29",
+    "rel": -21,
+    "prz_last": 12.84,
+    "index_100": 104.902,
+    "move_pct": -0.47,
+    "z": -0.44,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1029228.0
+   },
+   {
+    "d": "2026-07-30",
+    "rel": -20,
+    "prz_last": 13.03,
+    "index_100": 106.4542,
+    "move_pct": 1.48,
+    "z": 1.39,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1251870.0
+   },
+   {
+    "d": "2026-07-31",
+    "rel": -19,
+    "prz_last": 12.89,
+    "index_100": 105.3105,
+    "move_pct": -1.07,
+    "z": -1.01,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 845051.0
+   },
+   {
+    "d": "2026-08-03",
+    "rel": -18,
+    "prz_last": 12.72,
+    "index_100": 103.9216,
+    "move_pct": -1.32,
+    "z": -1.24,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 889586.0
+   },
+   {
+    "d": "2026-08-04",
+    "rel": -17,
+    "prz_last": 12.73,
+    "index_100": 104.0033,
+    "move_pct": 0.08,
+    "z": 0.07,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1021504.0
+   },
+   {
+    "d": "2026-08-05",
+    "rel": -16,
+    "prz_last": 12.6,
+    "index_100": 102.9412,
+    "move_pct": -1.02,
+    "z": -0.96,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 762269.0
+   },
+   {
+    "d": "2026-08-06",
+    "rel": -15,
+    "prz_last": 12.54,
+    "index_100": 102.451,
+    "move_pct": -0.48,
+    "z": -0.45,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 533662.0
+   },
+   {
+    "d": "2026-08-07",
+    "rel": -14,
+    "prz_last": 12.39,
+    "index_100": 101.2255,
+    "move_pct": -1.2,
+    "z": -1.12,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 652604.0
+   },
+   {
+    "d": "2026-08-10",
+    "rel": -13,
+    "prz_last": 12.28,
+    "index_100": 100.3268,
+    "move_pct": -0.89,
+    "z": -0.83,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 731870.0
+   },
+   {
+    "d": "2026-08-11",
+    "rel": -12,
+    "prz_last": 12.42,
+    "index_100": 101.4706,
+    "move_pct": 1.14,
+    "z": 1.07,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 558512.0
+   },
+   {
+    "d": "2026-08-12",
+    "rel": -11,
+    "prz_last": 12.36,
+    "index_100": 100.9804,
+    "move_pct": -0.48,
+    "z": -0.45,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 543444.0
+   },
+   {
+    "d": "2026-08-13",
+    "rel": -10,
+    "prz_last": 12.41,
+    "index_100": 101.3889,
+    "move_pct": 0.4,
+    "z": 0.38,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 462948.0
+   },
+   {
+    "d": "2026-08-14",
+    "rel": -9,
+    "prz_last": 12.41,
+    "index_100": 101.3889,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 936354.0
+   },
+   {
+    "d": "2026-08-17",
+    "rel": -8,
+    "prz_last": 12.35,
+    "index_100": 100.8987,
+    "move_pct": -0.48,
+    "z": -0.45,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 919273.0
+   },
+   {
+    "d": "2026-08-18",
+    "rel": -7,
+    "prz_last": 12.0,
+    "index_100": 98.0392,
+    "move_pct": -2.83,
+    "z": -2.66,
+    "unusual": true,
+    "in_baseline": true,
+    "volume": 1348995.0
+   },
+   {
+    "d": "2026-08-19",
+    "rel": -6,
+    "prz_last": 11.96,
+    "index_100": 97.7124,
+    "move_pct": -0.33,
+    "z": -0.31,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 474530.0
+   },
+   {
+    "d": "2026-08-20",
+    "rel": -5,
+    "prz_last": 12.03,
+    "index_100": 98.2843,
+    "move_pct": 0.59,
+    "z": 0.55,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 445058.0
+   },
+   {
+    "d": "2026-08-21",
+    "rel": -4,
+    "prz_last": 12.09,
+    "index_100": 98.7745,
+    "move_pct": 0.5,
+    "z": 0.47,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 326993.0
+   },
+   {
+    "d": "2026-08-24",
+    "rel": -3,
+    "prz_last": 12.02,
+    "index_100": 98.2026,
+    "move_pct": -0.58,
+    "z": -0.54,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 344094.0
+   },
+   {
+    "d": "2026-08-25",
+    "rel": -2,
+    "prz_last": 12.03,
+    "index_100": 98.2843,
+    "move_pct": 0.08,
+    "z": 0.08,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 537977.0
+   },
+   {
+    "d": "2026-08-26",
+    "rel": -1,
+    "prz_last": 12.24,
+    "index_100": 100.0,
+    "move_pct": 1.75,
+    "z": 1.64,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 597389.0
+   },
+   {
+    "d": "2026-08-27",
+    "rel": 0,
+    "prz_last": 12.64,
+    "index_100": 103.268,
+    "move_pct": 3.27,
+    "z": 3.07,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 957026.0
+   },
+   {
+    "d": "2026-08-28",
+    "rel": 1,
+    "prz_last": 12.61,
+    "index_100": 103.0229,
+    "move_pct": -0.24,
+    "z": -0.22,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 629383.0
+   },
+   {
+    "d": "2026-08-31",
+    "rel": 2,
+    "prz_last": 12.48,
+    "index_100": 101.9608,
+    "move_pct": -1.03,
+    "z": -0.97,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 671500.0
+   },
+   {
+    "d": "2026-09-01",
+    "rel": 3,
+    "prz_last": 12.44,
+    "index_100": 101.634,
+    "move_pct": -0.32,
+    "z": -0.3,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 412958.0
+   },
+   {
+    "d": "2026-09-02",
+    "rel": 4,
+    "prz_last": 12.06,
+    "index_100": 98.5294,
+    "move_pct": -3.05,
+    "z": -2.87,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 547380.0
+   },
+   {
+    "d": "2026-09-03",
+    "rel": 5,
+    "prz_last": 12.18,
+    "index_100": 99.5098,
+    "move_pct": 1.0,
+    "z": 0.93,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 282327.0
+   },
+   {
+    "d": "2026-09-04",
+    "rel": 6,
+    "prz_last": 12.2,
+    "index_100": 99.6732,
+    "move_pct": 0.16,
+    "z": 0.15,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 271359.0
+   },
+   {
+    "d": "2026-09-07",
+    "rel": 7,
+    "prz_last": 12.43,
+    "index_100": 101.5523,
+    "move_pct": 1.89,
+    "z": 1.77,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 332727.0
+   },
+   {
+    "d": "2026-09-08",
+    "rel": 8,
+    "prz_last": 12.67,
+    "index_100": 103.5131,
+    "move_pct": 1.93,
+    "z": 1.81,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 391324.0
+   },
+   {
+    "d": "2026-09-09",
+    "rel": 9,
+    "prz_last": 12.38,
+    "index_100": 101.1438,
+    "move_pct": -2.29,
+    "z": -2.15,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 514185.0
+   },
+   {
+    "d": "2026-09-10",
+    "rel": 10,
+    "prz_last": 12.3,
+    "index_100": 100.4902,
+    "move_pct": -0.65,
+    "z": -0.61,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 314776.0
+   },
+   {
+    "d": "2026-09-11",
+    "rel": 11,
+    "prz_last": 12.61,
+    "index_100": 103.0229,
+    "move_pct": 2.52,
+    "z": 2.37,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 367278.0
+   },
+   {
+    "d": "2026-09-14",
+    "rel": 12,
+    "prz_last": 12.1,
+    "index_100": 98.8562,
+    "move_pct": -4.04,
+    "z": -3.8,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 495983.0
+   },
+   {
+    "d": "2026-09-15",
+    "rel": 13,
+    "prz_last": 12.25,
+    "index_100": 100.0817,
+    "move_pct": 1.24,
+    "z": 1.16,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 401104.0
+   },
+   {
+    "d": "2026-09-16",
+    "rel": 14,
+    "prz_last": 12.45,
+    "index_100": 101.7157,
+    "move_pct": 1.63,
+    "z": 1.53,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 410206.0
+   },
+   {
+    "d": "2026-09-17",
+    "rel": 15,
+    "prz_last": 12.57,
+    "index_100": 102.6961,
+    "move_pct": 0.96,
+    "z": 0.91,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 567178.0
+   },
+   {
+    "d": "2026-09-18",
+    "rel": 16,
+    "prz_last": 12.41,
+    "index_100": 101.3889,
+    "move_pct": -1.27,
+    "z": -1.2,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 641808.0
+   },
+   {
+    "d": "2026-09-21",
+    "rel": 17,
+    "prz_last": 12.1,
+    "index_100": 98.8562,
+    "move_pct": -2.5,
+    "z": -2.35,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 975958.0
+   },
+   {
+    "d": "2026-09-22",
+    "rel": 18,
+    "prz_last": 12.07,
+    "index_100": 98.6111,
+    "move_pct": -0.25,
+    "z": -0.23,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 636525.0
+   },
+   {
+    "d": "2026-09-23",
+    "rel": 19,
+    "prz_last": 12.19,
+    "index_100": 99.5915,
+    "move_pct": 0.99,
+    "z": 0.93,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 408530.0
+   }
+  ]
+ }
+}

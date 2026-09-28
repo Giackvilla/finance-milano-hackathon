@@ -1,0 +1,97 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202608291329324262",
+ "article": {
+  "content_id": "202608291329324262",
+  "titolo": "Eni rafforza ancora la sua presenza nell’offshore dell’Uruguay",
+  "data_pubblicazione": "2026-08-29T11:20:40",
+  "pub_local": "2026-08-29T13:20:40",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/eni-rafforza-ancora-la-sua-presenza-nelloffshore-delluruguay-202608291329324262"
+ },
+ "instrument": {
+  "des_azione": "Eni",
+  "cod_azione": "ENISPA",
+  "isin": "IT0003132476",
+  "company_slug": "eni"
+ },
+ "news": {
+  "news_type": "deal",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "deal",
+    "keyword": "\\baccord[oi]\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-09-04",
+   "timing": "later",
+   "timing_words_en": "5 sessions after the article",
+   "timing_words_it": "5 sedute dopo l'articolo",
+   "move_pct": -3.29,
+   "z": -2.45,
+   "vol_x": 1.23,
+   "retained_pct": -22.93,
+   "open_share_pct": 13.81
+  },
+  "largest": {
+   "d": "2026-09-04",
+   "timing": "later",
+   "timing_words_en": "5 sessions after the article",
+   "timing_words_it": "5 sedute dopo l'articolo",
+   "move_pct": -3.29,
+   "z": -2.45,
+   "vol_x": 1.23,
+   "retained_pct": -22.93,
+   "open_share_pct": 13.81
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-04",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -3.29,
+    "z": -2.45
+   }
+  ],
+  "at_open": null,
+  "publication_phase": "non_trading_day",
+  "pub_local": "2026-08-29T13:20:40",
+  "text_en": "The stock moved 5 sessions after the article (4 Sep 2026, -3.3%, 2.5 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the move has fully reversed.",
+  "text_it": "L'azione si è mossa 5 sedute dopo l'articolo (4 settembre 2026, -3.3%, 2.5 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il movimento si è completamente invertito."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-09-04",
+  "move_pct": -3.29,
+  "z": -2.45,
+  "unusual": true,
+  "volume_x": 1.23,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.344,
+  "px_before_move": 23.86,
+  "px_after_move": 23.075,
+  "last_session": "2026-09-23",
+  "last_px": 24.04,
+  "retained_pct": -23,
+  "facts_text": {
+   "en": [
+    "The stock moved 5 sessions after the article (4 Sep 2026, -3.3%, 2.5 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the move has fully reversed."
+   ],
+   "it": [
+    "L'azione si è mossa 5 sedute dopo l'articolo (4 settembre 2026, -3.3%, 2.5 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il movimento si è completamente invertito."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

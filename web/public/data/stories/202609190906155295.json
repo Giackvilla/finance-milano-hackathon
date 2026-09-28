@@ -1,0 +1,100 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609190906155295",
+ "article": {
+  "content_id": "202609190906155295",
+  "titolo": "Fiere dei loro profitti: così Ieg e Fiera Milano corrono come tech nonostante un business da old economy",
+  "data_pubblicazione": "2026-09-18T09:40:52",
+  "pub_local": "2026-09-18T11:40:52",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/fiere-dei-loro-profitti-così-ieg-e-fiera-milano-corrono-come-tech-nonostante-un-business-da-old-economy-202609190906155295"
+ },
+ "instrument": {
+  "des_azione": "Fiera Milano",
+  "cod_azione": "FMI",
+  "isin": "IT0003365613",
+  "company_slug": "fiera-milano"
+ },
+ "news": {
+  "news_type": "deal",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "deal",
+    "keyword": "\\bcompra\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-09-21",
+   "timing": "later",
+   "timing_words_en": "1 session after the article",
+   "timing_words_it": "la seduta dopo l'articolo",
+   "move_pct": 3.48,
+   "z": 2.92,
+   "vol_x": 1.66,
+   "retained_pct": 42.31,
+   "open_share_pct": 84.84
+  },
+  "largest": {
+   "d": "2026-09-21",
+   "timing": "later",
+   "timing_words_en": "1 session after the article",
+   "timing_words_it": "la seduta dopo l'articolo",
+   "move_pct": 3.48,
+   "z": 2.92,
+   "vol_x": 1.66,
+   "retained_pct": 42.31,
+   "open_share_pct": 84.84
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-21",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 3.48,
+    "z": 2.92
+   }
+  ],
+  "at_open": {
+   "open_share_pct": -90.8,
+   "gap_pct": 1.58
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-09-18T11:40:52",
+  "text_en": "The stock moved 1 session after the article (21 Sep 2026, +3.5%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, 42% of that move is still in the price.",
+  "text_it": "L'azione si è mossa la seduta dopo l'articolo (21 settembre 2026, +3.5%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 42% di quel movimento è ancora nel prezzo."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-09-21",
+  "move_pct": 3.48,
+  "z": 2.92,
+  "unusual": true,
+  "volume_x": 1.66,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.188,
+  "px_before_move": 7.48,
+  "px_after_move": 7.74,
+  "last_session": "2026-09-23",
+  "last_px": 7.59,
+  "retained_pct": 42,
+  "facts_text": {
+   "en": [
+    "The stock moved 1 session after the article (21 Sep 2026, +3.5%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, 42% of that move is still in the price."
+   ],
+   "it": [
+    "L'azione si è mossa la seduta dopo l'articolo (21 settembre 2026, +3.5%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 42% di quel movimento è ancora nel prezzo."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

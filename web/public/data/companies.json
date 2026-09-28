@@ -1,0 +1,5322 @@
+[
+ {
+  "slug": "unicredit",
+  "des_azione": "Unicredit",
+  "cod_azione": "CRIT",
+  "isin": "IT0005239360",
+  "n_stories": 2573,
+  "n_unusual": 983,
+  "status": {
+   "NO_REACTION": 1590,
+   "ALREADY_IN_PRICE": 130,
+   "PARTLY_IN_PRICE": 56,
+   "MOSTLY_AT_OPEN": 25,
+   "REACTED": 133,
+   "DELAYED": 639
+  },
+  "last_pub": "2026-09-15T13:06:27",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "eni",
+  "des_azione": "Eni",
+  "cod_azione": "ENISPA",
+  "isin": "IT0003132476",
+  "n_stories": 768,
+  "n_unusual": 288,
+  "status": {
+   "NO_REACTION": 480,
+   "ALREADY_IN_PRICE": 52,
+   "PARTLY_IN_PRICE": 19,
+   "MOSTLY_AT_OPEN": 9,
+   "REACTED": 34,
+   "DELAYED": 174
+  },
+  "last_pub": "2026-09-15T12:02:35",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "leonardo",
+  "des_azione": "Leonardo",
+  "cod_azione": "FINME",
+  "isin": "IT0003856405",
+  "n_stories": 749,
+  "n_unusual": 279,
+  "status": {
+   "NO_REACTION": 470,
+   "ALREADY_IN_PRICE": 46,
+   "PARTLY_IN_PRICE": 14,
+   "MOSTLY_AT_OPEN": 4,
+   "REACTED": 46,
+   "DELAYED": 169
+  },
+  "last_pub": "2026-09-15T12:09:38",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "mediobanca",
+  "des_azione": "Mediobanca",
+  "cod_azione": "MEDIOB",
+  "isin": "IT0000062957",
+  "n_stories": 543,
+  "n_unusual": 216,
+  "status": {
+   "NO_REACTION": 327,
+   "ALREADY_IN_PRICE": 44,
+   "PARTLY_IN_PRICE": 17,
+   "MOSTLY_AT_OPEN": 10,
+   "REACTED": 34,
+   "DELAYED": 111
+  },
+  "last_pub": "2026-09-14T10:24:07",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "intesa-sanpaolo",
+  "des_azione": "Intesa Sanpaolo",
+  "cod_azione": "AMBR",
+  "isin": "IT0000072618",
+  "n_stories": 490,
+  "n_unusual": 206,
+  "status": {
+   "NO_REACTION": 284,
+   "ALREADY_IN_PRICE": 30,
+   "PARTLY_IN_PRICE": 10,
+   "MOSTLY_AT_OPEN": 7,
+   "REACTED": 29,
+   "DELAYED": 130
+  },
+  "last_pub": "2026-09-15T21:30:44",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "generali",
+  "des_azione": "Generali",
+  "cod_azione": "GENE",
+  "isin": "IT0000062072",
+  "n_stories": 478,
+  "n_unusual": 189,
+  "status": {
+   "NO_REACTION": 289,
+   "ALREADY_IN_PRICE": 31,
+   "PARTLY_IN_PRICE": 8,
+   "MOSTLY_AT_OPEN": 6,
+   "REACTED": 21,
+   "DELAYED": 123
+  },
+  "last_pub": "2026-09-15T12:13:43",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "enel",
+  "des_azione": "Enel",
+  "cod_azione": "ENEL",
+  "isin": "IT0003128367",
+  "n_stories": 457,
+  "n_unusual": 177,
+  "status": {
+   "NO_REACTION": 280,
+   "ALREADY_IN_PRICE": 32,
+   "PARTLY_IN_PRICE": 13,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 22,
+   "DELAYED": 108
+  },
+  "last_pub": "2026-09-11T17:12:55",
+  "n_detail": 2,
+  "has_prices": true
+ },
+ {
+  "slug": "saipem",
+  "des_azione": "Saipem",
+  "cod_azione": "SAIP",
+  "isin": "IT0005495657",
+  "n_stories": 403,
+  "n_unusual": 180,
+  "status": {
+   "NO_REACTION": 223,
+   "ALREADY_IN_PRICE": 28,
+   "PARTLY_IN_PRICE": 20,
+   "MOSTLY_AT_OPEN": 10,
+   "REACTED": 37,
+   "DELAYED": 85
+  },
+  "last_pub": "2026-09-02T12:40:28",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "banco-bpm",
+  "des_azione": "Banco Bpm",
+  "cod_azione": "BAMI",
+  "isin": "IT0005218380",
+  "n_stories": 383,
+  "n_unusual": 152,
+  "status": {
+   "NO_REACTION": 231,
+   "ALREADY_IN_PRICE": 23,
+   "PARTLY_IN_PRICE": 9,
+   "MOSTLY_AT_OPEN": 7,
+   "REACTED": 24,
+   "DELAYED": 89
+  },
+  "last_pub": "2026-09-07T12:19:03",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "prysmian",
+  "des_azione": "Prysmian",
+  "cod_azione": "PRY",
+  "isin": "IT0004176001",
+  "n_stories": 247,
+  "n_unusual": 117,
+  "status": {
+   "NO_REACTION": 130,
+   "ALREADY_IN_PRICE": 23,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 9,
+   "REACTED": 13,
+   "DELAYED": 69
+  },
+  "last_pub": "2026-09-15T07:12:00",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "nexi",
+  "des_azione": "Nexi",
+  "cod_azione": "NEXI",
+  "isin": "IT0005366767",
+  "n_stories": 238,
+  "n_unusual": 98,
+  "status": {
+   "NO_REACTION": 140,
+   "ALREADY_IN_PRICE": 19,
+   "PARTLY_IN_PRICE": 4,
+   "MOSTLY_AT_OPEN": 4,
+   "REACTED": 22,
+   "DELAYED": 49
+  },
+  "last_pub": "2026-09-14T13:57:54",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "azimut",
+  "des_azione": "Azimut",
+  "cod_azione": "AZM",
+  "isin": "IT0003261697",
+  "n_stories": 235,
+  "n_unusual": 104,
+  "status": {
+   "NO_REACTION": 131,
+   "ALREADY_IN_PRICE": 14,
+   "PARTLY_IN_PRICE": 8,
+   "MOSTLY_AT_OPEN": 7,
+   "REACTED": 14,
+   "DELAYED": 61
+  },
+  "last_pub": "2026-09-08T15:19:56",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fincantieri",
+  "des_azione": "Fincantieri",
+  "cod_azione": "FCT",
+  "isin": "IT0005599938",
+  "n_stories": 224,
+  "n_unusual": 105,
+  "status": {
+   "NO_REACTION": 119,
+   "ALREADY_IN_PRICE": 12,
+   "PARTLY_IN_PRICE": 5,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 28,
+   "DELAYED": 58
+  },
+  "last_pub": "2026-09-01T15:37:07",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "snam",
+  "des_azione": "Snam",
+  "cod_azione": "SRG",
+  "isin": "IT0003153415",
+  "n_stories": 195,
+  "n_unusual": 70,
+  "status": {
+   "NO_REACTION": 125,
+   "ALREADY_IN_PRICE": 11,
+   "PARTLY_IN_PRICE": 5,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 9,
+   "DELAYED": 45
+  },
+  "last_pub": "2026-09-10T12:29:21",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "unipol",
+  "des_azione": "Unipol",
+  "cod_azione": "UNIPOL",
+  "isin": "IT0004810054",
+  "n_stories": 188,
+  "n_unusual": 86,
+  "status": {
+   "NO_REACTION": 102,
+   "ALREADY_IN_PRICE": 17,
+   "PARTLY_IN_PRICE": 5,
+   "MOSTLY_AT_OPEN": 4,
+   "REACTED": 19,
+   "DELAYED": 41
+  },
+  "last_pub": "2026-08-28T12:39:46",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "maire",
+  "des_azione": "Maire",
+  "cod_azione": "MT",
+  "isin": "IT0004931058",
+  "n_stories": 179,
+  "n_unusual": 81,
+  "status": {
+   "NO_REACTION": 98,
+   "ALREADY_IN_PRICE": 15,
+   "PARTLY_IN_PRICE": 4,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 15,
+   "DELAYED": 45
+  },
+  "last_pub": "2026-08-31T10:45:25",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "poste-italiane",
+  "des_azione": "Poste Italiane",
+  "cod_azione": "PST",
+  "isin": "IT0003796171",
+  "n_stories": 165,
+  "n_unusual": 67,
+  "status": {
+   "NO_REACTION": 98,
+   "ALREADY_IN_PRICE": 14,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 10,
+   "DELAYED": 38
+  },
+  "last_pub": "2026-09-07T21:19:19",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "webuild",
+  "des_azione": "Webuild",
+  "cod_azione": "COGE",
+  "isin": "IT0003865570",
+  "n_stories": 162,
+  "n_unusual": 56,
+  "status": {
+   "NO_REACTION": 106,
+   "ALREADY_IN_PRICE": 11,
+   "PARTLY_IN_PRICE": 7,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 12,
+   "DELAYED": 25
+  },
+  "last_pub": "2026-09-10T20:10:32",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "terna",
+  "des_azione": "Terna",
+  "cod_azione": "TRN",
+  "isin": "IT0003242622",
+  "n_stories": 153,
+  "n_unusual": 64,
+  "status": {
+   "NO_REACTION": 89,
+   "ALREADY_IN_PRICE": 11,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 5,
+   "DELAYED": 45
+  },
+  "last_pub": "2026-09-09T12:25:26",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "a2a",
+  "des_azione": "A2a",
+  "cod_azione": "AEM",
+  "isin": "IT0001233417",
+  "n_stories": 143,
+  "n_unusual": 64,
+  "status": {
+   "NO_REACTION": 79,
+   "ALREADY_IN_PRICE": 19,
+   "PARTLY_IN_PRICE": 4,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 11,
+   "DELAYED": 29
+  },
+  "last_pub": "2026-08-27T09:03:31",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "diasorin",
+  "des_azione": "Diasorin",
+  "cod_azione": "DIA",
+  "isin": "IT0003492391",
+  "n_stories": 134,
+  "n_unusual": 67,
+  "status": {
+   "NO_REACTION": 67,
+   "ALREADY_IN_PRICE": 14,
+   "PARTLY_IN_PRICE": 5,
+   "MOSTLY_AT_OPEN": 9,
+   "REACTED": 16,
+   "DELAYED": 23
+  },
+  "last_pub": "2026-09-03T07:46:48",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "italgas",
+  "des_azione": "Italgas",
+  "cod_azione": "IG",
+  "isin": "IT0005211237",
+  "n_stories": 130,
+  "n_unusual": 40,
+  "status": {
+   "NO_REACTION": 90,
+   "ALREADY_IN_PRICE": 7,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 6,
+   "DELAYED": 24
+  },
+  "last_pub": "2026-07-24T10:06:57",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "amplifon",
+  "des_azione": "Amplifon",
+  "cod_azione": "AMP",
+  "isin": "IT0004056880",
+  "n_stories": 118,
+  "n_unusual": 66,
+  "status": {
+   "NO_REACTION": 52,
+   "ALREADY_IN_PRICE": 15,
+   "PARTLY_IN_PRICE": 7,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 15,
+   "DELAYED": 27
+  },
+  "last_pub": "2026-09-02T12:53:36",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "acea",
+  "des_azione": "Acea",
+  "cod_azione": "ACE",
+  "isin": "IT0001207098",
+  "n_stories": 108,
+  "n_unusual": 37,
+  "status": {
+   "NO_REACTION": 71,
+   "ALREADY_IN_PRICE": 10,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 8,
+   "DELAYED": 17
+  },
+  "last_pub": "2026-07-23T12:12:11",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "dovalue",
+  "des_azione": "doValue",
+  "cod_azione": "DOB",
+  "isin": "IT0005610958",
+  "n_stories": 101,
+  "n_unusual": 57,
+  "status": {
+   "NO_REACTION": 44,
+   "ALREADY_IN_PRICE": 10,
+   "PARTLY_IN_PRICE": 6,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 13,
+   "DELAYED": 26
+  },
+  "last_pub": "2026-08-24T12:20:55",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "recordati",
+  "des_azione": "Recordati",
+  "cod_azione": "REC",
+  "isin": "IT0003828271",
+  "n_stories": 87,
+  "n_unusual": 52,
+  "status": {
+   "NO_REACTION": 35,
+   "ALREADY_IN_PRICE": 12,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 12,
+   "DELAYED": 23
+  },
+  "last_pub": "2026-09-14T12:29:58",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sesa",
+  "des_azione": "Sesa",
+  "cod_azione": "MI1",
+  "isin": "IT0004729759",
+  "n_stories": 81,
+  "n_unusual": 40,
+  "status": {
+   "NO_REACTION": 41,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 10,
+   "DELAYED": 23
+  },
+  "last_pub": "2026-09-14T16:59:42",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "iren",
+  "des_azione": "Iren",
+  "cod_azione": "AET",
+  "isin": "IT0003027817",
+  "n_stories": 78,
+  "n_unusual": 33,
+  "status": {
+   "NO_REACTION": 45,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 5,
+   "DELAYED": 22
+  },
+  "last_pub": "2026-09-04T10:04:33",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "credem",
+  "des_azione": "Credem",
+  "cod_azione": "EURM",
+  "isin": "IT0003121677",
+  "n_stories": 73,
+  "n_unusual": 35,
+  "status": {
+   "NO_REACTION": 38,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 8,
+   "DELAYED": 22
+  },
+  "last_pub": "2026-07-20T12:20:01",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "erg",
+  "des_azione": "Erg",
+  "cod_azione": "ERG",
+  "isin": "IT0001157020",
+  "n_stories": 72,
+  "n_unusual": 33,
+  "status": {
+   "NO_REACTION": 39,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 13,
+   "DELAYED": 11
+  },
+  "last_pub": "2026-07-20T11:07:08",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "inwit",
+  "des_azione": "Inwit",
+  "cod_azione": "INW",
+  "isin": "IT0005090300",
+  "n_stories": 72,
+  "n_unusual": 31,
+  "status": {
+   "NO_REACTION": 41,
+   "ALREADY_IN_PRICE": 6,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 9,
+   "DELAYED": 13
+  },
+  "last_pub": "2026-08-24T09:43:46",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "buzzi",
+  "des_azione": "Buzzi",
+  "cod_azione": "UNIC",
+  "isin": "IT0001347308",
+  "n_stories": 69,
+  "n_unusual": 23,
+  "status": {
+   "NO_REACTION": 46,
+   "ALREADY_IN_PRICE": 6,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 2,
+   "DELAYED": 12
+  },
+  "last_pub": "2026-09-10T14:10:58",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "piaggio",
+  "des_azione": "Piaggio",
+  "cod_azione": "PIA",
+  "isin": "IT0003073266",
+  "n_stories": 66,
+  "n_unusual": 38,
+  "status": {
+   "NO_REACTION": 28,
+   "ALREADY_IN_PRICE": 8,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 12,
+   "DELAYED": 17
+  },
+  "last_pub": "2026-07-09T14:08:01",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "hera",
+  "des_azione": "Hera",
+  "cod_azione": "HER",
+  "isin": "IT0001250932",
+  "n_stories": 63,
+  "n_unusual": 37,
+  "status": {
+   "NO_REACTION": 26,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 7,
+   "DELAYED": 22
+  },
+  "last_pub": "2026-07-29T13:50:49",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "avio",
+  "des_azione": "Avio",
+  "cod_azione": "SPA2",
+  "isin": "IT0005119810",
+  "n_stories": 61,
+  "n_unusual": 24,
+  "status": {
+   "NO_REACTION": 37,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 8,
+   "DELAYED": 12
+  },
+  "last_pub": "2026-09-15T08:08:09",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "moncler",
+  "des_azione": "Moncler",
+  "cod_azione": "MONC",
+  "isin": "IT0004965148",
+  "n_stories": 59,
+  "n_unusual": 26,
+  "status": {
+   "NO_REACTION": 33,
+   "ALREADY_IN_PRICE": 6,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 5,
+   "REACTED": 7,
+   "DELAYED": 8
+  },
+  "last_pub": "2026-09-10T11:56:11",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "seco",
+  "des_azione": "SECO",
+  "cod_azione": "IOT",
+  "isin": "IT0005438046",
+  "n_stories": 58,
+  "n_unusual": 29,
+  "status": {
+   "NO_REACTION": 29,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 10,
+   "DELAYED": 14
+  },
+  "last_pub": "2026-09-10T20:39:37",
+  "n_detail": 2,
+  "has_prices": true
+ },
+ {
+  "slug": "somec",
+  "des_azione": "Somec",
+  "cod_azione": "SOM",
+  "isin": "IT0005329815",
+  "n_stories": 57,
+  "n_unusual": 24,
+  "status": {
+   "NO_REACTION": 33,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 4,
+   "DELAYED": 14
+  },
+  "last_pub": "2026-09-16T12:42:25",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "bper-banca",
+  "des_azione": "Bper Banca",
+  "cod_azione": "BPEMI",
+  "isin": "IT0000066123",
+  "n_stories": 54,
+  "n_unusual": 22,
+  "status": {
+   "NO_REACTION": 32,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 3,
+   "DELAYED": 13
+  },
+  "last_pub": "2026-06-12T18:36:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "interpump",
+  "des_azione": "Interpump",
+  "cod_azione": "INTP",
+  "isin": "IT0001078911",
+  "n_stories": 53,
+  "n_unusual": 22,
+  "status": {
+   "NO_REACTION": 31,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 4,
+   "REACTED": 7,
+   "DELAYED": 7
+  },
+  "last_pub": "2026-04-12T22:31:28",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "lottomatica",
+  "des_azione": "Lottomatica",
+  "cod_azione": "LTMC",
+  "isin": "IT0005541336",
+  "n_stories": 46,
+  "n_unusual": 22,
+  "status": {
+   "NO_REACTION": 24,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 7,
+   "DELAYED": 9
+  },
+  "last_pub": "2026-09-07T10:41:27",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "mondadori",
+  "des_azione": "Mondadori",
+  "cod_azione": "MONDA",
+  "isin": "IT0001469383",
+  "n_stories": 46,
+  "n_unusual": 17,
+  "status": {
+   "NO_REACTION": 29,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 12
+  },
+  "last_pub": "2026-08-10T12:50:09",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "rai-way",
+  "des_azione": "Rai Way",
+  "cod_azione": "RWAY",
+  "isin": "IT0005054967",
+  "n_stories": 46,
+  "n_unusual": 30,
+  "status": {
+   "NO_REACTION": 16,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 4,
+   "MOSTLY_AT_OPEN": 5,
+   "REACTED": 10,
+   "DELAYED": 6
+  },
+  "last_pub": "2026-08-26T09:52:50",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "enav",
+  "des_azione": "Enav",
+  "cod_azione": "ENAV",
+  "isin": "IT0005176406",
+  "n_stories": 45,
+  "n_unusual": 23,
+  "status": {
+   "NO_REACTION": 22,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 4,
+   "DELAYED": 11
+  },
+  "last_pub": "2026-08-03T13:28:33",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "finecobank",
+  "des_azione": "FinecoBank",
+  "cod_azione": "FBK",
+  "isin": "IT0000072170",
+  "n_stories": 45,
+  "n_unusual": 12,
+  "status": {
+   "NO_REACTION": 33,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 9
+  },
+  "last_pub": "2026-08-17T12:13:32",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "caltagirone",
+  "des_azione": "Caltagirone",
+  "cod_azione": "CAL",
+  "isin": "IT0003127930",
+  "n_stories": 44,
+  "n_unusual": 18,
+  "status": {
+   "NO_REACTION": 26,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 8
+  },
+  "last_pub": "2026-05-28T16:24:54",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cy4gate",
+  "des_azione": "Cy4Gate",
+  "cod_azione": "CY4",
+  "isin": "IT0005412504",
+  "n_stories": 44,
+  "n_unusual": 16,
+  "status": {
+   "NO_REACTION": 28,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 2,
+   "DELAYED": 4
+  },
+  "last_pub": "2026-07-22T09:33:54",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fiera-milano",
+  "des_azione": "Fiera Milano",
+  "cod_azione": "FMI",
+  "isin": "IT0003365613",
+  "n_stories": 43,
+  "n_unusual": 21,
+  "status": {
+   "NO_REACTION": 22,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 7,
+   "DELAYED": 9
+  },
+  "last_pub": "2026-09-18T11:40:52",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "technoprobe",
+  "des_azione": "Technoprobe",
+  "cod_azione": "TPRO",
+  "isin": "IT0005482333",
+  "n_stories": 40,
+  "n_unusual": 17,
+  "status": {
+   "NO_REACTION": 23,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 6,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-09-09T10:29:54",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "ferretti",
+  "des_azione": "Ferretti",
+  "cod_azione": "YACHT",
+  "isin": "IT0005383291",
+  "n_stories": 38,
+  "n_unusual": 20,
+  "status": {
+   "NO_REACTION": 18,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 15
+  },
+  "last_pub": "2026-09-14T19:33:44",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "technogym",
+  "des_azione": "Technogym",
+  "cod_azione": "TGYM",
+  "isin": "IT0005162406",
+  "n_stories": 38,
+  "n_unusual": 22,
+  "status": {
+   "NO_REACTION": 16,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 5,
+   "DELAYED": 11
+  },
+  "last_pub": "2026-05-27T15:29:58",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "borgosesia",
+  "des_azione": "Borgosesia",
+  "cod_azione": "BORG",
+  "isin": "IT0003217335",
+  "n_stories": 37,
+  "n_unusual": 12,
+  "status": {
+   "NO_REACTION": 25,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 7
+  },
+  "last_pub": "2026-01-22T15:14:16",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "telecom-italia",
+  "des_azione": "Telecom Italia",
+  "cod_azione": "OLI",
+  "isin": "IT0005712671",
+  "n_stories": 36,
+  "n_unusual": 11,
+  "status": {
+   "NO_REACTION": 25,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-06-25T14:20:35",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "class-editori",
+  "des_azione": "Class Editori",
+  "cod_azione": "CLE",
+  "isin": "IT0005117848",
+  "n_stories": 32,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 25,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-09-15T17:15:05",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sciuker-frames",
+  "des_azione": "Sciuker Frames",
+  "cod_azione": "SCK",
+  "isin": "IT0005340051",
+  "n_stories": 32,
+  "n_unusual": 13,
+  "status": {
+   "NO_REACTION": 19,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 1,
+   "DELAYED": 3
+  },
+  "last_pub": "2025-06-12T13:15:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "tinexta",
+  "des_azione": "Tinexta",
+  "cod_azione": "TECN",
+  "isin": "IT0005037210",
+  "n_stories": 32,
+  "n_unusual": 20,
+  "status": {
+   "NO_REACTION": 12,
+   "ALREADY_IN_PRICE": 7,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 3,
+   "DELAYED": 6
+  },
+  "last_pub": "2026-07-31T15:43:01",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ediliziacrobatica",
+  "des_azione": "EdiliziAcrobatica",
+  "cod_azione": "EDAC",
+  "isin": "IT0005351504",
+  "n_stories": 31,
+  "n_unusual": 13,
+  "status": {
+   "NO_REACTION": 18,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 2,
+   "DELAYED": 6
+  },
+  "last_pub": "2026-09-07T12:51:49",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "italmobiliare",
+  "des_azione": "Italmobiliare",
+  "cod_azione": "ITMO",
+  "isin": "IT0005253205",
+  "n_stories": 31,
+  "n_unusual": 16,
+  "status": {
+   "NO_REACTION": 15,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 8
+  },
+  "last_pub": "2026-09-10T21:48:35",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "bff-bank",
+  "des_azione": "Bff Bank",
+  "cod_azione": "BFF",
+  "isin": "IT0005244402",
+  "n_stories": 30,
+  "n_unusual": 19,
+  "status": {
+   "NO_REACTION": 11,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 6,
+   "DELAYED": 7
+  },
+  "last_pub": "2026-09-08T12:55:07",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "eles",
+  "des_azione": "Eles",
+  "cod_azione": "ELES",
+  "isin": "IT0005373417",
+  "n_stories": 28,
+  "n_unusual": 14,
+  "status": {
+   "NO_REACTION": 14,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 6
+  },
+  "last_pub": "2026-03-16T15:07:32",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "alerion",
+  "des_azione": "Alerion",
+  "cod_azione": "FINCA44",
+  "isin": "IT0004720733",
+  "n_stories": 27,
+  "n_unusual": 10,
+  "status": {
+   "NO_REACTION": 17,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 8
+  },
+  "last_pub": "2026-02-13T15:47:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "igd",
+  "des_azione": "Igd",
+  "cod_azione": "IGD",
+  "isin": "IT0005322612",
+  "n_stories": 27,
+  "n_unusual": 12,
+  "status": {
+   "NO_REACTION": 15,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 7
+  },
+  "last_pub": "2026-08-04T12:25:27",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ovs",
+  "des_azione": "Ovs",
+  "cod_azione": "OVS",
+  "isin": "IT0005043507",
+  "n_stories": 26,
+  "n_unusual": 17,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 5,
+   "DELAYED": 6
+  },
+  "last_pub": "2026-02-18T12:48:31",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "digital-value",
+  "des_azione": "Digital Value",
+  "cod_azione": "DGV",
+  "isin": "IT0005347429",
+  "n_stories": 24,
+  "n_unusual": 14,
+  "status": {
+   "NO_REACTION": 10,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 4,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-03-06T09:32:07",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "officina-stellare",
+  "des_azione": "Officina Stellare",
+  "cod_azione": "OS",
+  "isin": "IT0005374035",
+  "n_stories": 24,
+  "n_unusual": 15,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 4,
+   "DELAYED": 9
+  },
+  "last_pub": "2026-07-20T10:08:34",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sol",
+  "des_azione": "Sol",
+  "cod_azione": "SOL",
+  "isin": "IT0001206769",
+  "n_stories": 24,
+  "n_unusual": 15,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 7
+  },
+  "last_pub": "2026-07-15T13:11:46",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "meglioquesto",
+  "des_azione": "MeglioQuesto",
+  "cod_azione": "1CALL",
+  "isin": "IT0005450173",
+  "n_stories": 23,
+  "n_unusual": 6,
+  "status": {
+   "NO_REACTION": 17,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 2
+  },
+  "last_pub": "2024-11-15T14:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sogefi",
+  "des_azione": "Sogefi",
+  "cod_azione": "SOGEFI",
+  "isin": "IT0000076536",
+  "n_stories": 23,
+  "n_unusual": 22,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 8,
+   "PARTLY_IN_PRICE": 5,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 4,
+   "DELAYED": 4
+  },
+  "last_pub": "2025-10-28T12:36:25",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "the-italian-sea-group",
+  "des_azione": "The Italian Sea Group",
+  "cod_azione": "TISG",
+  "isin": "IT0005439085",
+  "n_stories": 23,
+  "n_unusual": 14,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 6,
+   "DELAYED": 7
+  },
+  "last_pub": "2026-08-19T13:02:02",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "unidata",
+  "des_azione": "Unidata",
+  "cod_azione": "UD",
+  "isin": "IT0005573065",
+  "n_stories": 23,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 15,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 3,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-03-31T16:54:21",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "almawave",
+  "des_azione": "Almawave",
+  "cod_azione": "AIW",
+  "isin": "IT0005434615",
+  "n_stories": 22,
+  "n_unusual": 9,
+  "status": {
+   "NO_REACTION": 13,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 4
+  },
+  "last_pub": "2026-09-09T12:24:38",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "zest",
+  "des_azione": "ZEST",
+  "cod_azione": "FDP",
+  "isin": "IT0005013013",
+  "n_stories": 22,
+  "n_unusual": 9,
+  "status": {
+   "NO_REACTION": 13,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-09-16T13:31:08",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "sabaf",
+  "des_azione": "Sabaf",
+  "cod_azione": "SABA",
+  "isin": "IT0001042610",
+  "n_stories": 20,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 13,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-02-18T11:30:53",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "pharmanutra",
+  "des_azione": "Pharmanutra",
+  "cod_azione": "PHN",
+  "isin": "IT0005274094",
+  "n_stories": 19,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 11,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-06-11T14:32:37",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "racing-force",
+  "des_azione": "Racing Force",
+  "cod_azione": "RFG",
+  "isin": "IT0005466963",
+  "n_stories": 19,
+  "n_unusual": 14,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 5,
+   "DELAYED": 4
+  },
+  "last_pub": "2026-07-22T08:07:19",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "redelfi",
+  "des_azione": "Redelfi",
+  "cod_azione": "RDF",
+  "isin": "IT0005496101",
+  "n_stories": 19,
+  "n_unusual": 13,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-06-26T12:30:09",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sanlorenzo",
+  "des_azione": "Sanlorenzo",
+  "cod_azione": "SL",
+  "isin": "IT0003549422",
+  "n_stories": 19,
+  "n_unusual": 11,
+  "status": {
+   "NO_REACTION": 8,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 7
+  },
+  "last_pub": "2026-02-16T11:19:13",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "tamburi",
+  "des_azione": "Tamburi",
+  "cod_azione": "TIP",
+  "isin": "IT0003153621",
+  "n_stories": 18,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 10,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-07-31T11:10:30",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "wiit",
+  "des_azione": "Wiit",
+  "cod_azione": "WIIT",
+  "isin": "IT0005440893",
+  "n_stories": 18,
+  "n_unusual": 9,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-08-26T13:19:19",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "alkemy",
+  "des_azione": "Alkemy",
+  "cod_azione": "ALK",
+  "isin": "IT0005314635",
+  "n_stories": 17,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 4
+  },
+  "last_pub": "2024-12-26T19:00:52",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "brunello-cucinelli",
+  "des_azione": "Brunello Cucinelli",
+  "cod_azione": "BC",
+  "isin": "IT0004764699",
+  "n_stories": 17,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 3
+  },
+  "last_pub": "2025-09-26T09:56:29",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "trevi",
+  "des_azione": "Trevi",
+  "cod_azione": "TFI",
+  "isin": "IT0005709909",
+  "n_stories": 17,
+  "n_unusual": 11,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 6
+  },
+  "last_pub": "2026-09-10T13:25:43",
+  "n_detail": 2,
+  "has_prices": true
+ },
+ {
+  "slug": "esi",
+  "des_azione": "Esi",
+  "cod_azione": "ESI",
+  "isin": "IT0005421885",
+  "n_stories": 16,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-05-11T19:46:41",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "masi-agricola",
+  "des_azione": "Masi Agricola",
+  "cod_azione": "MASI",
+  "isin": "IT0004125677",
+  "n_stories": 16,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 4
+  },
+  "last_pub": "2026-03-04T14:55:53",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "neosperience",
+  "des_azione": "Neosperience",
+  "cod_azione": "NSP",
+  "isin": "IT0005497018",
+  "n_stories": 16,
+  "n_unusual": 10,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2024-12-30T21:00:06",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "directa-sim",
+  "des_azione": "Directa Sim",
+  "cod_azione": "D",
+  "isin": "IT0001463063",
+  "n_stories": 15,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 7,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 4
+  },
+  "last_pub": "2026-03-26T15:36:10",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fila",
+  "des_azione": "Fila",
+  "cod_azione": "SPA",
+  "isin": "IT0004967292",
+  "n_stories": 15,
+  "n_unusual": 9,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 2
+  },
+  "last_pub": "2025-10-02T20:42:38",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gpi",
+  "des_azione": "Gpi",
+  "cod_azione": "GPI",
+  "isin": "IT0005221517",
+  "n_stories": 15,
+  "n_unusual": 12,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 6
+  },
+  "last_pub": "2025-12-22T16:10:36",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "landi-renzo",
+  "des_azione": "Landi Renzo",
+  "cod_azione": "LR",
+  "isin": "IT0005619843",
+  "n_stories": 15,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 8,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-04-30T08:33:35",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "olidata",
+  "des_azione": "Olidata",
+  "cod_azione": "OLID",
+  "isin": "IT0005634610",
+  "n_stories": 15,
+  "n_unusual": 6,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-07-23T14:14:13",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "seri-industrial",
+  "des_azione": "Seri Industrial",
+  "cod_azione": "PCU",
+  "isin": "IT0005283640",
+  "n_stories": 15,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 8,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 3,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-09-11T10:11:09",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "tesmec",
+  "des_azione": "Tesmec",
+  "cod_azione": "TES",
+  "isin": "IT0004585243",
+  "n_stories": 15,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 10,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-08-07T10:29:10",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "h-farm",
+  "des_azione": "H-Farm",
+  "cod_azione": "FARM1",
+  "isin": "IT0004674666",
+  "n_stories": 14,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-06-08T12:43:35",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "portobello",
+  "des_azione": "Portobello",
+  "cod_azione": "POR",
+  "isin": "IT0005337495",
+  "n_stories": 14,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 7,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2024-02-20T18:12:24",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "promotica",
+  "des_azione": "Promotica",
+  "cod_azione": "PMT",
+  "isin": "IT0005425365",
+  "n_stories": 14,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-09-04T13:29:42",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ascopiave",
+  "des_azione": "Ascopiave",
+  "cod_azione": "ASC",
+  "isin": "IT0004093263",
+  "n_stories": 13,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-04-13T09:26:59",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cir",
+  "des_azione": "Cir",
+  "cod_azione": "COFI",
+  "isin": "IT0000070786",
+  "n_stories": 13,
+  "n_unusual": 10,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 5
+  },
+  "last_pub": "2025-11-20T18:22:50",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "datrix",
+  "des_azione": "Datrix",
+  "cod_azione": "DATA",
+  "isin": "IT0005468357",
+  "n_stories": 13,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 4,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-08-06T12:09:51",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "digitouch",
+  "des_azione": "Digitouch",
+  "cod_azione": "DGT",
+  "isin": "IT0005089476",
+  "n_stories": 13,
+  "n_unusual": 10,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-06-30T18:53:12",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gvs",
+  "des_azione": "Gvs",
+  "cod_azione": "GVS",
+  "isin": "IT0005411209",
+  "n_stories": 13,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 4,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-04-13T13:31:20",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "pininfarina",
+  "des_azione": "Pininfarina",
+  "cod_azione": "PININ",
+  "isin": "IT0003056386",
+  "n_stories": 13,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 10,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-09-17T07:52:38",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "gabetti",
+  "des_azione": "Gabetti",
+  "cod_azione": "GABET",
+  "isin": "IT0005023038",
+  "n_stories": 12,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 7,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-03-27T14:15:49",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "industrie-de-nora",
+  "des_azione": "Industrie De Nora",
+  "cod_azione": "DNR",
+  "isin": "IT0005186371",
+  "n_stories": 12,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 4
+  },
+  "last_pub": "2026-09-04T09:23:13",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "innovatec",
+  "des_azione": "Innovatec",
+  "cod_azione": "INC",
+  "isin": "IT0005412298",
+  "n_stories": 12,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 4
+  },
+  "last_pub": "2024-11-04T18:27:52",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "newprinces",
+  "des_azione": "Newprinces",
+  "cod_azione": "NWL",
+  "isin": "IT0005385213",
+  "n_stories": 12,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-09-15T10:05:18",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "valsoia",
+  "des_azione": "Valsoia",
+  "cod_azione": "VLS",
+  "isin": "IT0001018362",
+  "n_stories": 12,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 7,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 3
+  },
+  "last_pub": "2025-04-05T04:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "farmacosmo",
+  "des_azione": "Farmacosmo",
+  "cod_azione": "COSMO",
+  "isin": "IT0005487670",
+  "n_stories": 11,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-05-29T10:54:28",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fidia",
+  "des_azione": "Fidia",
+  "cod_azione": "FDA",
+  "isin": "IT0005654683",
+  "n_stories": 11,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 10,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-07-20T12:15:43",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "immsi",
+  "des_azione": "Immsi",
+  "cod_azione": "IMS",
+  "isin": "IT0001413837",
+  "n_stories": 11,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 2
+  },
+  "last_pub": "2025-09-11T14:00:45",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "marzocchi-pompe",
+  "des_azione": "Marzocchi Pompe",
+  "cod_azione": "MARP",
+  "isin": "IT0004376858",
+  "n_stories": 11,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-02-07T21:53:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "orsero",
+  "des_azione": "Orsero",
+  "cod_azione": "GLF",
+  "isin": "IT0005138703",
+  "n_stories": 11,
+  "n_unusual": 6,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-07-01T09:34:53",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sit",
+  "des_azione": "Sit",
+  "cod_azione": "SIT",
+  "isin": "IT0005262149",
+  "n_stories": 11,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 3
+  },
+  "last_pub": "2025-02-28T22:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "zignago-vetro",
+  "des_azione": "Zignago Vetro",
+  "cod_azione": "ZV",
+  "isin": "IT0004171440",
+  "n_stories": 11,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-05-07T13:16:36",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "alfonsino",
+  "des_azione": "Alfonsino",
+  "cod_azione": "ALF",
+  "isin": "IT0005466039",
+  "n_stories": 10,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-11-24T08:35:25",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "clabo",
+  "des_azione": "Clabo",
+  "cod_azione": "CLA",
+  "isin": "IT0005091324",
+  "n_stories": 10,
+  "n_unusual": 8,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-06-17T10:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "elica",
+  "des_azione": "Elica",
+  "cod_azione": "ELC",
+  "isin": "IT0003404214",
+  "n_stories": 10,
+  "n_unusual": 9,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 4
+  },
+  "last_pub": "2025-07-01T12:35:38",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fope",
+  "des_azione": "Fope",
+  "cod_azione": "FPE",
+  "isin": "IT0005203424",
+  "n_stories": 10,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-05-15T14:15:50",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "garofalo-health-care",
+  "des_azione": "Garofalo Health Care",
+  "cod_azione": "GHC",
+  "isin": "IT0005345233",
+  "n_stories": 10,
+  "n_unusual": 6,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-09-10T12:54:03",
+  "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "marr",
+  "des_azione": "Marr",
+  "cod_azione": "MARR",
+  "isin": "IT0003428445",
+  "n_stories": 10,
+  "n_unusual": 6,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 4,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-02-26T11:21:56",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cleanbnb",
+  "des_azione": "CleanBnB",
+  "cod_azione": "CBB",
+  "isin": "IT0005377277",
+  "n_stories": 9,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-07-15T17:04:10",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "esprinet",
+  "des_azione": "Esprinet",
+  "cod_azione": "PRT",
+  "isin": "IT0003850929",
+  "n_stories": 9,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-07-17T12:40:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "execus",
+  "des_azione": "Execus",
+  "cod_azione": "EXEC",
+  "isin": "IT0005557530",
+  "n_stories": 9,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-05-11T08:15:37",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gefran",
+  "des_azione": "Gefran",
+  "cod_azione": "GEFRAN",
+  "isin": "IT0003203947",
+  "n_stories": 9,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-08-31T09:47:01",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "reply",
+  "des_azione": "Reply",
+  "cod_azione": "REY",
+  "isin": "IT0005282865",
+  "n_stories": 9,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-02-06T10:34:40",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "4aim-sicaf",
+  "des_azione": "4Aim Sicaf",
+  "cod_azione": "4AIM",
+  "isin": "IT0005204729",
+  "n_stories": 8,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-12-15T14:59:25",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "aquafil",
+  "des_azione": "Aquafil",
+  "cod_azione": "SPA3",
+  "isin": "IT0005241192",
+  "n_stories": 8,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 2
+  },
+  "last_pub": "2025-10-02T20:51:24",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "askoll-eva",
+  "des_azione": "Askoll Eva",
+  "cod_azione": "EVA",
+  "isin": "IT0005337123",
+  "n_stories": 8,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 3
+  },
+  "last_pub": "2025-04-21T12:22:23",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cairo-communication",
+  "des_azione": "Cairo Communication",
+  "cod_azione": "CAI",
+  "isin": "IT0004329733",
+  "n_stories": 8,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-02-21T20:36:15",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "estrima",
+  "des_azione": "Estrima",
+  "cod_azione": "BIRO",
+  "isin": "IT0005468191",
+  "n_stories": 8,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-02-26T11:49:19",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "franchetti",
+  "des_azione": "Franchetti",
+  "cod_azione": "FCH",
+  "isin": "IT0005508574",
+  "n_stories": 8,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-06-10T18:27:13",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gas-plus",
+  "des_azione": "Gas Plus",
+  "cod_azione": "GSP",
+  "isin": "IT0004098510",
+  "n_stories": 8,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-04-17T11:21:36",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "intercos",
+  "des_azione": "Intercos",
+  "cod_azione": "ICOS",
+  "isin": "IT0005455875",
+  "n_stories": 8,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-08-13T10:27:17",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "kruso-kapital",
+  "des_azione": "Kruso Kapital",
+  "cod_azione": "KK",
+  "isin": "IT0005707341",
+  "n_stories": 8,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-07-03T11:15:33",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "radici",
+  "des_azione": "Radici",
+  "cod_azione": "RAD",
+  "isin": "IT0005379737",
+  "n_stories": 8,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-01-13T11:48:09",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "bioera",
+  "des_azione": "Bioera",
+  "cod_azione": "BIE",
+  "isin": "IT0005516130",
+  "n_stories": 7,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-02-10T17:30:26",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "doxee",
+  "des_azione": "Doxee",
+  "cod_azione": "DOX",
+  "isin": "IT0005394413",
+  "n_stories": 7,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2022-09-27T11:49:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "expert-ai",
+  "des_azione": "Expert.Ai",
+  "cod_azione": "EXSY",
+  "isin": "IT0004496029",
+  "n_stories": 7,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-04-22T14:47:20",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "geox",
+  "des_azione": "Geox",
+  "cod_azione": "GEOX",
+  "isin": "IT0003697080",
+  "n_stories": 7,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-01-23T10:49:13",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "res",
+  "des_azione": "RES",
+  "cod_azione": "RES",
+  "isin": "IT0005543613",
+  "n_stories": 7,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-07-28T11:09:23",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sg-company",
+  "des_azione": "SG Company",
+  "cod_azione": "SGC",
+  "isin": "IT0005337172",
+  "n_stories": 7,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-07-15T18:27:20",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "abp-nocivelli",
+  "des_azione": "ABP Nocivelli",
+  "cod_azione": "ABP",
+  "isin": "IT0005439861",
+  "n_stories": 6,
+  "n_unusual": 6,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-03-17T15:21:04",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cellularline",
+  "des_azione": "Cellularline",
+  "cod_azione": "CRS",
+  "isin": "IT0005244618",
+  "n_stories": 6,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-09-11T18:00:56",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cofle",
+  "des_azione": "Cofle",
+  "cod_azione": "CFL",
+  "isin": "IT0005465619",
+  "n_stories": 6,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-10-21T17:50:44",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "datalogic",
+  "des_azione": "Datalogic",
+  "cod_azione": "DAL",
+  "isin": "IT0004053440",
+  "n_stories": 6,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 2,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-06-01T10:45:54",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "destination-italia",
+  "des_azione": "Destination Italia",
+  "cod_azione": "DIT",
+  "isin": "IT0005454027",
+  "n_stories": 6,
+  "n_unusual": 6,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 2
+  },
+  "last_pub": "2025-02-21T03:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "first-capital",
+  "des_azione": "First Capital",
+  "cod_azione": "FIC",
+  "isin": "IT0005252736",
+  "n_stories": 6,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 2
+  },
+  "last_pub": "2025-08-14T10:03:26",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gismondi-1754",
+  "des_azione": "Gismondi 1754",
+  "cod_azione": "GIS",
+  "isin": "IT0005391138",
+  "n_stories": 6,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2024-10-23T12:36:43",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "grifal",
+  "des_azione": "Grifal",
+  "cod_azione": "GRAL",
+  "isin": "IT0005332595",
+  "n_stories": 6,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2023-08-14T14:47:55",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "i-grandi-viaggi",
+  "des_azione": "I Grandi Viaggi",
+  "cod_azione": "IGV",
+  "isin": "IT0005108219",
+  "n_stories": 6,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-02-18T19:10:39",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "indel-b",
+  "des_azione": "Indel B",
+  "cod_azione": "INDB",
+  "isin": "IT0005245508",
+  "n_stories": 6,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-06-10T13:44:24",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "lindbergh",
+  "des_azione": "Lindbergh",
+  "cod_azione": "LDB",
+  "isin": "IT0005469272",
+  "n_stories": 6,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-11-13T18:36:08",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "mit-sim",
+  "des_azione": "MIT SIM",
+  "cod_azione": "MTS",
+  "isin": "IT0005427510",
+  "n_stories": 6,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-08-13T12:26:02",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "nusco",
+  "des_azione": "Nusco",
+  "cod_azione": "NUS",
+  "isin": "IT0005453110",
+  "n_stories": 6,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-06-27T20:00:06",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "omer",
+  "des_azione": "Omer",
+  "cod_azione": "OMER",
+  "isin": "IT0005453748",
+  "n_stories": 6,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-05-29T10:55:40",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "risanamento",
+  "des_azione": "Risanamento",
+  "cod_azione": "RN",
+  "isin": "IT0001402269",
+  "n_stories": 6,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 5,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-07-21T11:33:07",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sipario-movies",
+  "des_azione": "Sipario Movies",
+  "cod_azione": "IE",
+  "isin": "IT0005380602",
+  "n_stories": 6,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-04-11T18:27:03",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "spindox",
+  "des_azione": "Spindox",
+  "cod_azione": "SPN",
+  "isin": "IT0005449522",
+  "n_stories": 6,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-12-03T03:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "trendevice",
+  "des_azione": "TrenDevice",
+  "cod_azione": "TD",
+  "isin": "IT0005422792",
+  "n_stories": 6,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-06-12T12:10:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "visibilia-editore",
+  "des_azione": "Visibilia Editore",
+  "cod_azione": "PMSS",
+  "isin": "IT0005433732",
+  "n_stories": 6,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-07-22T07:41:57",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "agatos",
+  "des_azione": "Agatos",
+  "cod_azione": "TEW",
+  "isin": "IT0005421919",
+  "n_stories": 5,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-08-21T13:09:20",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ala",
+  "des_azione": "Ala",
+  "cod_azione": "ALA",
+  "isin": "IT0005446700",
+  "n_stories": 5,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-11-28T08:56:57",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "anima-holding",
+  "des_azione": "Anima Holding",
+  "cod_azione": "ANIM",
+  "isin": "IT0004998065",
+  "n_stories": 5,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-06-29T15:27:02",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "beghelli",
+  "des_azione": "Beghelli",
+  "cod_azione": "BEG",
+  "isin": "IT0001223277",
+  "n_stories": 5,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-02-13T17:47:13",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "biesse",
+  "des_azione": "Biesse",
+  "cod_azione": "BSS",
+  "isin": "IT0003097257",
+  "n_stories": 5,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-05-08T16:10:42",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "dba-group",
+  "des_azione": "Dba Group",
+  "cod_azione": "DBA",
+  "isin": "IT0005285942",
+  "n_stories": 5,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 3,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-05-28T18:32:38",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fnm",
+  "des_azione": "Fnm",
+  "cod_azione": "FNM",
+  "isin": "IT0000060886",
+  "n_stories": 5,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-05-18T17:34:19",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fos",
+  "des_azione": "FOS",
+  "cod_azione": "FOS",
+  "isin": "IT0005388217",
+  "n_stories": 5,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-08-29T11:24:13",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "generalfinance",
+  "des_azione": "Generalfinance",
+  "cod_azione": "GF",
+  "isin": "IT0005144784",
+  "n_stories": 5,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-03-03T20:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gentili-mosconi",
+  "des_azione": "Gentili Mosconi",
+  "cod_azione": "GM",
+  "isin": "IT0005531261",
+  "n_stories": 5,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-01-27T09:40:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "growens",
+  "des_azione": "Growens",
+  "cod_azione": "MAIL",
+  "isin": "IT0005040354",
+  "n_stories": 5,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 3
+  },
+  "last_pub": "2023-07-11T16:13:41",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "health-italia",
+  "des_azione": "Health Italia",
+  "cod_azione": "HI",
+  "isin": "IT0005585861",
+  "n_stories": 5,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2022-04-01T20:59:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "illa",
+  "des_azione": "Illa",
+  "cod_azione": "ILLA",
+  "isin": "IT0005578395",
+  "n_stories": 5,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-09-11T10:20:09",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "illimity-bank",
+  "des_azione": "Illimity Bank",
+  "cod_azione": "SPAX",
+  "isin": "IT0005359192",
+  "n_stories": 5,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-05-09T08:40:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "intred",
+  "des_azione": "Intred",
+  "cod_azione": "INTRED",
+  "isin": "IT0005337818",
+  "n_stories": 5,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-02-13T10:51:31",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "italian-exhibition",
+  "des_azione": "Italian Exhibition",
+  "cod_azione": "IEG",
+  "isin": "IT0003411417",
+  "n_stories": 5,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2025-06-24T12:48:55",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "italian-wine-brands",
+  "des_azione": "Italian Wine Brands",
+  "cod_azione": "IWB",
+  "isin": "IT0005075764",
+  "n_stories": 5,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-12-18T11:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "piquadro",
+  "des_azione": "Piquadro",
+  "cod_azione": "PQ",
+  "isin": "IT0004240443",
+  "n_stories": 5,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2023-06-12T17:03:53",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "rosetti-marino",
+  "des_azione": "Rosetti Marino",
+  "cod_azione": "YRM",
+  "isin": "IT0001017851",
+  "n_stories": 5,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-12-22T14:30:52",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sicily-by-car",
+  "des_azione": "Sicily by Car",
+  "cod_azione": "SBC",
+  "isin": "IT0005556581",
+  "n_stories": 5,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2026-04-24T11:10:59",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "txt-e-solutions",
+  "des_azione": "Txt e-solutions",
+  "cod_azione": "TXT",
+  "isin": "IT0001454435",
+  "n_stories": 5,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-12-23T13:08:01",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "vantea-smart",
+  "des_azione": "Vantea Smart",
+  "cod_azione": "VNT",
+  "isin": "IT0005433765",
+  "n_stories": 5,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-10-23T18:35:24",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "aeffe",
+  "des_azione": "Aeffe",
+  "cod_azione": "AEF",
+  "isin": "IT0001384590",
+  "n_stories": 4,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-02-03T12:59:51",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "allcore",
+  "des_azione": "Allcore",
+  "cod_azione": "STG",
+  "isin": "IT0005461303",
+  "n_stories": 4,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-12-05T21:20:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ambromobiliare",
+  "des_azione": "Ambromobiliare",
+  "cod_azione": "AMB1",
+  "isin": "IT0004779515",
+  "n_stories": 4,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-11-02T07:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "edil-san-felice",
+  "des_azione": "Edil San Felice",
+  "cod_azione": "ESF",
+  "isin": "IT0005561441",
+  "n_stories": 4,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-03-26T18:22:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "erredue",
+  "des_azione": "ErreDue",
+  "cod_azione": "RDUE",
+  "isin": "IT0005521247",
+  "n_stories": 4,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-06-18T21:25:53",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "eurotech",
+  "des_azione": "Eurotech",
+  "cod_azione": "ETH",
+  "isin": "IT0003895668",
+  "n_stories": 4,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 3,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-02-26T11:37:37",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fae-technology",
+  "des_azione": "Fae Technology",
+  "cod_azione": "FAE",
+  "isin": "IT0005500688",
+  "n_stories": 4,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-12-21T10:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gt-talent-group",
+  "des_azione": "GT Talent Group",
+  "cod_azione": "GT",
+  "isin": "IT0005607699",
+  "n_stories": 4,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 4,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-10-21T11:25:30",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "monnalisa",
+  "des_azione": "Monnalisa",
+  "cod_azione": "MNL",
+  "isin": "IT0005338139",
+  "n_stories": 4,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-07-13T21:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "notorious-pictures",
+  "des_azione": "Notorious Pictures",
+  "cod_azione": "NPI",
+  "isin": "IT0005025355",
+  "n_stories": 4,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2022-08-30T12:10:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "revo-insurance",
+  "des_azione": "Revo Insurance",
+  "cod_azione": "REVO2",
+  "isin": "IT0005513202",
+  "n_stories": 4,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-08-03T12:18:58",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "telesia",
+  "des_azione": "Telesia",
+  "cod_azione": "TLS",
+  "isin": "IT0005240046",
+  "n_stories": 4,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-11-20T21:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "tessellis",
+  "des_azione": "Tessellis",
+  "cod_azione": "TIS",
+  "isin": "IT0005496473",
+  "n_stories": 4,
+  "n_unusual": 4,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 3
+  },
+  "last_pub": "2026-05-22T13:52:47",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "abc-company",
+  "des_azione": "ABC Company",
+  "cod_azione": "CDR",
+  "isin": "IT0005466294",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-08-08T15:27:22",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "abitare-in",
+  "des_azione": "Abitare In",
+  "cod_azione": "ABT",
+  "isin": "IT0005445280",
+  "n_stories": 3,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-12-06T11:21:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "aedes",
+  "des_azione": "Aedes",
+  "cod_azione": "AEDE",
+  "isin": "IT0005708174",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2023-07-07T23:28:48",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "bending-spoons",
+  "des_azione": "Bending Spoons",
+  "cod_azione": "1BSP",
+  "isin": "IT0005717696",
+  "n_stories": 3,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 3,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-09-11T16:04:11",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "braga-moro",
+  "des_azione": "Braga Moro",
+  "cod_azione": "BRM",
+  "isin": "IT0005640286",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-06-29T11:26:53",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "carel-industries",
+  "des_azione": "Carel Industries",
+  "cod_azione": "CRL",
+  "isin": "IT0005331019",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-07-13T09:36:06",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cembre",
+  "des_azione": "Cembre",
+  "cod_azione": "CEMBRE",
+  "isin": "IT0001128047",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-03-26T09:07:42",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "copernico",
+  "des_azione": "Copernico",
+  "cod_azione": "COP",
+  "isin": "IT0005379406",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-03-25T18:10:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cyberoo",
+  "des_azione": "Cyberoo",
+  "cod_azione": "CYB",
+  "isin": "IT0005546103",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-02-28T21:30:50",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "digital-bros",
+  "des_azione": "Digital Bros",
+  "cod_azione": "DIB",
+  "isin": "IT0001469995",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-04-27T14:23:22",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "emma-villas",
+  "des_azione": "Emma Villas",
+  "cod_azione": "EAV",
+  "isin": "IT0005562183",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-04-17T11:28:35",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "eviso",
+  "des_azione": "Eviso",
+  "cod_azione": "EVS",
+  "isin": "IT0005430936",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-01-01T12:04:50",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gambero-rosso",
+  "des_azione": "Gambero Rosso",
+  "cod_azione": "GAMB",
+  "isin": "IT0005122392",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2023-09-26T23:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "magis",
+  "des_azione": "Magis",
+  "cod_azione": "MGS",
+  "isin": "IT0005525347",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-04-23T12:58:42",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "matica-fintec",
+  "des_azione": "Matica Fintec",
+  "cod_azione": "MFT",
+  "isin": "IT0005388449",
+  "n_stories": 3,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2022-06-01T19:40:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "next-re",
+  "des_azione": "Next Re",
+  "cod_azione": "SICC",
+  "isin": "IT0005330516",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-03-03T08:50:49",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ops-ecom",
+  "des_azione": "Ops eCom",
+  "cod_azione": "GGTV",
+  "isin": "IT0005122400",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-07-17T10:21:18",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "siav",
+  "des_azione": "Siav",
+  "cod_azione": "SIAV",
+  "isin": "IT0005504128",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2023-11-22T12:56:32",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "talea-group",
+  "des_azione": "Talea Group",
+  "cod_azione": "FAR",
+  "isin": "IT0005378333",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-06-12T10:30:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "trawell-co",
+  "des_azione": "Trawell Co",
+  "cod_azione": "SB",
+  "isin": "IT0005717571",
+  "n_stories": 3,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2023-04-04T12:58:37",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "websolute",
+  "des_azione": "Websolute",
+  "cod_azione": "WEB",
+  "isin": "IT0005384901",
+  "n_stories": 3,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2021-11-15T10:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "zucchi",
+  "des_azione": "Zucchi",
+  "cod_azione": "ZUC",
+  "isin": "IT0005395071",
+  "n_stories": 3,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-08-11T12:09:32",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "b-c-speakers",
+  "des_azione": "B&C Speakers",
+  "cod_azione": "BEC",
+  "isin": "IT0001268561",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2023-12-28T17:00:43",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "bellini-nautica",
+  "des_azione": "Bellini Nautica",
+  "cod_azione": "BELL",
+  "isin": "IT0005497042",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-06-26T12:58:19",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "danieli-c",
+  "des_azione": "Danieli & C",
+  "cod_azione": "DANI",
+  "isin": "IT0000076502",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2022-12-02T13:30:31",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "dedem",
+  "des_azione": "Dedem",
+  "cod_azione": "DDM",
+  "isin": "IT0005659724",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-04-17T14:28:42",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ecomembrane",
+  "des_azione": "Ecomembrane",
+  "cod_azione": "ECMB",
+  "isin": "IT0005543332",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2023-06-20T16:48:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "emak",
+  "des_azione": "Emak",
+  "cod_azione": "EMAK",
+  "isin": "IT0001237053",
+  "n_stories": 2,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2022-01-28T13:57:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "energy-time",
+  "des_azione": "Energy Time",
+  "cod_azione": "ET",
+  "isin": "IT0005660219",
+  "n_stories": 2,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-08-13T10:23:24",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "enertronica",
+  "des_azione": "Enertronica",
+  "cod_azione": "ENT",
+  "isin": "IT0004887409",
+  "n_stories": 2,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-09-02T10:25:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "equita-group",
+  "des_azione": "Equita Group",
+  "cod_azione": "EQUI",
+  "isin": "IT0005312027",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2022-04-28T20:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "esautomotion",
+  "des_azione": "Esautomotion",
+  "cod_azione": "ESAU",
+  "isin": "IT0005337107",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2022-10-12T19:35:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fervi",
+  "des_azione": "Fervi",
+  "cod_azione": "FVI",
+  "isin": "IT0005325912",
+  "n_stories": 2,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-10-16T08:03:19",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "franchi-umberto-marmi",
+  "des_azione": "Franchi Umberto Marmi",
+  "cod_azione": "TSPA",
+  "isin": "IT0005335754",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2022-06-15T13:10:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "it-way",
+  "des_azione": "It Way",
+  "cod_azione": "ITW",
+  "isin": "IT0003057624",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2021-10-12T16:30:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ivision-tech",
+  "des_azione": "iVision Tech",
+  "cod_azione": "IVN",
+  "isin": "IT0005554784",
+  "n_stories": 2,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-01-22T19:46:41",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "kaleon",
+  "des_azione": "Kaleon",
+  "cod_azione": "KLN",
+  "isin": "IT0005678104",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-03-30T19:25:50",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "la-sia",
+  "des_azione": "La Sia",
+  "cod_azione": "LASIA",
+  "isin": "IT0005555468",
+  "n_stories": 2,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 2,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-02-13T10:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "moltiply-group",
+  "des_azione": "Moltiply Group",
+  "cod_azione": "MOL",
+  "isin": "IT0004195308",
+  "n_stories": 2,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-06-25T09:55:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "mondo-tv",
+  "des_azione": "Mondo TV",
+  "cod_azione": "MTV",
+  "isin": "IT0001447785",
+  "n_stories": 2,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-09-07T14:11:31",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "neodecortech",
+  "des_azione": "Neodecortech",
+  "cod_azione": "NDT",
+  "isin": "IT0005275778",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-04-01T15:44:29",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "palingeo",
+  "des_azione": "Palingeo",
+  "cod_azione": "PAL",
+  "isin": "IT0005575730",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-06-16T09:55:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "planetel",
+  "des_azione": "Planetel",
+  "cod_azione": "PLT1",
+  "isin": "IT0005430951",
+  "n_stories": 2,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-09-14T09:36:42",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "saccheria-franceschetti",
+  "des_azione": "Saccheria Franceschetti",
+  "cod_azione": "SAC",
+  "isin": "IT0005521551",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-01-16T15:19:50",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "smart-capital",
+  "des_azione": "Smart Capital",
+  "cod_azione": "SMCAP",
+  "isin": "IT0005621070",
+  "n_stories": 2,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 2,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-02-23T11:59:16",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "sys-dat",
+  "des_azione": "SYS-DAT",
+  "cod_azione": "SYS",
+  "isin": "IT0005595423",
+  "n_stories": 2,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-05-18T11:44:41",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "tradelab",
+  "des_azione": "TradeLab",
+  "cod_azione": "TRAI",
+  "isin": "IT0005651507",
+  "n_stories": 2,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-08-05T12:52:08",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "valtecne",
+  "des_azione": "Valtecne",
+  "cod_azione": "VLT",
+  "isin": "IT0005532525",
+  "n_stories": 2,
+  "n_unusual": 2,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 2,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-06-26T17:04:55",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "alfio-bardolla",
+  "des_azione": "Alfio Bardolla",
+  "cod_azione": "ABTG",
+  "isin": "IT0005244030",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-11-26T09:26:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "arterra-bioscience",
+  "des_azione": "Arterra Bioscience",
+  "cod_azione": "ABS",
+  "isin": "IT0005386369",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2021-04-08T10:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "bifire",
+  "des_azione": "Bifire",
+  "cod_azione": "FIRE",
+  "isin": "IT0005495335",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-03-17T12:25:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "caleffi",
+  "des_azione": "Caleffi",
+  "cod_azione": "CLF",
+  "isin": "IT0003025019",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2021-09-29T16:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "centrale-del-latte-d-italia",
+  "des_azione": "Centrale del Latte d'Italia",
+  "cod_azione": "CLT",
+  "isin": "IT0003023980",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-03-05T14:35:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "confinvest-oro",
+  "des_azione": "Confinvest Oro",
+  "cod_azione": "CFV1",
+  "isin": "IT0005379604",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-07-16T17:26:43",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "cube-labs",
+  "des_azione": "Cube Labs",
+  "cod_azione": "CUBE",
+  "isin": "IT0005532483",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-06-06T04:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "deodato-gallery",
+  "des_azione": "Deodato.Gallery",
+  "cod_azione": "ARTD",
+  "isin": "IT0005528937",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2026-03-17T21:05:49",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "dexelance",
+  "des_azione": "Dexelance",
+  "cod_azione": "IDB",
+  "isin": "IT0005543480",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-05-26T18:20:08",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "e-globe",
+  "des_azione": "E-Globe",
+  "cod_azione": "EGB",
+  "isin": "IT0005557514",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-05-03T11:34:04",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ecosuntek",
+  "des_azione": "Ecosuntek",
+  "cod_azione": "ECK",
+  "isin": "IT0005654766",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-04-01T21:01:34",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "enervit",
+  "des_azione": "Enervit",
+  "cod_azione": "ENV",
+  "isin": "IT0004356751",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-11-18T11:58:58",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "espe",
+  "des_azione": "Espe",
+  "cod_azione": "ESPE",
+  "isin": "IT0005573818",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-03-19T01:20:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "eukedos",
+  "des_azione": "Eukedos",
+  "cod_azione": "AKM",
+  "isin": "IT0004818297",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-05-27T18:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "gel",
+  "des_azione": "Gel",
+  "cod_azione": "GEL",
+  "isin": "IT0005312365",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-02-12T09:41:10",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "il-fatto",
+  "des_azione": "Il Fatto",
+  "cod_azione": "SEIF",
+  "isin": "IT0005353484",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-02-13T20:40:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "ilpra",
+  "des_azione": "Ilpra",
+  "cod_azione": "ILP",
+  "isin": "IT0005359101",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2023-09-25T17:34:54",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "irce",
+  "des_azione": "Irce",
+  "cod_azione": "IRCE",
+  "isin": "IT0001077780",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-10-05T19:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "iscc-fintech",
+  "des_azione": "Iscc Fintech",
+  "cod_azione": "ISC",
+  "isin": "IT0005474108",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-05-03T11:21:52",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "juventus-fc",
+  "des_azione": "Juventus FC",
+  "cod_azione": "JUVE",
+  "isin": "IT0005572778",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2024-01-22T17:00:46",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "kme-group",
+  "des_azione": "KME Group",
+  "cod_azione": "SMI",
+  "isin": "IT0004552359",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2023-08-21T12:16:02",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "lemon-sistemi",
+  "des_azione": "Lemon Sistemi",
+  "cod_azione": "LS",
+  "isin": "IT0005573438",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-04-29T22:19:20",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "lucisano-media-group",
+  "des_azione": "Lucisano Media Group",
+  "cod_azione": "LMG",
+  "isin": "IT0004522162",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-02-08T10:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "markbass",
+  "des_azione": "Markbass",
+  "cod_azione": "MARK",
+  "isin": "IT0005670960",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-02-18T12:19:52",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "mevim",
+  "des_azione": "Mevim",
+  "cod_azione": "YIV",
+  "isin": "IT0005586950",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2024-07-03T19:40:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "novamarine",
+  "des_azione": "Novamarine",
+  "cod_azione": "NOVAM",
+  "isin": "IT0005605701",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-01-24T12:23:05",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "philogen",
+  "des_azione": "Philogen",
+  "cod_azione": "PHIL",
+  "isin": "IT0005373789",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2023-05-30T17:13:45",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "powersoft",
+  "des_azione": "Powersoft",
+  "cod_azione": "PWS",
+  "isin": "IT0005353815",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-03-19T15:30:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "pozzi-milano",
+  "des_azione": "Pozzi Milano",
+  "cod_azione": "POZ2",
+  "isin": "IT0005499949",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2023-12-04T16:53:03",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "rcs-mediagroup",
+  "des_azione": "Rcs Mediagroup",
+  "cod_azione": "HPI",
+  "isin": "IT0004931496",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2021-04-09T14:55:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "softlab",
+  "des_azione": "Softlab",
+  "cod_azione": "ACO",
+  "isin": "IT0001469953",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-06-11T14:19:31",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "star7",
+  "des_azione": "Star7",
+  "cod_azione": "STAR7",
+  "isin": "IT0005466195",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2022-09-19T11:30:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "svas-biosana",
+  "des_azione": "Svas Biosana",
+  "cod_azione": "SVS",
+  "isin": "IT0005469264",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2022-02-04T10:25:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "tmp-group",
+  "des_azione": "TMP Group",
+  "cod_azione": "TMP",
+  "isin": "IT0005531238",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2023-10-13T23:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "triboo",
+  "des_azione": "Triboo",
+  "cod_azione": "TBM",
+  "isin": "IT0005001554",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2022-05-19T18:15:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "valica",
+  "des_azione": "Valica",
+  "cod_azione": "VLC",
+  "isin": "IT0005562514",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-05-28T09:59:52",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "vinext",
+  "des_azione": "Vinext",
+  "cod_azione": "VNXT",
+  "isin": "IT0005652414",
+  "n_stories": 1,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-11-13T18:35:36",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "yakkyo",
+  "des_azione": "Yakkyo",
+  "cod_azione": "YKY",
+  "isin": "IT0005573966",
+  "n_stories": 1,
+  "n_unusual": 0,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2025-11-04T19:12:58",
+  "n_detail": 0,
+  "has_prices": true
+ }
+]

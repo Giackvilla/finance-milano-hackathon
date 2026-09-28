@@ -1,0 +1,91 @@
+{
+ "schema_version": "1.0",
+ "statuses": [
+  {
+   "status": "NO_REACTION",
+   "group": "none",
+   "color": "neutral",
+   "hex": "#9CA3AF",
+   "label_en": "No reaction",
+   "label_it": "Nessuna reazione",
+   "explain_en": "No session in the window moved at least 2 times the normal daily swing.",
+   "explain_it": "Nessuna seduta nella finestra si è mossa almeno il doppio dell'oscillazione normale."
+  },
+  {
+   "status": "ALREADY_IN_PRICE",
+   "group": "before",
+   "color": "danger",
+   "hex": "#DC2626",
+   "label_en": "Already in the price",
+   "label_it": "Già nel prezzo",
+   "explain_en": "The biggest unusual move closed before the article was published.",
+   "explain_it": "Il movimento anomalo più ampio aveva chiuso prima della pubblicazione."
+  },
+  {
+   "status": "PARTLY_IN_PRICE",
+   "group": "before",
+   "color": "warning",
+   "hex": "#F59E0B",
+   "label_en": "Partly in the price",
+   "label_it": "In parte nel prezzo",
+   "explain_en": "Some unusual move closed before publication, but the biggest one came after.",
+   "explain_it": "Una parte del movimento anomalo aveva chiuso prima della pubblicazione, ma il più ampio è arrivato dopo."
+  },
+  {
+   "status": "MOSTLY_AT_OPEN",
+   "group": "before",
+   "color": "caution",
+   "hex": "#EAB308",
+   "label_en": "Mostly at the open",
+   "label_it": "Quasi tutto in apertura",
+   "explain_en": "The article came out during trading, and more than half of the day's move was already in the opening price.",
+   "explain_it": "L'articolo è uscito a mercato aperto e più di metà del movimento del giorno era già nel prezzo di apertura."
+  },
+  {
+   "status": "REACTED",
+   "group": "after",
+   "color": "success",
+   "hex": "#16A34A",
+   "label_en": "Reacted",
+   "label_it": "Reazione",
+   "explain_en": "The biggest unusual move came on the first session trading on the story.",
+   "explain_it": "Il movimento anomalo più ampio è arrivato nella prima seduta che tratta sulla notizia."
+  },
+  {
+   "status": "DELAYED",
+   "group": "after",
+   "color": "info",
+   "hex": "#2563EB",
+   "label_en": "Delayed",
+   "label_it": "In ritardo",
+   "explain_en": "The biggest unusual move came after the first session trading on the story.",
+   "explain_it": "Il movimento anomalo più ampio è arrivato dopo la prima seduta che tratta sulla notizia."
+  }
+ ],
+ "groups": {
+  "before": {
+   "label_en": "Tape moved before the headline",
+   "label_it": "Il prezzo si è mosso prima del titolo"
+  },
+  "after": {
+   "label_en": "Tape moved after the headline",
+   "label_it": "Il prezzo si è mosso dopo il titolo"
+  },
+  "none": {
+   "label_en": "No unusual move",
+   "label_it": "Nessun movimento anomalo"
+  }
+ },
+ "news_types": [
+  "takeover",
+  "earnings",
+  "plan",
+  "capital",
+  "legal_regulatory",
+  "analyst",
+  "deal",
+  "governance",
+  "market_report",
+  "other"
+ ]
+}

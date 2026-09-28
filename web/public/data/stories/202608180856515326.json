@@ -1,0 +1,92 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202608180856515326",
+ "article": {
+  "content_id": "202608180856515326",
+  "titolo": "Seco, KarL4 sbarca negli Usa: dal contactless dei binocoli al vending",
+  "data_pubblicazione": "2026-08-18T06:43:16",
+  "pub_local": "2026-08-18T08:43:16",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/seco-karl4-sbarca-negli-usa-dal-contactless-dei-binocoli-al-vending-202608180856515326"
+ },
+ "instrument": {
+  "des_azione": "SECO",
+  "cod_azione": "IOT",
+  "isin": "IT0005438046",
+  "company_slug": "seco"
+ },
+ "news": {
+  "news_type": "other",
+  "scheduled": null,
+  "headline_reports_move": false,
+  "matched": []
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-08-21",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": 6.37,
+   "z": 2.93,
+   "vol_x": 2.81,
+   "retained_pct": 395.56,
+   "open_share_pct": 0.0
+  },
+  "largest": {
+   "d": "2026-08-21",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": 6.37,
+   "z": 2.93,
+   "vol_x": 2.81,
+   "retained_pct": 395.56,
+   "open_share_pct": 0.0
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-08-21",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 6.37,
+    "z": 2.93
+   }
+  ],
+  "at_open": null,
+  "publication_phase": "pre_open",
+  "pub_local": "2026-08-18T08:43:16",
+  "text_en": "The stock moved 3 sessions after the article (21 Aug 2026, +6.4%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (396% of the move is in the price).",
+  "text_it": "L'azione si è mossa 3 sedute dopo l'articolo (21 agosto 2026, +6.4%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 396% del movimento è nel prezzo)."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-08-21",
+  "move_pct": 6.37,
+  "z": 2.93,
+  "unusual": true,
+  "volume_x": 2.81,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 2.176,
+  "px_before_move": 3.53,
+  "px_after_move": 3.755,
+  "last_session": "2026-09-23",
+  "last_px": 4.42,
+  "retained_pct": 396,
+  "facts_text": {
+   "en": [
+    "The stock moved 3 sessions after the article (21 Aug 2026, +6.4%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (396% of the move is in the price)."
+   ],
+   "it": [
+    "L'azione si è mossa 3 sedute dopo l'articolo (21 agosto 2026, +6.4%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 396% del movimento è nel prezzo)."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

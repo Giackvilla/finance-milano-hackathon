@@ -1,0 +1,583 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609091059297824",
+ "article": {
+  "content_id": "202609091059297824",
+  "titolo": "Webuild smentisce la richiesta di 22 miliardi al governo: il titolo chiude in calo del 7,9%",
+  "data_pubblicazione": "2026-09-09T08:45:58",
+  "pub_local": "2026-09-09T10:45:58",
+  "testata": "MF",
+  "quote": "Il titolo ha chiuso in ribasso del 7,9% a 2,01 euro.",
+  "url": "https://www.milanofinanza.it/news/webuild-sotto-stress--7-equita-guarda-alle-tensioni-sulla-liquidità-202609091059297824"
+ },
+ "instrument": {
+  "des_azione": "Webuild",
+  "cod_azione": "COGE",
+  "isin": "IT0003865570",
+  "company_slug": "webuild"
+ },
+ "news": {
+  "news_type": "capital",
+  "scheduled": false,
+  "headline_reports_move": true,
+  "matched": [
+   {
+    "type": "market_report",
+    "keyword": "chiude in (?:calo|rialzo|ribasso|rosso|verde|parita)"
+   },
+   {
+    "type": "capital",
+    "keyword": "\\bobbligazioni?\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "REACTED",
+  "peak": {
+   "d": "2026-09-09",
+   "timing": "same_day",
+   "timing_words_en": "the day of the article",
+   "timing_words_it": "il giorno dell'articolo",
+   "move_pct": -7.96,
+   "z": -6.69,
+   "vol_x": 12.44,
+   "retained_pct": 126.44,
+   "open_share_pct": 30.16
+  },
+  "largest": {
+   "d": "2026-09-09",
+   "timing": "same_day",
+   "timing_words_en": "the day of the article",
+   "timing_words_it": "il giorno dell'articolo",
+   "move_pct": -7.96,
+   "z": -6.69,
+   "vol_x": 12.44,
+   "retained_pct": 126.44,
+   "open_share_pct": 30.16
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-09",
+    "timing": "same_day",
+    "closed_before_publication": false,
+    "move_pct": -7.96,
+    "z": -6.69
+   },
+   {
+    "d": "2026-09-10",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 3.58,
+    "z": 3.01
+   },
+   {
+    "d": "2026-09-11",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -3.36,
+    "z": -2.82
+   },
+   {
+    "d": "2026-09-14",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -3.97,
+    "z": -3.34
+   },
+   {
+    "d": "2026-09-16",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 5.49,
+    "z": 4.62
+   }
+  ],
+  "at_open": {
+   "open_share_pct": 30.16,
+   "gap_pct": -2.47
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-09-09T10:45:58",
+  "text_en": "The stock moved the day of the article (9 Sep 2026, -8.0%, 6.7 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (126% of the move is in the price). The headline reports the price move itself.",
+  "text_it": "L'azione si è mossa il giorno dell'articolo (9 settembre 2026, -8.0%, 6.7 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 126% del movimento è nel prezzo). Il titolo dell'articolo racconta il movimento dell'azione stesso."
+ },
+ "tape": {
+  "timing": "same_day",
+  "move_date": "2026-09-09",
+  "move_pct": -7.96,
+  "z": -6.69,
+  "unusual": true,
+  "volume_x": 12.44,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.19,
+  "px_before_move": 2.186,
+  "px_after_move": 2.012,
+  "last_session": "2026-09-23",
+  "last_px": 1.966,
+  "retained_pct": 126,
+  "facts_text": {
+   "en": [
+    "The stock moved the day of the article (9 Sep 2026, -8.0%, 6.7 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (126% of the move is in the price). The headline reports the price move itself."
+   ],
+   "it": [
+    "L'azione si è mossa il giorno dell'articolo (9 settembre 2026, -8.0%, 6.7 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 126% del movimento è nel prezzo). Il titolo dell'articolo racconta il movimento dell'azione stesso."
+   ]
+  }
+ },
+ "gemini": {
+  "en": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Webuild",
+   "title_adjective": "in calo del 7,9%",
+   "figure_in_body": "7,9%",
+   "adjective_matches": true,
+   "sentence": "The title adjective 'in calo del 7,9%' accurately describes the 7,9% drop reported in the body, and the story from MF, 2026-09-09, fits the price facts as the stock moved -8.0% on the day of the article, indicating a clear reaction.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  },
+  "it": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Webuild",
+   "title_adjective": "in calo del 7,9%",
+   "figure_in_body": "7,9%",
+   "adjective_matches": true,
+   "sentence": "L'aggettivo 'in calo del 7,9%' nel titolo di MF, 2026-09-09, descrive fedelmente il calo del 7,9% riportato nel corpo dell'articolo; il movimento dell'azione del -8.0% il 9 settembre 2026, pari a 6.7 volte l'oscillazione normale, non era nel prezzo prima della pubblicazione e il titolo racconta il movimento stesso.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  }
+ },
+ "series": {
+  "baseline": {
+   "from": "2026-08-12",
+   "to": "2026-09-08",
+   "sd_pct": 1.19
+  },
+  "markers": {
+   "publication": "2026-09-09T10:45:58",
+   "session_before": "2026-09-08",
+   "peak": "2026-09-09",
+   "last_session": "2026-09-23"
+  },
+  "sessions": [
+   {
+    "d": "2026-08-04",
+    "rel": -26,
+    "prz_last": 2.312,
+    "index_100": 105.764,
+    "move_pct": 2.12,
+    "z": 1.78,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 4052587.0
+   },
+   {
+    "d": "2026-08-05",
+    "rel": -25,
+    "prz_last": 2.308,
+    "index_100": 105.581,
+    "move_pct": -0.17,
+    "z": -0.15,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 5659249.0
+   },
+   {
+    "d": "2026-08-06",
+    "rel": -24,
+    "prz_last": 2.334,
+    "index_100": 106.7704,
+    "move_pct": 1.13,
+    "z": 0.95,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 3445814.0
+   },
+   {
+    "d": "2026-08-07",
+    "rel": -23,
+    "prz_last": 2.308,
+    "index_100": 105.581,
+    "move_pct": -1.11,
+    "z": -0.94,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 2083586.0
+   },
+   {
+    "d": "2026-08-10",
+    "rel": -22,
+    "prz_last": 2.274,
+    "index_100": 104.0256,
+    "move_pct": -1.47,
+    "z": -1.24,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 2676101.0
+   },
+   {
+    "d": "2026-08-11",
+    "rel": -21,
+    "prz_last": 2.296,
+    "index_100": 105.032,
+    "move_pct": 0.97,
+    "z": 0.81,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 2855033.0
+   },
+   {
+    "d": "2026-08-12",
+    "rel": -20,
+    "prz_last": 2.302,
+    "index_100": 105.3065,
+    "move_pct": 0.26,
+    "z": 0.22,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2203289.0
+   },
+   {
+    "d": "2026-08-13",
+    "rel": -19,
+    "prz_last": 2.284,
+    "index_100": 104.4831,
+    "move_pct": -0.78,
+    "z": -0.66,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2327553.0
+   },
+   {
+    "d": "2026-08-14",
+    "rel": -18,
+    "prz_last": 2.276,
+    "index_100": 104.1171,
+    "move_pct": -0.35,
+    "z": -0.29,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1752345.0
+   },
+   {
+    "d": "2026-08-17",
+    "rel": -17,
+    "prz_last": 2.246,
+    "index_100": 102.7447,
+    "move_pct": -1.32,
+    "z": -1.11,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2555411.0
+   },
+   {
+    "d": "2026-08-18",
+    "rel": -16,
+    "prz_last": 2.2,
+    "index_100": 100.6404,
+    "move_pct": -2.05,
+    "z": -1.72,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2391159.0
+   },
+   {
+    "d": "2026-08-19",
+    "rel": -15,
+    "prz_last": 2.218,
+    "index_100": 101.4639,
+    "move_pct": 0.82,
+    "z": 0.69,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1259489.0
+   },
+   {
+    "d": "2026-08-20",
+    "rel": -14,
+    "prz_last": 2.22,
+    "index_100": 101.5554,
+    "move_pct": 0.09,
+    "z": 0.08,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1423763.0
+   },
+   {
+    "d": "2026-08-21",
+    "rel": -13,
+    "prz_last": 2.226,
+    "index_100": 101.8298,
+    "move_pct": 0.27,
+    "z": 0.23,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1466652.0
+   },
+   {
+    "d": "2026-08-24",
+    "rel": -12,
+    "prz_last": 2.222,
+    "index_100": 101.6468,
+    "move_pct": -0.18,
+    "z": -0.15,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2006467.0
+   },
+   {
+    "d": "2026-08-25",
+    "rel": -11,
+    "prz_last": 2.21,
+    "index_100": 101.0979,
+    "move_pct": -0.54,
+    "z": -0.45,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2492608.0
+   },
+   {
+    "d": "2026-08-26",
+    "rel": -10,
+    "prz_last": 2.234,
+    "index_100": 102.1958,
+    "move_pct": 1.09,
+    "z": 0.91,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2547605.0
+   },
+   {
+    "d": "2026-08-27",
+    "rel": -9,
+    "prz_last": 2.228,
+    "index_100": 101.9213,
+    "move_pct": -0.27,
+    "z": -0.23,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1703504.0
+   },
+   {
+    "d": "2026-08-28",
+    "rel": -8,
+    "prz_last": 2.238,
+    "index_100": 102.3788,
+    "move_pct": 0.45,
+    "z": 0.38,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1342648.0
+   },
+   {
+    "d": "2026-08-31",
+    "rel": -7,
+    "prz_last": 2.224,
+    "index_100": 101.7383,
+    "move_pct": -0.63,
+    "z": -0.53,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2806975.0
+   },
+   {
+    "d": "2026-09-01",
+    "rel": -6,
+    "prz_last": 2.168,
+    "index_100": 99.1766,
+    "move_pct": -2.52,
+    "z": -2.12,
+    "unusual": true,
+    "in_baseline": true,
+    "volume": 2981308.0
+   },
+   {
+    "d": "2026-09-02",
+    "rel": -5,
+    "prz_last": 2.126,
+    "index_100": 97.2553,
+    "move_pct": -1.94,
+    "z": -1.63,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 3050340.0
+   },
+   {
+    "d": "2026-09-03",
+    "rel": -4,
+    "prz_last": 2.184,
+    "index_100": 99.9085,
+    "move_pct": 2.73,
+    "z": 2.29,
+    "unusual": true,
+    "in_baseline": true,
+    "volume": 2668745.0
+   },
+   {
+    "d": "2026-09-04",
+    "rel": -3,
+    "prz_last": 2.17,
+    "index_100": 99.2681,
+    "move_pct": -0.64,
+    "z": -0.54,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 2434936.0
+   },
+   {
+    "d": "2026-09-07",
+    "rel": -2,
+    "prz_last": 2.172,
+    "index_100": 99.3596,
+    "move_pct": 0.09,
+    "z": 0.08,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1530200.0
+   },
+   {
+    "d": "2026-09-08",
+    "rel": -1,
+    "prz_last": 2.186,
+    "index_100": 100.0,
+    "move_pct": 0.64,
+    "z": 0.54,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1817523.0
+   },
+   {
+    "d": "2026-09-09",
+    "rel": 0,
+    "prz_last": 2.012,
+    "index_100": 92.0403,
+    "move_pct": -7.96,
+    "z": -6.69,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 26592149.0
+   },
+   {
+    "d": "2026-09-10",
+    "rel": 1,
+    "prz_last": 2.084,
+    "index_100": 95.3339,
+    "move_pct": 3.58,
+    "z": 3.01,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 8861909.0
+   },
+   {
+    "d": "2026-09-11",
+    "rel": 2,
+    "prz_last": 2.014,
+    "index_100": 92.1317,
+    "move_pct": -3.36,
+    "z": -2.82,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 6804157.0
+   },
+   {
+    "d": "2026-09-14",
+    "rel": 3,
+    "prz_last": 1.934,
+    "index_100": 88.4721,
+    "move_pct": -3.97,
+    "z": -3.34,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 6536219.0
+   },
+   {
+    "d": "2026-09-15",
+    "rel": 4,
+    "prz_last": 1.894,
+    "index_100": 86.6423,
+    "move_pct": -2.07,
+    "z": -1.74,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 7399819.0
+   },
+   {
+    "d": "2026-09-16",
+    "rel": 5,
+    "prz_last": 1.998,
+    "index_100": 91.3998,
+    "move_pct": 5.49,
+    "z": 4.62,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 5755429.0
+   },
+   {
+    "d": "2026-09-17",
+    "rel": 6,
+    "prz_last": 1.971,
+    "index_100": 90.1647,
+    "move_pct": -1.35,
+    "z": -1.14,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 5057453.0
+   },
+   {
+    "d": "2026-09-18",
+    "rel": 7,
+    "prz_last": 1.931,
+    "index_100": 88.3349,
+    "move_pct": -2.03,
+    "z": -1.71,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 5062470.0
+   },
+   {
+    "d": "2026-09-21",
+    "rel": 8,
+    "prz_last": 1.981,
+    "index_100": 90.6221,
+    "move_pct": 2.59,
+    "z": 2.18,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 4901103.0
+   },
+   {
+    "d": "2026-09-22",
+    "rel": 9,
+    "prz_last": 1.985,
+    "index_100": 90.8051,
+    "move_pct": 0.2,
+    "z": 0.17,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 3810222.0
+   },
+   {
+    "d": "2026-09-23",
+    "rel": 10,
+    "prz_last": 1.966,
+    "index_100": 89.936,
+    "move_pct": -0.96,
+    "z": -0.8,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 2271100.0
+   }
+  ]
+ }
+}

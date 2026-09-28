@@ -4,3 +4,4 @@ node_modules/
 *.log
 __pycache__/
 data/tape_all.csv
+data/company_prices.csv

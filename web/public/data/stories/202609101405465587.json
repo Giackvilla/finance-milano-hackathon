@@ -1,0 +1,562 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609101405465587",
+ "article": {
+  "content_id": "202609101405465587",
+  "titolo": "Garofalo Health Care, l’utile frena ma i ricavi aumentano. In cerca di nuove opportunità di crescita m&a",
+  "data_pubblicazione": "2026-09-10T10:54:03",
+  "pub_local": "2026-09-10T12:54:03",
+  "testata": "MF",
+  "quote": "ll risultato netto si è attestato a 15,2 milioni (-21,8%) «con oneri finanziari netti allineati allo scorso esercizio (pari a 5,8 milioni) e imposte in riduzione di 1,9 milioni rispetto al primo semestre 2025 in seguito al minor risultato ante imposte (6,4 milioni contro 8,3 milioni)» hanno fatto sapere dalla società quotata all’Euronext Star Milan, tra i principali operatori italiani della sanità privata accreditata.",
+  "url": "https://www.milanofinanza.it/news/garofalo-health-care-aumenta-i-ricavi-e-guarda-a-nuove-acquisizioni-202609101405465587"
+ },
+ "instrument": {
+  "des_azione": "Garofalo Health Care",
+  "cod_azione": "GHC",
+  "isin": "IT0005345233",
+  "company_slug": "garofalo-health-care"
+ },
+ "news": {
+  "news_type": "earnings",
+  "scheduled": true,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "earnings",
+    "keyword": "\\butile\\b(?!\\s+per\\b)"
+   },
+   {
+    "type": "earnings",
+    "keyword": "\\bricavi\\b"
+   },
+   {
+    "type": "deal",
+    "keyword": "\\bm&a\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "PARTLY_IN_PRICE",
+  "peak": {
+   "d": "2026-09-10",
+   "timing": "same_day",
+   "timing_words_en": "the day of the article",
+   "timing_words_it": "il giorno dell'articolo",
+   "move_pct": -2.99,
+   "z": -3.1,
+   "vol_x": 1.97,
+   "retained_pct": -12.5,
+   "open_share_pct": -12.29
+  },
+  "largest": {
+   "d": "2026-09-10",
+   "timing": "same_day",
+   "timing_words_en": "the day of the article",
+   "timing_words_it": "il giorno dell'articolo",
+   "move_pct": -2.99,
+   "z": -3.1,
+   "vol_x": 1.97,
+   "retained_pct": -12.5,
+   "open_share_pct": -12.29
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-09",
+    "timing": "day_before",
+    "closed_before_publication": true,
+    "move_pct": -2.9,
+    "z": -3.01
+   },
+   {
+    "d": "2026-09-10",
+    "timing": "same_day",
+    "closed_before_publication": false,
+    "move_pct": -2.99,
+    "z": -3.1
+   },
+   {
+    "d": "2026-09-16",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 2.28,
+    "z": 2.37
+   }
+  ],
+  "at_open": {
+   "open_share_pct": -12.29,
+   "gap_pct": 0.37
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-09-10T12:54:03",
+  "text_en": "Part of the unusual movement came before publication; the biggest was the day of the article (10 Sep 2026, -3.0%, 3.1 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, the move has fully reversed.",
+  "text_it": "Parte del movimento anomalo è arrivata prima della pubblicazione; il più ampio è stato il giorno dell'articolo (10 settembre 2026, -3.0%, 3.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il movimento si è completamente invertito."
+ },
+ "tape": {
+  "timing": "same_day",
+  "move_date": "2026-09-10",
+  "move_pct": -2.99,
+  "z": -3.1,
+  "unusual": true,
+  "volume_x": 1.97,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 0.962,
+  "px_before_move": 5.36,
+  "px_after_move": 5.2,
+  "last_session": "2026-09-23",
+  "last_px": 5.38,
+  "retained_pct": -12,
+  "facts_text": {
+   "en": [
+    "Part of the unusual movement came before publication; the biggest was the day of the article (10 Sep 2026, -3.0%, 3.1 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, the move has fully reversed."
+   ],
+   "it": [
+    "Parte del movimento anomalo è arrivata prima della pubblicazione; il più ampio è stato il giorno dell'articolo (10 settembre 2026, -3.0%, 3.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il movimento si è completamente invertito."
+   ]
+  }
+ },
+ "gemini": {
+  "en": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Garofalo Health Care",
+   "title_adjective": "frena",
+   "figure_in_body": "-21,8%",
+   "adjective_matches": true,
+   "sentence": "The title adjective \"frena\" accurately describes the -21,8% decrease in net profit reported in the body. The stock price reaction on the day of the article (10 Sep 2026) was a -3.0% move, which was 3.1 times the normal daily swing, indicating a clear reaction to the news, although part of the unusual movement came before publication, according to price facts; by 23 Sep 2026, the move had fully reversed (MF, 2026-09-10).",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  },
+  "it": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Garofalo Health Care",
+   "title_adjective": "frena",
+   "figure_in_body": "15,2 milioni (-21,8%)",
+   "adjective_matches": true,
+   "sentence": "L'aggettivo 'frena' nel titolo di MF, 2026-09-10, descrive accuratamente il risultato netto di 15,2 milioni, in calo del -21,8%, e la storia si allinea ai fatti di prezzo, con un movimento anomalo parzialmente precedente la pubblicazione e il più ampio il giorno dell'articolo, il 10 settembre 2026, con una flessione del -3.0% che si è completamente invertita al 23 settembre 2026.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  }
+ },
+ "series": {
+  "baseline": {
+   "from": "2026-08-13",
+   "to": "2026-09-09",
+   "sd_pct": 0.962
+  },
+  "markers": {
+   "publication": "2026-09-10T12:54:03",
+   "session_before": "2026-09-09",
+   "peak": "2026-09-10",
+   "last_session": "2026-09-23"
+  },
+  "sessions": [
+   {
+    "d": "2026-08-05",
+    "rel": -26,
+    "prz_last": 5.6,
+    "index_100": 104.4776,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 23287.0
+   },
+   {
+    "d": "2026-08-06",
+    "rel": -25,
+    "prz_last": 5.62,
+    "index_100": 104.8507,
+    "move_pct": 0.36,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 10561.0
+   },
+   {
+    "d": "2026-08-07",
+    "rel": -24,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": 0.36,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 8261.0
+   },
+   {
+    "d": "2026-08-10",
+    "rel": -23,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 6600.0
+   },
+   {
+    "d": "2026-08-11",
+    "rel": -22,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 11291.0
+   },
+   {
+    "d": "2026-08-12",
+    "rel": -21,
+    "prz_last": 5.66,
+    "index_100": 105.597,
+    "move_pct": 0.35,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 12503.0
+   },
+   {
+    "d": "2026-08-13",
+    "rel": -20,
+    "prz_last": 5.68,
+    "index_100": 105.9701,
+    "move_pct": 0.35,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 15668.0
+   },
+   {
+    "d": "2026-08-14",
+    "rel": -19,
+    "prz_last": 5.68,
+    "index_100": 105.9701,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 23173.0
+   },
+   {
+    "d": "2026-08-17",
+    "rel": -18,
+    "prz_last": 5.68,
+    "index_100": 105.9701,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 9163.0
+   },
+   {
+    "d": "2026-08-18",
+    "rel": -17,
+    "prz_last": 5.7,
+    "index_100": 106.3433,
+    "move_pct": 0.35,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 6364.0
+   },
+   {
+    "d": "2026-08-19",
+    "rel": -16,
+    "prz_last": 5.62,
+    "index_100": 104.8507,
+    "move_pct": -1.4,
+    "z": -1.46,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 5331.0
+   },
+   {
+    "d": "2026-08-20",
+    "rel": -15,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": 0.36,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 5078.0
+   },
+   {
+    "d": "2026-08-21",
+    "rel": -14,
+    "prz_last": 5.6,
+    "index_100": 104.4776,
+    "move_pct": -0.71,
+    "z": -0.74,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 3422.0
+   },
+   {
+    "d": "2026-08-24",
+    "rel": -13,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": 0.71,
+    "z": 0.74,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 6489.0
+   },
+   {
+    "d": "2026-08-25",
+    "rel": -12,
+    "prz_last": 5.68,
+    "index_100": 105.9701,
+    "move_pct": 0.71,
+    "z": 0.74,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 8409.0
+   },
+   {
+    "d": "2026-08-26",
+    "rel": -11,
+    "prz_last": 5.72,
+    "index_100": 106.7164,
+    "move_pct": 0.7,
+    "z": 0.73,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 18264.0
+   },
+   {
+    "d": "2026-08-27",
+    "rel": -10,
+    "prz_last": 5.66,
+    "index_100": 105.597,
+    "move_pct": -1.05,
+    "z": -1.09,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 3742.0
+   },
+   {
+    "d": "2026-08-28",
+    "rel": -9,
+    "prz_last": 5.66,
+    "index_100": 105.597,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 4280.0
+   },
+   {
+    "d": "2026-08-31",
+    "rel": -8,
+    "prz_last": 5.68,
+    "index_100": 105.9701,
+    "move_pct": 0.35,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 1160.0
+   },
+   {
+    "d": "2026-09-01",
+    "rel": -7,
+    "prz_last": 5.66,
+    "index_100": 105.597,
+    "move_pct": -0.35,
+    "z": -0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 3259.0
+   },
+   {
+    "d": "2026-09-02",
+    "rel": -6,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": -0.35,
+    "z": -0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 6872.0
+   },
+   {
+    "d": "2026-09-03",
+    "rel": -5,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 5168.0
+   },
+   {
+    "d": "2026-09-04",
+    "rel": -4,
+    "prz_last": 5.62,
+    "index_100": 104.8507,
+    "move_pct": -0.35,
+    "z": -0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 394.0
+   },
+   {
+    "d": "2026-09-07",
+    "rel": -3,
+    "prz_last": 5.64,
+    "index_100": 105.2239,
+    "move_pct": 0.36,
+    "z": 0.37,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 815.0
+   },
+   {
+    "d": "2026-09-08",
+    "rel": -2,
+    "prz_last": 5.52,
+    "index_100": 102.9851,
+    "move_pct": -2.13,
+    "z": -2.21,
+    "unusual": true,
+    "in_baseline": true,
+    "volume": 5786.0
+   },
+   {
+    "d": "2026-09-09",
+    "rel": -1,
+    "prz_last": 5.36,
+    "index_100": 100.0,
+    "move_pct": -2.9,
+    "z": -3.01,
+    "unusual": true,
+    "in_baseline": true,
+    "volume": 19127.0
+   },
+   {
+    "d": "2026-09-10",
+    "rel": 0,
+    "prz_last": 5.2,
+    "index_100": 97.0149,
+    "move_pct": -2.99,
+    "z": -3.1,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 14959.0
+   },
+   {
+    "d": "2026-09-11",
+    "rel": 1,
+    "prz_last": 5.3,
+    "index_100": 98.8806,
+    "move_pct": 1.92,
+    "z": 2.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 17577.0
+   },
+   {
+    "d": "2026-09-14",
+    "rel": 2,
+    "prz_last": 5.32,
+    "index_100": 99.2537,
+    "move_pct": 0.38,
+    "z": 0.39,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 2411.0
+   },
+   {
+    "d": "2026-09-15",
+    "rel": 3,
+    "prz_last": 5.26,
+    "index_100": 98.1343,
+    "move_pct": -1.13,
+    "z": -1.17,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 3068.0
+   },
+   {
+    "d": "2026-09-16",
+    "rel": 4,
+    "prz_last": 5.38,
+    "index_100": 100.3731,
+    "move_pct": 2.28,
+    "z": 2.37,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 12605.0
+   },
+   {
+    "d": "2026-09-17",
+    "rel": 5,
+    "prz_last": 5.36,
+    "index_100": 100.0,
+    "move_pct": -0.37,
+    "z": -0.39,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 7954.0
+   },
+   {
+    "d": "2026-09-18",
+    "rel": 6,
+    "prz_last": 5.4,
+    "index_100": 100.7463,
+    "move_pct": 0.75,
+    "z": 0.78,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 15091.0
+   },
+   {
+    "d": "2026-09-21",
+    "rel": 7,
+    "prz_last": 5.4,
+    "index_100": 100.7463,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 7792.0
+   },
+   {
+    "d": "2026-09-22",
+    "rel": 8,
+    "prz_last": 5.38,
+    "index_100": 100.3731,
+    "move_pct": -0.37,
+    "z": -0.39,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 14166.0
+   },
+   {
+    "d": "2026-09-23",
+    "rel": 9,
+    "prz_last": 5.38,
+    "index_100": 100.3731,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 14461.0
+   }
+  ]
+ }
+}

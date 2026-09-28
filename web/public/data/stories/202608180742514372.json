@@ -1,0 +1,92 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202608180742514372",
+ "article": {
+  "content_id": "202608180742514372",
+  "titolo": "Unipol: il trend rimane positivo",
+  "data_pubblicazione": "2026-08-18T05:42:44",
+  "pub_local": "2026-08-18T07:42:44",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/unipol-il-trend-rimane-positivo-202608180742514372"
+ },
+ "instrument": {
+  "des_azione": "Unipol",
+  "cod_azione": "UNIPOL",
+  "isin": "IT0004810054",
+  "company_slug": "unipol"
+ },
+ "news": {
+  "news_type": "other",
+  "scheduled": null,
+  "headline_reports_move": false,
+  "matched": []
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-08-20",
+   "timing": "later",
+   "timing_words_en": "2 sessions after the article",
+   "timing_words_it": "2 sedute dopo l'articolo",
+   "move_pct": -2.96,
+   "z": -2.15,
+   "vol_x": 2.06,
+   "retained_pct": 165.48,
+   "open_share_pct": 7.04
+  },
+  "largest": {
+   "d": "2026-08-20",
+   "timing": "later",
+   "timing_words_en": "2 sessions after the article",
+   "timing_words_it": "2 sedute dopo l'articolo",
+   "move_pct": -2.96,
+   "z": -2.15,
+   "vol_x": 2.06,
+   "retained_pct": 165.48,
+   "open_share_pct": 7.04
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-08-20",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -2.96,
+    "z": -2.15
+   }
+  ],
+  "at_open": null,
+  "publication_phase": "pre_open",
+  "pub_local": "2026-08-18T07:42:44",
+  "text_en": "The stock moved 2 sessions after the article (20 Aug 2026, -3.0%, 2.1 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (165% of the move is in the price).",
+  "text_it": "L'azione si è mossa 2 sedute dopo l'articolo (20 agosto 2026, -3.0%, 2.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 165% del movimento è nel prezzo)."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-08-20",
+  "move_pct": -2.96,
+  "z": -2.15,
+  "unusual": true,
+  "volume_x": 2.06,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.379,
+  "px_before_move": 28.36,
+  "px_after_move": 27.52,
+  "last_session": "2026-09-23",
+  "last_px": 26.97,
+  "retained_pct": 165,
+  "facts_text": {
+   "en": [
+    "The stock moved 2 sessions after the article (20 Aug 2026, -3.0%, 2.1 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (165% of the move is in the price)."
+   ],
+   "it": [
+    "L'azione si è mossa 2 sedute dopo l'articolo (20 agosto 2026, -3.0%, 2.1 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 165% del movimento è nel prezzo)."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

@@ -1,0 +1,104 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202608171244257144",
+ "article": {
+  "content_id": "202608171244257144",
+  "titolo": "FinecoBank, Berenberg: crescita a effetto valanga, nuovo target price",
+  "data_pubblicazione": "2026-08-17T10:13:32",
+  "pub_local": "2026-08-17T12:13:32",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/finecobank-berenberg-crescita-a-effetto-valanga-nuovo-target-price-202608171244257144"
+ },
+ "instrument": {
+  "des_azione": "FinecoBank",
+  "cod_azione": "FBK",
+  "isin": "IT0000072170",
+  "company_slug": "finecobank"
+ },
+ "news": {
+  "news_type": "analyst",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "analyst",
+    "keyword": "target price"
+   },
+   {
+    "type": "analyst",
+    "keyword": "(?:equita|kepler|intermonte|jefferies|goldman|morgan stanley|barclays|\\bciti\\b|jp\\s*morgan|jpmorgan|bernstein|deutsche bank|banca akros|\\bakros\\b|berenberg|\\bubs\\b|\\bhsbc\\b|\\bbofa\\b|bank of america|\\bkbw\\b|\\balantra\\b).{0,55}(?:target|rating|giudizio|promuove|boccia|buy|hold|sell|neutral|outperform|underperform|upside|stime|analist|raccomand|overweight|underweight)"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-08-18",
+   "timing": "later",
+   "timing_words_en": "1 session after the article",
+   "timing_words_it": "la seduta dopo l'articolo",
+   "move_pct": -3.13,
+   "z": -2.93,
+   "vol_x": 1.15,
+   "retained_pct": 276.62,
+   "open_share_pct": 10.24
+  },
+  "largest": {
+   "d": "2026-08-18",
+   "timing": "later",
+   "timing_words_en": "1 session after the article",
+   "timing_words_it": "la seduta dopo l'articolo",
+   "move_pct": -3.13,
+   "z": -2.93,
+   "vol_x": 1.15,
+   "retained_pct": 276.62,
+   "open_share_pct": 10.24
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-08-18",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -3.13,
+    "z": -2.93
+   }
+  ],
+  "at_open": {
+   "open_share_pct": 0.0,
+   "gap_pct": 0.0
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-08-17T12:13:32",
+  "text_en": "The stock moved 1 session after the article (18 Aug 2026, -3.1%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (277% of the move is in the price).",
+  "text_it": "L'azione si è mossa la seduta dopo l'articolo (18 agosto 2026, -3.1%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 277% del movimento è nel prezzo)."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-08-18",
+  "move_pct": -3.13,
+  "z": -2.93,
+  "unusual": true,
+  "volume_x": 1.15,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.07,
+  "px_before_move": 24.58,
+  "px_after_move": 23.81,
+  "last_session": "2026-09-23",
+  "last_px": 22.45,
+  "retained_pct": 277,
+  "facts_text": {
+   "en": [
+    "The stock moved 1 session after the article (18 Aug 2026, -3.1%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (277% of the move is in the price)."
+   ],
+   "it": [
+    "L'azione si è mossa la seduta dopo l'articolo (18 agosto 2026, -3.1%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 277% del movimento è nel prezzo)."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

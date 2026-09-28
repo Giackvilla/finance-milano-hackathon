@@ -1,0 +1,540 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609110915249931",
+ "article": {
+  "content_id": "202609110915249931",
+  "titolo": "Il cda di Trevi boccia all’unisono l’offerta tutta in azioni di Icop: fondata su sinergie incerte",
+  "data_pubblicazione": "2026-09-10T11:25:43",
+  "pub_local": "2026-09-10T13:25:43",
+  "testata": "MF",
+  "quote": "Il cda di Trevi Finanziaria ha approvato all’unanimità il comunicato sull’offerta pubblica di scambio volontaria totalitaria promossa da Icop.",
+  "url": "https://www.milanofinanza.it/news/il-cda-di-trevi-boccia-allunisono-lofferta-tutta-in-azioni-di-icop-fondata-su-sinergie-incerte-202609110915249931"
+ },
+ "instrument": {
+  "des_azione": "Trevi",
+  "cod_azione": "TFI",
+  "isin": "IT0005709909",
+  "company_slug": "trevi"
+ },
+ "news": {
+  "news_type": "governance",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "governance",
+    "keyword": "\\bcda\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "ALREADY_IN_PRICE",
+  "peak": {
+   "d": "2026-09-09",
+   "timing": "day_before",
+   "timing_words_en": "the session before the article",
+   "timing_words_it": "la seduta prima dell'articolo",
+   "move_pct": -2.35,
+   "z": -2.89,
+   "vol_x": 5.23,
+   "retained_pct": 42.86,
+   "open_share_pct": 24.78
+  },
+  "largest": {
+   "d": "2026-09-09",
+   "timing": "day_before",
+   "timing_words_en": "the session before the article",
+   "timing_words_it": "la seduta prima dell'articolo",
+   "move_pct": -2.35,
+   "z": -2.89,
+   "vol_x": 5.23,
+   "retained_pct": 42.86,
+   "open_share_pct": 24.78
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-09",
+    "timing": "day_before",
+    "closed_before_publication": true,
+    "move_pct": -2.35,
+    "z": -2.89
+   }
+  ],
+  "at_open": {
+   "open_share_pct": 552.14,
+   "gap_pct": -0.95
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-09-10T13:25:43",
+  "text_en": "The biggest unusual move came before the article was published (on 9 Sep 2026, -2.4%, 2.9 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 43% of that move is still in the price.",
+  "text_it": "Il movimento anomalo più ampio è arrivato prima che l'articolo fosse pubblicato (il 9 settembre 2026, -2.4%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il 43% di quel movimento è ancora nel prezzo."
+ },
+ "tape": {
+  "timing": "day_before",
+  "move_date": "2026-09-09",
+  "move_pct": -2.35,
+  "z": -2.89,
+  "unusual": true,
+  "volume_x": 5.23,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 0.812,
+  "px_before_move": 4.768,
+  "px_after_move": 4.656,
+  "last_session": "2026-09-23",
+  "last_px": 4.72,
+  "retained_pct": 43,
+  "facts_text": {
+   "en": [
+    "The biggest unusual move came before the article was published (on 9 Sep 2026, -2.4%, 2.9 times the normal daily swing of the 20 sessions before the article). By 23 Sep 2026, 43% of that move is still in the price."
+   ],
+   "it": [
+    "Il movimento anomalo più ampio è arrivato prima che l'articolo fosse pubblicato (il 9 settembre 2026, -2.4%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo). Al 23 settembre 2026, il 43% di quel movimento è ancora nel prezzo."
+   ]
+  }
+ },
+ "gemini": {
+  "en": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Trevi",
+   "title_adjective": "boccia all’unisono",
+   "figure_in_body": "Il cda di Trevi Finanziaria ha approvato all’unanimità il comunicato sull’offerta pubblica di scambio volontaria totalitaria promossa da Icop.",
+   "adjective_matches": true,
+   "sentence": "The title's \"boccia all’unisono\" accurately reflects the board's unanimous rejection of Icop's offer as stated in the body; however, the biggest unusual move, a -2.4% drop, occurred on 9 Sep 2026, before the MF article was published on 10 Sep 2026, indicating the news was already largely in the price, with 43% of that move still present by 23 Sep 2026.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  },
+  "it": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Trevi",
+   "title_adjective": "boccia",
+   "figure_in_body": "non congruo dal punto di vista finanziario",
+   "adjective_matches": true,
+   "sentence": "L'aggettivo 'boccia' nel titolo descrive accuratamente la decisione del consiglio di amministrazione di Trevi, che ha ritenuto l'offerta 'non congrua dal punto di vista finanziario' e 'non conveniente per gli azionisti'; tuttavia, il movimento anomalo più ampio del -2.4% (2.9 volte l'oscillazione normale) si è verificato il 9 settembre 2026, prima della pubblicazione dell'articolo di MF il 10 settembre 2026, e al 23 settembre 2026 il 43% di tale movimento era ancora nel prezzo, suggerendo che la notizia era già in gran parte scontata.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  }
+ },
+ "series": {
+  "baseline": {
+   "from": "2026-08-13",
+   "to": "2026-09-09",
+   "sd_pct": 0.812
+  },
+  "markers": {
+   "publication": "2026-09-10T13:25:43",
+   "session_before": "2026-09-09",
+   "peak": "2026-09-09",
+   "last_session": "2026-09-23"
+  },
+  "sessions": [
+   {
+    "d": "2026-08-05",
+    "rel": -26,
+    "prz_last": 4.572,
+    "index_100": 98.1959,
+    "move_pct": 0.7,
+    "z": 0.87,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 260223.0
+   },
+   {
+    "d": "2026-08-06",
+    "rel": -25,
+    "prz_last": 4.656,
+    "index_100": 100.0,
+    "move_pct": 1.84,
+    "z": 2.26,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 266821.0
+   },
+   {
+    "d": "2026-08-07",
+    "rel": -24,
+    "prz_last": 4.646,
+    "index_100": 99.7852,
+    "move_pct": -0.21,
+    "z": -0.26,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 328103.0
+   },
+   {
+    "d": "2026-08-10",
+    "rel": -23,
+    "prz_last": 4.638,
+    "index_100": 99.6134,
+    "move_pct": -0.17,
+    "z": -0.21,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 153754.0
+   },
+   {
+    "d": "2026-08-11",
+    "rel": -22,
+    "prz_last": 4.62,
+    "index_100": 99.2268,
+    "move_pct": -0.39,
+    "z": -0.48,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 127543.0
+   },
+   {
+    "d": "2026-08-12",
+    "rel": -21,
+    "prz_last": 4.626,
+    "index_100": 99.3557,
+    "move_pct": 0.13,
+    "z": 0.16,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 71652.0
+   },
+   {
+    "d": "2026-08-13",
+    "rel": -20,
+    "prz_last": 4.63,
+    "index_100": 99.4416,
+    "move_pct": 0.09,
+    "z": 0.11,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 62431.0
+   },
+   {
+    "d": "2026-08-14",
+    "rel": -19,
+    "prz_last": 4.62,
+    "index_100": 99.2268,
+    "move_pct": -0.22,
+    "z": -0.27,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 37721.0
+   },
+   {
+    "d": "2026-08-17",
+    "rel": -18,
+    "prz_last": 4.64,
+    "index_100": 99.6564,
+    "move_pct": 0.43,
+    "z": 0.53,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 72990.0
+   },
+   {
+    "d": "2026-08-18",
+    "rel": -17,
+    "prz_last": 4.602,
+    "index_100": 98.8402,
+    "move_pct": -0.82,
+    "z": -1.01,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 92538.0
+   },
+   {
+    "d": "2026-08-19",
+    "rel": -16,
+    "prz_last": 4.6,
+    "index_100": 98.7973,
+    "move_pct": -0.04,
+    "z": -0.05,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 103915.0
+   },
+   {
+    "d": "2026-08-20",
+    "rel": -15,
+    "prz_last": 4.6,
+    "index_100": 98.7973,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 134370.0
+   },
+   {
+    "d": "2026-08-21",
+    "rel": -14,
+    "prz_last": 4.646,
+    "index_100": 99.7852,
+    "move_pct": 1.0,
+    "z": 1.23,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 132434.0
+   },
+   {
+    "d": "2026-08-24",
+    "rel": -13,
+    "prz_last": 4.64,
+    "index_100": 99.6564,
+    "move_pct": -0.13,
+    "z": -0.16,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 73301.0
+   },
+   {
+    "d": "2026-08-25",
+    "rel": -12,
+    "prz_last": 4.668,
+    "index_100": 100.2577,
+    "move_pct": 0.6,
+    "z": 0.74,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 124522.0
+   },
+   {
+    "d": "2026-08-26",
+    "rel": -11,
+    "prz_last": 4.688,
+    "index_100": 100.6873,
+    "move_pct": 0.43,
+    "z": 0.53,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 113748.0
+   },
+   {
+    "d": "2026-08-27",
+    "rel": -10,
+    "prz_last": 4.676,
+    "index_100": 100.4296,
+    "move_pct": -0.26,
+    "z": -0.32,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 119960.0
+   },
+   {
+    "d": "2026-08-28",
+    "rel": -9,
+    "prz_last": 4.64,
+    "index_100": 99.6564,
+    "move_pct": -0.77,
+    "z": -0.95,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 99641.0
+   },
+   {
+    "d": "2026-08-31",
+    "rel": -8,
+    "prz_last": 4.622,
+    "index_100": 99.2698,
+    "move_pct": -0.39,
+    "z": -0.48,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 120836.0
+   },
+   {
+    "d": "2026-09-01",
+    "rel": -7,
+    "prz_last": 4.64,
+    "index_100": 99.6564,
+    "move_pct": 0.39,
+    "z": 0.48,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 101565.0
+   },
+   {
+    "d": "2026-09-02",
+    "rel": -6,
+    "prz_last": 4.64,
+    "index_100": 99.6564,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 128255.0
+   },
+   {
+    "d": "2026-09-03",
+    "rel": -5,
+    "prz_last": 4.656,
+    "index_100": 100.0,
+    "move_pct": 0.34,
+    "z": 0.42,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 50045.0
+   },
+   {
+    "d": "2026-09-04",
+    "rel": -4,
+    "prz_last": 4.646,
+    "index_100": 99.7852,
+    "move_pct": -0.21,
+    "z": -0.26,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 172626.0
+   },
+   {
+    "d": "2026-09-07",
+    "rel": -3,
+    "prz_last": 4.7,
+    "index_100": 100.945,
+    "move_pct": 1.16,
+    "z": 1.43,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 270836.0
+   },
+   {
+    "d": "2026-09-08",
+    "rel": -2,
+    "prz_last": 4.768,
+    "index_100": 102.4055,
+    "move_pct": 1.45,
+    "z": 1.78,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 228452.0
+   },
+   {
+    "d": "2026-09-09",
+    "rel": -1,
+    "prz_last": 4.656,
+    "index_100": 100.0,
+    "move_pct": -2.35,
+    "z": -2.89,
+    "unusual": true,
+    "in_baseline": true,
+    "volume": 794203.0
+   },
+   {
+    "d": "2026-09-10",
+    "rel": 0,
+    "prz_last": 4.648,
+    "index_100": 99.8282,
+    "move_pct": -0.17,
+    "z": -0.21,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 154129.0
+   },
+   {
+    "d": "2026-09-11",
+    "rel": 1,
+    "prz_last": 4.71,
+    "index_100": 101.1598,
+    "move_pct": 1.33,
+    "z": 1.64,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 183029.0
+   },
+   {
+    "d": "2026-09-14",
+    "rel": 2,
+    "prz_last": 4.71,
+    "index_100": 101.1598,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 92053.0
+   },
+   {
+    "d": "2026-09-15",
+    "rel": 3,
+    "prz_last": 4.67,
+    "index_100": 100.3007,
+    "move_pct": -0.85,
+    "z": -1.05,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 113811.0
+   },
+   {
+    "d": "2026-09-16",
+    "rel": 4,
+    "prz_last": 4.71,
+    "index_100": 101.1598,
+    "move_pct": 0.86,
+    "z": 1.05,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 82635.0
+   },
+   {
+    "d": "2026-09-17",
+    "rel": 5,
+    "prz_last": 4.716,
+    "index_100": 101.2887,
+    "move_pct": 0.13,
+    "z": 0.16,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 63068.0
+   },
+   {
+    "d": "2026-09-18",
+    "rel": 6,
+    "prz_last": 4.742,
+    "index_100": 101.8471,
+    "move_pct": 0.55,
+    "z": 0.68,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 134896.0
+   },
+   {
+    "d": "2026-09-21",
+    "rel": 7,
+    "prz_last": 4.72,
+    "index_100": 101.3746,
+    "move_pct": -0.46,
+    "z": -0.57,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 286724.0
+   },
+   {
+    "d": "2026-09-22",
+    "rel": 8,
+    "prz_last": 4.72,
+    "index_100": 101.3746,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 71846.0
+   },
+   {
+    "d": "2026-09-23",
+    "rel": 9,
+    "prz_last": 4.72,
+    "index_100": 101.3746,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 132044.0
+   }
+  ]
+ }
+}

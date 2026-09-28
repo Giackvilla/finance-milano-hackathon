@@ -1,0 +1,107 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609040935025809",
+ "article": {
+  "content_id": "202609040935025809",
+  "titolo": "Industrie De Nora, commessa da 30 milioni nel Sud-Est asiatico per il trattamento delle acque dei semiconduttori",
+  "data_pubblicazione": "2026-09-04T07:23:13",
+  "pub_local": "2026-09-04T09:23:13",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/industrie-de-nora-commessa-da-30-milioni-nel-sud-est-asiatico-per-il-trattamento-delle-acque-dei-semiconduttori-202609040935025809"
+ },
+ "instrument": {
+  "des_azione": "Industrie De Nora",
+  "cod_azione": "DNR",
+  "isin": "IT0005186371",
+  "company_slug": "industrie-de-nora"
+ },
+ "news": {
+  "news_type": "deal",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "deal",
+    "keyword": "\\bcommess[ae]\\b"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-09-09",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": -3.89,
+   "z": -3.35,
+   "vol_x": 1.12,
+   "retained_pct": 346.3,
+   "open_share_pct": 5.45
+  },
+  "largest": {
+   "d": "2026-09-09",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": -3.89,
+   "z": -3.35,
+   "vol_x": 1.12,
+   "retained_pct": 346.3,
+   "open_share_pct": 5.45
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-09",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -3.89,
+    "z": -3.35
+   },
+   {
+    "d": "2026-09-10",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -3.3,
+    "z": -2.84
+   }
+  ],
+  "at_open": {
+   "open_share_pct": 69.75,
+   "gap_pct": 1.2
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-09-04T09:23:13",
+  "text_en": "The stock moved 3 sessions after the article (9 Sep 2026, -3.9%, 3.4 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (346% of the move is in the price).",
+  "text_it": "L'azione si è mossa 3 sedute dopo l'articolo (9 settembre 2026, -3.9%, 3.4 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 346% del movimento è nel prezzo)."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-09-09",
+  "move_pct": -3.89,
+  "z": -3.35,
+  "unusual": true,
+  "volume_x": 1.12,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.162,
+  "px_before_move": 6.945,
+  "px_after_move": 6.675,
+  "last_session": "2026-09-23",
+  "last_px": 6.01,
+  "retained_pct": 346,
+  "facts_text": {
+   "en": [
+    "The stock moved 3 sessions after the article (9 Sep 2026, -3.9%, 3.4 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (346% of the move is in the price)."
+   ],
+   "it": [
+    "L'azione si è mossa 3 sedute dopo l'articolo (9 settembre 2026, -3.9%, 3.4 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 346% del movimento è nel prezzo)."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

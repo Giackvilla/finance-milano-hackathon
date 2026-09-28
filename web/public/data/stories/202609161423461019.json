@@ -1,0 +1,104 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609161423461019",
+ "article": {
+  "content_id": "202609161423461019",
+  "titolo": "Stati Uniti ed Europa colpiti dalla stessa tempesta: perché la risposta è diversa. L’analisi di Lfg Zest",
+  "data_pubblicazione": "2026-09-16T11:31:08",
+  "pub_local": "2026-09-16T13:31:08",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/stati-uniti-ed-europa-colpiti-dalla-stessa-tempesta-perché-la-risposta-è-diversa-lanalisi-di-zest-202609161423461019"
+ },
+ "instrument": {
+  "des_azione": "ZEST",
+  "cod_azione": "FDP",
+  "isin": "IT0005013013",
+  "company_slug": "zest"
+ },
+ "news": {
+  "news_type": "capital",
+  "scheduled": false,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "capital",
+    "keyword": "\\bbond\\b"
+   },
+   {
+    "type": "legal_regulatory",
+    "keyword": "\\bcausa\\b(?!\\s+di\\s+borsa)"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-09-22",
+   "timing": "later",
+   "timing_words_en": "4 sessions after the article",
+   "timing_words_it": "4 sedute dopo l'articolo",
+   "move_pct": 5.79,
+   "z": 2.92,
+   "vol_x": 9.68,
+   "retained_pct": 60.0,
+   "open_share_pct": 106.47
+  },
+  "largest": {
+   "d": "2026-09-22",
+   "timing": "later",
+   "timing_words_en": "4 sessions after the article",
+   "timing_words_it": "4 sedute dopo l'articolo",
+   "move_pct": 5.79,
+   "z": 2.92,
+   "vol_x": 9.68,
+   "retained_pct": 60.0,
+   "open_share_pct": 106.47
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-22",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 5.79,
+    "z": 2.92
+   }
+  ],
+  "at_open": {
+   "open_share_pct": -302.39,
+   "gap_pct": -1.19
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-09-16T13:31:08",
+  "text_en": "The stock moved 4 sessions after the article (22 Sep 2026, +5.8%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, 60% of that move is still in the price.",
+  "text_it": "L'azione si è mossa 4 sedute dopo l'articolo (22 settembre 2026, +5.8%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 60% di quel movimento è ancora nel prezzo."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-09-22",
+  "move_pct": 5.79,
+  "z": 2.92,
+  "unusual": true,
+  "volume_x": 9.68,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.981,
+  "px_before_move": 0.1295,
+  "px_after_move": 0.137,
+  "last_session": "2026-09-23",
+  "last_px": 0.134,
+  "retained_pct": 60,
+  "facts_text": {
+   "en": [
+    "The stock moved 4 sessions after the article (22 Sep 2026, +5.8%, 2.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, 60% of that move is still in the price."
+   ],
+   "it": [
+    "L'azione si è mossa 4 sedute dopo l'articolo (22 settembre 2026, +5.8%, 2.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 60% di quel movimento è ancora nel prezzo."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}

@@ -1,0 +1,1025 @@
+{
+ "schema_version": "1.0",
+ "from_date": "2021-02-01",
+ "to_date": "2026-09-15",
+ "headline_numbers": {
+  "en": [
+   "The session before an MF story is unusual 7.3% of the time, against 6.2% for any session.",
+   "The first session trading on the story is unusual 17.9% of the time, 2.4 times chance.",
+   "When MF publishes after the close, the same day had already moved unusually in 18.4% of cases (2.5 times chance).",
+   "When MF publishes before the open, the same trading day is unusual 15.9% of the time (2.1 times chance)."
+  ],
+  "it": [
+   "La seduta prima di un articolo MF è anomala nel 7.3% dei casi, contro il 6.2% di una seduta qualsiasi.",
+   "La prima seduta che tratta sulla notizia è anomala nel 17.9% dei casi, 2.4 volte il caso.",
+   "Quando MF pubblica dopo la chiusura, lo stesso giorno si era già mosso in modo anomalo nel 18.4% dei casi (2.5 volte il caso).",
+   "Quando MF pubblica prima dell'apertura, la stessa seduta è anomala nel 15.9% dei casi (2.1 volte il caso)."
+  ]
+ },
+ "chance_pct": {
+  "any_session": 6.21,
+  "after_unusual_rule_b": 7.5
+ },
+ "base_rate": {
+  "n_sessions_a": 1050859,
+  "n_unusual_a": 65240,
+  "share_a": 0.06208254389980007,
+  "n_sessions_b": 1049361,
+  "n_unusual_b": 78674,
+  "share_b": 0.07497324562281237
+ },
+ "first_articles": {
+  "n_articles": 4746,
+  "n_unusual": 2163,
+  "status": [
+   {
+    "status": "NO_REACTION",
+    "n": 2583,
+    "share": 0.5442
+   },
+   {
+    "status": "ALREADY_IN_PRICE",
+    "n": 365,
+    "share": 0.0769
+   },
+   {
+    "status": "PARTLY_IN_PRICE",
+    "n": 150,
+    "share": 0.0316
+   },
+   {
+    "status": "MOSTLY_AT_OPEN",
+    "n": 116,
+    "share": 0.0244
+   },
+   {
+    "status": "REACTED",
+    "n": 473,
+    "share": 0.0997
+   },
+   {
+    "status": "DELAYED",
+    "n": 1059,
+    "share": 0.2231
+   }
+  ],
+  "by_news_type": [
+   {
+    "news_type": "other",
+    "n": 1835,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 1105,
+      "share": 0.6022
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 106,
+      "share": 0.0578
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 44,
+      "share": 0.024
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 27,
+      "share": 0.0147
+     },
+     {
+      "status": "REACTED",
+      "n": 121,
+      "share": 0.0659
+     },
+     {
+      "status": "DELAYED",
+      "n": 432,
+      "share": 0.2354
+     }
+    ]
+   },
+   {
+    "news_type": "earnings",
+    "n": 914,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 398,
+      "share": 0.4354
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 68,
+      "share": 0.0744
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 35,
+      "share": 0.0383
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 29,
+      "share": 0.0317
+     },
+     {
+      "status": "REACTED",
+      "n": 148,
+      "share": 0.1619
+     },
+     {
+      "status": "DELAYED",
+      "n": 236,
+      "share": 0.2582
+     }
+    ]
+   },
+   {
+    "news_type": "deal",
+    "n": 720,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 427,
+      "share": 0.5931
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 40,
+      "share": 0.0556
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 22,
+      "share": 0.0306
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 19,
+      "share": 0.0264
+     },
+     {
+      "status": "REACTED",
+      "n": 54,
+      "share": 0.075
+     },
+     {
+      "status": "DELAYED",
+      "n": 158,
+      "share": 0.2194
+     }
+    ]
+   },
+   {
+    "news_type": "market_report",
+    "n": 386,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 189,
+      "share": 0.4896
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 76,
+      "share": 0.1969
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 18,
+      "share": 0.0466
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 9,
+      "share": 0.0233
+     },
+     {
+      "status": "REACTED",
+      "n": 39,
+      "share": 0.101
+     },
+     {
+      "status": "DELAYED",
+      "n": 55,
+      "share": 0.1425
+     }
+    ]
+   },
+   {
+    "news_type": "capital",
+    "n": 303,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 152,
+      "share": 0.5017
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 22,
+      "share": 0.0726
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 13,
+      "share": 0.0429
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 6,
+      "share": 0.0198
+     },
+     {
+      "status": "REACTED",
+      "n": 40,
+      "share": 0.132
+     },
+     {
+      "status": "DELAYED",
+      "n": 70,
+      "share": 0.231
+     }
+    ]
+   },
+   {
+    "news_type": "analyst",
+    "n": 262,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 131,
+      "share": 0.5
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 25,
+      "share": 0.0954
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 6,
+      "share": 0.0229
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 12,
+      "share": 0.0458
+     },
+     {
+      "status": "REACTED",
+      "n": 43,
+      "share": 0.1641
+     },
+     {
+      "status": "DELAYED",
+      "n": 45,
+      "share": 0.1718
+     }
+    ]
+   },
+   {
+    "news_type": "governance",
+    "n": 127,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 83,
+      "share": 0.6535
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 11,
+      "share": 0.0866
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 5,
+      "share": 0.0394
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 1,
+      "share": 0.0079
+     },
+     {
+      "status": "REACTED",
+      "n": 6,
+      "share": 0.0472
+     },
+     {
+      "status": "DELAYED",
+      "n": 21,
+      "share": 0.1654
+     }
+    ]
+   },
+   {
+    "news_type": "takeover",
+    "n": 118,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 55,
+      "share": 0.4661
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 8,
+      "share": 0.0678
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 4,
+      "share": 0.0339
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 13,
+      "share": 0.1102
+     },
+     {
+      "status": "REACTED",
+      "n": 17,
+      "share": 0.1441
+     },
+     {
+      "status": "DELAYED",
+      "n": 21,
+      "share": 0.178
+     }
+    ]
+   },
+   {
+    "news_type": "legal_regulatory",
+    "n": 55,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 32,
+      "share": 0.5818
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 3,
+      "share": 0.0545
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 1,
+      "share": 0.0182
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 0,
+      "share": 0.0
+     },
+     {
+      "status": "REACTED",
+      "n": 2,
+      "share": 0.0364
+     },
+     {
+      "status": "DELAYED",
+      "n": 17,
+      "share": 0.3091
+     }
+    ]
+   },
+   {
+    "news_type": "plan",
+    "n": 26,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 11,
+      "share": 0.4231
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 6,
+      "share": 0.2308
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 2,
+      "share": 0.0769
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 0,
+      "share": 0.0
+     },
+     {
+      "status": "REACTED",
+      "n": 3,
+      "share": 0.1154
+     },
+     {
+      "status": "DELAYED",
+      "n": 4,
+      "share": 0.1538
+     }
+    ]
+   }
+  ],
+  "per_session": [
+   {
+    "slot": "day_before",
+    "n": 4746,
+    "n_unusual": 349,
+    "share": 0.0735,
+    "chance_rule": "a",
+    "chance": 0.0621,
+    "ratio": 1.18
+   },
+   {
+    "slot": "reaction",
+    "n": 4741,
+    "n_unusual": 851,
+    "share": 0.1795,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 2.39
+   },
+   {
+    "slot": "same_day_pre_open",
+    "n": 446,
+    "n_unusual": 71,
+    "share": 0.1592,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 2.12
+   },
+   {
+    "slot": "same_day_in_session",
+    "n": 3196,
+    "n_unusual": 599,
+    "share": 0.1874,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 2.5
+   },
+   {
+    "slot": "same_day_after_close",
+    "n": 1014,
+    "n_unusual": 187,
+    "share": 0.1844,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 2.46
+   },
+   {
+    "slot": "later_1",
+    "n": 4741,
+    "n_unusual": 603,
+    "share": 0.1272,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.7
+   },
+   {
+    "slot": "later_2",
+    "n": 4741,
+    "n_unusual": 446,
+    "share": 0.0941,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.25
+   },
+   {
+    "slot": "later_3",
+    "n": 4741,
+    "n_unusual": 403,
+    "share": 0.085,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.13
+   },
+   {
+    "slot": "later_4",
+    "n": 4741,
+    "n_unusual": 371,
+    "share": 0.0783,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.04
+   },
+   {
+    "slot": "later_5",
+    "n": 4741,
+    "n_unusual": 371,
+    "share": 0.0783,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.04
+   }
+  ],
+  "share_anything_before": 0.292,
+  "share_already_or_mostly_at_open": 0.222,
+  "share_day_before_peak": 0.106
+ },
+ "all_matched": {
+  "n_articles": 12867,
+  "n_unusual": 5461,
+  "status": [
+   {
+    "status": "NO_REACTION",
+    "n": 7406,
+    "share": 0.5756
+   },
+   {
+    "status": "ALREADY_IN_PRICE",
+    "n": 952,
+    "share": 0.074
+   },
+   {
+    "status": "PARTLY_IN_PRICE",
+    "n": 365,
+    "share": 0.0284
+   },
+   {
+    "status": "MOSTLY_AT_OPEN",
+    "n": 240,
+    "share": 0.0187
+   },
+   {
+    "status": "REACTED",
+    "n": 974,
+    "share": 0.0757
+   },
+   {
+    "status": "DELAYED",
+    "n": 2930,
+    "share": 0.2277
+   }
+  ],
+  "by_news_type": [
+   {
+    "news_type": "other",
+    "n": 5683,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 3452,
+      "share": 0.6074
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 357,
+      "share": 0.0628
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 131,
+      "share": 0.0231
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 63,
+      "share": 0.0111
+     },
+     {
+      "status": "REACTED",
+      "n": 328,
+      "share": 0.0577
+     },
+     {
+      "status": "DELAYED",
+      "n": 1352,
+      "share": 0.2379
+     }
+    ]
+   },
+   {
+    "news_type": "earnings",
+    "n": 1621,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 784,
+      "share": 0.4837
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 110,
+      "share": 0.0679
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 55,
+      "share": 0.0339
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 48,
+      "share": 0.0296
+     },
+     {
+      "status": "REACTED",
+      "n": 233,
+      "share": 0.1437
+     },
+     {
+      "status": "DELAYED",
+      "n": 391,
+      "share": 0.2412
+     }
+    ]
+   },
+   {
+    "news_type": "market_report",
+    "n": 1565,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 894,
+      "share": 0.5712
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 183,
+      "share": 0.1169
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 54,
+      "share": 0.0345
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 22,
+      "share": 0.0141
+     },
+     {
+      "status": "REACTED",
+      "n": 97,
+      "share": 0.062
+     },
+     {
+      "status": "DELAYED",
+      "n": 315,
+      "share": 0.2013
+     }
+    ]
+   },
+   {
+    "news_type": "deal",
+    "n": 1491,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 904,
+      "share": 0.6063
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 92,
+      "share": 0.0617
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 32,
+      "share": 0.0215
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 29,
+      "share": 0.0195
+     },
+     {
+      "status": "REACTED",
+      "n": 99,
+      "share": 0.0664
+     },
+     {
+      "status": "DELAYED",
+      "n": 335,
+      "share": 0.2247
+     }
+    ]
+   },
+   {
+    "news_type": "capital",
+    "n": 807,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 455,
+      "share": 0.5638
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 53,
+      "share": 0.0657
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 33,
+      "share": 0.0409
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 18,
+      "share": 0.0223
+     },
+     {
+      "status": "REACTED",
+      "n": 72,
+      "share": 0.0892
+     },
+     {
+      "status": "DELAYED",
+      "n": 176,
+      "share": 0.2181
+     }
+    ]
+   },
+   {
+    "news_type": "analyst",
+    "n": 611,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 314,
+      "share": 0.5139
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 57,
+      "share": 0.0933
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 16,
+      "share": 0.0262
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 32,
+      "share": 0.0524
+     },
+     {
+      "status": "REACTED",
+      "n": 73,
+      "share": 0.1195
+     },
+     {
+      "status": "DELAYED",
+      "n": 119,
+      "share": 0.1948
+     }
+    ]
+   },
+   {
+    "news_type": "governance",
+    "n": 459,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 271,
+      "share": 0.5904
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 39,
+      "share": 0.085
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 19,
+      "share": 0.0414
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 5,
+      "share": 0.0109
+     },
+     {
+      "status": "REACTED",
+      "n": 17,
+      "share": 0.037
+     },
+     {
+      "status": "DELAYED",
+      "n": 108,
+      "share": 0.2353
+     }
+    ]
+   },
+   {
+    "news_type": "takeover",
+    "n": 373,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 185,
+      "share": 0.496
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 35,
+      "share": 0.0938
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 15,
+      "share": 0.0402
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 19,
+      "share": 0.0509
+     },
+     {
+      "status": "REACTED",
+      "n": 38,
+      "share": 0.1019
+     },
+     {
+      "status": "DELAYED",
+      "n": 81,
+      "share": 0.2172
+     }
+    ]
+   },
+   {
+    "news_type": "legal_regulatory",
+    "n": 184,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 117,
+      "share": 0.6359
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 16,
+      "share": 0.087
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 6,
+      "share": 0.0326
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 1,
+      "share": 0.0054
+     },
+     {
+      "status": "REACTED",
+      "n": 6,
+      "share": 0.0326
+     },
+     {
+      "status": "DELAYED",
+      "n": 38,
+      "share": 0.2065
+     }
+    ]
+   },
+   {
+    "news_type": "plan",
+    "n": 73,
+    "status": [
+     {
+      "status": "NO_REACTION",
+      "n": 30,
+      "share": 0.411
+     },
+     {
+      "status": "ALREADY_IN_PRICE",
+      "n": 10,
+      "share": 0.137
+     },
+     {
+      "status": "PARTLY_IN_PRICE",
+      "n": 4,
+      "share": 0.0548
+     },
+     {
+      "status": "MOSTLY_AT_OPEN",
+      "n": 3,
+      "share": 0.0411
+     },
+     {
+      "status": "REACTED",
+      "n": 11,
+      "share": 0.1507
+     },
+     {
+      "status": "DELAYED",
+      "n": 15,
+      "share": 0.2055
+     }
+    ]
+   }
+  ],
+  "per_session": [
+   {
+    "slot": "day_before",
+    "n": 12867,
+    "n_unusual": 980,
+    "share": 0.0762,
+    "chance_rule": "a",
+    "chance": 0.0621,
+    "ratio": 1.23
+   },
+   {
+    "slot": "reaction",
+    "n": 12862,
+    "n_unusual": 1790,
+    "share": 0.1392,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.86
+   },
+   {
+    "slot": "same_day_pre_open",
+    "n": 1302,
+    "n_unusual": 167,
+    "share": 0.1283,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.71
+   },
+   {
+    "slot": "same_day_in_session",
+    "n": 8743,
+    "n_unusual": 1269,
+    "share": 0.1451,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.94
+   },
+   {
+    "slot": "same_day_after_close",
+    "n": 2557,
+    "n_unusual": 385,
+    "share": 0.1506,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 2.01
+   },
+   {
+    "slot": "later_1",
+    "n": 12862,
+    "n_unusual": 1332,
+    "share": 0.1036,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.38
+   },
+   {
+    "slot": "later_2",
+    "n": 12862,
+    "n_unusual": 1098,
+    "share": 0.0854,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.14
+   },
+   {
+    "slot": "later_3",
+    "n": 12862,
+    "n_unusual": 1025,
+    "share": 0.0797,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.06
+   },
+   {
+    "slot": "later_4",
+    "n": 12862,
+    "n_unusual": 1026,
+    "share": 0.0798,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.06
+   },
+   {
+    "slot": "later_5",
+    "n": 12862,
+    "n_unusual": 1001,
+    "share": 0.0778,
+    "chance_rule": "b",
+    "chance": 0.075,
+    "ratio": 1.04
+   }
+  ],
+  "share_anything_before": 0.285,
+  "share_already_or_mostly_at_open": 0.218,
+  "share_day_before_peak": 0.122
+ },
+ "count": {
+  "matched_stories": 12867,
+  "with_unusual_day": 5472,
+  "unusual_day_before": 663,
+  "unusual_same_day": 1395,
+  "unusual_later": 3414,
+  "share_day_before": 0.121
+ }
+}

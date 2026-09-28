@@ -84,6 +84,24 @@ The controlled labels are the existing card labels: `takeover`, `earnings`,
 offerings are `capital`; commercial offers and contracts are `deal`. The output
 keeps the card's `article`, `instrument`, `news`, and `gemini` blocks.
 
+## For the dashboard
+
+Read only `web/public/data/`. It is committed, so the dashboard never needs gcloud or a Gemini key. The shape of every file is in [data/SCHEMA.md](data/SCHEMA.md).
+
+- `manifest.json` has counts, dates and the file path templates.
+- `stories.json` is the list view. `stories/<content_id>.json` is one story with the card, the Gemini sentence in both languages, and the chart series.
+- `summary.json` holds the headline numbers and the status breakdowns by news type.
+- `status_meta.json` has labels, explanations and colours for the six statuses.
+- `companies.json` and `companies/<slug>.json` hold every MF story on a company since 2021, with its verdict, plus daily prices for the company page.
+
+```bash
+make export   # offline: rebuild the bundle from data/ and run the contract test
+make all      # BigQuery + Gemini: events, tape/stats, prices, cards, Gemini cards, series, export
+make test     # all unit tests
+```
+
+`make export` needs `data/tape_all.csv` (from `make stats`) and optionally `data/company_prices.csv` (from `make prices`) to rebuild the company files. Both are gitignored. Without them, the existing `companies/` is kept as it is.
+
 ## Workflow
 
 Everyone works on `main`, stays inside their own folder, makes small commits and pulls often.

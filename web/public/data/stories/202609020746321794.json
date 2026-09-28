@@ -1,0 +1,621 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609020746321794",
+ "article": {
+  "content_id": "202609020746321794",
+  "titolo": "Gaming, Lottomatica (-11,2%) rileva Cirsa: nasce il secondo operatore globale quotato. Perché il titolo crolla",
+  "data_pubblicazione": "2026-09-02T05:29:54",
+  "pub_local": "2026-09-02T07:29:54",
+  "testata": "MF",
+  "quote": "Il titolo del gruppo italiano, intanto, perde l’11,2% in apertura di mercoledì 2 settembre, a 21,98 euro.",
+  "url": "https://www.milanofinanza.it/news/gaming-lottomatica-rileva-cirsa-nasce-il-secondo-maggiore-operatore-globale-quotato-operazione-da-oltre-2-miliardi-202609020746321794"
+ },
+ "instrument": {
+  "des_azione": "Lottomatica",
+  "cod_azione": "LTMC",
+  "isin": "IT0005541336",
+  "company_slug": "lottomatica"
+ },
+ "news": {
+  "news_type": "deal",
+  "scheduled": false,
+  "headline_reports_move": true,
+  "matched": [
+   {
+    "type": "deal",
+    "keyword": "\\brileva\\b"
+   },
+   {
+    "type": "market_report",
+    "keyword": "il titolo (?:crolla|balza|vola|corre|affonda|scivola|cade|tracolla|sprofonda|rimbalza)"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-09-07",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": 7.7,
+   "z": 5.89,
+   "vol_x": 5.03,
+   "retained_pct": 169.52,
+   "open_share_pct": 2.22
+  },
+  "largest": {
+   "d": "2026-09-07",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": 7.7,
+   "z": 5.89,
+   "vol_x": 5.03,
+   "retained_pct": 169.52,
+   "open_share_pct": 2.22
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-02",
+    "timing": "same_day",
+    "closed_before_publication": false,
+    "move_pct": -7.63,
+    "z": -5.83
+   },
+   {
+    "d": "2026-09-03",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 5.77,
+    "z": 4.41
+   },
+   {
+    "d": "2026-09-07",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": 7.7,
+    "z": 5.89
+   }
+  ],
+  "at_open": null,
+  "publication_phase": "pre_open",
+  "pub_local": "2026-09-02T07:29:54",
+  "text_en": "The stock moved 3 sessions after the article (7 Sep 2026, +7.7%, 5.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (170% of the move is in the price). The headline reports the price move itself.",
+  "text_it": "L'azione si è mossa 3 sedute dopo l'articolo (7 settembre 2026, +7.7%, 5.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 170% del movimento è nel prezzo). Il titolo dell'articolo racconta il movimento dell'azione stesso."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-09-07",
+  "move_pct": 7.7,
+  "z": 5.89,
+  "unusual": true,
+  "volume_x": 5.03,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.308,
+  "px_before_move": 24.27,
+  "px_after_move": 26.14,
+  "last_session": "2026-09-23",
+  "last_px": 27.44,
+  "retained_pct": 170,
+  "facts_text": {
+   "en": [
+    "The stock moved 3 sessions after the article (7 Sep 2026, +7.7%, 5.9 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, the stock has moved further in the same direction since (170% of the move is in the price). The headline reports the price move itself."
+   ],
+   "it": [
+    "L'azione si è mossa 3 sedute dopo l'articolo (7 settembre 2026, +7.7%, 5.9 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, l'azione ha continuato nella stessa direzione (il 170% del movimento è nel prezzo). Il titolo dell'articolo racconta il movimento dell'azione stesso."
+   ]
+  }
+ },
+ "gemini": {
+  "en": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Lottomatica",
+   "title_adjective": "crolla",
+   "figure_in_body": "l’11,2%",
+   "adjective_matches": true,
+   "sentence": "The title adjective \"crolla\" accurately describes the 11.2% drop reported in the body of MF, 2026-09-02, which occurred at the open on the day of publication; however, the stock's significant price reaction was a delayed positive move of 7.7% three sessions after the article, on 7 Sep 2026, which was 5.9 times the normal daily swing.",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  },
+  "it": {
+   "model": "gemini-2.5-flash",
+   "instrument_name": "Lottomatica",
+   "title_adjective": "crolla",
+   "figure_in_body": "l’11,2%",
+   "adjective_matches": true,
+   "sentence": "L'aggettivo 'crolla' nel titolo di MF, 2026-09-02, descrive in modo appropriato la perdita dell'11,2% del titolo Lottomatica in apertura il 2 settembre 2026; i fatti di prezzo indicano che il titolo dell'articolo racconta il movimento dell'azione stesso, avvenuto per lo più all'apertura, e che l'azione ha poi registrato un movimento positivo del +7.7% il 7 settembre 2026, 3 sedute dopo l'articolo, continuando nella stessa direzione al 23 settembre 2026 (il 170% del movimento è nel prezzo).",
+   "checks": {
+    "quote_is_verbatim": true,
+    "figure_is_in_body": true,
+    "adjective_is_in_title": true,
+    "numbers_not_in_sources": [],
+    "no_recommendation": true,
+    "recommendation_words_flagged": []
+   }
+  }
+ },
+ "series": {
+  "baseline": {
+   "from": "2026-08-05",
+   "to": "2026-09-01",
+   "sd_pct": 1.308
+  },
+  "markers": {
+   "publication": "2026-09-02T07:29:54",
+   "session_before": "2026-09-01",
+   "peak": "2026-09-07",
+   "last_session": "2026-09-23"
+  },
+  "sessions": [
+   {
+    "d": "2026-07-28",
+    "rel": -26,
+    "prz_last": 24.76,
+    "index_100": 99.9596,
+    "move_pct": -1.43,
+    "z": -1.1,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1149090.0
+   },
+   {
+    "d": "2026-07-29",
+    "rel": -25,
+    "prz_last": 23.77,
+    "index_100": 95.9629,
+    "move_pct": -4.0,
+    "z": -3.06,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 3216164.0
+   },
+   {
+    "d": "2026-07-30",
+    "rel": -24,
+    "prz_last": 23.68,
+    "index_100": 95.5995,
+    "move_pct": -0.38,
+    "z": -0.29,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 811093.0
+   },
+   {
+    "d": "2026-07-31",
+    "rel": -23,
+    "prz_last": 23.48,
+    "index_100": 94.7921,
+    "move_pct": -0.84,
+    "z": -0.65,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 590152.0
+   },
+   {
+    "d": "2026-08-03",
+    "rel": -22,
+    "prz_last": 24.02,
+    "index_100": 96.9721,
+    "move_pct": 2.3,
+    "z": 1.76,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 759067.0
+   },
+   {
+    "d": "2026-08-04",
+    "rel": -21,
+    "prz_last": 24.02,
+    "index_100": 96.9721,
+    "move_pct": 0.0,
+    "z": 0.0,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 676003.0
+   },
+   {
+    "d": "2026-08-05",
+    "rel": -20,
+    "prz_last": 24.27,
+    "index_100": 97.9814,
+    "move_pct": 1.04,
+    "z": 0.8,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 803946.0
+   },
+   {
+    "d": "2026-08-06",
+    "rel": -19,
+    "prz_last": 24.01,
+    "index_100": 96.9318,
+    "move_pct": -1.07,
+    "z": -0.82,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 797311.0
+   },
+   {
+    "d": "2026-08-07",
+    "rel": -18,
+    "prz_last": 24.16,
+    "index_100": 97.5373,
+    "move_pct": 0.62,
+    "z": 0.48,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 536802.0
+   },
+   {
+    "d": "2026-08-10",
+    "rel": -17,
+    "prz_last": 24.08,
+    "index_100": 97.2144,
+    "move_pct": -0.33,
+    "z": -0.25,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 343903.0
+   },
+   {
+    "d": "2026-08-11",
+    "rel": -16,
+    "prz_last": 24.42,
+    "index_100": 98.587,
+    "move_pct": 1.41,
+    "z": 1.08,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 558115.0
+   },
+   {
+    "d": "2026-08-12",
+    "rel": -15,
+    "prz_last": 24.25,
+    "index_100": 97.9007,
+    "move_pct": -0.7,
+    "z": -0.53,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 455398.0
+   },
+   {
+    "d": "2026-08-13",
+    "rel": -14,
+    "prz_last": 24.37,
+    "index_100": 98.3851,
+    "move_pct": 0.49,
+    "z": 0.38,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 313891.0
+   },
+   {
+    "d": "2026-08-14",
+    "rel": -13,
+    "prz_last": 24.5,
+    "index_100": 98.91,
+    "move_pct": 0.53,
+    "z": 0.41,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 543327.0
+   },
+   {
+    "d": "2026-08-17",
+    "rel": -12,
+    "prz_last": 24.18,
+    "index_100": 97.6181,
+    "move_pct": -1.31,
+    "z": -1.0,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 469941.0
+   },
+   {
+    "d": "2026-08-18",
+    "rel": -11,
+    "prz_last": 23.78,
+    "index_100": 96.0032,
+    "move_pct": -1.65,
+    "z": -1.26,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 329945.0
+   },
+   {
+    "d": "2026-08-19",
+    "rel": -10,
+    "prz_last": 23.85,
+    "index_100": 96.2858,
+    "move_pct": 0.29,
+    "z": 0.23,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 599930.0
+   },
+   {
+    "d": "2026-08-20",
+    "rel": -9,
+    "prz_last": 24.19,
+    "index_100": 97.6585,
+    "move_pct": 1.43,
+    "z": 1.09,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 479518.0
+   },
+   {
+    "d": "2026-08-21",
+    "rel": -8,
+    "prz_last": 24.44,
+    "index_100": 98.6677,
+    "move_pct": 1.03,
+    "z": 0.79,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 406261.0
+   },
+   {
+    "d": "2026-08-24",
+    "rel": -7,
+    "prz_last": 24.75,
+    "index_100": 99.9193,
+    "move_pct": 1.27,
+    "z": 0.97,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 371440.0
+   },
+   {
+    "d": "2026-08-25",
+    "rel": -6,
+    "prz_last": 25.22,
+    "index_100": 101.8167,
+    "move_pct": 1.9,
+    "z": 1.45,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 580601.0
+   },
+   {
+    "d": "2026-08-26",
+    "rel": -5,
+    "prz_last": 24.88,
+    "index_100": 100.4441,
+    "move_pct": -1.35,
+    "z": -1.03,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 715798.0
+   },
+   {
+    "d": "2026-08-27",
+    "rel": -4,
+    "prz_last": 25.01,
+    "index_100": 100.9689,
+    "move_pct": 0.52,
+    "z": 0.4,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 464542.0
+   },
+   {
+    "d": "2026-08-28",
+    "rel": -3,
+    "prz_last": 25.59,
+    "index_100": 103.3105,
+    "move_pct": 2.32,
+    "z": 1.77,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 611980.0
+   },
+   {
+    "d": "2026-08-31",
+    "rel": -2,
+    "prz_last": 25.42,
+    "index_100": 102.6241,
+    "move_pct": -0.66,
+    "z": -0.51,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 607514.0
+   },
+   {
+    "d": "2026-09-01",
+    "rel": -1,
+    "prz_last": 24.77,
+    "index_100": 100.0,
+    "move_pct": -2.56,
+    "z": -1.95,
+    "unusual": false,
+    "in_baseline": true,
+    "volume": 621558.0
+   },
+   {
+    "d": "2026-09-02",
+    "rel": 0,
+    "prz_last": 22.88,
+    "index_100": 92.3698,
+    "move_pct": -7.63,
+    "z": -5.83,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 6620160.0
+   },
+   {
+    "d": "2026-09-03",
+    "rel": 1,
+    "prz_last": 24.2,
+    "index_100": 97.6988,
+    "move_pct": 5.77,
+    "z": 4.41,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 4227717.0
+   },
+   {
+    "d": "2026-09-04",
+    "rel": 2,
+    "prz_last": 24.27,
+    "index_100": 97.9814,
+    "move_pct": 0.29,
+    "z": 0.22,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1526428.0
+   },
+   {
+    "d": "2026-09-07",
+    "rel": 3,
+    "prz_last": 26.14,
+    "index_100": 105.5309,
+    "move_pct": 7.7,
+    "z": 5.89,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 2666871.0
+   },
+   {
+    "d": "2026-09-08",
+    "rel": 4,
+    "prz_last": 26.13,
+    "index_100": 105.4905,
+    "move_pct": -0.04,
+    "z": -0.03,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1764284.0
+   },
+   {
+    "d": "2026-09-09",
+    "rel": 5,
+    "prz_last": 26.08,
+    "index_100": 105.2887,
+    "move_pct": -0.19,
+    "z": -0.15,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1281916.0
+   },
+   {
+    "d": "2026-09-10",
+    "rel": 6,
+    "prz_last": 27.5,
+    "index_100": 111.0214,
+    "move_pct": 5.44,
+    "z": 4.16,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 2547402.0
+   },
+   {
+    "d": "2026-09-11",
+    "rel": 7,
+    "prz_last": 27.33,
+    "index_100": 110.3351,
+    "move_pct": -0.62,
+    "z": -0.47,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1432651.0
+   },
+   {
+    "d": "2026-09-14",
+    "rel": 8,
+    "prz_last": 27.2,
+    "index_100": 109.8103,
+    "move_pct": -0.48,
+    "z": -0.36,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 875424.0
+   },
+   {
+    "d": "2026-09-15",
+    "rel": 9,
+    "prz_last": 26.85,
+    "index_100": 108.3973,
+    "move_pct": -1.29,
+    "z": -0.98,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 869268.0
+   },
+   {
+    "d": "2026-09-16",
+    "rel": 10,
+    "prz_last": 27.59,
+    "index_100": 111.3847,
+    "move_pct": 2.76,
+    "z": 2.11,
+    "unusual": true,
+    "in_baseline": false,
+    "volume": 974220.0
+   },
+   {
+    "d": "2026-09-17",
+    "rel": 11,
+    "prz_last": 27.58,
+    "index_100": 111.3444,
+    "move_pct": -0.04,
+    "z": -0.03,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 713829.0
+   },
+   {
+    "d": "2026-09-18",
+    "rel": 12,
+    "prz_last": 27.09,
+    "index_100": 109.3662,
+    "move_pct": -1.78,
+    "z": -1.36,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1705118.0
+   },
+   {
+    "d": "2026-09-21",
+    "rel": 13,
+    "prz_last": 27.38,
+    "index_100": 110.5369,
+    "move_pct": 1.07,
+    "z": 0.82,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 730451.0
+   },
+   {
+    "d": "2026-09-22",
+    "rel": 14,
+    "prz_last": 27.83,
+    "index_100": 112.3537,
+    "move_pct": 1.64,
+    "z": 1.26,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1101615.0
+   },
+   {
+    "d": "2026-09-23",
+    "rel": 15,
+    "prz_last": 27.44,
+    "index_100": 110.7792,
+    "move_pct": -1.4,
+    "z": -1.07,
+    "unusual": false,
+    "in_baseline": false,
+    "volume": 1155069.0
+   }
+  ]
+ }
+}

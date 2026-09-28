@@ -1,0 +1,100 @@
+{
+ "schema_version": "1.0",
+ "content_id": "202609161301428772",
+ "article": {
+  "content_id": "202609161301428772",
+  "titolo": "Somec, utile triplicato. Marginalità e backlog record nel primo semestre",
+  "data_pubblicazione": "2026-09-16T10:42:25",
+  "pub_local": "2026-09-16T12:42:25",
+  "testata": "MF",
+  "quote": null,
+  "url": "https://www.milanofinanza.it/news/somec-utile-triplicato-marginalità-e-backlog-record-nel-primo-semestre-202609161301428772"
+ },
+ "instrument": {
+  "des_azione": "Somec",
+  "cod_azione": "SOM",
+  "isin": "IT0005329815",
+  "company_slug": "somec"
+ },
+ "news": {
+  "news_type": "earnings",
+  "scheduled": true,
+  "headline_reports_move": false,
+  "matched": [
+   {
+    "type": "earnings",
+    "keyword": "\\butile\\b(?!\\s+per\\b)"
+   }
+  ]
+ },
+ "verdict": {
+  "status": "DELAYED",
+  "peak": {
+   "d": "2026-09-21",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": -4.5,
+   "z": -2.26,
+   "vol_x": 2.71,
+   "retained_pct": 60.0,
+   "open_share_pct": 9.8
+  },
+  "largest": {
+   "d": "2026-09-21",
+   "timing": "later",
+   "timing_words_en": "3 sessions after the article",
+   "timing_words_it": "3 sedute dopo l'articolo",
+   "move_pct": -4.5,
+   "z": -2.26,
+   "vol_x": 2.71,
+   "retained_pct": 60.0,
+   "open_share_pct": 9.8
+  },
+  "unusual_sessions": [
+   {
+    "d": "2026-09-21",
+    "timing": "later",
+    "closed_before_publication": false,
+    "move_pct": -4.5,
+    "z": -2.26
+   }
+  ],
+  "at_open": {
+   "open_share_pct": 20.19,
+   "gap_pct": 0.48
+  },
+  "publication_phase": "in_session",
+  "pub_local": "2026-09-16T12:42:25",
+  "text_en": "The stock moved 3 sessions after the article (21 Sep 2026, -4.5%, 2.3 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, 60% of that move is still in the price.",
+  "text_it": "L'azione si è mossa 3 sedute dopo l'articolo (21 settembre 2026, -4.5%, 2.3 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 60% di quel movimento è ancora nel prezzo."
+ },
+ "tape": {
+  "timing": "later",
+  "move_date": "2026-09-21",
+  "move_pct": -4.5,
+  "z": -2.26,
+  "unusual": true,
+  "volume_x": 2.71,
+  "baseline_sessions": 20,
+  "baseline_sd_pct": 1.993,
+  "px_before_move": 22.2,
+  "px_after_move": 21.2,
+  "last_session": "2026-09-23",
+  "last_px": 21.6,
+  "retained_pct": 60,
+  "facts_text": {
+   "en": [
+    "The stock moved 3 sessions after the article (21 Sep 2026, -4.5%, 2.3 times the normal daily swing of the 20 sessions before the article); nothing unusual closed before publication. By 23 Sep 2026, 60% of that move is still in the price."
+   ],
+   "it": [
+    "L'azione si è mossa 3 sedute dopo l'articolo (21 settembre 2026, -4.5%, 2.3 volte l'oscillazione normale delle 20 sedute precedenti l'articolo); niente di anomalo aveva chiuso prima della pubblicazione. Al 23 settembre 2026, il 60% di quel movimento è ancora nel prezzo."
+   ]
+  }
+ },
+ "gemini": {
+  "en": null,
+  "it": null
+ },
+ "series": null
+}
