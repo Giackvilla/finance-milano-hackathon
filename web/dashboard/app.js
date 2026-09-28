@@ -802,15 +802,19 @@
       body = `<section class="card empty" style="margin-top:16px"><h3>Nessuna posizione</h3><p>Aggiungi un titolo che possiedi per vedere come è distribuito il portafoglio.</p>
         <button class="btn" type="button" data-act="add-pos">${icon('plus')}Aggiungi posizione</button></section>`;
     } else {
-      const secs = sectors(rows), names = new Set(secs.map(x => x.n));
-      HOME.rows = rows; HOME.tot = tot;
-      HOME.titoli = companies(rows);
-      HOME.settori = secs.map(x => ({ ...x, members: rows.filter(r => { const s0 = D.settori[r.ticker] || 'Altro'; return (names.has(s0) ? s0 : 'Altro') === x.n; }) }));
+      /* Come il totale: nelle torte solo le posizioni con un peso (prezzo dal dataset); le altre sono indicate sotto. */
+      const inPie = rows.filter(r => typeof r.peso === 'number'), fuori = rows.filter(r => typeof r.peso !== 'number');
+      const secs = sectors(inPie), names = new Set(secs.map(x => x.n));
+      HOME.rows = inPie; HOME.tot = tot;
+      HOME.titoli = companies(inPie);
+      HOME.settori = secs.map(x => ({ ...x, members: inPie.filter(r => { const s0 = D.settori[r.ticker] || 'Altro'; return (names.has(s0) ? s0 : 'Altro') === x.n; }) }));
+      HOME.fuori = fuori;
       if (HOME.pin != null && !HOME.settori[HOME.pin]) HOME.pin = null;
       body = `<div class="home-grid">
         <section class="card"><div class="card-h"><h2>Per titolo</h2><span class="muted">Clic: scheda del titolo</span></div>${pieInteractive('titoli')}</section>
         <section class="card"><div class="card-h"><h2>Per settore</h2><span class="muted">Clic: i titoli del settore</span></div>${pieInteractive('settori')}</section>
-      </div>`;
+      </div>
+      ${fuori.length ? `<p class="note" style="margin-top:10px">Fuori dalle torte e dal totale: ${fuori.map(r => `${esc(r.ticker)} (${esc(r.a.nome.replace(/ · prezzo simulato$/, ''))})`).join(', ')}, perché il prezzo è simulato e non presente nel dataset MF.</p>` : ''}`;
     }
     $('#app').innerHTML = `<div class="view">${head}${fg}${body}</div>`;
     if (typeof window.renderFearGreed === 'function') {
@@ -1430,7 +1434,13 @@
     $$('.sym').forEach(b => { if (b.dataset.open === ui.current) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
     renderMain();
     window.scrollTo(0, 0);
-    const title = $('#ptitle'); if (title) title.focus({ preventScroll: true });
+    const target = ui.scrollTo && document.getElementById(ui.scrollTo);
+    ui.scrollTo = null;
+    if (target) {
+      target.scrollIntoView({ block: 'start' }); window.scrollBy(0, -64);
+      target.classList.remove('flash'); void target.offsetWidth; target.classList.add('flash');
+      const h = target.querySelector('h2'); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); }
+    } else { const title = $('#ptitle'); if (title) title.focus({ preventScroll: true }); }
   }
   const openCompany = t => { const h = '#azienda-' + encodeURIComponent(t); if (location.hash === h) route(); else location.hash = h; };
 
@@ -1447,6 +1457,8 @@
   }
 
   document.addEventListener('click', ev => {
+    const go = ev.target.closest('[data-goto]');
+    if (go) { ui.scrollTo = go.dataset.goto; closePreview(); openCompany(go.dataset.t); return; }
     const slice = ev.target.closest('.ipie [data-i]');
     if (slice) {
       const kind = slice.dataset.k, i = +slice.dataset.i, x = HOME[kind][i];
@@ -1607,11 +1619,11 @@
     const tesi = (state.tesi[t] && state.tesi[t].motivo) || T.motivoBreve || T.motivo || 'Nessuna tesi scritta.';
     const eff = se && EFFETTO[se.e.impatto.effetto];
     return `<div class="nt-head"><b>${esc(x.n)} <span>${esc(x.full)}</span></b>${chipStato(stato)}</div>
-      <div class="nt-card"><dl class="nt-rows">
-        <div><dt>Tesi</dt><dd class="nt-clamp">${esc(tesi)}</dd></div>
-        <div><dt>Risultati</dt><dd>${eff ? `<span class="chip ${eff.cls}">${icon(eff.ic)}${eff.label}</span> <span class="muted">· ${esc(se.e.label)}</span>` : '<span class="muted">Non disponibili</span>'}</dd></div>
-        <div><dt>Prezzo</dt><dd>${se && se.pct != null ? `<b class="${dirOf(se.pct)}">${signed(se.pct, 1)}</b> dai risultati` : '<span class="muted">n.d.</span>'}</dd></div>
-      </dl>
+      <div class="nt-card"><div class="nt-rows">
+        <button class="nt-link" type="button" data-goto="tesi-card" data-t="${esc(t)}" aria-label="Apri la tua tesi su ${esc(x.full)}"><span class="nt-k">Tesi</span><span class="nt-v nt-clamp">${esc(tesi)}</span>${icon('chev')}</button>
+        <button class="nt-link" type="button" data-goto="earn" data-t="${esc(t)}" aria-label="Apri gli ultimi risultati di ${esc(x.full)}"><span class="nt-k">Risultati</span><span class="nt-v">${eff ? `<span class="chip ${eff.cls}">${icon(eff.ic)}${eff.label}</span> <span class="muted">· ${esc(se.e.label)}</span>` : '<span class="muted">Non disponibili</span>'}</span>${icon('chev')}</button>
+        <div class="nt-row"><span class="nt-k">Prezzo</span><span class="nt-v">${se && se.pct != null ? `<b class="${dirOf(se.pct)}">${signed(se.pct, 1)}</b> dai risultati` : '<span class="muted">n.d.</span>'}</span></div>
+      </div>
       <p class="nt-read">${priceVsThesis(stato, se && se.pct)}</p></div>`;
   }
   /* Accanto al bordo esterno dello spicchio, verso l'esterno; dentro la finestra; cresce dal lato dello spicchio. */
@@ -1646,15 +1658,25 @@
   }
   function hideNotif() { clearTimeout(notifT); notifKey = null; notif.hidden = true; }
 
+  let hideT;
+  const closePreview = () => { clearTimeout(hideT); hideNotif(); $$('.ipie').forEach(w => setActive(w, null)); };
   const pieHover = (target, preview) => {
+    if (target && target.closest && target.closest('#pie-notif')) { clearTimeout(hideT); return; }
     const hit = target && target.closest && target.closest('.ipie [data-i]');
-    $$('.ipie').forEach(w => setActive(w, hit && w.contains(hit) ? +hit.dataset.i : null));
-    if (hit && preview) showNotif(hit); else hideNotif();
+    if (hit) {
+      clearTimeout(hideT);
+      $$('.ipie').forEach(w => setActive(w, w.contains(hit) ? +hit.dataset.i : null));
+      if (preview) showNotif(hit); else hideNotif();
+      return;
+    }
+    if (!notif.hidden) { clearTimeout(hideT); hideT = setTimeout(closePreview, 260); return; }
+    closePreview();
   };
   document.addEventListener('pointerover', ev => pieHover(ev.target, ev.pointerType !== 'touch'));
   document.addEventListener('focusin', ev => pieHover(ev.target, true));
   document.documentElement.addEventListener('pointerleave', () => pieHover(null));
-  window.addEventListener('scroll', hideNotif, { passive: true });
+  window.addEventListener('scroll', closePreview, { passive: true });
+  notif.addEventListener('pointerleave', () => { clearTimeout(hideT); hideT = setTimeout(closePreview, 260); });
   document.addEventListener('keydown', ev => {
     const sl = ev.target.closest && ev.target.closest('.slice[role="button"]');
     if (sl && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); sl.dispatchEvent(new MouseEvent('click', { bubbles: true })); }

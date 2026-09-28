@@ -193,11 +193,11 @@ svg.fg-gauge .fg-val { fill: var(--ink-3); font: 700 34px var(--font); }
 .seg a[aria-current="page"] { background: var(--seg-on); box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 0 0 .5px rgba(0, 0, 0, .04); font-weight: 600; }
 
 /* anteprima notizie in stile notifiche (materiale traslucido, cresce dallo spicchio) */
-.notif { position: fixed; z-index: 40; width: 290px; max-width: calc(100vw - 16px); padding: 8px; border-radius: 20px; pointer-events: none;
+.notif { position: fixed; z-index: 40; width: 290px; max-width: calc(100vw - 16px); padding: 8px; border-radius: 20px;
   background: color-mix(in srgb, var(--bg) 72%, transparent); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
   box-shadow: 0 16px 40px rgba(0, 0, 0, .18), 0 0 0 .5px var(--sep-strong);
   opacity: 1; transform: scale(1); transition: opacity 160ms var(--ease-out, ease-out), transform 160ms var(--ease-out, ease-out); }
-.notif[hidden] { display: block !important; visibility: hidden; opacity: 0; transform: scale(.96); transition: opacity 110ms ease, transform 110ms ease, visibility 0s linear 110ms; }
+.notif[hidden] { display: block !important; visibility: hidden; pointer-events: none; opacity: 0; transform: scale(.96); transition: opacity 110ms ease, transform 110ms ease, visibility 0s linear 110ms; }
 .notif.instant { transition: none; }
 .nt-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 4px 8px 8px; font-size: 13px; }
 .nt-head b span, .nt-head > span { color: var(--ink-2); font-weight: 400; }
@@ -210,12 +210,20 @@ svg.fg-gauge .fg-val { fill: var(--ink-3); font: 700 34px var(--font); }
 .nt-app { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 5px; background: var(--ink); color: var(--card); font-size: 8px; font-weight: 800; letter-spacing: -.02em; }
 .nt-card p { margin-top: 5px; font-size: 13.5px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .nt-head .chip { font-size: 12.5px; }
-.nt-rows > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 6px 0; }
-.nt-rows > div + div { border-top: 1px solid var(--sep); }
-.nt-rows dt { font-size: 12px; color: var(--ink-2); }
-.nt-rows dd { margin: 0; font-size: 13.5px; }
-.nt-rows dd b { font-weight: 700; font-variant-numeric: tabular-nums; }
-.nt-rows dd .chip { font-size: 13px; }
+.nt-rows > * { display: grid; grid-template-columns: 64px minmax(0, 1fr) 12px; gap: 10px; align-items: baseline; width: 100%; padding: 7px 6px; }
+.nt-rows > * + * { border-top: 1px solid var(--sep); }
+.nt-link { border: 0; background: none; text-align: left; color: inherit; border-radius: 8px; cursor: pointer; transition: background-color 120ms ease; }
+.nt-link + .nt-link, .nt-link + .nt-row { border-top: 1px solid var(--sep); }
+@media (hover: hover) and (pointer: fine) { .nt-link:hover { background: var(--fill-2); } .nt-link:hover .nt-k { color: var(--accent); } }
+.nt-link svg.i { width: 12px; height: 12px; color: var(--ink-3); align-self: center; }
+.nt-link:active { transform: scale(.985); }
+.nt-k { font-size: 12px; color: var(--ink-2); font-weight: 500; }
+.nt-v { font-size: 13.5px; min-width: 0; }
+.nt-v b { font-weight: 700; font-variant-numeric: tabular-nums; }
+.nt-v .chip { font-size: 13px; }
+/* arrivo dalla scheda: la sezione di destinazione si illumina un istante */
+.card.flash { animation: flash 900ms var(--ease-out, ease-out); }
+@keyframes flash { 0% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent); } 100% { box-shadow: var(--shadow); } }
 .nt-rows .nt-clamp { font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .nt-card p.nt-read { margin-top: 6px; font-size: 12.5px; font-weight: 400; font-style: italic; color: var(--ink-2); }
 .nt-foot { padding: 8px 8px 3px; font-size: 12px; color: var(--ink-2); }
@@ -630,6 +638,7 @@ body { letter-spacing: -0.005em; }
   .shell { transition: none; }
   .slice[data-on] { transform: none; }
   .notif, .notif[hidden] { transform: none; }
+  .card.flash { animation: none; }
   .view { animation: view-fade 160ms ease both; }
   @keyframes view-fade { from { opacity: 0; } }
   dialog, dialog:not([open]), .toast { transform: none !important; }
