@@ -753,7 +753,7 @@
       return `<section class="ssec" aria-labelledby="sec-${esc(t)}">
         <div class="ssec-h"><button class="ssec-title" type="button" data-open="${esc(t)}" id="sec-${esc(t)}"><span class="t">${esc(t)}</span><span class="n">${esc(a.nome)}</span></button><span class="tag">${own}</span></div>
         <div class="quote"><span class="p">${nf(a.prezzo, priceDigits(a.prezzo))}</span><span class="c ${dirOf(v)}">${signed(v)}</span> ${pxBadge}<span class="vsep"></span>${chipStato(statoDi(a))}</div>
-        <div class="cards">${items.map(n => newsCard(n, t)).join('')}</div>
+        <div class="cards">${items.slice(0, 4).map(n => newsCard(n, t)).join('')}</div>
         <div class="more"><button type="button" data-open="${esc(t)}">SCHEDA <b>${esc(t)}</b>${icon('chev')}</button></div>
       </section>`;
     }).join('') + (loose.length ? `<section class="ssec"><div class="ssec-h"><span class="ssec-title"><span class="t">Mercati</span><span class="n">senza titoli collegati</span></span></div>
