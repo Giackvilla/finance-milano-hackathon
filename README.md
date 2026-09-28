@@ -54,6 +54,36 @@ Verdict statuses: **NO_REACTION** — no session with |z|≥2 · **ALREADY_IN_PR
 
 `<content_id>` must name exactly one Italian listed company with 20 baseline sessions. Check `gemini.checks`: quote verbatim in body, figure in body, adjective in title, numbers only from article/facts, no recommendation words unless already in the article.
 
+## Body-first Gemini classification CLI
+
+`scripts/classify_gemini.py` calls Gemini through Vertex AI with the access token
+from `gcloud auth print-access-token`. It reads the full article body, returns at
+most three controlled topics, and validates the selected company and ticker
+against ordinary Italian instruments that also have quotes in BigQuery.
+
+```bash
+# Article from class-hackaton-09.news.articles
+python3 scripts/classify_gemini.py --content-id 202609101905313642
+
+# JSON (titolo/title/headline + body/text/content) or plain UTF-8 text
+python3 scripts/classify_gemini.py --file article.json --lang it
+
+# Body on stdin; title is optional but improves company matching
+cat article.txt | python3 scripts/classify_gemini.py \
+  --title "Prysmian colloca nuove azioni" --out /tmp/classification.json
+```
+
+The defaults match the card builder: project `class-hackaton-09`, Vertex location
+`global`, and model `gemini-2.5-flash`. Override them with `--project`,
+`--location`, and `--model` (or `GOOGLE_CLOUD_PROJECT`,
+`GOOGLE_CLOUD_LOCATION`, and `GEMINI_MODEL`).
+
+The controlled labels are the existing card labels: `takeover`, `earnings`,
+`plan`, `capital`, `legal_regulatory`, `analyst`, `deal`, `governance`,
+`market_report`, and `other`. Public/control offers are `takeover`; securities
+offerings are `capital`; commercial offers and contracts are `deal`. The output
+keeps the card's `article`, `instrument`, `news`, and `gemini` blocks.
+
 ## Workflow
 
 Everyone works on `main`, stays inside their own folder, makes small commits and pulls often.
