@@ -33,6 +33,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from classify import PRIORITY as NEWS_TYPES, classify  # noqa: E402
 from verdict import verdict  # noqa: E402
+from story_selection import (  # noqa: E402
+    catalog_from_rows,
+    deduplicate_stories,
+    filter_valid_stories,
+    story_matches_catalog,
+)
 
 SCHEMA_VERSION = "1.0"
 DATA = ROOT / "data"
@@ -216,7 +222,36 @@ def story_row(s: dict) -> dict:
     }
 
 
-def build_stories() -> List[dict]:
+def _csv_rows(path: Path) -> List[dict]:
+    if not path.exists():
+        return []
+    with open(path, newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def load_instrument_catalog(out_dir: Optional[Path] = None) -> List[dict]:
+    """Load the best local instrument catalog available to an offline export."""
+    rows: List[dict] = []
+    for path in (TAPE_CSV, DATA / "events_all.csv", DATA / "candidates_recent.csv"):
+        rows.extend(_csv_rows(path))
+    for name in ("cards", "cards_gemini_en", "cards_gemini_it"):
+        for card in load_dir(name).values():
+            inst = card.get("instrument") or {}
+            rows.append({
+                "COD_AZIONE": inst.get("cod_azione"),
+                "DES_AZIONE": inst.get("des_azione"),
+                "COD_ISIN": inst.get("isin"),
+            })
+    source = (out_dir or OUT_DIR) / "companies.json"
+    if source.exists():
+        try:
+            rows.extend(json.loads(source.read_text()))
+        except (OSError, ValueError):
+            pass
+    return catalog_from_rows(rows)
+
+
+def build_stories(catalog: Optional[List[dict]] = None) -> List[dict]:
     plain, en, it, series = (load_dir(n) for n in ("cards", "cards_gemini_en", "cards_gemini_it", "series"))
     ids = sorted(set(plain) | set(en) | set(it))
     out = []
@@ -224,6 +259,13 @@ def build_stories() -> List[dict]:
         base = en.get(cid) or it.get(cid) or plain[cid]
         name = (base.get("instrument") or {}).get("des_azione") or cid
         out.append(merge_story(cid, plain.get(cid), en.get(cid), it.get(cid), series.get(cid), slugify(name)))
+    catalog = load_instrument_catalog() if catalog is None else catalog
+    if catalog:
+        out = filter_valid_stories(out, catalog)
+    # A duplicate can have the English/Italian/chart artifact that the
+    # earliest card lacks; the shared merge keeps those non-empty fields on
+    # the canonical (earliest) content id.
+    out = deduplicate_stories(out)
     out.sort(key=lambda s: s["article"].get("pub_local") or "", reverse=True)
     return out
 
@@ -287,7 +329,7 @@ def _session_brief(sess: Optional[dict]) -> Optional[dict]:
     return {k: sess.get(k) for k in ("d", "timing", "move_pct", "z", "retained_pct")}
 
 
-def history_from_tape() -> Dict[str, dict]:
+def history_from_tape(catalog: Optional[List[dict]] = None) -> Dict[str, dict]:
     """content_id → company history row, from the offline verdict over tape_all.csv."""
     by_id: Dict[str, List[dict]] = collections.OrderedDict()
     with open(TAPE_CSV, newline="") as f:
@@ -296,6 +338,15 @@ def history_from_tape() -> Dict[str, dict]:
     out = {}
     for cid, rows in by_id.items():
         r0 = rows[0]
+        probe = {
+            "content_id": cid,
+            "titolo": r0.get("titolo") or "",
+            "COD_AZIONE": r0.get("COD_AZIONE"),
+            "DES_AZIONE": r0.get("DES_AZIONE"),
+            "COD_ISIN": r0.get("COD_ISIN"),
+        }
+        if catalog and not story_matches_catalog(probe, catalog):
+            continue
         news = classify(r0.get("titolo") or "")
         v = verdict(rows, news)
         out[cid] = {
@@ -310,7 +361,9 @@ def history_from_tape() -> Dict[str, dict]:
             "peak": _session_brief(v.get("peak")),
             "largest": _session_brief(v.get("largest")),
         }
-    return out
+    # Tape can contain the same headline under multiple IDs.  Keep the
+    # earliest history row before company counts and first-article flags.
+    return {s["content_id"]: s for s in deduplicate_stories(list(out.values()))}
 
 
 def history_from_story(s: dict) -> dict:
@@ -355,14 +408,76 @@ def load_prices() -> Dict[str, dict]:
     return cols
 
 
-def build_companies(stories: List[dict]) -> Optional[tuple]:
-    if not TAPE_CSV.exists():
-        return None
-    hist = history_from_tape()
+def _history_from_existing(source: Path, catalog: Optional[List[dict]] = None) -> Dict[str, dict]:
+    """Recover cached histories when the tape CSV is unavailable."""
+    index_path = source / "companies.json"
+    if not index_path.exists():
+        return {}
+    try:
+        index = json.loads(index_path.read_text())
+    except (OSError, ValueError):
+        return {}
+    out: Dict[str, dict] = {}
+    for entry in index:
+        path = source / "companies" / f"{entry.get('slug')}.json"
+        try:
+            obj = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        for row in obj.get("stories") or []:
+            hist = {
+                "content_id": row.get("content_id"),
+                "titolo": row.get("titolo") or "",
+                "pub_local": row.get("pub_local"),
+                "cod_azione": obj.get("cod_azione") or entry.get("cod_azione"),
+                "des_azione": obj.get("des_azione") or entry.get("des_azione"),
+                "isin": obj.get("isin") or entry.get("isin"),
+                "news_type": row.get("news_type"),
+                "status": row.get("status") or "NO_REACTION",
+                "peak": row.get("peak"),
+                "largest": row.get("largest"),
+            }
+            if hist["content_id"] and (not catalog or story_matches_catalog(hist, catalog)):
+                out[hist["content_id"]] = hist
+    return {s["content_id"]: s for s in deduplicate_stories(list(out.values()))}
+
+
+def _existing_prices(source: Path) -> Dict[str, dict]:
+    """Read prices from the old bundle so an offline export is lossless."""
+    out: Dict[str, dict] = {}
+    path = source / "companies.json"
+    if not path.exists():
+        return out
+    try:
+        index = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return out
+    for entry in index:
+        if not entry.get("has_prices"):
+            continue
+        try:
+            obj = json.loads((source / "companies" / f"{entry['slug']}.json").read_text())
+        except (OSError, ValueError):
+            continue
+        if obj.get("prices") is not None and obj.get("cod_azione"):
+            out[obj["cod_azione"]] = obj["prices"]
+    return out
+
+
+def build_companies(stories: List[dict], source_dir: Optional[Path] = None,
+                    catalog: Optional[List[dict]] = None) -> tuple:
+    source_dir = source_dir or OUT_DIR
+    catalog = load_instrument_catalog(source_dir) if catalog is None else catalog
+    hist = (history_from_tape(catalog) if TAPE_CSV.exists()
+            else _history_from_existing(source_dir, catalog))
     for s in stories:
-        hist[s["content_id"]] = history_from_story(s)
+        if not catalog or story_matches_catalog(s, catalog):
+            hist[s["content_id"]] = history_from_story(s)
+    hist = {s["content_id"]: s for s in deduplicate_stories(list(hist.values()))}
     detail_ids = {s["content_id"] for s in stories}
     prices = load_prices()
+    if not prices:
+        prices = _existing_prices(source_dir)
 
     by_cod: Dict[str, List[dict]] = collections.defaultdict(list)
     for h in hist.values():
@@ -435,7 +550,11 @@ def main(argv: Optional[List[str]] = None) -> None:
     out = Path(args.out_dir).resolve()
     out.mkdir(parents=True, exist_ok=True)
 
-    stories = build_stories()
+    # A custom output directory is generally a preview; use the committed
+    # bundle as a read-only source for cached company histories and prices.
+    source_dir = out if out == OUT_DIR else OUT_DIR
+    catalog = load_instrument_catalog(source_dir)
+    stories = build_stories(catalog)
     shutil.rmtree(out / "stories", ignore_errors=True)
     for s in stories:
         write_json(out / "stories" / f"{s['content_id']}.json", s)
@@ -453,18 +572,13 @@ def main(argv: Optional[List[str]] = None) -> None:
         "news_types": NEWS_TYPES,
     })
 
-    companies = build_companies(stories)
-    if companies is None:
-        print(f"companies: skipped, {TAPE_CSV.name} missing (existing companies/ kept)")
-        n_companies = len(read_json(out / "companies.json")) if (out / "companies.json").exists() else 0
-    else:
-        index, files = companies
-        shutil.rmtree(out / "companies", ignore_errors=True)
-        for slug, obj in files.items():
-            write_json(out / "companies" / f"{slug}.json", obj, compact=True)
-        write_json(out / "companies.json", index)
-        n_companies = len(index)
-        print(f"companies: {n_companies} ({sum(c['has_prices'] for c in index)} with prices)")
+    index, files = build_companies(stories, source_dir=source_dir, catalog=catalog)
+    shutil.rmtree(out / "companies", ignore_errors=True)
+    for slug, obj in files.items():
+        write_json(out / "companies" / f"{slug}.json", obj, compact=True)
+    write_json(out / "companies.json", index)
+    n_companies = len(index)
+    print(f"companies: {n_companies} ({sum(c['has_prices'] for c in index)} with prices)")
 
     pubs = [r["pub_local"] for r in rows if r["pub_local"]]
     write_json(out / "manifest.json", {

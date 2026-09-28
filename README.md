@@ -124,6 +124,12 @@ python3 scripts/build_cards.py --ids <content_id> --gemini --lang it --out-dir d
 
 Blocks: `article`, `instrument`, `news`, `verdict`, `tape`, `gemini`, and optional `context`. `--no-gemini` leaves the Gemini fields null. Prices come from BigQuery. Gemini sees the title, the body, and the verdict facts as text.
 
+### Company match
+
+A fresh title is kept only when one Italian listed company remains, and that company has 20 baseline sessions. Matching uses the instrument name plus a short alias list (Telecom Italia/Tim, Finmeccanica, Intesa San Paolo). A second listed company in the same title rejects the row. Person and brand homonyms (Leonardo Maria Del Vecchio, Leonardo jr., Leonardo Capital, Leonardo da Vinci) are not Leonardo the aerospace company. A bank is not the subject when it is only the source of the note ("analisti di Intesa", "Intesa Sanpaolo vede un upside"). The bare noun "intesa" after an apostrophe (l'intesa, sull'intesa) is an agreement, not the bank.
+
+Rows for the same company with the same normalized title within 24 hours count as one article. Normalization is case, accents, punctuation, and whitespace, so a real follow-up stays a separate story. `make export` applies the same drop to cached company files: a row goes when the assigned company is a homonym or only the broker. A headline that also names a counterparty stays on the company it was already assigned to.
+
 ### Classification
 
 `scripts/classify_gemini.py` reads the full body, returns at most three controlled topics, and checks the company and ticker against ordinary Italian instruments that also have quotes in BigQuery.
@@ -188,12 +194,12 @@ The board score next to a headline is the observed move around that article, inc
 make test
 ```
 
-Runs `test_verdict`, `test_classify`, `test_build_card`, `test_export`, `test_theses`, `test_choose_news`, `test_classify_gemini`, and `test_fear_greed`.
+Runs `test_verdict`, `test_classify`, `test_build_card`, `test_export`, `test_theses`, `test_choose_news`, `test_classify_gemini`, `test_fear_greed`, `test_company_matching`, and `test_story_selection`.
 
 A separate hand review of 12 articles is in [eval/manual_article_eval.md](eval/manual_article_eval.md): company match 11/12, strict type 8/12. Full bodies are not in the export, so that review scores quotes as partial.
 
 ## Limits
 
-Match is on the title. A shared token such as Leonardo attaches the person as well as Leonardo SpA. The hand review counted on the order of 80 of 749 stories under that name. The tape is daily closes, plus the open-share rule for `MOSTLY_AT_OPEN`. The 2σ / 20-session cut is a description, not a model. Sessions well after publication sit near the base rate. Gemini text that fails a check is omitted. A link from a story to a thesis indicator can be loose. Article bodies are not in `web/public/data/`. The demo book is invented.
+Match is still on the title, with the filters in Company match above. The hand review in `eval/` was scored before those filters: about 80 of 749 Leonardo stories were the person, not the company. The tape is daily closes, plus the open-share rule for `MOSTLY_AT_OPEN`. The 2σ / 20-session cut is a description, not a model. Sessions well after publication sit near the base rate. Gemini text that fails a check is omitted. A link from a story to a thesis indicator can be loose. Article bodies are not in `web/public/data/`. The demo book is invented.
 
 Wording for the jury, in both languages, is in [pitch/jury_qa.md](pitch/jury_qa.md).

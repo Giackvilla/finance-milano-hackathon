@@ -4,15 +4,15 @@
   "des_azione": "Unicredit",
   "cod_azione": "CRIT",
   "isin": "IT0005239360",
-  "n_stories": 2573,
-  "n_unusual": 983,
+  "n_stories": 2565,
+  "n_unusual": 979,
   "status": {
-   "NO_REACTION": 1590,
-   "ALREADY_IN_PRICE": 130,
+   "NO_REACTION": 1586,
+   "ALREADY_IN_PRICE": 127,
    "PARTLY_IN_PRICE": 56,
    "MOSTLY_AT_OPEN": 25,
    "REACTED": 133,
-   "DELAYED": 639
+   "DELAYED": 638
   },
   "last_pub": "2026-09-15T13:06:27",
   "n_detail": 0,
@@ -23,10 +23,10 @@
   "des_azione": "Eni",
   "cod_azione": "ENISPA",
   "isin": "IT0003132476",
-  "n_stories": 768,
+  "n_stories": 762,
   "n_unusual": 288,
   "status": {
-   "NO_REACTION": 480,
+   "NO_REACTION": 474,
    "ALREADY_IN_PRICE": 52,
    "PARTLY_IN_PRICE": 19,
    "MOSTLY_AT_OPEN": 9,
@@ -42,15 +42,15 @@
   "des_azione": "Leonardo",
   "cod_azione": "FINME",
   "isin": "IT0003856405",
-  "n_stories": 749,
-  "n_unusual": 279,
+  "n_stories": 663,
+  "n_unusual": 243,
   "status": {
-   "NO_REACTION": 470,
-   "ALREADY_IN_PRICE": 46,
-   "PARTLY_IN_PRICE": 14,
+   "NO_REACTION": 420,
+   "ALREADY_IN_PRICE": 41,
+   "PARTLY_IN_PRICE": 12,
    "MOSTLY_AT_OPEN": 4,
-   "REACTED": 46,
-   "DELAYED": 169
+   "REACTED": 41,
+   "DELAYED": 145
   },
   "last_pub": "2026-09-15T12:09:38",
   "n_detail": 1,
@@ -61,37 +61,18 @@
   "des_azione": "Mediobanca",
   "cod_azione": "MEDIOB",
   "isin": "IT0000062957",
-  "n_stories": 543,
-  "n_unusual": 216,
+  "n_stories": 525,
+  "n_unusual": 212,
   "status": {
-   "NO_REACTION": 327,
+   "NO_REACTION": 313,
    "ALREADY_IN_PRICE": 44,
-   "PARTLY_IN_PRICE": 17,
+   "PARTLY_IN_PRICE": 16,
    "MOSTLY_AT_OPEN": 10,
-   "REACTED": 34,
-   "DELAYED": 111
+   "REACTED": 33,
+   "DELAYED": 109
   },
   "last_pub": "2026-09-14T10:24:07",
   "n_detail": 1,
-  "has_prices": true
- },
- {
-  "slug": "intesa-sanpaolo",
-  "des_azione": "Intesa Sanpaolo",
-  "cod_azione": "AMBR",
-  "isin": "IT0000072618",
-  "n_stories": 490,
-  "n_unusual": 206,
-  "status": {
-   "NO_REACTION": 284,
-   "ALREADY_IN_PRICE": 30,
-   "PARTLY_IN_PRICE": 10,
-   "MOSTLY_AT_OPEN": 7,
-   "REACTED": 29,
-   "DELAYED": 130
-  },
-  "last_pub": "2026-09-15T21:30:44",
-  "n_detail": 0,
   "has_prices": true
  },
  {
@@ -99,17 +80,36 @@
   "des_azione": "Generali",
   "cod_azione": "GENE",
   "isin": "IT0000062072",
-  "n_stories": 478,
-  "n_unusual": 189,
+  "n_stories": 477,
+  "n_unusual": 188,
   "status": {
    "NO_REACTION": 289,
    "ALREADY_IN_PRICE": 31,
    "PARTLY_IN_PRICE": 8,
    "MOSTLY_AT_OPEN": 6,
    "REACTED": 21,
-   "DELAYED": 123
+   "DELAYED": 122
   },
   "last_pub": "2026-09-15T12:13:43",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "intesa-sanpaolo",
+  "des_azione": "Intesa Sanpaolo",
+  "cod_azione": "AMBR",
+  "isin": "IT0000072618",
+  "n_stories": 471,
+  "n_unusual": 199,
+  "status": {
+   "NO_REACTION": 272,
+   "ALREADY_IN_PRICE": 29,
+   "PARTLY_IN_PRICE": 10,
+   "MOSTLY_AT_OPEN": 7,
+   "REACTED": 29,
+   "DELAYED": 124
+  },
+  "last_pub": "2026-09-15T21:30:44",
   "n_detail": 0,
   "has_prices": true
  },
@@ -118,15 +118,15 @@
   "des_azione": "Enel",
   "cod_azione": "ENEL",
   "isin": "IT0003128367",
-  "n_stories": 457,
-  "n_unusual": 177,
+  "n_stories": 453,
+  "n_unusual": 174,
   "status": {
-   "NO_REACTION": 280,
+   "NO_REACTION": 279,
    "ALREADY_IN_PRICE": 32,
    "PARTLY_IN_PRICE": 13,
    "MOSTLY_AT_OPEN": 2,
    "REACTED": 22,
-   "DELAYED": 108
+   "DELAYED": 105
   },
   "last_pub": "2026-09-11T17:12:55",
   "n_detail": 2,
@@ -137,11 +137,11 @@
   "des_azione": "Saipem",
   "cod_azione": "SAIP",
   "isin": "IT0005495657",
-  "n_stories": 403,
-  "n_unusual": 180,
+  "n_stories": 402,
+  "n_unusual": 179,
   "status": {
    "NO_REACTION": 223,
-   "ALREADY_IN_PRICE": 28,
+   "ALREADY_IN_PRICE": 27,
    "PARTLY_IN_PRICE": 20,
    "MOSTLY_AT_OPEN": 10,
    "REACTED": 37,
@@ -156,10 +156,10 @@
   "des_azione": "Banco Bpm",
   "cod_azione": "BAMI",
   "isin": "IT0005218380",
-  "n_stories": 383,
+  "n_stories": 382,
   "n_unusual": 152,
   "status": {
-   "NO_REACTION": 231,
+   "NO_REACTION": 230,
    "ALREADY_IN_PRICE": 23,
    "PARTLY_IN_PRICE": 9,
    "MOSTLY_AT_OPEN": 7,
@@ -213,12 +213,12 @@
   "des_azione": "Azimut",
   "cod_azione": "AZM",
   "isin": "IT0003261697",
-  "n_stories": 235,
-  "n_unusual": 104,
+  "n_stories": 233,
+  "n_unusual": 103,
   "status": {
-   "NO_REACTION": 131,
+   "NO_REACTION": 130,
    "ALREADY_IN_PRICE": 14,
-   "PARTLY_IN_PRICE": 8,
+   "PARTLY_IN_PRICE": 7,
    "MOSTLY_AT_OPEN": 7,
    "REACTED": 14,
    "DELAYED": 61
@@ -232,14 +232,14 @@
   "des_azione": "Fincantieri",
   "cod_azione": "FCT",
   "isin": "IT0005599938",
-  "n_stories": 224,
-  "n_unusual": 105,
+  "n_stories": 221,
+  "n_unusual": 104,
   "status": {
-   "NO_REACTION": 119,
+   "NO_REACTION": 117,
    "ALREADY_IN_PRICE": 12,
    "PARTLY_IN_PRICE": 5,
    "MOSTLY_AT_OPEN": 2,
-   "REACTED": 28,
+   "REACTED": 27,
    "DELAYED": 58
   },
   "last_pub": "2026-09-01T15:37:07",
@@ -251,10 +251,10 @@
   "des_azione": "Snam",
   "cod_azione": "SRG",
   "isin": "IT0003153415",
-  "n_stories": 195,
+  "n_stories": 194,
   "n_unusual": 70,
   "status": {
-   "NO_REACTION": 125,
+   "NO_REACTION": 124,
    "ALREADY_IN_PRICE": 11,
    "PARTLY_IN_PRICE": 5,
    "MOSTLY_AT_OPEN": 0,
@@ -289,15 +289,15 @@
   "des_azione": "Maire",
   "cod_azione": "MT",
   "isin": "IT0004931058",
-  "n_stories": 179,
-  "n_unusual": 81,
+  "n_stories": 177,
+  "n_unusual": 80,
   "status": {
-   "NO_REACTION": 98,
+   "NO_REACTION": 97,
    "ALREADY_IN_PRICE": 15,
    "PARTLY_IN_PRICE": 4,
    "MOSTLY_AT_OPEN": 2,
    "REACTED": 15,
-   "DELAYED": 45
+   "DELAYED": 44
   },
   "last_pub": "2026-08-31T10:45:25",
   "n_detail": 1,
@@ -327,10 +327,10 @@
   "des_azione": "Webuild",
   "cod_azione": "COGE",
   "isin": "IT0003865570",
-  "n_stories": 162,
+  "n_stories": 161,
   "n_unusual": 56,
   "status": {
-   "NO_REACTION": 106,
+   "NO_REACTION": 105,
    "ALREADY_IN_PRICE": 11,
    "PARTLY_IN_PRICE": 7,
    "MOSTLY_AT_OPEN": 1,
@@ -346,10 +346,10 @@
   "des_azione": "Terna",
   "cod_azione": "TRN",
   "isin": "IT0003242622",
-  "n_stories": 153,
+  "n_stories": 152,
   "n_unusual": 64,
   "status": {
-   "NO_REACTION": 89,
+   "NO_REACTION": 88,
    "ALREADY_IN_PRICE": 11,
    "PARTLY_IN_PRICE": 2,
    "MOSTLY_AT_OPEN": 1,
@@ -422,14 +422,14 @@
   "des_azione": "Amplifon",
   "cod_azione": "AMP",
   "isin": "IT0004056880",
-  "n_stories": 118,
-  "n_unusual": 66,
+  "n_stories": 117,
+  "n_unusual": 65,
   "status": {
    "NO_REACTION": 52,
    "ALREADY_IN_PRICE": 15,
    "PARTLY_IN_PRICE": 7,
    "MOSTLY_AT_OPEN": 2,
-   "REACTED": 15,
+   "REACTED": 14,
    "DELAYED": 27
   },
   "last_pub": "2026-09-02T12:53:36",
@@ -460,15 +460,15 @@
   "des_azione": "doValue",
   "cod_azione": "DOB",
   "isin": "IT0005610958",
-  "n_stories": 101,
-  "n_unusual": 57,
+  "n_stories": 100,
+  "n_unusual": 56,
   "status": {
    "NO_REACTION": 44,
    "ALREADY_IN_PRICE": 10,
    "PARTLY_IN_PRICE": 6,
    "MOSTLY_AT_OPEN": 2,
    "REACTED": 13,
-   "DELAYED": 26
+   "DELAYED": 25
   },
   "last_pub": "2026-08-24T12:20:55",
   "n_detail": 0,
@@ -479,15 +479,15 @@
   "des_azione": "Recordati",
   "cod_azione": "REC",
   "isin": "IT0003828271",
-  "n_stories": 87,
-  "n_unusual": 52,
+  "n_stories": 84,
+  "n_unusual": 49,
   "status": {
    "NO_REACTION": 35,
    "ALREADY_IN_PRICE": 12,
    "PARTLY_IN_PRICE": 2,
    "MOSTLY_AT_OPEN": 3,
    "REACTED": 12,
-   "DELAYED": 23
+   "DELAYED": 20
   },
   "last_pub": "2026-09-14T12:29:58",
   "n_detail": 0,
@@ -688,10 +688,10 @@
   "des_azione": "SECO",
   "cod_azione": "IOT",
   "isin": "IT0005438046",
-  "n_stories": 58,
+  "n_stories": 57,
   "n_unusual": 29,
   "status": {
-   "NO_REACTION": 29,
+   "NO_REACTION": 28,
    "ALREADY_IN_PRICE": 3,
    "PARTLY_IN_PRICE": 1,
    "MOSTLY_AT_OPEN": 1,
@@ -726,11 +726,11 @@
   "des_azione": "Bper Banca",
   "cod_azione": "BPEMI",
   "isin": "IT0000066123",
-  "n_stories": 54,
-  "n_unusual": 22,
+  "n_stories": 53,
+  "n_unusual": 21,
   "status": {
    "NO_REACTION": 32,
-   "ALREADY_IN_PRICE": 4,
+   "ALREADY_IN_PRICE": 3,
    "PARTLY_IN_PRICE": 1,
    "MOSTLY_AT_OPEN": 1,
    "REACTED": 3,
@@ -817,25 +817,6 @@
   "has_prices": true
  },
  {
-  "slug": "enav",
-  "des_azione": "Enav",
-  "cod_azione": "ENAV",
-  "isin": "IT0005176406",
-  "n_stories": 45,
-  "n_unusual": 23,
-  "status": {
-   "NO_REACTION": 22,
-   "ALREADY_IN_PRICE": 5,
-   "PARTLY_IN_PRICE": 1,
-   "MOSTLY_AT_OPEN": 2,
-   "REACTED": 4,
-   "DELAYED": 11
-  },
-  "last_pub": "2026-08-03T13:28:33",
-  "n_detail": 0,
-  "has_prices": true
- },
- {
   "slug": "finecobank",
   "des_azione": "FinecoBank",
   "cod_azione": "FBK",
@@ -889,6 +870,25 @@
    "DELAYED": 4
   },
   "last_pub": "2026-07-22T09:33:54",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "enav",
+  "des_azione": "Enav",
+  "cod_azione": "ENAV",
+  "isin": "IT0005176406",
+  "n_stories": 44,
+  "n_unusual": 23,
+  "status": {
+   "NO_REACTION": 21,
+   "ALREADY_IN_PRICE": 5,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 2,
+   "REACTED": 4,
+   "DELAYED": 11
+  },
+  "last_pub": "2026-08-03T13:28:33",
   "n_detail": 0,
   "has_prices": true
  },
@@ -1045,25 +1045,6 @@
   "has_prices": true
  },
  {
-  "slug": "tinexta",
-  "des_azione": "Tinexta",
-  "cod_azione": "TECN",
-  "isin": "IT0005037210",
-  "n_stories": 32,
-  "n_unusual": 20,
-  "status": {
-   "NO_REACTION": 12,
-   "ALREADY_IN_PRICE": 7,
-   "PARTLY_IN_PRICE": 1,
-   "MOSTLY_AT_OPEN": 3,
-   "REACTED": 3,
-   "DELAYED": 6
-  },
-  "last_pub": "2026-07-31T15:43:01",
-  "n_detail": 0,
-  "has_prices": true
- },
- {
   "slug": "ediliziacrobatica",
   "des_azione": "EdiliziAcrobatica",
   "cod_azione": "EDAC",
@@ -1099,6 +1080,25 @@
   },
   "last_pub": "2026-09-10T21:48:35",
   "n_detail": 1,
+  "has_prices": true
+ },
+ {
+  "slug": "tinexta",
+  "des_azione": "Tinexta",
+  "cod_azione": "TECN",
+  "isin": "IT0005037210",
+  "n_stories": 31,
+  "n_unusual": 19,
+  "status": {
+   "NO_REACTION": 12,
+   "ALREADY_IN_PRICE": 7,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 3,
+   "REACTED": 3,
+   "DELAYED": 5
+  },
+  "last_pub": "2026-07-31T15:43:01",
+  "n_detail": 0,
   "has_prices": true
  },
  {
@@ -1353,10 +1353,10 @@
   "des_azione": "ZEST",
   "cod_azione": "FDP",
   "isin": "IT0005013013",
-  "n_stories": 22,
+  "n_stories": 21,
   "n_unusual": 9,
   "status": {
-   "NO_REACTION": 13,
+   "NO_REACTION": 12,
    "ALREADY_IN_PRICE": 2,
    "PARTLY_IN_PRICE": 2,
    "MOSTLY_AT_OPEN": 0,
@@ -1767,25 +1767,6 @@
   "has_prices": true
  },
  {
-  "slug": "portobello",
-  "des_azione": "Portobello",
-  "cod_azione": "POR",
-  "isin": "IT0005337495",
-  "n_stories": 14,
-  "n_unusual": 7,
-  "status": {
-   "NO_REACTION": 7,
-   "ALREADY_IN_PRICE": 2,
-   "PARTLY_IN_PRICE": 3,
-   "MOSTLY_AT_OPEN": 0,
-   "REACTED": 0,
-   "DELAYED": 2
-  },
-  "last_pub": "2024-02-20T18:12:24",
-  "n_detail": 0,
-  "has_prices": true
- },
- {
   "slug": "promotica",
   "des_azione": "Promotica",
   "cod_azione": "PMT",
@@ -1919,6 +1900,25 @@
   "has_prices": true
  },
  {
+  "slug": "portobello",
+  "des_azione": "Portobello",
+  "cod_azione": "POR",
+  "isin": "IT0005337495",
+  "n_stories": 13,
+  "n_unusual": 7,
+  "status": {
+   "NO_REACTION": 6,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 3,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 2
+  },
+  "last_pub": "2024-02-20T18:12:24",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
   "slug": "gabetti",
   "des_azione": "Gabetti",
   "cod_azione": "GABET",
@@ -2029,25 +2029,6 @@
    "DELAYED": 2
   },
   "last_pub": "2026-05-29T10:54:28",
-  "n_detail": 0,
-  "has_prices": true
- },
- {
-  "slug": "fidia",
-  "des_azione": "Fidia",
-  "cod_azione": "FDA",
-  "isin": "IT0005654683",
-  "n_stories": 11,
-  "n_unusual": 1,
-  "status": {
-   "NO_REACTION": 10,
-   "ALREADY_IN_PRICE": 0,
-   "PARTLY_IN_PRICE": 1,
-   "MOSTLY_AT_OPEN": 0,
-   "REACTED": 0,
-   "DELAYED": 0
-  },
-  "last_pub": "2026-07-20T12:15:43",
   "n_detail": 0,
   "has_prices": true
  },
@@ -2200,6 +2181,25 @@
    "DELAYED": 4
   },
   "last_pub": "2025-07-01T12:35:38",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "fidia",
+  "des_azione": "Fidia",
+  "cod_azione": "FDA",
+  "isin": "IT0005654683",
+  "n_stories": 10,
+  "n_unusual": 1,
+  "status": {
+   "NO_REACTION": 9,
+   "ALREADY_IN_PRICE": 0,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 0,
+   "DELAYED": 0
+  },
+  "last_pub": "2026-07-20T12:15:43",
   "n_detail": 0,
   "has_prices": true
  },
@@ -2660,25 +2660,6 @@
   "has_prices": true
  },
  {
-  "slug": "abp-nocivelli",
-  "des_azione": "ABP Nocivelli",
-  "cod_azione": "ABP",
-  "isin": "IT0005439861",
-  "n_stories": 6,
-  "n_unusual": 6,
-  "status": {
-   "NO_REACTION": 0,
-   "ALREADY_IN_PRICE": 2,
-   "PARTLY_IN_PRICE": 2,
-   "MOSTLY_AT_OPEN": 1,
-   "REACTED": 0,
-   "DELAYED": 1
-  },
-  "last_pub": "2025-03-17T15:21:04",
-  "n_detail": 0,
-  "has_prices": true
- },
- {
   "slug": "cellularline",
   "des_azione": "Cellularline",
   "cod_azione": "CRS",
@@ -3021,6 +3002,25 @@
   "has_prices": true
  },
  {
+  "slug": "abp-nocivelli",
+  "des_azione": "ABP Nocivelli",
+  "cod_azione": "ABP",
+  "isin": "IT0005439861",
+  "n_stories": 5,
+  "n_unusual": 5,
+  "status": {
+   "NO_REACTION": 0,
+   "ALREADY_IN_PRICE": 2,
+   "PARTLY_IN_PRICE": 1,
+   "MOSTLY_AT_OPEN": 1,
+   "REACTED": 0,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-03-17T15:21:04",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
   "slug": "agatos",
   "des_azione": "Agatos",
   "cod_azione": "TEW",
@@ -3074,25 +3074,6 @@
    "DELAYED": 0
   },
   "last_pub": "2026-06-29T15:27:02",
-  "n_detail": 0,
-  "has_prices": true
- },
- {
-  "slug": "beghelli",
-  "des_azione": "Beghelli",
-  "cod_azione": "BEG",
-  "isin": "IT0001223277",
-  "n_stories": 5,
-  "n_unusual": 4,
-  "status": {
-   "NO_REACTION": 1,
-   "ALREADY_IN_PRICE": 1,
-   "PARTLY_IN_PRICE": 0,
-   "MOSTLY_AT_OPEN": 0,
-   "REACTED": 2,
-   "DELAYED": 1
-  },
-  "last_pub": "2025-02-13T17:47:13",
   "n_detail": 0,
   "has_prices": true
  },
@@ -3492,6 +3473,25 @@
    "DELAYED": 1
   },
   "last_pub": "2024-11-02T07:00:00",
+  "n_detail": 0,
+  "has_prices": true
+ },
+ {
+  "slug": "beghelli",
+  "des_azione": "Beghelli",
+  "cod_azione": "BEG",
+  "isin": "IT0001223277",
+  "n_stories": 4,
+  "n_unusual": 3,
+  "status": {
+   "NO_REACTION": 1,
+   "ALREADY_IN_PRICE": 1,
+   "PARTLY_IN_PRICE": 0,
+   "MOSTLY_AT_OPEN": 0,
+   "REACTED": 1,
+   "DELAYED": 1
+  },
+  "last_pub": "2025-02-13T17:47:13",
   "n_detail": 0,
   "has_prices": true
  },

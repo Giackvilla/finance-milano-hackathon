@@ -4,26 +4,37 @@
 -- Params: @content_ids ARRAY<STRING>, @from_date DATE, @to_date DATE.
 -- Ids mode: non-empty @content_ids. Range mode: empty array + pub_date between dates.
 
-WITH names AS (
-  SELECT
-    i.COD_AZIONE,
-    i.DES_AZIONE,
-    i.COD_ISIN,
-    -- first letter must be capitalised (unless the name itself starts lowercase, e.g. doValue): "impianti" in a sentence is not Impianti
-    CONCAT(
-      r'\b',
-      IF(REGEXP_CONTAINS(SUBSTR(TRIM(i.DES_AZIONE), 1, 1), r'^[a-z]$'),
-         CONCAT('[', SUBSTR(TRIM(i.DES_AZIONE), 1, 1), UPPER(SUBSTR(TRIM(i.DES_AZIONE), 1, 1)), ']'),
-         REGEXP_REPLACE(SUBSTR(TRIM(i.DES_AZIONE), 1, 1), r'([.^$|()\[\]{}*+?\\])', r'\\\1')),
-      r'(?i:', REGEXP_REPLACE(SUBSTR(TRIM(i.DES_AZIONE), 2), r'([.^$|()\[\]{}*+?\\])', r'\\\1'), r')\b'
-    ) AS pattern
+WITH catalog AS (
+  -- Deduplicate the instrument catalogue before adding aliases.  Otherwise
+  -- Intesa/Tim/Leonardo aliases inflate n_companies.
+  SELECT DISTINCT i.COD_AZIONE, i.DES_AZIONE, i.COD_ISIN
   FROM `class-hackaton-09.financial_instruments.instruments_info` i
-  WHERE i.COD_TIPO = 'ORD'
-    AND i.COD_ISIN LIKE 'IT%'
+  WHERE i.COD_TIPO = 'ORD' AND i.COD_ISIN LIKE 'IT%'
     AND LENGTH(TRIM(i.DES_AZIONE)) >= 3
-    -- company names that are also everyday or foreign words in titles
     AND TRIM(i.DES_AZIONE) NOT IN ('Reti', 'Impianti', 'Energy', 'Maps', 'Simone', 'Plc', 'Circle', 'Pattern', 'Predict', 'Friends', 'Adventure', 'Tecno')
     AND i.COD_AZIONE IN (SELECT DISTINCT COD_AZIONE FROM `class-hackaton-09.financial_instruments.instruments_quotes`)
+),
+alias_rows AS (
+  SELECT c.*, TRIM(c.DES_AZIONE) AS alias_name
+  FROM catalog c
+  UNION ALL SELECT c.*, 'Tim' FROM catalog c WHERE LOWER(TRIM(c.DES_AZIONE)) = 'telecom italia'
+  UNION ALL SELECT c.*, 'Finmeccanica' FROM catalog c WHERE LOWER(TRIM(c.DES_AZIONE)) = 'leonardo'
+  UNION ALL SELECT c.*, 'Intesa' FROM catalog c WHERE LOWER(TRIM(c.DES_AZIONE)) = 'intesa sanpaolo'
+  UNION ALL SELECT c.*, 'Intesa San Paolo' FROM catalog c WHERE LOWER(TRIM(c.DES_AZIONE)) = 'intesa sanpaolo'
+),
+names AS (
+  SELECT
+    r.COD_AZIONE, r.DES_AZIONE, r.COD_ISIN,
+    -- RE2-compatible boundaries (Python uses equivalent \w boundaries).
+    -- Bare Intesa: an apostrophe belongs to l'intesa / sull'intesa ("agreement").
+    CASE
+      WHEN LOWER(TRIM(r.alias_name)) = 'intesa' THEN
+        '(?i)(^|[^[:alnum:]_''])intesa($|[^[:alnum:]_])'
+      ELSE CONCAT(r'(?i)(^|[^[:alnum:]_])',
+        REGEXP_REPLACE(REGEXP_REPLACE(TRIM(r.alias_name), r'([.^$|()\[\]{}*+?\\])', r'\\\1'), r' ', r'[[:space:]-]+'),
+        r'($|[^[:alnum:]_])')
+    END AS pattern
+  FROM alias_rows r
 ),
 
 articles AS (
@@ -42,11 +53,49 @@ articles AS (
     AND NOT REGEXP_CONTAINS(titolo, r"^(Borse oggi in diretta|Cos.è successo oggi)")
 ),
 
-matches AS (
-  SELECT a.*, n.COD_AZIONE, n.DES_AZIONE, n.COD_ISIN,
-         COUNT(*) OVER (PARTITION BY a.content_id) AS n_companies
+-- Exclusions are scoped to the matched instrument so a Del Vecchio / Intesa
+-- analyst aside does not drop the real company named in the same headline.
+matched_rows AS (
+  SELECT DISTINCT a.content_id, a.titolo, a.data_pubblicazione, a.pub_local, a.pub_date,
+         n.COD_AZIONE, n.DES_AZIONE, n.COD_ISIN
   FROM articles a
   JOIN names n ON REGEXP_CONTAINS(a.titolo, n.pattern)
+  WHERE NOT (
+      -- Leonardo person / other-entity uses (COD_AZIONE FINME or DES_AZIONE)
+      (UPPER(n.COD_AZIONE) = 'FINME' OR LOWER(TRIM(n.DES_AZIONE)) = 'leonardo')
+      AND (
+        REGEXP_CONTAINS(a.titolo,
+          r'(?i)(^|[^[:alnum:]_])leonardo[[:space:],;:/()\-]+(maria([[:space:]]+del[[:space:]]+vecchio)?|del[[:space:]]+vecchio|jr|j[[:space:]]*r|da[[:space:]]+vinci|capital|lmdv|group|holding)($|[^[:alnum:]_])')
+        OR REGEXP_CONTAINS(a.titolo,
+          r'(?i)(^|[^[:alnum:]_])(maria|del[[:space:]]+vecchio)[[:space:]]*[,:\-]?[[:space:]]*leonardo($|[^[:alnum:]_])')
+        OR (
+          REGEXP_CONTAINS(a.titolo, r'(?i)del[[:space:]]+vecchio')
+          AND REGEXP_CONTAINS(a.titolo, r'(?i)(^|[^[:alnum:]_])di[[:space:]]+leonardo($|[^[:alnum:]_])')
+        )
+      )
+    )
+    AND NOT (
+      -- Intesa as analyst / broker source (mirrors company_matching._analyst_reference)
+      LOWER(TRIM(n.DES_AZIONE)) = 'intesa sanpaolo'
+      AND (
+        REGEXP_CONTAINS(a.titolo,
+          r'(?i)(analist[[:alpha:]]*|stime)[[:space:]]+(di|da)[[:space:]]+intesa(?:[[:space:]-]+san[[:space:]-]*paolo)?($|[^[:alnum:]_])')
+        OR REGEXP_CONTAINS(a.titolo,
+          r'(?i)(^|[^[:alnum:]_])secondo[[:space:]]+intesa(?:[[:space:]-]+san[[:space:]-]*paolo)?($|[^[:alnum:]_])')
+        OR REGEXP_CONTAINS(a.titolo,
+          r'(?i)(^|[^[:alnum:]_])intesa(?:[[:space:]-]+san[[:space:]-]*paolo)?[[:space:],;:/()\-]+(vede|vedono|alza|alzano|taglia|tagliano|conferma|confermano|aggiorna|aggiornano|stima|stimano|prevede|prevedono|promuove|boccia|raccomanda|raccomandano|fissa|fissano)([[:space:]]+[^[:space:]]+){0,5}[[:space:]]+(target[[:space:]]+price|target[[:space:]]+sul[[:space:]]+titolo|rating|upside|stime|valutazion[[:alpha:]]*|giudizio|raccomand[[:alpha:]]*)($|[^[:alnum:]_])')
+      )
+    )
+    AND NOT (
+      -- Tim Cook / Tim Brasil are not Telecom Italia
+      LOWER(TRIM(n.DES_AZIONE)) = 'telecom italia'
+      AND REGEXP_CONTAINS(a.titolo,
+        r'(?i)(^|[^[:alnum:]_])tim[[:space:],;:/()\-]+(cook|brasil)($|[^[:alnum:]_])')
+    )
+),
+matches AS (
+  SELECT m.*, COUNT(*) OVER (PARTITION BY m.content_id) AS n_companies
+  FROM matched_rows m
 ),
 
 sessions AS (

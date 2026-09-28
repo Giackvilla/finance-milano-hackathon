@@ -30,6 +30,7 @@ from build_card import (  # noqa: E402
 )
 from verdict import bq_tape, verdict  # noqa: E402
 from classify import classify  # noqa: E402
+from story_selection import deduplicate_stories  # noqa: E402
 
 CARDS_DIR = ROOT / "data" / "cards"
 
@@ -135,7 +136,7 @@ def run(
         rows = bq_tape(content_ids=None, from_date=tape_from, to_date=to_date)
 
     by_id = _group_rows(rows)
-    metas = [_article_meta(rs) for rs in by_id.values()]
+    metas = deduplicate_stories([_article_meta(rs) for rs in by_id.values()])
 
     if content_ids:
         selected = [m for m in metas if m["content_id"] in set(content_ids)]
