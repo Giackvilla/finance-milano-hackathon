@@ -950,27 +950,39 @@
   setLeft(clampLeft(ui.leftW));
 
   // torte della home: passando (o con il focus) su uno spicchio o su una voce si aggiornano evidenziazione e riquadro
-  /* Anteprima notizie in stile notifiche: compare accanto allo spicchio (o alla voce di legenda) sotto il puntatore.
-     Primo ingresso con un breve ritardo; passando da uno spicchio all'altro si aggiorna subito, senza animazione. */
+  /* Anteprima della tesi in stile notifiche, solo sulla torta per titolo: tesi in breve, ultimi risultati,
+     e come si è mosso il prezzo rispetto alla tesi. Primo ingresso con un breve ritardo; tra spicchi si aggiorna subito. */
   const notif = document.createElement('div');
   notif.className = 'notif'; notif.id = 'pie-notif'; notif.setAttribute('role', 'tooltip'); notif.hidden = true;
   document.body.appendChild(notif);
   let notifT, notifKey = null;
 
-  const newsFor = tickers => D.notizie.filter(n => linked(n).some(s => tickers.includes(s.ticker))).sort((a, b) => b.data.localeCompare(a.data));
-  function notifHTML(kind, x) {
-    const tickers = kind === 'titoli' ? [x.open] : x.members.map(m => m.ticker);
-    const list = newsFor(tickers);
-    const cards = list.slice(0, 3).map(n => {
-      const d = new Date(n.data + 'Z'), s0 = linked(n).find(y => tickers.includes(y.ticker)), vd = n.verdetto;
-      const dir = s0 ? s0.dir : n.segnale && n.segnale.dir;
-      const tag = vd ? `<span class="chip ${vd.cls}">${esc(vd.label)}</span>`
-        : n.segnale ? `<span class="chip ${dir === 'up' ? 'pos' : dir === 'down' ? 'neg' : 'neu'}">${trend(dir)}${DIR_LABEL[dir]}</span>` : '';
-      return `<li class="nt-card"><div class="nt-meta"><span class="nt-app" aria-hidden="true">MF</span><span>${kind === 'settori' && s0 ? `<b>${esc(s0.ticker)}</b> · ` : ''}${d.getUTCDate()} ${MESI[d.getUTCMonth()]}</span>${tag}</div><p>${esc(n.titolo)}</p></li>`;
-    }).join('');
-    return `<div class="nt-head"><b>${esc(x.n)}${kind === 'titoli' ? ` <span>${esc(x.full)}</span>` : ''}</b><span>${list.length ? `${list.length} ${list.length === 1 ? 'notizia' : 'notizie'}` : 'Nessuna notizia'}</span></div>
-      ${cards ? `<ul>${cards}</ul>` : '<p class="nt-empty">Nessun articolo MF collegato di recente.</p>'}
-      <div class="nt-foot">${kind === 'titoli' ? 'Clic per aprire la scheda' : 'Clic per vedere i titoli del settore'}</div>`;
+  /* Ultimi risultati disponibili e variazione del prezzo dalla chiusura precedente la pubblicazione a oggi. */
+  function sinceEarnings(t) {
+    const q = (azienda(t).earnings || []).filter(e => !e.mancante), e = q[q.length - 1];
+    if (!e) return null;
+    const pd = parseIt(e.data), s0 = serieDi(t), i = pd ? D.giorni.findIndex(d => d >= pd) : -1;
+    return { e, pct: i < 0 ? null : (s0[s0.length - 1] / s0[Math.max(0, i - 1)] - 1) * 100 };
+  }
+  /* Lettura (interpretazione, non dato): il prezzo dopo i risultati va nella direzione della tesi? */
+  function priceVsThesis(stato, pct) {
+    if (stato === 'insufficiente' || pct == null) return 'Dati insufficienti per confrontare prezzo e tesi.';
+    const up = pct > 0.5, down = pct < -0.5;
+    if (stato === 'rafforzata') return up ? 'Il prezzo va nella direzione della tesi.' : down ? 'Il prezzo non riflette ancora il rafforzamento della tesi.' : 'Prezzo quasi fermo nonostante la tesi più forte.';
+    if (stato === 'indebolita') return down ? 'Il prezzo conferma l’indebolimento della tesi.' : up ? 'Il prezzo sale nonostante la tesi più debole.' : 'Prezzo quasi fermo con una tesi più debole.';
+    return up ? 'Tesi invariata; il prezzo è salito dai risultati.' : down ? 'Tesi invariata; il prezzo è sceso dai risultati.' : 'Tesi e prezzo sostanzialmente fermi.';
+  }
+  function notifHTML(x) {
+    const t = x.open, a = azienda(t), T = tesiDi(t), stato = statoDi(a), se = sinceEarnings(t);
+    const tesi = (state.tesi[t] && state.tesi[t].motivo) || T.motivoBreve || T.motivo || 'Nessuna tesi scritta.';
+    const eff = se && EFFETTO[se.e.impatto.effetto];
+    return `<div class="nt-head"><b>${esc(x.n)} <span>${esc(x.full)}</span></b>${chipStato(stato)}</div>
+      <div class="nt-card"><dl class="nt-rows">
+        <div><dt>Tesi</dt><dd class="nt-clamp">${esc(tesi)}</dd></div>
+        <div><dt>Risultati</dt><dd>${eff ? `<span class="chip ${eff.cls}">${icon(eff.ic)}${eff.label}</span> <span class="muted">· ${esc(se.e.label)}</span>` : '<span class="muted">Non disponibili</span>'}</dd></div>
+        <div><dt>Prezzo</dt><dd>${se && se.pct != null ? `<b class="${dirOf(se.pct)}">${signed(se.pct, 1)}</b> dai risultati` : '<span class="muted">n.d.</span>'}</dd></div>
+      </dl>
+      <p class="nt-read">${priceVsThesis(stato, se && se.pct)}</p></div>`;
   }
   /* Accanto al bordo esterno dello spicchio, verso l'esterno; dentro la finestra; cresce dal lato dello spicchio. */
   function placeNotif(slice) {
@@ -988,10 +1000,10 @@
   }
   function showNotif(hit) {
     const w = hit.closest('.ipie'), kind = w.dataset.kind, i = +hit.dataset.i, x = HOME[kind][i];
-    if (!x || (kind === 'titoli' && !x.open)) return hideNotif();
+    if (kind !== 'titoli' || !x || !x.open) return hideNotif();
     const key = kind + i, slice = w.querySelector(`.slice[data-i="${i}"]`);
     const render = () => {
-      notif.innerHTML = notifHTML(kind, x); placeNotif(slice); notifKey = key;
+      notif.innerHTML = notifHTML(x); placeNotif(slice); notifKey = key;
       $$('[aria-describedby="pie-notif"]').forEach(e => e.removeAttribute('aria-describedby'));
       hit.setAttribute('aria-describedby', 'pie-notif');
     };
