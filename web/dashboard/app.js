@@ -71,6 +71,111 @@
   const held = t => state.portafoglio.some(p => p.ticker === t);
   const watched = t => state.watchlist.some(w => w.ticker === t);
   const tracked = t => held(t) || watched(t);
+
+  /* Catalogo ticker↔nome: aziende del desk + listone MF (companies.js). */
+  function companyIndex() {
+    const map = new Map();
+    (window.COMPANY_CATALOG || []).forEach(c => {
+      if (!c || !c.t || !c.n) return;
+      map.set(String(c.t).toUpperCase(), { ticker: String(c.t).toUpperCase(), nome: String(c.n) });
+    });
+    Object.entries(D.aziende || {}).forEach(([t, a]) => {
+      map.set(t, { ticker: t, nome: (a && a.nome) || t, prezzo: a && a.prezzo, known: true });
+    });
+    Object.entries(state.aziende || {}).forEach(([t, a]) => {
+      map.set(t, { ticker: t, nome: (a && a.nome) || t, prezzo: a && a.prezzo, known: true });
+    });
+    return [...map.values()];
+  }
+  function rankCompanies(q, limit = 5) {
+    const raw = (q || '').trim().toLowerCase();
+    if (!raw) return [];
+    const qUp = raw.toUpperCase();
+    const scored = [];
+    companyIndex().forEach(c => {
+      const t = c.ticker, n = (c.nome || '').toLowerCase(), tLow = t.toLowerCase();
+      let score = -1;
+      if (t === qUp) score = 1000;
+      else if (tLow.startsWith(raw)) score = 800 - tLow.length;
+      else if (n.startsWith(raw)) score = 700 - n.length;
+      else if (tLow.includes(raw)) score = 500 - tLow.indexOf(raw) * 10;
+      else if (n.includes(raw)) score = 400 - n.indexOf(raw) * 10 - n.length * 0.01;
+      if (score >= 0) scored.push({ ...c, score });
+    });
+    return scored.sort((a, b) => b.score - a.score || a.nome.localeCompare(b.nome, 'it')).slice(0, limit);
+  }
+  function wireCompanySuggest(input, { listId, onPick, openOnEmpty = false } = {}) {
+    if (!input) return;
+    const wrap = input.closest('.ac-wrap') || input.parentElement;
+    wrap.classList.add('ac-wrap');
+    let list = listId ? document.getElementById(listId) : wrap.querySelector('.ac-list');
+    if (!list) {
+      list = document.createElement('ul');
+      list.className = 'ac-list';
+      list.id = listId || `${input.id || 'ac'}-list`;
+      list.setAttribute('role', 'listbox');
+      list.hidden = true;
+      wrap.appendChild(list);
+    }
+    input.setAttribute('role', 'combobox');
+    input.setAttribute('aria-autocomplete', 'list');
+    input.setAttribute('aria-controls', list.id);
+    input.setAttribute('aria-expanded', 'false');
+    let active = -1, items = [];
+
+    const close = () => {
+      list.hidden = true; list.innerHTML = ''; active = -1; items = [];
+      input.setAttribute('aria-expanded', 'false'); input.removeAttribute('aria-activedescendant');
+    };
+    const paint = () => {
+      $$('.ac-opt', list).forEach((btn, i) => btn.setAttribute('aria-selected', i === active ? 'true' : 'false'));
+      const cur = items[active] && $(`#${list.id}-o${active}`);
+      if (cur) { input.setAttribute('aria-activedescendant', cur.id); cur.scrollIntoView({ block: 'nearest' }); }
+      else input.removeAttribute('aria-activedescendant');
+    };
+    const pick = c => {
+      if (!c) return;
+      close();
+      onPick(c);
+    };
+    const render = hits => {
+      items = hits;
+      active = hits.length ? 0 : -1;
+      if (!hits.length) { close(); return; }
+      list.innerHTML = hits.map((c, i) =>
+        `<li role="presentation"><button type="button" class="ac-opt" role="option" id="${list.id}-o${i}" data-i="${i}" aria-selected="${i === 0}">
+          <span class="t">${esc(c.ticker)}</span><span class="n">${esc(c.nome)}</span>
+        </button></li>`).join('');
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      paint();
+    };
+    const update = () => {
+      const q = input.value;
+      if (!openOnEmpty && !q.trim()) { close(); return; }
+      render(rankCompanies(q, 5));
+    };
+
+    input.addEventListener('input', update);
+    input.addEventListener('focus', update);
+    input.addEventListener('keydown', ev => {
+      if (list.hidden || !items.length) {
+        if (ev.key === 'ArrowDown' && input.value.trim()) { update(); ev.preventDefault(); }
+        return;
+      }
+      if (ev.key === 'ArrowDown') { active = (active + 1) % items.length; paint(); ev.preventDefault(); }
+      else if (ev.key === 'ArrowUp') { active = (active - 1 + items.length) % items.length; paint(); ev.preventDefault(); }
+      else if (ev.key === 'Enter' && active >= 0) { pick(items[active]); ev.preventDefault(); }
+      else if (ev.key === 'Escape') { close(); ev.preventDefault(); }
+    });
+    list.addEventListener('mousedown', ev => {
+      const btn = ev.target.closest('.ac-opt');
+      if (!btn) return;
+      ev.preventDefault();
+      pick(items[+btn.dataset.i]);
+    });
+    input.addEventListener('blur', () => setTimeout(close, 120));
+  }
   const ownership = t => (held(t) ? 'p' : watched(t) ? 'w' : '');
   const varDi = t => (D.mercato[t] ?? 0);
   const serieDi = t => { const a = azienda(t); return D.serie(t, a.prezzo, varDi(t)); };
@@ -420,8 +525,9 @@
 
   function renderLeft() {
     const { rows, base, tot } = posizioni();
-    const search = `<label class="search">${icon('search')}<span class="sr">Cerca titoli o notizie</span>
-      <input id="q" type="search" placeholder="Cerca" autocomplete="off" value="${esc(ui.q)}"><kbd>⌘K</kbd></label>`;
+    const search = `<label class="search ac-wrap">${icon('search')}<span class="sr">Cerca titoli o notizie</span>
+      <input id="q" type="search" placeholder="Cerca" autocomplete="off" value="${esc(ui.q)}" role="combobox" aria-autocomplete="list" aria-controls="q-ac-list" aria-expanded="false"><kbd>⌘K</kbd>
+      <ul id="q-ac-list" class="ac-list" role="listbox" hidden></ul></label>`;
     let body;
     if (!rows.length) {
       body = `<div class="side-head"><h2>Portafoglio</h2></div>
@@ -1289,14 +1395,24 @@
 
   /* ================================================================ moduli */
   const dlg = $('#dlg');
+  function fillFromCompany(c, formRoot) {
+    if (!c) return;
+    const nome = $('#a-nome', formRoot), tk = $('#a-ticker', formRoot), px = $('#a-prezzo', formRoot), mo = $('#a-motivo', formRoot);
+    if (nome) nome.value = c.nome;
+    if (tk) tk.value = c.ticker;
+    const a = azienda(c.ticker);
+    if (px && a && a.prezzo != null && !px.value) px.value = a.prezzo;
+    if (mo && a && a.tesi && a.tesi.motivo && !mo.value) mo.value = a.tesi.motivo;
+    fieldErr(nome, ''); fieldErr(tk, '');
+  }
   function openDialog(kind) {
     const pos = kind === 'pos';
     dlg.innerHTML = `<form class="form" id="add-form" novalidate>
       <h2 id="dlg-title">${pos ? 'Aggiungi posizione' : 'Aggiungi alla watchlist'}</h2>
       <p class="intro">${pos ? 'Indica il titolo e il motivo per cui l’hai comprato.' : 'Indica l’azienda e il motivo del tuo interesse.'} Nella demo i prezzi si inseriscono a mano.</p>
       <div class="two">
-        <div class="field"><label for="a-nome">Nome azienda</label><input id="a-nome" name="nome" required autocomplete="off"><span class="err" hidden></span></div>
-        <div class="field"><label for="a-ticker">Ticker</label><input id="a-ticker" name="ticker" required autocomplete="off" maxlength="10" style="text-transform:uppercase"><span class="err" hidden></span></div>
+        <div class="field"><label for="a-nome">Nome azienda</label><div class="ac-wrap"><input id="a-nome" name="nome" required autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="a-nome-list" aria-expanded="false"><ul id="a-nome-list" class="ac-list" role="listbox" hidden></ul></div><span class="err" hidden></span></div>
+        <div class="field"><label for="a-ticker">Ticker</label><div class="ac-wrap"><input id="a-ticker" name="ticker" required autocomplete="off" maxlength="10" style="text-transform:uppercase" role="combobox" aria-autocomplete="list" aria-controls="a-ticker-list" aria-expanded="false"><ul id="a-ticker-list" class="ac-list" role="listbox" hidden></ul></div><span class="err" hidden></span></div>
       </div>
       <div class="two">
         ${pos ? '<div class="field"><label for="a-qta">Quantità</label><input id="a-qta" name="quantita" type="number" min="1" step="1" inputmode="numeric" required><span class="err" hidden></span></div>'
@@ -1308,18 +1424,18 @@
       <div class="form-actions"><button class="btn secondary" type="button" data-act="dlg-close">Annulla</button><button class="btn" type="submit">${pos ? 'Aggiungi posizione' : 'Aggiungi alla watchlist'}</button></div>
     </form>`;
     dlg.dataset.kind = kind;
-    const tk = $('#a-ticker', dlg);
-    tk.addEventListener('change', () => {
-      const a = azienda(tk.value.trim().toUpperCase());
-      if (a) { $('#a-nome', dlg).value ||= a.nome; $('#a-prezzo', dlg).value ||= a.prezzo; $('#a-motivo', dlg).value ||= a.tesi.motivo; }
-    });
+    const form = $('#add-form', dlg);
+    const applyPick = c => fillFromCompany(c, form);
+    wireCompanySuggest($('#a-nome', dlg), { listId: 'a-nome-list', onPick: applyPick });
+    wireCompanySuggest($('#a-ticker', dlg), { listId: 'a-ticker-list', onPick: applyPick });
     if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
     $('#a-nome', dlg).focus();
   }
   function closeDialog() { if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); }
 
   function fieldErr(input, msg) {
-    const err = input.parentElement.querySelector('.err');
+    const field = input.closest('.field') || input.parentElement;
+    const err = field.querySelector('.err');
     input.setAttribute('aria-invalid', msg ? 'true' : 'false');
     if (err) { err.textContent = msg || ''; err.hidden = !msg; }
     return !msg;
@@ -1519,13 +1635,34 @@
 
   function bindSearch() {
     const q = $('#q');
+    if (!q) return;
+    wireCompanySuggest(q, {
+      listId: 'q-ac-list',
+      onPick: c => {
+        q.value = '';
+        ui.q = '';
+        if (azienda(c.ticker)) openCompany(c.ticker);
+        else {
+          ui.q = c.ticker;
+          q.value = c.ticker;
+          if (currentTicker()) location.hash = '#notizie'; else renderMain();
+        }
+      }
+    });
     q.addEventListener('input', () => {
       ui.q = q.value;
       if (currentTicker()) location.hash = '#notizie'; else renderMain();
     });
     q.addEventListener('keydown', ev => {
-      if (ev.key === 'Enter') { const v = q.value.trim().toUpperCase(); if (azienda(v)) { q.value = ''; ui.q = ''; openCompany(v); } }
-      if (ev.key === 'Escape') { q.value = ''; ui.q = ''; renderMain(); }
+      const listOpen = $('#q-ac-list') && !$('#q-ac-list').hidden;
+      if (ev.key === 'Enter') {
+        if (listOpen) return;
+        const v = q.value.trim().toUpperCase();
+        const hit = rankCompanies(q.value, 1)[0];
+        if (azienda(v)) { q.value = ''; ui.q = ''; openCompany(v); ev.preventDefault(); }
+        else if (hit && azienda(hit.ticker)) { q.value = ''; ui.q = ''; openCompany(hit.ticker); ev.preventDefault(); }
+      }
+      if (ev.key === 'Escape' && !listOpen) { q.value = ''; ui.q = ''; renderMain(); }
     });
   }
 
