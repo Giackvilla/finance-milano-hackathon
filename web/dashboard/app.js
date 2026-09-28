@@ -563,7 +563,18 @@
   /* Quadrante a semicerchio: cinque zone (quella attiva colorata), scala 0-100, lancetta, valore al centro. */
   function fgDial(score) {
     const W = 360, cx = 180, cy = 184, R = 176, r0 = 112, rl = (R + r0) / 2;
-    const ang = v => Math.PI + (Math.max(0, Math.min(100, v)) / 100) * Math.PI;
+    /* Scala a tratti: il neutro (45-55) occupa il 15% dell'arco invece del 10%, così resta leggibile.
+       Lancetta, puntini e numeri usano la stessa scala, quindi i confini delle zone restano esatti. */
+    const SPAN = [0.2125, 0.2, 0.15, 0.2, 0.2375];
+    const ang = v => {
+      const x = Math.max(0, Math.min(100, v));
+      let acc = 0;
+      for (let k = 0; k < FG_ZONES.length; k++) {
+        const z = FG_ZONES[k], hi = Math.min(100, z.hi);
+        if (x <= hi || k === FG_ZONES.length - 1) return Math.PI + (acc + SPAN[k] * (x - z.lo) / (hi - z.lo)) * Math.PI;
+        acc += SPAN[k];
+      }
+    };
     const pt = (rad, a) => `${(cx + rad * Math.cos(a)).toFixed(1)} ${(cy + rad * Math.sin(a)).toFixed(1)}`;
     const active = fgZone(score);
     const zones = FG_ZONES.map((z, i) => {
@@ -571,7 +582,12 @@
       const on = z === active;
       return `<path class="fg-zone${on ? ` on ${z.tone}` : ''}" d="M${pt(R, a0)}A${R} ${R} 0 0 1 ${pt(R, a1)}L${pt(r0, a1)}A${r0} ${r0} 0 0 0 ${pt(r0, a0)}Z"/>
         <path id="fgl${i}" d="M${pt(rl, a0)}A${rl} ${rl} 0 0 1 ${pt(rl, a1)}" fill="none"/>
-        <text class="fg-zl${on ? ' on' : ''}${(a1 - a0) * rl < 70 ? ' tight' : ''}"><textPath href="#fgl${i}" startOffset="50%" text-anchor="middle" dominant-baseline="middle">${z.short.toUpperCase()}</textPath></text>`;
+        ${(() => {
+          /* Etichetta sull'arco: se non ci sta, prima carattere più piccolo, poi compressa alla lunghezza dell'arco. */
+          const txt = z.short.toUpperCase(), arc = (a1 - a0) * rl * 0.9, est = f => txt.length * f * 0.64;
+          const tight = est(12.5) > arc, fit = tight && est(11) > arc ? ` textLength="${arc.toFixed(0)}" lengthAdjust="spacingAndGlyphs"` : '';
+          return `<text class="fg-zl${on ? ' on' : ''}${tight ? ' tight' : ''}"><textPath href="#fgl${i}" startOffset="50%" text-anchor="middle" dominant-baseline="middle"${fit}>${txt}</textPath></text>`;
+        })()}`;
     }).join('');
     const dots = Array.from({ length: 21 }, (_, i) => i * 5).filter(v => v % 25).map(v => { const a = ang(v); return `<circle cx="${(cx + (r0 - 14) * Math.cos(a)).toFixed(1)}" cy="${(cy + (r0 - 14) * Math.sin(a)).toFixed(1)}" r="1.5"/>`; }).join('');
     const nums = [0, 25, 50, 75, 100].map(v => { const a = ang(v); return `<text class="fg-num" x="${(cx + (r0 - 22) * Math.cos(a)).toFixed(1)}" y="${(cy + (r0 - 22) * Math.sin(a) + 4).toFixed(1)}" text-anchor="middle">${v}</text>`; }).join('');
