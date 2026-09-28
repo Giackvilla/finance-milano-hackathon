@@ -63,8 +63,8 @@
 
   const PREF = 'mf-desk:ui';
   const pref = (() => { try { return JSON.parse(localStorage.getItem(PREF) || '{}'); } catch (e) { return {}; } })();
-  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen, leftW: ui.leftW })); } catch (e) { /* ignora */ } };
-  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320 };
+  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen, leftW: ui.leftW, alloc: ui.alloc })); } catch (e) { /* ignora */ } };
+  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320, alloc: pref.alloc === 'titoli' ? 'titoli' : 'settori' };
 
   const azienda = t => state.aziende[t] || D.aziende[t] || null;
   const tesiDi = t => ({ ...azienda(t).tesi, ...(state.tesi[t] || {}) });
@@ -135,7 +135,7 @@
   /* Linea come nell'app Borsa: area tenue, riferimento tratteggiato al valore iniziale, asse a destra, mirino con tooltip. */
   function areaChart(host, values, dates, opts = {}) {
     const draw = () => {
-      const W = Math.max(200, host.clientWidth), H = opts.h || 140, padR = opts.padR ?? 44, padB = 20, padT = opts.markers ? 18 : 6;
+      const W = Math.max(200, host.clientWidth), H = typeof opts.h === 'function' ? opts.h(W) : (opts.h || 140), padR = opts.padR ?? 44, padB = 20, padT = opts.markers ? 18 : 6;
       const n = values.length, iw = W - padR, ih = H - padT - padB;
       let lo = Math.min(...values), hi = Math.max(...values);
       const span = hi - lo || hi * 0.02 || 1; lo -= span * 0.08; hi += span * 0.08;
@@ -201,6 +201,17 @@
 
   /* ================================================================ allocazione: torta */
   const SERIES = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s5)'];
+  /* Ordine validato come anello (anche l'ultimo accanto al primo) in entrambi i temi. */
+  const COMPANY_COLS = ['var(--s1)', 'var(--s2)', 'var(--s3)', 'var(--s4)', 'var(--s6)', 'var(--s5)'];
+  /* Il colore segue il titolo (ordine di inserimento), non il suo peso: cambiare i pesi non ridipinge nulla. Oltre sei: "Altri". */
+  function companies(rows) {
+    const byT = Object.fromEntries(rows.map(r => [r.ticker, r]));
+    const ordered = state.portafoglio.map(p => byT[p.ticker]).filter(Boolean);
+    const out = ordered.slice(0, 6).map((r, i) => ({ n: r.ticker, full: r.a.nome, p: r.peso, v: r.valore, col: COMPANY_COLS[i], open: r.ticker }));
+    const rest = ordered.slice(6);
+    if (rest.length) out.push({ n: 'Altri', full: `${rest.length} posizioni`, p: rest.reduce((s, r) => s + r.peso, 0), v: rest.reduce((s, r) => s + r.valore, 0), col: 'var(--s-other)' });
+    return out;
+  }
   function sectors(rows) {
     const by = {};
     rows.forEach(r => { const s = D.settori[r.ticker] || 'Altro'; (by[s] = by[s] || { p: 0, v: 0 }); by[s].p += r.peso; by[s].v += r.valore; });
@@ -213,7 +224,7 @@
     return secs.map(x => ({ ...x, col: x.n === 'Altro' ? 'var(--s-other)' : SERIES[i++] }));
   }
   /* Torta con spicchi separati da 2px del colore della superficie (ring). */
-  function pieSVG(secs, size, ring) {
+  function pieSVG(secs, size, ring, label) {
     const r = size / 2, tot = secs.reduce((s, x) => s + x.p, 0) || 1;
     let a0 = -Math.PI / 2;
     const pt = a => `${(r + r * Math.cos(a)).toFixed(2)} ${(r + r * Math.sin(a)).toFixed(2)}`;
@@ -221,13 +232,16 @@
       const f = x.p / tot, a1 = a0 + f * 2 * Math.PI;
       const d = f > 0.9999 ? `M${r} 0A${r} ${r} 0 1 1 ${r - 0.01} 0Z` : `M${r} ${r}L${pt(a0)}A${r} ${r} 0 ${f > 0.5 ? 1 : 0} 1 ${pt(a1)}Z`;
       a0 = a1;
-      return `<path d="${d}" fill="${x.col}" stroke="${ring}" stroke-width="2" stroke-linejoin="round" data-slice="${i}"><title>${esc(x.n)} ${nf(x.p, 1)}%</title></path>`;
+      return `<path d="${d}" fill="${x.col}" stroke="${ring}" stroke-width="2" stroke-linejoin="round" data-slice="${i}"${x.open ? ` data-open="${esc(x.open)}"` : ''}><title>${esc(x.full || x.n)} ${nf(x.p, 1)}%</title></path>`;
     }).join('');
-    return `<svg class="pie" width="${size}" height="${size}" viewBox="-1 -1 ${size + 2} ${size + 2}" role="img" aria-label="Allocazione per settore: ${esc(secs.map(x => `${x.n} ${nf(x.p, 1)}%`).join(', '))}">${paths}</svg>`;
+    return `<svg class="pie" width="${size}" height="${size}" viewBox="-1 -1 ${size + 2} ${size + 2}" role="img" aria-label="${esc(label)}: ${esc(secs.map(x => `${x.n} ${nf(x.p, 1)}%`).join(', '))}">${paths}</svg>`;
   }
-  function pieBlock(secs, size, ring, withValues) {
-    return `<div class="pie-wrap${withValues ? ' lg' : ''}">${pieSVG(secs, size, ring)}
-      <ul class="pie-legend">${secs.map((x, i) => `<li data-leg="${i}"><i style="background:${x.col}"></i><span>${esc(x.n)}</span><b>${nf(x.p, 1)}%${withValues ? `<em>${eur(x.v, 0)}</em>` : ''}</b></li>`).join('')}</ul></div>`;
+  function pieBlock(secs, size, ring, label) {
+    const inner = x => `<i style="background:${x.col}"></i><span>${esc(x.n)}</span><b>${nf(x.p, 1)}%<em>${eur(x.v, 0)}</em></b>`;
+    return `<div class="pie-wrap">${pieSVG(secs, size, ring, label)}
+      <ul class="pie-legend">${secs.map((x, i) => `<li data-leg="${i}">${x.open
+        ? `<button class="leg" type="button" data-open="${esc(x.open)}" title="Apri ${esc(x.full)}">${inner(x)}</button>`
+        : `<div class="leg">${inner(x)}</div>`}</li>`).join('')}</ul></div>`;
   }
   const dayChange = (rows, tot) => { const prev = rows.reduce((s, r) => s + r.quantita * r.a.prezzo / (1 + varDi(r.ticker) / 100), 0); return { day: tot - prev, pct: (tot / prev - 1) * 100 }; };
 
@@ -264,7 +278,14 @@
           </div>
           <div class="range-delta num" id="rdelta" style="padding:6px 6px 0"></div>
         </div>
-        <div class="alloc"><div class="label">Allocazione per settore</div>${pieBlock(secs, 104, 'var(--side)', true)}</div>
+        <div class="alloc">
+          <div class="alloc-head"><span class="label">Allocazione</span>
+            <div class="seg seg-sm" role="group" aria-label="Allocazione per">${[['settori', 'Settori'], ['titoli', 'Titoli']].map(([k, l]) => `<button type="button" data-alloc="${k}" aria-pressed="${ui.alloc === k}">${l}</button>`).join('')}</div></div>
+          <div class="alloc-grid" data-show="${ui.alloc}">
+            <div data-panel="settori"><div class="label alloc-sub">Per settore</div>${pieBlock(secs, 104, 'var(--side)', 'Allocazione per settore')}</div>
+            <div data-panel="titoli"><div class="label alloc-sub">Per titolo</div>${pieBlock(companies(rows), 104, 'var(--side)', 'Allocazione per titolo')}</div>
+          </div>
+        </div>
         <div>
           <div class="side-head"><h3>Posizioni</h3></div><p class="label" style="padding:0 6px;margin:2px 0 6px">Tesi: ${sum}</p>
           <ul class="syms">${rows.map(r => {
@@ -290,7 +311,7 @@
     rows.forEach(r => { const s = serieDi(r.ticker); for (let i = 0; i < n; i++) vals[i] += r.quantita * s[N - n + i]; });
     const dates = D.giorni.slice(N - n), ch = vals[n - 1] - vals[0], pct = (vals[n - 1] / vals[0] - 1) * 100;
     const delta = `<span class="${dirOf(ch)}">${ch >= 0 ? '+' : '−'}${eur(Math.abs(ch), 0)} (${signed(pct, 1)})</span> <span class="muted">nel periodo</span>`;
-    if ($('#pchart')) { areaChart($('#pchart'), vals, dates, { h: 132, padR: 40, xLabels: [0.15, 0.85], year: ui.range === 'MAX', label: 'Valore del portafoglio' }); $('#rdelta').innerHTML = delta; }
+    if ($('#pchart')) { areaChart($('#pchart'), vals, dates, { h: w => Math.round(Math.max(132, Math.min(300, w * 0.42))), padR: 40, xLabels: [0.15, 0.85], year: ui.range === 'MAX', label: 'Valore del portafoglio' }); $('#rdelta').innerHTML = delta; }
     $$('[data-range]').forEach(b => b.setAttribute('aria-pressed', b.dataset.range === ui.range));
   }
 
@@ -737,8 +758,14 @@
   }
 
   document.addEventListener('click', ev => {
-    const el = ev.target.closest('[data-open],[data-act],[data-range],[data-scope],[data-filter],[data-q]');
+    const el = ev.target.closest('[data-open],[data-act],[data-range],[data-scope],[data-filter],[data-q],[data-alloc]');
     if (!el) return;
+    if (el.dataset.alloc) {
+      ui.alloc = el.dataset.alloc; savePref();
+      const g = $('.alloc-grid'); if (g) g.dataset.show = ui.alloc;
+      $$('[data-alloc]').forEach(b => b.setAttribute('aria-pressed', b.dataset.alloc === ui.alloc));
+      return;
+    }
     if (el.dataset.open) { openCompany(el.dataset.open); return; }
     if (el.dataset.range) { ui.range = el.dataset.range; drawPortfolioChart(); return; }
     if (el.dataset.scope) { ui.scope = el.dataset.scope; ui.ticker = null; renderMain(); return; }
