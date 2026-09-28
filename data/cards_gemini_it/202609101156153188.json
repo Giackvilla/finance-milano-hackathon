@@ -14,10 +14,29 @@
     "isin": "IT0004965148"
   },
   "news": {
-    "news_type": "other",
+    "news_type": "market_report",
+    "classifier": "gemini",
     "scheduled": null,
     "headline_reports_move": false,
-    "matched": []
+    "matched": [
+      {
+        "type": "market_report",
+        "keyword": "La situazione tecnica di Moncler rimane negativa. Il titolo, confermando la tendenza ribassista nella quale si trova inserito, ha infatti subito una nuova flessione ed è sceso fino a quota 45 euro."
+      }
+    ],
+    "topics": [
+      {
+        "topic": "market_report",
+        "confidence": 0.95,
+        "evidence": "La situazione tecnica di Moncler rimane negativa. Il titolo, confermando la tendenza ribassista nella quale si trova inserito, ha infatti subito una nuova flessione ed è sceso fino a quota 45 euro."
+      }
+    ],
+    "summary": "La situazione tecnica di Moncler rimane negativa, con il titolo che ha subito una flessione scendendo a 45 euro. Si prevede un ulteriore cedimento con target a 44,40-44,25 e 43,80-43,70 euro, a meno che un forte ipervenduto di breve termine non lo impedisca. Un'inversione rialzista è difficile da ipotizzare e richiederebbe una fase riaccumulativa, con una resistenza in area 46,80-47,20 euro.",
+    "company_evidence": "La situazione tecnica di Moncler",
+    "keyword_news_type": "other",
+    "gemini_des_azione": "Moncler",
+    "gemini_cod_azione": "MONC",
+    "instrument_agrees": true
   },
   "verdict": {
     "status": "REACTED",

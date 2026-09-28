@@ -84,6 +84,11 @@ The controlled labels are the existing card labels: `takeover`, `earnings`,
 offerings are `capital`; commercial offers and contracts are `deal`. The output
 keeps the card's `article`, `instrument`, `news`, and `gemini` blocks.
 
+The demo cards in `data/cards_gemini_en` and `data/cards_gemini_it` use this
+classifier for `news.news_type` (`news.classifier` = `gemini`). `scheduled` and
+`headline_reports_move` stay on the keyword rules, because the verdict text uses
+them. Refresh with `python3 scripts/refresh_demo_news.py`.
+
 ## For the dashboard
 
 Read only `web/public/data/`. It is committed, so the dashboard never needs gcloud or a Gemini key. The shape of every file is in [data/SCHEMA.md](data/SCHEMA.md).

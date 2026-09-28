@@ -15,18 +15,28 @@
   },
   "news": {
     "news_type": "market_report",
+    "classifier": "gemini",
     "scheduled": null,
     "headline_reports_move": false,
     "matched": [
       {
         "type": "market_report",
-        "keyword": "il titolo prova"
-      },
-      {
-        "type": "market_report",
-        "keyword": "nuovo allungo"
+        "keyword": "Il titolo, dopo una breve pausa di consolidamento al di sopra del sostegno grafico posto in area 4,10-4,05 euro, ha infatti compiuto un veloce balzo in avanti ed è salito verso i 4,40 euro. Il trend di breve termine è positivo: possibile pertanto un ulteriore allungo che può spingere i prezzi a quota 4,45-4,46 prima e verso i 4,50 euro in un secondo momento."
       }
-    ]
+    ],
+    "topics": [
+      {
+        "topic": "market_report",
+        "confidence": 0.95,
+        "evidence": "Il titolo, dopo una breve pausa di consolidamento al di sopra del sostegno grafico posto in area 4,10-4,05 euro, ha infatti compiuto un veloce balzo in avanti ed è salito verso i 4,40 euro. Il trend di breve termine è positivo: possibile pertanto un ulteriore allungo che può spingere i prezzi a quota 4,45-4,46 prima e verso i 4,50 euro in un secondo momento."
+      }
+    ],
+    "summary": "La situazione tecnica di Nexi è costruttiva. Dopo una breve pausa di consolidamento, il titolo ha registrato un rapido aumento a 4,40 euro. Il trend di breve termine è positivo, suggerendo un ulteriore allungo verso 4,45-4,46 euro e poi 4,50 euro. Un'inversione ribassista è improbabile, a meno di una chiusura giornaliera inferiore ai 4 euro.",
+    "company_evidence": "La situazione tecnica di Nexi rimane costruttiva.",
+    "keyword_news_type": "market_report",
+    "gemini_des_azione": "Nexi",
+    "gemini_cod_azione": "NEXI",
+    "instrument_agrees": true
   },
   "verdict": {
     "status": "ALREADY_IN_PRICE",

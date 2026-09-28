@@ -14,15 +14,47 @@
     "isin": "IT0005709909"
   },
   "news": {
-    "news_type": "governance",
+    "news_type": "takeover",
+    "classifier": "gemini",
     "scheduled": false,
     "headline_reports_move": false,
     "matched": [
       {
+        "type": "takeover",
+        "keyword": "offerta pubblica di scambio volontaria totalitaria promossa da Icop"
+      },
+      {
         "type": "governance",
-        "keyword": "\\bcda\\b"
+        "keyword": "Il cda di Trevi Finanziaria ha approvato all’unanimità il comunicato"
+      },
+      {
+        "type": "capital",
+        "keyword": "corrispettivo, interamente costituito da azioni Icop"
       }
-    ]
+    ],
+    "topics": [
+      {
+        "topic": "takeover",
+        "confidence": 1.0,
+        "evidence": "offerta pubblica di scambio volontaria totalitaria promossa da Icop"
+      },
+      {
+        "topic": "governance",
+        "confidence": 0.8,
+        "evidence": "Il cda di Trevi Finanziaria ha approvato all’unanimità il comunicato"
+      },
+      {
+        "topic": "capital",
+        "confidence": 0.6,
+        "evidence": "corrispettivo, interamente costituito da azioni Icop"
+      }
+    ],
+    "summary": "Il consiglio di amministrazione di Trevi ha respinto all'unanimità l'offerta pubblica di scambio totalitaria di Icop, giudicandola non congrua finanziariamente e non conveniente per gli azionisti. Il cda ha contestato le sinergie incerte, il corrispettivo interamente in azioni Icop e il momento dell'offerta, che non avrebbe ancora incorporato i benefici del piano industriale 2026-2029. L'articolo menziona anche l'offerta concorrente di Webuild, basata su un corrispettivo in denaro.",
+    "company_evidence": "Il cda di Trevi Finanziaria",
+    "keyword_news_type": "governance",
+    "gemini_des_azione": "Trevi",
+    "gemini_cod_azione": "TFI",
+    "instrument_agrees": true
   },
   "verdict": {
     "status": "ALREADY_IN_PRICE",

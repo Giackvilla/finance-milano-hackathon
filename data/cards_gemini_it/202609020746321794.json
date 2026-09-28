@@ -15,18 +15,46 @@
   },
   "news": {
     "news_type": "deal",
+    "classifier": "gemini",
     "scheduled": false,
     "headline_reports_move": true,
     "matched": [
       {
         "type": "deal",
-        "keyword": "\\brileva\\b"
+        "keyword": "Lottomatica mette a segno la grande operazione che ridisegna il settore europeo del gaming. Il gruppo guidato da Guglielmo Angelozzi ha raggiunto un accordo con la spagnola Cirsa e con LHMC Midco, società controllata dai fondi gestiti da Blackstone, per una fusione interamente basata su scambio azionario."
       },
       {
         "type": "market_report",
-        "keyword": "il titolo (?:crolla|balza|vola|corre|affonda|scivola|cade|tracolla|sprofonda|rimbalza)"
+        "keyword": "Il titolo del gruppo italiano, intanto, perde l’11,2% in apertura di mercoledì 2 settembre, a 21,98 euro."
+      },
+      {
+        "type": "analyst",
+        "keyword": "Equita giudica positivamente l'acquisizione di Cirsa e conferma il rating buy, con target price a 31 euro."
       }
-    ]
+    ],
+    "topics": [
+      {
+        "topic": "deal",
+        "confidence": 1.0,
+        "evidence": "Lottomatica mette a segno la grande operazione che ridisegna il settore europeo del gaming. Il gruppo guidato da Guglielmo Angelozzi ha raggiunto un accordo con la spagnola Cirsa e con LHMC Midco, società controllata dai fondi gestiti da Blackstone, per una fusione interamente basata su scambio azionario."
+      },
+      {
+        "topic": "market_report",
+        "confidence": 0.9,
+        "evidence": "Il titolo del gruppo italiano, intanto, perde l’11,2% in apertura di mercoledì 2 settembre, a 21,98 euro."
+      },
+      {
+        "topic": "analyst",
+        "confidence": 0.9,
+        "evidence": "Equita giudica positivamente l'acquisizione di Cirsa e conferma il rating buy, con target price a 31 euro."
+      }
+    ],
+    "summary": "Lottomatica ha annunciato l'acquisizione di Cirsa tramite fusione per scambio azionario, creando il secondo operatore globale quotato nel gaming. Nonostante il razionale industriale dell'operazione, il titolo Lottomatica ha registrato un calo dell'11,2% in apertura a causa di preoccupazioni finanziarie a breve termine. Gli analisti, pur riconoscendo i rischi, hanno generalmente espresso pareri positivi sull'acquisizione, evidenziando il rafforzamento della leadership e le sinergie attese.",
+    "company_evidence": "Lottomatica mette a segno la grande operazione che ridisegna il settore europeo del gaming.",
+    "keyword_news_type": "deal",
+    "gemini_des_azione": "Lottomatica",
+    "gemini_cod_azione": "LTMC",
+    "instrument_agrees": true
   },
   "verdict": {
     "status": "DELAYED",

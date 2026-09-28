@@ -449,17 +449,64 @@ def null_gemini() -> dict:
     }
 
 
+def news_block_for(
+    titolo: str,
+    body: str,
+    article: dict,
+    kw: dict,
+    instruments: Optional[List[dict]] = None,
+    use_gemini_news: bool = False,
+    lang: str = "it",
+    card_code: Optional[str] = None,
+) -> dict:
+    """News block. Gemini picks the type; keyword rules keep the two verdict flags."""
+    block = {
+        "news_type": kw["news_type"],
+        "classifier": "rules",
+        "scheduled": kw["scheduled"],
+        "headline_reports_move": kw["headline_reports_move"],
+        "matched": [{"type": t, "keyword": k} for t, k in kw.get("matched") or []],
+    }
+    if not use_gemini_news:
+        return block
+    from classify_gemini import classify_article, fetch_instruments
+
+    listed = instruments if instruments is not None else fetch_instruments()
+    g = classify_article(
+        {**article, "titolo": titolo, "body": body},
+        listed,
+        language=lang,
+    )
+    gem_code = (g.get("instrument") or {}).get("cod_azione")
+    block.update({
+        "news_type": g["news"]["news_type"],
+        "classifier": "gemini",
+        "topics": g["news"]["topics"],
+        "summary": g["gemini"]["summary"],
+        "company_evidence": g["gemini"]["company_evidence"],
+        "matched": g["news"]["matched"],
+        "keyword_news_type": kw["news_type"],
+        "gemini_des_azione": (g.get("instrument") or {}).get("des_azione"),
+        "gemini_cod_azione": gem_code,
+        "instrument_agrees": (card_code is None) or (gem_code == card_code),
+    })
+    return block
+
+
 def build_card_dict(
     article: dict,
     rows: List[dict],
     lang: str = "en",
     use_gemini: bool = True,
+    use_gemini_news: bool = False,
+    instruments: Optional[List[dict]] = None,
 ) -> dict:
     """Assemble one card from article + its tape_window rows."""
     titolo = article.get("titolo") or (rows[0].get("titolo") if rows else "") or ""
     body = article.get("body") or ""
-    news = classify(titolo, body)
-    verd = verdict(rows, news)
+    kw = classify(titolo, body)
+    # Verdict wording uses the keyword flags only (scheduled, headline_reports_move).
+    verd = verdict(rows, kw)
     tape = build_tape_block(rows, verd, lang)
     facts = tape["facts_text"]
 
@@ -481,15 +528,16 @@ def build_card_dict(
         "url": article.get("URL") or article.get("url"),
     }
 
-    news_block = {
-        "news_type": news["news_type"],
-        "scheduled": news["scheduled"],
-        "headline_reports_move": news["headline_reports_move"],
-        "matched": [{"type": t, "keyword": k} for t, k in news.get("matched") or []],
-    }
+    news_block = news_block_for(
+        titolo, body, article, kw,
+        instruments=instruments,
+        use_gemini_news=use_gemini_news,
+        lang=lang,
+        card_code=instrument.get("cod_azione"),
+    )
 
     if use_gemini:
-        g, c, attempts = run_gemini(article, facts, news, lang)
+        g, c, attempts = run_gemini(article, facts, news_block, lang)
         art_block["quote"] = g.get("quote")
         gemini_block = {
             "model": MODEL,
