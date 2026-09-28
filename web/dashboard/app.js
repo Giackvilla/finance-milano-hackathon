@@ -45,8 +45,6 @@
     x: '<path d="M6 6l12 12M18 6L6 18"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
     search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
-    expand: '<path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/>',
-    collapse: '<path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/>',
     panel: '<rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M15 4.5v15"/>'
   };
   const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
@@ -65,8 +63,8 @@
 
   const PREF = 'mf-desk:ui';
   const pref = (() => { try { return JSON.parse(localStorage.getItem(PREF) || '{}'); } catch (e) { return {}; } })();
-  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen })); } catch (e) { /* ignora */ } };
-  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false };
+  const savePref = () => { try { localStorage.setItem(PREF, JSON.stringify({ watchOpen: ui.watchOpen, leftW: ui.leftW })); } catch (e) { /* ignora */ } };
+  const ui = { range: '3M', scope: 'rilevanti', ticker: null, q: '', quarter: {}, editing: false, removing: false, current: null, watchOpen: pref.watchOpen !== false, leftW: pref.leftW || 320 };
 
   const azienda = t => state.aziende[t] || D.aziende[t] || null;
   const tesiDi = t => ({ ...azienda(t).tesi, ...(state.tesi[t] || {}) });
@@ -196,9 +194,9 @@
     const Y = v => (2 + (1 - (v - lo) / ((hi - lo) || 1)) * (h - 4)).toFixed(1);
     const pts = vals.map((v, i) => `${(i / (n - 1) * (w - 2) + 1).toFixed(1)},${Y(v)}`).join(' ');
     const col = vals[n - 1] >= vals[0] ? 'var(--up)' : 'var(--down)';
-    return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">
-      <line x1="0" x2="${w}" y1="${Y(vals[0])}" y2="${Y(vals[0])}" stroke="${col}" stroke-width="1" stroke-dasharray="1.5 2.5" opacity=".7"/>
-      <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+    return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="0" x2="${w}" y1="${Y(vals[0])}" y2="${Y(vals[0])}" stroke="${col}" stroke-width="1" stroke-dasharray="1.5 2.5" opacity=".7" vector-effect="non-scaling-stroke"/>
+      <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`;
   }
 
   /* ================================================================ allocazione: torta */
@@ -253,10 +251,7 @@
       rows.forEach(r => counts[STATO[statoDi(r.a)].cls]++);
       const sum = [counts.pos && `${counts.pos} rafforzate`, counts.neu && `${counts.neu} invariate`, counts.warn && `${counts.warn} da rivedere`, counts.na && `${counts.na} senza dati`].filter(Boolean).join(' · ');
 
-      const open = location.hash === '#portafoglio';
-      body = `<div class="side-head"><h2>Portafoglio</h2><div class="side-tools">
-          <button class="icon-btn" type="button" data-act="expand-port" aria-pressed="${open}" aria-label="${open ? 'Chiudi la vista estesa' : 'Espandi il portafoglio'}" title="${open ? 'Chiudi la vista estesa' : 'Espandi il portafoglio'}">${icon(open ? 'collapse' : 'expand')}</button>
-          <button class="icon-btn" type="button" data-act="add-pos" aria-label="Aggiungi posizione" title="Aggiungi posizione">${icon('plus')}</button></div></div>
+      body = `<div class="side-head"><h2>Portafoglio</h2><button class="icon-btn" type="button" data-act="add-pos" aria-label="Aggiungi posizione" title="Aggiungi posizione">${icon('plus')}</button></div>
         <div class="summary">
           <div class="label">Valore totale · al ${esc(D.aggiornamento)}</div>
           <div class="total num">${eur(tot)}</div>
@@ -269,7 +264,7 @@
           </div>
           <div class="range-delta num" id="rdelta" style="padding:6px 6px 0"></div>
         </div>
-        <div class="alloc"><div class="label">Allocazione per settore</div>${pieBlock(secs, 104, 'var(--side)', false)}</div>
+        <div class="alloc"><div class="label">Allocazione per settore</div>${pieBlock(secs, 104, 'var(--side)', true)}</div>
         <div>
           <div class="side-head"><h3>Posizioni</h3></div><p class="label" style="padding:0 6px;margin:2px 0 6px">Tesi: ${sum}</p>
           <ul class="syms">${rows.map(r => {
@@ -296,56 +291,7 @@
     const dates = D.giorni.slice(N - n), ch = vals[n - 1] - vals[0], pct = (vals[n - 1] / vals[0] - 1) * 100;
     const delta = `<span class="${dirOf(ch)}">${ch >= 0 ? '+' : '−'}${eur(Math.abs(ch), 0)} (${signed(pct, 1)})</span> <span class="muted">nel periodo</span>`;
     if ($('#pchart')) { areaChart($('#pchart'), vals, dates, { h: 132, padR: 40, xLabels: [0.15, 0.85], year: ui.range === 'MAX', label: 'Valore del portafoglio' }); $('#rdelta').innerHTML = delta; }
-    if ($('#xchart')) { areaChart($('#xchart'), vals, dates, { h: 260, padR: 48, year: ui.range === 'MAX', ring: 'var(--card)', label: 'Valore del portafoglio' }); $('#xdelta').innerHTML = delta; }
     $$('[data-range]').forEach(b => b.setAttribute('aria-pressed', b.dataset.range === ui.range));
-  }
-
-  /* ================================================================ area centrale: portafoglio esteso */
-  function renderPortfolioView() {
-    toolbar(true);
-    const { rows, tot } = posizioni();
-    const d = asOfDate;
-    const title = `<h1 class="page-title" tabindex="-1" id="ptitle">Portafoglio <span class="date">${d.getUTCDate()} ${MESI_LUNGHI[d.getUTCMonth()]}</span></h1>`;
-    if (!rows.length) {
-      $('#app').innerHTML = `<div class="view">${title}<div class="empty" style="margin-top:40px"><h3>Nessuna posizione</h3><p>Aggiungi un titolo che possiedi e il motivo per cui l’hai comprato.</p>
-        <button class="btn" type="button" data-act="add-pos">${icon('plus')}Aggiungi posizione</button></div></div>`;
-      return;
-    }
-    const { day, pct } = dayChange(rows, tot), secs = sectors(rows);
-    const byState = ['rafforzata', 'invariata', 'indebolita', 'insufficiente'].map(k => ({ k, list: rows.filter(r => statoDi(r.a) === k) })).filter(x => x.list.length);
-    const table = rows.map(r => {
-      const dec = decisioneDi(r.ticker), v = varDi(r.ticker);
-      return `<tr data-open="${esc(r.ticker)}">
-        <td><button class="rowlink" type="button" data-open="${esc(r.ticker)}"><b>${esc(r.ticker)}</b><span>${esc(r.a.nome)}</span></button></td>
-        <td>${nf(r.quantita, 0)}</td><td>${nf(r.a.prezzo, priceDigits(r.a.prezzo))}</td><td>${eur(r.valore)}</td><td>${nf(r.peso, 1)}%</td>
-        <td class="${dirOf(v)}">${signed(v)}</td>
-        <td class="l">${chipStato(statoDi(r.a))}</td>
-        <td class="l">${dec ? AZIONI.portafoglio[dec.azione] : '<span class="muted">Dati insufficienti</span>'}</td>
-      </tr>`;
-    }).join('');
-    $('#app').innerHTML = `<div class="view">
-      ${title}
-      <div class="dh-quote" style="margin-top:10px"><span class="p">${eur(tot)}</span><span class="${dirOf(day)}" style="font-weight:500">${day >= 0 ? '+' : '−'}${eur(Math.abs(day))} (${signed(pct)})</span><span class="muted">ultima seduta · ${rows.length} posizioni</span></div>
-      <div class="detail" style="margin-top:20px">
-        <section class="card">
-          <div class="card-h"><h2>Andamento</h2><div class="seg" role="group" aria-label="Periodo del grafico">${Object.keys(RANGES).map(k => `<button type="button" data-range="${k}" aria-pressed="${ui.range === k}">${k}</button>`).join('')}</div></div>
-          <div class="chart" id="xchart"></div>
-          <div class="range-delta num" id="xdelta" style="margin-top:8px;font-size:14px"></div>
-        </section>
-        <div class="split" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
-          <section class="card"><div class="card-h"><h2>Allocazione per settore</h2></div>${pieBlock(secs, 176, 'var(--card)', true)}</section>
-          <section class="card"><div class="card-h"><h2>Stato delle tesi</h2><span class="muted">dopo gli ultimi risultati</span></div>
-            <dl class="group theses">${byState.map(x => `<div><dt>${chipStato(x.k)}</dt><dd><b>${x.list.length}</b>${x.list.map(r => esc(r.ticker)).join(', ')}</dd></div>`).join('')}</dl></section>
-        </div>
-        <section class="card">
-          <div class="card-h"><h2>Posizioni</h2><button class="btn secondary" type="button" data-act="add-pos" style="height:30px;padding:0 14px">${icon('plus')}Aggiungi posizione</button></div>
-          <div class="table-wrap"><table class="hold">
-            <thead><tr><th scope="col">Titolo</th><th scope="col">Quantità</th><th scope="col">Prezzo</th><th scope="col">Valore</th><th scope="col">Peso</th><th scope="col">Oggi</th><th scope="col" class="l">Tesi</th><th scope="col" class="l">Decisione</th></tr></thead>
-            <tbody>${table}</tbody></table></div>
-        </section>
-      </div>
-    </div>`;
-    drawPortfolioChart();
   }
 
   /* ================================================================ barra destra: watchlist */
@@ -751,13 +697,9 @@
 
   function renderMain() {
     charts.forEach((_, host) => { if (host.id !== 'pchart') charts.delete(host); });
-    const t = currentTicker(), ok = !!(t && azienda(t)), port = location.hash === '#portafoglio';
-    if (port) renderPortfolioView();
-    else if (ok) renderDetail(t);
-    else { if (t) history.replaceState(null, '', '#notizie'); renderNews(); }
-    $('#shell').classList.toggle('is-detail', ok || port);
-    const ex = $('[data-act="expand-port"]');
-    if (ex) { const l = port ? 'Chiudi la vista estesa' : 'Espandi il portafoglio'; ex.setAttribute('aria-pressed', port); ex.setAttribute('aria-label', l); ex.title = l; ex.innerHTML = icon(port ? 'collapse' : 'expand'); }
+    const t = currentTicker(), ok = !!(t && azienda(t));
+    if (ok) renderDetail(t); else { if (t) history.replaceState(null, '', '#notizie'); renderNews(); }
+    $('#shell').classList.toggle('is-detail', ok);
     applyWatch();
   }
   function renderAll() {
@@ -799,8 +741,7 @@
     if (el.dataset.q) { ui.quarter[t] = +el.dataset.q; $('#earn').innerHTML = earningsHTML(t); $(`#qt-${el.dataset.q}`).focus(); return; }
     switch (el.dataset.act) {
       case 'add-pos': openDialog('pos'); break;
-      case 'expand-port': location.hash = location.hash === '#portafoglio' ? '#notizie' : '#portafoglio'; break;
-      case 'toggle-watch': ui.watchOpen = !ui.watchOpen; savePref(); applyWatch(); break;
+      case 'toggle-watch': ui.watchOpen = !ui.watchOpen; savePref(); applyWatch(); setLeft(clampLeft(ui.leftW)); break;
       case 'add-watch': openDialog('watch'); break;
       case 'dlg-close': closeDialog(); break;
       case 'clear-filter': ui.ticker = null; renderMain(); break;
@@ -834,6 +775,59 @@
     const tabs = $$('.qtab'), i = tabs.indexOf(tab);
     tabs[(i + (ev.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length].click();
   });
+
+  /* Divisore tra portafoglio e notizie (regole apple-design): segue il puntatore 1:1 da dove lo si afferra,
+     oltre i limiti oppone resistenza elastica e al rilascio torna al limite con la curva "drawer".
+     Doppio clic: larghezza predefinita. Tastiera: frecce (Maiusc = passo lungo), Home, Fine. */
+  const LEFT_DEF = 320, LEFT_MIN = 260;
+  const shell = $('#shell'), splitter = $('#splitter');
+  const leftMax = () => Math.max(LEFT_MIN, Math.min(720, window.innerWidth - (ui.watchOpen && window.innerWidth > 1240 ? 320 : 0) - 440));
+  const clampLeft = w => Math.max(LEFT_MIN, Math.min(leftMax(), w));
+  const rubber = (over, dim = 180, c = 0.55) => (over * dim * c) / (dim + c * Math.abs(over));
+  let sideRaf;
+  const redrawSide = () => { cancelAnimationFrame(sideRaf); sideRaf = requestAnimationFrame(() => { const h = $('#pchart'), d = h && charts.get(h); if (d) d(); }); };
+  function setLeft(w) {
+    document.documentElement.style.setProperty('--left-w', w.toFixed(1) + 'px');
+    splitter.setAttribute('aria-valuenow', Math.round(w));
+    splitter.setAttribute('aria-valuemax', Math.round(leftMax()));
+  }
+  function settleLeft(w) {
+    ui.leftW = clampLeft(w); setLeft(ui.leftW); savePref();
+    setTimeout(() => charts.forEach((draw, host) => { if (host.isConnected) draw(); }), 320);
+  }
+  splitter.addEventListener('pointerdown', ev => {
+    if (ev.button !== 0) return;
+    ev.preventDefault();
+    try { splitter.setPointerCapture(ev.pointerId); } catch (e) { /* puntatore non catturabile: il trascinamento funziona comunque */ }
+    const startX = ev.clientX, startW = ui.leftW;
+    let w = startW;
+    shell.classList.add('resizing'); document.body.classList.add('resizing');
+    const move = e => {
+      w = startW + (e.clientX - startX);
+      const lo = LEFT_MIN, hi = leftMax();
+      const shown = w < lo ? lo - rubber(lo - w) : w > hi ? hi + rubber(w - hi) : w;
+      setLeft(shown); redrawSide();
+    };
+    const up = () => {
+      splitter.removeEventListener('pointermove', move);
+      splitter.removeEventListener('pointerup', up);
+      splitter.removeEventListener('pointercancel', up);
+      shell.classList.remove('resizing'); document.body.classList.remove('resizing');
+      settleLeft(w);
+    };
+    splitter.addEventListener('pointermove', move);
+    splitter.addEventListener('pointerup', up);
+    splitter.addEventListener('pointercancel', up);
+  });
+  splitter.addEventListener('dblclick', () => settleLeft(LEFT_DEF));
+  splitter.addEventListener('keydown', ev => {
+    const step = ev.shiftKey ? 64 : 16;
+    const next = { ArrowLeft: ui.leftW - step, ArrowRight: ui.leftW + step, Home: LEFT_MIN, End: leftMax() }[ev.key];
+    if (next === undefined) return;
+    ev.preventDefault(); settleLeft(next);
+  });
+  window.addEventListener('resize', () => setLeft(clampLeft(ui.leftW)));
+  setLeft(clampLeft(ui.leftW));
 
   // torta: passando su uno spicchio si evidenzia la voce di legenda, e viceversa
   document.addEventListener('pointerover', ev => {
