@@ -45,7 +45,8 @@
     x: '<path d="M6 6l12 12M18 6L6 18"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
     search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
-    panel: '<rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M9 4.5v15"/>'
+    panel: '<rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M9 4.5v15"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.4"/>'
   };
   const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
 
@@ -765,9 +766,28 @@
     $('#toolbar').innerHTML = `<button class="icon-btn plain" type="button" data-act="toggle-side" aria-controls="side-left" aria-pressed="${ui.sideOpen}" aria-label="${sl}" title="${sl}">${icon('panel')}</button>
       ${nav}
       <span class="spacer"></span>
-      <span class="status">Borsa Italiana · chiusa ·</span>
-      <span class="demo"${D.reale ? ` title="${esc(`${D.reale.etichetta} · Prezzi al ${D.reale.prezzi_al || D.aggiornamento} · Notizie al ${D.reale.notizie_al || D.aggiornamento}`)}"` : ''}>${D.reale ? `${esc(D.reale.etichetta)} · ${cutoffsHTML()}` : 'Dati simulati'}</span>`;
+      ${dataInfoHTML()}`;
   }
+  /* Provenienza dei dati: nella barra solo la data dei prezzi; il resto in un piccolo pannello che si apre dal pulsante. */
+  function dataInfoHTML() {
+    const R = D.reale, p = (R && R.prezzi_al) || D.aggiornamento, n = (R && R.notizie_al) || D.aggiornamento;
+    const rows = R
+      ? [['Prezzi', `Chiusura del ${p} · dataset MF`], ['Notizie', `Articoli MF fino al ${n}`], ['Portafoglio e tesi', 'Di esempio'], ['Analisi', 'Generate dal modello · non è consulenza']]
+      : [['Dati', 'Prezzi, notizie e segnali simulati'], ['Portafoglio e tesi', 'Di esempio'], ['Analisi', 'Esempi scritti a mano · non è consulenza']];
+    const label = R ? `Dati al ${esc(String(p).replace(/\s\d{4}$/, ''))}` : 'Dati simulati';
+    return `<div class="data-wrap">
+      <button class="data-btn" type="button" data-act="data-info" aria-expanded="false" aria-controls="data-pop">${label}${icon('info')}</button>
+      <div class="data-pop" id="data-pop" role="dialog" aria-label="Da dove vengono i dati" hidden>
+        <dl>${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+      </div>
+    </div>`;
+  }
+  function setDataInfo(open) {
+    const b = $('.data-btn'), pop = $('#data-pop');
+    if (!b || !pop) return;
+    b.setAttribute('aria-expanded', open); pop.hidden = !open;
+  }
+
   function applySide() {
     $('#shell').classList.toggle('side-closed', !ui.sideOpen);
     $('#side-left').inert = !ui.sideOpen;
@@ -1697,6 +1717,7 @@
     switch (el.dataset.act) {
       case 'add-pos': openDialog('pos'); break;
       case 'more-news': { ui.allNews[t] = true; const y = scrollY; renderDetail(t); scrollTo(0, y); break; }
+      case 'data-info': setDataInfo(el.getAttribute('aria-expanded') !== 'true'); break;
       case 'toggle-side': ui.sideOpen = !ui.sideOpen; savePref(); applySide(); break;
       case 'add-watch': openDialog('watch'); break;
       case 'dlg-close': closeDialog(); break;
@@ -1718,6 +1739,10 @@
       }
     }
   });
+
+  // pannello dati: si chiude cliccando fuori o con Esc
+  document.addEventListener('pointerdown', ev => { if (!ev.target.closest('.data-wrap')) setDataInfo(false); });
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && $('#data-pop') && !$('#data-pop').hidden) { setDataInfo(false); $('.data-btn').focus(); } });
 
   document.addEventListener('submit', ev => {
     ev.preventDefault();
