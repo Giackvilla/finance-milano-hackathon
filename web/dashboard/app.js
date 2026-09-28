@@ -717,11 +717,9 @@
     const heads = (selected && selected.headlines) || [];
     const sp = block.spark || [], at = k => (sp.length > k ? sp[sp.length - 1 - k] : null);
     const hist = [['Chiusura precedente', at(1)], ['1 settimana fa', at(5)], ['1 mese fa', at(21)], ['3 mesi fa', sp.length ? sp[0] : null]];
-    const zone = fgZone(block.score);
     return `<section class="card fg" id="fear-greed" aria-labelledby="h-fg">
-      <div class="card-h"><div><h2 id="h-fg">Fear &amp; Greed · ${esc(name)} ${prov('modello', 'Indice descrittivo sul nastro e sul tono delle notizie. Non è un segnale operativo.')}</h2>
-        <p class="muted" style="font-size:13px;margin-top:2px">Che emozione muove il mercato oggi? · ${esc(fgDate(block.date))}</p></div>
-        <span class="fg-now ${zone.tone}">${esc(fgBand(block.label))}</span></div>
+      <div class="card-h"><h2 id="h-fg">Fear &amp; Greed · ${esc(name)} ${prov('modello', 'Indice descrittivo sul nastro e sul tono delle notizie. Non è un segnale operativo.')}</h2>
+        <span class="muted">${esc(fgDate(block.date))}</span></div>
       <div class="fg-body">
         ${fgDial(block.score)}
         <dl class="fg-hist">${hist.map(([l, v]) => {
@@ -729,14 +727,17 @@
           return `<div><dt><span>${l}</span><b>${z ? esc(z.short) : 'n.d.'}</b></dt><i aria-hidden="true"></i><dd class="${z ? z.tone : ''}">${v == null ? '—' : Math.round(v)}</dd></div>`;
         }).join('')}</dl>
       </div>
-      <div class="fg-picks" role="group" aria-label="Mercato o settore">${picks.map(p => `<button class="fg-pick" type="button" data-fg="${esc(p.id)}" aria-pressed="${(selected ? selected.id : 'italy') === p.id}">
+      <div class="fg-foot">
+        <div class="fg-picks" role="group" aria-label="Mercato o settore">${picks.map(p => `<button class="fg-pick" type="button" data-fg="${esc(p.id)}" aria-pressed="${(selected ? selected.id : 'italy') === p.id}">
         <span class="nm">${esc(p.name)}</span><b class="${fgZone(p.score).tone}">${Math.round(p.score)}</b>
       </button>`).join('')}</div>
-      <details class="fg-more"><summary>Come è calcolato</summary>
+        <button class="link fg-how" type="button" data-act="fg-how" aria-expanded="${ui.fgHow ? 'true' : 'false'}" aria-controls="fg-how">Come è calcolato</button>
+      </div>
+      <div class="fg-how-body" id="fg-how"${ui.fgHow ? '' : ' hidden'}>
         <p class="fg-shocks">${fgShocks(block)} <span class="muted">· ${block.names} titoli</span></p>
         ${fgBars(block.components)}
         ${heads.length ? `<ul class="fg-heads">${heads.map(h => `<li>${esc(h)}</li>`).join('')}</ul>` : ''}
-      </details>
+      </div>
     </section>`;
   }
   function fearGreedCompanyHTML(ticker) {
@@ -1718,6 +1719,11 @@
       case 'add-pos': openDialog('pos'); break;
       case 'more-news': { ui.allNews[t] = true; const y = scrollY; renderDetail(t); scrollTo(0, y); break; }
       case 'data-info': setDataInfo(el.getAttribute('aria-expanded') !== 'true'); break;
+      case 'fg-how': {
+        ui.fgHow = !ui.fgHow;
+        el.setAttribute('aria-expanded', ui.fgHow); const body = $('#fg-how'); if (body) body.hidden = !ui.fgHow;
+        break;
+      }
       case 'toggle-side': ui.sideOpen = !ui.sideOpen; savePref(); applySide(); break;
       case 'add-watch': openDialog('watch'); break;
       case 'dlg-close': closeDialog(); break;
