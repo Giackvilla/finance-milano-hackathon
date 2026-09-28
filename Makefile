@@ -9,7 +9,7 @@ TO       ?= 2026-09-18
 # Hero stories = the ones that already have Gemini cards; override with HERO_IDS="id1 id2".
 HERO_IDS ?= $(basename $(notdir $(filter-out %/index.json,$(wildcard data/cards_gemini_en/*.json))))
 
-.PHONY: all data events stats series prices cards gemini export test
+.PHONY: all data events stats series prices cards gemini export dashboard test
 
 all: data cards gemini series export
 
@@ -40,6 +40,11 @@ series:
 export:
 	$(PY) scripts/export_dashboard.py
 	$(PY) scripts/test_export.py
+	$(PY) scripts/build_dashboard_data.py
+
+# Only regenerate web/dashboard/real_data.js from the committed bundle
+dashboard:
+	$(PY) scripts/build_dashboard_data.py
 
 test:
 	$(PY) scripts/test_verdict.py

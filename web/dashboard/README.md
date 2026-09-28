@@ -24,6 +24,16 @@ Then open http://localhost:8765. Opening `index.html` directly from disk also wo
 
 User edits (positions, watchlist, thesis changes, added companies) are saved in the browser's `localStorage` under `mf-desk:v1`. Use **Ripristina dati demo** in the footer to reset.
 
+## Real data (connected)
+
+`real_data.js` loads after `data.js` and replaces what the pipeline really has. It is generated from `web/public/data` by `make dashboard` (see `scripts/build_dashboard_data.py`); don't edit it by hand.
+
+- Real: prices and the price chart (2021-01-04 to 2026-09-23), last-session move, trading-day calendar, company names, and MF stories since 1 Aug 2026 with the price verdict (status, peak move, how many times the normal daily swing).
+- Portfolio quantities are rescaled so each position keeps its demo value at the real price, so the weights stay the same.
+- Still simulated: theses, earnings, decisions, sectors. Stellantis (`STLAM`) keeps a simulated price because its ISIN is Dutch and the story matching only covers Italian ISINs; its name is marked "prezzo simulato". The index strip is hidden.
+
+Demo tickers map to the bundle in `DEMO_COMPANIES` inside the generator (`ISP` → Intesa Sanpaolo `AMBR`, `LDO` → Leonardo `FINME`, `SPM` → Saipem `SAIP`, `TIT` → Telecom Italia `OLI`).
+
 ## Connecting real data
 
 `app.js` only reads `window.DEMO_DATA`. To connect real data, produce an object with the same shape, either by generating `data.js` from a script or by replacing it with a loader that sets `window.DEMO_DATA` before `app.js` runs. The full shape is documented at the top of `data.js`.

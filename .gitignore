@@ -5,3 +5,5 @@ node_modules/
 __pycache__/
 data/tape_all.csv
 data/company_prices.csv
+# iCloud Desktop sync conflict copies ("moncler 2.json")
+* [0-9].json

@@ -319,7 +319,7 @@
     $('#toolbar').innerHTML = `${back ? `<button class="back" type="button" data-act="back">${icon('back')}Notizie</button>` : ''}
       <span class="spacer"></span>
       <span class="status">Borsa Italiana · chiusa ·</span>
-      <span class="demo">Dati simulati</span>
+      <span class="demo">${D.reale ? esc(D.reale.etichetta) : 'Dati simulati'}</span>
       <button class="icon-btn plain" type="button" data-act="toggle-watch" aria-controls="side-right" aria-pressed="${ui.watchOpen}" aria-label="${ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'}" title="${ui.watchOpen ? 'Nascondi la watchlist' : 'Mostra la watchlist'}">${icon('panel')}</button>`;
   }
   function applyWatch() {
@@ -357,7 +357,13 @@
     const dir = s ? s.dir : g && g.dir;
     const others = linked(n).filter(x => x.ticker !== t).map(x => x.ticker);
     let sig;
-    if (g) {
+    const vd = n.verdetto;
+    if (vd) {
+      const fig = vd.move_pct != null && vd.z != null
+        ? `${vd.status === 'NO_REACTION' ? 'seduta più ampia' : 'picco'} <b class="${dirOf(vd.move_pct)}">${signed(vd.move_pct, 1)}</b> · ${nf(Math.abs(vd.z), 1)}× il normale${vd.d ? ` · ${fmtDate(new Date(vd.d + 'T00:00:00Z'))}` : ''}` : '';
+      sig = `<div class="sig" title="Verdetto sul prezzo: una seduta è anomala se si muove almeno 2 volte l’oscillazione normale delle 20 sedute precedenti.">
+        <span class="chip ${vd.cls}">${esc(vd.label)}</span><span class="hist">${fig}</span></div>`;
+    } else if (g) {
       sig = `<div class="sig" title="Direzione e forza stimate dal testo. Storico: variazione media del titolo nelle ${g.storico.sedute} sedute dopo ${g.storico.n} articoli simili.">
         <span class="dir ${dir}">${trend(dir)}${DIR_LABEL[dir]}</span><span class="meter ${dir}" role="img" aria-label="Forza ${nf(g.forza, 2)}"><i style="width:${Math.round(g.forza * 100)}%"></i></span>
         <span class="hist">· simili <b class="${dirOf(g.storico.pct)}">${signed(g.storico.pct, 1)}</b> in ${g.storico.sedute} sedute (n=${g.storico.n})</span></div>`;
@@ -368,8 +374,8 @@
     if (n.indicatore && (!t || n.indicatore.ticker === t) && tracked(n.indicatore.ticker)) tl = `<div class="tl">${icon('link')}<span>Tocca la tua tesi: “${esc(n.indicatore.nome)}”</span></div>`;
     else if (n.notaTesi && t) tl = `<div class="tl off">${icon('link')}<span>${esc(n.notaTesi)}</span></div>`;
     return `<article class="ncard">
-      <div class="src">MF Milano Finanza · ${esc(n.sezione)}${s ? ` · similarità ${nf(s.sim, 2)}` : ''}</div>
-      <h3>${esc(n.titolo)}</h3>
+      <div class="src">MF Milano Finanza · ${esc(n.sezione)}${s && !vd ? ` · similarità ${nf(s.sim, 2)}` : ''}</div>
+      <h3>${n.url ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.titolo)}</a>` : esc(n.titolo)}</h3>
       <p class="sum">${esc(n.riassunto)}</p>
       ${sig}${tl}
       <div class="when">${d.getUTCDate()} ${MESI[d.getUTCMonth()]} · ${hhmm(d)}${others.length ? ` <span class="muted" style="font-weight:400">· anche ${others.map(esc).join(', ')}</span>` : ''}</div>
@@ -409,7 +415,7 @@
 
     const board = signalBoard();
     const boardHTML = board.length && !ui.q ? `<section class="card board" aria-labelledby="h-board">
-        <div class="board-h"><h2 id="h-board">Segnali impliciti</h2><p>Ultime 4 sedute · media di direzione × forza × similarità · scala −1 … +1</p></div>
+        <div class="board-h"><h2 id="h-board">Segnali impliciti</h2><p>${D.reale ? 'Articoli MF dal 1 ago · direzione del picco × forza (|z| / 6) · scala −1 … +1' : 'Ultime 4 sedute · media di direzione × forza × similarità · scala −1 … +1'}</p></div>
         <div class="board-rows">${board.map(b => `<button class="brow" type="button" data-filter="${esc(b.t)}" aria-pressed="${ui.ticker === b.t}" title="${esc(azienda(b.t).nome)}: ${b.n} ${b.n === 1 ? 'articolo' : 'articoli'}, segnale netto ${signed(b.v, 2, '')}">
           <span class="t"><span class="own ${ownership(b.t)}"></span>${esc(b.t)}</span>
           <span class="track"><i class="${b.v >= 0 ? 'up' : 'down'}" style="width:calc(${Math.min(1, Math.abs(b.v)) * 50}% - 1px)"></i></span>
@@ -420,8 +426,8 @@
     const d = asOfDate;
     $('#app').innerHTML = `<div class="view">
       <h1 class="page-title" tabindex="-1" id="ptitle">Notizie <span class="date">${d.getUTCDate()} ${MESI_LUNGHI[d.getUTCMonth()]}</span></h1>
-      <p class="page-sub">Da MF Milano Finanza, collegate ai tuoi titoli per similarità tra embedding (soglia ${nf(D.soglia, 2)}), con il segnale implicito e l’indicatore della tesi che toccano.</p>
-      <div class="tape" aria-label="Indici (demo)">${D.indici.map(x => `<span>${esc(x.nome)}<b>${esc(x.valore)}</b><span class="${dirOf(x.var)}">${signed(x.var)}</span></span>`).join('')}</div>
+      <p class="page-sub">${D.reale ? esc(D.reale.sottotitolo) : `Da MF Milano Finanza, collegate ai tuoi titoli per similarità tra embedding (soglia ${nf(D.soglia, 2)}), con il segnale implicito e l’indicatore della tesi che toccano.`}</p>
+      ${D.indici.length ? `<div class="tape" aria-label="Indici (demo)">${D.indici.map(x => `<span>${esc(x.nome)}<b>${esc(x.valore)}</b><span class="${dirOf(x.var)}">${signed(x.var)}</span></span>`).join('')}</div>` : ''}
       <div class="controls">
         <div class="seg" role="group" aria-label="Quali notizie">${scopes.map(([k, l]) => `<button type="button" data-scope="${k}" aria-pressed="${ui.scope === k}">${l}<span class="c">${counts[k]}</span></button>`).join('')}</div>
         ${ui.ticker ? `<span class="filter">Solo <b>${esc(ui.ticker)}</b><button type="button" data-act="clear-filter" aria-label="Rimuovi filtro">${icon('x')}</button></span>` : ''}
