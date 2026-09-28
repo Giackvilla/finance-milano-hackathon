@@ -1,6 +1,6 @@
 # Dashboard (prototype)
 
-Portfolio on the left, MF news grouped by stock in the middle, watchlist on the right. Clicking a stock opens its page: your thesis, what changed after the latest results, a decision to consider, and the last four earnings.
+Portfolio on the left (value, chart, holdings), a lean summary in the middle (Fear & Greed slot and allocation pies), watchlist on the right. Clicking a stock opens its page: your thesis, what changed after the latest results, a decision to consider, and the last four earnings.
 
 **Everything in `data.js` is simulated.** Prices, earnings, news and signals are placeholders so the design shows every state. Nothing in this folder reads the pipeline yet.
 
@@ -13,6 +13,24 @@ python3 -m http.server 8765 --directory web/dashboard
 ```
 
 Then open http://localhost:8765. Opening `index.html` directly from disk also works.
+
+## Pages
+
+- **Riepilogo** (home, `#riepilogo`): a slot for the Fear & Greed index, then two interactive pies, by holding and by sector. Clicking a holding opens its company page; clicking a sector pins it and lists its holdings.
+- **Notizie** (`#notizie`): MF headlines grouped by company, kept simple. Reached from the toolbar switch.
+- **Company page** (`#azienda-<code>`): news that can move the stock (net signal, price verdict, thesis indicator), then thesis, what changed, decision and the last four earnings.
+
+The left column (value, chart, holdings) and the right column (watchlist) stay on every page.
+
+## Adding the Fear & Greed index
+
+The home page reserves a card with the id `fear-greed`, sized like a half-circle gauge with a four-row history (previous close, 1 week, 1 month, 1 year ago). To fill it without touching `app.js`:
+
+1. Create `web/dashboard/fear_greed.js` and load it in `index.html` **before** `app.js`.
+2. In it, define `window.renderFearGreed = function (el, ctx) { … }`. `el` is the card element; replace its contents. `ctx.data` is `window.DEMO_DATA`.
+3. The home page calls it after every render (switching back to Riepilogo, adding a position, resetting the demo), so it must be safe to call more than once.
+
+Use the page's CSS variables (`--card`, `--ink`, `--ink-2`, `--fill`, `--up`, `--down`, `--sep`) so it works in light and dark mode. `data/fear_greed.json` and `web/fear-greed.html` already have the numbers and a first design.
 
 ## Files
 
