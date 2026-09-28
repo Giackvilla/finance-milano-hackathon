@@ -391,7 +391,7 @@
     return nf(v, step < 0.1 ? 3 : step < 1 ? 2 : step < 10 ? 1 : 0);
   };
 
-  /* Linea come nell'app Borsa: area tenue, riferimento tratteggiato al valore iniziale, asse a destra, mirino con tooltip. */
+  /* Grafico del prezzo (area + linea), senza linea di riferimento “attuale”. Asse a destra, mirino con tooltip. */
   function areaChart(host, values, dates, opts = {}) {
     const draw = () => {
       const W = Math.max(200, host.clientWidth), H = typeof opts.h === 'function' ? opts.h(W) : (opts.h || 140), padR = opts.padR ?? 44, padB = 20, padT = opts.markers ? 18 : 6;
@@ -410,9 +410,8 @@
       const xl = xs.map(f => { const i = Math.round(f * (n - 1)); return `<text class="axis" x="${x(i).toFixed(1)}" y="${H - 4}" text-anchor="middle">${fmtDate(dates[i]).replace(/ \d{4}$/, opts.year ? ' ’' + String(dates[i].getUTCFullYear()).slice(2) : '')}</text>`; }).join('');
       const mk = (opts.markers || []).map(m => `<line class="mk" x1="${x(m.i).toFixed(1)}" x2="${x(m.i).toFixed(1)}" y1="${padT - 4}" y2="${padT + ih}"/><text class="mk-label" x="${x(m.i).toFixed(1)}" y="${padT - 7}" text-anchor="middle">${esc(m.label)}</text>`).join('');
       host.innerHTML = `<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="${esc(opts.label || 'Andamento')}">
-        <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".16"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
+        <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".22"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
         ${grid}${mk}
-        <line class="base" x1="0" x2="${iw}" y1="${y(values[0]).toFixed(1)}" y2="${y(values[0]).toFixed(1)}"/>
         <path d="${area}" fill="url(#${gid})"/>
         <path d="${line}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
         <line class="cross" x1="0" x2="0" y1="${padT}" y2="${padT + ih}" visibility="hidden"/>
@@ -447,7 +446,7 @@
   let rsz;
   window.addEventListener('resize', () => { clearTimeout(rsz); rsz = setTimeout(() => charts.forEach((draw, host) => { if (host.isConnected) draw(); else charts.delete(host); }), 120); });
 
-  /* Mini grafico del prezzo (serie storica), senza linea di riferimento. */
+  /* Mini grafico del prezzo assoluto (area + linea), mai %/riferimento tratteggiato. */
   function sparkline(vals, w = 56, h = 30) {
     if (!vals || vals.length < 2) return '';
     const lo = Math.min(...vals), hi = Math.max(...vals), n = vals.length;
@@ -458,19 +457,27 @@
     const base = `${X(0).toFixed(1)},${(h - 1).toFixed(1)} ${pts} ${X(n - 1).toFixed(1)},${(h - 1).toFixed(1)}`;
     const up = vals[n - 1] >= vals[0];
     const col = up ? 'var(--up)' : 'var(--down)';
-    const fill = up ? 'color-mix(in srgb, var(--up) 22%, transparent)' : 'color-mix(in srgb, var(--down) 22%, transparent)';
+    const gid = 'sg' + Math.abs(Math.round(vals[0] * 1e4 + vals[n - 1] * 1e2 + n));
     return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
-      <polygon points="${base}" fill="${fill}" stroke="none"/>
-      <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`;
+      <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".35"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
+      <polygon points="${base}" fill="url(#${gid})" stroke="none"/>
+      <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`;
   }
   const sparkPrezzo = t => {
     const span = { '1M': 21, '3M': 63, '1A': 252, 'MAX': D.giorni.length }[ui.range] || 63;
     const n = Math.min(span, D.giorni.length);
     const a = azienda(t);
-    const s = serieDi(t).slice(-n).filter(v => v != null && Number.isFinite(v));
+    // Keep calendar alignment (null gaps stay gaps) so the path is the price series, not a compacted % run.
+    const raw = serieDi(t).slice(-n);
+    const s = [];
+    for (let i = 0; i < raw.length; i++) {
+      const v = raw[i];
+      if (v != null && Number.isFinite(v)) s.push(v);
+      else if (s.length) s.push(s[s.length - 1]);
+    }
     if (s.length > 1) return sparkline(s);
     const px = a && a.prezzo != null ? a.prezzo : 0;
-    return sparkline([px, px]);
+    return sparkline([px * 0.998, px]);
   };
 
   /* ================================================================ allocazione: torta */
