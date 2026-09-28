@@ -969,8 +969,8 @@
       HOME.fuori = fuori;
       if (HOME.pin != null && !HOME.settori[HOME.pin]) HOME.pin = null;
       body = `<div class="home-grid">
-        <section class="card"><div class="card-h"><h2>Per titolo</h2><span class="muted">Clic: scheda del titolo</span></div>${pieInteractive('titoli')}</section>
-        <section class="card"><div class="card-h"><h2>Per settore</h2><span class="muted">Clic: i titoli del settore</span></div>${pieInteractive('settori')}</section>
+        <section class="card"><div class="card-h"><h2>Per titolo</h2></div>${pieInteractive('titoli')}</section>
+        <section class="card"><div class="card-h"><h2>Per settore</h2></div>${pieInteractive('settori')}</section>
       </div>
       ${fuori.length ? `<p class="note" style="margin-top:10px">Fuori dalle torte e dal totale: ${fuori.map(r => `${esc(r.ticker)} (${esc(r.a.nome.replace(/ · prezzo simulato$/, ''))})`).join(', ')}, perché il prezzo è simulato e non presente nel dataset MF.</p>` : ''}`;
     }
