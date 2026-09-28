@@ -1,4 +1,4 @@
-# MF Desk
+# FinMan
 
 Finance Milano Hackathon, challenge 2. You write a thesis for an Italian name. The desk checks that thesis against Milano Finanza articles and Borsa Italiana closes, then drafts an indication to evaluate.
 
