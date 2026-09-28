@@ -35,6 +35,17 @@ bq --project_id=class-hackaton-09 query --use_legacy_sql=false --format=csv --ma
   < sql/events.sql > data/candidates_recent.csv
 ```
 
+## Building the card for the chosen story
+
+```bash
+python3 scripts/build_card.py <content_id>            # writes data/card.json
+python3 scripts/build_card.py <content_id> --lang it  # Gemini sentence in Italian
+python3 scripts/count_day_before.py                   # writes data/count.json
+```
+
+`<content_id>` comes from `data/candidates_recent.csv`. The article's title must name exactly one company.
+Check `gemini.checks` in the output: the quote must be verbatim, the figure must be in the body, and no number may come from outside the sources.
+
 ## Workflow
 
 Everyone works on `main`, stays inside their own folder, makes small commits and pulls often.

@@ -1,0 +1,209 @@
+{
+  "from_date": "2021-02-01",
+  "to_date": "2026-09-15",
+  "n_session_rows": 94484,
+  "n_articles_before_filter": 13540,
+  "n_articles_after_filter": 4824,
+  "all_matched": {
+    "label": "all_matched",
+    "n_articles": 13540,
+    "status": {
+      "NO_REACTION": 7754,
+      "ALREADY_IN_PRICE": 1012,
+      "PARTLY_IN_PRICE": 375,
+      "MOSTLY_AT_OPEN": 251,
+      "REACTED": 1100,
+      "DELAYED": 3048
+    },
+    "by_news_type": {
+      "analyst": {
+        "NO_REACTION": 314,
+        "ALREADY_IN_PRICE": 58,
+        "PARTLY_IN_PRICE": 16,
+        "MOSTLY_AT_OPEN": 32,
+        "REACTED": 74,
+        "DELAYED": 118
+      },
+      "capital": {
+        "NO_REACTION": 459,
+        "ALREADY_IN_PRICE": 53,
+        "PARTLY_IN_PRICE": 32,
+        "MOSTLY_AT_OPEN": 18,
+        "REACTED": 77,
+        "DELAYED": 176
+      },
+      "deal": {
+        "NO_REACTION": 928,
+        "ALREADY_IN_PRICE": 96,
+        "PARTLY_IN_PRICE": 31,
+        "MOSTLY_AT_OPEN": 32,
+        "REACTED": 102,
+        "DELAYED": 338
+      },
+      "earnings": {
+        "NO_REACTION": 810,
+        "ALREADY_IN_PRICE": 118,
+        "PARTLY_IN_PRICE": 56,
+        "MOSTLY_AT_OPEN": 48,
+        "REACTED": 241,
+        "DELAYED": 404
+      },
+      "governance": {
+        "NO_REACTION": 276,
+        "ALREADY_IN_PRICE": 40,
+        "PARTLY_IN_PRICE": 19,
+        "MOSTLY_AT_OPEN": 5,
+        "REACTED": 17,
+        "DELAYED": 111
+      },
+      "legal_regulatory": {
+        "NO_REACTION": 122,
+        "ALREADY_IN_PRICE": 20,
+        "PARTLY_IN_PRICE": 6,
+        "MOSTLY_AT_OPEN": 1,
+        "REACTED": 7,
+        "DELAYED": 41
+      },
+      "market_report": {
+        "NO_REACTION": 1021,
+        "ALREADY_IN_PRICE": 210,
+        "PARTLY_IN_PRICE": 62,
+        "MOSTLY_AT_OPEN": 30,
+        "REACTED": 191,
+        "DELAYED": 371
+      },
+      "other": {
+        "NO_REACTION": 3601,
+        "ALREADY_IN_PRICE": 367,
+        "PARTLY_IN_PRICE": 132,
+        "MOSTLY_AT_OPEN": 63,
+        "REACTED": 338,
+        "DELAYED": 1392
+      },
+      "plan": {
+        "NO_REACTION": 30,
+        "ALREADY_IN_PRICE": 12,
+        "PARTLY_IN_PRICE": 4,
+        "MOSTLY_AT_OPEN": 3,
+        "REACTED": 12,
+        "DELAYED": 15
+      },
+      "takeover": {
+        "NO_REACTION": 193,
+        "ALREADY_IN_PRICE": 38,
+        "PARTLY_IN_PRICE": 17,
+        "MOSTLY_AT_OPEN": 19,
+        "REACTED": 41,
+        "DELAYED": 82
+      }
+    },
+    "unusual_n": 5786,
+    "share_already_or_mostly_at_open": 0.218,
+    "share_anything_before": 0.283,
+    "count_already_or_mostly_at_open": 1263,
+    "count_anything_before": 1638,
+    "unusual_day_before_peak": 691,
+    "share_day_before_peak": 0.119
+  },
+  "first_articles": {
+    "label": "first_articles",
+    "n_articles": 4824,
+    "status": {
+      "NO_REACTION": 2637,
+      "ALREADY_IN_PRICE": 363,
+      "PARTLY_IN_PRICE": 140,
+      "MOSTLY_AT_OPEN": 116,
+      "REACTED": 507,
+      "DELAYED": 1061
+    },
+    "by_news_type": {
+      "analyst": {
+        "NO_REACTION": 125,
+        "ALREADY_IN_PRICE": 23,
+        "PARTLY_IN_PRICE": 6,
+        "MOSTLY_AT_OPEN": 11,
+        "REACTED": 39,
+        "DELAYED": 40
+      },
+      "capital": {
+        "NO_REACTION": 147,
+        "ALREADY_IN_PRICE": 21,
+        "PARTLY_IN_PRICE": 11,
+        "MOSTLY_AT_OPEN": 5,
+        "REACTED": 36,
+        "DELAYED": 65
+      },
+      "deal": {
+        "NO_REACTION": 422,
+        "ALREADY_IN_PRICE": 41,
+        "PARTLY_IN_PRICE": 19,
+        "MOSTLY_AT_OPEN": 21,
+        "REACTED": 56,
+        "DELAYED": 150
+      },
+      "earnings": {
+        "NO_REACTION": 395,
+        "ALREADY_IN_PRICE": 69,
+        "PARTLY_IN_PRICE": 32,
+        "MOSTLY_AT_OPEN": 29,
+        "REACTED": 144,
+        "DELAYED": 230
+      },
+      "governance": {
+        "NO_REACTION": 80,
+        "ALREADY_IN_PRICE": 10,
+        "PARTLY_IN_PRICE": 5,
+        "MOSTLY_AT_OPEN": 1,
+        "REACTED": 5,
+        "DELAYED": 22
+      },
+      "legal_regulatory": {
+        "NO_REACTION": 33,
+        "ALREADY_IN_PRICE": 2,
+        "PARTLY_IN_PRICE": 1,
+        "MOSTLY_AT_OPEN": 0,
+        "REACTED": 2,
+        "DELAYED": 18
+      },
+      "market_report": {
+        "NO_REACTION": 210,
+        "ALREADY_IN_PRICE": 83,
+        "PARTLY_IN_PRICE": 17,
+        "MOSTLY_AT_OPEN": 10,
+        "REACTED": 83,
+        "DELAYED": 73
+      },
+      "other": {
+        "NO_REACTION": 1163,
+        "ALREADY_IN_PRICE": 102,
+        "PARTLY_IN_PRICE": 42,
+        "MOSTLY_AT_OPEN": 26,
+        "REACTED": 120,
+        "DELAYED": 441
+      },
+      "plan": {
+        "NO_REACTION": 11,
+        "ALREADY_IN_PRICE": 5,
+        "PARTLY_IN_PRICE": 2,
+        "MOSTLY_AT_OPEN": 0,
+        "REACTED": 4,
+        "DELAYED": 3
+      },
+      "takeover": {
+        "NO_REACTION": 51,
+        "ALREADY_IN_PRICE": 7,
+        "PARTLY_IN_PRICE": 5,
+        "MOSTLY_AT_OPEN": 13,
+        "REACTED": 18,
+        "DELAYED": 19
+      }
+    },
+    "unusual_n": 2187,
+    "share_already_or_mostly_at_open": 0.219,
+    "share_anything_before": 0.283,
+    "count_already_or_mostly_at_open": 479,
+    "count_anything_before": 619,
+    "unusual_day_before_peak": 225,
+    "share_day_before_peak": 0.103
+  }
+}
