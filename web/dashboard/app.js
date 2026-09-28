@@ -1005,27 +1005,7 @@
     const na = newsAnalysis(t);
     const ctx = contesto(t), dec = decisioneDi(t);
 
-    const reaz = last && last.reazione
-      ? `<div class="react block"><span class="label">Reazione all’ultimo earnings · ${esc(last.label)}</span>
-          <span class="big ${dirOf(last.reazione.pct)}">${signed(last.reazione.pct, 1)}</span>
-          <span class="interval">${esc(cap(last.reazione.da))} ${icon('arrow')} ${esc(last.reazione.a)}</span>
-          <span class="small muted">Chiusura precedente → chiusura successiva alla pubblicazione. ${esc(last.reazione.nota || '')}</span></div>`
-      : `<div class="react block"><span class="label">Reazione all’ultimo earnings</span><span class="big muted">n.d.</span><span class="small muted">${sim ? 'Nessuna reazione disponibile nella demo.' : 'Prezzo non disponibile.'}</span></div>`;
-    const strip = summaryStripHTML(t, a, e, na, last, dec, rs, diff, dryRun);
-    const head = `<div class="dh">
-        <div class="dh-title"><h1 tabindex="-1" id="ptitle">${esc(a.ticker)}</h1><span class="n">${esc(a.nome)}</span></div>
-        <div class="dh-quote"><span class="p">${eur(a.prezzo, priceDigits(a.prezzo))}</span><span class="${dirOf(v)}" style="font-weight:500">${signed(v)}</span>${isPrezzoSim(a) && D.reale ? ` ${prov('esempio', 'Prezzo simulato')}` : D.reale ? ` ${prov('dataset', 'Prezzo da dataset MF')}` : ` ${prov('esempio', 'Prezzo demo')}`}<span class="muted">Chiusura del ${esc((D.reale && D.reale.prezzi_al) || D.aggiornamento)}</span></div>
-        <div class="dh-meta tag">${[isHeld ? `In portafoglio · peso ${nf(pos ? pos.peso : 0, 1)}%` : isWatched ? 'In watchlist' : '', a.settore && a.settore !== '—' ? esc(a.settore) : ''].filter(Boolean).join(' · ')}</div>
-      </div>
-      ${fearGreedCompanyHTML(t)}
-      ${strip}
-      <section class="card"><div class="split">
-        <div><div class="label" style="margin-bottom:6px">Ultimo anno · le linee verticali indicano la pubblicazione dei risultati</div><div class="chart" id="dchart"></div></div>
-        <div class="stack">${reaz}<div class="remove-row" id="remove-row">${removeRow(t)}</div></div>
-      </div></section>`;
-
-    const tesi = `<section class="card" id="tesi-card">${ui.editing ? tesiForm(t) : tesiView(t, pos)}</section>`;
-
+    const busy = stale || rs === 'running' || rs === 'error' || dryRun;
     const chipRicalc = `<span class="chip na lg">${icon('alert')}Da ricalcolare</span>`;
     const chipRun = `<span class="chip na lg">${icon('eq')}Ricalcolo in corso…</span>`;
     let cambiaBanner = '';
@@ -1039,7 +1019,7 @@
     } else if (stale) {
       cambiaBanner = `<div class="warnbox">${icon('alert')}<span>Hai modificato la tesi: le conclusioni sotto non sono più attuali. Avvia <code>make serve</code> e salva di nuovo, oppure <button class="link" type="button" data-act="retry-ricalcolo">Riprova</button>.</span></div>`;
     }
-    const diffBox = diff ? `<div class="block" id="cosa-cambiato" style="border:1px solid var(--line);border-radius:12px;padding:12px 14px">
+    const diffBox = diff ? `<div class="block" id="cosa-cambiato" style="border:1px solid var(--sep);border-radius:12px;padding:12px 14px">
         <h3 class="mini">Cosa è cambiato</h3>
         <ul class="bullets" style="margin:8px 0 0">
           ${diff.status ? `<li>Stato tesi: <strong>${esc(diff.status.da)}</strong> → <strong>${esc(diff.status.a)}</strong></li>` : ''}
@@ -1050,45 +1030,60 @@
         </ul>
       </div>` : '';
     const interps = [...((e && e.interpretazioni) || [])];
-    if (isHeld && pos && pos.peso >= 20) {
-      interps.push(`Con un peso del ${nf(pos.peso, 1)}% il titolo concentra già una parte rilevante del portafoglio.`);
-    }
+    if (isHeld && pos && pos.peso >= 20) interps.push(`Con un peso del ${nf(pos.peso, 1)}% il titolo concentra già una parte rilevante del portafoglio.`);
     const interpH = e && e.metodo ? 'Interpretazioni del modello (non sono dati)' : 'Interpretazioni (non sono dati)';
     const noEsito = sim
       ? 'Non ci sono risultati trimestrali collegati a questa azienda nella demo: non è possibile confrontare la tesi con i dati.'
       : 'Non ci sono risultati trimestrali collegati a questa azienda: non è possibile confrontare la tesi con i dati.';
-    const prevBody = e ? `
-        <p style="font-size:16px;max-width:68ch">${esc(e.sintesi)}</p>
-        ${(e.indicatori || []).length ? `<div class="block"><h3 class="mini">Indicatori della tua tesi</h3><ul class="ind-list">${e.indicatori.map(ind => indHTML(ind, false)).join('')}</ul></div>` : ''}
-        ${((e.fatti && e.fatti.length) || interps.length) ? `<div class="split">
-          ${e.fatti && e.fatti.length ? `<div class="block"><h3 class="mini">Fatti documentati nei risultati ${prov('dataset', 'Fatti da articoli/risultati MF')}</h3><ul class="facts">${e.fatti.map(f => `<li>${factHTML(f)}</li>`).join('')}</ul>
-            <div class="srcnote">${srcNoteHTML(e.fatti, sim)}</div></div>` : ''}
-          ${interps.length ? `<div class="block"><h3 class="mini">${interpH} ${prov('modello', 'Interpretazioni generate dal modello')}</h3><ul class="interps">${interps.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''}
-        </div>` : ''}` : `<p style="font-size:16px;max-width:68ch">${esc(noEsito)}</p>`;
-    const liveCambia = (stale || rs === 'running' || rs === 'error' || dryRun)
-      ? `<div>${rs === 'running' ? chipRun : chipRicalc}</div>
-        ${cambiaBanner}${diffBox}
+
+    /* 1. Intestazione: solo quanto serve per orientarsi */
+    const head = `<div class="dh">
+        <div class="dh-title"><h1 tabindex="-1" id="ptitle">${esc(a.ticker)}</h1><span class="n">${esc(a.nome)}</span></div>
+        <div class="dh-quote"><span class="p">${eur(a.prezzo, priceDigits(a.prezzo))}</span><span class="${dirOf(v)}" style="font-weight:500">${signed(v)}</span>${isPrezzoSim(a) && D.reale ? ` ${prov('esempio', 'Prezzo simulato')}` : D.reale ? ` ${prov('dataset', 'Prezzo da dataset MF')}` : ` ${prov('esempio', 'Prezzo demo')}`}<span class="muted">Chiusura del ${esc((D.reale && D.reale.prezzi_al) || D.aggiornamento)}</span></div>
+        <div class="dh-meta tag">${[isHeld ? `In portafoglio · peso ${nf(pos ? pos.peso : 0, 1)}%` : isWatched ? 'In watchlist' : '', a.settore && a.settore !== '—' ? esc(a.settore) : ''].filter(Boolean).join(' · ')}<span class="remove-row" id="remove-row">${removeRow(t)}</span></div>
+      </div>`;
+
+    /* 2. La tua tesi */
+    const tesi = `<section class="card" id="tesi-card">${ui.editing ? tesiForm(t) : tesiView(t, pos)}</section>`;
+
+    /* 3. Ultimi risultati: effetto sulla tesi, sintesi, cifre chiave. I dettagli restano a un clic. */
+    const imp = last && last.impatto && EFFETTO[last.impatto.effetto];
+    const baseAbbr = b => (b === 'a/a' ? 'a/a' : b === 't/t' ? 't/t' : '');
+    const figs = last && (last.metriche || []).length ? `<div class="kfigs">${last.metriche.map(m => m.valore == null
+        ? `<div class="kfig na"><span class="n">${esc(metricLabel(m.nome))}</span><span class="v">n.d.</span></div>`
+        : `<div class="kfig"><span class="n">${esc(metricLabel(m.nome))}</span><span class="v">${esc(shortVal(m.valore))}</span>${m.confronto ? `<span class="c">${esc(m.confronto)} ${baseAbbr(m.base)}</span>` : ''}</div>`).join('')}</div>` : '';
+    const reazLine = last && last.reazione
+      ? `<span class="kreact"><b class="${dirOf(last.reazione.pct)}">${signed(last.reazione.pct, 1)}</b> reazione del prezzo <span class="muted">· ${esc(cap(last.reazione.da))} → ${esc(last.reazione.a)}</span></span>` : '';
+    const core = `<p class="lead">${esc(e ? e.sintesi : noEsito)}</p>${e && e.metodo ? `<p class="note metodo">${esc(e.metodo)}</p>` : ''}`;
+    const indsE = e && (e.indicatori || []).length ? `<div class="block"><h3 class="mini">Indicatori della tua tesi</h3><ul class="ind-list">${e.indicatori.map(ind => indHTML(ind, false)).join('')}</ul></div>` : '';
+    const moreParts = [
+      indsE,
+      e && (e.fatti || []).length ? `<div class="block"><h3 class="mini">Fatti documentati nei risultati ${prov('dataset', 'Fatti da articoli/risultati MF')}</h3><ul class="facts">${e.fatti.map(f => `<li>${factHTML(f)}</li>`).join('')}</ul><div class="srcnote">${srcNoteHTML(e.fatti, sim)}</div></div>` : '',
+      last && last.guidance ? `<div class="block"><h3 class="mini">Indicazioni del management</h3><p>${esc(last.guidance)}</p></div>` : '',
+      last && last.cambiato ? `<div class="block"><h3 class="mini">Rispetto al trimestre precedente</h3><p>${esc(last.cambiato)}</p></div>` : '',
+      interps.length ? `<div class="block"><h3 class="mini">${interpH} ${prov('modello', 'Interpretazioni generate dal modello')}</h3><ul class="interps">${interps.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''
+    ].filter(Boolean).join('');
+    const more = moreParts ? `<details class="expander"><summary>Indicatori, fatti e interpretazioni</summary><div class="stack">${moreParts}</div></details>` : '';
+    const latestBody = busy
+      ? `<div>${rs === 'running' ? chipRun : chipRicalc}</div>${cambiaBanner}${diffBox}${figs}
         <details class="prev-analisi" style="opacity:.72"><summary class="muted">Analisi precedente (tesi del ${esc(tesiUsataLabel(t))})</summary>
-          <div class="stack" style="margin-top:12px"><div>${chipStato(stato)}${e && e.metodo ? `<p class="note metodo">${esc(e.metodo)}</p>` : ''}</div>${prevBody}</div>
-        </details>`
-      : `<div>${chipStato(stato, true)}${e && e.metodo ? `<p class="note metodo">${esc(e.metodo)}</p>` : ''}</div>
-        ${diffBox}${prevBody}`;
-    const cambia = `<section class="card" id="cambia-card">
-      <div class="card-h"><h2>Cosa cambia dopo gli ultimi risultati</h2>${last ? `<span class="muted">${esc(last.label)} · pubblicati il ${esc(last.data)}</span>` : ''}</div>
-      <div class="stack">${liveCambia}</div>
+          <div class="stack" style="margin-top:12px"><div>${chipStato(stato)}</div>${core}${more}</div></details>`
+      : `${diffBox}<div class="kline">${imp ? `<span class="chip ${imp.cls} lg">${icon(imp.ic)}${imp.label}</span>` : ''}${reazLine}</div>${core}${figs}${more}`;
+    const latest = `<section class="card" id="cambia-card">
+      <div class="card-h"><h2>Ultimi risultati${last ? ` · ${esc(last.label)}` : ''}</h2>${last ? `<span class="muted">pubblicati il ${esc(last.data)}</span>` : ''}</div>
+      <div class="stack">${latestBody}</div>
     </section>`;
 
-    const earn = `<section class="card" id="earn">${earningsHTML(t)}</section>`;
-    const newsSec = `<section class="card" id="news-analysis">${newsAnalysisHTML(t, na, stale || dryRun, sim)}</section>`;
+    /* 4. Ultimi quattro trimestri: solo cifre; il dettaglio per trimestre è a un clic */
+    const hasE = (a.earnings || []).length;
+    const earn = `<section class="card" id="earn">${quartersTableHTML(t)}${hasE ? `<details class="expander" id="earn-more"><summary>Dettagli per trimestre</summary><div id="earn-detail">${earningsHTML(t)}</div></details>` : ''}</section>`;
 
-    let decHTML;
-    const decPrev = () => {
+    /* 5. Decisione: indicazione e motivo; pro, rischi e contesto a un clic */
+    const decBody = () => {
       if (!dec) {
         const miss = a.mancano || (a.decisione ? [`Un’indicazione pensata per il nuovo contesto (${isHeld ? 'posizione detenuta' : 'watchlist'})`] : ['Risultati trimestrali collegati all’azienda', 'Una valutazione di riferimento', 'Indicatori da monitorare']);
-        return `<div class="stack">
-          <div class="dec-scale" aria-label="Possibili indicazioni">${Object.values(AZIONI[ctx]).map(l => `<span>${l}</span>`).join('')}</div>
-          <div class="dec-main muted" style="font-size:22px">Dati insufficienti per valutare l’azione</div>
-          <div class="block"><h3 class="mini">Cosa manca</h3><ul class="bullets">${miss.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div></div>`;
+        return `<div class="stack"><div class="dec-main muted" style="font-size:22px">Dati insufficienti per valutare l’azione</div>
+          <details class="expander"><summary>Cosa manca</summary><ul class="bullets">${miss.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details></div>`;
       }
       const considered = [
         `Tesi ${STATO[stato].label.toLowerCase()}`, `Orizzonte ${T.orizzonte}`,
@@ -1099,42 +1094,47 @@
       const usedNews = (dec.basata_su || []).includes('notizie');
       const decNote = usedNews
         ? `<p class="note">Indicazione generata dai risultati e da ${dec.notizie_considerate} ${dec.notizie_considerate === 1 ? 'notizia' : 'notizie'} MF${dec.notizie_da ? ` dal ${esc(dec.notizie_da)}` : ''}.</p>`
-        : `<div class="warnbox">${icon('alert')}<span>Questa indicazione ${sim ? 'di esempio ' : ''}è stata scritta sui soli risultati: non tiene ancora conto delle notizie analizzate qui sopra.</span></div>`;
-      return `<div class="split">
-          <div class="stack">
-            <div class="dec-scale" aria-label="Possibili indicazioni">${Object.entries(AZIONI[ctx]).map(([k, l]) => `<span class="${k === dec.azione ? 'on' : ''}"${k === dec.azione ? ' aria-current="true"' : ''}>${l}</span>`).join('')}</div>
-            <div><div class="label">Indicazione principale ${prov('modello', 'Indicazione generata dal modello')}</div><div class="dec-main">${AZIONI[ctx][dec.azione]}</div></div>
-            <p style="font-size:16px">${esc(dec.motivazione)}</p>
+        : `<p class="note">Questa indicazione ${sim ? 'di esempio ' : ''}è stata scritta sui soli risultati: non tiene ancora conto delle notizie.</p>`;
+      return `<div class="stack">
+          <div class="dec-top"><div><div class="label">Indicazione principale ${prov('modello', 'Indicazione generata dal modello')}</div><div class="dec-main">${AZIONI[ctx][dec.azione]}</div></div>
+            <div class="dec-scale" aria-label="Possibili indicazioni">${Object.entries(AZIONI[ctx]).map(([k, l]) => `<span class="${k === dec.azione ? 'on' : ''}"${k === dec.azione ? ' aria-current="true"' : ''}>${l}</span>`).join('')}</div></div>
+          <p class="lead">${esc(dec.motivazione)}</p>
+          <p class="disclaimer">Un’indicazione da valutare, non un ordine operativo né una previsione: nessuna probabilità di successo è stimata.</p>
+          <details class="expander"><summary>Pro, rischio e cosa cambierebbe</summary><div class="stack">
+            <div class="dec-grid">
+              <div class="block"><h3 class="mini">Elementi a favore</h3><ul class="bullets">${(dec.aFavore || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+              <div class="block"><h3 class="mini">Rischio principale</h3><p>${esc(dec.rischio)}</p></div>
+              <div class="block"><h3 class="mini">Cosa cambierebbe la valutazione</h3><p>${esc(dec.cambierebbe)}</p></div>
+            </div>
+            <div class="block"><h3 class="mini">Elementi considerati</h3><p class="considered">${considered.map(esc).join(' · ')}</p></div>
             ${decNote}
-            <p class="disclaimer">Un’indicazione da valutare, non un ordine operativo né una previsione: nessuna probabilità di successo è stimata.</p>
-          </div>
-          <div class="block"><h3 class="mini">Elementi considerati</h3><p class="considered">${considered.map(esc).join(' · ')}</p></div>
-        </div>
-        <div class="dec-grid" style="margin-top:18px">
-          <div class="block"><h3 class="mini">Elementi a favore</h3><ul class="bullets">${(dec.aFavore || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
-          <div class="block"><h3 class="mini">Rischio principale</h3><p>${esc(dec.rischio)}</p></div>
-          <div class="block"><h3 class="mini">Cosa cambierebbe la valutazione</h3><p>${esc(dec.cambierebbe)}</p></div>
+          </div></details>
         </div>`;
     };
-    if (stale || rs === 'running' || rs === 'error' || dryRun) {
-      decHTML = `<div class="stack">
-        <div>${rs === 'running' ? chipRun : chipRicalc}</div>
-        <div class="dec-main muted" style="font-size:22px">${rs === 'running' ? 'Ricalcolo in corso…' : 'Da ricalcolare'}</div>
-        <p class="note">${dryRun ? 'Server in modalità prova (--dry-run): l’analisi non è stata ricalcolata.' : 'L’indicazione precedente non è più valida sulla tesi aggiornata.'}</p>
-        <details class="prev-analisi" style="opacity:.72"><summary class="muted">Analisi precedente (tesi del ${esc(tesiUsataLabel(t))})</summary>
-          <div style="margin-top:12px">${decPrev()}</div>
-        </details>
-      </div>`;
-    } else {
-      decHTML = decPrev();
-    }
-    const decisione = `<section class="card" id="decisione-card"><div class="card-h"><h2>Decisione da valutare</h2><span class="muted">${ctx === 'portafoglio' ? 'Posizione detenuta' : 'Azienda in watchlist'} · dopo tesi e notizie</span></div>${decHTML}</section>`;
+    const decHTML = busy
+      ? `<div class="stack"><div>${rs === 'running' ? chipRun : chipRicalc}</div>
+          <div class="dec-main muted" style="font-size:22px">${rs === 'running' ? 'Ricalcolo in corso…' : 'Da ricalcolare'}</div>
+          <p class="note">${dryRun ? 'Server in modalità prova (--dry-run): l’analisi non è stata ricalcolata.' : 'L’indicazione precedente non è più valida sulla tesi aggiornata.'}</p>
+          <details class="prev-analisi" style="opacity:.72"><summary class="muted">Analisi precedente (tesi del ${esc(tesiUsataLabel(t))})</summary><div style="margin-top:12px">${decBody()}</div></details></div>`
+      : decBody();
+    const decisione = `<section class="card" id="decisione-card"><div class="card-h"><h2>Decisione da valutare</h2><span class="muted">${ctx === 'portafoglio' ? 'Posizione detenuta' : 'Azienda in watchlist'}</span></div>${decHTML}</section>`;
 
-    $('#app').innerHTML = `<div class="view detail">${head}${tesi}${cambia}${earn}${newsSec}${decisione}</div>`;
+    /* 6. Il resto, chiuso: analisi delle notizie, prezzo nell'ultimo anno, Fear & Greed del settore */
+    const altro = `<section class="card"><details class="expander expander-top" id="altro">
+        <summary>Notizie, prezzo e settore <span class="muted">· ${na.rel.length} ${na.rel.length === 1 ? 'articolo' : 'articoli'} MF${na.touching ? `, ${na.touching} sulla tesi` : ''}</span></summary>
+        <div class="stack">
+          <div id="news-analysis">${newsAnalysisHTML(t, na, stale || dryRun, sim)}</div>
+          <div class="block"><h3 class="mini">Prezzo nell’ultimo anno · le linee indicano la pubblicazione dei risultati</h3><div class="chart" id="dchart"></div></div>
+          ${fearGreedCompanyHTML(t)}
+        </div>
+      </details></section>`;
+
+    $('#app').innerHTML = `<div class="view detail">${head}${tesi}${latest}${earn}${decisione}${altro}</div>`;
 
     const N = D.giorni.length, n = 252, s = serieDi(t).slice(N - n), dates = D.giorni.slice(N - n);
     const markers = q.map(e => { const pd = parseIt(e.data); if (!pd) return null; const i = dates.findIndex(d => d >= pd); return i >= 0 ? { i, label: e.label.replace(' 20', '') } : null; }).filter(Boolean);
-    areaChart($('#dchart'), s, dates, { h: 150, markers, ring: 'var(--card)', fmt: v => eur(v, priceDigits(v)), label: `Prezzo di ${a.nome} nell’ultimo anno` });
+    const drawPrice = () => areaChart($('#dchart'), s, dates, { h: 150, markers, ring: 'var(--card)', fmt: v => eur(v, priceDigits(v)), label: `Prezzo di ${a.nome} nell’ultimo anno` });
+    $('#altro').addEventListener('toggle', ev => { if (ev.target.open) drawPrice(); });
   }
 
   function removeRow(t) {
@@ -1146,21 +1146,19 @@
 
   function tesiView(t, pos) {
     const a = azienda(t), T = tesiDi(t), isHeld = held(t), inds = (T.indicatori || []).filter(Boolean);
-    const peso = isHeld
-      ? `<div><dt>Peso attuale nel portafoglio</dt><dd>${nf(pos ? pos.peso : 0, 1)}%</dd></div>`
-      : `<div><dt>Peso previsto (facoltativo)</dt><dd>${T.pesoPrevisto ? nf(T.pesoPrevisto, 1) + '%' : '<span class="muted" style="font-weight:400">Non indicato</span>'}</dd></div>`;
-    const indNote = (a.esito && a.esito.indicatori)
-      ? 'Indicatori di esempio, verificati sugli articoli MF qui sotto; puoi modificarli.'
-      : 'Indicatori di esempio; puoi modificarli.';
-    return `<div class="card-h"><h2>La tua tesi</h2><button class="btn secondary" type="button" data-act="edit" style="height:30px;padding:0 14px">Modifica tesi</button></div>
-      <div class="split">
-        <div class="stack">
-          <div class="block"><h3 class="mini">Perché ${isHeld ? 'l’hai comprata' : 'ti interessa'}</h3><blockquote class="motivo">${esc(T.motivo)}</blockquote></div>
-          <div class="block"><h3 class="mini">Indicatori da monitorare</h3>
-            ${inds.length ? `<ol class="inds">${inds.map(x => `<li>${esc(x)}</li>`).join('')}</ol><p class="note">${indNote}</p>` : '<p class="note">Nessun indicatore: aggiungine fino a tre con “Modifica tesi”.</p>'}</div>
-        </div>
-        <dl class="group">${peso}<div><dt>Orizzonte</dt><dd>${esc(T.orizzonte || 'Non indicato')}</dd></div></dl>
-      </div>`;
+    const rs = statoRicalcolo(t), stale = tesiStale(t, a);
+    const chip = rs === 'running' ? `<span class="chip na">${icon('eq')}Ricalcolo in corso…</span>`
+      : (stale || rs === 'error') ? `<span class="chip na">${icon('alert')}Da ricalcolare</span>` : chipStato(statoDi(a));
+    const peso = isHeld ? `Peso ${nf(pos ? pos.peso : 0, 1)}%` : (T.pesoPrevisto ? `Peso previsto ${nf(T.pesoPrevisto, 1)}%` : 'Peso previsto non indicato');
+    return `<div class="card-h"><h2>La tua tesi</h2><div class="card-h-r">${chip}<button class="btn secondary" type="button" data-act="edit" style="height:30px;padding:0 14px">Modifica</button></div></div>
+      <blockquote class="motivo">${esc(T.motivo)}</blockquote>
+      <p class="tesi-meta">Orizzonte ${esc(T.orizzonte || 'non indicato')} · ${peso}</p>
+      ${inds.length ? `<div class="block"><h3 class="mini">Indicatori da monitorare</h3><ol class="inds">${inds.map(x => {
+        /* Stato dell'indicatore dopo gli ultimi risultati, se l'analisi è aggiornata sulla tesi attuale */
+        const st = !stale && rs !== 'running' && ((a.esito && a.esito.indicatori) || []).find(i => i && String(i.nome).trim() === String(x).trim());
+        const S = st && (IND_STATO[st.stato] || IND_STATO.non_citato);
+        return `<li><span class="ind-n">${esc(x)}</span>${S ? `<span class="chip ${S.cls}">${icon(S.ic)}${S.label}</span>` : ''}</li>`;
+      }).join('')}</ol></div>` : '<p class="note">Nessun indicatore: aggiungine fino a tre con “Modifica”.</p>'}`;
   }
 
   function tesiForm(t) {
@@ -1176,6 +1174,51 @@
         ${ind.map((x, i) => `<input id="f-i${i + 1}" name="ind" value="${esc(x)}" placeholder="Indicatore ${i + 1}"${i ? ` aria-label="Indicatore ${i + 1}"` : ''}>`).join('')}</div>
       <div class="form-actions"><button class="btn secondary" type="button" data-act="edit-cancel">Annulla</button><button class="btn" type="submit">Salva tesi</button></div>
     </form>`;
+  }
+
+  /* Quattro trimestri in una tabella di sole cifre: colonne = trimestri, righe = metriche, reazione, effetto sulla tesi. */
+  const EFF_SHORT = { rafforza: 'Rafforza', invariata: 'Neutro', indebolisce: 'Indebolisce' };
+  /* Nomi delle metriche uniformati: gli articoli chiamano la stessa cifra in modi diversi da un trimestre all'altro. */
+  const METRICHE = [
+    { key: 'ricavi', label: 'Ricavi', re: /^(ricavi|fatturato|revenue|proventi operativi)/ },
+    { key: 'ebitda', label: 'EBITDA rett.', re: /ebitda/, not: /margin|debito|leva|\/|volte/ },
+    { key: 'margine', label: 'Margine', re: /margin/ },
+    { key: 'utile', label: 'Utile netto', re: /utile netto|net income|risultato netto/ },
+    { key: 'eps', label: 'EPS', re: /^eps|utile per azione/ },
+    { key: 'fcf', label: 'Free cash flow', re: /free cash flow|^fcf|flusso di cassa/ }
+  ];
+  const metricKey = nome => {
+    const n = String(nome || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    const m = METRICHE.find(x => x.re.test(n) && !(x.not && x.not.test(n)));
+    return m ? m.key : null;
+  };
+  const metricLabel = nome => { const k = metricKey(nome); return k ? METRICHE.find(x => x.key === k).label : nome; };
+  const shortVal = v => String(v).replace(/\s+(di\s+)?euro$/i, '');
+  const metricOf = (e, key) => (e.metriche || []).find(m => metricKey(m.nome) === key && m.valore != null) || null;
+  function quartersTableHTML(t) {
+    const a = azienda(t), E = a.earnings || [], sim = isSimAnalisi(a);
+    const h = `<div class="card-h"><h2>Ultimi quattro trimestri</h2><span class="muted">Cifre principali</span></div>`;
+    if (!E.length) return `${h}<p class="note">Nessun risultato trimestrale disponibile${sim ? ' nella demo' : ''} per questa azienda.</p>`;
+    /* Righe standard, nell'ordine fisso, solo se almeno un trimestre ha la cifra; le altre metriche restano nei dettagli */
+    const keys = METRICHE.filter(x => E.some(e => !e.mancante && metricOf(e, x.key)));
+    const lastI = E.length - 1, cls = i => (i === lastI ? ' class="last"' : '');
+    const abbr = b => (b === 'a/a' ? 'a/a' : b === 't/t' ? 't/t' : '');
+    const cell = (e, i, key) => {
+      if (e.mancante) return `<td${cls(i)}><span class="muted">—</span></td>`;
+      const m = metricOf(e, key);
+      if (!m) return `<td${cls(i)}><span class="muted">n.d.</span></td>`;
+      return `<td${cls(i)}><b>${esc(shortVal(m.valore))}</b>${m.confronto ? `<span>${esc(m.confronto)} ${abbr(m.base)}</span>` : ''}</td>`;
+    };
+    const headRow = `<tr><th scope="col"><span class="sr">Metrica</span></th>${E.map((e, i) => `<th scope="col"${cls(i)}>${esc(e.label)}<span>${e.mancante ? 'n.d.' : esc(e.data)}</span></th>`).join('')}</tr>`;
+    const metricRows = keys.map(x => `<tr><th scope="row">${esc(x.label)}</th>${E.map((e, i) => cell(e, i, x.key)).join('')}</tr>`).join('');
+    const reactRow = `<tr><th scope="row">Reazione del prezzo</th>${E.map((e, i) => (e.mancante || !e.reazione) ? `<td${cls(i)}><span class="muted">—</span></td>` : `<td${cls(i)}><b class="${dirOf(e.reazione.pct)}">${signed(e.reazione.pct, 1)}</b></td>`).join('')}</tr>`;
+    const effRow = `<tr><th scope="row">Effetto sulla tesi</th>${E.map((e, i) => {
+      if (e.mancante || !e.impatto) return `<td${cls(i)}><span class="muted">—</span></td>`;
+      const x = EFFETTO[e.impatto.effetto];
+      return `<td${cls(i)}><span class="chip ${x.cls}">${icon(x.ic)}${EFF_SHORT[e.impatto.effetto] || x.label}</span></td>`;
+    }).join('')}</tr>`;
+    return `${h}<div class="table-wrap"><table class="qtable"><thead>${headRow}</thead><tbody>${metricRows}${reactRow}${effRow}</tbody></table></div>
+      <p class="note">a/a = anno su anno · t/t = trimestre su trimestre · in evidenza l’ultimo trimestre</p>`;
   }
 
   function earningsHTML(t) {
@@ -1225,8 +1268,7 @@
         </div>
       </div>`;
     }
-    return `<div class="card-h"><h2>Ultimi quattro earnings</h2><span class="muted">Dal più vecchio al più recente</span></div>
-      <div class="block"><h3 class="mini">Evoluzione della tesi nei quattro trimestri</h3>${evo}</div>
+    return `<div class="block"><h3 class="mini">Evoluzione della tesi nei quattro trimestri</h3>${evo}</div>
       ${tabs}<div id="qp" role="tabpanel" aria-labelledby="qt-${sel}">${panel}</div>`;
   }
 
@@ -1499,7 +1541,7 @@
     if (el.dataset.scope) { ui.scope = el.dataset.scope; ui.ticker = null; renderMain(); return; }
     if (el.dataset.filter) { ui.ticker = ui.ticker === el.dataset.filter ? null : el.dataset.filter; renderMain(); return; }
     const t = currentTicker();
-    if (el.dataset.q) { ui.quarter[t] = +el.dataset.q; $('#earn').innerHTML = earningsHTML(t); $(`#qt-${el.dataset.q}`).focus(); return; }
+    if (el.dataset.q) { ui.quarter[t] = +el.dataset.q; $('#earn-detail').innerHTML = earningsHTML(t); $(`#qt-${el.dataset.q}`).focus(); return; }
     switch (el.dataset.act) {
       case 'add-pos': openDialog('pos'); break;
       case 'more-news': { ui.allNews[t] = true; const y = scrollY; renderDetail(t); scrollTo(0, y); break; }
@@ -1637,7 +1679,7 @@
     return `<div class="nt-head"><b>${esc(x.n)} <span>${esc(x.full)}</span></b>${chipStato(stato)}</div>
       <div class="nt-card"><div class="nt-rows">
         <button class="nt-link" type="button" data-goto="tesi-card" data-t="${esc(t)}" aria-label="Apri la tua tesi su ${esc(x.full)}"><span class="nt-k">Tesi</span><span class="nt-v nt-clamp">${esc(tesi)}</span>${icon('chev')}</button>
-        <button class="nt-link" type="button" data-goto="earn" data-t="${esc(t)}" aria-label="Apri gli ultimi risultati di ${esc(x.full)}"><span class="nt-k">Risultati</span><span class="nt-v">${eff ? `<span class="chip ${eff.cls}">${icon(eff.ic)}${eff.label}</span> <span class="muted">· ${esc(se.e.label)}</span>` : '<span class="muted">Non disponibili</span>'}</span>${icon('chev')}</button>
+        <button class="nt-link" type="button" data-goto="cambia-card" data-t="${esc(t)}" aria-label="Apri gli ultimi risultati di ${esc(x.full)}"><span class="nt-k">Risultati</span><span class="nt-v">${eff ? `<span class="chip ${eff.cls}">${icon(eff.ic)}${eff.label}</span> <span class="muted">· ${esc(se.e.label)}</span>` : '<span class="muted">Non disponibili</span>'}</span>${icon('chev')}</button>
         <div class="nt-row"><span class="nt-k">Prezzo</span><span class="nt-v">${se && se.pct != null ? `<b class="${dirOf(se.pct)}">${signed(se.pct, 1)}</b> dai risultati` : '<span class="muted">n.d.</span>'}</span></div>
       </div>
       <p class="nt-read">${priceVsThesis(stato, se && se.pct)}</p></div>`;
