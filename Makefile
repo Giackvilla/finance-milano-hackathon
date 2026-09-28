@@ -47,7 +47,4 @@ dashboard:
 	$(PY) scripts/build_dashboard_data.py
 
 test:
-	$(PY) scripts/test_verdict.py
-	$(PY) scripts/test_classify.py
-	$(PY) scripts/test_build_card.py
-	$(PY) scripts/test_export.py
+	$(PY) -m unittest discover -s scripts -p 'test_*.py'

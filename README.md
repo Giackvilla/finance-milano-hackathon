@@ -52,7 +52,11 @@ python3 scripts/build_cards.py --from 2026-08-15 --to 2026-09-18 --first-only --
 
 Verdict statuses: **NO_REACTION** — no session with |z|≥2 · **ALREADY_IN_PRICE** — peak unusual session closed before publication · **PARTLY_IN_PRICE** — some unusual move closed before, peak did not · **MOSTLY_AT_OPEN** — more than half of the day's move was already in the opening price before an in-session article (fixed majority rule, not tuned) · **REACTED** — peak unusual move on the reaction session · **DELAYED** — peak unusual move after the reaction session.
 
-`<content_id>` must name exactly one Italian listed company with 20 baseline sessions. Check `gemini.checks`: quote verbatim in body, figure in body, adjective in title, numbers only from article/facts, no recommendation words unless already in the article.
+`<content_id>` must name exactly one Italian listed company with 20 baseline sessions. Company matching is deliberately conservative: it uses canonical instrument names plus reviewed aliases (Telecom Italia/Tim, Finmeccanica, and Intesa San Paolo), and it rejects a fresh title when more than one listed company remains. Person and brand homonyms (Leonardo Maria Del Vecchio, Leonardo jr., Leonardo Capital, Leonardo da Vinci) are not the aerospace company. A bank is not the subject when it is only the source of the note ("analisti di Intesa", "Intesa Sanpaolo vede un upside"). The bare noun "intesa" after an apostrophe (l'intesa, sull'intesa) is an agreement, not the bank. This is title entity matching, not full semantic entity resolution.
+
+Before aggregation, rows for the same canonical company with the same normalized title within 24 hours are treated as one article. The normalization is limited to case, accents, punctuation, and whitespace, so distinct follow-up stories remain distinct. The offline exporter drops a cached row only when the assigned company itself is a homonym or only the broker, and it collapses duplicate headlines before rebuilding company histories. A headline that also names a counterparty stays on the company it was already assigned to.
+
+Check `gemini.checks`: quote verbatim in body, figure in body, adjective in title, numbers only from article/facts, no recommendation words unless already in the article.
 
 ## Body-first Gemini classification CLI
 

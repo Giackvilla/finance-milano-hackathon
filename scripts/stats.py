@@ -24,6 +24,11 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from verdict import bq_tape, verdict  # noqa: E402
+from story_selection import (  # noqa: E402
+    catalog_from_rows,
+    deduplicate_stories,
+    story_matches_catalog,
+)
 
 PROJECT = "class-hackaton-09"
 FROM_DATE = "2021-02-01"
@@ -128,12 +133,43 @@ def load_base_rate(offline):
     return br
 
 
-def articles_from_rows(rows):
+def _deduplicate_session_rows(rows):
+    """Keep one row per tape session inside a content id.
+
+    A repeated query page can contain the same article/session more than once;
+    collapsing by session date keeps the full multi-session window while
+    preventing duplicate sessions from changing a verdict or its statistics.
+    """
+    seen = set()
+    out = []
+    for row in rows:
+        key = (row.get("d") or row.get("move_date") or "", row.get("timing") or "")
+        if not key[0]:
+            key = tuple(sorted((str(k), str(v)) for k, v in row.items()))
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(row)
+    return out
+
+
+def articles_from_rows(rows, catalog=None):
     by_id = collections.OrderedDict()
     for r in rows:
         by_id.setdefault(r["content_id"], []).append(r)
     arts = []
     for cid, rs in by_id.items():
+        rs = _deduplicate_session_rows(rs)
+        meta = {
+            "content_id": cid,
+            "COD_AZIONE": rs[0]["COD_AZIONE"],
+            "DES_AZIONE": rs[0].get("DES_AZIONE"),
+            "COD_ISIN": rs[0].get("COD_ISIN"),
+            "titolo": rs[0].get("titolo") or "",
+            "pub_local": _parse_pub_local(rs[0]["pub_local"]),
+        }
+        if catalog and not story_matches_catalog(meta, catalog):
+            continue
         arts.append({
             "content_id": cid,
             "COD_AZIONE": rs[0]["COD_AZIONE"],
@@ -142,7 +178,9 @@ def articles_from_rows(rows):
             "publication_phase": rs[0]["publication_phase"],
             "rows": rs,
         })
-    return arts
+    # Apply the same article-level duplicate policy as dashboard cards before
+    # any verdict or per-session count is calculated.
+    return deduplicate_stories(arts)
 
 
 def first_article_filter(arts):
@@ -366,7 +404,7 @@ def main():
         # always allow live base_rate even when tape is offline
         base_rate = load_base_rate(False)
 
-    arts = articles_from_rows(rows)
+    arts = articles_from_rows(rows, catalog=catalog_from_rows(rows))
     n_before = len(arts)
     first = first_article_filter(arts)
     n_after = len(first)

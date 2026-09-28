@@ -77,6 +77,7 @@ These files are compact (no whitespace). The biggest, Unicredit, is about 1 MB.
 - `slug`, `des_azione`, `cod_azione`, `isin`.
 - `summary`: `n_stories`, `n_first_articles`, `n_unusual`, `status {…}`, `first_pub`, `last_pub`.
 - `stories[]`, newest first. Each story has `content_id`, `titolo`, `pub_local`, `news_type`, `status`, `first_article` (the 7-day rule), `has_detail` (true when `stories/{content_id}.json` exists), and `peak` and `largest`, each `{d, timing, move_pct, z, retained_pct}` or `null`. History runs to 2026-09-15, plus any newer detail stories. Its `news_type` comes from the title only, while the detail cards also use the body.
+- Stories are matched to a canonical quoted instrument before they enter this history. A fresh tape row is kept only when one listed company survives aliases and the homonym/analyst filters. A cached row stays when that assigned company is still a real mention, including when the headline also names a counterparty; it is removed when the name is a person or other brand (Leonardo Maria Del Vecchio, Leonardo jr., Leonardo Capital) or the company is only the broker behind the note. Same-company rows with the same normalized title within 24 hours are collapsed before the seven-day first-article rule and all aggregates. `make export` applies these rules to cached company files, so removed matches do not survive in the static bundle.
 - `prices`: `null`, or columnar arrays of the same length, which you can pass straight to a chart:
   - `d`: session dates, from 2021-01-04 to 2026-09-23.
   - `close`: `PRZ_LAST`.
