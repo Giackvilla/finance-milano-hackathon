@@ -1,0 +1,577 @@
+{
+  "tesi_usata": {
+    "motivo": "Utili elevati e una distribuzione generosa agli azionisti, tra dividendi e riacquisto di azioni proprie.",
+    "indicatori": [
+      "Utile netto trimestrale",
+      "CET1 ratio (solidità del capitale)",
+      "Distribuzione annunciata agli azionisti"
+    ],
+    "orizzonte": "3–5 anni"
+  },
+  "valutazione": null,
+  "esito": {
+    "stato": "rafforzata",
+    "sintesi": "La banca ha costantemente registrato utili netti elevati, spesso superando gli obiettivi e stabilendo nuovi record, il che supporta pienamente la parte della tesi relativa agli \"utili elevati\". Inoltre, la generosa distribuzione agli azionisti tramite dividendi significativi e riacquisti di azioni proprie in ogni trimestre conferma con forza la parte della tesi sulla \"distribuzione generosa\".",
+    "fatti": [
+      {
+        "testo": "Kepler Cheuvreux ha alzato il target price di Intesa Sanpaolo a 7 euro, un incremento dell'11,1%, a seguito dei risultati positivi del secondo trimestre 2026.",
+        "citazione": "Kepler Cheuvreux ha alzato il target di Intesa Sanpaolo da 6,30 a 7 euro, con un incremento dell’11,1%, dopo i risultati positivi del secondo trimestre 2026",
+        "fonte": {
+          "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+          "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+          "data": "10 ago 2026"
+        }
+      },
+      {
+        "testo": "La previsione di utile ante imposte per il 2026 è stata aumentata da 3,5 a 3,6 miliardi di euro, grazie ai forti risultati del secondo trimestre.",
+        "citazione": "la previsione di utile ante imposte per il 2026 è stata portata da 3,5 a 3,6 miliardi di euro, sostenuta dalla forza dei risultati del secondo trimestre.",
+        "fonte": {
+          "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+          "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+          "data": "10 ago 2026"
+        }
+      },
+      {
+        "testo": "Kepler ha rivisto al rialzo le stime sull'utile per azione adjusted per il 2026 (da 0,69 a 0,70 euro), 2027 (da 0,83 a 0,85 euro) e 2028 (da 0,95 a 0,97 euro).",
+        "citazione": "Kepler ha inoltre rivisto leggermente al rialzo le stime sull’utile per azione adjusted: da 0,69 a 0,70 euro nel 2026, da 0,83 a 0,85 nel 2027 e da 0,95 a 0,97 euro nel 2028",
+        "fonte": {
+          "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+          "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+          "data": "10 ago 2026"
+        }
+      }
+    ],
+    "interpretazioni": [
+      "A mio parere, la capacità di Intesa Sanpaolo di superare le proprie previsioni di utile e di aumentare costantemente la remunerazione degli azionisti dimostra una gestione finanziaria molto efficace.",
+      "Ritengo che la conferma e l'aumento delle previsioni di utile per gli anni futuri, insieme all'impegno per una distribuzione generosa, rendano la banca un'opzione interessante per gli investitori che cercano rendimenti stabili."
+    ],
+    "indicatori": [
+      {
+        "nome": "Utile netto trimestrale",
+        "stato": "a_favore",
+        "testo": "I risultati del secondo trimestre 2026 sono stati positivi, contribuendo al miglioramento della guidance sull'utile ante imposte per l'intero anno.",
+        "citazione": "risultati positivi del secondo trimestre 2026",
+        "fonte": {
+          "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+          "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+          "data": "10 ago 2026"
+        }
+      },
+      {
+        "nome": "CET1 ratio (solidità del capitale)",
+        "stato": "a_favore",
+        "testo": "Il CET1 ratio si mantiene al 13%, ampiamente sopra i requisiti regolamentari (rilevato in 1T 2026).",
+        "citazione": "Sul fronte patrimoniale il Cet1 si mantiene al 13%, ampiamente sopra i requisiti regolamentari.",
+        "fonte": {
+          "titolo": "Intesa Sanpaolo chiude il trimestre con 2,8 miliardi di utile (+5,6%) e conferma il target a 10 miliardi. Generali? Argomento per altri",
+          "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-chiude-il-trimestre-con-28-miliardi-di-utile-56-e-conferma-lobiettivo-di-10-miliardi-nel-2026-202605081301378023",
+          "data": "8 mag 2026"
+        }
+      },
+      {
+        "nome": "Distribuzione annunciata agli azionisti",
+        "stato": "a_favore",
+        "testo": "L'operazione con MPS è attesa aumentare l'utile e il dividendo per azione di circa l'8% già dal 2026.",
+        "citazione": "l'operazione accrescerà di circa l'8% l'utile e il dividendo per azione già dal 2026",
+        "fonte": {
+          "titolo": "Intesa Sanpaolo-Mps, ecco tutti i numeri della nuova superbanca: ricavi, utili, dividendi e azionisti",
+          "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-mps-ecco-tutti-i-numeri-della-nuova-superbanca-ricavi-utili-dividendi-e-azionisti-202607312254499432",
+          "data": "31 lug 2026"
+        }
+      }
+    ],
+    "metodo": "Generato da Gemini 2.5 Flash su articoli MF; 4 trimestri verificati; citazioni e numeri verificati sul testo degli articoli."
+  },
+  "evoluzione": "L'andamento trimestrale mostra una crescita costante degli utili netti, culminata nel miglior trimestre di sempre nel 1T 2026. Parallelamente, la distribuzione agli azionisti è rimasta generosa e in linea con le aspettative, con previsioni di ulteriore aumento.",
+  "earnings": [
+    {
+      "id": "3T25",
+      "label": "3T 2025",
+      "periodo": "luglio–settembre 2025",
+      "data": "31 ott 2025",
+      "fatti": [
+        {
+          "testo": "Intesa Sanpaolo ha registrato un utile netto di 7,6 miliardi di euro nei primi nove mesi del 2025, con un aumento del 5,9% rispetto allo stesso periodo del 2024.",
+          "citazione": "Intesa Sanpaolo batte le stime e chiude i primi nove mesi del 2025 con un utile netto di 7,6 miliardi di euro, segnando un incremento del 5,9% rispetto allo stesso periodo del 2024.",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo, utili a 7,6 miliardi e dividendi per 5,3 miliardi nei nove mesi. Ma cala il margine d’interesse e in borsa chiude in rosso",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utili-a-76-miliardi-e-dividendi-per-53-miliardi-nei-primi-nove-mesi-cala-il-margine-dinteresse-202510311248481591",
+            "data": "31 ott 2025"
+          }
+        },
+        {
+          "testo": "La banca ha maturato 5,3 miliardi di dividendi nei primi nove mesi, di cui 3,2 miliardi in acconto distribuiti a novembre, a cui si aggiunge un buyback da 2 miliardi concluso a ottobre.",
+          "citazione": "5,3 miliardi di dividendi maturati nei primi nove mesi, di cui 3,2 miliardi in acconto distribuiti a novembre (appena deliberato dal cda), a cui si aggiunge il buyback da 2 miliardi concluso a ottobre.",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo, utili a 7,6 miliardi e dividendi per 5,3 miliardi nei nove mesi. Ma cala il margine d’interesse e in borsa chiude in rosso",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utili-a-76-miliardi-e-dividendi-per-53-miliardi-nei-primi-nove-mesi-cala-il-margine-dinteresse-202510311248481591",
+            "data": "31 ott 2025"
+          }
+        },
+        {
+          "testo": "Il CET1 ratio si è attestato al 13,9%, con un incremento di circa 0,4 punti percentuali nel solo terzo trimestre e di circa 1,05 punti percentuali nei primi nove mesi dell'anno.",
+          "citazione": "Il Cet1 ratio si attesta al 13,9%, segnando un incremento di circa 1,05 punti percentuali nei primi nove mesi dell’anno e di circa 0,4 punti solo nel terzo trimestre.",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo, utili a 7,6 miliardi e dividendi per 5,3 miliardi nei nove mesi. Ma cala il margine d’interesse e in borsa chiude in rosso",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utili-a-76-miliardi-e-dividendi-per-53-miliardi-nei-primi-nove-mesi-cala-il-margine-dinteresse-202510311248481591",
+            "data": "31 ott 2025"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Utile netto trimestrale",
+          "valore": "2,37 miliardi",
+          "confronto": "in calo rispetto ai 2,6 miliardi",
+          "base": "t/t",
+          "nota": "leggermente sopra i 2,4 miliardi del terzo trimestre 2024"
+        },
+        {
+          "nome": "CET1 ratio",
+          "valore": "13,9%",
+          "confronto": "incremento di circa 0,4 punti",
+          "base": "t/t",
+          "nota": "incremento di circa 1,05 punti percentuali nei primi nove mesi dell’anno"
+        },
+        {
+          "nome": "Distribuzione annunciata agli azionisti (2025)",
+          "valore": "8,3 miliardi",
+          "confronto": "",
+          "base": null,
+          "nota": "inclusi i 3,2 miliardi dell’interim dividend che sarà pagato a novembre"
+        }
+      ],
+      "guidance": "Intesa Sanpaolo conferma la prospettiva di un utile netto annuo ben oltre i 9 miliardi e un payout cash pari al 70% dell'utile netto consolidato, stimando un aumento del dividendo per azione relativo al 2024 e al 2025 rispetto all'importo relativo al 2023. La banca considererà inoltre una eventuale ulteriore distribuzione per il 2024 e il 2025 da valutare anno per anno.",
+      "cambiato": "",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "Gli utili elevati nei primi nove mesi del 2025 (7,6 miliardi) e la significativa distribuzione agli azionisti (8,3 miliardi previsti per il 2025) rafforzano la tesi di investimento, supportati da un CET1 ratio solido al 13,9%."
+      },
+      "reazione": {
+        "pct": -2.2,
+        "da": "chiusura del 30 ott 2025",
+        "a": "chiusura del 31 ott 2025",
+        "nota": "Articolo MF delle 12:46: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Intesa Sanpaolo, utili a 7,6 miliardi e dividendi per 5,3 miliardi nei nove mesi. Ma cala il margine d’interesse e in borsa chiude in rosso",
+          "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utili-a-76-miliardi-e-dividendi-per-53-miliardi-nei-primi-nove-mesi-cala-il-margine-dinteresse-202510311248481591",
+          "data": "31 ott 2025"
+        }
+      ]
+    },
+    {
+      "id": "4T25",
+      "label": "4T 2025",
+      "periodo": "ottobre–dicembre 2025",
+      "data": "2 feb 2026",
+      "fatti": [
+        {
+          "testo": "Intesa Sanpaolo ha chiuso il 2025 con un utile netto di 9,3 miliardi di euro, superando gli obiettivi del piano industriale.",
+          "citazione": "Intesa Sanpaolo chiude il 2025 con un utile netto di 9,3 miliardi di euro, in aumento del 7,6% rispetto ai 8,7 miliardi del 2024, superiore agli obiettivi del piano industriale 2022-2025.",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo, utile record a 9,3 miliardi e agli azionisti dividendi per 6,5 miliardi. Il buyback da 2,3 miliardi parte a luglio",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utile-record-a-93-miliardi-nel-2025-agli-azionisti-dividendi-per-65-miliardi-il-buyback-da-23-miliardi-parte-a-luglio-202602020816044270",
+            "data": "2 feb 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto consolidato del quarto trimestre 2025 si è attestato a 1,733 miliardi di euro.",
+          "citazione": "L’utile netto consolidato del quarto trimestre si attesta a 1,733 miliardi, in calo rispetto ai 2.372 milioni del trimestre precedente ma in crescita rispetto ai 1,49 milioni del quarto trimestre 2024.",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo, utile record a 9,3 miliardi e agli azionisti dividendi per 6,5 miliardi. Il buyback da 2,3 miliardi parte a luglio",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utile-record-a-93-miliardi-nel-2025-agli-azionisti-dividendi-per-65-miliardi-il-buyback-da-23-miliardi-parte-a-luglio-202602020816044270",
+            "data": "2 feb 2026"
+          }
+        },
+        {
+          "testo": "La banca ha annunciato dividendi complessivi per 6,5 miliardi di euro e un buyback da 2,3 miliardi di euro per gli azionisti.",
+          "citazione": "Per gli azionisti, i dividendi complessivi ammontano a 6,5 miliardi, di cui 3,2 miliardi già pagati come acconto e 3,3 miliardi in saldo a maggio 2026, affiancati da un buyback da 2,3 miliardi previsto per luglio 2026.",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo, utile record a 9,3 miliardi e agli azionisti dividendi per 6,5 miliardi. Il buyback da 2,3 miliardi parte a luglio",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utile-record-a-93-miliardi-nel-2025-agli-azionisti-dividendi-per-65-miliardi-il-buyback-da-23-miliardi-parte-a-luglio-202602020816044270",
+            "data": "2 feb 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Utile netto 2025",
+          "valore": "9,3 miliardi di euro",
+          "confronto": "7,6%",
+          "base": "a/a",
+          "nota": "Superiore agli obiettivi del piano industriale"
+        },
+        {
+          "nome": "Utile netto 4T 2025",
+          "valore": "1,733 miliardi",
+          "confronto": "in crescita",
+          "base": "a/a",
+          "nota": "In calo rispetto al trimestre precedente"
+        },
+        {
+          "nome": "CET1 ratio",
+          "valore": "13,9%",
+          "confronto": "110 centesimi di punto",
+          "base": null,
+          "nota": "Include impatto negativo di Basilea 4 e contributo straordinario"
+        }
+      ],
+      "guidance": "La banca ha previsto per il 2026 un utile netto vicino a 10 miliardi di euro.",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "L'utile netto record e la generosa distribuzione di dividendi e buyback confermano la tesi di investimento basata su utili elevati e ritorni per gli azionisti."
+      },
+      "reazione": {
+        "pct": 0.2,
+        "da": "chiusura del 30 gen 2026",
+        "a": "chiusura del 2 feb 2026",
+        "nota": "Articolo MF delle 08:15: risultati noti prima dell'apertura."
+      },
+      "fonti": [
+        {
+          "titolo": "Intesa Sanpaolo, utile record a 9,3 miliardi e agli azionisti dividendi per 6,5 miliardi. Il buyback da 2,3 miliardi parte a luglio",
+          "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-utile-record-a-93-miliardi-nel-2025-agli-azionisti-dividendi-per-65-miliardi-il-buyback-da-23-miliardi-parte-a-luglio-202602020816044270",
+          "data": "2 feb 2026"
+        }
+      ]
+    },
+    {
+      "id": "1T26",
+      "label": "1T 2026",
+      "periodo": "gennaio–marzo 2026",
+      "data": "8 mag 2026",
+      "fatti": [
+        {
+          "testo": "Intesa Sanpaolo ha registrato un utile netto di 2,76 miliardi di euro nel primo trimestre 2026, il miglior trimestre di sempre per la banca.",
+          "citazione": "Intesa Sanpaolo apre il 2026 con un utile netto di 2,76 miliardi di euro, in crescita del 5,6% rispetto allo stesso periodo del 2025 e sopra il consensus di 2,61 miliardi",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo chiude il trimestre con 2,8 miliardi di utile (+5,6%) e conferma il target a 10 miliardi. Generali? Argomento per altri",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-chiude-il-trimestre-con-28-miliardi-di-utile-56-e-conferma-lobiettivo-di-10-miliardi-nel-2026-202605081301378023",
+            "data": "8 mag 2026"
+          }
+        },
+        {
+          "testo": "L'utile netto del trimestre è cresciuto del 5,6% rispetto allo stesso periodo del 2025.",
+          "citazione": "in crescita del 5,6% rispetto allo stesso periodo del 2025",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo chiude il trimestre con 2,8 miliardi di utile (+5,6%) e conferma il target a 10 miliardi. Generali? Argomento per altri",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-chiude-il-trimestre-con-28-miliardi-di-utile-56-e-conferma-lobiettivo-di-10-miliardi-nel-2026-202605081301378023",
+            "data": "8 mag 2026"
+          }
+        },
+        {
+          "testo": "Nel primo trimestre, il gruppo ha maturato 2,6 miliardi di euro per i soci, di cui 2,1 miliardi destinati ai dividendi.",
+          "citazione": "Nel primo trimestre il gruppo ha maturato 2,6 miliardi per i soci, di cui 2,1 miliardi destinati ai dividendi.",
+          "fonte": {
+            "titolo": "Intesa Sanpaolo chiude il trimestre con 2,8 miliardi di utile (+5,6%) e conferma il target a 10 miliardi. Generali? Argomento per altri",
+            "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-chiude-il-trimestre-con-28-miliardi-di-utile-56-e-conferma-lobiettivo-di-10-miliardi-nel-2026-202605081301378023",
+            "data": "8 mag 2026"
+          }
+        }
+      ],
+      "metriche": [
+        {
+          "nome": "Utile netto trimestrale",
+          "valore": "2,76 miliardi di euro",
+          "confronto": "5,6%",
+          "base": "a/a",
+          "nota": "Sopra il consensus di 2,61 miliardi"
+        },
+        {
+          "nome": "Risultato corrente lordo",
+          "valore": "9,7%",
+          "confronto": "9,7%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Risultato della gestione operativa",
+          "valore": "9%",
+          "confronto": "9%",
+          "base": "a/a",
+          "nota": null
+        },
+        {
+          "nome": "Ricavi netti",
+          "valore": "5,3%",
+          "confronto": "5,3%",
+          "base": "a/a",
+          "nota": "Trainati da commissioni nette (+3,1%), attività assicurativa (+3%) e attività finanziarie"
+        }
+      ],
+      "guidance": "Intesa Sanpaolo conferma la previsione di circa 10 miliardi di utile per l’intero esercizio 2026.",
+      "cambiato": "Confronto con il trimestre precedente non verificabile dai testi.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "L'utile netto di 2,76 miliardi di euro e i 2,6 miliardi di euro maturati per i soci nel trimestre rafforzano la tesi di utili elevati e generosa distribuzione agli azionisti."
+      },
+      "reazione": {
+        "pct": -2.0,
+        "da": "chiusura del 7 mag 2026",
+        "a": "chiusura del 8 mag 2026",
+        "nota": "Articolo MF delle 11:01: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Intesa Sanpaolo chiude il trimestre con 2,8 miliardi di utile (+5,6%) e conferma il target a 10 miliardi. Generali? Argomento per altri",
+          "url": "https://www.milanofinanza.it/news/intesa-sanpaolo-chiude-il-trimestre-con-28-miliardi-di-utile-56-e-conferma-lobiettivo-di-10-miliardi-nel-2026-202605081301378023",
+          "data": "8 mag 2026"
+        }
+      ]
+    },
+    {
+      "id": "2T26",
+      "label": "2T 2026",
+      "periodo": "aprile–giugno 2026",
+      "data": "10 ago 2026",
+      "fatti": [
+        {
+          "testo": "Kepler Cheuvreux ha alzato il target price di Intesa Sanpaolo a 7 euro, un incremento dell'11,1%, a seguito dei risultati positivi del secondo trimestre 2026.",
+          "citazione": "Kepler Cheuvreux ha alzato il target di Intesa Sanpaolo da 6,30 a 7 euro, con un incremento dell’11,1%, dopo i risultati positivi del secondo trimestre 2026",
+          "fonte": {
+            "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+            "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+            "data": "10 ago 2026"
+          }
+        },
+        {
+          "testo": "La previsione di utile ante imposte per il 2026 è stata aumentata da 3,5 a 3,6 miliardi di euro, grazie ai forti risultati del secondo trimestre.",
+          "citazione": "la previsione di utile ante imposte per il 2026 è stata portata da 3,5 a 3,6 miliardi di euro, sostenuta dalla forza dei risultati del secondo trimestre.",
+          "fonte": {
+            "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+            "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+            "data": "10 ago 2026"
+          }
+        },
+        {
+          "testo": "Kepler ha rivisto al rialzo le stime sull'utile per azione adjusted per il 2026 (da 0,69 a 0,70 euro), 2027 (da 0,83 a 0,85 euro) e 2028 (da 0,95 a 0,97 euro).",
+          "citazione": "Kepler ha inoltre rivisto leggermente al rialzo le stime sull’utile per azione adjusted: da 0,69 a 0,70 euro nel 2026, da 0,83 a 0,85 nel 2027 e da 0,95 a 0,97 euro nel 2028",
+          "fonte": {
+            "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+            "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+            "data": "10 ago 2026"
+          }
+        }
+      ],
+      "metriche": [],
+      "guidance": "La previsione di utile ante imposte per il 2026 è stata portata da 3,5 a 3,6 miliardi di euro.",
+      "cambiato": "La guidance sull'utile ante imposte per il 2026 è stata migliorata, passando da 3,5 a 3,6 miliardi di euro, sostenuta dai risultati positivi del secondo trimestre.",
+      "impatto": {
+        "effetto": "rafforza",
+        "testo": "I risultati positivi del trimestre e il miglioramento della guidance sull'utile ante imposte per il 2026 indicano una continua forza negli utili. Inoltre, l'operazione con MPS è prevista aumentare l'utile e il dividendo per azione già dal 2026, rafforzando la prospettiva di una generosa distribuzione agli azionisti."
+      },
+      "reazione": {
+        "pct": 0.5,
+        "da": "chiusura del 7 ago 2026",
+        "a": "chiusura del 10 ago 2026",
+        "nota": "Articolo MF delle 10:09: risultati durante la seduta."
+      },
+      "fonti": [
+        {
+          "titolo": "Kepler alza il target price a Intesa dell’11% dopo i conti. Ecco quanto può valere",
+          "url": "https://www.milanofinanza.it/news/kepler-alza-il-target-price-a-intesa-dell11-dopo-i-conti-ecco-quanto-può-valere-202608101550269208",
+          "data": "10 ago 2026"
+        }
+      ]
+    }
+  ],
+  "analisi_notizie": {
+    "da": "1 ago 2026",
+    "n": 17,
+    "per_indicatore": [
+      {
+        "nome": "Utile netto trimestrale",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "CET1 ratio (solidità del capitale)",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      },
+      {
+        "nome": "Distribuzione annunciata agli azionisti",
+        "n": 0,
+        "reazione": 0,
+        "gia_nel_prezzo": 0,
+        "nessuna": 0,
+        "titoli": []
+      }
+    ],
+    "fuori_tesi": {
+      "n": 17,
+      "reazione": 10,
+      "gia_nel_prezzo": 2,
+      "nessuna": 5
+    }
+  },
+  "decisione": {
+    "contesto": "portafoglio",
+    "azione": "mantenere",
+    "motivazione": "La tesi di utili elevati e una distribuzione generosa agli azionisti è stata pienamente confermata dai risultati costantemente positivi e dalla solida politica di dividendi e riacquisti. Le notizie recenti non hanno fornito nuovi elementi significativi che modifichino questa valutazione, in quanto la maggior parte non toccava direttamente la tesi.",
+    "aFavore": [
+      "Utile netto trimestrale",
+      "CET1 ratio (solidità del capitale)",
+      "Distribuzione annunciata agli azionisti"
+    ],
+    "rischio": "Il rischio principale è che la banca non riesca a mantenere gli attuali livelli di utili elevati o la generosa politica di distribuzione agli azionisti.",
+    "cambierebbe": "Un calo significativo degli utili netti o una riduzione della distribuzione agli azionisti nei prossimi risultati o annunci cambierebbe la valutazione.",
+    "basata_su": [
+      "risultati",
+      "notizie"
+    ],
+    "notizie_considerate": 17,
+    "notizie_da": "1 ago 2026"
+  },
+  "notizie_indicatori": {},
+  "debug": {
+    "candidate_ids": {
+      "3T25": [
+        "202510311248481591"
+      ],
+      "4T25": [
+        "202602020816044270",
+        "202602061452307480"
+      ],
+      "1T26": [
+        "202604301707575115",
+        "202605081301378023"
+      ],
+      "2T26": [
+        "202607312254499432",
+        "202608101550269208"
+      ]
+    },
+    "attempts": {
+      "3T25": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "4T25": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [5.3]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "cambiato: numbers not in sources [5.3]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        }
+      ],
+      "1T26": [
+        {
+          "failures": [
+            "cambiato: numbers not in sources [1.733, 4.0, 8.8]"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        },
+        {
+          "failures": [
+            "cambiato: numbers not in sources [1.733]",
+            "indicatore Distribuzione annunciata agli azionisti: citazione not verbatim"
+          ],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 1,
+            "fields": [
+              "cambiato"
+            ]
+          }
+        }
+      ],
+      "2T26": [
+        {
+          "failures": [],
+          "drops": {
+            "fatti": 0,
+            "metriche": 0,
+            "indicatori_to_non_citato": 0,
+            "fields": []
+          }
+        }
+      ],
+      "aggregate": [
+        {
+          "failures": []
+        }
+      ],
+      "decisione": [
+        {
+          "failures": []
+        }
+      ]
+    },
+    "checks": {
+      "3T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "4T25": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "1T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      },
+      "2T26": {
+        "pertinente": true,
+        "n_fatti": 3
+      }
+    },
+    "dropped": {
+      "3T25": 0,
+      "4T25": 1,
+      "1T26": 2,
+      "2T26": 0
+    },
+    "thesis_fp": "cc9198a66fc190e2",
+    "pipeline_version": 2,
+    "n_quarters_ok": 4,
+    "n_facts_latest": 3,
+    "total_dropped": 3,
+    "insufficiente_forced": false,
+    "stlam_prices": null
+  }
+}

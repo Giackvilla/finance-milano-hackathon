@@ -9,9 +9,9 @@ TO       ?= 2026-09-18
 # Hero stories = the ones that already have Gemini cards; override with HERO_IDS="id1 id2".
 HERO_IDS ?= $(basename $(notdir $(filter-out %/index.json,$(wildcard data/cards_gemini_en/*.json))))
 
-.PHONY: all data events stats series prices cards gemini export dashboard test
+.PHONY: all data events stats series prices cards gemini theses export dashboard test serve
 
-all: data cards gemini series export
+all: data cards gemini series theses export
 
 data: events stats prices
 
@@ -37,6 +37,10 @@ gemini:
 series:
 	$(PY) scripts/build_series.py $(HERO_IDS)
 
+# Thesis / earnings analysis from MF articles (needs gcloud + BigQuery + Gemini)
+theses:
+	$(PY) scripts/build_theses.py
+
 export:
 	$(PY) scripts/export_dashboard.py
 	$(PY) scripts/test_export.py
@@ -46,8 +50,18 @@ export:
 dashboard:
 	$(PY) scripts/build_dashboard_data.py
 
+# Local dashboard + thesis regenerate API (POST /api/tesi/<TICKER>)
+serve:
+	$(PY) scripts/serve_dashboard.py
+
 test:
-	$(PY) scripts/test_verdict.py
-	$(PY) scripts/test_classify.py
-	$(PY) scripts/test_build_card.py
-	$(PY) scripts/test_export.py
+	@total=0; failed=0; \
+	for t in test_verdict test_classify test_build_card test_export test_theses \
+		test_choose_news test_classify_gemini test_fear_greed; do \
+	  out=$$($(PY) scripts/$$t.py 2>&1); ec=$$?; echo "$$out"; \
+	  n=$$(echo "$$out" | sed -n 's/.*Ran \([0-9][0-9]*\) test.*/\1/p' | tail -1); \
+	  total=$$((total + $${n:-0})); \
+	  if [ $$ec -ne 0 ]; then failed=1; fi; \
+	done; \
+	echo ""; echo "TOTAL: $$total tests"; \
+	if [ $$failed -ne 0 ]; then exit 1; fi

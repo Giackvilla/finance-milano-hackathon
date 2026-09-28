@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "evaluated_at": "2026-09-28",
+    "method": "Manual review of locally available title, news_type, topic evidence snippets, article.quote (when present), company-story metadata, and thesis links. Full article bodies are not stored in data/cards*, web/public/data/stories, or companies/*.json (body_len=0 everywhere checked); evidence vs body is therefore limited to quote↔title/topic consistency plus pipeline check flags.",
+    "sample_size": 12,
+    "selection_rationale": "Varied companies, news types (earnings, M&A/deal, takeover, plan/guidance, analyst rating, tape-recap), clear vs ambiguous name matches, with and without thesis links (ENEL indicator link; LDO false-person match as negative control).",
+    "sources_consulted": [
+      "data/cards_gemini_it/*.json",
+      "data/cards/*.json",
+      "web/public/data/companies/*.json",
+      "web/public/data/stories/*.json",
+      "data/theses/{ENEL,LDO,PRY,SPM}.json",
+      "data/candidates_recent.csv"
+    ],
+    "body_availability": "unavailable_locally"
+  },
+  "summary": {
+    "match": {"ok": 11, "fail": 1, "rate_ok": 0.917},
+    "classification": {"ok": 8, "partial": 3, "fail": 1, "rate_ok_or_partial": 0.917, "rate_ok_strict": 0.667},
+    "evidence": {"ok": 0, "partial": 11, "fail": 0, "na": 1, "note": "No local bodies; partial = quote/title/topic internally consistent and/or automated verbatim flags present, but not re-verified against full body."}
+  },
+  "articles": [
+    {
+      "id": "202609101405465587",
+      "ticker": "GHC",
+      "des_azione": "Garofalo Health Care",
+      "title": "Garofalo Health Care, l’utile frena ma i ricavi aumentano. In cerca di nuove opportunità di crescita m&a",
+      "news_type_pipeline": "earnings",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Correct single-company match. Primary earnings type fits results headline; secondary deal/plan topics echo M&A/investments in the title. Quote on net income −21.8% supports 'frena'; starts with typo 'll'. Body not local."
+    },
+    {
+      "id": "202609151013178211",
+      "ticker": "NWL",
+      "des_azione": "Newprinces",
+      "title": "NewPrinces raddoppia i ricavi e accelera sull’ebitda, ma chiude il semestre ancora in perdita",
+      "news_type_pipeline": "earnings",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Clear name match. Earnings classification correct; capital topic on net debt is secondary. Quote on −5.8m net result supports 'in perdita'. Body not local."
+    },
+    {
+      "id": "202609020746321794",
+      "ticker": "LTMC",
+      "des_azione": "Lottomatica",
+      "title": "Gaming, Lottomatica (-11,2%) rileva Cirsa: nasce il secondo operatore globale quotato. Perché il titolo crolla",
+      "news_type_pipeline": "deal",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Acquirer correctly matched (not Cirsa). Deal primary is right; market_report/analyst secondary fit. Gemini article.quote is the −11.2% open, not the Cirsa terms — substantive deal evidence only in topics[]. Body not local."
+    },
+    {
+      "id": "202609170819021103",
+      "ticker": "PININ",
+      "des_azione": "Pininfarina",
+      "title": "Pininfarina verso il delisting da Piazza Affari: opa a 1 euro, premio del 20%",
+      "news_type_pipeline": "takeover",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Correct match and takeover type. Quote on 20% premium aligns with title; capital/governance topics coherent. Body not local."
+    },
+    {
+      "id": "202608270925452473",
+      "ticker": "MT",
+      "des_azione": "Maire",
+      "title": "Maire, nuovi ordini per 110 milioni: la controllata Tecnimont si rafforza nel gas in Sud America e in Asia",
+      "news_type_pipeline": "deal",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "partial",
+      "evidence": "partial",
+      "notes": "Company match correct. Classified as deal, but content is new orders/contracts (commercial backlog), not M&A. Taxonomy stretch. Quote '110 milioni' matches title. Body not local."
+    },
+    {
+      "id": "202609041033385407",
+      "ticker": "AET",
+      "des_azione": "Iren",
+      "title": "Iren, dividendo al 6,7% nel 2027: il piano di ottobre può spingere il titolo. L’analisi di Equita",
+      "news_type_pipeline": "plan",
+      "company_story_news_type": "capital",
+      "keyword_news_type": "capital",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "partial",
+      "evidence": "partial",
+      "notes": "Match correct. Gemini/choose_news → plan; company export still capital; title mixes dividend, industrial plan, and Equita note — plan is defensible but pipelines disagree. Body not local."
+    },
+    {
+      "id": "202608261044164621",
+      "ticker": "RWAY",
+      "des_azione": "Rai Way",
+      "title": "Rai Way, Morgan Stanley taglia il target price del 20%: 5 motivi per cui resta cauta sul titolo",
+      "news_type_pipeline": "analyst",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Clear match. Analyst primary correct; plan/earnings secondary from broker note. Quote on TP 6.7→5.4 (−20%) matches title. Body not local."
+    },
+    {
+      "id": "202608250749363291",
+      "ticker": "NEXI",
+      "des_azione": "Nexi",
+      "title": "Nexi: il titolo prova un nuovo allungo",
+      "news_type_pipeline": "market_report",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Tape-recap / technical note correctly typed market_report. Quote is chart language (4.10–4.40). Body not local."
+    },
+    {
+      "id": "202609101156153188",
+      "ticker": "MONC",
+      "des_azione": "Moncler",
+      "title": "Moncler: il trend rimane negativo",
+      "news_type_pipeline": "market_report",
+      "company_story_news_type": "other",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Match correct. Gemini market_report fits tape-recap; company story still 'other' — export inconsistency, not a wrong read of the title. Body not local."
+    },
+    {
+      "id": "202609111222214538",
+      "ticker": "FINME",
+      "des_azione": "Leonardo",
+      "title": "Essilux, Leonardo Maria Del Vecchio sbarca su X e attacca Milleri sui compensi",
+      "news_type_pipeline": "other",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": false,
+      "match": "fail",
+      "classification": "fail",
+      "evidence": "na",
+      "notes": "False positive: person name 'Leonardo Maria Del Vecchio' matched to Leonardo SpA (FINME). Story is about EssilorLuxottica/Delfin family governance, not the defence contractor. No Gemini card. Pattern is large: ~80/749 Leonardo company stories mention Del Vecchio / Leonardo Maria (~11%). LDO thesis debug also lists a Del Vecchio Delfin piece among 2T26 earnings candidates."
+    },
+    {
+      "id": "202609111817042189",
+      "ticker": "ENEL",
+      "des_azione": "Enel",
+      "title": "Enel, la controllata Usa torna a fare cassa e avvia una nuova fase di m&a nelle rinnovabili",
+      "news_type_pipeline": "deal",
+      "has_thesis_link": true,
+      "thesis_indicator": "Free cash flow dopo gli investimenti",
+      "body_available": false,
+      "quote_available": false,
+      "match": "ok",
+      "classification": "ok",
+      "evidence": "partial",
+      "notes": "Company match and deal type OK for US sub cash + renewables M&A. Thesis link to FCF-after-investments is plausible from 'fare cassa' but loose without body evidence that FCF/capex is discussed. No quote on card. Body not local."
+    },
+    {
+      "id": "202609091059297824",
+      "ticker": "COGE",
+      "des_azione": "Webuild",
+      "title": "Webuild smentisce la richiesta di 22 miliardi al governo: il titolo chiude in calo del 7,9%",
+      "news_type_pipeline": "market_report",
+      "company_story_news_type": "capital",
+      "keyword_news_type": "capital",
+      "has_thesis_link": false,
+      "body_available": false,
+      "quote_available": true,
+      "match": "ok",
+      "classification": "partial",
+      "evidence": "partial",
+      "notes": "Match correct. Keyword wanted capital; choose_news correctly rejects capital evidence (denial ≠ capital raise) and picks market_report because of the −7.9% tape line. Primary story is a denial/clarification; market_report is imperfect but better than capital. Quote is only the close. Body not local."
+    }
+  ],
+  "error_patterns": [
+    {
+      "id": "homonym_false_match",
+      "severity": "Title regex on DES_AZIONE matches person/football names sharing a listed company string (esp. Leonardo ↔ Leonardo Maria Del Vecchio).",
+      "severity_in_sample": true,
+      "scale_note": "~11% of stories under web/public/data/companies/leonardo.json"
+    },
+    {
+      "id": "news_type_pipeline_divergence",
+      "severity": "keyword_news_type / company-story news_type / Gemini choose_news news_type disagree (Iren capital vs plan; Webuild capital vs market_report; Moncler other vs market_report).",
+      "severity_in_sample": true
+    },
+    {
+      "id": "orders_as_deal",
+      "severity": "Commercial orders/contracts labelled deal (Maire 110m), conflating backlog news with M&A.",
+      "severity_in_sample": true
+    },
+    {
+      "id": "loose_thesis_indicator_link",
+      "severity": "Thesis–news mapping can attach a story to an indicator from headline alone (Enel M&A/cash → FCF indicator) without quote-level support in the shipped card.",
+      "severity_in_sample": true
+    },
+    {
+      "id": "quote_prefers_tape_over_substance",
+      "severity": "On mixed deal+tape headlines, article.quote often stores the price move, while deal facts live only in topics[].evidence.",
+      "severity_in_sample": true
+    },
+    {
+      "id": "bodies_not_in_dashboard_bundle",
+      "severity": "Exported cards/stories omit body text, so offline audit cannot re-check citazione against source beyond build-time flags.",
+      "severity_in_sample": true
+    }
+  ],
+  "recommended_fixes": [
+    "Add negative match rules for known homonyms (e.g. 'Leonardo Maria', 'Del Vecchio', Figc football contexts) before accepting DES_AZIONE hits; optionally require defence/aerospace context for FINME.",
+    "Export a single canonical news_type (post choose_news) into company stories so UI/stats and Gemini cards do not diverge.",
+    "Introduce or map an orders/contract topic distinct from M&A deal, or bias choose_news away from deal when only 'ordini/commesse' evidence is present.",
+    "Require thesis-indicator assignment to cite a verbatim span that mentions the indicator concept; mark links without quote as low confidence.",
+    "When both substance and tape topics exist, prefer a substantive quote for article.quote (keep tape in topics).",
+    "Optionally ship a short body excerpt or hash in public cards to allow offline quote re-verification."
+  ]
+}
