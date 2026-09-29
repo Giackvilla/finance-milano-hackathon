@@ -775,7 +775,7 @@
     const sp = block.spark || [], at = k => (sp.length > k ? sp[sp.length - 1 - k] : null);
     const hist = [['Chiusura precedente', at(1)], ['1 settimana fa', at(5)], ['1 mese fa', at(21)], ['3 mesi fa', sp.length ? sp[0] : null]];
     return `<section class="card fg" id="fear-greed" aria-labelledby="h-fg">
-      <div class="card-h"><h2 id="h-fg">Fear &amp; Greed · ${esc(name)} ${prov('modello', 'Indice descrittivo sul nastro e sul tono delle notizie. Non è un segnale operativo.')}</h2>
+      <div class="card-h"><h2 id="h-fg">Fear &amp; Greed · ${esc(name)}</h2>
         <span class="muted">${esc(fgDate(block.date))}</span></div>
       <div class="fg-body">
         ${fgDial(block.score)}
@@ -803,7 +803,7 @@
     return `<section class="card fg-co" aria-label="Fear and Greed del settore">
       <div class="fg-top">
         <div>
-          <div class="fg-kicker">Fear &amp; Greed · ${esc(sector.name)} ${prov('modello', 'Stesso indice della home, sul paniere di questo settore.')}</div>
+          <div class="fg-kicker">Fear &amp; Greed · ${esc(sector.name)}</div>
           <div class="label">${esc(fgDate(sector.date))} · ${esc(fgShocks(sector))}</div>
         </div>
         <div class="fg-side">
