@@ -826,7 +826,7 @@
     const rows = R
       ? [['Prezzi', `Chiusura del ${p} · dataset MF`], ['Notizie', `Articoli MF fino al ${n}`], ['Portafoglio e tesi', 'Di esempio'], ['Analisi', 'Generate dal modello · non è consulenza']]
       : [['Dati', 'Prezzi, notizie e segnali simulati'], ['Portafoglio e tesi', 'Di esempio'], ['Analisi', 'Esempi scritti a mano · non è consulenza']];
-    const label = R ? `Dati al ${esc(String(p).replace(/\s\d{4}$/, ''))}` : 'Dati simulati';
+    const label = R ? `<span class="db-pre">Dati al </span>${esc(String(p).replace(/\s\d{4}$/, ''))}` : 'Dati simulati';
     return `<div class="data-wrap">
       <button class="data-btn" type="button" data-act="data-info" aria-expanded="false" aria-controls="data-pop">${label}${icon('info')}</button>
       <div class="data-pop" id="data-pop" role="dialog" aria-label="Da dove vengono i dati" hidden>
@@ -845,11 +845,18 @@
     b.setAttribute('aria-expanded', open); pop.hidden = !open;
   }
 
+  /* Sul telefono la barra laterale è un pannello che scorre sopra la pagina, con uno stato suo (ui.mSide) che non tocca la preferenza del computer. */
+  const isPhone = () => window.matchMedia('(max-width: 820px)').matches;
   function applySide() {
+    const phone = isPhone(), open = phone ? !!ui.mSide : ui.sideOpen;
     $('#shell').classList.toggle('side-closed', !ui.sideOpen);
-    $('#side-left').inert = !ui.sideOpen;
+    $('#shell').classList.toggle('m-side-open', phone && !!ui.mSide);
+    $('#side-left').inert = !open;
     const b = $('[data-act="toggle-side"]');
-    if (b) { const l = ui.sideOpen ? 'Nascondi la barra laterale' : 'Mostra la barra laterale'; b.setAttribute('aria-pressed', ui.sideOpen); b.setAttribute('aria-label', l); b.title = l; }
+    if (b) {
+      const l = phone ? (open ? 'Chiudi portafoglio e watchlist' : 'Apri portafoglio e watchlist') : (open ? 'Nascondi la barra laterale' : 'Mostra la barra laterale');
+      b.setAttribute('aria-pressed', open); b.setAttribute('aria-label', l); b.title = l;
+    }
     setTimeout(() => charts.forEach((draw, host) => { if (host.isConnected) draw(); }), 320);
   }
 
@@ -1812,6 +1819,7 @@
   }
   function route() {
     hideNotif();
+    if (ui.mSide) { ui.mSide = false; applySide(); }
     ui.editing = false; ui.removing = false;
     ui.current = currentTicker();
     const c = ui.current;
@@ -1903,7 +1911,10 @@
         el.setAttribute('aria-expanded', ui.fgHow); const body = $('#fg-how'); if (body) body.hidden = !ui.fgHow;
         break;
       }
-      case 'toggle-side': ui.sideOpen = !ui.sideOpen; savePref(); applySide(); break;
+      case 'toggle-side':
+        if (isPhone()) { ui.mSide = !ui.mSide; applySide(); if (ui.mSide) { const f = $('#side-left .side-tabs [aria-selected="true"]'); if (f) f.focus({ preventScroll: true }); } break; }
+        ui.sideOpen = !ui.sideOpen; savePref(); applySide(); break;
+      case 'close-side': ui.mSide = false; applySide(); break;
       case 'add-watch': openDialog('watch'); break;
       case 'dlg-close': closeDialog(); break;
       case 'clear-filter': ui.ticker = null; renderMain(); break;
@@ -1928,6 +1939,8 @@
   // pannello dati: si chiude cliccando fuori o con Esc
   document.addEventListener('pointerdown', ev => { if (!ev.target.closest('.data-wrap')) setDataInfo(false); });
   document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && $('#data-pop') && !$('#data-pop').hidden) { setDataInfo(false); $('.data-btn').focus(); } });
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && ui.mSide) { ui.mSide = false; applySide(); const b = $('[data-act="toggle-side"]'); if (b) b.focus(); } });
+  window.matchMedia('(max-width: 820px)').addEventListener('change', () => { ui.mSide = false; applySide(); });
 
   document.addEventListener('submit', ev => {
     ev.preventDefault();

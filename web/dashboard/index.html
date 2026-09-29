@@ -691,18 +691,48 @@ dialog::backdrop { background: rgba(0, 0, 0, .35); }
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 50; padding: 10px 16px; border-radius: 980px; background: var(--card); box-shadow: 0 8px 30px rgba(0, 0, 0, .18), 0 0 0 .5px var(--sep-strong); font-size: 14px; font-weight: 500; }
 
 /* ---------------------------------------------------------------- responsive */
+/* il velo esiste solo sul telefono */
+.scrim { display: none; }
 @media (max-width: 820px) {
   .splitter { display: none; }
-  .shell, .shell.side-closed { grid-template-columns: minmax(0, 1fr); grid-template-areas: "left" "main"; }
-  .shell.is-detail { grid-template-areas: "main" "left"; }
-  .shell.side-closed .side-left { display: none; }
-  .side { position: static; height: auto; overflow: visible; }
-  .side-left { border: 0; border-top: 1px solid var(--sep); }
+  /* telefono: la pagina occupa tutto lo schermo; portafoglio e watchlist scorrono da sinistra sopra un velo */
+  .shell, .shell.side-closed, .shell.is-detail { grid-template-columns: minmax(0, 1fr); grid-template-areas: "main"; }
+  .shell .side-left, .shell.side-closed .side-left {
+    display: block; position: fixed; top: 0; bottom: 0; left: 0; z-index: 60;
+    width: min(88vw, 380px); height: 100dvh; overflow-y: auto; overscroll-behavior: contain;
+    padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+    border: 0; border-right: 1px solid var(--sep); box-shadow: 0 0 40px rgba(0, 0, 0, .18);
+    visibility: hidden; transform: translateX(-102%);
+    transition: transform 320ms var(--ease-drawer, cubic-bezier(0.32, 0.72, 0, 1)), visibility 0s linear 320ms;
+  }
+  .shell.m-side-open .side-left { visibility: visible; transform: none; transition: transform 320ms var(--ease-drawer, cubic-bezier(0.32, 0.72, 0, 1)), visibility 0s; }
+  .shell.side-closed .side-left .side-inner { opacity: 1; }
+  .scrim { display: block; position: fixed; inset: 0; z-index: 55; background: rgba(0, 0, 0, .32); opacity: 0; pointer-events: none; transition: opacity 240ms ease; }
+  .shell.m-side-open .scrim { opacity: 1; pointer-events: auto; }
   .side-left .side-inner { width: auto; }
+  /* il marchio resta visibile nella barra degli strumenti (solo l'icona, per lo spazio) */
+  .tb-brand, .shell.side-closed .tb-brand { display: flex; }
+  .tb-brand .brand-name { display: none; }
+  /* intestazione della scheda titolo: le righe lunghe vanno a capo invece di allargare la pagina */
+  .dh { grid-template-columns: minmax(0, 1fr); }
+  .dh > * { min-width: 0; }
+  .dh-meta { white-space: normal; }
+  .dh-meta .remove-row { margin-left: 0; width: 100%; }
+  /* barra degli strumenti più compatta: la data resta, "Dati al" no */
+  .toolbar { gap: 8px; }
+  .db-pre { display: none; }
+  /* Fear & Greed: i settori usano tutta la riga, "Come è calcolato" va sotto */
+  .fg-foot { flex-direction: column; align-items: stretch; gap: 8px; width: 100%; min-width: 0; }
+  .fg-foot .fg-picks { flex: none; width: 100%; max-width: 100%; }
+  .fg-how { margin-left: 0; align-self: flex-start; }
   .side-inner { padding-inline: 10px; }
   .toolbar, .content { padding-inline: 16px; }
   .status { display: none; }
   .page-title, .dh-title h1, .dh-title .n { font-size: 30px; }
+}
+@media (max-width: 820px) and (prefers-reduced-motion: reduce) {
+  .shell .side-left, .shell.m-side-open .side-left { transition: visibility 0s; transform: none; }
+  .shell:not(.m-side-open) .side-left { visibility: hidden; }
 }
 @media (max-width: 460px) {
   .two { grid-template-columns: minmax(0, 1fr); }
@@ -760,6 +790,7 @@ body { letter-spacing: -0.005em; }
 
 <div class="shell" id="shell">
   <aside class="side side-left" id="side-left" aria-label="Portafoglio e watchlist"></aside>
+  <div class="scrim" data-act="close-side" aria-hidden="true"></div>
   <div class="splitter" id="splitter" role="separator" tabindex="0" aria-orientation="vertical" aria-controls="side-left" aria-label="Larghezza della barra laterale" aria-valuemin="260" aria-valuemax="720" aria-valuenow="320" title="Trascina per ridimensionare · doppio clic per ripristinare"></div>
   <main class="main" tabindex="-1">
     <div class="toolbar" id="toolbar"></div>
