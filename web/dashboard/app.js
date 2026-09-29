@@ -504,6 +504,13 @@
     let i = 0;
     return secs.map(x => ({ ...x, col: x.n === 'Altro' ? 'var(--s-other)' : SERIES[i++] }));
   }
+  /* Ultimo tipo di puntatore (mouse, penna, dito), letto prima di ogni altro gestore:
+     con il dito le torte funzionano a tocchi, con il mouse a passaggi. */
+  let lastPointer = 'mouse';
+  document.addEventListener('pointerdown', ev => { lastPointer = ev.pointerType || 'mouse'; }, true);
+  document.addEventListener('pointermove', ev => { if (ev.pointerType === 'mouse') lastPointer = 'mouse'; }, { capture: true, passive: true });
+  const touchInput = () => lastPointer === 'touch';
+
   /* Home: torte grandi e interattive. HOME tiene i dati dell'ultima resa e il settore fissato con un clic. */
   const HOME = { titoli: [], settori: [], rows: [], tot: 0, pin: null };
 
@@ -1880,9 +1887,24 @@
     const slice = ev.target.closest('.ipie [data-i]');
     if (slice) {
       const kind = slice.dataset.k, i = +slice.dataset.i, x = HOME[kind][i];
+      const w = slice.closest('.ipie');
+      /* Touch: il primo tocco seleziona e mostra l'anteprima (come il passaggio del mouse sul computer).
+         Per un titolo, un secondo tocco sullo stesso spicchio apre la scheda. */
+      if (touchInput()) {
+        if (kind === 'titoli') {
+          if (!x || !x.open) return;
+          if (HOME.tapSel === i) { HOME.tapSel = null; closePreview(); openCompany(x.open); return; }
+          HOME.tapSel = i; setActive(w, i); showNotif(slice, true);
+          return;
+        }
+        HOME.pin = HOME.pin === i ? null : i;
+        w.dataset.state = ''; setActive(w, null);
+        if (HOME.pin == null) hideNotif(); else showNotif(slice, true);
+        return;
+      }
       if (kind === 'titoli') { if (x && x.open) openCompany(x.open); return; }
       HOME.pin = HOME.pin === i ? null : i;
-      const w = slice.closest('.ipie'); w.dataset.state = ''; setActive(w, null);
+      w.dataset.state = ''; setActive(w, null);
       return;
     }
     const tab = ev.target.closest('[data-side-tab]');
@@ -2049,7 +2071,9 @@
     }).join('');
     return `<div class="nt-head"><b>${esc(x.n)}</b><span>${list.length ? `${list.length} ${list.length === 1 ? 'notizia' : 'notizie'}` : 'Nessuna notizia'}</span></div>
       ${cards ? `<ul>${cards}</ul>` : '<p class="nt-empty">Nessun articolo MF collegato di recente.</p>'}
-      <div class="nt-foot">${list.some(n => n.url) ? 'Clic su una notizia per aprirla su MF · sullo spicchio per i titoli' : 'Clic per vedere i titoli del settore'}</div>`;
+      <div class="nt-foot">${touchInput()
+        ? (list.some(n => n.url) ? 'Tocca una notizia per aprirla su MF · i titoli sono sotto la torta' : 'I titoli del settore sono sotto la torta')
+        : (list.some(n => n.url) ? 'Clic su una notizia per aprirla su MF · sullo spicchio per i titoli' : 'Clic per vedere i titoli del settore')}</div>`;
   }
   function notifHTML(x) {
     const t = x.open, a = azienda(t), T = tesiDi(t), stato = statoDi(a), se = sinceEarnings(t);
@@ -2061,7 +2085,8 @@
         <button class="nt-link" type="button" data-goto="cambia-card" data-t="${esc(t)}" aria-label="Apri gli ultimi risultati di ${esc(x.full)}"><span class="nt-k">Risultati</span><span class="nt-v">${eff ? `<span class="chip ${eff.cls}">${icon(eff.ic)}${eff.label}</span> <span class="muted">· ${esc(se.e.label)}</span>` : '<span class="muted">Non disponibili</span>'}</span>${icon('chev')}</button>
         <div class="nt-row"><span class="nt-k">Prezzo</span><span class="nt-v">${se && se.pct != null ? `<b class="${dirOf(se.pct)}">${signed(se.pct, 1)}</b> dai risultati` : '<span class="muted">n.d.</span>'}</span></div>
       </div>
-      <p class="nt-read">${priceVsThesis(stato, se && se.pct)}</p></div>`;
+      <p class="nt-read">${priceVsThesis(stato, se && se.pct)}</p></div>
+      ${touchInput() ? '<div class="nt-foot">Tocca di nuovo lo spicchio per aprire la scheda</div>' : ''}`;
   }
   /* Accanto al bordo esterno dello spicchio, verso l'esterno; dentro la finestra; cresce dal lato dello spicchio. */
   function placeNotif(slice) {
@@ -2077,7 +2102,7 @@
     notif.style.left = x + 'px'; notif.style.top = y + 'px';
     notif.style.transformOrigin = `${x > ox ? 'left' : 'right'} ${Math.max(0, Math.min(h, oy - y))}px`;
   }
-  function showNotif(hit) {
+  function showNotif(hit, now) {
     const w = hit.closest('.ipie'), kind = w.dataset.kind, i = +hit.dataset.i, x = HOME[kind][i];
     if (!x || (kind === 'titoli' && !x.open)) return hideNotif();
     const key = kind + i, slice = w.querySelector(`.slice[data-i="${i}"]`);
@@ -2091,13 +2116,16 @@
       if (notifKey !== key) { notif.classList.add('instant'); render(); requestAnimationFrame(() => notif.classList.remove('instant')); }
       return;
     }
+    if (now) { render(); notif.hidden = false; return; }
     notifT = setTimeout(() => { render(); notif.hidden = false; }, 140);
   }
   function hideNotif() { clearTimeout(notifT); notifKey = null; notif.hidden = true; }
 
   let hideT;
-  const closePreview = () => { clearTimeout(hideT); hideNotif(); $$('.ipie').forEach(w => setActive(w, null)); };
+  const closePreview = () => { clearTimeout(hideT); HOME.tapSel = null; hideNotif(); $$('.ipie').forEach(w => setActive(w, null)); };
   const pieHover = (target, preview) => {
+    /* Con il dito niente "passaggio": sposterebbe lo spicchio sotto il dito e il tocco andrebbe perso. Decide il tocco (click). */
+    if (touchInput()) return;
     if (target && target.closest && target.closest('#pie-notif')) { clearTimeout(hideT); return; }
     const hit = target && target.closest && target.closest('.ipie [data-i]');
     if (hit) {
@@ -2109,9 +2137,15 @@
     if (!notif.hidden) { clearTimeout(hideT); hideT = setTimeout(closePreview, 260); return; }
     closePreview();
   };
-  document.addEventListener('pointerover', ev => pieHover(ev.target, ev.pointerType !== 'touch'));
+  document.addEventListener('pointerover', ev => { if (ev.pointerType !== 'touch') pieHover(ev.target, true); });
   document.addEventListener('focusin', ev => pieHover(ev.target, true));
-  document.documentElement.addEventListener('pointerleave', () => pieHover(null));
+  document.documentElement.addEventListener('pointerleave', ev => { if (ev.pointerType !== 'touch') pieHover(null); });
+  // touch: toccando fuori dalle torte e dall'anteprima, l'anteprima si chiude
+  document.addEventListener('pointerdown', ev => {
+    if (ev.pointerType !== 'touch') return;
+    if (ev.target.closest('.ipie [data-i], #pie-notif')) return;
+    if (!notif.hidden || HOME.tapSel != null) closePreview();
+  });
   window.addEventListener('scroll', closePreview, { passive: true });
   notif.addEventListener('pointerleave', () => { clearTimeout(hideT); hideT = setTimeout(closePreview, 260); });
   document.addEventListener('keydown', ev => {
