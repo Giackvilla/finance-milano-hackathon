@@ -1866,6 +1866,7 @@
   }
 
   document.addEventListener('click', ev => {
+    if (ev.target.closest('#pie-notif a.nt-art')) { setTimeout(closePreview, 0); return; }
     const go = ev.target.closest('[data-goto]');
     if (go) { ui.scrollTo = go.dataset.goto; closePreview(); openCompany(go.dataset.t); return; }
     const slice = ev.target.closest('.ipie [data-i]');
@@ -2027,11 +2028,15 @@
       const dir = s0 ? s0.dir : n.segnale && n.segnale.dir;
       const tag = vd ? `<span class="chip ${vd.cls}">${esc(vd.label)}</span>`
         : n.segnale ? `<span class="chip ${dir === 'up' ? 'pos' : dir === 'down' ? 'neg' : 'neu'}">${trend(dir)}${DIR_LABEL[dir]}</span>` : '';
-      return `<li class="nt-card"><div class="nt-meta"><span class="nt-app" aria-hidden="true">MF</span><span>${s0 ? `<b>${esc(s0.ticker)}</b> · ` : ''}${d.getUTCDate()} ${MESI[d.getUTCMonth()]}</span>${tag}</div><p>${esc(n.titolo)}</p></li>`;
+      /* Con l'indirizzo dell'articolo la scheda è un link: si apre su MF in una nuova scheda del browser. */
+      const body = `<div class="nt-meta"><span class="nt-app" aria-hidden="true">MF</span><span>${s0 ? `<b>${esc(s0.ticker)}</b> · ` : ''}${d.getUTCDate()} ${MESI[d.getUTCMonth()]}</span>${tag}</div><p>${esc(n.titolo)}</p>`;
+      return n.url
+        ? `<li><a class="nt-card nt-art" href="${esc(n.url)}" target="_blank" rel="noopener" aria-label="Apri su MF: ${esc(n.titolo)}">${body}</a></li>`
+        : `<li class="nt-card">${body}</li>`;
     }).join('');
     return `<div class="nt-head"><b>${esc(x.n)}</b><span>${list.length ? `${list.length} ${list.length === 1 ? 'notizia' : 'notizie'}` : 'Nessuna notizia'}</span></div>
       ${cards ? `<ul>${cards}</ul>` : '<p class="nt-empty">Nessun articolo MF collegato di recente.</p>'}
-      <div class="nt-foot">Clic per vedere i titoli del settore</div>`;
+      <div class="nt-foot">${list.some(n => n.url) ? 'Clic su una notizia per aprirla su MF · sullo spicchio per i titoli' : 'Clic per vedere i titoli del settore'}</div>`;
   }
   function notifHTML(x) {
     const t = x.open, a = azienda(t), T = tesiDi(t), stato = statoDi(a), se = sinceEarnings(t);
